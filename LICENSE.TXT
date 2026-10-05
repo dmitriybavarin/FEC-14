@@ -1,21 +1,86 @@
-MIT License
+NON-COMPETITIVE SERVER USE LICENSE
+Version 1.0
 
-Copyright (c) 2023-2026 RMC-14
+Copyright (c) 2026 Bavarin
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. GRANT OF RIGHTS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated source code (the "Software"), to:
+- view and study the source code
+- copy and modify the Software
+- create and distribute modified versions of the Software
+- run the Software or modified versions on private or public servers
+  for non-commercial purposes
+- use the Software for personal, educational, testing, research,
+  development, and community purposes.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. NON-COMMERCIAL SERVER USE
+You may operate a server using the Software, including a publicly
+accessible server, provided that the server is operated on a
+non-commercial basis.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+A server is considered non-commercial if it does not generate revenue
+or other financial compensation through:
+- donations
+- subscriptions
+- paid ranks, roles, permissions, or benefits
+- paid virtual currency or virtual items
+- advertisements
+- sponsorships
+- paid access
+- loot boxes or other paid random rewards
+- sales of goods or services connected to the server
+- or any substantially similar monetization method
+
+3. COMPETING SERVERS
+You may not use, distribute, modify, or deploy the Software, or a
+substantial portion of the Software, for the purpose of operating,
+creating, or substantially assisting a commercial server that competes
+with the original server or service operated by the copyright holder.
+
+This restriction includes, but is not limited to:
+- launching a commercial server based substantially on the Software
+- launching a competing server using a modified version of the Software
+- using the Software as the backend or core technology of a competing
+  commercial server
+- providing the Software to another party for the purpose of operating
+  such a competing commercial server
+
+4. PRIVATE AND LOCAL USE
+Nothing in this license prohibits a person from running the Software
+locally or privately for personal use, development, testing,
+experimentation, or educational purposes.
+
+5. MODIFICATIONS AND FORKS
+You may modify and fork the Software for purposes permitted by this
+license.
+
+Modified versions must retain this license and the original copyright
+notice in all copies or substantial portions of the Software.
+
+6. COMMERCIAL USE WITH PERMISSION
+The copyright holder may grant written permission for commercial use,
+including operation of a commercial server.
+
+Such permission may be granted on an individual basis and may include
+additional terms or conditions.
+
+7. NO TRANSFER OF TRADEMARK RIGHTS
+This license does not grant permission to use the names, logos,
+trademarks, branding, domain names, or other identifying marks of
+Bavarin or the original project to imply official affiliation,
+endorsement, or sponsorship.
+
+8. DISCLAIMER
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+9. COPYRIGHT
+The copyright holder retains all rights not expressly granted by this
+license.
