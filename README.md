@@ -6,11 +6,11 @@ FEC-14 это асимметричная игра, работающая на д�
 
 ## Ссылки
 
-[Вики сообщества RMC-14](https://wiki.rouny-ss14.com/) | [Discord](https://discord.gg/rouny) | [Лаунчер SS14 в Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Скачать отдельный лаунчер](https://spacestation14.io/about/nightlies/)
+[Discord](https://discord.gg/7jkQ7mJDXg) | [Лаунчер SS14 в Steam](https://store.steampowered.com/app/1255460/Space_Station_14/)
 
 ## Участие в разработке
 
-Мы рады вкладу от кого угодно. Если хотите помочь, заходите в Discord. У нас есть [список задач](https://github.com/RMC-14/RMC-14/issues), которые нужно выполнить, и любой может за них взяться. Не бойтесь просить о помощи!
+Мы рады вкладу от кого угодно. Если хотите помочь, заходите в Discord. У нас есть [список задач](https://github.com/dmitriybavarin/FEC-14/issues), которые нужно выполнить, и любой может за них взяться. Не бойтесь просить о помощи!
 
 ## Требования к участникам
 
@@ -30,10 +30,12 @@ FEC-14 это асимметричная игра, работающая на д�
 
 ## Лицензия
 
+Весь код контент-репозитория, специфичный для FEC-14, распространяется под [лицензией](LICENSE.TXT).
+
 Весь код контент-репозитория, специфичный для RMC-14, распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
 
 Весь [код апстрима](https://github.com/space-wizards/space-station-14) распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE-UPSTREAM.TXT).
 
 Большинство ассетов распространяется под лицензией [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и копирайт каждого ассета указаны в его файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
-Обратите внимание: некоторые ассеты распространяются под некоммерческой лицензией [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичными некоммерческими лицензиями, и их необходимо удалить, если вы хотите использовать проект в коммерческих целях.
+Обратите внимание! Некоторые ассеты распространяются под некоммерческой лицензией [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичными некоммерческими лицензиями, и их необходимо удалить, если вы хотите использовать проект в коммерческих целях.
