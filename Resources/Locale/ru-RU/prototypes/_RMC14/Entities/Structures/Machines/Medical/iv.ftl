@@ -1,0 +1,9 @@
+ent-CMIV = Капельница
+    .desc = Позволяет вливать пациенту кровь или брать ее для переливания.
+    .suffix = Капельница, пустой
+ent-CMBloodPack = Пакет крови
+    .desc = Пакет крови. Содержит жидкости, обычно для переливания.
+    .suffix = CM, пустой
+ent-CMBloodPackFull = Пакет крови
+    .desc = { ent-CMBloodPack.desc }
+    .suffix = CM, полный

@@ -1,0 +1,12 @@
+ent-PartSkeleton = Часть тела скелета
+ent-TorsoSkeleton = Торс скелета
+ent-HeadSkeleton = Череп
+    .desc = Бедный Йорик...
+ent-LeftArmSkeleton = Левая рука скелета
+ent-RightArmSkeleton = Правая рука скелета
+ent-LeftHandSkeleton = Левая кисть скелета
+ent-RightHandSkeleton = Правая кисть скелета
+ent-LeftLegSkeleton = Левая нога скелета
+ent-RightLegSkeleton = Правая нога скелета
+ent-LeftFootSkeleton = Левая ступня скелета
+ent-RightFootSkeleton = Правая ступня скелета

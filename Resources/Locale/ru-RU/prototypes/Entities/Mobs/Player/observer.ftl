@@ -1,0 +1,16 @@
+ent-Incorporeal =
+    .desc = Мобы без физического тела.
+ent-MobObserverBase = Наблюдатель
+    .desc = Бу!
+ent-MobObserver = { ent-MobObserverBase }
+    .desc = { ent-MobObserverBase.desc }
+ent-ActionGhostBoo = Бу!
+    .desc = Пугайте экипаж от скуки!
+ent-ActionToggleLighting = Переключить освещение
+    .desc = Переключает отрисовку света, чтобы лучше видеть темные места.
+ent-ActionToggleFov = Переключить поле зрения
+    .desc = Переключает поле зрения, чтобы видеть то же, что игроки.
+ent-ActionToggleGhosts = Переключить призраков
+    .desc = Переключает видимость других призраков.
+ent-ActionToggleGhostHearing = Переключить слух призрака
+    .desc = Переключает между всеми сообщениями и только радио и ближайшими.

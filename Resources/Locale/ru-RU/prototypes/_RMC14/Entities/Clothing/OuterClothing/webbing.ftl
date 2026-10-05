@@ -1,0 +1,11 @@
+ent-RMCOuterClothingExternalWebbing = Внешняя разгрузка
+    .desc = Ее носят поверх комбинезона, а не пристегивают.
+ent-RMCOuterClothingExternalWebbingBrown = { ent-RMCOuterClothingExternalWebbing }
+    .desc = { ent-RMCOuterClothingExternalWebbing.desc }
+    .suffix = Коричневый
+ent-RMCOuterClothingExternalWebbingBlack = { ent-RMCOuterClothingExternalWebbing }
+    .desc = { ent-RMCOuterClothingExternalWebbing.desc }
+    .suffix = Черный
+ent-RMCOuterClothingExternalWebbingSPPSurvivor = { ent-RMCOuterClothingExternalWebbing }
+    .desc = { ent-RMCOuterClothingExternalWebbing.desc }
+    .suffix = SPP, выживший, заполненный

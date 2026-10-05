@@ -1,0 +1,10 @@
+ent-RMCEncryptionKeyTSE = Ключ шифрования рации TSE
+    .desc = { ent-CMEncryptionKey.desc }
+ent-RMCEncryptionKeyTSEPA = Ключ шифрования рации TSEPA
+    .desc = { ent-CMEncryptionKey.desc }
+ent-RMCHeadsetTSEAbstract = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetTSE = Гарнитура TSE
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetTSEPA = Гарнитура TSEPA
+    .desc = { ent-CMHeadset.desc }

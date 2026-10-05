@@ -1,0 +1,1 @@
+ent-RMCActionViewIntelObjectives = Задачи разведки

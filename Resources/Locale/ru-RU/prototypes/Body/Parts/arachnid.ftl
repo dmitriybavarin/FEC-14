@@ -1,0 +1,11 @@
+ent-PartArachnid = Часть тела арахнида
+ent-TorsoArachnid = Торс арахнида
+ent-HeadArachnid = Голова арахнида
+ent-LeftArmArachnid = Левая рука арахнида
+ent-RightArmArachnid = Правая рука арахнида
+ent-LeftHandArachnid = Левая кисть арахнида
+ent-RightHandArachnid = Правая кисть арахнида
+ent-LeftLegArachnid = Левая нога арахнида
+ent-RightLegArachnid = Правая нога арахнида
+ent-LeftFootArachnid = Левая ступня арахнида
+ent-RightFootArachnid = Правая ступня арахнида

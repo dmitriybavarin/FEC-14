@@ -1,0 +1,9 @@
+ent-RadiationCollector = Коллектор радиации
+    .desc = Машина, собирающая радиацию и превращающая ее в энергию. Для работы нужна газообразная плазма.
+    .suffix = Пустой бак
+ent-RadiationCollectorNoTank = { ent-RadiationCollector }
+    .desc = { ent-RadiationCollector.desc }
+    .suffix = Без бака
+ent-RadiationCollectorFullTank = { ent-RadiationCollector }
+    .desc = { ent-RadiationCollector.desc }
+    .suffix = Полный бак

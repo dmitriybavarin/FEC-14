@@ -1,0 +1,11 @@
+ent-CrateChemistryP = Ящик химикатов (P)
+    .desc = Содержит химикаты из p-блока элементов. Для открытия нужен доступ химии.
+    .suffix = { ent-CrateBaseSecure.suffix }
+ent-CrateChemistryS = Ящик химикатов (S)
+    .desc = Содержит химикаты из s-блока элементов. Для открытия нужен доступ химии.
+    .suffix = { ent-CrateBaseSecure.suffix }
+ent-CrateChemistryD = Ящик химикатов (D)
+    .desc = Содержит химикаты из d-блока элементов. Для открытия нужен доступ химии.
+    .suffix = { ent-CrateBaseSecure.suffix }
+ent-CratePlantBGone = Ящик гербицида "Прочь, растения"
+    .desc = От Монстано. "Нежеланные сорняки, встречайте небесную облаву!"

@@ -1,0 +1,17 @@
+stat-values-desc = Выводит все показатели выбранной категории в таблицу.
+stat-values-server = Нельзя запускать на сервере!
+stat-values-args = Неверное число аргументов, нужен 1
+stat-values-invalid = {$arg} не является допустимым показателем!
+stat-cargo-values = Цены продажи в снабжении
+stat-cargo-id = ID
+stat-cargo-price = Цена
+stat-lathe-values = Цены продажи станков
+stat-lathe-id = ID
+stat-lathe-cost = Стоимость
+stat-lathe-sell = Цена продажи
+stat-item-values = Размеры предметов
+stat-item-id = ID
+stat-item-price = Размер
+stat-drawrate-values = Потребление ЛКП
+stat-drawrate-id = ID
+stat-drawrate-rate = Потребление (Вт)

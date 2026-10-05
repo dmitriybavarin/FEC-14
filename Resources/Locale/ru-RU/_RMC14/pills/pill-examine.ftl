@@ -1,0 +1,19 @@
+cm-pill-contains = Состав таблетки: {$reagents}
+cm-pill-contains-none = Таблетка ничего не содержит.
+
+cm-pill-contents-unknown = Вы не знаете, что в ней.
+cm-pill-contents-none = {""}
+cm-pill-contents-bicaridine = Таблетка бикаридина. Лечит механические повреждения.
+cm-pill-contents-dexalin = Таблетка дексалина. Помогает при кислородном голодании.
+cm-pill-contents-dylovene = Таблетка антитоксина. Нейтрализует многие распространенные токсины и лечит отравление.
+cm-pill-contents-inaprovaline = Таблетка инапровалина. Стабилизирует состояние пациента.
+cm-pill-contents-kelotane = Таблетка келотана. Лечит ожоги.
+cm-pill-contents-tricordrazine = Таблетка трикордразина. Слабое лекарство общего действия.
+rmc-pill-contents-ultrazine = Неизвестная таблетка.
+rmc-pill-contents-meralyne-bicaridine = Таблетка мералина с бикаридином. Быстро лечит механические повреждения.
+rmc-pill-contents-kelotane-dermaline = Таблетка келотана с дермалином. Быстро лечит ожоги.
+rmc-pill-contents-russianred = Таблетка "Русского красного". Очень опасное средство против радиации.
+rmc-pill-contents-antized = Таблетка какого-то необычного лекарства. Похоже, оно лечит некротические инфекции.
+rmc-pill-contents-imidazoline = Таблетка имидазолина. Восстанавливает зрение при приобретенных повреждениях глаз.
+rmc-pill-contents-dexalin-plus = Таблетка дексалина плюс. Мгновенно снимает кислородное голодание.
+rmc-pill-contents-iron = Таблетка железа. Быстро восстанавливает кровь.

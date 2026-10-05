@@ -1,0 +1,16 @@
+ent-CMM96SSniperRifle = Винтовка с прицелом M96S
+    .desc = Тяжелая снайперская винтовка производства AEGIS Armaments. С прицельной системой, стреляет бронебойными патронами из магазина на 15 патронов. "Мир через превосходящую огневую мощь"
+ent-CMMagazineSniperM96S = Снайперский магазин M96S (10x28 мм)
+    .desc = Магазин патронов для снайперской винтовки. Прицельный выстрел наносит серьезный урон.
+ent-CMMagazineSniperM96SIncendiary = Зажигательный магазин M96S (10x28 мм)
+    .desc = Магазин патронов для снайперской винтовки. Прицельный выстрел ненадолго ослепляет цель и раздувает пламя.
+ent-CMMagazineSniperM96SFlak = Зенитный магазин M96S (10x28 мм)
+    .desc = Магазин патронов для снайперской винтовки. Прицельный выстрел ненадолго замедляет цель и смягчает отдачу.
+ent-CMCartridgeSniper10x28mmIncendiary = Патрон (10x28 мм, зажигательный)
+ent-CMCartridgeSniper10x28mmFlak = Патрон (10x28 мм, зенитный)
+ent-CMBulletSniper10x28mm = Пуля (10x28 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-CMBulletSniper10x28mmIncendiary = Пуля (10x28 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-CMBulletSniper10x28mmFlak = Пуля (10x28 мм)
+    .desc = { ent-BaseBullet.desc }

@@ -1,0 +1,13 @@
+ent-WeaponEnergyTurretControlPanelFrame = Сборка панели управления охранными турелями
+    .desc = Незавершенная настенная сборка панели управления охранными турелями.
+ent-WeaponEnergyTurretStationControlPanelBase = Панель управления охранными турелями
+    .desc = Настенный интерфейс для удаленной настройки параметров работы связанных охранных турелей.
+ent-WeaponEnergyTurretAIControlPanel = { ent-WeaponEnergyTurretStationControlPanelBase }
+    .desc = { ent-WeaponEnergyTurretStationControlPanelBase.desc }
+    .suffix = ИИ, синтетики
+ent-WeaponEnergyTurretSecurityControlPanel = { ent-WeaponEnergyTurretStationControlPanelBase }
+    .desc = { ent-WeaponEnergyTurretStationControlPanelBase.desc }
+    .suffix = Охрана
+ent-WeaponEnergyTurretCommandControlPanel = { ent-WeaponEnergyTurretStationControlPanelBase }
+    .desc = { ent-WeaponEnergyTurretStationControlPanelBase.desc }
+    .suffix = Командование

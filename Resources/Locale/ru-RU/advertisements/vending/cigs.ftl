@@ -1,0 +1,15 @@
+advertisement-cigs-1 = Космические сигареты хороши, как и должны быть сигареты.
+advertisement-cigs-2 = Лучше ящиком по голове, чем сменить марку.
+advertisement-cigs-3 = Курите!
+advertisement-cigs-4 = Не верьте докладам, курите сегодня!
+advertisement-cigs-5 = Наверное, не вредно!
+advertisement-cigs-6 = Не верьте ученым!
+advertisement-cigs-7 = Это полезно!
+advertisement-cigs-8 = Не бросайте, покупайте еще!
+advertisement-cigs-9 = Никотиновый рай.
+advertisement-cigs-10 = Лучшие сигареты с 2150 года.
+advertisement-cigs-11 = Сигареты с наградами.
+advertisement-cigs-12 = Снимут рабочее напряжение!
+thankyou-cigs-1 = Купили, теперь курите!
+thankyou-cigs-2 = Наверное, не пожалеете!
+thankyou-cigs-3 = Привыкнете в два счета!

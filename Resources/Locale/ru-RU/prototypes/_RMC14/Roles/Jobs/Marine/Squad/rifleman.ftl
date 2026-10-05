@@ -1,0 +1,17 @@
+ent-CMSpawnPointRifleman = Точка появления стрелка
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = { ent-CMSpawnPointJobBase.suffix }
+ent-CMSpawnPointRiflemanAlpha = { ent-CMSpawnPointRifleman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Альфа
+ent-CMSpawnPointRiflemanBravo = { ent-CMSpawnPointRifleman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Браво
+ent-CMSpawnPointRiflemanCharlie = { ent-CMSpawnPointRifleman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Чарли
+ent-CMSpawnPointRiflemanDelta = { ent-CMSpawnPointRifleman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Дельта
+ent-CMGuidebookRoleYou = Вы?
+ent-RMCGuidebookCorpseMarine = Раненый морпех

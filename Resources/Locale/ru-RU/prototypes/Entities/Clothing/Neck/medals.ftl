@@ -1,0 +1,16 @@
+ent-ClothingNeckBronzeheart = Медаль "Бронзовое сердце"
+    .desc = Вручается членам экипажа за образцовую храбрость перед лицом опасности.
+ent-ClothingNeckGoldmedal = Золотая медаль за службу экипажу
+    .desc = Вручается членам экипажа за отличную службу.
+ent-ClothingNeckCargomedal = Медаль снабжения
+    .desc = Вручается за лучшую работу в отделе снабжения.
+ent-ClothingNeckEngineermedal = Инженерная медаль
+    .desc = Вручается за лучшую работу в инженерном отделе.
+ent-ClothingNeckMedicalmedal = Медицинская медаль
+    .desc = Вручается за лучшую работу в медицинском отделе.
+ent-ClothingNeckSciencemedal = Научная медаль
+    .desc = Вручается за лучшую работу в научном отделе.
+ent-ClothingNeckSecuritymedal = Медаль охраны
+    .desc = Вручается за лучшую работу в службе безопасности.
+ent-ClothingNeckClownmedal = Медаль клоуна
+    .desc = Вручается за лучшую шутку во вселенной. ХОНК!

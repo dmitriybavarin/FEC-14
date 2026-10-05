@@ -1,0 +1,13 @@
+store-ui-default-title = Магазин
+store-ui-default-withdraw-text = Вывести
+store-ui-balance-display = {$currency}: {$amount}
+store-ui-price-display = {$amount} {$currency}
+store-ui-discount-display-with-currency =  Скидка {$amount} ({$currency})
+store-ui-discount-display =  (скидка {$amount}!)
+store-ui-traitor-flavor = Copyright (C) NT -30643
+store-ui-traitor-warning = Оперативники должны блокировать аплинк после использования, чтобы их не раскрыли.
+store-withdraw-button-ui = Вывести: {$currency}
+store-ui-button-out-of-stock = {""} (Нет в наличии)
+store-not-account-owner = Это не ваш магазин!
+store-preset-name-uplink = Аплинк
+store-preset-name-spellbook = Книга заклинаний

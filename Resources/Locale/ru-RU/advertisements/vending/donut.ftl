@@ -1,0 +1,10 @@
+advertisement-donut-1 = Каждый из нас немножко коп!
+advertisement-donut-2 = Надеемся, вы голодны!
+advertisement-donut-3 = Продано более миллиона пончиков!
+advertisement-donut-4 = Мы гордимся постоянством нашей продукции!
+advertisement-donut-5 = Сладкие, сахарные и вкусные!
+advertisement-donut-6 = Не волнуйся, пончик кушай!
+thankyou-donut-1 = Наслаждайтесь пончиком!
+thankyou-donut-2 = Продан еще один пончик!
+thankyou-donut-3 = Хорошего дня, офицер!
+thankyou-donut-4 = Надеюсь, вы подсядете!

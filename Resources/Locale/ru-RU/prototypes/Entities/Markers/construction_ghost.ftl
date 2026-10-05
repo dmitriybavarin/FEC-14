@@ -1,0 +1,1 @@
+ent-constructionghost = Призрак постройки

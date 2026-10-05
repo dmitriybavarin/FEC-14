@@ -1,0 +1,14 @@
+ent-RMCHardHat = Каска
+    .desc = Головной убор для защиты головы на опасных работах. Со встроенным фонариком.
+ent-RMCHardhatRed = Пожарный шлем
+    .desc = { ent-RMCHardHat.desc }
+ent-RMCHardhatOrange = { ent-RMCHardHat }
+    .desc = { ent-RMCHardHat.desc }
+ent-RMCHardhatBlue = { ent-RMCHardHat }
+    .desc = { ent-RMCHardHat.desc }
+ent-RMCHardhatWhite = { ent-RMCHardHat }
+    .desc = { ent-RMCHardHat.desc }
+ent-RMCHardhatWhiteAlt = Шахтерская каска комбината "Чаньэ"
+    .desc = { ent-RMCHardHat.desc }
+ent-RMCHardhatRedTMCC = Каска Tartarus-Mining
+    .desc = { ent-RMCHardHat.desc }

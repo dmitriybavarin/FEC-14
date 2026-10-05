@@ -1,0 +1,15 @@
+bible-heal-success-self = Вы бьете цель книгой, и ее раны затягиваются во вспышке святого света!
+bible-heal-success-others = {CAPITALIZE($user)} бьет книгой, и раны затягиваются во вспышке святого света!
+bible-heal-success-none-self = Вы бьете цель книгой, но лечить нечего!
+bible-heal-success-none-others = {CAPITALIZE($user)} бьет книгой!
+bible-heal-fail-self = Вы бьете цель книгой, и та с жалким шлепком лишь оглушает!
+bible-heal-fail-others = {CAPITALIZE($user)} бьет книгой, и та с жалким шлепком лишь оглушает!
+bible-sizzle = Книга шипит у вас в руках!
+bible-summon-verb = Призвать фамильяра
+bible-summon-verb-desc = Призывает фамильяра, который будет вам помогать и обретет человеческий разум, когда в него вселится душа.
+bible-summon-requested = Фамильяр явится, как только найдется желающая душа.
+bible-summon-respawn-ready = Книга наполняется эфирной силой. Ее обитатель снова дома.
+necro-heal-success-self = Вы бьете цель книгой, и плоть корежится и плавится!
+necro-heal-success-others = {CAPITALIZE($user)} бьет книгой, и плоть корежится и плавится!
+necro-heal-fail-self = Вы бьете цель книгой, но та с жалким шлепком не наносит кары.
+necro-heal-fail-others = {CAPITALIZE($user)} бьет книгой, но та с жалким шлепком не наносит кары.

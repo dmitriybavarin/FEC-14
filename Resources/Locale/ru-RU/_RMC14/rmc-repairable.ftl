@@ -1,0 +1,9 @@
+rmc-repairable-need-blowtorch = Нужна горелка помощнее!
+rmc-repairable-not-damaged = Ремонт не требуется: { $target }.
+rmc-repairable-too-damaged = Конструкция слишком повреждена, ремонт невозможен: { $target }.
+rmc-repairable-not-trained = Вы не умеете это чинить: { $target }...
+rmc-repairable-start-self = Вы начинаете ремонт: { $target }
+rmc-repairable-start-others = { CAPITALIZE($user) } начинает ремонт: { $target }
+rmc-repairable-finish-self = Вы чините: { $target }
+rmc-repairable-finish-others = { CAPITALIZE($user) } чинит: { $target }
+rmc-repairable-alt-repair = Починить

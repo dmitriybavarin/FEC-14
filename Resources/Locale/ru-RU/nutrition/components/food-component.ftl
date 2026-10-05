@@ -1,0 +1,15 @@
+food-you-need-to-hold-utensil = Чтобы это съесть, нужно держать в руке столовый прибор ({$utensil})!
+food-nom = Ням. {$flavors}
+food-swallow = Вы проглатываете еду. {$flavors}
+food-has-used-storage = Это нельзя съесть, пока внутри лежит предмет.
+food-system-remove-mask = Мешает {$entity}. Сначала снимите.
+food-system-you-cannot-eat-any-more = Вы больше не можете есть!
+food-system-you-cannot-eat-any-more-other = Цель больше не может есть!
+food-system-try-use-food-is-empty = Пусто!
+food-system-wrong-utensil = Это нельзя есть этим прибором ({$utensil}).
+food-system-cant-digest = Вы не можете это переварить!
+food-system-cant-digest-other = Цель не может это переварить!
+food-system-verb-eat = Съесть
+food-system-force-feed = {CAPITALIZE($user)} пытается вас чем-то накормить!
+food-system-force-feed-success = {CAPITALIZE($user)} заставляет вас что-то съесть! {$flavors}
+food-system-force-feed-success-user = Вы кормите цель

@@ -1,0 +1,32 @@
+nuke-component-cant-anchor-floor = Анкерные болты не фиксируются в полу!
+nuke-component-cant-anchor-toggle = Чтобы переключить болты, нужен диск ядерной аутентификации!
+nuke-component-announcement-sender = Ядерное устройство
+nuke-component-announcement-armed = Внимание! Механизм самоуничтожения станции активирован {$location}. До детонации {$time} с. Если это ошибка, механизм еще можно обезвредить.
+nuke-component-announcement-unarmed = Самоуничтожение станции отменено! Хорошего дня!
+nuke-component-announcement-send-codes = Внимание! Коды самоуничтожения отправлены на назначенные факсы.
+nuke-component-doafter-warning = Вы начинаете возиться с проводами и ручками, чтобы обезвредить бомбу... Это может занять время.
+nuke-disk-component-microwave = Диск искрит и шипит, но, кажется, почти не пострадал?
+nuke-user-interface-title = Ядерное устройство
+nuke-user-interface-arm-button = ВЗВЕСТИ
+nuke-user-interface-disarm-button = ОБЕЗВРЕДИТЬ
+nuke-user-interface-anchor-button = ЗАКРЕПИТЬ
+nuke-user-interface-eject-button = ИЗВЛЕЧЬ
+nuke-user-interface-first-status-device-locked = УСТРОЙСТВО ЗАБЛОКИРОВАНО
+nuke-user-interface-first-status-input-code = ВВЕДИТЕ КОД
+nuke-user-interface-first-status-input-time = ВВЕДИТЕ ВРЕМЯ
+nuke-user-interface-first-status-device-ready = УСТРОЙСТВО ГОТОВО
+nuke-user-interface-first-status-device-armed = УСТРОЙСТВО ВЗВЕДЕНО
+nuke-user-interface-first-status-device-cooldown = ДЕАКТИВИРОВАНО
+nuke-user-interface-status-error = ОШИБКА
+nuke-user-interface-second-status-await-disk = ОЖИДАНИЕ ДИСКА
+nuke-user-interface-second-status-time = ВРЕМЯ: {$time}
+nuke-user-interface-second-status-current-code = КОД: {$code}
+nuke-user-interface-second-status-cooldown-time = ЖДИТЕ: {$time}
+nuke-label-nanotrasen = NT-{$serial}
+nuke-label-syndicate = SYN-{$serial}
+nuke-codes-message = [color=red]СОВЕРШЕННО СЕКРЕТНО![/color]
+nuke-codes-list = Код устройства {$name}: {$code}
+nuke-codes-fax-paper-name = Коды ядерной аутентификации
+nuke-slot-component-slot-name-disk = Диск
+nuke-examine-armed = Эй, а почему мигает [color=red]красная лампочка[/color]?
+nuke-examine-exploding = Ага... Кажется, уже поздно, приятель.

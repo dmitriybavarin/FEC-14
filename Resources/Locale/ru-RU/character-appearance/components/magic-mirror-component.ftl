@@ -1,0 +1,12 @@
+magic-mirror-component-activate-user-has-no-hair = У вас не может быть волос!
+magic-mirror-window-title = Волшебное зеркало
+magic-mirror-add-slot-self = Вы добавляете себе волосы.
+magic-mirror-remove-slot-self = Вы убираете часть волос.
+magic-mirror-change-slot-self = Вы меняете прическу.
+magic-mirror-change-color-self = Вы меняете цвет волос.
+magic-mirror-add-slot-target = Вам добавляет волосы {$user}.
+magic-mirror-remove-slot-target = Вам срезает волосы {$user}.
+magic-mirror-change-slot-target = Вам меняет прическу {$user}.
+magic-mirror-change-color-target = Вам меняет цвет волос {$user}.
+magic-mirror-blocked-by-hat-self = Чтобы поменять прическу, снимите головной убор.
+magic-mirror-blocked-by-hat-self-target = Вы пытаетесь поменять прическу, но мешает одежда.

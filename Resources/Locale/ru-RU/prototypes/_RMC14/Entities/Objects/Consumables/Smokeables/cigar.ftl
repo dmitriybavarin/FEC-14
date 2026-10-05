@@ -1,0 +1,14 @@
+ent-CMTarbackCigar = Сигара "Тарбек"
+    .desc = "Тарбекс" от Reisland Tobacco. Главный санитарный врач заявил, что курение "Тарбекс" может вредить здоровью. Reisland Tobacco заявила, что главный санитарный врач сволочь. Скручено в Колумбии.
+ent-CMTarbackCigarSpent = { ent-CMTarbackCigar }
+    .desc = { ent-CMTarbackCigar.desc }
+    .suffix = Выкуренная
+ent-RMCTarbackTube = Туба "Тарбек"
+    .desc = Одна сигара "Тарбек" в защитной металлической тубе. Ниже уровнем не найти. Скручено в Колумбии.
+ent-RMCShioCigar = Сигара "Сио Роялс"
+    .desc = "Сио Роялс" производства Weston-Yamada. Как-то намекает на волны и море. Скручено в Японии.
+ent-RMCShioCigarSpent = { ent-RMCShioCigar }
+    .desc = { ent-RMCShioCigar.desc }
+    .suffix = Выкуренная
+ent-RMCShioRoyalsTube = Туба "Сио Роялс"
+    .desc = Одна сигара "Сио Роялс" в серебристой защитной металлической тубе. Вопреки заявлениям и Weston-Yamada, и конкурентов, эти сигары совершенно посредственные. Скручено в Японии.

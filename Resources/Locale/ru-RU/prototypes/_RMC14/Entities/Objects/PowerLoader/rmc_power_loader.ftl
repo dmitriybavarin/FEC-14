@@ -1,0 +1,12 @@
+ent-RMCMechPowerLoaderWreckage = Обломки погрузчика LU-50
+    .desc = Обломки силового погрузчика LU-50.
+ent-RMCMechPowerLoaderWreckageGreen = Обломки погрузчика LU-43
+    .desc = Обломки силового погрузчика LU-43.
+ent-RMCMechPowerLoaderWreckageBlue = Обломки погрузчика LU-52
+    .desc = Обломки силового погрузчика LU-52.
+ent-RMCMechPowerLoader = Погрузчик LU-50
+    .desc = Старая модель, обновленная Weston-Yamada. Работает на складах, стройках и военных кораблях по всей галактике.
+ent-RMCMechPowerLoaderGreen = Погрузчик LU-43
+    .desc = Очень старая, но проверенная модель. Работает на складах, стройках и военных кораблях по всей галактике.
+ent-RMCMechPowerLoaderBlue = Погрузчик LU-52
+    .desc = Модернизированная модель, созданная, чтобы превзойти старые. Когда-то стояла в богатых портах и на солидных объектах.

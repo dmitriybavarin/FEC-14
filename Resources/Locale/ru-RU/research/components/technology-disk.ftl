@@ -1,0 +1,9 @@
+tech-disk-inserted = Вы вставляете диск, на сервер добавлен новый рецепт.
+tech-disk-examine-none = Этикетка пустая.
+tech-disk-examine = На этикетке маленькое точечное изображение. На нем: {$result}.
+tech-disk-examine-more = Есть и другие изображения, но они слишком мелкие, чтобы разобрать.
+tech-disk-name-format = {$baseName} ({$technology})
+tech-disk-ui-name = Терминал дисков технологий
+tech-disk-ui-total-label = На выбранном сервере очков: {$amount}
+tech-disk-ui-cost-label = Печать одного диска стоит очков: {$amount}
+tech-disk-ui-print-button = Напечатать диск

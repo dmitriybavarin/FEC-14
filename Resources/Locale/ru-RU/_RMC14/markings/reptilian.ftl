@@ -1,0 +1,17 @@
+marking-RMCLizardChestDragonwings = Драконьи крылья
+marking-RMCLizardChestDragonwings-body_dragonwings = Драконьи крылья
+marking-RMCLizardChestDragonwings-body_dragonwings_membrane = Перепонки драконьих крыльев
+marking-RMCLizardSnakeTail = Змеиный хвост
+marking-RMCLizardSnakeTail-m_tail_snaketail = Основной
+marking-RMCLizardSnakeTailAlt = Змеиный хвост, вариант 2
+marking-RMCLizardSnakeTailAlt-m_tail_snakedual_primary = Основной
+marking-RMCLizardSnakeTailAlt-m_tail_snakedual_secondary = Кончик
+marking-RMCLizardSnakeTailStripe = Полосы змеиного хвоста
+marking-RMCLizardSnakeTailStripe-m_tail_snakestripe_primary = Основной
+marking-RMCLizardSnakeTailStripe-m_tail_snakestripe_secondary = Полосы
+marking-RMCLizardSnakeTailStripeAlt = Полосы змеиного хвоста, вариант 2
+marking-RMCLizardSnakeTailStripeAlt-m_tail_snakestripealt_primary = Основной
+marking-RMCLizardSnakeTailStripeAlt-m_tail_snakestripealt_secondary = Полосы
+marking-RMCLizardSnakeTailUnder = Низ змеиного хвоста
+marking-RMCLizardSnakeTailUnder-m_tail_snakeunder_primary = Основной
+marking-RMCLizardSnakeTailUnder-m_tail_snakeunder_secondary = Низ

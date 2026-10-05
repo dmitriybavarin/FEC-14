@@ -1,0 +1,15 @@
+ent-CMRandomPosterAny = Спавнер случайного плаката
+    .desc = { "" }
+    .suffix = FEC14, все
+ent-CMRandomPosterUN = Спавнер случайного плаката
+    .desc = { "" }
+    .suffix = FEC14, ООН
+ent-CMRandomPosterSPP = Спавнер случайного плаката
+    .desc = { "" }
+    .suffix = FEC14, SPP
+ent-RMCRandomPosterWeYa = Спавнер случайного плаката
+    .desc = { "" }
+    .suffix = FEC14, Ве-Я
+ent-RMCRandomPosterTSEPA = Спавнер случайного плаката
+    .desc = { "" }
+    .suffix = FEC14, TSEPA

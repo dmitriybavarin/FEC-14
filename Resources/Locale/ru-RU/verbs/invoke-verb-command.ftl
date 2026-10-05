@@ -1,0 +1,9 @@
+invoke-verb-command-description = Выполняет действие с указанным названием над сущностью от лица сущности игрока
+invoke-verb-command-help = invokeverb <playerUid | "self"> <targetUid> <verbName | "interaction" | "activation" | "alternative">
+invoke-verb-command-invalid-args = invokeverb принимает 2 аргумента.
+invoke-verb-command-invalid-player-uid = Не удалось распознать uid игрока, или не передано "self".
+invoke-verb-command-invalid-target-uid = Не удалось распознать uid цели.
+invoke-verb-command-invalid-player-entity = Указанный uid игрока не соответствует существующей сущности.
+invoke-verb-command-invalid-target-entity = Указанный uid цели не соответствует существующей сущности.
+invoke-verb-command-success = Выполнено действие '{ $verb }' над { $target }, пользователь: { $player }.
+invoke-verb-command-verb-not-found = Не найдено действие { $verb } у { $target }.

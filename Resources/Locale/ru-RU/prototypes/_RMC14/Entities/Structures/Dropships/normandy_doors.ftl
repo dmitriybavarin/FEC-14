@@ -1,0 +1,13 @@
+ent-CMNormandyDoor = Люк экипажа "Нормандии"
+ent-CMNormandyDoorAft = Грузовая дверь "Нормандии"
+    .desc = { "" }
+    .suffix = { ent-RMCDropshipDoorAftBase.suffix }
+ent-CMNormandyDoorPort = Люк экипажа "Нормандии"
+    .desc = { "" }
+    .suffix = { ent-RMCDropshipDoorPortBase.suffix }
+ent-CMNormandyDoorStarboard = Люк экипажа "Нормандии"
+    .desc = { "" }
+    .suffix = { ent-RMCDropshipDoorStarboardBase.suffix }
+ent-CMNormandyCockpit = { ent-RMCDropshipCockpitBase }
+    .desc = { "" }
+    .suffix = "Нормандия"

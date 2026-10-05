@@ -244,11 +244,7 @@ public sealed class LinkAccountManager : IPostInjectInit
 
     public string GetPatronOOCHexColor(NetUserId userId)
     {
-        // TODO RMC14 move this to the database
-        if (userId.UserId == Guid.Parse("518fe396-b199-4757-92ff-697fc527bbf1"))
-            return "#FFFFFF";
-
-        return "#aa00ff";
+        return "#aa00ff"; // FEC14
     }
 
     void IPostInjectInit.PostInject()

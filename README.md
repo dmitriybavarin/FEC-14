@@ -1,44 +1,39 @@
-<p align="center"> <img alt="Space Station 14" width="400" height="400" src="https://github.com/user-attachments/assets/320ad459-8997-4e5b-9f7e-fc7e7d7dcb73" /></p>
+<p align="center"> <img alt="Space Station 14" width="400" height="400" src="Resources\Textures\_FEC14\Logo\logo-512.png" /></p>
 
-RMC-14 is an asymmetric game, that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox). It is inspired by [CMSS13](https://github.com/cmss13-devs/cmss13), [Space Station 13](https://spacestation13.com/).
+FEC-14 это асимметричная игра, работающая на движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox). Создана на основе репозитория [RMC-14](https://github.com/RMC-14/RMC-14). Вдохновлена [CMSS13](https://github.com/cmss13-devs/cmss13) и [Space Station 13](https://spacestation13.com/).
 
-This is the primary repo for RMC-14. To prevent people forking Robust Toolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+Если вы хотите создавать контент для FEC-14, вам нужен именно этот репозиторий. Он содержит как RobustToolbox, так и контент-пак для разработки новых контент-паков.
 
-If you want to host or create content for RMC-14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+## Ссылки
 
-## Links
+[Вики сообщества RMC-14](https://wiki.rouny-ss14.com/) | [Discord](https://discord.gg/rouny) | [Лаунчер SS14 в Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Скачать отдельный лаунчер](https://spacestation14.io/about/nightlies/)
 
-[RMC-14 Community Wiki](https://wiki.rouny-ss14.com/) | [Discord](https://discord.gg/rouny) | [SS14 Steam Launcher](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Launcher Download](https://spacestation14.io/about/nightlies/)
+## Участие в разработке
 
-## Contributing
+Мы рады вкладу от кого угодно. Если хотите помочь, заходите в Discord. У нас есть [список задач](https://github.com/RMC-14/RMC-14/issues), которые нужно выполнить, и любой может за них взяться. Не бойтесь просить о помощи!
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/RMC-14/RMC-14/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
+## Требования к участникам
 
-## Contributing Requirements
-- Understanding how to contribute - Read this resource provided by SS14 and attempt to keep to it. [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- Standards - Following the commonly agreed upon standards, ensuring that work is submitted in a reasonable state. [Coding Standards](coding-standards.md)
-- Media - Add relevant media like videos and photos whereever possible, as proof of changes working in game, and for easier review.
-- Responisbility - By submitting any form of PR, you are confirming that you either own them or have provided the correct necessary licenses to use and distribute them. You are agreeing to be fully responsible for any legal claims or issues arising from the use of these materials.
-- Patience - Please understand that the amount of capable reviewers is very small, PRs depending on their importance priority and size can take anywhere from weeks to months to review. Please do not close your PRs without providing a reason, as we will eventually get around to all of them. A PR awaiting a review does not mean we do not have interest.
+- Понимание процесса — прочитайте этот материал от SS14 и старайтесь ему следовать: [Правила оформления Pull Request и чейнджлогов](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- Стандарты — следуйте общепринятым стандартам и отправляйте работу в приемлемом состоянии: [Стандарты кода](coding-standards.md).
+- Медиа — по возможности прикладывайте видео и скриншоты как доказательство того, что изменения работают в игре, и для упрощения ревью.
+- Ответственность — отправляя любой PR, вы подтверждаете, что либо владеете материалами, либо обладаете необходимыми лицензиями на их использование и распространение. Вы соглашаетесь нести полную ответственность за любые правовые претензии или проблемы, связанные с использованием этих материалов.
+- Терпение — пожалуйста, поймите, что опытных ревьюеров очень мало, и в зависимости от важности, приоритета и размера ревью PR может занять от нескольких недель до нескольких месяцев. Пожалуйста, не закрывайте свои PR без указания причины: рано или поздно мы доберёмся до всех. То, что PR ожидает ревью, не означает, что он нам неинтересен.
 
-## Building
+## Сборка
 
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
+1. Клонируйте этот репозиторий.
+2. Запустите `RUN_THIS.py`, чтобы инициализировать сабмодули и скачать движок.
+3. Скомпилируйте решение.
 
-[More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
+[Более подробная инструкция по сборке проекта.](https://docs.spacestation14.com/en/general-development/setup.html)
 
-## License
+## Лицензия
 
-All RMC-14 specific code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
+Весь код контент-репозитория, специфичный для RMC-14, распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
 
-All [upstream code](https://github.com/space-wizards/space-station-14) is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE-UPSTREAM.TXT).
+Весь [код апстрима](https://github.com/space-wizards/space-station-14) распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE-UPSTREAM.TXT).
 
-Most assets are licensed under [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+Большинство ассетов распространяется под лицензией [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и копирайт каждого ассета указаны в его файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
-
-## Partners
-
-Proxy/VPN detection by [GetIPIntel.net](http://getipintel.net/).
+Обратите внимание: некоторые ассеты распространяются под некоммерческой лицензией [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичными некоммерческими лицензиями, и их необходимо удалить, если вы хотите использовать проект в коммерческих целях.

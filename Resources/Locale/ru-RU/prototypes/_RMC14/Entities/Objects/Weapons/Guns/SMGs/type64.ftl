@@ -1,0 +1,10 @@
+ent-RMCWeaponSMGType64 = Пистолет-пулемет Type 64
+    .desc = Стандартный пистолет-пулемет SPP с необычным шнековым магазином на 64 патрона. Высокий темп стрельбы при необычно хорошей точности. Этот громоздкий и неэргономичный, значит, гражданская или экспортная модель.
+ent-RMCMagazineSMGType64 = Магазин Type 64 (10x20 мм)
+ent-RMCMagazineSMGType64Rubber = Магазин Type 64 с резиновыми пулями (10x20 мм)
+ent-RMCCartridgeType64 = Патрон (10x20 мм)
+ent-RMCCartridgeType64Rubber = Патрон (10x20 мм)
+ent-RMCBulletType64 = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }
+ent-RMCBulletType64Rubber = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }

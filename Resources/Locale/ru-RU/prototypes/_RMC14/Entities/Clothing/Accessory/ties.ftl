@@ -1,0 +1,16 @@
+ent-RMCTieBase = Галстук
+    .desc = Абстрактный галстук.
+ent-RMCTie = Синий галстук
+    .desc = Галстук из неошелка на клипсе.
+ent-RMCTieBlack = Черный галстук
+    .desc = { ent-RMCTie.desc }
+ent-RMCTieGold = Золотой галстук
+    .desc = { ent-RMCTie.desc }
+ent-RMCTieGreen = Зеленый галстук
+    .desc = { ent-RMCTie.desc }
+ent-RMCTiePurple = Фиолетовый галстук
+    .desc = { ent-RMCTie.desc }
+ent-RMCTieRed = Красный галстук
+    .desc = { ent-RMCTie.desc }
+ent-RMCTieHorrible = Ужасный галстук
+    .desc = { ent-RMCTie.desc }

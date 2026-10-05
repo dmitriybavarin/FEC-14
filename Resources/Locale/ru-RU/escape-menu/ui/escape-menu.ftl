@@ -1,0 +1,7 @@
+ui-escape-title = Меню
+ui-escape-options = Настройки
+ui-escape-rules = Правила
+ui-escape-guidebook = Справочник
+ui-escape-wiki = Вики
+ui-escape-disconnect = Отключиться
+ui-escape-quit = Выйти из игры

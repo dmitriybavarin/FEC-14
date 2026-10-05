@@ -1,0 +1,16 @@
+ent-RMCCableBase = { ent-CableHV }
+    .desc = { ent-CableHV.desc }
+ent-RMCCableHeavy = Толстый силовой кабель
+    .desc = Этот кабель прочный. Простыми ручными инструментами его не перерезать.
+ent-RMCCableBlue = Силовой кабель
+    .desc = Этот кабель прочный. Простыми ручными инструментами его не перерезать.
+    .suffix = Синий
+ent-RMCCableRed = Силовой кабель
+    .desc = { ent-RMCCableBlue.desc }
+    .suffix = Красный
+ent-RMCCableYellow = Силовой кабель
+    .desc = { ent-RMCCableBlue.desc }
+    .suffix = Желтая
+ent-RMCCableTerminal = { ent-CableTerminal }
+    .desc = { ent-CableTerminal.desc }
+    .suffix = FEC

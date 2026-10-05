@@ -1,0 +1,15 @@
+ent-RMCOuterClothingExternalWebbingForeconSurvivorFill = { ent-RMCOuterClothingExternalWebbing }
+    .desc = { ent-RMCOuterClothingExternalWebbing.desc }
+    .suffix = FORECON, заполненный
+ent-RMCArmorUDEPForeconFilled = { ent-RMCArmorUDEPForecon }
+    .desc = { ent-RMCArmorUDEPForecon.desc }
+    .suffix = FORECON, заполненный
+ent-RMCJacketWindbreakerForeconFilled = { ent-RMCJacketWindbreaker }
+    .desc = { ent-RMCJacketWindbreaker.desc }
+    .suffix = FORECON, заполненный
+ent-CMArmorM4TyrargoSurvivorFill = { ent-CMArmorM4Tyrargo }
+    .desc = { ent-CMArmorM4Tyrargo.desc }
+    .suffix = Выживший, заполненный
+ent-CMArmorM4TyrargoSynthSurvivorFill = { ent-CMArmorM4TyrargoSynth }
+    .desc = { ent-CMArmorM4TyrargoSynth.desc }
+    .suffix = Выживший, заполненный, синтетик

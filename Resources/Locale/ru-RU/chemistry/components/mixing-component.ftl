@@ -1,0 +1,12 @@
+mixing-verb-default-mix = смешать
+mixing-verb-default-grind = измельчить
+mixing-verb-default-juice = выжать сок
+mixing-verb-default-condense = сконденсировать
+mixing-verb-centrifuge = центрифугировать
+mixing-verb-electrolysis = провести электролиз
+mixing-verb-holy = освятить
+mixing-verb-stir = размешать
+mixing-verb-shake = взболтать
+default-mixing-success = Вы перемешиваете содержимое
+bible-mixing-success = Вы освящаете содержимое
+spoon-mixing-success = Вы размешиваете содержимое

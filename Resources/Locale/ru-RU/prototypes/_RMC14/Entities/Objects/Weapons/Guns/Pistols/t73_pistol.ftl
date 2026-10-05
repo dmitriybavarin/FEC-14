@@ -1,0 +1,17 @@
+ent-RMCWeaponPistolT73 = Пистолет Type 73
+    .desc = Type 73 когда-то был штатным пистолетом SPP. В SPP его заменил NP92, но ветераны по-прежнему любят Type 73 за привычность и лишнюю мощь. Выпущено их было чудовищно много, поэтому они часто попадают к тем, кто вооружается на скромный бюджет. Им пользуются Социалистические Прогрессивные Народы, Фронт освобождения колоний и чуть ли не любые наемники и пираты.
+ent-RMCWeaponPistolT74 = Пистолет Type 74
+    .desc = Type 74: особая модификация Type 73 со встроенным лазерным целеуказателем, облегчающими вырезами, которые позволяют стрелять патроном повышенного давления при той же возвратной пружине, и более удобной рукоятью. После принятия на вооружение NP92 Type 74 выпустили малой серией, поэтому обычно его выдают только высокопоставленным офицерам по запросу.
+ent-RMCWeaponPistolT73Empty = { ent-RMCWeaponPistolT73 }
+    .desc = { ent-RMCWeaponPistolT73.desc }
+    .suffix = Пустая
+ent-RMCMagazinePistolT73 = Магазин Type 73 (7,62x25 мм)
+    .desc = { ent-CMBaseMagazinePistol.desc }
+ent-RMCMagazinePistolT74Impact = Ударный магазин Type 74 (7,62x25 мм)
+    .desc = { ent-CMBaseMagazinePistol.desc }
+ent-RMCBulletPistolT73 = Пуля (7,62x25 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-RMCCartridgePistolT73 = Патрон (7,62x25 мм)
+ent-RMCBulletPistolT74Impact = Пуля (7,62x25 мм, ударная)
+    .desc = { ent-BaseBullet.desc }
+ent-RMCCartridgePistolT74Impact = Патрон (7,62x25 мм, ударный)

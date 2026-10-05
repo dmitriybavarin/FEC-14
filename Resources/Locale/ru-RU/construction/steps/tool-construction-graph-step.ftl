@@ -1,0 +1,1 @@
+construction-use-tool-entity = Далее используйте инструмент [color=cyan]{$toolName}[/color].

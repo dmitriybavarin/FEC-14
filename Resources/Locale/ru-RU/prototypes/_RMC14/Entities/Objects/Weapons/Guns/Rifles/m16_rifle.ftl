@@ -1,0 +1,11 @@
+ent-WeaponRifleM16 = Винтовка M16
+    .desc = Старая надежная конструкция, впервые принятая армией ООН в 1960-х. Таким место в музее военной истории. Под патрон 5,56x45 мм.
+    .suffix = Заполнено
+ent-RMCWeaponRifleM16A5 = Винтовка M16A5
+    .desc = Модернизированная винтовка на платформе M16. Вероятно, из бездонных запасов ООН, оставшихся после перехода на более современные винтовки. Под патрон 5,56x45 мм.
+    .suffix = { ent-WeaponRifleM16.suffix }
+ent-RMCMagazineRifleM16 = Магазин M16 (5,56x45 мм)
+ent-RMCCartridgeRifleM16 = Патрон (5,56x45)
+    .desc = Винтовочный патрон 5,56x45
+ent-BulletRifle556x45mm = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }

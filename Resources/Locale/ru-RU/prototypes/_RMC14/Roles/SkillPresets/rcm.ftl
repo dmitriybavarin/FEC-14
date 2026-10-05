@@ -1,0 +1,9 @@
+ent-RMCSkillPresetRoyalRifleman = Стрелок Королевской морской пехоты
+ent-RMCSkillPresetRoyalMedic = Медик Королевской морской пехоты
+ent-RMCSkillPresetRoyalBreacher = Штурмовик Королевской морской пехоты
+ent-RMCSkillPresetRoyalMarksman = Марксман Королевской морской пехоты
+ent-RMCSkillPresetRoyalSmartGunner = Смартганнер Королевской морской пехоты
+ent-RMCSkillPresetRoyalTeamLeader = Командир группы Королевской морской пехоты
+ent-RMCSkillPresetRoyalLieutenant = Лейтенант Королевской морской пехоты
+ent-RMCSkillPresetRoyalCaptain = Капитан Королевской морской пехоты
+ent-RMCSkillPresetRoyalMajor = Майор Королевской морской пехоты

@@ -1,0 +1,10 @@
+ent-RMCWallKutjevoRock = Каменная стена
+    .desc = Высокие песчаные скалы. Внушительные. Впечатляющие. Притягивают взгляд.
+ent-RMCWallKutjevoRockBorder = { ent-RMCWallKutjevoRock }
+    .desc = { ent-RMCWallKutjevoRock.desc }
+ent-RMCWallKutjevo = Стена колонии
+    .desc = Пыльные истертые стены, когда-то построенные на века.
+ent-RMCWallKutjevoReinforced = Армированная стена колонии
+    .desc = Пыльные истертые стены, когда-то построенные на века. Эта армирована
+ent-RMCWallKutjevoHull = Тяжелая армированная стена колонии
+    .desc = Пыльные истертые стены, когда-то построенные на века. Эта неразрушима.

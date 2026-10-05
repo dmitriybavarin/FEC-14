@@ -1,0 +1,11 @@
+advertisement-magivend-1 = Колдуйте правильно с MagiVend!
+advertisement-magivend-2 = Станьте сами себе Гудини! Пользуйтесь MagiVend!
+advertisement-magivend-3 = ФЫВАПРОЛД
+advertisement-magivend-4 = ЖДЛОРПАВЫ
+advertisement-magivend-5 = >МЛИЦО
+advertisement-magivend-6 = ХОНК!
+advertisement-magivend-7 = ЭЙ НАТ
+advertisement-magivend-8 = Уничтожьте станцию!
+advertisement-magivend-9 = Оборудование, искривляющее пространство-время!
+advertisement-magivend-10 = 1234 ПСИХИ ЛОЛ!
+advertisement-magivend-11 = НАР'СИ, ВОССТАНЬ!!!

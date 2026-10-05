@@ -64,8 +64,20 @@ public sealed class IdentityRepresentation
         };
 
         // i.e. 'young assistant man' or 'old cargo technician person' or 'middle-aged captain'
+        // FEC14
+        var ageId = AgeString == Loc.GetString("identity-age-young") ? "young"
+            : AgeString == Loc.GetString("identity-age-old") ? "old"
+            : "middle";
+        var genderId = TrueGender switch
+        {
+            Gender.Female => "female",
+            Gender.Male => "male",
+            _ => "other"
+        };
+
         return PresumedJob is null
-            ? $"{AgeString} {genderString}"
-            : $"{AgeString} {PresumedJob} {genderString}";
+            ? Loc.GetString("fec-identity-unknown", ("age", ageId), ("gender", genderId), ("ageString", AgeString), ("genderString", genderString))
+            : Loc.GetString("fec-identity-unknown-job", ("age", ageId), ("gender", genderId), ("ageString", AgeString), ("genderString", genderString), ("job", PresumedJob));
+        // FEC14
     }
 }

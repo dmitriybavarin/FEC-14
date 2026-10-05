@@ -1,0 +1,17 @@
+ent-CMSpawnPointHospitalCorpsman = Точка появления санитара
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = { ent-CMSpawnPointJobBase.suffix }
+ent-CMSpawnPointHospitalCorpsmanAlpha = { ent-CMSpawnPointHospitalCorpsman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Альфа
+ent-CMSpawnPointHospitalCorpsmanBravo = { ent-CMSpawnPointHospitalCorpsman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Браво
+ent-CMSpawnPointHospitalCorpsmanCharlie = { ent-CMSpawnPointHospitalCorpsman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Чарли
+ent-CMSpawnPointHospitalCorpsmanDelta = { ent-CMSpawnPointHospitalCorpsman }
+    .desc = { ent-CMSpawnPointJobBase.desc }
+    .suffix = Дельта
+ent-RMCGuidebookRoleHM = Санитар
+    .desc = Санитар

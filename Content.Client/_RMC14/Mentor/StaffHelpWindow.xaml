@@ -1,11 +1,11 @@
 ﻿<controls:StaffHelpWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Mentor"
-    Title="Admin and Mentor Help">
+    Title="{Loc 'fec-xaml-admin-and-mentor-help'}">
     <BoxContainer Orientation="Vertical">
-        <RichTextLabel Text="For reporting issues with another player to an admin, or asking about the rules" />
-        <Button Name="AdminHelpButton" Access="Public" Text="Admin Help" StyleClasses="OpenBoth" />
-        <RichTextLabel Text="For asking questions about the game" Margin="0 20 0 0" />
-        <Button Name="MentorHelpButton" Access="Public" Text="Mentor Help" StyleClasses="OpenBoth" />
+        <RichTextLabel Text="{Loc 'fec-xaml-for-reporting-issues-with-another-player-to-an-a'}" />
+        <Button Name="AdminHelpButton" Access="Public" Text="{Loc 'fec-xaml-admin-help'}" StyleClasses="OpenBoth" />
+        <RichTextLabel Text="{Loc 'fec-xaml-for-asking-questions-about-the-game'}" Margin="0 20 0 0" />
+        <Button Name="MentorHelpButton" Access="Public" Text="{Loc 'fec-xaml-mentor-help'}" StyleClasses="OpenBoth" />
     </BoxContainer>
 </controls:StaffHelpWindow>

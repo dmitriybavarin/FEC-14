@@ -1,0 +1,10 @@
+ent-RMCBoxDonutEmpty = Пончики "Ням!"
+    .desc = Коробка аппетитных пончиков марки "Ням!"
+    .suffix = Пустая
+ent-RMCBoxDonut = { ent-RMCBoxDonutEmpty }
+    .desc = { ent-RMCBoxDonutEmpty.desc }
+    .suffix = { "" }
+ent-RMCFoodDonut = Пончик
+    .desc = Пончик. На фронтире редкость, так что берегите его.
+ent-RMCFoodDonutFrosted = Пончик в глазури
+    .desc = Пончик в розовой глазури. На фронтире еще большая редкость.

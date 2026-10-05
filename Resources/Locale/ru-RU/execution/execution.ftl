@@ -1,0 +1,10 @@
+execution-verb-name = Казнить
+execution-verb-message = Казнить кого-нибудь своим оружием.
+execution-popup-melee-initial-internal = Вы приставляете оружие к горлу жертвы ({$victim}).
+execution-popup-melee-initial-external = { CAPITALIZE($attacker) } приставляет оружие к горлу жертвы ({$victim}).
+execution-popup-melee-complete-internal = Вы перерезаете горло жертве ({$victim})!
+execution-popup-melee-complete-external = { CAPITALIZE($attacker) } перерезает горло жертве ({$victim})!
+execution-popup-self-initial-internal = Вы приставляете оружие к собственному горлу.
+execution-popup-self-initial-external = { CAPITALIZE($attacker) } приставляет оружие к собственному горлу.
+execution-popup-self-complete-internal = Вы перерезаете себе горло!
+execution-popup-self-complete-external = { CAPITALIZE($attacker) } перерезает себе горло!

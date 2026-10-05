@@ -1,0 +1,51 @@
+- type: fecRoadmapSection
+  id: FECRoadmapCurrent
+  name: fec-roadmap-section-current
+  order: 0
+  items:
+  - name: fec-roadmap-russian
+    text: fec-roadmap-russian-desc
+    state: InProgress
+  - name: fec-roadmap-humans
+    text: fec-roadmap-humans-desc
+    state: Complete
+  - name: fec-roadmap-ranks
+    text: fec-roadmap-ranks-desc
+    state: Complete
+  - name: fec-roadmap-names
+    text: fec-roadmap-names-desc
+    state: Complete
+  - name: fec-roadmap-boosty
+    text: fec-roadmap-boosty-desc
+    state: Complete
+  - name: fec-roadmap-discord-bot
+    text: fec-roadmap-discord-bot-desc
+    state: Complete
+
+- type: fecRoadmapSection
+  id: FECRoadmapUpcoming
+  name: fec-roadmap-section-upcoming
+  order: 1
+  items:
+  - name: fec-roadmap-service-record
+    text: fec-roadmap-service-record-desc
+  - name: fec-roadmap-after-action
+    text: fec-roadmap-after-action-desc
+  - name: fec-roadmap-radio-phrases
+    text: fec-roadmap-radio-phrases-desc
+  - name: fec-roadmap-origin
+    text: fec-roadmap-origin-desc
+  - name: fec-roadmap-discord-reports
+    text: fec-roadmap-discord-reports-desc
+
+- type: fecRoadmapSection
+  id: FECRoadmapFuture
+  name: fec-roadmap-section-future
+  order: 2
+  items:
+  - name: fec-roadmap-contracts
+    text: fec-roadmap-contracts-desc
+  - name: fec-roadmap-slang-filter
+    text: fec-roadmap-slang-filter-desc
+  - name: fec-roadmap-exclusives
+    text: fec-roadmap-exclusives-desc

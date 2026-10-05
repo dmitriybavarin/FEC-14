@@ -1,0 +1,17 @@
+cmd-mapping-desc = Создает или загружает карту и телепортирует вас на нее.
+cmd-mapping-help = Использование: mapping [MapID] [Path] [Grid]
+cmd-mapping-server = Эту команду могут использовать только игроки.
+cmd-mapping-error = При создании новой карты произошла ошибка.
+cmd-mapping-try-grid = Не удалось загрузить файл как карту. Пробуем загрузить как грид...
+cmd-mapping-success-load = Создана неинициализированная карта из файла {$path} с id {$mapId}.
+cmd-mapping-success-load-grid = Неинициализированный грид из файла {$path} загружен на новую карту с id {$mapId}.
+cmd-mapping-success = Создана неинициализированная карта с id {$mapId}.
+cmd-mapping-warning = ВНИМАНИЕ: сервер использует отладочную сборку. Вы рискуете потерять изменения.
+cmd-mapping-failure-integer = {$arg} не является допустимым целым числом.
+cmd-mapping-failure-float = {$arg} не является допустимым float.
+cmd-mapping-failure-bool = {$arg} не является допустимым bool.
+cmd-mapping-nullspace = На карту 0 загрузиться нельзя.
+cmd-hint-mapping-id = [MapID]
+cmd-mapping-hint-grid = [Grid]
+cmd-hint-mapping-path = [Path]
+cmd-mapping-exists = Карта {$mapId} уже существует.

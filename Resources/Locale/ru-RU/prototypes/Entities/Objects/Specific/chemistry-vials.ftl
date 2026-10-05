@@ -1,0 +1,16 @@
+ent-BaseChemistryEmptyVial = Флакон
+    .desc = Маленький флакон.
+ent-BorgVial = Встроенный флакон
+    .desc = Внутренний отсек, установленный в киборга. Рассчитан на 30 единиц любой жидкости.
+ent-VestineChemistryVial = { ent-BaseChemistryEmptyVial }
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+    .suffix = Вестин
+ent-RadiumChemistryVial = { ent-BaseChemistryEmptyVial }
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+    .suffix = Радий
+ent-ChlorineChemistryVial = { ent-BaseChemistryEmptyVial }
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+    .suffix = Хлор
+ent-PlasmaChemistryVial = { ent-BaseChemistryEmptyVial }
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+    .suffix = плазма

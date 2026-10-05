@@ -1,0 +1,10 @@
+advertisement-ammo-1 = Станция Свободы: все для второй поправки в одном месте!
+advertisement-ammo-2 = Будь патриотом, возьми ствол!
+advertisement-ammo-3 = Качественное оружие по низким ценам!
+advertisement-ammo-4 = Лучше мертвый, чем красный!
+advertisement-ammo-5 = Порхай как астронавт, жаль как пуля!
+advertisement-ammo-6 = Воспользуйся второй поправкой сегодня!
+advertisement-ammo-7 = Оружие не убивает людей, а ты можешь!
+advertisement-ammo-8 = Кому нужна ответственность, когда есть оружие?
+advertisement-ammo-9 = Убивать людей весело!
+advertisement-ammo-10 = Иди и перестреляй их!

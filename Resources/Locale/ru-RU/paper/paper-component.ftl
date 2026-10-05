@@ -1,0 +1,15 @@
+paper-ui-blank-page-message = Эта страница намеренно оставлена пустой
+paper-component-examine-detail-has-words = На листе что-то написано.
+paper-component-examine-detail-stamped-by = Печати: {$stamps}.
+paper-component-illiterate = Вы не умеете писать.
+paper-component-illiterate-mime = Обет запрещает вам писать.
+paper-component-action-stamp-paper-other = {CAPITALIZE($user)} ставит печать.
+paper-component-action-stamp-paper-self = Вы ставите печать.
+paper-ui-fill-level = {$currentLength}/{$maxLength}
+paper-ui-save-button = Сохранить ({$keybind})
+paper-form-fill-button = Заполнить
+paper-signature-sign-button = Подписать
+paper-form-dialog-ok = ОК
+paper-form-dialog-cancel = Отмена
+paper-signature-unknown = Неизвестно
+paper-tamper-proof-modified-message = Эта страница написана защищенными от подделки чернилами.

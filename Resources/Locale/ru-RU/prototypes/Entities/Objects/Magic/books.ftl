@@ -1,0 +1,14 @@
+ent-BaseSpellbook = Книга заклинаний
+ent-WizardsGrimoire = Гримуар волшебника
+    .desc = { "" }
+    .suffix = Волшебник
+ent-WizardsGrimoireNoRefund = Гримуар волшебника
+    .desc = { "" }
+    .suffix = Волшебник, без возврата
+ent-SpawnSpellbook = Книга заклинаний призыва
+ent-ForceWallSpellbook = Книга заклинания силовой стены
+ent-BlinkBook = Книга заклинания скачка
+ent-SmiteBook = Книга заклинания кары
+ent-KnockSpellbook = Книга заклинания стука
+ent-FireballSpellbook = Книга заклинания огненного шара
+ent-ScrollRunes = Свиток рун

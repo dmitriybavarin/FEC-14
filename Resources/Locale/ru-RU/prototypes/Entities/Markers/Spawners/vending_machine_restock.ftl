@@ -1,0 +1,9 @@
+ent-SpawnVendingMachineRestockFoodDrink = Пополнение торгового автомата
+    .desc = { "" }
+    .suffix = Еда или напитки
+ent-SpawnVendingMachineRestockFood = Пополнение торгового автомата
+    .desc = { "" }
+    .suffix = Еда
+ent-SpawnVendingMachineRestockDrink = Пополнение торгового автомата
+    .desc = { "" }
+    .suffix = Напитки

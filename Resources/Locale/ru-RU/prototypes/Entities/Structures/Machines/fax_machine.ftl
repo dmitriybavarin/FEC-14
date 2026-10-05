@@ -1,0 +1,11 @@
+ent-FaxMachineBase = Дальний факс
+    .desc = Блюспейс-технологии на службе бюрократии.
+ent-FaxMachineCentcom = Дальний факс ЦК
+    .desc = { ent-FaxMachineBase.desc }
+    .suffix = ЦК
+ent-FaxMachineSyndie = Дальний факс Синдиката
+    .desc = { ent-FaxMachineBase.desc }
+    .suffix = Синдикат
+ent-FaxMachineCaptain = Дальний факс капитана
+    .desc = { ent-FaxMachineBase.desc }
+    .suffix = Ядерные коды

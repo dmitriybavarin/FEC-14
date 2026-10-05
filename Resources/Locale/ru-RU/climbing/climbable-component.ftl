@@ -1,0 +1,9 @@
+comp-climbable-verb-climb = Перелезть
+comp-climbable-user-climbs = Вы забираетесь наверх!
+comp-climbable-user-climbs-other = { CAPITALIZE($user) } забирается наверх!
+comp-climbable-user-climbs-force = Вы затаскиваете цель наверх!
+comp-climbable-user-climbs-force-other = { CAPITALIZE($user) } затаскивает кого-то наверх!
+comp-climbable-cant-reach = Туда не дотянуться!
+comp-climbable-cant-interact = Так нельзя!
+comp-climbable-cant-climb = Вы не можете лазать!
+comp-climbable-target-cant-climb = { CAPITALIZE($moved-user) } не может туда забраться!

@@ -1,0 +1,15 @@
+ent-MaintenanceFluffSpawner = Спавнер добычи техтоннелей
+    .desc = { "" }
+    .suffix = Мелочи и одежда
+ent-MaintenanceToolSpawner = Спавнер добычи техтоннелей
+    .desc = { "" }
+    .suffix = Инструменты, батареи, материалы
+ent-MaintenanceWeaponSpawner = Спавнер добычи техтоннелей
+    .desc = { "" }
+    .suffix = Лом и оружие
+ent-MaintenancePlantSpawner = Спавнер добычи техтоннелей
+    .desc = { "" }
+    .suffix = Растения
+ent-MaintenanceInsulsSpawner = Спавнер добычи техтоннелей
+    .desc = { "" }
+    .suffix = Изолированные перчатки, безопасно

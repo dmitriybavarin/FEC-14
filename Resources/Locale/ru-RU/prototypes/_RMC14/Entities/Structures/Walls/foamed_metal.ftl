@@ -1,0 +1,9 @@
+ent-RMCBaseFoamedMetal = Базовый вспененный металл FEC
+ent-RMCAluminiumMetalFoamEffect = Алюминиевая металлическая пена
+ent-RMCIronMetalFoamEffect = Железная металлическая пена
+ent-RMCFoamedAluminiumMetal = Алюминиевый пенометалл
+    .desc = Легкая стена из вспененного металла.
+    .suffix = FEC
+ent-RMCFoamedIronMetal = Железный пенометалл
+    .desc = Чуть более прочная легкая стена из вспененного железа.
+    .suffix = FEC

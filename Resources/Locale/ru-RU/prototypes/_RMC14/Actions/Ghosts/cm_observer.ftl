@@ -1,0 +1,14 @@
+ent-ActionToggleMarineHud = HUD морпехов
+    .desc = Показать или скрыть значки морпехов.
+ent-ActionToggleXenoHud = HUD ксеноморфов
+    .desc = Показать или скрыть полосы здоровья и плазмы ксеноморфов.
+ent-RMCActionToggleDeadChat = Заглушить чат мертвых
+    .desc = Скрыть сообщения и облачка речи чата мертвых.
+ent-ActionFindParasite = Найти лицехвата
+    .desc = Найти лицехватов, доступных для призраков
+ent-ActionJoinXeno = Играть за ксеноморфа
+    .desc = Найти закопанную личинку, чтобы вселиться в нее.
+ent-ActionToggleVisibility = Видимость
+    .desc = Переключает видимость. Пока вы невидимы, ваш друг все равно слышит, что вы говорите.
+ent-ActionStopBeingFriends = Покинуть друга
+    .desc = Перестать быть воображаемым другом.

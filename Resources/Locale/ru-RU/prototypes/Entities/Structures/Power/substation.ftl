@@ -1,0 +1,15 @@
+ent-BaseSubstation = Подстанция
+    .desc = Снижает напряжение поступающего электричества.
+ent-BaseSubstationWall = Настенная подстанция
+    .desc = Подстанция для компактных шаттлов и помещений.
+ent-SubstationBasic = { ent-BaseSubstation }
+    .desc = { ent-BaseSubstation.desc }
+    .suffix = Базовая, 2,5 МДж
+ent-SubstationBasicEmpty = { ent-BaseSubstation }
+    .desc = { ent-BaseSubstation.desc }
+    .suffix = Пустая
+ent-SubstationWallBasic = { ent-BaseSubstationWall }
+    .desc = { ent-BaseSubstationWall.desc }
+    .suffix = Базовая, 2 МДж
+ent-BaseSubstationWallFrame = Рама настенной подстанции
+    .desc = Рама подстанции для сборки.

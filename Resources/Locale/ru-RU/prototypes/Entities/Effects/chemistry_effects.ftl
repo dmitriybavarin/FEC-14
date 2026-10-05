@@ -1,0 +1,13 @@
+ent-Smoke = Дым
+ent-TearGasSmoke = Слезоточивый газ
+ent-TearGasSmokeWhite = { ent-TearGasSmoke }
+ent-WizardSmoke = Дым
+ent-Foam = Пена
+ent-MetalFoam = Металлическая пена
+ent-IronMetalFoam = Железная металлическая пена
+ent-AluminiumMetalFoam = Алюминиевая металлическая пена
+ent-BaseFoamedMetal = Базовый пенометалл
+ent-FoamedIronMetal = Железный пенометалл
+    .desc = Для заделки пробоин в обшивке.
+ent-FoamedAluminiumMetal = Алюминиевый пенометалл
+    .desc = Остатки рыхлой пены от алюминиевой пенной гранаты. Легко разрушается.

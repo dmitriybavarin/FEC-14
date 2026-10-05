@@ -1,0 +1,11 @@
+cmd-ftldisk-desc = Создает диск координат сверхсвета для полета на карту, где находится указанная сущность
+cmd-ftldisk-help = ftldisk [EntityID]
+cmd-ftldisk-no-transform = У сущности {$destination} нет компонента Transform!
+cmd-ftldisk-no-map = У сущности {$destination} нет карты!
+cmd-ftldisk-no-map-comp = Сущность {$destination} каким-то образом находится на карте {$map} без компонента карты.
+cmd-ftldisk-map-not-init = Сущность {$destination} находится на карте {$map}, которая не инициализирована! Проверьте, что ее безопасно инициализировать, и сначала инициализируйте карту, иначе игроки застрянут!
+cmd-ftldisk-map-paused = Сущность {$desintation} находится на карте {$map}, которая на паузе! Сначала снимите карту с паузы, иначе игроки застрянут.
+cmd-ftldisk-planet = Сущность {$desintation} находится на планетарной карте {$map}, понадобится точка сверхсвета. Возможно, она уже есть.
+cmd-ftldisk-already-dest-not-enabled = Сущность {$destination} находится на карте {$map}, у которой уже есть FTLDestinationComponent, но он не включен! Для безопасности включите его вручную.
+cmd-ftldisk-requires-ftl-point = Сущность {$destination} находится на карте {$map}, для полета на которую нужна точка сверхсвета! Возможно, она уже есть.
+cmd-ftldisk-hint = netID карты

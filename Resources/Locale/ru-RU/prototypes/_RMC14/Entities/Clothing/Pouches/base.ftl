@@ -1,0 +1,10 @@
+ent-RMCPouch = Абстрактный подсумок
+    .desc = Физическое воплощение самой идеи подсумка. Ого.
+ent-RMCPouchStorage = Подсумок
+    .desc = { ent-RMCPouch.desc }
+ent-RMCPouchClosed = { ent-RMCPouch }
+    .desc = { ent-RMCPouch.desc }
+ent-RMCPouchOpenClosed = { ent-RMCPouch }
+    .desc = { ent-RMCPouch.desc }
+ent-RMCPouchFill = { ent-RMCPouch }
+    .desc = { ent-RMCPouch.desc }

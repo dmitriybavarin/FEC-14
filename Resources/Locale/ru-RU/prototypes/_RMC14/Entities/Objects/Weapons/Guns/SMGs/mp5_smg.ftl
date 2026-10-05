@@ -1,0 +1,9 @@
+ent-WeaponSMGMP5 = Пистолет-пулемет MP5
+    .desc = Немецкая конструкция, когда-то один из самых распространенных пистолетов-пулеметов в мире. Его все еще можно встретить у коллекционеров и оружейных фанатиков.
+    .suffix = Заполнено
+ent-CMMagazineSMGMP5 = Магазин MP5 (9 мм)
+    .desc = Магазин 9 мм для MP5.
+ent-CMCartridge9mmSMG = Патрон (9 мм, ПП)
+    .desc = Патрон 9 мм для пистолета-пулемета MP5.
+ent-CMBullet9mmSMG = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }

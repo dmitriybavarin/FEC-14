@@ -1,0 +1,14 @@
+ent-RMCPouchMedical = Медицинский подсумок
+    .desc = Вмещает небольшие медицинские припасы.
+ent-RMCPouchMedicalFill = { ent-RMCPouchMedical }
+    .desc = { ent-RMCPouchMedical.desc }
+    .suffix = Заполнено
+ent-RMCPouchMedicalPills = { ent-RMCPouchMedical }
+    .desc = { ent-RMCPouchMedical.desc }
+    .suffix = Таблетки
+ent-RMCPouchMedicalERT = { ent-RMCPouchMedical }
+    .desc = { ent-RMCPouchMedical.desc }
+    .suffix = ОБР
+ent-RMCPouchMedicalSPPSynth = { ent-RMCPouchMedical }
+    .desc = { ent-RMCPouchMedical.desc }
+    .suffix = ОБР

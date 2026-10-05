@@ -1,0 +1,12 @@
+accent-southern-words-1 = вы все
+accent-southern-words-replace-1 = вы, братцы
+accent-southern-words-2 = ребята
+accent-southern-words-replace-2 = робяты
+accent-southern-words-3 = сейчас
+accent-southern-words-replace-3 = щас
+accent-southern-words-4 = что
+accent-southern-words-replace-4 = чаво
+accent-southern-words-5 = нет
+accent-southern-words-replace-5 = нетути
+accent-southern-words-6 = очень
+accent-southern-words-replace-6 = шибко

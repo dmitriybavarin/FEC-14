@@ -1,0 +1,11 @@
+ent-BaseRune = Руна
+ent-CollideRune = Руна столкновения
+ent-ActivateRune = Руна активации
+ent-CollideTimerRune = Таймерная руна столкновения
+ent-ExplosionRune = Руна взрыва
+ent-StunRune = Руна оглушения
+ent-IgniteRune = Руна поджога
+ent-ExplosionTimedRune = Таймерная руна взрыва
+ent-ExplosionActivateRune = Активируемая руна взрыва
+ent-FlashRune = Руна вспышки
+ent-FlashRuneTimer = Таймерная руна вспышки

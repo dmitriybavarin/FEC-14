@@ -1,0 +1,9 @@
+ent-BaseAsteroidDebris = Астероидные обломки
+ent-AsteroidDebrisSmall = Малые астероидные обломки
+ent-AsteroidDebrisMedium = Средние астероидные обломки
+ent-AsteroidDebrisLarge = Большие астероидные обломки
+ent-AsteroidDebrisLarger = Очень большие астероидные обломки
+ent-AsteroidSalvageSmall = Малый астероид утилизаторов
+ent-AsteroidSalvageMedium = Средний астероид утилизаторов
+ent-AsteroidSalvageLarge = Большой астероид утилизаторов
+ent-AsteroidSalvageHuge = Огромный астероид утилизаторов

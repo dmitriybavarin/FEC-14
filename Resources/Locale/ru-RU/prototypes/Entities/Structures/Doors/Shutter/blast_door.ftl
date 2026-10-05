@@ -1,0 +1,14 @@
+ent-BlastDoor = Гермозатвор
+    .desc = На этом написано "ГЕРМОЗАТВОРИЩЕ".
+ent-BlastDoorOpen = { ent-BlastDoor }
+    .desc = { ent-BlastDoor.desc }
+    .suffix = Открытая
+ent-BlastDoorFrame = Рама гермозатвора
+    .desc = На этом написано "ГЕРМОЗАТВОРИЩЕ".
+ent-BlastDoorXeno = Ксеногермозатвор
+    .desc = Не потеряйте руку!
+ent-BlastDoorXenoOpen = { ent-BlastDoorXeno }
+    .desc = { ent-BlastDoorXeno.desc }
+    .suffix = Открытая
+ent-BlastDoorXenoFrame = Рама ксеногермозатвора
+    .desc = На этом написано "ГЕРМОЗАТВОРИЩЕ".

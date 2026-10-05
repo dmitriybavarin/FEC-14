@@ -91,26 +91,35 @@ public abstract class SharedRankSystem : EntitySystem
         if (isShort)
         {
             if (rank.FemalePrefix == null || rank.MalePrefix == null)
-                return rank.Prefix;
+                return LocalizeRank(rank, "prefix", rank.Prefix); // FEC14
 
             if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearance))
-                return rank.Prefix;
+                return LocalizeRank(rank, "prefix", rank.Prefix); // FEC14
 
+            // FEC14
             var genderPrefix = humanoidAppearance.Gender switch
             {
-                Gender.Female => rank.FemalePrefix,
-                Gender.Male => rank.MalePrefix,
-                _ => rank.Prefix,
+                Gender.Female => LocalizeRank(rank, "prefix-female", rank.FemalePrefix),
+                Gender.Male => LocalizeRank(rank, "prefix-male", rank.MalePrefix),
+                _ => LocalizeRank(rank, "prefix", rank.Prefix),
             };
+            // FEC14
 
             return genderPrefix;
         }
 
         if (hasPaygrade && rank.Paygrade != null)
-            return $"({Loc.GetString(rank.Paygrade)}) {Loc.GetString(rank.Name)}";
+            return $"({Loc.GetString(rank.Paygrade)}) {LocalizeRank(rank, "name", rank.Name)}"; // FEC14
 
-        return rank.Name;
+        return LocalizeRank(rank, "name", rank.Name); // FEC14
     }
+
+    // FEC14
+    public string LocalizeRank(RankPrototype rank, string kind, string fallback)
+    {
+        return Loc.TryGetString($"fec-rank-{kind}-{rank.ID}", out var value) ? value : fallback;
+    }
+    // FEC14
 
     /// <summary>
     ///     Gets the prefix rank name. (ex. Maj John Marine)

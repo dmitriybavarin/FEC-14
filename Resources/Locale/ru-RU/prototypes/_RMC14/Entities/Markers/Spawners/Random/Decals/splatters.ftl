@@ -1,0 +1,15 @@
+ent-RMCDecalSpawnerBase = { ent-DecalSpawnerBase }
+    .desc = { "" }
+    .suffix = FEC14, брызги крови
+ent-RMCDecalSpawnerBloodSplatters = Спавнер крови
+    .desc = { "" }
+    .suffix = FEC14
+ent-RMCDecalSpawnerXenoSplatters = Спавнер крови ксеноморфа
+    .desc = { "" }
+    .suffix = FEC14
+ent-RMCDecalSpawnerOilSplatters = Спавнер масла
+    .desc = { "" }
+    .suffix = FEC14
+ent-RMCDecalSpawnerAcidBloodSplash = Спавнер брызг кислоты ксеноморфа
+    .desc = { "" }
+    .suffix = FEC14

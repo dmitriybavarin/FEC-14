@@ -1,0 +1,14 @@
+ent-RMCVirtualPowerLoaderRight = Правый гидравлический захват погрузчика
+ent-RMCVirtualPowerLoaderLeft = Левый гидравлический захват погрузчика
+ent-RMCVirtualDropshipGearRight = { ent-RMCVirtualPowerLoaderRight }
+ent-RMCVirtualDropshipGearLeft = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualDropshipAmmoRight = { ent-RMCVirtualPowerLoaderRight }
+ent-RMCVirtualDropshipAmmoLeft = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualCrateRight = { ent-RMCVirtualPowerLoaderRight }
+ent-RMCVirtualCrateLeft = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualFuelRight = { ent-RMCVirtualPowerLoaderRight }
+ent-RMCVirtualFuelLeft = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualWarheadRight = { ent-RMCVirtualPowerLoaderRight }
+ent-RMCVirtualWarheadLeft = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualWarheadLeftAegis = { ent-RMCVirtualPowerLoaderLeft }
+ent-RMCVirtualWarheadRightAegis = { ent-RMCVirtualPowerLoaderRight }

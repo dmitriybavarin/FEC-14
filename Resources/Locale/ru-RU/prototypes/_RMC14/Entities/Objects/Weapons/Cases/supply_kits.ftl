@@ -1,0 +1,10 @@
+ent-RMCSupplyKitPursuit = Набор головного дозорного M63
+    .desc = { ent-RMCKitBase.desc }
+ent-RMCSupplyKitSelfDefense = Набор личной самообороны
+    .desc = { ent-RMCKitBase.desc }
+ent-RMCSupplyKitMiniMedic = Набор медицинской поддержки "Первая помощь"
+    .desc = { ent-RMCKitBase.desc }
+ent-RMCSupplyKitMOU53 = Набор полевых испытаний MOU53
+    .desc = { ent-RMCKitBase.desc }
+ent-RMCSupplyKitHeavySupport = Набор переднего щита HAR
+    .desc = { ent-RMCKitBase.desc }

@@ -1,0 +1,15 @@
+ent-LootSpawnerSecurityBasic = Спавнер добычи охраны
+    .desc = { "" }
+    .suffix = Снаряжение, простое
+ent-LootSpawnerSecurity = Спавнер добычи охраны
+    .desc = { "" }
+    .suffix = Снаряжение, получше
+ent-LootSpawnerArmory = Спавнер добычи оружейной
+    .desc = { "" }
+    .suffix = Оружие, броня
+ent-LootSpawnerArmoryGunsOnly = Спавнер добычи оружейной
+    .desc = { "" }
+    .suffix = Оружие
+ent-LootSpawnerArmoryArmorOnly = Спавнер добычи оружейной
+    .desc = { "" }
+    .suffix = Броня

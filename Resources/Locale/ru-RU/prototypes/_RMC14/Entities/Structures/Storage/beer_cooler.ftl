@@ -1,0 +1,9 @@
+ent-RMCBeerCoolerBase = Холодильный ящик
+    .desc = Уютный холодильник для пива и прочих напитков.
+    .suffix = Пустая
+ent-RMCBeerCooler = { ent-RMCBeerCoolerBase }
+    .desc = { ent-RMCBeerCoolerBase.desc }
+    .suffix = { ent-RMCBeerCoolerBase.suffix }
+ent-RMCBeerCoolerFilled = { ent-RMCBeerCoolerBase }
+    .desc = { ent-RMCBeerCoolerBase.desc }
+    .suffix = Заполнено

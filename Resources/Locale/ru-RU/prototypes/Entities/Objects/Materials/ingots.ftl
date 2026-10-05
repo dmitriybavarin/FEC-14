@@ -1,0 +1,14 @@
+ent-IngotBase = { ent-BaseItem }
+    .desc = Тяжелый металлический слиток с логотипом Nanotrasen.
+ent-IngotGold = Золотой слиток
+    .desc = { ent-IngotBase.desc }
+    .suffix = Полный
+ent-IngotGold1 = Золотой слиток
+    .desc = { ent-IngotBase.desc }
+    .suffix = Один
+ent-IngotSilver = Серебряный слиток
+    .desc = { ent-IngotBase.desc }
+    .suffix = Полный
+ent-IngotSilver1 = Серебряный слиток
+    .desc = { ent-IngotBase.desc }
+    .suffix = Один

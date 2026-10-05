@@ -1,0 +1,14 @@
+ent-RMCWeaponPistolNP92 = Пистолет NP92
+    .desc = Штатный пистолет SPP. NP92 маленький, но мощный, и он нравится большинству тех, кому его выдают, хотя некоторые предпочитают пистолет, который он должен был заменить, Type 73. Магазины на 12 патронов.
+ent-RMCWeaponPistolNPZ92 = Пистолет NPZ92
+    .desc = NPZ92: версия NP92 со встроенным глушителем. Понемногу выдается подразделениям коммандос.
+ent-RMCWeaponPistolNP92Empty = { ent-RMCWeaponPistolNP92 }
+    .desc = { ent-RMCWeaponPistolNP92.desc }
+    .suffix = Пустая
+ent-RMCMagazinePistolNP92 = Магазин NP92 (9 мм)
+    .desc = { ent-CMBaseMagazinePistol.desc }
+ent-RMCMagazinePistolNP92Extended = Удлиненный магазин NP92 (9 мм)
+    .desc = { ent-CMBaseMagazinePistol.desc }
+ent-RMCBulletPistolNP92 = Пуля (9 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-RMCCartridgePistolNP92 = Патрон (9 мм)

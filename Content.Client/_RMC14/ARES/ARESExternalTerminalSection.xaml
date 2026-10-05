@@ -2,7 +2,7 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.ARES">
     <BoxContainer Orientation="Vertical">
-	    <RichTextLabel Access="Public" Name="SectionName" Text="[font size= 15]ERROR" Margin="0 10 0 5" HorizontalAlignment="Center" HorizontalExpand="True"/>
+	    <RichTextLabel Access="Public" Name="SectionName" Text="{Loc 'fec-xaml-font-size-15-error'}" Margin="0 10 0 5" HorizontalAlignment="Center" HorizontalExpand="True"/>
 	    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
 	        <GridContainer Access="Public" Name="ButtonContainer" Columns="4"/>
 	    </BoxContainer>

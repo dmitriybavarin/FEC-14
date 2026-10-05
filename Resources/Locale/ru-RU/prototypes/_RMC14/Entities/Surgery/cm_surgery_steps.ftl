@@ -1,0 +1,14 @@
+ent-CMSurgeryStepOpenIncisionScalpel = Сделать разрез скальпелем
+ent-CMSurgeryStepClampBleeders = Пережать кровоточащие сосуды
+ent-CMSurgeryStepRetractSkin = Отвести кожу
+ent-CMSurgeryStepSawBones = Распилить кости
+ent-CMSurgeryStepPriseOpenBones = Развести кости
+ent-CMSurgeryStepCutLarvaRoots = Перерезать корни личинки
+ent-CMSurgeryStepRemoveLarva = Извлечь личинку
+ent-CMSurgeryStepCloseBones = Свести кости
+ent-CMSurgeryStepMendRibcage = Восстановить грудную клетку
+ent-CMSurgeryStepCloseIncision = Закрыть разрез
+ent-RMCSurgeryCutExoskeleton = Разрезать панцирь экзоскелета
+ent-RMCSurgeryOpenExoskeleton = Вскрыть экзоскелет
+ent-RMCSurgerySevereXenoConnections = Перерезать связи органа
+ent-RMCSurgeryRemoveXenoOrgan = Извлечь орган ксеноморфа

@@ -1,0 +1,13 @@
+cmd-changecvar-no-arguments = Укажите CVar.
+cmd-changecvar-cvar-not-registered = CVar {$cvar} не зарегистрирован.
+cmd-changecvar-cvar-not-allowed = Этот CVar менять нельзя.
+cmd-changecvar-value-out-of-range = Значение вне диапазона. Допустимо от {$min} до {$max}.
+cmd-changecvar-desc = Меняет значение CVar.
+cmd-changecvar-help = Использование: changecvar <cvar | ? | search> <значение>
+cmd-changecvar-available-cvars = Доступные CVar:
+cmd-changecvar-no-cvars = Нет CVar, которые вам можно менять.
+cmd-changecvar-success = CVar {$cvar} изменен с "{$old}" на "{$value}".
+cmd-changecvar-search-no-arguments = Укажите поисковый запрос.
+cmd-changecvar-search-no-matches = CVar по запросу не найдены.
+cmd-changecvar-search-matches = Найдено CVar по запросу: {$count}
+cmd-changecvar-arg-name = <имя | ? | search>

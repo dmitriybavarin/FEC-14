@@ -1,0 +1,9 @@
+generic-reagent-effect-burning-insides = Внутренности горят!
+generic-reagent-effect-burning-eyes = Глаза начинает слегка жечь.
+generic-reagent-effect-burning-eyes-a-bit = Глаза немного жжет.
+generic-reagent-effect-tearing-up = Глаза начинают слезиться.
+generic-reagent-effect-nauseous = Вас мутит.
+generic-reagent-effect-parched = Во рту пересохло.
+generic-reagent-effect-thirsty = Хочется пить.
+generic-reagent-effect-sick = После этого вам дурно...
+generic-reagent-effect-slicing-insides = Живот пронзает невероятно острая боль!

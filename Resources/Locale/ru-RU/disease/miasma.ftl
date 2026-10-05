@@ -1,0 +1,13 @@
+ammonia-smell = Пахнет чем-то едким!
+perishable-1 = [color=green]Труп еще выглядит свежим.[/color]
+perishable-2 = [color=orangered]Труп выглядит относительно свежим.[/color]
+perishable-3 = [color=red]Труп выглядит не очень свежим.[/color]
+perishable-1-nonmob = [color=green]Выглядит еще свежо.[/color]
+perishable-2-nonmob = [color=orangered]Выглядит относительно свежо.[/color]
+perishable-3-nonmob = [color=red]Выглядит не очень свежо.[/color]
+rotting-rotting = [color=orange]Труп гниет![/color]
+rotting-bloated = [color=orangered]Труп раздулся![/color]
+rotting-extremely-bloated = [color=red]Труп сильно раздулся![/color]
+rotting-rotting-nonmob = [color=orange]Гниет![/color]
+rotting-bloated-nonmob = [color=orangered]Видно вздутие![/color]
+rotting-extremely-bloated-nonmob = [color=red]Видно сильное вздутие![/color]

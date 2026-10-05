@@ -1,14 +1,14 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               Title="Armor Values">
+               Title="{Loc 'fec-xaml-armor-values'}">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="50" Margin="4">
-        <Label Text="Bullet Armor" />
-        <LineEdit Name="BulletLineEdit" Text="Enter bullet armor value" />
-        <Label Text="Melee Armor" />
-        <LineEdit Name="MeleeLineEdit" Text="Enter melee armor value" />
-        <Label Text="Explosion Armor" />
-        <LineEdit Name="ExplosionLineEdit" Text="Enter explosion armor value" />
-        <Label Text="Bio Armor" />
-        <LineEdit Name="BioLineEdit" Text="Enter bio armor value" />
+        <Label Text="{Loc 'fec-xaml-bullet-armor'}" />
+        <LineEdit Name="BulletLineEdit" Text="{Loc 'fec-xaml-enter-bullet-armor-value'}" />
+        <Label Text="{Loc 'fec-xaml-melee-armor'}" />
+        <LineEdit Name="MeleeLineEdit" Text="{Loc 'fec-xaml-enter-melee-armor-value'}" />
+        <Label Text="{Loc 'fec-xaml-explosion-armor'}" />
+        <LineEdit Name="ExplosionLineEdit" Text="{Loc 'fec-xaml-enter-explosion-armor-value'}" />
+        <Label Text="{Loc 'fec-xaml-bio-armor'}" />
+        <LineEdit Name="BioLineEdit" Text="{Loc 'fec-xaml-enter-bio-armor-value'}" />
     </BoxContainer>
 </DefaultWindow>

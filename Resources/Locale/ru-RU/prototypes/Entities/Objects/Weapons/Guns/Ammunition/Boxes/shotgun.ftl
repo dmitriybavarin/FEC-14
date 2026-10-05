@@ -1,0 +1,10 @@
+ent-BaseAmmoProvider = { ent-BaseItem }
+ent-AmmoProviderShotgunShell = { ent-BaseItem }
+ent-BoxBeanbag = Коробка патронов (.50 травматические)
+ent-BoxLethalshot = Коробка патронов (.50 дробь)
+ent-BoxShotgunSlug = Коробка патронов (.50 пуля)
+ent-BoxShotgunFlare = Коробка патронов (.50 сигнальные)
+ent-BoxShotgunIncendiary = Коробка патронов (.50 зажигательные)
+ent-BoxShotgunUranium = Коробка патронов (.50 урановые)
+ent-BoxShotgunPractice = Коробка патронов (.50 учебные)
+ent-BoxShellTranquilizer = Коробка патронов (.50 транквилизатор)

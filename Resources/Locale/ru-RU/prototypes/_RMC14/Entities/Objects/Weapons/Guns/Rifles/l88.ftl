@@ -1,0 +1,15 @@
+ent-RMCWeaponRifleL88A1 = Винтовка-буллпап L88A1
+    .desc = L88A1: штатная винтовка полков парамаринов RCM, первая в серии новаторских винтовок, которые дают вооруженным силам TSE легкое, точное и надежное оружие.
+ent-RMCWeaponRifleL88A2 = Винтовка-буллпап L88A2
+    .desc = L88A2: вторая итерация серии винтовок L88. Вариант A2 более модульный благодаря планке по всей нижней части цевья.
+ent-RMCWeaponRifleL88A1Filled = { ent-RMCWeaponRifleL88A1 }
+    .desc = { ent-RMCWeaponRifleL88A1.desc }
+    .suffix = Заполнено
+ent-RMCWeaponRifleL88A2Filled = { ent-RMCWeaponRifleL88A2 }
+    .desc = { ent-RMCWeaponRifleL88A2.desc }
+    .suffix = Заполнено
+ent-RMCMagazineRifleL88 = Магазин L88 (10x24 мм)
+    .desc = Магазин патронов 10x24 мм для винтовок образца L88.
+ent-RMCMagazineRifleL88AP = Бронебойный магазин L88 (10x24 мм)
+    .desc = Магазин бронебойных патронов 10x24 мм для винтовок образца L88.
+    .suffix = Бронебойный

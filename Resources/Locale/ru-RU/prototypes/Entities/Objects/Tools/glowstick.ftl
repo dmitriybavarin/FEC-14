@@ -1,0 +1,16 @@
+ent-GlowstickBase = Зеленая светящаяся палочка
+    .desc = Пригодится на рейвах и в экстренных случаях.
+ent-GlowstickRed = Красная светящаяся палочка
+    .desc = { ent-GlowstickBase.desc }
+ent-GlowstickPurple = Фиолетовая светящаяся палочка
+    .desc = { ent-GlowstickBase.desc }
+ent-GlowstickYellow = Желтая светящаяся палочка
+    .desc = { ent-GlowstickBase.desc }
+ent-GlowstickBlue = Синяя светящаяся палочка
+    .desc = { ent-GlowstickBase.desc }
+ent-LightBehaviourTest1 = Тест пульсации света
+ent-LightBehaviourTest2 = Тест смены цветов
+ent-LightBehaviourTest3 = Тест многорежимного света
+ent-LightBehaviourTest4 = Тест плавного появления света
+ent-LightBehaviourTest5 = Тест пульсации радиуса света
+ent-LightBehaviourTest6 = Тест случайного радиуса света

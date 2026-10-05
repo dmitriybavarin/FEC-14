@@ -1,0 +1,14 @@
+ent-CMIDCardASO = ID-карта офицера вспомогательной поддержки
+    .desc = { ent-CMIDCardSilver.desc }
+ent-CMIDCardPilotDropship = ID-карта пилота десантного корабля
+    .desc = { ent-CMIDCardBase.desc }
+ent-CMIDCardPilotGunship = ID-карта пилота штурмового корабля
+    .desc = { ent-CMIDCardBase.desc }
+ent-CMIDCardDCC = ID-карта бортмеханика десантного корабля
+    .desc = { ent-CMIDCardBase.desc }
+ent-CMIDCardIntelOfficer = ID-карта офицера разведки
+    .desc = { ent-CMIDCardSilver.desc }
+ent-CMDogtagCrewman = Жетоны члена экипажа
+    .desc = { ent-CMIDCardStandardDogtag.desc }
+ent-RMCDogtagCrewmanHidden = { ent-CMDogtagCrewman }
+    .desc = { ent-CMIDCardStandardDogtag.desc }

@@ -1,0 +1,15 @@
+ent-RMCHeadsetHvHWeYaPMC = Корпоративная гарнитура Ве-Я
+    .desc = Особая гарнитура корпоративного персонала.
+    .suffix = Ве-Я, PMC, HvH,
+ent-RMCHeadsetHvHWeYaPMCMedic = Гарнитура PMC-MED
+    .desc = { ent-RMCHeadsetHvHWeYaPMC.desc }
+    .suffix = { ent-RMCHeadsetHvHWeYaPMC.suffix }
+ent-RMCHeadsetHvHWeYaPMCEngineer = Гарнитура PMC-CCT
+    .desc = { ent-RMCHeadsetHvHWeYaPMC.desc }
+    .suffix = { ent-RMCHeadsetHvHWeYaPMC.suffix }
+ent-RMCHeadsetHvHWeYaPMCLeader = Гарнитура PMC-CMD
+    .desc = { ent-RMCHeadsetHvHWeYaPMC.desc }
+    .suffix = { ent-RMCHeadsetHvHWeYaPMC.suffix }
+ent-RMCHeadsetHvHWeYaPMCCommando = Гарнитура коммандос Ве-Я
+    .desc = Особая гарнитура неопознанных оперативников.
+    .suffix = Ве-Я, коммандос PMC, HvH

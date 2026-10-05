@@ -1,0 +1,1 @@
+ent-MobArachnid = Урист Макпаутина

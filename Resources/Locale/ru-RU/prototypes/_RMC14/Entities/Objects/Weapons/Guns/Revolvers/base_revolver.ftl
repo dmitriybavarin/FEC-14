@@ -1,0 +1,1 @@
+ent-RMCWeaponRevolverBase = { ent-BaseItem }

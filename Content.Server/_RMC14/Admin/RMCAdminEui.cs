@@ -292,6 +292,13 @@ public sealed class RMCAdminEui : BaseEui
                 var coordinates = _transform.GetMoverCoordinates(entity);
                 var newXeno = _entities.SpawnAttachedTo(transformXeno.XenoId, coordinates);
                 _hive.SetSameHive(entity, newXeno);
+                // FEC14
+                if (!_hive.HasHive(newXeno))
+                {
+                    var hives = _entities.EntityQueryEnumerator<HiveComponent>();
+                    _hive.SetHive(newXeno, hives.MoveNext(out var existingHive, out _) ? existingHive : _hive.CreateHive("xenonid hive"));
+                }
+                // FEC14
 
                 if (_mind.TryGetMind(entity, out var mindId, out var mind))
                 {

@@ -1,0 +1,11 @@
+ent-PartDiona = Часть тела дионы
+ent-TorsoDiona = Торс дионы
+ent-HeadDiona = Голова дионы
+ent-LeftArmDiona = Левая рука дионы
+ent-RightArmDiona = Правая рука дионы
+ent-LeftHandDiona = Левая кисть дионы
+ent-RightHandDiona = Правая кисть дионы
+ent-LeftLegDiona = Левая нога дионы
+ent-RightLegDiona = Правая нога дионы
+ent-LeftFootDiona = Левая ступня дионы
+ent-RightFootDiona = Правая ступня дионы

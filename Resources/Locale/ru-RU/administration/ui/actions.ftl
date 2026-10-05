@@ -1,0 +1,13 @@
+admin-player-actions-reason = Причина
+admin-player-actions-bans = Список банов
+admin-player-actions-notes = Заметки
+admin-player-actions-kick = Кикнуть
+admin-player-actions-ban = Забанить
+admin-player-actions-ahelp = Ахелп
+admin-player-actions-respawn = Возродить
+admin-player-actions-spawn = Создать здесь
+admin-player-spawn-failed = Не удалось найти подходящие координаты
+admin-player-actions-player-panel = Открыть панель игрока
+admin-player-actions-clone = Клонировать
+admin-player-actions-follow = Следить
+admin-player-actions-confirm = Точно?

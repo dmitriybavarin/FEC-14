@@ -1,0 +1,15 @@
+ent-RMCSheetCardboard = Картон
+    .desc = { ent-SheetOtherBase.desc }
+    .suffix = Полное, FEC
+ent-RMCSheetCardboard30 = { ent-RMCSheetCardboard }
+    .desc = { ent-SheetOtherBase.desc }
+    .suffix = 30, FEC
+ent-RMCSheetCardboard25 = { ent-RMCSheetCardboard }
+    .desc = { ent-SheetOtherBase.desc }
+    .suffix = 25, FEC
+ent-RMCSheetCardboard10 = { ent-RMCSheetCardboard }
+    .desc = { ent-SheetOtherBase.desc }
+    .suffix = 10, FEC
+ent-RMCSheetCardboard1 = { ent-RMCSheetCardboard }
+    .desc = { ent-SheetOtherBase.desc }
+    .suffix = Один, FEC

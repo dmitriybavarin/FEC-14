@@ -1,0 +1,12 @@
+ent-RMCPouchBayonet = Ножны для штыка
+    .desc = Ножиданная встреча!
+ent-RMCPouchBayonetFill = { ent-RMCPouchBayonet }
+    .desc = { ent-RMCPouchBayonet.desc }
+    .suffix = Заполнено
+ent-RMCPouchPistol = Подсумок для пистолета
+    .desc = В нем можно носить пистолет, а главное, быстро его выхватить. Пригодится в экстренной ситуации.
+ent-RMCPouchMachete = Подсумок для мачете M2132 образца H6B
+    .desc = Большой кожаный подсумок для мачете M2132. Крепится в слот подсумка.
+ent-RMCPouchMacheteFilled = { ent-RMCPouchMachete }
+    .desc = { ent-RMCPouchMachete.desc }
+    .suffix = Заполнено

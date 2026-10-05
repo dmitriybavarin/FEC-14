@@ -1,0 +1,15 @@
+ent-RMCRequisitionsChairMarker = Метка стула снабжения
+    .desc = { "" }
+    .suffix = FEC14
+ent-RMCRequisitionsChairMarkerNorth = { ent-RMCRequisitionsChairMarker }
+    .desc = { "" }
+    .suffix = FEC14, север
+ent-RMCRequisitionsChairMarkerEast = { ent-RMCRequisitionsChairMarker }
+    .desc = { "" }
+    .suffix = FEC14, восток
+ent-RMCRequisitionsChairMarkerSouth = { ent-RMCRequisitionsChairMarker }
+    .desc = { "" }
+    .suffix = FEC14, юг
+ent-RMCRequisitionsChairMarkerWest = { ent-RMCRequisitionsChairMarker }
+    .desc = { "" }
+    .suffix = FEC14, запад

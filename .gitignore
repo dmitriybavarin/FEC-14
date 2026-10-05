@@ -306,3 +306,10 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
+
+# FEC14 host config
+/.CONFIG/
+
+# FEC14 discord bot
+/.BOT/
+/.BOT/*

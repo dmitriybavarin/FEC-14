@@ -1,0 +1,1 @@
+ent-RMCHeadXeno = Голова ксеноморфа

@@ -1,0 +1,9 @@
+ent-RMCPinpointerBase = Пеленгатор
+    .desc = Прочное военное устройство слежения. Меняет цвет в зависимости от расстояния до цели. Держите вертикально, чтобы сохранять точность.
+    .suffix = FEC
+ent-RMCPinpointerUniversal = { ent-RMCPinpointerBase }
+    .desc = { ent-RMCPinpointerBase.desc }
+    .suffix = Универсальный
+ent-RMCPinpointerAegisID = { ent-RMCPinpointerBase }
+    .desc = { ent-RMCPinpointerBase.desc }
+    .suffix = AEGIS

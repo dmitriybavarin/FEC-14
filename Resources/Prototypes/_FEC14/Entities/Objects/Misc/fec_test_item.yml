@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseItem
+  id: FECTestItem
+  name: FEC14 test token
+  description: A commemorative token of the Frontier Expeditionary Corps. Used to test FEC14 exclusive content.
+  suffix: FEC14
+  components:
+  - type: Sprite
+    sprite: _FEC14/Objects/Misc/fec_token.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: FECExclusive

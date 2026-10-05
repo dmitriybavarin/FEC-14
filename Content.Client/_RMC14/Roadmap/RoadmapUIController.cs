@@ -1,4 +1,5 @@
-﻿using Content.Client.Credits;
+﻿using Content.Client._FEC14.Roadmap; // FEC14
+using Content.Client.Credits;
 using Content.Client.Lobby;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Info;
@@ -32,16 +33,31 @@ public sealed class RoadmapUIController : UIController, IOnStateEntered<LobbySta
         if (_infoUIController.RulesPopup != null)
             return;
 
-        ToggleRoadmap();
+        ShowFecOnce(); // FEC14
     }
 
     private void OnAccepted()
     {
         if (!_shown)
-            ToggleRoadmap();
+            ShowFecOnce(); // FEC14
+    }
+
+    // FEC14
+    public bool IsOpen => _window != null;
+
+    private void ShowFecOnce()
+    {
+        _shown = true;
+        UIManager.GetUIController<FECRoadmapUIController>().OpenFec();
     }
 
     public void ToggleRoadmap()
+    {
+        UIManager.GetUIController<FECRoadmapUIController>().ToggleChooser();
+    }
+
+    public void ToggleRmcRoadmap()
+    // FEC14
     {
         if (_window != null)
         {

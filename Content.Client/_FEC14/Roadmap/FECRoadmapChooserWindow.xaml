@@ -1,0 +1,15 @@
+<controls:FECRoadmapChooserWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Roadmap"
+    Title="{Loc 'cm-ui-roadmap'}"
+    Resizable="False">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="10" MinWidth="320">
+        <Label Text="{Loc 'fec-roadmap-choose'}" HorizontalAlignment="Center" />
+        <BoxContainer Orientation="Horizontal" SeparationOverride="10">
+            <Button Name="FecButton" Access="Public" Text="{Loc 'fec-roadmap-choose-fec'}"
+                    StyleClasses="OpenBoth" HorizontalExpand="True" MinHeight="40" />
+            <Button Name="RmcButton" Access="Public" Text="{Loc 'fec-roadmap-choose-rmc'}"
+                    StyleClasses="OpenBoth" HorizontalExpand="True" MinHeight="40" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FECRoadmapChooserWindow>

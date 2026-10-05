@@ -1,0 +1,11 @@
+ent-SmokingPipe = Трубка
+    .desc = Прямо как курил дедуля.
+ent-SmokingPipeFilledTobacco = Трубка
+    .desc = Прямо как курил дедуля.
+    .suffix = Табак
+ent-SmokingPipeFilledCannabis = Трубка
+    .desc = Прямо как курил дедуля.
+    .suffix = Конопля
+ent-SmokingPipeFilledCannabisRainbow = Трубка
+    .desc = Прямо как курил дедуля.
+    .suffix = Радужная конопля

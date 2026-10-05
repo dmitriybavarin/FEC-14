@@ -1,0 +1,10 @@
+advertisement-dinnerware-1 = М-м, еда!
+advertisement-dinnerware-2 = Еда и аксессуары для еды.
+advertisement-dinnerware-3 = Берите тарелки!
+advertisement-dinnerware-4 = Любите вилки?
+advertisement-dinnerware-5 = Я люблю вилки.
+advertisement-dinnerware-6 = Ура, приборы.
+advertisement-dinnerware-7 = Вам это на самом деле не нужно...
+advertisement-dinnerware-8 = Берите, если хотите!
+advertisement-dinnerware-9 = Уверен, стаканы обязательны.
+advertisement-dinnerware-10 = ПОЧЕМУ ТАК МНОГО ВИДОВ КРУЖЕК?

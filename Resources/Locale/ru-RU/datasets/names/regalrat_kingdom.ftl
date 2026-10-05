@@ -1,0 +1,15 @@
+names-regal-rat-kingdom-dataset-1 = Чумы
+names-regal-rat-kingdom-dataset-2 = Аммиака
+names-regal-rat-kingdom-dataset-3 = Техтоннелей
+names-regal-rat-kingdom-dataset-4 = Хлама
+names-regal-rat-kingdom-dataset-5 = Мусора
+names-regal-rat-kingdom-dataset-6 = Крыс
+names-regal-rat-kingdom-dataset-7 = Паразитов
+names-regal-rat-kingdom-dataset-8 = Сыра
+names-regal-rat-kingdom-dataset-9 = Жратвы
+names-regal-rat-kingdom-dataset-10 = Громадин
+names-regal-rat-kingdom-dataset-11 = Грязи
+names-regal-rat-kingdom-dataset-12 = Канализации
+names-regal-rat-kingdom-dataset-13 = Утилизации
+names-regal-rat-kingdom-dataset-14 = Обслуги
+names-regal-rat-kingdom-dataset-15 = Всего Сущего

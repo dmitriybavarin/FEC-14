@@ -1,0 +1,15 @@
+ent-RMCSpawnerRandomClothingBase = Спавнер оружия
+    .desc = Создает случайный предмет одежды
+    .suffix = Основа
+ent-RMCSpawnerRandomGoggles = Спавнер добычи: очки
+    .desc = Случайные очки для выживших.
+    .suffix = Гарантированно
+ent-RMCSpawnerRandomGogglesLowChance = { ent-RMCSpawnerRandomGoggles }
+    .desc = { ent-RMCSpawnerRandomGoggles.desc }
+    .suffix = Низкий шанс
+ent-RMCSpawnerRandomGogglesMidChance = { ent-RMCSpawnerRandomGoggles }
+    .desc = { ent-RMCSpawnerRandomGoggles.desc }
+    .suffix = Средний шанс
+ent-RMCSpawnerRandomGogglesHighChance = { ent-RMCSpawnerRandomGoggles }
+    .desc = { ent-RMCSpawnerRandomGoggles.desc }
+    .suffix = Высокий шанс

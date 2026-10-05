@@ -1,0 +1,15 @@
+ent-RMCIDSPP = Жетон SPP
+    .desc = Солдатский жетон.
+ent-RMCIDSPPCard = ID-карта SPP
+    .desc = ID-карта офицера SPP.
+ent-RMCIDSPPHidden = { ent-RMCIDSPP }
+    .desc = { ent-RMCIDSPP.desc }
+ent-RMCIDSPPRifleman = { ent-RMCIDSPP }
+    .desc = { ent-RMCIDSPP.desc }
+ent-RMCIDSPPRiflemanHidden = { ent-CMIDCardStandardDogtag }
+    .desc = { ent-CMIDCardStandardDogtag.desc }
+ent-RMCIDCardPCG = Идентификационный голожетон PCG
+    .desc = Стандартный голожетон сотрудников Народной гражданской жандармерии SPP. Показывает звание и принадлежность офицера.
+ent-RMCIDCardHalcyon = Корпоративный голожетон
+    .desc = Корпоративный голожетон в фирменных оранжево-черных цветах Компании.
+    .suffix = Halcyon

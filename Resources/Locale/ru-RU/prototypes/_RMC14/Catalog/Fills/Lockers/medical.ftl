@@ -1,0 +1,12 @@
+ent-RMCClosetMedical = Медицинский шкаф
+    .desc = Заполнен медицинскими принадлежностями.
+    .suffix = { ent-CMClosetBase.suffix }
+ent-RMCClosetMedicalMedicine = Шкаф с лекарствами
+    .desc = { ent-RMCClosetMedical.desc }
+    .suffix = Заполненный, медицина, лекарства
+ent-RMCClosetMedicalAnesthetic = Шкаф с анестетиками
+    .desc = Чтобы усыплять людей.
+    .suffix = Заполненный, медицина, анестетики
+ent-RMCClosetMedicalDoctors = Шкафчик врача
+    .desc = { ent-RMCClosetMedical.desc }
+    .suffix = Заполненный, медицина, для врача

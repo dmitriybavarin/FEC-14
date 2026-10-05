@@ -1,0 +1,12 @@
+ent-RMCCrateGearBinoculars = Ящик разных биноклей (по 2, всего 6)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateGearPackFlare = Ящик пачек сигнальных ракет (x20)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateGearMotionDetector = Ящик детекторов движения (x2)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateGearPackFlareCAS = Ящик пачек сигнальных ракет для авиаподдержки (x4)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateGearFulton = Ящик систем эвакуации "Фултон" (x4)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateGearParachute = Ящик парашютов (x20)
+    .desc = { ent-RMCCrateSupply.desc }

@@ -1,0 +1,14 @@
+reagent-name-nutriment = Питательные вещества
+reagent-desc-nutriment = Все нужные телу витамины, минералы и углеводы в чистом виде.
+reagent-name-glucose = Глюкоза
+reagent-desc-glucose = Простой сахар, который есть во многих продуктах.
+reagent-name-vitamin = Витамины
+reagent-desc-vitamin = Есть в здоровой полноценной еде.
+reagent-name-protein = Белок
+reagent-desc-protein = Есть в некоторых блюдах, полезен для здоровья.
+reagent-name-cocoapowder = Какао-порошок
+reagent-desc-cocoapowder = Из лучших сортов какао-бобов
+reagent-name-butter = Сливочное масло
+reagent-desc-butter = Хотите верьте, хотите нет!
+reagent-name-pumpkin-flesh = Мякоть тыквы
+reagent-desc-pumpkin-flesh = Мягкие сладкие остатки тыквы.

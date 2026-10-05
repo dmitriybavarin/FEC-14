@@ -1,0 +1,12 @@
+ent-CMBulletSentry10x50mm = Пуля (10x50 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-RMCBulletSentry = Пуля (10x28 мм)
+    .desc = { ent-BaseBullet.desc }
+ent-RMCBaseBulletSentryFireProjectile = Огненный шар
+    .desc = А? Вы не должны этого видеть...
+ent-RMCBulletSentryFireProjectile = { ent-RMCBaseBulletSentryFireProjectile }
+    .desc = { ent-RMCBaseBulletSentryFireProjectile.desc }
+ent-RMCBulletSentryFireProjectileBlue = Синий огненный шар
+    .desc = А? Вы не должны этого видеть...
+ent-RMCBulletSentryFireProjectileSmoke = Дымный огненный шар
+    .desc = А? Вы не должны этого видеть...

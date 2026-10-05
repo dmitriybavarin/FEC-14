@@ -1,0 +1,12 @@
+ent-RMCWeaponFL3Flamer = Тяжелый огнемет "Фламменверфер 3"
+    .desc = Тяжелый промышленный огнемет производства Weston Corporation, а позже Weston-Yamada. Часто используется для расчистки растительности в колониях фронтира. В бою встречается редко, но если уж применяется, то разрушительно.
+ent-RMCWeaponFL3FlamerPVE = { ent-RMCWeaponFL3Flamer }
+    .desc = { ent-RMCWeaponFL3Flamer.desc }
+    .suffix = PVE
+ent-RMCWeaponFL3FlamerWhiteout = { ent-RMCWeaponFL3Flamer }
+    .desc = { ent-RMCWeaponFL3Flamer.desc }
+    .suffix = Белая мгла
+ent-RMCTankFlamerFL3 = Тяжелый бак огнемета FW3
+    .desc = Тяжелый вместительный бак для тяжелого огнемета "Фламменверфер 3". На нем синий жаростойкий логотип Weston-Yamada.
+ent-RMCTankFlamerFL3Whiteout = Тяжелый бак огнемета FW3 (EX)
+    .desc = Тяжелый топливный бак со сверхгустым нафталом типа EX, липкой горючей жидкостью, которая горит так жарко, что прожигает большинство огнеупорных материалов. Для тяжелого огнемета "Фламменверфер 3". На нем синий жаростойкий логотип Weston-Yamada. Обращаться осторожно.

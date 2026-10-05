@@ -1,0 +1,12 @@
+cargo-account-cargo-name = Бюджет снабжения станции
+cargo-account-cargo-code = SUP
+cargo-account-engineering-name = Сбережения на обслуживание
+cargo-account-engineering-code = ENG
+cargo-account-medical-name = Фонд здравоохранения экипажа
+cargo-account-medical-code = MED
+cargo-account-science-name = Фонд межзвездного развития
+cargo-account-science-code = RND
+cargo-account-security-name = Оборонный резерв станции
+cargo-account-security-code = SEC
+cargo-account-service-name = Общие активы сервиса
+cargo-account-service-code = SRV

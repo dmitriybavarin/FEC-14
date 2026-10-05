@@ -1,0 +1,10 @@
+ent-RMCSkillPresetReconRifleman = Выживший стрелок разведки
+ent-RMCSkillPresetReconSpecialist = Выживший специалист разведки
+ent-RMCSkillPresetReconSmartGunOperator = Выживший смартганнер разведки
+ent-RMCSkillPresetReconSquadLeader = Выживший командир отряда разведки
+ent-RMCSkillPresetReconSupportTechnician = Выживший техник поддержки разведки
+ent-RMCSkillPresetSurvivorUNMCRifleman = Выживший морпех КМП США
+ent-RMCSkillPresetSurvivorUNMCVeteranRifleman = Выживший стрелок-ветеран КМП США
+ent-RMCSkillPresetSurvivorUNMCGroundCrew = Выживший наземный экипаж КМП США
+ent-RMCSkillPresetSurvivorUNMCVehicleCrewman = Выживший экипаж бронетехники КМП США
+ent-RMCSkillPresetSurvivorUNMCFighterPilot = Выживший пилот истребителя КМП США

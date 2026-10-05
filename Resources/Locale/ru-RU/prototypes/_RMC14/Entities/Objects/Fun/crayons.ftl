@@ -1,0 +1,16 @@
+ent-RMCCrayonBox = Коробка мелков
+    .desc = Коробка мелков всех вкусов.
+ent-RMCBaseCrayon = { ent-Crayon }
+    .desc = Цветной мелок. Пожалуйста, не ешьте его и не засовывайте в нос.
+ent-RMCCrayonRed = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }
+ent-RMCCrayonOrange = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }
+ent-RMCCrayonYellow = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }
+ent-RMCCrayonGreen = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }
+ent-RMCCrayonBlue = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }
+ent-RMCCrayonPurple = { ent-Crayon }
+    .desc = { ent-RMCBaseCrayon.desc }

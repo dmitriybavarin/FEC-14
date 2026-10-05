@@ -1,0 +1,11 @@
+custom-vote-webhook-name = Проведено голосование
+custom-vote-webhook-footer = сервер: { $serverName }, раунд: { $roundId } { $runLevel }
+custom-vote-webhook-cancelled = **Голосование отменено**
+custom-vote-webhook-option-pending = Ожидается
+custom-vote-webhook-option-cancelled = Н/Д
+votekick-webhook-name = Проведено голосование за кик
+votekick-webhook-description = Инициатор: { $initiator }; цель: { $target }
+votekick-webhook-cancelled-admin-online = **Голосование отменено: в сети есть админы**
+votekick-webhook-cancelled-admin-target = **Голосование отменено: цель является админом**
+votekick-webhook-cancelled-antag-target = **Голосование отменено: цель является антагонистом**
+votekick-ban-reason = "Голосование за кик: {$reason}"

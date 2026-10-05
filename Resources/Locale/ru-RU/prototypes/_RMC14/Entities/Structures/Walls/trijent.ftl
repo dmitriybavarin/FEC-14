@@ -1,0 +1,10 @@
+ent-RMCWallHangar = Стена ангара
+    .desc = { ent-CMWallMetal.desc }
+ent-RMCWallBunker = Стена бункера
+    .desc = { ent-RMCBaseWallReinforced.desc }
+ent-RMCWallBunkerHull = Сверхплотная стена бункера
+    .desc = Огромный кусок армированного металла, разделяющий помещения. Эта, похоже, особо укреплена.
+ent-RMCWallChigusa = Стена объекта
+    .desc = { ent-RMCBaseWallReinforced.desc }
+ent-RMCWallRockTrijent = { ent-CMWallRock }
+    .desc = { ent-CMWallRock.desc }

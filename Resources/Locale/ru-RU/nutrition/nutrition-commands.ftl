@@ -1,0 +1,10 @@
+cmd-nutrition-error-player = Эту команду может использовать только игрок.
+cmd-nutrition-error-entity = Эту команду нельзя использовать без сущности.
+cmd-nutrition-error-component = У вашей сущности нет компонента {$comp}.
+cmd-hungry-desc = вызывает голод
+cmd-hungry-help = устанавливает уровень голода на истощение
+cmd-setnutrit-desc = меняет голод и жажду
+cmd-setnutrit-help = устанавливает голод или жажду на один из встроенных порогов
+cmd-setnutrit-error-invalid-threshold = неверный {$thresholdType} `{$thresholdString}`
+cmd-thirsty-desc = вызывает жажду
+cmd-thirsty-help = устанавливает уровень жажды на обезвоживание

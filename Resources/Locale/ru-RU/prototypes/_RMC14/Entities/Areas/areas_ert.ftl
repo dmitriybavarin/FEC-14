@@ -1,0 +1,9 @@
+ent-RMCAreaERT = Станция ОБР
+    .desc = { "" }
+    .suffix = { ent-RMCAreaBase.suffix }
+ent-RMCAreaERTFax = Секторный ретранслятор связи
+    .desc = { "" }
+    .suffix = Аванпост ответчиков на факсы, внутри
+ent-RMCAreaERTFaxExterior = Секторный ретранслятор связи
+    .desc = { "" }
+    .suffix = Аванпост ответчиков на факсы, снаружи

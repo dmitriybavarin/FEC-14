@@ -5,6 +5,7 @@ using Content.Shared._RMC14.Language.Prototypes;
 using Content.Shared._RMC14.Language.Systems;
 using Robust.Client.Player;
 using Robust.Shared.GameStates;
+using Robust.Shared.Player; // FEC14
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._RMC14.Language.Systems;
@@ -23,7 +24,18 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         base.Initialize();
         SubscribeLocalEvent<LanguageComponent, AfterAutoHandleStateEvent>(OnLanguageAfterState);
         SubscribeLocalEvent<LanguageLearningComponent, AfterAutoHandleStateEvent>(OnLearningAfterState);
+        // FEC14
+        SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnLocalPlayerAttached);
+        // FEC14
     }
+
+    // FEC14
+    private void OnLocalPlayerAttached(LocalPlayerAttachedEvent args)
+    {
+        OnLanguagesChanged?.Invoke();
+        OnLanguageLearningChanged?.Invoke();
+    }
+    // FEC14
 
     private void OnLanguageAfterState(Entity<LanguageComponent> ent, ref AfterAutoHandleStateEvent args)
     {

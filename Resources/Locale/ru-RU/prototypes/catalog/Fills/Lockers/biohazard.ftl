@@ -1,0 +1,15 @@
+ent-ClosetL3Filled = { ent-ClosetL3 }
+    .desc = { ent-ClosetL3.desc }
+    .suffix = Заполнено, общий
+ent-ClosetL3VirologyFilled = { ent-ClosetL3 }
+    .desc = { ent-ClosetL3.desc }
+    .suffix = Заполнено, вирусология
+ent-ClosetL3SecurityFilled = { ent-ClosetL3 }
+    .desc = { ent-ClosetL3.desc }
+    .suffix = Заполнено, охрана
+ent-ClosetL3JanitorFilled = { ent-ClosetL3 }
+    .desc = { ent-ClosetL3.desc }
+    .suffix = Заполнено, уборщик
+ent-ClosetL3ScienceFilled = { ent-ClosetL3 }
+    .desc = { ent-ClosetL3.desc }
+    .suffix = Заполнено, наука

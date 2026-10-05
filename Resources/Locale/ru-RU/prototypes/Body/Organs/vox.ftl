@@ -1,0 +1,9 @@
+ent-OrganVoxLungs = { ent-OrganHumanLungs }
+    .desc = Синие анаэробные легкие вокса, дышат азотом. Любой газообразный кислород при вдыхании смертельно ядовит.
+    .suffix = вокс
+ent-OrganVoxStomach = Желудок
+    .desc = Желудок, пахнущий аммиаком.
+ent-OrganVoxLiver = Печень
+    .desc = Пахнет чем-то горючим.
+ent-OrganVoxHeart = Сердце
+    .desc = Странное сердце вокса.

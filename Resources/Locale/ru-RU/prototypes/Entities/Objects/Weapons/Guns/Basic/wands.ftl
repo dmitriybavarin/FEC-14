@@ -1,0 +1,17 @@
+ent-WeaponWandPolymorphBase = { ent-BaseItem }
+ent-WeaponWandPolymorphCarp = Жезл превращения в карпа
+    .desc = Когда срочно нужно филе карпа, а клоун выглядит аппетитно.
+ent-WeaponWandPolymorphMonkey = Жезл превращения в обезьяну
+    .desc = Когда нужен друг-обезьяна.
+ent-WeaponWandFireball = Жезл огненного шара
+    .desc = Большие огненные шары!
+ent-WeaponWandLocker = Жезл шкафчика
+    .desc = Запихивайте ботаников в шкафчики на расстоянии!
+ent-WeaponWandDeath = Волшебный жезл мгновенной смерти
+    .desc = Только лучшие и умнейшие из отдела НИОКР Космических волшебников создали эту красавицу.
+ent-WeaponWandPolymorphDoor = Жезл входа
+    .desc = Когда нужен путь отступления.
+ent-WeaponWandCluwne = Жезл клувнения
+    .desc = Сделайте их положение хуже, превратив в клувня.
+ent-WeaponWandPolymorphBread = Волшебный хлебный жезл
+    .desc = Превратите всех друзей в хлеб! Начальника! Врагов! Собаку! Пусть все станет хлебом!

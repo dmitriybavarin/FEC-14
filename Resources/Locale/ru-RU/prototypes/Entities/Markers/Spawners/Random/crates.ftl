@@ -1,0 +1,9 @@
+ent-CrateEmptySpawner = Спавнер пустого ящика
+ent-CrateFilledSpawner = Спавнер заполненного ящика
+    .desc = { "" }
+    .suffix = Малоценный
+ent-LootSpawnerRandomCrateEngineering = Спавнер случайного инженерного ящика
+ent-LootSpawnerRandomCrateSecurity = Спавнер случайного ящика охраны
+ent-LootSpawnerRandomLockbox = Спавнер случайного запертого ящика
+    .desc = { "" }
+    .suffix = 90%

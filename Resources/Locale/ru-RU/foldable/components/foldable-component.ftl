@@ -1,0 +1,10 @@
+foldable-fold-fail = Здесь это не сложить.
+foldable-unfold-fail = Здесь это не разложить.
+foldable-deploy-fail = Здесь это не развернуть.
+fold-verb = Сложить
+unfold-verb = Разложить
+fold-flip-verb = Перевернуть
+fold-zip-verb = Застегнуть
+fold-unzip-verb = Расстегнуть
+fold-strap-verb = Пристегнуть
+fold-unstrap-verb = Отстегнуть

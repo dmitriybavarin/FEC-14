@@ -1,0 +1,9 @@
+objective-condition-steal-title-no-owner = Украсть: {$itemName}.
+objective-condition-steal-title-alive-no-owner = Украсть: {$itemName}.
+objective-condition-steal-title = Украсть: {$itemName} (владелец: {$owner}).
+objective-condition-steal-description = Нужно украсть предмет: {$itemName}. Не попадитесь.
+objective-condition-steal-station = станция
+objective-condition-steal-Ian = корги главы персонала
+objective-condition-thief-description = {$itemName} отлично пополнит мою коллекцию!
+objective-condition-thief-animal-description = {$itemName} отлично пополнит мою коллекцию! Главное, живьем.
+objective-condition-thief-multiply-description = Нужно достать и унести с собой предметы ({$itemName}, любые): {$count} шт.

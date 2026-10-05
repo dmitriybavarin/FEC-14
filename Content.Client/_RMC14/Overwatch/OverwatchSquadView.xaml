@@ -243,7 +243,7 @@
                                                 </BoxContainer>
                                                 <BoxContainer Orientation="Vertical">
                                                     <RichTextLabel Name="CrateStatus" Access="Public"
-                                                                   Text="[color=red][bold][ NO CRATE LOADED ][/bold][/color]" />
+                                                                   Text="{Loc 'fec-xaml-color-red-bold-no-crate-loaded-bold-color'}" />
                                                     <Label Text="{Loc rmc-overwatch-console-status}" HorizontalAlignment="Center" />
                                                 </BoxContainer>
                                             </BoxContainer>

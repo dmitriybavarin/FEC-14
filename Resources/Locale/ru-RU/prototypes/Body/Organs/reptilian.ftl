@@ -1,0 +1,1 @@
+ent-OrganReptilianStomach = { ent-OrganAnimalStomach }

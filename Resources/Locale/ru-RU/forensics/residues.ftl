@@ -1,0 +1,9 @@
+forensic-residue = {CAPITALIZE(LOC($adjective))} осадок
+forensic-residue-colored = {CAPITALIZE(LOC($adjective))} {LOC($color)} осадок
+residue-unknown = неизвестный
+residue-slippery = скользкий
+residue-green = зеленый
+residue-blue = синий
+residue-red = красный
+residue-grey = серый
+residue-brown = коричневый

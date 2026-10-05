@@ -1,0 +1,1 @@
+ent-RMCOppressorTail = Хвост угнетателя

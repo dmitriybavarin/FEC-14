@@ -1,0 +1,5 @@
+ent-RMCSkillPresetSurvivorMarshalCO = Выживший командир заместителей маршала
+ent-RMCSkillPresetSurvivorMarshal = Выживший заместитель маршала
+ent-RMCSkillPresetSurvivorRiotControlTeamLeader = Выживший командир группы подавления беспорядков CMB
+ent-RMCSkillPresetSurvivorRiotControlMedicalTechnician = Медтехник подавления беспорядков CMB
+ent-RMCSkillPresetSurvivorRiotControlBreachingTechnician = Штурмовой техник подавления беспорядков CMB

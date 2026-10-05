@@ -402,5 +402,5 @@ public sealed partial class CCVars
     ///     Should the clients window show the server hostname in the title?
     /// </summary>
     public static readonly CVarDef<bool> GameHostnameInTitlebar =
-        CVarDef.Create("game.hostname_in_titlebar", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.hostname_in_titlebar", false, CVar.SERVER | CVar.REPLICATED); // FEC14
 }

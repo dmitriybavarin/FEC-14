@@ -1,0 +1,1 @@
+ent-BaseMobDiona = Урист Макрастения

@@ -1,0 +1,12 @@
+ent-CMSyringe = { ent-BaseSyringe }
+    .desc = { ent-BaseSyringe.desc }
+    .suffix = FEC14
+ent-RMCPrefilledSyringe = { ent-BaseSyringe }
+    .desc = { ent-BaseSyringe.desc }
+    .suffix = FEC14, вводит
+ent-RMCSyringeLethal = Шприц для смертельной инъекции
+    .desc = Шприц для смертельных инъекций.
+    .suffix = { ent-CMSyringe.suffix }
+ent-RMCSyringeLethalPrefilled = { ent-RMCSyringeLethal }
+    .desc = { ent-RMCSyringeLethal.desc }
+    .suffix = FEC14, заполненный

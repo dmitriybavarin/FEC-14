@@ -1,0 +1,8 @@
+cmd-addaction-desc = Добавляет действие целевой сущности. Действие не сработает, если цели нужен дополнительный компонент (например, для Пожирания дракона).
+cmd-addaction-help = addaction <EntityUid> <ActionPrototype>
+cmd-addaction-invalid-args = Ожидается ровно 2 аргумента.
+cmd-addaction-actions-not-found = Целевая сущность не может использовать действия.
+cmd-addaction-action-not-found = Не найден подходящий прототип действия {$action}.
+cmd-addaction-adding-failed = Не удалось добавить действие.
+cmd-addaction-player-completion = <EntityUid>
+cmd-addaction-action-completion = <ActionProto>

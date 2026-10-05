@@ -1,0 +1,12 @@
+ent-ActionRevertPolymorph = Вернуться
+    .desc = Вернуться в исходный облик.
+ent-ActionPolymorphWizardSpider = Превращение в паука
+    .desc = Превращает вас в паука.
+ent-ActionPolymorphWizardRod = Облик стержня
+    .desc = ДЗЫНЬ!
+ent-ActionPolymorphJaunt = Эфирное странствие
+    .desc = Раствориться в эфирном плане, чтобы быстро скрыться!
+ent-ActionPolymorphJauntII = Эфирное странствие II
+    .desc = Раствориться в эфирном плане, чтобы скрыться еще быстрее!
+ent-ActionPolymorphJauntIII = Эфирное странствие III
+    .desc = Вы вообще еще материальны?

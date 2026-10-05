@@ -1,0 +1,9 @@
+addtag-command-description = Добавляет тег указанной сущности
+addtag-command-help = Использование: addtag <uid сущности> <тег>
+addtag-command-success = Тег {$tag} добавлен сущности {$target}.
+addtag-command-fail = Не удалось добавить тег {$tag} сущности {$target}.
+removetag-command-description = Убирает тег у указанной сущности
+removetag-command-help = Использование: removetag <uid сущности> <тег>
+removetag-command-success = Тег {$tag} убран у сущности {$target}.
+removetag-command-fail = Не удалось убрать тег {$tag} у сущности {$target}.
+tag-command-arg-tag = Тег

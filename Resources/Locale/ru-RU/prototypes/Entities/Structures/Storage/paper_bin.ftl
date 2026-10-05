@@ -1,0 +1,12 @@
+ent-PaperBin = Лоток для бумаги
+    .desc = Какие тайны лежат на дне этой бесконечной стопки?
+    .suffix = Пустая
+ent-PaperBin5 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 5
+ent-PaperBin10 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 10
+ent-PaperBin20 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 20

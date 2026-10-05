@@ -1,0 +1,9 @@
+ent-FultonBeacon = Маяк фултона
+    .desc = Маяк для приема эвакуации фултоном.
+ent-Fulton = Фултон
+    .desc = Для эвакуации контейнеров, предметов или принудительной вербовки людей на вашу базу.
+    .suffix = Полный
+ent-Fulton1 = Фултон
+    .desc = { ent-Fulton.desc }
+    .suffix = Один
+ent-FultonEffect = Эффект фултона

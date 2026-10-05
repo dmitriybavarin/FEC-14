@@ -1,0 +1,11 @@
+damage-command-description = Наносит или убирает урон сущности.
+damage-command-help = Использование: {$command} <тип/группа> <количество> [ignoreResistances] [uid]
+damage-command-arg-type = <тип или группа урона>
+damage-command-arg-quantity = [количество]
+damage-command-arg-target = [euid цели]
+damage-command-error-type = {$arg} не является допустимой группой или типом урона.
+damage-command-error-euid = {$arg} не является допустимым uid сущности.
+damage-command-error-quantity = {$arg} не является допустимым количеством.
+damage-command-error-bool = {$arg} не является допустимым логическим значением.
+damage-command-error-player = К сессии не привязана сущность. Укажите uid цели
+damage-command-error-args = Неверное число аргументов

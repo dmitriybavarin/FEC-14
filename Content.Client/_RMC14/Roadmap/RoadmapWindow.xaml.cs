@@ -13,7 +13,7 @@ public sealed partial class RoadmapWindow : DefaultWindow
         RobustXamlLoader.Load(this);
         var year = DateTime.UtcNow.Year;
         var msg = new FormattedMessage();
-        msg.AddMarkupOrThrow($"[font size=24]ROADMAP [bold]{year}[/bold][/font]");
+        msg.AddMarkupOrThrow(Loc.GetString("fec-roadmap-rmc-header", ("year", year))); // FEC14
         Header.SetMessage(msg);
     }
 }

@@ -1,0 +1,9 @@
+ent-RMCMatchbox = Спичечный коробок
+    .desc = Маленький коробок "космостойких" спичек премиум-класса.
+ent-RMCMatchboxFull = Спичечный коробок
+    .desc = { ent-RMCMatchbox.desc }
+    .suffix = Полный
+ent-RMCMatchstick = Спичка
+    .desc = Простая спичка для прикуривания.
+ent-RMCMatchstickPaper = Бумажная спичка
+    .desc = Простая спичка для прикуривания.

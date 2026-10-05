@@ -1,0 +1,1 @@
+ent-BoxBase = { ent-BaseStorageItem }

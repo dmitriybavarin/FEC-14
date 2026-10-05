@@ -1,0 +1,11 @@
+ent-PartReptilian = Часть тела ящера
+ent-TorsoReptilian = Торс ящера
+ent-HeadReptilian = Голова ящера
+ent-LeftArmReptilian = Левая рука ящера
+ent-RightArmReptilian = Правая рука ящера
+ent-LeftHandReptilian = Левая кисть ящера
+ent-RightHandReptilian = Правая кисть ящера
+ent-LeftLegReptilian = Левая нога ящера
+ent-RightLegReptilian = Правая нога ящера
+ent-LeftFootReptilian = Левая ступня ящера
+ent-RightFootReptilian = Правая ступня ящера

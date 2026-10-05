@@ -1,0 +1,11 @@
+ent-RMCWeaponRevolver38Magnum = Револьвер .38 магнум
+    .desc = Поджарый револьвер .38. Вечная классика от древности до будущего. Эта модель известна жуткой неточностью, зато крайне смертоносна.
+ent-RMCWeaponRevolver38Empty = { ent-RMCWeaponRevolver38Magnum }
+    .desc = { ent-RMCWeaponRevolver38Magnum.desc }
+    .suffix = Пустая
+ent-RMCBaseSpeedLoader38 = Скорозарядник (.38)
+ent-RMCSpeedLoader38 = Скорозарядник (.38)
+    .desc = Скорозарядник для револьвера.
+ent-RMCCartridgeRevolver38 = Патрон (.38)
+ent-RMCBulletRevolver38 = Пуля (.38)
+    .desc = { ent-BaseBullet.desc }

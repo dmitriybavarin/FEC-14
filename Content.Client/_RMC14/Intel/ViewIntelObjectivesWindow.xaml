@@ -110,10 +110,10 @@
                     <ui:BlueHorizontalSeparator />
                     <BoxContainer Orientation="Horizontal" Margin="0 2 0 4" SeparationOverride="4">
                         <LineEdit Name="CluesSearchBar" Access="Public"
-                                  PlaceHolder="Search clues..."
+                                  PlaceHolder="{Loc 'fec-xaml-search-clues'}"
                                   HorizontalExpand="True" />
                         <Button Name="HideAreasButton" Access="Public"
-                                Text="Hide Areas"
+                                Text="{Loc 'fec-xaml-hide-areas'}"
                                 MinWidth="90" />
                     </BoxContainer>
                     <TabContainer Name="CluesContainer" Access="Public" VerticalExpand="True" />

@@ -1,0 +1,13 @@
+ent-RMCSkillPresetSurvivor = Выживший
+ent-RMCSkillPresetSurvivorResearcher = Выживший исследователь
+ent-RMCSkillPresetSurvivorDoctor = Выживший врач
+ent-RMCSkillPresetSurvivorEngineer = Выживший инженер
+ent-RMCSkillPresetSurvivorChaplain = Выживший капеллан
+ent-RMCSkillPresetSurvivorGangLeader = Выживший главарь банды
+ent-RMCSkillPresetSurvivorPrisoner = Выживший заключенный
+ent-RMCSkillPresetSurvivorTrucker = Выживший дальнобойщик
+ent-RMCSkillPresetSurvivorMiner = Выживший шахтер
+ent-RMCSkillPresetSurvivorPizzaGalaxyDriver = Выживший доставщик Pizza Galaxy
+ent-RMCSkillPresetSurvivorCommercialPilot = Выживший гражданский пилот
+ent-RMCSkillPresetSurvivorParamedic = Выживший парамедик
+ent-RMCSkillPresetSurvivorFireProtectionSpecialist = Выживший специалист пожарной охраны

@@ -1,0 +1,10 @@
+ent-RMCPelletHeavyShotgunBuckshot = Тяжелая картечь
+    .desc = { ent-BaseBullet.desc }
+ent-RMCPelletHeavyShotgunSlug = Тяжелая пуля
+    .desc = { ent-BaseBullet.desc }
+ent-RMCPelletHeavyShotgunBeanbag = Тяжелая травматическая пуля
+    .desc = { ent-BaseBullet.desc }
+ent-RMCPelletHeavyShotgunFlechette = Тяжелый патрон с флешеттами
+    .desc = { ent-BaseBullet.desc }
+ent-RMCPelletHeavyShotgunIncendiaryBuckshot = Картечный патрон "Дыхание дракона"
+    .desc = { ent-BaseBullet.desc }

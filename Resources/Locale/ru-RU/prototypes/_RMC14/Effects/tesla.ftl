@@ -1,0 +1,1 @@
+ent-EffectTeslaBeam = Электрический луч

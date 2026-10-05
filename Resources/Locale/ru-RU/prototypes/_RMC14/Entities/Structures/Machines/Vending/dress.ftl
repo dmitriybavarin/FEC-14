@@ -1,0 +1,10 @@
+ent-RMCAutomatedPersonalUniformCloset = Автоматический шкаф с личной формой
+    .desc = Автоматический шкаф, подключенный к огромному складу штатных вариантов парадной формы.
+ent-RMCUniformCaseDressEnlisted = Кейс парадной формы рядового
+    .desc = Кейс с парадной формой рядового состава.
+ent-RMCUniformCaseDressNCO = Кейс парадной формы сержанта
+    .desc = Кейс с парадной формой сержантского состава.
+ent-RMCUniformCaseDressOfficer = Кейс парадной формы офицера
+    .desc = Кейс с парадной формой офицера.
+ent-RMCUniformCaseService = Кейс служебной формы
+    .desc = Кейс со штатной служебной формой.

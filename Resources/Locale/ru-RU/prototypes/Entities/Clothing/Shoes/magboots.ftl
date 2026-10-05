@@ -1,0 +1,14 @@
+ent-ClothingShoesBootsMagBase = Магнитные ботинки
+    .desc = Магнитные ботинки, которые часто используют при выходах в открытый космос, чтобы надежно держаться за корабль.
+ent-ClothingShoesBootsMag = { ent-ClothingShoesBootsMagBase }
+    .desc = { ent-ClothingShoesBootsMagBase.desc }
+ent-ClothingShoesBootsMagAdv = Продвинутые магнитные ботинки
+    .desc = Новейшие магнитные ботинки, не замедляющие владельца.
+ent-ClothingShoesBootsMagSci = { ent-ClothingShoesBootsMagBase }
+    .desc = { ent-ClothingShoesBootsMagBase.desc }
+ent-ClothingShoesBootsMagBlinding = Магнитные ботинки ослепительной скорости
+    .desc = На таком красавце, как вы, они будут смотреться отлично.
+ent-ClothingShoesBootsMagSyndie = Кроваво-красные магнитные ботинки
+    .desc = Магнитные ботинки, созданные обратной разработкой, с сильным притяжением и встроенными двигателями. Вмещают 0,75 л газа.
+ent-ActionToggleMagboots = Переключить магнитные ботинки
+    .desc = Включает и выключает магнитные ботинки.

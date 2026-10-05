@@ -1,0 +1,13 @@
+comp-kitchen-spike-deny-collect = На крюке уже что-то висит, сначала срежьте все мясо!
+comp-kitchen-spike-deny-butcher = Это нельзя разделать на крюке.
+comp-kitchen-spike-deny-butcher-knife = Это нельзя разделать на крюке, нужно разделать ножом.
+comp-kitchen-spike-deny-not-dead = Это нельзя разделать, оно еще живое!
+comp-kitchen-spike-begin-hook-victim = { CAPITALIZE($user) } начинает тащить вас на крюк!
+comp-kitchen-spike-begin-hook-self = Вы начинаете затаскивать себя на крюк!
+comp-kitchen-spike-kill = { CAPITALIZE($user) } насаживает жертву ({ $victim }) на крюк, мгновенно убивая!
+comp-kitchen-spike-suicide-other = { CAPITALIZE($victim) } бросается на крюк!
+comp-kitchen-spike-suicide-self = Вы бросаетесь на крюк!
+comp-kitchen-spike-knife-needed = Для этого нужен нож.
+comp-kitchen-spike-remove-meat = Вы срезаете немного мяса.
+comp-kitchen-spike-remove-meat-last = Вы срезаете последний кусок мяса!
+comp-kitchen-spike-meat-name = { $name } ({ $victim })

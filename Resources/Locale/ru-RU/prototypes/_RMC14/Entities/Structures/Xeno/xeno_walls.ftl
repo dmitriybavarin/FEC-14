@@ -1,0 +1,33 @@
+ent-WallXenoResin = Смоляная стена
+    .desc = Странная слизь, застывшая в стену.
+ent-WallXenoResinImpenetrable = Непробиваемая смоляная стена
+    .desc = Совершенно неуязвима. Со временем должна ослабнуть и стать уязвимой.
+    .suffix = Неуязвимая, 25 минут
+ent-DoorXenoResinImpenetrable = Непробиваемая смоляная дверь
+    .desc = Совершенно неуязвима. Со временем должна ослабнуть и стать уязвимой.
+    .suffix = Неуязвимая, 25 минут
+ent-RMCBlockerMarine = Блокиратор морпехов
+    .desc = { "" }
+    .suffix = НЕ РАЗМЕЩАТЬ НА КАРТЕ
+ent-WallXenoResinThick = Толстая смоляная стена
+    .desc = Странная слизь, застывшая в толстую стену.
+ent-BaseMembraneXeno = Смоляная мембрана
+    .desc = { ent-BaseStructureWall.desc }
+ent-WallXenoMembrane = Смоляная мембрана
+    .desc = Странная слизь, достаточно прозрачная, чтобы пропускать свет.
+ent-WallXenoMembraneThick = Толстая смоляная мембрана
+    .desc = Странная густая слизь, прозрачная ровно настолько, чтобы пропускать свет.
+ent-WallXenoResinWeak = Слабая смоляная стена
+    .desc = Странная слизь, застывшая в стену. Уже выглядит так, будто вот-вот рухнет...
+ent-WallXenoResinWeedbound = Смоляная стена на смоле
+    .desc = Странная слизь, застывшая в стену, привязанную к смоле.
+ent-WallXenoResinThickWeedbound = Толстая смоляная стена на смоле
+    .desc = Странная слизь, застывшая в толстую стену, привязанную к смоле.
+ent-BaseWallXenoResinReflective = Отражающая смоляная стена
+    .desc = Странная отвердевшая слизь, застывшая в ровную гладкую стену.
+ent-WallXenoResinReflective = { ent-BaseWallXenoResinReflective }
+    .desc = { ent-BaseWallXenoResinReflective.desc }
+ent-WallXenoResinReflectiveUnstable = Ослабленная отражающая стена
+    .desc = 
+        Странная слизь с необычными твердыми осколками, застывшая в стену.
+        Выглядит так, будто рухнет в любой момент.

@@ -2,6 +2,7 @@
   parent: CMJobXenoBase
   id: CMXenoSelectableXeno
   name: cm-job-name-selectable-xenonid
+  description: fec-job-description-xeno
   playTimeTracker: CMJobSelectableXeno
   icon: "RMCJobIconXeno"
   hidden: false

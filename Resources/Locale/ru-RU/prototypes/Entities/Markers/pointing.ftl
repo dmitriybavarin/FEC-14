@@ -1,0 +1,1 @@
+ent-PointingArrow = Указующая стрелка

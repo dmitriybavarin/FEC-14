@@ -1,0 +1,12 @@
+ent-FoodMushroomPlump = Пухлошлемник
+    .desc = Plumus Hellmus: да ЗАТКНИТЕСЬ уже про эти ЧЕРТОВЫ грибы! ШЕВЕЛИТЕСЬ, морпехи!
+ent-FoodPeanut = Арахис
+    .desc = Орешки!
+ent-FoodWhiteBeet = Белая свекла
+    .desc = Белую свеклу не перебьешь.
+ent-FoodSunflower = Подсолнух
+    .desc = Красиво! Кое-кто может забить вас до смерти, если вы их потопчете.
+ent-FoodGrass = Пучок травы
+    .desc = Давай, потрогай траву.
+ent-RMCFoodMango = Манго
+    .desc = МАНГО МАНГО МАНГО

@@ -1,0 +1,16 @@
+ent-RMCHeadsetIcons = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsWeYa = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsUNMC = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsSPP = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsTSE = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsPara = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsCLF = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }
+ent-RMCHeadsetIconsCMB = { ent-CMHeadset }
+    .desc = { ent-CMHeadset.desc }

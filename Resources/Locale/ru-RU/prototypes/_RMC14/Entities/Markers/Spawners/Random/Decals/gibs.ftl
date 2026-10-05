@@ -1,0 +1,9 @@
+ent-RMCDecalSpawnerGibsBase = { ent-DecalSpawnerBase }
+    .desc = { "" }
+    .suffix = FEC14, ошметки
+ent-RMCDecalSpawnerGibsDrone = Спавнер ошметков
+    .desc = { "" }
+    .suffix = FEC14, трутень
+ent-RMCDecalSpawnerGibsLesserDrone = Спавнер ошметков
+    .desc = { "" }
+    .suffix = FEC14, малый трутень

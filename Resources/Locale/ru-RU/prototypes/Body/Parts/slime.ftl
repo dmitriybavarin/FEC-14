@@ -1,0 +1,11 @@
+ent-PartSlime = Часть тела слайма
+ent-TorsoSlime = Торс слайма
+ent-HeadSlime = Голова слайма
+ent-LeftArmSlime = Левая рука слайма
+ent-RightArmSlime = Правая рука слайма
+ent-LeftHandSlime = Левая кисть слайма
+ent-RightHandSlime = Правая кисть слайма
+ent-LeftLegSlime = Левая нога слайма
+ent-RightLegSlime = Правая нога слайма
+ent-LeftFootSlime = Левая ступня слайма
+ent-RightFootSlime = Правая ступня слайма

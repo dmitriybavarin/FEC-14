@@ -1,0 +1,13 @@
+ent-LandMineKickUnarmed = Мина-пинок
+ent-LandMineKick = { ent-LandMineKickUnarmed }
+    .desc = { "" }
+    .suffix = Взведенная
+ent-LandMineModularUnarmed = Модульная мина
+    .desc = Эта красотка может таить любую опасность. Или велосипедный гудок.
+ent-LandMineModular = { ent-LandMineModularUnarmed }
+    .desc = { ent-LandMineModularUnarmed.desc }
+    .suffix = Взведенная
+ent-LandMineExplosiveUnarmed = Взрывная мина
+ent-LandMineExplosive = { ent-LandMineExplosiveUnarmed }
+    .desc = { "" }
+    .suffix = Взведенная

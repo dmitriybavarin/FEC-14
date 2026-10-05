@@ -5,6 +5,7 @@
     "tasks": [
         {
             "label": "build",
+            "hide": true,
             "command": "dotnet",
             "type": "shell",
             "args": [
@@ -14,7 +15,7 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "presentation": {
                 "reveal": "silent"
@@ -23,6 +24,7 @@
         },
         {
             "label": "build-yaml-linter",
+            "hide": true,
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -35,6 +37,7 @@
         },
         {
             "label": "test",
+            "hide": true,
             "command": "dotnet",
             "type": "shell",
             "args": [
@@ -56,6 +59,7 @@
         },
         {
             "label": "integration-test",
+            "hide": true,
             "command": "dotnet",
             "type": "shell",
             "args": [
@@ -76,6 +80,474 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "FEC: Собрать и запустить сервер + клиент (DEV)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "FEC: Собрать всё (DEV)",
+                "FEC: _сервер и клиент без сборки (DEV)"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: Собрать всё (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "SpaceStation14.sln",
+                "--configuration",
+                "Debug",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Запустить сервер (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server",
+                "--configuration",
+                "Debug",
+                "--",
+                "--config-file",
+                "${workspaceFolder}/.CONFIG/server_config.toml"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Запустить клиент (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client",
+                "--configuration",
+                "Debug"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Юнит-тесты",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "--configuration",
+                "DebugOpt",
+                "Content.Tests/Content.Tests.csproj",
+                "--",
+                "NUnit.ConsoleOut=0"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "FEC: Интеграционные тесты",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "--configuration",
+                "DebugOpt",
+                "Content.IntegrationTests/Content.IntegrationTests.csproj",
+                "--",
+                "NUnit.ConsoleOut=0",
+                "NUnit.MapWarningTo=Failed"
+            ],
+            "group": "test",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "FEC: YAML-линтер",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.YAMLLinter/Content.YAMLLinter.csproj",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: Собрать и запустить сервер + клиент (Release)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "FEC: Собрать всё (Release)",
+                "FEC: _сервер и клиент без сборки (Release)"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: Собрать всё (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "SpaceStation14.sln",
+                "--configuration",
+                "Release",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Запустить сервер (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server",
+                "--configuration",
+                "Release",
+                "--",
+                "--config-file",
+                "${workspaceFolder}/.CONFIG/server_config.toml"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Запустить клиент (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client",
+                "--configuration",
+                "Release"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Упаковать сервер (Release, win-x64)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Packaging",
+                "server",
+                "--hybrid-acz",
+                "--platform",
+                "win-x64"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Собрать сервер (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Content.Server/Content.Server.csproj",
+                "--configuration",
+                "Debug",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Собрать клиент (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Content.Client/Content.Client.csproj",
+                "--configuration",
+                "Debug",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Собрать сервер (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Content.Server/Content.Server.csproj",
+                "--configuration",
+                "Release",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Собрать клиент (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Content.Client/Content.Client.csproj",
+                "--configuration",
+                "Release",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign;NoSummary",
+                "/m"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "FEC: Запустить сервер (Tools)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server",
+                "--configuration",
+                "Tools",
+                "--",
+                "--config-file",
+                "${workspaceFolder}/.CONFIG/server_config.toml"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Запустить клиент (Tools)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client",
+                "--configuration",
+                "Tools"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FEC: Запустить бота (BOT)",
+            "type": "process",
+            "command": "${workspaceFolder}/.BOT/run.bat",
+            "options": {"cwd": "${workspaceFolder}/.BOT"},
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "dedicated"}
+        },
+        {
+            "label": "FEC: Создать папку .CONFIG",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/init_cfg.py"],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: Проверка безопасности (код, текстуры, аудио)",
+            "type": "process",
+            "command": "${workspaceFolder}/../.INSTRUCTIONS/I-FEC14/tools/.venv/Scripts/python.exe",
+            "args": ["${workspaceFolder}/../.INSTRUCTIONS/I-FEC14/tools/sec/scan_all.py", "--changed", "upstream/master"],
+            "options": {"env": {"PYTHONIOENCODING": "utf-8", "FEC14_REPO": "${workspaceFolder}"}},
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "dedicated", "clear": true}
+        },
+        {
+            "label": "FEC: Обновить сабмодули (RUN_THIS.py)",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "RUN_THIS.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: Очистить сборку",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "clean",
+                "SpaceStation14.sln"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: _сервер без сборки (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server",
+                "--configuration",
+                "Debug",
+                "--no-build",
+                "--",
+                "--config-file",
+                "${workspaceFolder}/.CONFIG/server_config.toml"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "hide": true
+        },
+        {
+            "label": "FEC: _клиент без сборки (DEV)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client",
+                "--configuration",
+                "Debug",
+                "--no-build"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "hide": true
+        },
+        {
+            "label": "FEC: _сервер и клиент без сборки (DEV)",
+            "hide": true,
+            "dependsOn": [
+                "FEC: _сервер без сборки (DEV)",
+                "FEC: _клиент без сборки (DEV)"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "FEC: _сервер без сборки (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server",
+                "--configuration",
+                "Release",
+                "--no-build",
+                "--",
+                "--config-file",
+                "${workspaceFolder}/.CONFIG/server_config.toml"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "hide": true
+        },
+        {
+            "label": "FEC: _клиент без сборки (Release)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client",
+                "--configuration",
+                "Release",
+                "--no-build"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "hide": true
+        },
+        {
+            "label": "FEC: _сервер и клиент без сборки (Release)",
+            "hide": true,
+            "dependsOn": [
+                "FEC: _сервер без сборки (Release)",
+                "FEC: _клиент без сборки (Release)"
+            ],
+            "problemMatcher": []
         }
     ]
 }

@@ -1,0 +1,12 @@
+ent-RMCNewIconGuidebookPurple = Фиолетовое "новое"
+    .desc = { "" }
+    .suffix = (Объект гайдбука)
+ent-RMCNewIconGuidebookRed = Красное "новое"
+    .desc = { "" }
+    .suffix = (Объект гайдбука)
+ent-RMCNewIconGuidebookYellow = Желтое "новое"
+    .desc = { "" }
+    .suffix = (Объект гайдбука)
+ent-RMCNewIconGuidebookGreen = Зеленое "новое"
+    .desc = { "" }
+    .suffix = (Объект гайдбука)

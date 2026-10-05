@@ -1,0 +1,11 @@
+ent-PartMoth = Часть тела ниана
+ent-TorsoMoth = Торс ниана
+ent-HeadMoth = Голова ниана
+ent-LeftArmMoth = Левая рука ниана
+ent-RightArmMoth = Правая рука ниана
+ent-LeftHandMoth = Левая кисть ниана
+ent-RightHandMoth = Правая кисть ниана
+ent-LeftLegMoth = Левая нога ниана
+ent-RightLegMoth = Правая нога ниана
+ent-LeftFootMoth = Левая ступня ниана
+ent-RightFootMoth = Правая ступня ниана

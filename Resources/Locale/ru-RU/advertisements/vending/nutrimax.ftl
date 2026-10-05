@@ -1,0 +1,9 @@
+advertisement-nutrimax-1 = Мы любим растения!
+advertisement-nutrimax-2 = Не хотите немного?
+advertisement-nutrimax-3 = Самые зеленые руки на свете.
+advertisement-nutrimax-4 = Мы любим большие растения.
+advertisement-nutrimax-5 = Мягкая почва...
+advertisement-nutrimax-6 = Теперь с ведрами!
+advertisement-nutrimax-7 = Чем больше растение, тем лучше!
+thankyou-nutrimax-1 = За посадку!
+thankyou-nutrimax-2 = Покопайтесь в земле!

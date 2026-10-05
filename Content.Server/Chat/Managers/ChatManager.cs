@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Content.Server._FEC14.Chat; // FEC14
 using Content.Server._RMC14.Admin;
 using Content.Server._RMC14.Discord;
 using Content.Server._RMC14.LinkAccount;
@@ -313,6 +314,10 @@ internal sealed partial class ChatManager : IChatManager
             var color = _linkAccount.GetPatronOOCHexColor(player.Channel.UserId);
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", $"{color}"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         }
+        // FEC14
+        if (FECOocColors.TryGetColor(_configurationManager, player.UserId.UserId, out var fecColor))
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", fecColor), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        // FEC14
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
         ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride, author: player.UserId);

@@ -1,0 +1,15 @@
+ent-CableHV = Высоковольтный кабель
+    .desc = Оранжевый высоковольтный кабель питания.
+ent-CableHVUncuttable = { ent-CableHV }
+    .desc = { ent-CableHV.desc }
+    .suffix = Неразрезаемый
+ent-CableMV = Средневольтный кабель
+    .desc = Средневольтный кабель питания.
+ent-CableMVUncuttable = { ent-CableMV }
+    .desc = { ent-CableMV.desc }
+    .suffix = Неразрезаемый
+ent-CableApcExtension = Низковольтный кабель
+    .desc = Кабель для подключения машин к ЛКП.
+ent-CableApcExtensionUncuttable = { ent-CableApcExtension }
+    .desc = { ent-CableApcExtension.desc }
+    .suffix = Неразрезаемый

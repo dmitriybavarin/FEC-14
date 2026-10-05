@@ -1,0 +1,15 @@
+ent-Window = Окно
+    .desc = Не заляпайте стекло внизу.
+ent-TintedWindow = Тонированное окно
+    .desc = { ent-Window.desc }
+ent-WindowRCDResistant = { ent-Window }
+    .desc = { ent-Window.desc }
+ent-WindowDirectional = Направленное окно
+    .desc = Не заляпайте стекло внизу.
+ent-WindowDirectionalRCDResistant = { ent-WindowDirectional }
+    .desc = { ent-WindowDirectional.desc }
+ent-WindowFrostedDirectional = Направленное матовое окно
+    .desc = Не заляпайте стекло внизу.
+ent-WindowDiagonal = { ent-Window }
+    .desc = { ent-Window.desc }
+    .suffix = Диагональная

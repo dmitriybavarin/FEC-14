@@ -1,0 +1,10 @@
+ent-RMCSpawnerRandomTools = Спавнер случайных инструментов
+    .desc = Случайный инструмент.
+ent-RMCSpawnerRandomToolbox = Спавнер случайного ящика для инструментов
+    .desc = Случайный ящик для инструментов.
+ent-RMCSpawnerRandomPowercell = Спавнер случайной батареи
+    .desc = Случайная батарея.
+ent-RMCSpawnerBombSupply = Взрывные припасы
+    .desc = Случайные взрывные припасы
+ent-RMCSpawnerRandomTechSupply = Спавнер случайных технических припасов
+    .desc = Случайные технические припасы.

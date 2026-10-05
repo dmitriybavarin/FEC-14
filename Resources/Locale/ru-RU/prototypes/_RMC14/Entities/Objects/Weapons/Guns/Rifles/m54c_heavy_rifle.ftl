@@ -1,0 +1,12 @@
+ent-RMCWeaponRifleM54CE2 = Тяжелая штурмовая винтовка M54CE2
+    .desc = Крупное оружие поддержки отделения, способное вести продолжительный огонь на подавление с упора. Неустойчиво и менее точно, но его можно таскать и стрелять, держа двумя руками.
+ent-CMMagazineRifleM54CE2 = Магазин M54CE2 (10x24 мм)
+ent-CMMagazineRifleM54CE2HT = Магазин HT M54CE2 (10x24 мм)
+ent-CMCartridgeRifle10x24mmHT = Патрон (10x24 мм)
+    .desc = Патрон HT 10x24 мм. Подходит к магазинам 10x24 мм с голографическим наведением.
+ent-BulletRifle10x24mmHT = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }
+ent-CMMagazineRifleM54CE2AP = Бронебойный магазин M54CE2 (10x24 мм)
+ent-RMCMagazineRifleM54CE2HEAP = Магазин HEAP M54CE2 (10x24 мм)
+ent-RMCMagazineRifleM54CE2WP = Стенобойный магазин M54CE2 (10x24 мм)
+ent-RMCMagazineRifleM54CE2Incendiary = Зажигательный магазин M54CE2 (10x24 мм)

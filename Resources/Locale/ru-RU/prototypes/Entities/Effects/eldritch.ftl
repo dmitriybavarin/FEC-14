@@ -1,0 +1,1 @@
+ent-EffectVoidBlink = Вспышка пустоты

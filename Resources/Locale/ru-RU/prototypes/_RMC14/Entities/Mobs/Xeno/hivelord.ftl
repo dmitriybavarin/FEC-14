@@ -1,0 +1,10 @@
+ent-CMXenoHivelordBase = Владыка улья
+    .desc = Строитель очень больших ульев.
+ent-CMXenoHivelord = { ent-CMXenoHivelordBase }
+    .desc = { ent-CMXenoHivelordBase.desc }
+ent-CMXenoHivelordResinWhisperer = { ent-CMXenoHivelordBase }
+    .desc = { ent-CMXenoHivelordBase.desc }
+    .suffix = Шептун смолы
+ent-CMXenoHivelordDesigner = { ent-CMXenoHivelordBase }
+    .desc = { ent-CMXenoHivelordBase.desc }
+    .suffix = Проектировщик

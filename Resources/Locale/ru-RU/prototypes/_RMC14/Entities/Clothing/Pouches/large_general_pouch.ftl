@@ -1,0 +1,14 @@
+ent-RMCPouchGeneralLarge = Большой универсальный подсумок
+    .desc = Универсальный подсумок для предметов разного размера, вмещает больше.
+ent-RMCPouchGeneralLargeFilledSmartGunDrums = { ent-RMCPouchGeneralLarge }
+    .desc = { ent-RMCPouchGeneralLarge.desc }
+    .suffix = Заполненный, барабаны смартгана
+ent-RMCPouchGeneralLargeFilledRCM = { ent-RMCPouchGeneralLarge }
+    .desc = { ent-RMCPouchGeneralLarge.desc }
+    .suffix = RCM, заполненный
+ent-RMCPouchGeneralLargeFilledSPPCommand = { ent-RMCPouchGeneralLarge }
+    .desc = { ent-RMCPouchGeneralLarge.desc }
+    .suffix = Заполненный, SPP
+ent-RMCPouchGeneralLargeFilledParaCO = { ent-RMCPouchGeneralLarge }
+    .desc = { ent-RMCPouchGeneralLarge.desc }
+    .suffix = Выживший, парамарин, заполненный, командир

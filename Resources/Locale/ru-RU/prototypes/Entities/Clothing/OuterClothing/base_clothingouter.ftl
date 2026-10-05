@@ -1,0 +1,12 @@
+ent-ClothingOuterBase = { ent-BaseItem }
+ent-ClothingOuterBaseLarge = { ent-BaseItem }
+ent-ClothingOuterStorageBase = { ent-BaseItem }
+ent-ClothingOuterStorageFoldableBase = { ent-BaseFoldable }
+ent-ClothingOuterStorageFoldableBaseOpened = { ent-BaseFoldable }
+    .desc = { "" }
+    .suffix = открытое
+ent-ClothingOuterStorageToggleableBase = { ent-BaseItem }
+ent-ClothingOuterHardsuitBase = Базовый скафандр
+ent-ClothingOuterEVASuitBase = Базовый скафандр EVA
+ent-ClothingOuterBaseToggleable = Толстовка с капюшоном
+ent-ClothingOuterBaseMedium = { ent-BaseItem }

@@ -1,3 +1,4 @@
+using Content.Shared._FEC14.Species; // FEC14
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared._RMC14.Marines.Roles.Ranks;
@@ -29,7 +30,7 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
+        private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-zА-Яа-яЁё0-9 '\-]"); // FEC14
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         /// <summary>
@@ -277,7 +278,7 @@ namespace Content.Shared.Preferences
 
             var species = random.Pick(prototypeManager
                 .EnumeratePrototypes<SpeciesPrototype>()
-                .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+                .Where(x => FECSpeciesRestriction.IsAllowed(x) && (ignoredSpecies == null || !ignoredSpecies.Contains(x.ID))) // FEC14
                 .ToArray()
             ).ID;
 
@@ -584,7 +585,7 @@ namespace Content.Shared.Preferences
             var prototypeManager = collection.Resolve<IPrototypeManager>();
             var compFactory = collection.Resolve<IComponentFactory>();
 
-            if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
+            if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || !FECSpeciesRestriction.IsAllowed(speciesPrototype, configManager)) // FEC14
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);

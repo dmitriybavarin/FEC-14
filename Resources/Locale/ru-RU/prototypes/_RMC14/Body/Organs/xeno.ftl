@@ -1,0 +1,10 @@
+ent-RMCOrganXenoHeart = Кислотное сердце
+    .desc = Кислотное сердце, извлеченное из ксеноморфа. Время от времени брызжет каплями кислоты.
+ent-RMCOrganXenoHeartT1 = { ent-RMCOrganXenoHeart }
+    .desc = { ent-RMCOrganXenoHeart.desc }
+ent-RMCOrganXenoHeartT2 = { ent-RMCOrganXenoHeart }
+    .desc = { ent-RMCOrganXenoHeart.desc }
+ent-RMCOrganXenoHeartT3 = { ent-RMCOrganXenoHeart }
+    .desc = { ent-RMCOrganXenoHeart.desc }
+ent-RMCOrganXenoHeartTQ = { ent-RMCOrganXenoHeart }
+    .desc = { ent-RMCOrganXenoHeart.desc }

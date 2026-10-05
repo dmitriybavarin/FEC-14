@@ -1,0 +1,15 @@
+ent-RMCPlanetLV624 = LV-624 "Лазарус-Лэндинг"
+ent-RMCPlanetSolaris = Солярис-Ридж
+ent-RMCPlanetShiva = Снежный шар Шивы
+ent-RMCPlanetFiorina = Научный корпус "Фиорина"
+ent-RMCPlanetTrijent = Плотина "Триджент"
+ent-RMCPlanetVaradero = Военно-морская база "Нью-Варадеро"
+ent-RMCPlanetKutjevo = НПЗ Кутьево
+ent-RMCPlanetChances = LV-522 "Участок Ченса"
+ent-RMCPlanetHybrisa = LV-759 Гибриса-Проспера
+ent-RMCPlanetSorokyne = LV-976 Сорокин-Страта
+ent-RMCPlanetArcticValley = Арктическая долина
+ent-RMCPlanetJungleDelta = Дельта в джунглях
+ent-RMCPlanetCorsat = CORSAT
+ent-RMCPlanetHybrisaRepaired = LV-759 Гибриса-Проспера (восстановлена)
+ent-RMCPlanetSorokyneRepaired = LV-976 Сорокин-Страта (восстановлена)

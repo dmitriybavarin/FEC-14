@@ -1,0 +1,9 @@
+ent-RMCSheetPlastic = Пластик
+    .desc = Пластик: синтетический полимер из органических и неорганических компонентов, превращенный в податливый легкий материал. Подходит для самых разных предметов.
+    .suffix = Полный
+ent-RMCSheetPlastic10 = { ent-RMCSheetPlastic }
+    .desc = { ent-RMCSheetPlastic.desc }
+    .suffix = 10
+ent-RMCSheetPlastic1 = { ent-RMCSheetPlastic }
+    .desc = { ent-RMCSheetPlastic.desc }
+    .suffix = Один

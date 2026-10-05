@@ -1,0 +1,10 @@
+marking-HumanNoseSchnozz = Шнобель
+marking-HumanNoseSchnozz-schnozz = Нос
+marking-HumanNoseNubby = Нос-пуговка
+marking-HumanNoseNubby-nubby = Нос
+marking-HumanNoseDroop = Свисающий нос
+marking-HumanNoseDroop-droop = Нос
+marking-HumanNoseBlob = Нос-картошка
+marking-HumanNoseBlob-blob = Нос
+marking-HumanNoseUppie = Вздернутый нос
+marking-HumanNoseUppie-uppie = Нос

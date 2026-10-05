@@ -1,0 +1,3 @@
+rule-restarting-in-seconds = Перезапуск через {$seconds} с.
+rule-time-has-run-out = Время вышло!
+rule-respawn-in-seconds = Возрождение через {$second} с...

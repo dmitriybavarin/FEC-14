@@ -1,0 +1,1 @@
+ent-BaseMobMoth = Урист Макпушок

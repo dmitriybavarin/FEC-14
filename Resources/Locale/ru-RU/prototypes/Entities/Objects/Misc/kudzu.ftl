@@ -1,0 +1,15 @@
+ent-Kudzu = Кудзу
+    .desc = Быстрорастущее опасное растение. ЗАЧЕМ ВЫ ОСТАНОВИЛИСЬ НА НЕГО ПОСМОТРЕТЬ?!
+ent-WeakKudzu = { ent-Kudzu }
+    .desc = { ent-Kudzu.desc }
+    .suffix = Слабый
+ent-KudzuFlowerFriendly = Цветочный ковер
+    .desc = Яркий ковер из цветов, расползающийся во все стороны. Вы не уверены, убрать его или оставить.
+    .suffix = Дружелюбный, цветочная аномалия
+ent-KudzuFlowerAngry = { ent-KudzuFlowerFriendly }
+    .desc = { ent-KudzuFlowerFriendly.desc }
+    .suffix = Злой, цветочная аномалия
+ent-FleshKudzu = Сухожилия
+    .desc = Быстрорастущее скопление мясистых сухожилий. ЗАЧЕМ ВЫ ОСТАНОВИЛИСЬ НА НЕГО ПОСМОТРЕТЬ?!
+ent-ShadowKudzu = Темная дымка
+ent-ShadowKudzuWeak = Дымка

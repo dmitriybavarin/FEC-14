@@ -1,0 +1,9 @@
+defusable-popup-begun = {CAPITALIZE($name)} оживает с писком, лампочка горит!
+defusable-popup-defuse = {CAPITALIZE($name)} пищит в последний раз, и лампочка гаснет навсегда.
+defusable-popup-boom = {CAPITALIZE($name)} ревет, когда внутренняя бомба взрывается!
+defusable-popup-fried = {CAPITALIZE($name)} искрит, но отсчет так и не начинается.
+defusable-popup-cant-anchor = Похоже, это прикручено к полу болтами!
+defusable-popup-wire-bolt-pulse = Болты на мгновение прокручиваются на месте.
+defusable-popup-wire-proceed-pulse = {CAPITALIZE($name)} зловеще жужжит!
+defusable-popup-wire-proceed-cut = Цифровой дисплей гаснет.
+defusable-popup-wire-chirp = {CAPITALIZE($name)} чирикает.

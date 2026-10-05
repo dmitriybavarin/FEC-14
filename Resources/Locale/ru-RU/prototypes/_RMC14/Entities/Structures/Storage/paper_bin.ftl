@@ -1,0 +1,15 @@
+ent-CMPaperBin = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = Пустая
+ent-CMPaperBin5 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 5
+ent-CMPaperBin10 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 10
+ent-CMPaperBin20 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 20
+ent-CMPaperBin30 = { ent-PaperBin }
+    .desc = { ent-PaperBin.desc }
+    .suffix = 30

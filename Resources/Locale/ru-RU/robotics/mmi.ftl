@@ -1,0 +1,11 @@
+positronic-brain-installed = Обнаружена нейронная активность.
+positronic-brain-off = Нейронная активность не обнаружена.
+positronic-brain-still-searching = Идет декодирование синтетических нейронов...
+positronic-brain-searching = Начинается декодирование синтетических нейронов...
+positronic-brain-role-name = Позитронный мозг
+positronic-brain-role-description = Служите экипажу станции.
+positronic-brain-wipe-device-verb-text = Стереть мозг
+positronic-brain-wiped-device = Нейронная активность прекращена.
+positronic-brain-stop-searching-verb-text = Остановить поиск
+positronic-brain-stopped-searching = Декодирование нейронов остановлено.
+positronic-brain-slot-component-slot-name-brain = Мозг

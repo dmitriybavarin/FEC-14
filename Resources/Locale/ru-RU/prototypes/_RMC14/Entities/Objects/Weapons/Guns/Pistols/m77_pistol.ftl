@@ -1,0 +1,13 @@
+ent-RMCWeaponPistolM77 = Боевой пистолет M77
+    .desc = Штатное оружие КМП США. Встречается и у команд PMC Ве-Я. Стреляет бронедробящими патронами 9 мм, может вести огонь очередью по 3 выстрела.
+ent-RMCWeaponPistolM77Empty = { ent-RMCWeaponPistolM77 }
+    .desc = { ent-RMCWeaponPistolM77.desc }
+    .suffix = Пустая
+ent-RMCWeaponPistolM77Survivor = { ent-RMCWeaponPistolM77 }
+    .desc = { ent-RMCWeaponPistolM77.desc }
+    .suffix = Выживший
+ent-CMMagazinePistolM77AP = Бронебойный магазин M77 (9 мм)
+    .desc = { ent-CMBaseMagazinePistol.desc }
+ent-CMBulletPistolM77AP = Пуля (9 мм, бронебойная)
+    .desc = { ent-BaseBullet.desc }
+ent-CMCartridgePistolM77AP = Патрон (9 мм, бронебойный)

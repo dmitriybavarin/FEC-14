@@ -1,0 +1,14 @@
+ent-GasTrinaryBase = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+ent-GasFilter = Газовый фильтр
+    .desc = Очень полезен для фильтрации газов.
+ent-GasFilterFlipped = Газовый фильтр
+    .desc = { ent-GasFilter.desc }
+    .suffix = Зеркальный
+ent-GasMixer = Газовый смеситель
+    .desc = Очень полезен для смешивания газов.
+ent-GasMixerFlipped = Газовый смеситель
+    .desc = { ent-GasMixer.desc }
+    .suffix = Зеркальный
+ent-PressureControlledValve = Пневматический клапан
+    .desc = Двунаправленный клапан, управляемый давлением. Открывается, если давление в выходной трубе ниже давления в управляющей на 101,325 кПа.

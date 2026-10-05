@@ -1,0 +1,16 @@
+reagent-effect-status-effect-Stun = оглушение
+reagent-effect-status-effect-KnockedDown = сбивание с ног
+reagent-effect-status-effect-Jitter = дрожь
+reagent-effect-status-effect-TemporaryBlindness = слепоту
+reagent-effect-status-effect-SeeingRainbows = галлюцинации
+reagent-effect-status-effect-Muted = немоту
+reagent-effect-status-effect-Stutter = заикание
+reagent-effect-status-effect-ForcedSleep = потерю сознания
+reagent-effect-status-effect-Drunk = опьянение
+reagent-effect-status-effect-PressureImmunity = иммунитет к давлению
+reagent-effect-status-effect-Pacified = пацифизм
+reagent-effect-status-effect-RatvarianLanguage = ратварскую речь
+reagent-effect-status-effect-StaminaModifier = изменение выносливости
+reagent-effect-status-effect-RadiationProtection = защиту от радиации
+reagent-effect-status-effect-Drowsiness = сонливость
+reagent-effect-status-effect-Adrenaline = адреналин

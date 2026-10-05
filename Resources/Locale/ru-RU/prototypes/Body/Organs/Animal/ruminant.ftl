@@ -1,0 +1,1 @@
+ent-OrganAnimalRuminantStomach = Желудок жвачного

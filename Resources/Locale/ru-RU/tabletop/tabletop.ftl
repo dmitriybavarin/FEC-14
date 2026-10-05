@@ -1,0 +1,11 @@
+tabletop-verb-play-game = Играть
+tabletop-verb-dump-pieces = Высыпать фигуры
+tabletop-default-board-name = Настольная игра
+tabletop-error-remove-non-hologram = Встроенную фигуру убрать нельзя!
+tabletop-added-piece = Доска ярко мерцает!
+tabletop-chess-board-name = Шахматы
+tabletop-chess-flip = Перевернуть
+tabletop-parchis-board-name = Парчис
+tabletop-backgammon-board-name = Нарды
+tabletop-checkers-board-name = Шашки
+tabletop-battlemap-board-name = Боевая карта

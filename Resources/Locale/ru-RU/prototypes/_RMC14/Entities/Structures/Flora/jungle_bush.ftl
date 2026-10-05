@@ -1,0 +1,9 @@
+ent-RMCBushJungle1 = { ent-RMCBaseBush }
+    .desc = { "" }
+    .suffix = { ent-RMCBaseBush.suffix }
+ent-RMCBushJungle2 = { ent-RMCBaseBush }
+    .desc = { "" }
+    .suffix = { ent-RMCBaseBush.suffix }
+ent-RMCBushJungle3 = { ent-RMCBaseBush }
+    .desc = { "" }
+    .suffix = { ent-RMCBaseBush.suffix }

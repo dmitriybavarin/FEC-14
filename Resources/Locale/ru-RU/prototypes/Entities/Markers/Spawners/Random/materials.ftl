@@ -1,0 +1,12 @@
+ent-LootSpawnerMaterials = Спавнер материалов
+    .desc = { "" }
+    .suffix = Строительные материалы
+ent-LootSpawnerMaterialsSupplementary = Спавнер материалов
+    .desc = { "" }
+    .suffix = Дополнительные материалы
+ent-LootSpawnerMaterialsHighValueConstruction = Спавнер ценных материалов
+    .desc = { "" }
+    .suffix = Строительные материалы
+ent-LootSpawnerMaterialsHighValue = Спавнер ценных материалов
+ent-LootSpawnerMaterialsSurplus = Спавнер излишков материалов
+ent-LootSpawnerCableCoil = Спавнер мотков кабеля

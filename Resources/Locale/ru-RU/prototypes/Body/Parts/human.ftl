@@ -1,0 +1,11 @@
+ent-PartHuman = Часть тела человека
+ent-TorsoHuman = Торс человека
+ent-HeadHuman = Голова человека
+ent-LeftArmHuman = Левая рука человека
+ent-RightArmHuman = Правая рука человека
+ent-LeftHandHuman = Левая кисть человека
+ent-RightHandHuman = Правая кисть человека
+ent-LeftLegHuman = Левая нога человека
+ent-RightLegHuman = Правая нога человека
+ent-LeftFootHuman = Левая ступня человека
+ent-RightFootHuman = Правая ступня человека

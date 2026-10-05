@@ -1,0 +1,5 @@
+ent-BaseCartridgeRifle = Патрон (.20 винтовочный)
+ent-CartridgeRifle = Патрон (.20 винтовочный)
+ent-CartridgeRiflePractice = Патрон (.20 винтовочный учебный)
+ent-CartridgeRifleIncendiary = Патрон (.20 винтовочный зажигательный)
+ent-CartridgeRifleUranium = Патрон (.20 винтовочный урановый)

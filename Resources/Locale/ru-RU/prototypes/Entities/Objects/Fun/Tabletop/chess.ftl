@@ -1,0 +1,15 @@
+ent-ChessBoard = Шахматная доска
+    .desc = Шахматная доска. Фигуры прилагаются!
+ent-ChessBoardTabletop = Шахматная доска
+ent-WhiteKing = Белый король
+ent-WhiteQueen = Белый ферзь
+ent-WhiteRook = Белая ладья
+ent-WhiteBishop = Белый слон
+ent-WhiteKnight = Белый конь
+ent-WhitePawn = Белая пешка
+ent-BlackKing = Черный король
+ent-BlackQueen = Черный ферзь
+ent-BlackRook = Черная ладья
+ent-BlackBishop = Черный слон
+ent-BlackKnight = Черный конь
+ent-BlackPawn = Черная пешка

@@ -1,0 +1,14 @@
+reagent-grinder-bound-user-interface-instant-button = СРАЗУ
+reagent-grinder-bound-user-interface-cook-time-label = ВРЕМЯ ГОТОВКИ
+reagent-grinder-component-cannot-put-entity-message = Это нельзя положить в измельчитель!
+grinder-menu-title = Измельчитель "Все-в-одном 3000"
+grinder-menu-grind-button = Измельчить
+grinder-menu-juice-button = Выжать
+grinder-menu-auto-label = Авторежим
+grinder-menu-auto-button-off = Выкл
+grinder-menu-manual-label = Ручной режим
+grinder-menu-chamber-content-box-label = Камера
+grinder-menu-chamber-content-box-button = Извлечь содержимое
+grinder-menu-beaker-content-box-label = Мензурка
+grinder-menu-beaker-content-box-button = Извлечь мензурку
+grinder-menu-beaker-content-box-is-empty = Пусто

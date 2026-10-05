@@ -1,0 +1,12 @@
+ent-BaseBorgChassisNotIonStormable = Киборг
+    .desc = Гибрид человека и машины, помогающий в работе станции. Обожает, когда его снова и снова просят зачитать законы.
+ent-BaseBorgChassis = { ent-BaseBorgChassisNotIonStormable }
+    .desc = { ent-BaseBorgChassisNotIonStormable.desc }
+ent-BaseBorgChassisNT = { ent-BaseBorgChassisNotIonStormable }
+    .desc = { ent-BaseBorgChassisNotIonStormable.desc }
+ent-BaseBorgChassisSyndicate = { ent-BaseBorgChassisNotIonStormable }
+    .desc = { ent-BaseBorgChassisNotIonStormable.desc }
+ent-BaseBorgChassisDerelict = { ent-BaseBorgChassisNotIonStormable }
+    .desc = { ent-BaseBorgChassisNotIonStormable.desc }
+ent-BaseXenoborgChassis = Ксеноборг
+    .desc = Гибрид человека и машины, стремящийся воспроизвести себя. Обожает извлекать мозги и вставлять их в новые шасси ксеноборгов, чтобы растить армию.

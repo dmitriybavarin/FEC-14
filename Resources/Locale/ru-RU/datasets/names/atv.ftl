@@ -1,0 +1,16 @@
+descriptions-atv-dataset-1 = Всегда Тягучий Вездеход.
+descriptions-atv-dataset-2 = Антимуравьиный Транспортный Вездеход.
+descriptions-atv-dataset-3 = Вечный Тепличный Вершок.
+descriptions-atv-dataset-4 = Вообще-То Два вездехода.
+descriptions-atv-dataset-5 = Вездесущая Типизированная Величина.
+descriptions-atv-dataset-6 = Вездеход Травматологической Выручки.
+descriptions-atv-dataset-7 = Вирус, Транслируемый Вычислениями.
+descriptions-atv-dataset-8 = Вакансия Тоддлера-Выпивохи.
+descriptions-atv-dataset-9 = Вулкан, Терзающий Вредин.
+descriptions-atv-dataset-10 = Внезапный Телевизионный Взгляд.
+descriptions-atv-dataset-11 = Вечно Трясущийся Ветрогон.
+descriptions-atv-dataset-12 = Волонтер Трагического Вкуса.
+descriptions-atv-dataset-13 = Вакансия Тако-Автомата.
+descriptions-atv-dataset-14 = Восхитительно Террифический Вид.
+descriptions-atv-dataset-15 = Все Только Вперед.
+descriptions-atv-dataset-16 = Весьма Тошнотворный Вездеход.

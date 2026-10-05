@@ -1,0 +1,14 @@
+reagent-name-oxygen = Кислород
+reagent-desc-oxygen = Бесцветный газ-окислитель.
+reagent-name-plasma = Плазма
+reagent-desc-plasma = Чудная космомагическая волшебная пыльца. Есть ее, наверное, не стоит, но мы оба знаем, что вы все равно съедите.
+reagent-name-tritium = Тритий
+reagent-desc-tritium = Радиоактивная космомагическая волшебная пыльца.
+reagent-name-carbon-dioxide = Углекислый газ
+reagent-desc-carbon-dioxide = Вы правда понятия не имеете, что это.
+reagent-name-nitrogen = Азот
+reagent-desc-nitrogen = Бесцветный инертный газ без запаха. Очень стабилен.
+reagent-name-nitrous-oxide = Закись азота
+reagent-desc-nitrous-oxide = Знаете, как все кажется смешнее, когда устал? Так вот...
+reagent-name-frezon = Фрезон
+reagent-desc-frezon = Очень эффективный хладагент... и галлюциноген.

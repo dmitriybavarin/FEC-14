@@ -1,0 +1,14 @@
+seeds-plump-name = пухлошлемник
+seeds-plump-display-name = Грибы пухлошлемники
+seeds-peanut-name = арахис
+seeds-peanut-display-name = Кусты арахиса
+seeds-sunflower-name = подсолнух
+seeds-sunflower-display-name = Подсолнухи
+seeds-whitebeet-name = белая свекла
+seeds-whitebeet-display-name = Белая свекла
+seeds-grass-name = трава
+seeds-grass-display-name = Трава
+seeds-rmc-grape-name = виноград
+seeds-rmc-grape-display-name = Виноградные лозы
+seeds-mango-name = манго
+seeds-mango-display-name = Манговые деревья

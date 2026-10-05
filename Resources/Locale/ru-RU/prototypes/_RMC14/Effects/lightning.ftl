@@ -1,0 +1,1 @@
+ent-RMCPurpleLightning = Фиолетовая молния

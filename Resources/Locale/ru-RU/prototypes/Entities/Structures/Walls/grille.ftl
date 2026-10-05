@@ -1,0 +1,12 @@
+ent-Grille = Решетка
+    .desc = Хлипкий каркас из железных прутьев.
+ent-ClockworkGrille = Заводная решетка
+    .desc = Хлипкий каркас из железных прутьев, собранный в традиционном стиле Ратвара.
+ent-GrilleBroken = Решетка
+    .desc = Хлипкий каркас из железных прутьев. Видал лучшие дни.
+ent-ClockworkGrilleBroken = Заводная решетка
+    .desc = Хлипкий каркас из железных прутьев, собранный в традиционном стиле Ратвара. Видал лучшие дни.
+ent-GrilleDiagonal = Диагональная решетка
+    .desc = { ent-Grille.desc }
+ent-ClockworkGrilleDiagonal = Диагональная заводная решетка
+    .desc = { ent-ClockworkGrille.desc }

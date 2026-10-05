@@ -1,0 +1,17 @@
+ent-GasPipeSensor = Датчик газовой трубы
+    .desc = Сообщает о состоянии газа в подключенной трубопроводной сети.
+ent-GasPipeSensorDistribution = { ent-GasPipeSensor }
+    .desc = { ent-GasPipeSensor.desc }
+    .suffix = Распределение
+ent-GasPipeSensorWaste = { ent-GasPipeSensor }
+    .desc = { ent-GasPipeSensor.desc }
+    .suffix = Отходы
+ent-GasPipeSensorMixedAir = { ent-GasPipeSensor }
+    .desc = { ent-GasPipeSensor.desc }
+    .suffix = Смешанный воздух
+ent-GasPipeSensorTEGHot = { ent-GasPipeSensor }
+    .desc = { ent-GasPipeSensor.desc }
+    .suffix = ТЭГ, горячий
+ent-GasPipeSensorTEGCold = { ent-GasPipeSensor }
+    .desc = { ent-GasPipeSensor.desc }
+    .suffix = ТЭГ, холодный

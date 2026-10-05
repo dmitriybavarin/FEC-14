@@ -1,0 +1,12 @@
+ent-RMCEntityDesertWaterShallow = { ent-CMFloorShallowWaterEntity }
+    .desc = { ent-CMFloorShallowWaterEntity.desc }
+ent-RMCEntityDesertWaterShallowCorner = { ent-CMFloorShallowWaterEntity }
+    .desc = { ent-CMFloorShallowWaterEntity.desc }
+ent-RMCEntityDesertWaterShallowCornerEdge = { ent-CMFloorShallowWaterEntity }
+    .desc = { ent-CMFloorShallowWaterEntity.desc }
+ent-RMCEntityDesertWaterShallowEdge = { ent-CMFloorShallowWaterEntity }
+    .desc = { ent-CMFloorShallowWaterEntity.desc }
+ent-RMCEntityDesertWaterDeep = { ent-CMFloorDeepWaterEntity }
+    .desc = { ent-CMFloorDeepWaterEntity.desc }
+ent-RMCGrate = Решетка
+    .desc = { "" }

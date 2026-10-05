@@ -1,0 +1,17 @@
+ent-VehicleAPCBase = Бронетранспортер
+    .desc = Крепкий бронетранспортер, оснащенный для поддержки на поле боя.
+ent-VehicleAPC = { ent-VehicleAPCBase }
+    .desc = { ent-VehicleAPCBase.desc }
+    .suffix = Управляемый, БТР, база
+ent-VehicleAPCTracked = { ent-VehicleAPCBase }
+    .desc = { ent-VehicleAPCBase.desc }
+    .suffix = Управляемый, БТР, база, гусеничный
+ent-VehicleAPCMed = Бронетранспортер (медицинский)
+    .desc = БТР в медицинской конфигурации с маркировкой сортировки раненых.
+    .suffix = Управляемый, БТР, база, медицинский, гусеничный
+ent-VehicleAPCCommand = Бронетранспортер (командный)
+    .desc = БТР в командной конфигурации, ощетинившийся датчиками и средствами связи.
+    .suffix = Управляемый, БТР, база, командный, гусеничный
+ent-VehicleSPPAPC = Бронетранспортер SPP
+    .desc = Бронетранспортер в конфигурации для сил SPP.
+    .suffix = Управляемый, БТР, база, SPP

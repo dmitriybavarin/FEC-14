@@ -1,0 +1,9 @@
+ninja-no-power = Недостаточно заряда в батарее костюма!
+ninja-revealed = Вас раскрыли!
+ninja-suit-cooldown = Костюму нужно время, чтобы восстановиться после прошлой атаки.
+ninja-cell-downgrade = Костюм примет только батарею лучше текущей!
+ninja-cell-too-large = Этот источник питания не помещается в костюм ниндзя!
+ninja-download-fail = На сервере нет данных исследований...
+ninja-research-steal-fail = Новых узлов исследований украсть не удалось...
+ninja-research-steal-success = Украдено новых узлов с сервера: {$count}.
+ninja-criminal-records-hack-announcement = ОШИБКА: в криминальных записях обнаружена ошибка [ЗАСЕКРЕЧЕНО] #*;"

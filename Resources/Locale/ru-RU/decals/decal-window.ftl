@@ -1,0 +1,9 @@
+decal-placer-window-title = Размещение декалей
+decal-placer-window-use-color = Свой цвет
+decal-placer-window-rotation = Поворот
+decal-placer-window-zindex = Глубина отрисовки
+decal-placer-window-enable-auto = Автоматические настройки
+decal-placer-window-enable-snap = Привязка к тайлу
+decal-placer-window-enable-cleanable = Можно отмыть
+decal-placer-window-palette = Палитра
+palette-color-picker-window-title = Палитры

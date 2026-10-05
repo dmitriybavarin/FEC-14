@@ -1,0 +1,17 @@
+ent-RMCWallSPPReinforced = Укрепленная стена
+    .desc = Толстая массивная металлическая стена. Поверхность голая и внушительная.
+    .suffix = SPP
+ent-RMCWallSPPGreyReinforced = { ent-RMCWallSPPReinforced }
+    .desc = { ent-RMCWallSPPReinforced.desc }
+    .suffix = Серая
+ent-RMCWallSPPWhiteReinforced = { ent-RMCWallSPPReinforced }
+    .desc = { ent-RMCWallSPPReinforced.desc }
+    .suffix = Белый
+ent-RMCWallSPPHull = Ребристые стены корпуса
+    .desc = Толстая массивная металлическая стена. Поверхность голая и внушительная.
+ent-RMCWallSPPGreyHull = { ent-RMCWallSPPHull }
+    .desc = { ent-RMCWallSPPHull.desc }
+    .suffix = Серая
+ent-RMCWallSPPWhiteHull = { ent-RMCWallSPPHull }
+    .desc = { ent-RMCWallSPPHull.desc }
+    .suffix = Белый

@@ -1,0 +1,12 @@
+ent-RMCPlanterBox = Ящик для выращивания
+    .desc = В ящике наполовину зарыта решетка корней.
+    .suffix = Пустой, красный песок, песок, вода
+ent-RMCPlanterBox2 = { ent-RMCPlanterBox }
+    .desc = { ent-RMCPlanterBox.desc }
+    .suffix = Лед, трава
+ent-RMCSoilNet = Почвенная сетка
+    .desc = Ученые натягивают такие сетки над участком земли, чтобы разбить его на квадраты для изучения.
+    .suffix = FEC
+ent-RMCPlatedGrowBox = Ящик для выращивания с обшивкой
+    .desc = Ящик для растений пуст.
+    .suffix = Пустая

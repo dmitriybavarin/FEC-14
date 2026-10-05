@@ -1,0 +1,15 @@
+ent-APCElectronics = Электроника ЛКП
+    .desc = Схема для сборки ЛКП.
+    .suffix = { ent-BaseElectronics.suffix }
+ent-WallmountSubstationElectronics = Электроника настенной подстанции
+    .desc = Схема для сборки настенной подстанции.
+    .suffix = { ent-BaseElectronics.suffix }
+ent-WallmountGeneratorElectronics = Электроника настенного генератора
+    .desc = Схема для сборки настенного генератора.
+    .suffix = { ent-BaseElectronics.suffix }
+ent-WallmountGeneratorAPUElectronics = Электроника настенной ВСУ
+    .desc = Схема для сборки настенной ВСУ.
+    .suffix = { ent-BaseElectronics.suffix }
+ent-SolarTrackerElectronics = Электроника солнечного трекера
+    .desc = Продвинутая плата для отслеживания ближайшей звезды.
+    .suffix = { ent-BaseElectronics.suffix }

@@ -27,14 +27,16 @@ public sealed partial class RoadmapItem : Control
                 _ => Color.Transparent
             };
 
+            // FEC14
             StateText.Text = _itemState switch
             {
-                RoadmapItemState.Planned => "PLANNED",
-                RoadmapItemState.InProgress => "IN PROGRESS",
-                RoadmapItemState.Partial => "PARTIALLY IMPLEMENTED",
-                RoadmapItemState.Complete => "COMPLETE",
+                RoadmapItemState.Planned => Loc.GetString("fec-roadmap-state-planned"),
+                RoadmapItemState.InProgress => Loc.GetString("fec-roadmap-state-in-progress"),
+                RoadmapItemState.Partial => Loc.GetString("fec-roadmap-state-partial"),
+                RoadmapItemState.Complete => Loc.GetString("fec-roadmap-state-complete"),
                 _ => string.Empty
             };
+            // FEC14
             StateText.ModulateSelfOverride = panel.BackgroundColor;
         }
     }

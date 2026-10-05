@@ -1,0 +1,12 @@
+ent-MobBaseScurret = Скуррет
+    .desc = { ent-MobBaseAncestor.desc }
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobScurret = Скуррет
+    .desc = В народе Вава, родом с болот планеты Вава. Эти зверьки составляют основу "преданной рабочей силы" пиццерии Арнольда.
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobBaseEmotionalSupportScurret = Скуррет эмоциональной поддержки
+    .desc = { ent-MobBaseAncestor.desc }
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobEmotionalSupportScurret = Скуррет эмоциональной поддержки
+    .desc = В народе Вава, родом с болот планеты Вава. Эти зверьки составляют основу "преданной рабочей силы" пиццерии Арнольда. Этот здесь на временной работе.
+    .suffix = { ent-SimpleMobBase.suffix }

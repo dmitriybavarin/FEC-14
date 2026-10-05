@@ -1,0 +1,13 @@
+ent-RMCPropTrashFull = Полный мешок для мусора
+    .desc = Прочный черный полимерный мешок, полный старого мусора. Трогать не хочется.
+ent-RMCPropBananaPeel = Банановая кожура
+    .desc = Банановая кожура.
+    .suffix = FEC
+ent-RMCPropCuppaJoeLid = Крышка стакана The Daily Grind
+    .desc = Крышка от одноразового стакана для кофе. Пластиковая, с маленьким отверстием, чтобы пить.
+ent-RMCPropCuppaJoeNoLid = Пустой стакан The Daily Grind
+    .desc = Пустой одноразовый стакан из The Daily Grind. На дне маленькая дырка, так что для жидкостей он уже не очень годится.
+ent-RMCPropCuppaJoeNoLidStack = Стопка пустых стаканов The Daily Grind
+    .desc = Стопка пустых одноразовых стаканов из The Daily Grind.
+ent-RMCPropCuppaJoeLidStack = Стопка крышек The Daily Grind
+    .desc = Стопка крышек от стаканов из The Daily Grind.

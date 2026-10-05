@@ -372,7 +372,7 @@ public sealed class OverwatchConsoleBui : RMCPopOutBui<OverwatchConsoleWindow>
                 if (marine.Rank != null)
                 {
                     if (_prototypes.TryIndex(marine.Rank, out var rank))
-                        rankName = rank.Prefix;
+                        rankName = _localization.TryGetString($"fec-rank-prefix-{rank.ID}", out var rankPrefix) ? rankPrefix : rank.Prefix; // FEC14
                 }
 
                 var name = rankName != null ? $"{rankName} {marine.Name}" : marine.Name;

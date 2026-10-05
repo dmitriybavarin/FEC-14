@@ -150,5 +150,9 @@
         ///     Admin Ghost
         /// </summary>
         AdminGhost = 1ul << 33,
+
+        // FEC14
+        JobWhitelist = 1ul << 48,
+        // FEC14
     }
 }

@@ -1,0 +1,8 @@
+ent-BasePKAUpgrade = Модкит ПКУ
+    .desc = Модкит для протокинетического ускорителя.
+ent-PKAUpgradeDamage = Модкит ПКУ (урон)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeRange = Модкит ПКУ (дальность)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeFireRate = Модкит ПКУ (скорострельность)
+    .desc = { ent-BasePKAUpgrade.desc }

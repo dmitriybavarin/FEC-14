@@ -1,0 +1,11 @@
+cmd-motd-desc = Выводит или задает сообщение дня.
+cmd-motd-help = motd [ сообщение... ]
+cmd-get-motd-desc = Выводит сообщение дня.
+cmd-get-motd-help = get-motd
+cmd-set-motd-desc = Задает или очищает сообщение дня.
+cmd-set-motd-help = set-motd [ сообщение... ]
+cmd-set-motd-hint-head = [ сообщение... ]
+cmd-set-motd-hint-cont = [ ...сообщение... ]
+cmd-set-motd-cleared-motd-message = Сообщение дня очищено.
+cmd-set-motd-set-motd-message = Сообщение дня: "{$motd}".
+motd-wrap-message = Сообщение дня: {$motd}

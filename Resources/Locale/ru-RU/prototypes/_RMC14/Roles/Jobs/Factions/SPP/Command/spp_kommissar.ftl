@@ -1,0 +1,15 @@
+ent-RMCRandomHumanoidSPPKommissarNeutral = Роль призрака: комиссар
+    .desc = { "" }
+    .suffix = Спавнер, игрок, нейтрал
+ent-RMCRandomHumanoidSPPBattalionKommissarNeutral = Роль призрака: батальонный комиссар
+    .desc = { "" }
+    .suffix = Спавнер, игрок, нейтрал
+ent-RMCRandomHumanoidSPPSrBattalionKommissarNeutral = Роль призрака: старший батальонный комиссар
+    .desc = { "" }
+    .suffix = Спавнер, игрок, нейтрал
+ent-RMCRandomHumanoidSPPRegimentalKommissarNeutral = Роль призрака: полковой комиссар
+    .desc = { "" }
+    .suffix = Спавнер, игрок, нейтрал
+ent-RMCRandomHumanoidSPPBrigadeKommissarNeutral = Роль призрака: бригадный комиссар
+    .desc = { "" }
+    .suffix = Спавнер, игрок, нейтрал

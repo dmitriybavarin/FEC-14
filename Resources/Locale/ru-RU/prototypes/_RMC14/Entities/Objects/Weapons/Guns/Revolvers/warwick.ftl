@@ -1,0 +1,9 @@
+ent-RMCWeaponRevolverWarwickMkVII = Служебный револьвер Warwick MkVII
+    .desc = Переломный револьвер L187 Warwick MkVII: штатный служебный револьвер полков парамаринов RCM. Несмотря на архаичную конструкцию Warwick, вакуумная герметизация механизма, бакелитовые накладки и патрон .44 магнум сохраняют MkVII актуальным и беспощадно эффективным.
+    .suffix = Парамарин
+ent-RMCWeaponRevolverWarwickMkVIIAlt = Служебный револьвер Warwick MkVII
+    .desc = { ent-RMCWeaponRevolverWarwickMkVII.desc }
+    .suffix = Парамарин, альт.
+ent-RMCWeaponRevolverWarwickMkVIISnub = Короткоствольный револьвер Warwick MkVII
+    .desc = Переломный револьвер L187 Warwick MkVII: штатный служебный револьвер полков парамаринов RCM. Этот вариант с коротким стволом и уменьшенной рукоятью, что делает оружие компактным и легким.
+    .suffix = RCM, снаряжение

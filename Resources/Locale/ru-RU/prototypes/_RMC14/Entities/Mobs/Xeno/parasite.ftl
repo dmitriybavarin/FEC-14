@@ -1,0 +1,12 @@
+ent-CMXenoParasiteBase = Детеныш
+    .desc = { "" }
+    .suffix = Лицехват
+ent-CMXenoParasite = { ent-CMXenoParasiteBase }
+    .desc = { "" }
+    .suffix = { ent-CMXenoParasiteBase.suffix }
+ent-RMCXenoParasiteWatcher = { ent-CMXenoParasiteBase }
+    .desc = { "" }
+    .suffix = Лицехват, наблюдатель
+ent-RMCXenoParasitePrimeHiveAssign = { ent-CMXenoParasiteBase }
+    .desc = { "" }
+    .suffix = Лицехват, автоназначение, главный улей

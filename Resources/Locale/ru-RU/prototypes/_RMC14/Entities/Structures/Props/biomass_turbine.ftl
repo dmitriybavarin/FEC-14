@@ -1,0 +1,9 @@
+ent-RMCPropTurbine = Силовая турбина
+    .desc = Гигантская турбина, работающая бог знает на чем. Наверное, тот, кто знает как, мог бы ее запустить.
+ent-RMCPropTurbineStrutsRight = Распорки силовой турбины
+    .desc = Трубы, а может, опорные распорки, ведущие к этой здоровенной турбине или поддерживающие ее.
+    .suffix = Правая часть
+ent-RMCPropTurbineStrutsLeft = { ent-RMCPropTurbineStrutsRight }
+    .desc = { ent-RMCPropTurbineStrutsRight.desc }
+    .suffix = Левая часть
+ent-RMCPropTurbineStrutsBorder = Предупреждающие полосы силовой турбины

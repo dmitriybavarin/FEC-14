@@ -1,0 +1,13 @@
+cmd-faxui-desc = Открывает админ-окно отправки факсов
+cmd-faxui-help = Использование: faxui
+admin-fax-title = Админский менеджер факсов
+admin-fax-fax = Факс:
+admin-fax-follow = Следовать
+admin-fax-title-placeholder = Название листа...
+admin-fax-from-placeholder = Чья печать...
+admin-fax-message-placeholder = Ваше сообщение...
+admin-fax-stamp = Значок печати:
+admin-fax-stamp-color = Цвет печати:
+admin-fax-send = Отправить
+admin-fax-lock-page = Заблокировать лист
+admin-fax-lock-page-tooltip = Заблокировать лист так, чтобы его нельзя было изменить даже ручками Cybersun и подобным.

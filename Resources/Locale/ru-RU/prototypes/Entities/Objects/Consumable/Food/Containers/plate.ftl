@@ -1,0 +1,16 @@
+ent-FoodPlate = Большая тарелка
+    .desc = Большая тарелка, отлично подходит для хлеба.
+ent-FoodPlateTrash = Разбитая тарелка
+    .desc = Разбитая тарелка. Бесполезна.
+ent-FoodPlateSmall = Маленькая тарелка
+    .desc = Маленькая тарелка. Хрупкая.
+ent-FoodPlateSmallTrash = { ent-FoodPlateTrash }
+    .desc = { ent-FoodPlateTrash.desc }
+ent-FoodPlatePlastic = Пластиковая тарелка
+    .desc = Большая синяя пластиковая тарелка, отлично подходит для праздничного торта.
+ent-FoodPlateSmallPlastic = Пластиковая тарелка
+    .desc = Синяя пластиковая тарелка, отлично подходит для кусков праздничного торта.
+ent-FoodPlateTin = Форма для пирога
+    .desc = Дешевая фольговая форма для пирогов.
+ent-FoodPlateMuffinTin = Форма для маффинов
+    .desc = Дешевая фольговая форма для маффинов.

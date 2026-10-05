@@ -1,0 +1,1 @@
+ent-Clothing = { ent-BaseItem }

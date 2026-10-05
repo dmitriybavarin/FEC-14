@@ -1,0 +1,10 @@
+ent-RMCPropBodybagPile = Груда мешков для трупов
+    .desc = Мрачная гора кое-как наваленных мешков для трупов.
+ent-RMCPropBodybagPileFlipped = { ent-RMCPropBodybagPile }
+    .desc = { ent-RMCPropBodybagPile.desc }
+    .suffix = Зеркальный
+ent-RMCPropBodybagPileCharred = Груда обугленных мешков для трупов
+    .desc = Мрачная гора кое-как наваленных мешков для трупов. Их поверхность почернела и вздулась от сильного жара. Содержимое частично обгорело.
+ent-RMCPropBodybagPileCharredFlipped = { ent-RMCPropBodybagPileCharred }
+    .desc = { ent-RMCPropBodybagPileCharred.desc }
+    .suffix = Зеркальный

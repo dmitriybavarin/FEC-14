@@ -1,0 +1,12 @@
+ent-MobCivilian = Гражданский
+    .desc = Жалкая куча секретов.
+ent-MobSalvager = Утилизатор
+ent-MobSpirate = Космопират
+    .desc = Йо-хо-хо!
+ent-MobSyndicateFootsoldier = Пехотинец Синдиката
+ent-MobSyndicateFootsoldierPilot = Пилот шаттла Синдиката
+ent-SalvageHumanCorpse = Неопознанный труп
+    .desc = Кажется, это мертвец.
+    .suffix = Мертвая
+ent-MobCluwne = Человек
+    .desc = Превращенный бедолага.

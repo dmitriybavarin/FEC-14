@@ -1,0 +1,74 @@
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 1
+enabled = true
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+max_connections = 256
+
+[status]
+enabled = true
+# connectaddress = "ss14://example.com:1212"
+
+[game]
+hostname = "Frontier Expeditionary Corps 14"
+desc = ""
+hostname_in_titlebar = false
+# Вайтлист должностей (Командующий офицер, синтетик, старший унтер-офицер-советник, инспекторы военной прокуратуры). Доступ выдается командой jobwhitelistadd.
+role_whitelist = true
+
+[hub]
+advertise = false
+# server_url = "ss14://example.com:1212"
+# tags = "lang:ru,region:eu_e,rp:med"
+
+[auth]
+mode = 1
+
+[console]
+loginlocal = true
+
+[whitelist]
+# Вайтлист входа на сервер: пускать только тех, кого добавили командой whitelistadd.
+enabled = false
+prototype_list = "basicWhitelist"
+
+[database]
+engine = "sqlite"
+sqlite_dbpath = "preferences.db"
+# engine = "postgres"
+# pg_host = "localhost"
+# pg_port = 5432
+# pg_database = "fec14"
+# pg_username = "fec14"
+# pg_password = ""
+
+[discord]
+# ahelp_webhook = ""
+# ahelp_avatar = ""
+# on_call_webhook = ""
+# on_call_ping = ""
+# round_update_webhook = ""
+# round_end_role = ""
+# vote_webhook = ""
+# votekick_webhook = ""
+# watchlist_connection_webhook = ""
+# news_webhook = ""
+
+[infolinks]
+# discord = "https://discord.gg/..."
+# github = "https://github.com/dmitriybavarin/FEC-14"
+# wiki = ""
+# rules = ""
+# patreon = "https://boosty.to/..."
+
+[fec]
+species_whitelist = "Human"
+# OOC-цвет ника по ID аккаунта: "GUID=#RRGGBB, GUID=#RRGGBB". GUID игрока: таблица player, колонка user_id в базе сервера.
+ooc_colors = ""
+# Файл цветов, который правит бот из .BOT. Сервер перечитывает его сам раз в 5 секунд.
+ooc_colors_file = ".CONFIG/ooc_colors.json"

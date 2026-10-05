@@ -1,0 +1,9 @@
+ent-BaseDelivery = { ent-BaseItem }
+ent-PackageDelivery = Посылка
+ent-LetterDelivery = Письмо
+ent-DeliveryModifierPriority =
+    .desc = Компоненты, добавляемые, если доставка выпала приоритетной.
+ent-DeliveryModifierFragile =
+    .desc = Компоненты, добавляемые, если доставка выпала хрупкой.
+ent-DeliveryModifierBomb =
+    .desc = Компоненты, добавляемые, если доставка выпала бомбой.

@@ -1,0 +1,3 @@
+gift-packin-contains = Похоже, внутри подарка: {$name}.
+christmas-tree-got-gift = Немного покопавшись, вы находите подарок со своим именем!
+christmas-tree-no-gift = Под елкой для вас подарка нет...

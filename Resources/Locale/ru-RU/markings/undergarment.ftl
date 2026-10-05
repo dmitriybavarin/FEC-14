@@ -1,0 +1,17 @@
+marking-UndergarmentTopTanktop = Майка
+marking-UndergarmentTopBinder = Утяжка
+marking-UndergarmentTopBra = Классический бюстгальтер
+marking-UndergarmentTopSportsbra = Спортивный бюстгальтер
+marking-UndergarmentBottomBoxers = Боксеры
+marking-UndergarmentBottomBriefs = Трусы-брифы
+marking-UndergarmentBottomSatin = Атласные трусы
+marking-UndergarmentTopTanktopVox = Майка
+marking-UndergarmentTopBinderVox = Утяжка
+marking-UndergarmentTopBraVox = Классический бюстгальтер
+marking-UndergarmentTopSportsbraVox = Спортивный бюстгальтер
+marking-UndergarmentBottomBoxersVox = Боксеры
+marking-UndergarmentBottomBriefsVox = Трусы-брифы
+marking-UndergarmentBottomSatinVox = Атласные трусы
+marking-UndergarmentBottomBoxersReptilian = Боксеры
+marking-UndergarmentBottomBriefsReptilian = Трусы-брифы
+marking-UndergarmentBottomSatinReptilian = Атласные трусы

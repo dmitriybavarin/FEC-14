@@ -1,0 +1,1 @@
+ent-RMCGuidebookCorpseColonistBurst = Мертвый колонист

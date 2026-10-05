@@ -1,3 +1,4 @@
+using Content.Shared._FEC14.Species; // FEC14
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -761,7 +762,8 @@ namespace Content.Client.Lobby.UI
             SpeciesButton.Clear();
             _species.Clear();
 
-            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
+            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => FECSpeciesRestriction.IsAllowed(o, _cfgManager))); // FEC14
+            SpeciesButton.Disabled = _species.Count <= 1; // FEC14
             var speciesIds = _species.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _species.Count; i++)
@@ -1181,13 +1183,13 @@ namespace Content.Client.Lobby.UI
                     // If the job has ranks we will add the options as buttons.
                     if (job.Ranks != null && job.SetRankPreference)
                     {
-                        rankOptions.AddItem("Auto");
+                        rankOptions.AddItem(Loc.GetString("fec-rank-auto")); // FEC14
 
                         foreach (var rank in job.Ranks)
                         {
                             if (_prototypeManager.TryIndex(rank.Key, out var rankPrototype))
                             {
-                                rankOptions.AddItem(rankPrototype.Name);
+                                rankOptions.AddItem(Loc.TryGetString($"fec-rank-name-{rankPrototype.ID}", out var rankName) ? rankName : rankPrototype.Name); // FEC14
                                 rankProtoIds.Add(rank.Key);
 
                                 if (rank.Value != null && !_requirements.CheckRoleRequirements(rank.Value, Profile, out _))

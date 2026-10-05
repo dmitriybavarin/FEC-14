@@ -1,0 +1,9 @@
+ent-MobHivebot = Хайвбот
+    .desc = Назойливые механические вредители.
+    .suffix = { ent-BaseSimpleMob.suffix }
+ent-MobHivebotRanged = Хайвбот
+    .desc = Назойливые механические вредители. У этого есть пушка.
+    .suffix = Дальнобойный
+ent-MobHivebotStrong = Сильный хайвбот
+    .desc = Назойливые механические вредители. Этот выглядит гораздо сильнее обычного.
+    .suffix = { ent-MobHivebotRanged.suffix }

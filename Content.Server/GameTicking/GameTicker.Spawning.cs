@@ -1,3 +1,4 @@
+using Content.Shared._FEC14.Species; // FEC14
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -197,7 +198,7 @@ namespace Content.Server.GameTicking
                     var speciesPrototypes = _prototypeManager.EnumeratePrototypes<SpeciesPrototype>();
                     foreach (var proto in speciesPrototypes)
                     {
-                        if (proto.RoundStart)
+                        if (FECSpeciesRestriction.IsAllowed(proto, _cfg)) // FEC14
                             roundStart.Add(proto.ID);
                     }
 

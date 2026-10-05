@@ -1,0 +1,13 @@
+signal-linker-component-saved = Связь с устройством {$machine} сохранена!
+signal-linker-component-linked-port = Связано: {$machine1}:{$port1} с {$machine2}:{$port2}!
+signal-linker-component-unlinked-port = Связь разорвана: {$machine1}:{$port1} и {$machine2}:{$port2}!
+signal-linker-component-connection-refused = {CAPITALIZE($machine)} отклоняет подключение!
+signal-linker-component-max-connections-receiver = У получателя достигнут предел подключений!
+signal-linker-component-max-connections-transmitter = У передатчика достигнут предел подключений!
+signal-linker-component-type-mismatch = Тип порта не совпадает с типом сохраненного порта!
+signal-linker-component-out-of-range = Подключение вне зоны действия!
+signal-linking-verb-text-link-default = Связать порты по умолчанию
+signal-linking-verb-success = Все связи по умолчанию для устройства {$machine} подключены.
+signal-linking-verb-fail = Не удалось подключить все связи по умолчанию для устройства {$machine}.
+signal-linking-verb-disabled-no-transmitter = Сначала взаимодействуйте с передатчиком, затем свяжите порты по умолчанию.
+signal-linking-verb-disabled-no-receiver = Сначала взаимодействуйте с получателем, затем свяжите порты по умолчанию.

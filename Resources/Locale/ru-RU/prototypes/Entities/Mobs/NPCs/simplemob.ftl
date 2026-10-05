@@ -1,0 +1,9 @@
+ent-BaseSimpleMob =
+    .desc = { "" }
+    .suffix = ИИ
+ent-SimpleSpaceMobBase =
+    .desc = { "" }
+    .suffix = ИИ
+ent-SimpleMobBase =
+    .desc = { "" }
+    .suffix = ИИ

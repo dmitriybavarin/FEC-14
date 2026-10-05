@@ -1,12 +1,12 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               Title="Set Job Icon"
+               Title="{Loc 'fec-xaml-set-job-icon'}"
                MinSize="400 360"
                SetSize="400 440">
     <BoxContainer Orientation="Vertical" SeparationOverride="3" Margin="2">
         <BoxContainer Orientation="Horizontal" SeparationOverride="4">
-            <LineEdit Name="SearchBar" PlaceHolder="Search..." HorizontalExpand="True" />
-            <Button Name="ClearButton" Text="Clear Icon" StyleClasses="ButtonColorRed" />
+            <LineEdit Name="SearchBar" PlaceHolder="{Loc 'fec-xaml-search'}" HorizontalExpand="True" />
+            <Button Name="ClearButton" Text="{Loc 'fec-xaml-clear-icon'}" StyleClasses="ButtonColorRed" />
         </BoxContainer>
         <ScrollContainer HScrollEnabled="False" VScrollEnabled="True" VerticalExpand="True">
             <GridContainer Name="IconGrid" Columns="8" Margin="0 0 10 0">

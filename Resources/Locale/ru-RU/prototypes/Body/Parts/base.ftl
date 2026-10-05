@@ -1,0 +1,11 @@
+ent-BasePart = Часть тела
+ent-BaseTorso = Торс
+ent-BaseHead = Голова
+ent-BaseLeftArm = Левая рука
+ent-BaseRightArm = Правая рука
+ent-BaseLeftHand = Левая кисть
+ent-BaseRightHand = Правая кисть
+ent-BaseLeftLeg = Левая нога
+ent-BaseRightLeg = Правая нога
+ent-BaseLeftFoot = Левая ступня
+ent-BaseRightFoot = Правая ступня

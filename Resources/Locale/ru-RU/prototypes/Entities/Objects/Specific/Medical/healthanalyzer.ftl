@@ -1,0 +1,9 @@
+ent-HandheldHealthAnalyzerUnpowered = Анализатор здоровья
+    .desc = Ручной сканер тела, определяющий жизненные показатели пациента.
+    .suffix = Всегда с питанием
+ent-HandheldHealthAnalyzer = { ent-HandheldHealthAnalyzerUnpowered }
+    .desc = { ent-HandheldHealthAnalyzerUnpowered.desc }
+    .suffix = { "" }
+ent-HandheldHealthAnalyzerEmpty = { ent-HandheldHealthAnalyzerUnpowered }
+    .desc = { ent-HandheldHealthAnalyzerUnpowered.desc }
+    .suffix = Пустая

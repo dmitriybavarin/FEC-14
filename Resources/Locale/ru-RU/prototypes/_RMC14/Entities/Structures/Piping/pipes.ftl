@@ -1,0 +1,15 @@
+ent-RMCGasPipeHalf = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+    .suffix = FEC, половина
+ent-RMCGasPipeStraight = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+    .suffix = FEC, прямая
+ent-RMCGasPipeBend = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+    .suffix = FEC, изгиб
+ent-RMCGasPipeTJunction = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+    .suffix = FEC, тройник
+ent-RMCGasPipeFourway = { ent-GasPipeSansLayers }
+    .desc = { ent-GasPipeSansLayers.desc }
+    .suffix = FEC, крестовина

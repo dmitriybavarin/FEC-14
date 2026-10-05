@@ -1,0 +1,11 @@
+ent-CMSurgicalCase = Хирургический кейс
+    .desc = Медицинский кейс для базовых хирургических инструментов.
+ent-CMSurgicalCaseFilled = { ent-CMSurgicalCase }
+    .desc = { ent-CMSurgicalCase.desc }
+    .suffix = Заполнено
+ent-RMCSurgicalCaseRCM = Хирургический кейс RCM
+    .desc = Улучшенный хирургический кейс Королевской морской пехоты, вмещает больше инструментов.
+    .suffix = RCM
+ent-RMCSurgicalCaseRCMFilled = { ent-RMCSurgicalCaseRCM }
+    .desc = { ent-RMCSurgicalCaseRCM.desc }
+    .suffix = Заполнено

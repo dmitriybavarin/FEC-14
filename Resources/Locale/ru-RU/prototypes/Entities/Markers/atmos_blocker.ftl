@@ -1,0 +1,17 @@
+ent-AtmosFixBlockerMarker = Маркер атмосферы: вакуум
+    .desc = Вакуум, 20 °C
+ent-AtmosFixOxygenMarker = Маркер атмосферы: кислород
+    .desc = Кислород при давлении газодобытчика, 20 °C
+ent-AtmosFixNitrogenMarker = Маркер атмосферы: азот
+    .desc = Азот при давлении газодобытчика, 20 °C
+ent-AtmosFixPlasmaMarker = Маркер атмосферы: плазма
+    .desc = Плазма при давлении газодобытчика, 20 °C
+ent-AtmosFixInstantPlasmaFireMarker = Маркер атмосферы: мгновенный плазменный пожар
+    .desc = МГНОВЕННЫЙ ПЛАЗМЕННЫЙ ПОЖАР
+ent-AtmosFixFreezerMarker = Маркер атмосферы: морозильник
+    .desc = Меняет температуру воздуха на 235 K, для морозильника с небольшим запасом на настройку.
+ent-AtmosFixVoxMarker = { ent-AtmosFixNitrogenMarker }
+    .desc = Азот при 101 кПа, 20 °C
+    .suffix = Атмосфера воксов
+ent-AtmosFixAirMarker = Маркер атмосферы: воздух
+    .desc = Кислород (21%) и азот (79%) при давлении газодобытчика, 20 °C

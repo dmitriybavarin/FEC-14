@@ -1,0 +1,12 @@
+ent-BaseMagazineCaselessRifle = Магазин (.25 безгильзовые)
+ent-BaseMagazineCaselessRifleShort = Короткий магазин безгильзовой винтовки (.25 безгильзовые)
+ent-BaseMagazinePistolCaselessRifle = Пистолетный магазин (.25 безгильзовые)
+ent-MagazineCaselessRifle10x24 = Коробчатый магазин (.25 безгильзовые)
+ent-MagazinePistolCaselessRifle = Пистолетный магазин (.25 безгильзовые)
+    .desc = Магазин на 10 патронов для пистолета "Кобра". Для обычных кинетических боеприпасов.
+ent-MagazinePistolCaselessRiflePractice = Пистолетный магазин (.25 безгильзовые учебные)
+    .desc = Магазин на 10 патронов для пистолета "Кобра". Для безвредных меловых боеприпасов.
+ent-MagazineCaselessRifle = Магазин (.25 безгильзовые)
+ent-MagazineCaselessRiflePractice = Магазин (.25 безгильзовые учебные)
+ent-MagazineCaselessRifleShort = Короткий магазин (.25 безгильзовые)
+ent-MagazineCaselessRifleShortPractice = Короткий магазин (.25 безгильзовые учебные)

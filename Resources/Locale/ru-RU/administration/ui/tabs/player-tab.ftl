@@ -1,0 +1,14 @@
+player-tab-player-count = Игроков: { $count }
+player-tab-username = Ник
+player-tab-character = Персонаж
+player-tab-job = Должность
+player-tab-roletype = Тип роли
+player-tab-playtime = Время игры
+player-tab-show-disconnected = Показать отключившихся
+player-tab-overlay = Оверлей
+player-tab-entry-tooltip = Время игры в формате дни:часы:минуты.
+player-tab-filter-line-edit-placeholder = Фильтр
+player-tab-is-antag-yes = ДА
+player-tab-is-antag-no = НЕТ
+player-tab-character-name-antag-symbol = {$symbol} {$name}
+player-tab-antag-prefix = 🗡

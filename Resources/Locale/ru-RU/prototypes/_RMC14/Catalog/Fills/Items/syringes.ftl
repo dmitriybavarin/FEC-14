@@ -1,0 +1,9 @@
+ent-RMCSyringeInaprovaline = { ent-BaseSyringe }
+    .desc = Содержит инапровалин для стабилизации пациентов.
+    .suffix = Инапровалин, FEC14
+ent-RMCSyringeDylovene = { ent-BaseSyringe }
+    .desc = Содержит антитоксины.
+    .suffix = Диловен, FEC14
+ent-RMCSyringeDrugs = { ent-BaseSyringe }
+    .desc = Содержит агрессивные препараты для пыток.
+    .suffix = Наркотики, FEC14

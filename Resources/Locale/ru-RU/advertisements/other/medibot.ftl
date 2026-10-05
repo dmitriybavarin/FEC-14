@@ -1,0 +1,17 @@
+advertisement-medibot-1 = Что это за медотсек такой? Все мрут как мухи.
+advertisement-medibot-2 = Я так и знал, надо было идти в пластические хирурги.
+advertisement-medibot-3 = Всегда есть подвох, и лучший подвох это я.
+advertisement-medibot-4 = Яблоко в день, и меня не видать.
+advertisement-medibot-5 = Я не такой, как все!
+advertisement-medibot-6 = Пошел ты.
+advertisement-medibot-7 = Зачем мы еще здесь? Чтобы страдать?
+advertisement-medibot-8 = Я... я никогда раньше не терял пациента. То есть сегодня.
+advertisement-medibot-9 = Вводим лексорин.
+advertisement-medibot-10 = Отличного дня!
+advertisement-medibot-11 = Надеюсь, вам не придется возвращаться!
+advertisement-medibot-12 = Не забывайте чистить зубы.
+advertisement-medibot-13 = Хотел бы я иметь руки.
+advertisement-medibot-14 = Я здесь, чтобы помочь!
+advertisement-medibot-15 = Попросите у врача леденец!
+advertisement-medibot-16 = Поправляйтесь скорее!
+advertisement-medibot-17 = Кто яблоко в день съедает, у того доктор не бывает!

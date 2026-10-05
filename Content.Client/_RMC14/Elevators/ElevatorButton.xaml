@@ -6,5 +6,5 @@
     HorizontalExpand="True"
     Align="Center">
     <Button Name="DestinationButton" Access="Public" StyleClasses="ButtonColorGreen" Margin="2" MinSize="40 40"/>
-    <RichTextLabel Name="DestinationLabel" Access="Public" Text="[font size=14][bold]Placeholder[/bold][/font]"/>
+    <RichTextLabel Name="DestinationLabel" Access="Public" Text="{Loc 'fec-xaml-font-size-14-bold-placeholder-bold-font'}"/>
 </cc:ElevatorButton>

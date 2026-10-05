@@ -1,0 +1,11 @@
+comp-solution-transfer-fill-normal = Вы переливаете {$amount} ед.
+comp-solution-transfer-fill-fully = Вы наполняете емкость до краев ({$amount} ед.).
+comp-solution-transfer-transfer-solution = Вы переливаете {$amount} ед.
+comp-solution-transfer-is-empty = Там пусто!
+comp-solution-transfer-is-full = Емкость полна!
+comp-solution-transfer-verb-custom-amount = Свое значение
+comp-solution-transfer-verb-amount = {$amount} ед.
+comp-solution-transfer-verb-toggle = Переключить на {$amount} ед.
+comp-solution-transfer-set-amount = Объем переноса: {$amount} ед.
+comp-solution-transfer-set-amount-max = Макс.: {$amount} ед.
+comp-solution-transfer-set-amount-min = Мин.: {$amount} ед.

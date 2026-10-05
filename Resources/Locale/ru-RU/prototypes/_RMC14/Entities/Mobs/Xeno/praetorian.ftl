@@ -1,0 +1,16 @@
+ent-CMXenoPraetorianBase = Преторианец
+    .desc = Огромный нависающий зверь среди ксеноморфов.
+ent-CMXenoPraetorian = { ent-CMXenoPraetorianBase }
+    .desc = { ent-CMXenoPraetorianBase.desc }
+ent-RMCXenoPraetorianValkyrie = { ent-CMXenoPraetorianBase }
+    .desc = { ent-CMXenoPraetorianBase.desc }
+    .suffix = Валькирия
+ent-RMCXenoPraetorianDancer = { ent-CMXenoPraetorianBase }
+    .desc = { ent-CMXenoPraetorianBase.desc }
+    .suffix = Танцор
+ent-RMCXenoPraetorianVanguard = { ent-CMXenoPraetorianBase }
+    .desc = { ent-CMXenoPraetorianBase.desc }
+    .suffix = Авангард
+ent-RMCXenoPraetorianOppressor = { ent-CMXenoPraetorianBase }
+    .desc = { ent-CMXenoPraetorianBase.desc }
+    .suffix = Угнетатель

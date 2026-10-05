@@ -1,0 +1,1 @@
+ent-BaseClockworkWindoor = Заводная стеклодверь

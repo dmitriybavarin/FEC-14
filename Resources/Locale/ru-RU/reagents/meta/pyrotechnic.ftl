@@ -1,0 +1,14 @@
+reagent-name-thermite = Термит
+reagent-desc-thermite = Смесь, которая при поджоге раскаляется до огромной температуры.
+reagent-name-napalm = Напалм
+reagent-desc-napalm = Слегка огнеопасен.
+reagent-name-phlogiston = Флогистон
+reagent-desc-phlogiston = Поджигает вас, и вы вспыхиваете.
+reagent-name-chlorine-trifluoride = Трифторид хлора
+reagent-desc-chlorine-trifluoride = Вы правда, ПРАВДА не хотите, чтобы эта дрянь оказалась рядом с вами.
+reagent-name-foaming-agent = Пенообразователь
+reagent-desc-foaming-agent = Образует пену, например для гранат с металлической пеной.
+reagent-name-welding-fuel = Сварочное топливо
+reagent-desc-welding-fuel = Им заправляют сварочные аппараты.
+reagent-name-fluorosurfactant = Фторсурфактант
+reagent-desc-fluorosurfactant = Перфторированная сульфоновая кислота, которая с водой образует пену.

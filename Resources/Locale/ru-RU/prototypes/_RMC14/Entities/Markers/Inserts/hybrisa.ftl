@@ -1,0 +1,15 @@
+ent-RMCMapInsertHybrisaBase = { ent-RMCMapInsertBase }
+    .desc = { "" }
+    .suffix = Вставка Гибриса
+ent-RMCMapInsertHybrisaCLFSpaceport = Космопорт CLF
+    .desc = { "" }
+    .suffix = Вставка Гибриса
+ent-RMCMapInsertHybrisaTSEAirbase = Авиабаза TSE
+    .desc = { "" }
+    .suffix = Вставка Гибриса
+ent-RMCMapInsertHybrisaTSEAirbaseIntact = Целая авиабаза TSE
+    .desc = { "" }
+    .suffix = Вставка Гибриса
+ent-RMCMapInsertHybrisaSurvivorSpawns = Спавны выживших
+    .desc = { "" }
+    .suffix = Вставка Гибриса

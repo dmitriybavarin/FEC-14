@@ -1,0 +1,11 @@
+ent-BaseShellShotgun = Патрон (.50)
+ent-ShellShotgunBeanbag = Патрон (.50 травматический)
+ent-ShellShotgunSlug = Патрон (.50 пуля)
+ent-ShellShotgunFlare = Патрон (.50 сигнальный)
+ent-ShellShotgun = Патрон (.50 дробь)
+ent-ShellShotgunIncendiary = Патрон (.50 зажигательный)
+ent-ShellShotgunPractice = Патрон (.50 учебный)
+ent-ShellTranquilizer = Патрон (.50 транквилизатор)
+ent-ShellShotgunImprovised = Самодельный патрон для дробовика
+    .desc = Самодельный патрон для дробовика, стреляющий болезненными осколками стекла. Разброс такой, что и в стену сарая не попасть.
+ent-ShellShotgunUranium = Урановый патрон для дробовика

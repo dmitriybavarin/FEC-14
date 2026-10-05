@@ -1,0 +1,1 @@
+ent-WeaponStaffBase = { ent-BaseItem }
