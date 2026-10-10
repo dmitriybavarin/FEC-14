@@ -1,75 +1,81 @@
-NON-COMPETITIVE SERVER USE LICENSE
-Version 1.0
+FEC-14 PRIVATE USE LICENSE
+Version 2.0
 
 Copyright (c) 2026 Bavarin
 
+0. DEFINITIONS
+"Software" means the FEC-14 specific part of this repository:
+- all files located in directories named "_FEC14";
+- all changes to other files that are marked with "FEC14";
+- the Russian localization in "Resources/Locale/ru-RU";
+- any other file whose header or metadata states that it belongs to
+  FEC-14.
+
+Code and assets taken from Space Station 14, RMC-14 and other third
+parties are not covered by this license. They remain under their own
+licenses (see LICENSE-UPSTREAM.TXT, LICENSE-RMC14.TXT and the license
+field in each asset's metadata), and nothing in this license restricts
+the rights those licenses grant.
+
+"Private Use" means running the Software on your own computer or
+private network for yourself and the people directly working with you
+on development or testing, where the server is not listed on any public
+server hub and its address is not shared with the general public.
+
+"Public Server" means any server running the Software, or a substantial
+portion of it, that is not Private Use. This includes any server listed
+on a public hub, any server whose address is published or shared with
+players, and any server open to people other than those described in
+"Private Use", whether or not it is commercial.
+
 1. GRANT OF RIGHTS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated source code (the "Software"), to:
-- view and study the source code
-- copy and modify the Software
-- create and distribute modified versions of the Software
-- run the Software or modified versions on private or public servers
-  for non-commercial purposes
-- use the Software for personal, educational, testing, research,
-  development, and community purposes.
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of the Software, to:
+- view and study the source code;
+- copy and modify the Software;
+- run the Software or modified versions for Private Use, including
+  personal, educational, testing, research and development purposes;
+- publish copies or forks of the source code, provided that this
+  license and the copyright notice are kept intact.
 
-2. NON-COMMERCIAL SERVER USE
-You may operate a server using the Software, including a publicly
-accessible server, provided that the server is operated on a
-non-commercial basis.
+2. PUBLIC SERVERS REQUIRE PERMISSION
+You may not operate, host, or help another party operate a Public
+Server using the Software, a modified version of it, or a substantial
+portion of it, without prior written permission from the copyright
+holder.
 
-A server is considered non-commercial if it does not generate revenue
-or other financial compensation through:
-- donations
-- subscriptions
-- paid ranks, roles, permissions, or benefits
-- paid virtual currency or virtual items
-- advertisements
-- sponsorships
-- paid access
-- loot boxes or other paid random rewards
-- sales of goods or services connected to the server
-- or any substantially similar monetization method
+This applies to commercial and non-commercial servers alike, and
+includes using the Software as the base, backend or core technology of
+another server or project.
 
-3. COMPETING SERVERS
-You may not use, distribute, modify, or deploy the Software, or a
-substantial portion of the Software, for the purpose of operating,
-creating, or substantially assisting a commercial server that competes
-with the original server or service operated by the copyright holder.
+3. COMMERCIAL USE
+Any commercial use of the Software, including receiving donations,
+subscriptions, paid ranks, roles, items, advertisements, sponsorships or
+any other compensation connected to a server running the Software,
+requires prior written permission from the copyright holder.
 
-This restriction includes, but is not limited to:
-- launching a commercial server based substantially on the Software
-- launching a competing server using a modified version of the Software
-- using the Software as the backend or core technology of a competing
-  commercial server
-- providing the Software to another party for the purpose of operating
-  such a competing commercial server
-
-4. PRIVATE AND LOCAL USE
-Nothing in this license prohibits a person from running the Software
-locally or privately for personal use, development, testing,
-experimentation, or educational purposes.
+4. PERMISSION
+Permission under sections 2 and 3 is valid only if given in writing by
+the copyright holder. It may be limited to a specific server, person or
+period of time, may include additional conditions, and may be revoked
+according to its terms.
 
 5. MODIFICATIONS AND FORKS
-You may modify and fork the Software for purposes permitted by this
-license.
+Modified versions and forks are covered by this license. They must
+retain this license and the original copyright notice in all copies or
+substantial portions of the Software. Anyone who receives the Software
+from a fork is bound by the same terms.
 
-Modified versions must retain this license and the original copyright
-notice in all copies or substantial portions of the Software.
-
-6. COMMERCIAL USE WITH PERMISSION
-The copyright holder may grant written permission for commercial use,
-including operation of a commercial server.
-
-Such permission may be granted on an individual basis and may include
-additional terms or conditions.
+6. TERMINATION
+Any use of the Software in breach of this license automatically
+terminates all rights granted by it. The rights can only be restored by
+written permission from the copyright holder.
 
 7. NO TRANSFER OF TRADEMARK RIGHTS
 This license does not grant permission to use the names, logos,
 trademarks, branding, domain names, or other identifying marks of
-Bavarin or the original project to imply official affiliation,
-endorsement, or sponsorship.
+Bavarin or Frontier Expeditionary Corps 14 to imply official
+affiliation, endorsement, or sponsorship.
 
 8. DISCLAIMER
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,

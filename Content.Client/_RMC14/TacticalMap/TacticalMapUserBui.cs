@@ -87,6 +87,7 @@ public sealed class TacticalMapUserBui(EntityUid owner, Enum uiKey) : RMCPopOutB
     {
         if (disposing && Window?.Wrapper != null)
         {
+            Content.Client._FEC14.TacticalMap.FECTacticalMapDrafts.Save(EntMan, Owner, Window.Wrapper.Canvas); // FEC14
             try
             {
                 var settingsManager = IoCManager.Resolve<TacticalMapSettingsManager>();
@@ -136,6 +137,8 @@ public sealed class TacticalMapUserBui(EntityUid owner, Enum uiKey) : RMCPopOutB
             Window.Wrapper.Canvas.Lines.AddRange(lines.MarineLines);
             Window.Wrapper.Canvas.Lines.AddRange(lines.XenoLines);
         }
+
+        Content.Client._FEC14.TacticalMap.FECTacticalMapDrafts.Restore(EntMan, Owner, Window.Wrapper.Canvas); // FEC14
 
         var user = EntMan.GetComponentOrNull<TacticalMapUserComponent>(Owner);
         if (user?.CanDraw ?? false)

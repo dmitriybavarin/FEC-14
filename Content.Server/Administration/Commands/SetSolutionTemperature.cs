@@ -12,7 +12,7 @@ namespace Content.Server.Administration.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "setsolutiontemperature";
-        public string Description => "Set the temperature of some solution.";
+        public string Description => Loc.GetString("fec-cmd-set-solution-temperature-desc"); // FEC14
         public string Help => $"Usage: {Command} <target> <solution> <new temperature>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

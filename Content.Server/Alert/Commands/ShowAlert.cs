@@ -12,7 +12,7 @@ namespace Content.Server.Alert.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "showalert";
-        public string Description => "Shows an alert for a player, defaulting to current player";
+        public string Description => Loc.GetString("fec-cmd-show-alert-desc"); // FEC14
         public string Help => "showalert <alertType> <severity, -1 if no severity> <name or userID, omit for current player>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

@@ -167,6 +167,7 @@ namespace Content.Client.Administration.UI
         {
             var flags = popup.CollectSetFlags();
             var name = popup.NameEdit.Text;
+            int? fecWeight = popup.FECWeightEdit.Editable && int.TryParse(popup.FECWeightEdit.Text.Trim(), out var parsedWeight) ? parsedWeight : null; // FEC14
 
             if (popup.SourceId is { } src)
             {
@@ -175,6 +176,7 @@ namespace Content.Client.Administration.UI
                     Id = src,
                     Flags = flags,
                     Name = name,
+                    FECWeight = fecWeight, // FEC14
                 });
             }
             else
@@ -182,7 +184,8 @@ namespace Content.Client.Administration.UI
                 SendMessage(new AddAdminRank
                 {
                     Flags = flags,
-                    Name = name
+                    Name = name,
+                    FECWeight = fecWeight, // FEC14
                 });
             }
 
@@ -228,7 +231,7 @@ namespace Content.Client.Administration.UI
                 {
                     italic = false;
                     var rankData = s.AdminRanks[rankId];
-                    rank = rankData.Name;
+                    rank = Loc.GetString("fec-admin-weight-rank", ("rank", rankData.Name), ("weight", rankData.FECWeight)); // FEC14
                     combinedFlags |= rankData.Flags;
                 }
                 else
@@ -271,6 +274,7 @@ namespace Content.Client.Administration.UI
                 var rank = kv.Value;
                 var flagsText = string.Join(' ', AdminFlagsHelper.FlagsToNames(rank.Flags).Select(f => $"+{f}"));
                 _menu.AdminRanksList.AddChild(new Label { Text = rank.Name });
+                _menu.AdminRanksList.AddChild(new Label { Text = Loc.GetString("fec-admin-weight-value", ("weight", rank.FECWeight)) }); // FEC14
                 _menu.AdminRanksList.AddChild(new Label
                 {
                     Text = flagsText,
@@ -329,7 +333,7 @@ namespace Content.Client.Administration.UI
                 };
                 TabContainer.SetTabTitle(adminVBox, Loc.GetString("permissions-eui-menu-admins-tab-title"));
 
-                AdminRanksList = new GridContainer { Columns = 3, VerticalExpand = true };
+                AdminRanksList = new GridContainer { Columns = 4, VerticalExpand = true }; // FEC14
                 var rankVBox = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
@@ -539,6 +543,7 @@ namespace Content.Client.Administration.UI
         {
             public readonly int? SourceId;
             public readonly LineEdit NameEdit;
+            public readonly LineEdit FECWeightEdit; // FEC14
             public readonly Button SaveButton;
             public readonly Button? RemoveButton;
             public readonly Dictionary<AdminFlags, CheckBox> FlagCheckBoxes = new();
@@ -558,6 +563,16 @@ namespace Content.Client.Administration.UI
                 {
                     NameEdit.Text = data.Value.Value.Name;
                 }
+
+                // FEC14
+                FECWeightEdit = new LineEdit
+                {
+                    Text = (data?.Value.FECWeight ?? 0).ToString(),
+                    Editable = ui._adminManager.HasFlag(AdminFlags.AdminWeight),
+                    HorizontalExpand = true,
+                    ToolTip = Loc.GetString("fec-admin-weight-tooltip"),
+                };
+                // FEC14
 
                 SaveButton = new Button
                 {
@@ -611,6 +626,13 @@ namespace Content.Client.Administration.UI
                     Children =
                     {
                         NameEdit,
+                        // FEC14
+                        new BoxContainer
+                        {
+                            Orientation = LayoutOrientation.Horizontal,
+                            Children = { new Label { Text = Loc.GetString("fec-admin-weight-label") }, FECWeightEdit },
+                        },
+                        // FEC14
                         flagsBox,
                         bottomButtons
                     }

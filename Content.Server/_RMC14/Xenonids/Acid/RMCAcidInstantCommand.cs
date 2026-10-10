@@ -11,7 +11,7 @@ namespace Content.Server._RMC14.Xenonids.Acid;
 public sealed class RMCAcidInstantCommand : IConsoleCommand
 {
     public string Command => "rmc_acid_instant";
-    public string Description => "Toggle or set instant corrosive acid.";
+    public string Description => Loc.GetString("fec-cmd-r-m-c-acid-instant-desc"); // FEC14
     public string Help => "Usage: rmc_acid_instant [true/false]";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

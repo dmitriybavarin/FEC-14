@@ -1,6 +1,6 @@
-ent-RMCRandomHumanoidSPPRiflemanHostile = Роль призрака SPP: стрелок
+ent-RMCRandomHumanoidSPPRiflemanHostile = Роль призрака СССП: стрелок
     .desc = { "" }
     .suffix = Спавнер, игрок, враг
-ent-RMCRandomHumanoidSPPRiflemanFriendly = Роль призрака SPP: стрелок
+ent-RMCRandomHumanoidSPPRiflemanFriendly = Роль призрака СССП: стрелок
     .desc = { "" }
     .suffix = Спавнер, игрок, союзник

@@ -42,6 +42,8 @@ namespace Content.Server.GameTicking.Commands
                 status != PlayerGameStatus.JoinedGame)
             {
                 ticker.JoinAsObserver(player);
+                if (isAdminCommand && _adminManager.IsAdmin(player)) // FEC14
+                    shell.ExecuteCommand("aghost"); // FEC14
             }
             else
             {

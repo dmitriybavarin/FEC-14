@@ -22,7 +22,7 @@ plant-holder-component-dead-plant-matter-message = Тут полно [color=red]
 plant-holder-component-weed-high-level-message = Тут полно [color=green]сорняков[/color]!
 plant-holder-component-pest-high-level-message = Тут полно [color=gray]мелких червей[/color]!
 plant-holder-component-water-level-message = Вода:     [color=cyan]{$waterLevel}[/color].
-plant-holder-component-nutrient-level-message = Питание: [color=orange]{$nutritionLevel}[/color].
+plant-holder-component-nutrient-level-message = Уровень питательных веществ [color=orange]{$nutritionLevel}[/color].
 plant-holder-component-toxins-high-warning = Индикатор [color=red]уровня токсичности[/color] горит красным.
 plant-holder-component-light-improper-warning = Мигает индикатор [color=yellow]неподходящего освещения[/color].
 plant-holder-component-heat-improper-warning = Мигает индикатор [color=orange]неподходящей температуры[/color].

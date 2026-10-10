@@ -14,7 +14,7 @@ namespace Content.Server.Administration.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "setsolutioncapacity";
-        public string Description => "Set the capacity (maximum volume) of some solution.";
+        public string Description => Loc.GetString("fec-cmd-set-solution-capacity-desc"); // FEC14
         public string Help => $"Usage: {Command} <target> <solution> <new capacity>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

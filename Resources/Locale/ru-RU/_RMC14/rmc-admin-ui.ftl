@@ -1,6 +1,6 @@
 rmc-ui-cm-actions = Действия FEC
 rmc-ui-transform-tab = Превращение
-rmc-ui-open-rmc-actions = Открыть действия FEC
+rmc-ui-open-rmc-actions = Открыть действия CM
 rmc-ui-marine-tab = Морпех
 rmc-ui-automated-vendor-points = Очки автоматических раздатчиков
 rmc-ui-points = Очки:

@@ -509,7 +509,7 @@ public sealed class OrbitalCannonSystem : EntitySystem
             {
                 _core.CreateARESLog(cannon,
                     LogCat,
-                    (string)$"{Name(args.Actor)} chambered a {Name(element)}");
+                    Loc.GetString("fec-code-ares-ob-chambered", ("user", Name(args.Actor)), ("item", Name(element)))); // FEC14
             }
 
         }
@@ -744,7 +744,7 @@ public sealed class OrbitalCannonSystem : EntitySystem
         var logMessage = $"{ToPrettyString(user)} launched orbital bombardment at {fireCoordinates} for squad {ToPrettyString(squad)}, misfuel: {misfuel}, final coords: {adjustedCoords}";
         _adminLog.Add(LogType.RMCOrbitalBombardment, $"{logMessage}");
 
-        _core.CreateARESLog(cannon, LogCat, (string)$"{Name(user)} fired the orbital cannon at {adjustedCoords.X}, {adjustedCoords.Y}");
+        _core.CreateARESLog(cannon, LogCat, Loc.GetString("fec-code-ares-ob-fired", ("user", Name(user)), ("x", adjustedCoords.X), ("y", adjustedCoords.Y))); // FEC14
 
         var ev = new OrbitalCannonLaunchEvent(cannon.Comp.FireCooldown + firing.ImpactDelay);
         RaiseLocalEvent(ref ev);

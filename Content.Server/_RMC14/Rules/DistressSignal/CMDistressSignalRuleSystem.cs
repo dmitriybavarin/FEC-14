@@ -196,6 +196,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
     [ViewVariables]
     private RMCPlanet? SelectedPlanetMap { get; set; }
+    public RMCPlanet? FECSelectedPlanet => SelectedPlanetMap; // FEC14
 
     [ViewVariables]
     public string? SelectedPlanetMapName => SelectedPlanetMap?.Proto.Name;

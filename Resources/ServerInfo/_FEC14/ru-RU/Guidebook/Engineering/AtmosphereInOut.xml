@@ -1,0 +1,25 @@
+<Document>
+  #Подача и откачка атмосферы
+  Подавать газы в атмосферу (или пустоту) и откачивать их оттуда важная часть работы атмосферного отдела.
+  <Box>
+    <GuideEntityEmbed Entity="GasVentPump"/>
+    <GuideEntityEmbed Entity="GasPassiveVent"/>
+    <GuideEntityEmbed Entity="GasOutletInjector"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PortableScrubber"/>
+  </Box>
+
+  С этими устройствами атмосферный отдел может подавать, откачивать или очищать от ненужных газов любую атмосферу.
+  Так поддерживается безопасная пригодная для дыхания атмосфера.
+
+  Некоторым из этих устройств для работы нужно [textlink="электричество" link="Power"], и их можно привязать к [textlink="воздушной сигнализации." link="AirAlarms"]
+
+  [textlink="Привязка" link="Networking"] совместимых устройств к воздушной сигнализации открывает больше настроек и возможностей. Иначе устройства работают по умолчанию, как описано в подразделах.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm"/>
+    <GuideEntityEmbed Entity="Multitool"/>
+    <GuideEntityEmbed Entity="NetworkConfigurator"/>
+  </Box>
+
+</Document>

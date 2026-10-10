@@ -14,7 +14,7 @@ public sealed class TileReplaceCommand : IConsoleCommand
 
     // ReSharper disable once StringLiteralTypo
     public string Command => "tilereplace";
-    public string Description => "Replaces one tile with another.";
+    public string Description => Loc.GetString("fec-cmd-tile-replace-desc"); // FEC14
     public string Help => $"Usage: {Command} [<gridId>] <src> <dst>";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

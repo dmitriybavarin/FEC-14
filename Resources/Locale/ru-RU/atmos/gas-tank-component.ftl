@@ -1,4 +1,4 @@
-comp-gas-tank-examine = Давление: [color=orange]{PRESSURE($pressure)}[/color].
+comp-gas-tank-examine = Давление в баллоне [color=orange]{PRESSURE($pressure)}[/color].
 comp-gas-tank-connected = Подключен к внешнему компоненту.
 comp-gas-tank-examine-open-valve = Выпускной клапан [color=red]открыт[/color].
 comp-gas-tank-examine-closed-valve = Выпускной клапан [color=green]закрыт[/color].

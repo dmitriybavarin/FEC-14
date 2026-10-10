@@ -30,11 +30,11 @@ FEC-14 это асимметричная игра, работающая на д�
 
 ## Лицензия
 
-Весь код контент-репозитория, специфичный для FEC-14, распространяется под [лицензией](LICENSE.TXT).
+Весь код контент-репозитория, специфичный для FEC-14, распространяется под [лицензией](LICENSE.TXT). Запускать его у себя для разработки и тестов можно свободно, а открывать на его основе сервер для других игроков можно только с письменного разрешения автора.
 
-Весь код контент-репозитория, специфичный для RMC-14, распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
+Весь код контент-репозитория, специфичный для RMC-14, распространяется под лицензией [MIT](LICENSE-RMC14.TXT).
 
-Весь [код апстрима](https://github.com/space-wizards/space-station-14) распространяется под лицензией [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE-UPSTREAM.TXT).
+Весь [код апстрима](https://github.com/space-wizards/space-station-14) распространяется под лицензией [MIT](LICENSE-UPSTREAM.TXT).
 
 Большинство ассетов распространяется под лицензией [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и копирайт каждого ассета указаны в его файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 

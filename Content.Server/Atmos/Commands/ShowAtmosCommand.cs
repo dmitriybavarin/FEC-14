@@ -11,7 +11,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "showatmos";
-        public string Description => "Toggles seeing atmos debug overlay.";
+        public string Description => Loc.GetString("fec-cmd-show-atmos-desc"); // FEC14
         public string Help => $"Usage: {Command}";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

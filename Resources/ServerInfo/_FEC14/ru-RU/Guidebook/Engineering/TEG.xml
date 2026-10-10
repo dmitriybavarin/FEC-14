@@ -1,0 +1,234 @@
+<Document>
+  # Термоэлектрический генератор (ТЭГ)
+
+  ТЭГ вырабатывает энергию за счет теплообмена между горячими и холодными газами.
+  На станции горячий газ обычно получают, сжигая плазму, а блок [textlink="теплообменных" link="Radiators"] труб в космосе отводит тепло и охлаждает циркулирующие газы.
+
+  ТЭГ сильно зависит от [textlink="атмосферных" link="Atmospherics"] [textlink="труб." link="Pipes"]
+  По-настоящему особенные в нем только ядро генератора и циркуляторы, все остальное обычное атмосферное оборудование.
+  Точная схема на разных станциях может сильно отличаться, но основные компоненты и устройство обычно одинаковы.
+
+  ## Генератор
+
+  Сам генератор это машина из 3 основных частей: центрального генератора и двух "циркуляторов", расставленных так:
+
+  <Box>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="TegCirculator" Caption="" Margin="0"/>
+  </Box>
+
+  Циркуляторы принимают горячий или холодный газ и пропускают его через машину для теплообмена.
+  Затем газ выходит с другого конца циркулятора. Сам генератор вырабатывает энергию и отдает ее по [color=orange]кабелю ВН[/color].
+
+  Учтите, что у циркуляторов есть [color=#a4885c]направление[/color]: газ проходит через них только в одну сторону.
+  Направление можно узнать в игре, осмотрев циркулятор.
+  Между входом и выходом нужен перепад давления, поэтому там обычно стоят насосы, и их нужно включить.
+
+  Неважно, какая сторона горячая, а какая холодная, нужна только разница температур между ними.
+  Газы двух "контуров" никогда не смешиваются, [color=#a4885c]между ними передается только энергия[/color].
+  Горячая сторона остывает, холодная нагревается.
+
+  ## Трубы
+
+  Здесь важны 2 основные [textlink="трубосети" link="PipeNetworks"]: [color=red]горячий контур[/color] (где газ сжигают ради тепла) и [color=cyan]холодный контур[/color] (где прошедший цикл нагретый отработанный газ выбрасывают в космос или снова охлаждают).
+  Следите, чтобы [color=#a4885c][bold]эти две [textlink="трубосети" link="PipeNetworks"] НЕ смешивались[/bold][/color]: между ними через ТЭГ должно передаваться только тепло.
+
+  # Горячий контур
+
+  Как наверняка сказал кто-то мудрый, лучший способ что-то нагреть это поджечь.
+  Смотря в каком контексте, это может быть и не очень мудро, но, к счастью, в вашем инженерном отделе есть все, чтобы сделать это с умом.
+
+  Как сказано выше, схем нагрева (или охлаждения) газов много. В этой части руководства разобраны распространенные способы устройства горячего контура с [color=red]камерой сгорания[/color].
+
+  Попутно: плазма горит сравнительно холодно, например по сравнению с тритием.
+  Может быть выгодно извлекать тритий на установке извлечения и сжигать его с кислородом, получая поистине адские температуры для выработки энергии.
+
+  ## Камера сгорания
+
+  Камера сгорания основной способ нагрева газов, и ее часто используют и для других целей (например, для получения трития).
+
+  На большинстве станций (если не на всех) камера сгорания отделена от основного атмосферного блока полосой вакуума шириной в 1 клетку, чтобы при пробое обжигающе горячий газ не пошел в атмосферный отдел. В камере 3 важные части:
+  - [textlink="Воздушный инжектор" link="AirInjector"]/[textlink="пассивная вентиляция" link="PassiveVent"]
+  - Выброс в космос
+  - Блок [textlink="скрубберов" link="AirScrubber"]
+
+  Вот один слой примерной схемы:
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="BlastDoorOpen" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="-90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="-90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+
+  [textlink="Воздушный инжектор" link="AirInjector"] (или [textlink="пассивная вентиляция" link="PassiveVent"]) закачивает воздух в камеру сгорания (или пропускает его туда).
+  Перед любым из них стоит поставить насос, чтобы держать давление высоким.
+
+  Между [textlink="пассивной вентиляцией" link="PassiveVent"] и [textlink="воздушным инжектором" link="AirInjector"] есть заметная разница: [textlink="воздушный инжектор" link="AirInjector"] закачивает воздух только до [color=#a4885c]9 МПа[/color], а при хорошем горении это давление набирается очень легко.
+  В идеале замените [textlink="воздушный инжектор" link="AirInjector"] на [textlink="пассивную вентиляцию" link="PassiveVent"], подключенную к объемному насосу.
+
+  Выброс в космос (гермозатвор в космос с одной стороны камеры сгорания) позволяет выбрасывать и уничтожать отработанные газы.
+  Время от времени открывайте его, чтобы держать давление под контролем или выбросить лишний входной газ.
+  Для периодического выброса газа может пригодиться и пневматический клапан.
+
+  Блок [textlink="скрубберов" link="AirScrubber"] отфильтровывает все сгоревшие газы и отправляет их через ТЭГ.
+  Оставлять [textlink="скрубберы" link="AirScrubber"] на стандартных настройках плохая идея: они отфильтруют и ценную плазму.
+
+  Вместо этого подключите сетевым конфигуратором все [textlink="скрубберы" link="AirScrubber"] к ближайшей воздушной сигнализации и настройте в ней [textlink="скрубберы" link="AirScrubber"] так, чтобы они удаляли все, кроме кислорода и плазмы, и заодно откачивали воздух.
+  Так в ТЭГ попадет как можно больше доступного тепла.
+
+  Это лишь один из многих способов устроить горячий контур, [color=#a4885c]смело комбинируйте схемы как нужно![/color]
+  [textlink="Объемные насосы" link="Pumps"] вместо [textlink="насосов давления" link="Pumps"], контуры из [textlink="радиаторов" link="Radiators"] для сбора тепла или даже пирокластическая аномалия как источник тепла!
+  Предел только звезды!
+
+  # Холодный контур
+
+  Как и горячий контур, для работы ТЭГ нужно настроить и холодный.
+  Но холодный контур обычно гораздо проще горячего: на деле он должен быть лишь "относительно" холоднее. Комнатная температура ведь технически холоднее поверхности солнца, верно?
+
+  Для холодного контура обычно используют 3 основных способа: [color=#a4885c]водяное охлаждение[/color] (см. видео Liltenhead о ТЭГ), [color=cyan]блок охлаждения[/color] и [color=#a4885c]контур с охладителем[/color].
+
+  ## Водяное охлаждение
+
+  Столь же наивный способ, как сжигание в трубах: берем ненужный газ (здесь водяной пар) и гоним его через ТЭГ в космос. Дешево и просто, но ценой эффективности и безвозвратной потери газа.
+
+  Это настолько просто, что справится даже Гамлет. Возьмите выход газа (здесь водяного пара), пропустите через холодную сторону ТЭГ и выпустите в космос.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+
+  ## Блок охлаждения
+
+  Это стандартный способ устройства холодного контура на многих станциях.
+  Он средней сложности и не тратит никаких ресурсов, поэтому [color=#a4885c]должен[/color] быть основным способом охлаждения ТЭГ.
+  Но сейчас на большинстве станций радиаторы почему-то подключены неправильно (или предлагается неправильная разводка), и эффективность сильно падает.
+
+  Чтобы теплообменники работали правильно, их нужно подключать [color=#a4885c]параллельно[/color], а не последовательно (как на большинстве станций).
+  После теплообменников ставят насос на максимальном давлении, а перед ними объемный насос.
+  Расход объемного насоса задается по формуле:
+  <Box>
+    [color=cyan]( 200 / число теплообменников )[/color] л/с.
+  </Box>
+
+  Проще говоря, блок охлаждения состоит из 3 основных частей: входного соединительного порта, нескольких насосов и блока теплообменников в космосе.
+  Его можно собрать так:
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasVolumePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="TegCenter" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPort" Rotation="180" Caption="" Margin="-1"/>
+  </Box>
+
+  - Соединительный порт: через него подают газ с высокой теплоемкостью. Чаще всего это плазма или фрезон, у обоих очень высокая удельная теплоемкость (хотя подойдет почти любой газ). (Да, плазма не значит горячо. Ее можно охладить, и она отлично переносит тепло.)
+  - Входной и выходной насосы: гонят газ через циркулятор и блок радиаторов. Газ остывает, нагревается и проходит через теплообменник, и чтобы он не останавливался, нужно давление.
+  - Радиатор: по сути, просто несколько радиаторов в космосе. Добавить нечего, кроме того, что они охлаждают газ внутри. Ставьте радиаторы [color=#a4885c]на решетку, а не на обшивку[/color]! Иначе эффективность теплообмена сильно упадет, ведь под радиаторами не будет открытого космоса.
+
+  ## Контур с охладителем
+
+  Этот способ чаще всего встречается в эффективных схемах ТЭГ.
+  По сути, это тот же блок охлаждения, только вместо радиаторов охладитель.
+  Охладитель хоть и потребляет энергию, но лишь малую долю того, что вырабатывает ТЭГ, и сейчас он лучше стандартного блока охлаждения, так что выбор очевиден.
+
+  Действуйте как с блоком охлаждения, но вместо теплообменников поставьте охладитель. Вот так:
+  <Box>
+    <GuideEntityEmbed Entity="GasPort" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Caption="" Rotation="0" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasVolumePump" Rotation="270" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+
+  И снова, для максимальной эффективности пустите по контуру плазму или фрезон (хотя подойдет почти любой газ).
+
+  ## В погоне за эффективностью
+  Помните, атмосферное дело это наука, а наука всегда развивается.
+  Схемы выше лишь верхушка айсберга: собрать ТЭГ и улучшить эти схемы можно множеством способов.
+  [color=#a4885c]Экспериментируйте![/color]
+
+  Всегда старайтесь улучшить и чужие схемы, и свои.
+  ТЭГ мощный инструмент, а с большой силой приходит большая ответственность.
+  Пользуйтесь им с умом и с толком.
+
+  Атмосфера в Space Station 14 сложная система, и ТЭГ лишь одна ее часть.
+  [bold]Это как огромная головоломка, так что вперед, решайте![/bold]
+
+</Document>

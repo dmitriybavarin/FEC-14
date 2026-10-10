@@ -1,0 +1,39 @@
+<Document>
+  # Мониторинг и управление устройствами
+  Атмосферная сеть охватывает всю станцию, поэтому важно отслеживать и управлять устройствами из одного места.
+
+  С помощью этих систем атмосферный отдел следит за атмосферой всей станции и управляет ею.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
+  </Box>
+  <Box>
+    ## Воздушные сигнализации
+  </Box>
+  <Box>
+    [color=#999999][italic]Мониторинг и управление атмосферными устройствами по зонам[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
+  </Box>
+  <Box>
+    ## Компьютер атмосферных тревог
+  </Box>
+  <Box>
+    [color=#999999][italic]Мониторинг воздушных сигнализаций по всей станции[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAtmosMonitoring" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
+  </Box>
+  <Box>
+    ## Монитор атмосферной сети
+  </Box>
+  <Box>
+    [color=#999999][italic]Мониторинг целых трубосетей[italic][/color]
+  </Box>
+
+</Document>

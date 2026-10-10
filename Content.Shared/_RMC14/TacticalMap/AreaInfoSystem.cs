@@ -152,86 +152,86 @@ public sealed class AreaInfoSystem : EntitySystem
         var restrictedActions = new List<string>();
 
         if (_area.CanOrbitalBombard(coordinates, out _))
-            allowedActions.Add("Orbital Strike");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-orbital-strike")); // FEC14
         else
-            restrictedActions.Add("Orbital Strike");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-orbital-strike")); // FEC14
 
         if (_area.CanCAS(coordinates))
-            allowedActions.Add("Close Air Support");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-cas")); // FEC14
         else
-            restrictedActions.Add("Close Air Support");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-cas")); // FEC14
 
         if (_area.CanSupplyDrop(coordinates.ToMap(_entityManager, _transform)))
-            allowedActions.Add("Supply Drops");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-supply-drops")); // FEC14
         else
-            restrictedActions.Add("Supply Drops");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-supply-drops")); // FEC14
 
         if (_area.CanMortarFire(coordinates))
-            allowedActions.Add("Mortar Fire");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-mortar-fire")); // FEC14
         else
-            restrictedActions.Add("Mortar Fire");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-mortar-fire")); // FEC14
 
         if (_area.CanMortarPlacement(coordinates))
-            allowedActions.Add("Mortar Placement");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-mortar-placement")); // FEC14
         else
-            restrictedActions.Add("Mortar Placement");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-mortar-placement")); // FEC14
 
         if (_area.CanLase(coordinates))
-            allowedActions.Add("Laser Designation");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-lase")); // FEC14
         else
-            restrictedActions.Add("Laser Designation");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-lase")); // FEC14
 
         if (_area.CanMedevac(coordinates))
-            allowedActions.Add("Casualty Evacuation");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-medevac")); // FEC14
         else
-            restrictedActions.Add("Casualty Evacuation");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-medevac")); // FEC14
 
         if (_area.CanParadrop(coordinates))
-            allowedActions.Add("Paradropping");
+            allowedActions.Add(Loc.GetString("fec-code-area-info-paradrop")); // FEC14
         else
-            restrictedActions.Add("Paradropping");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-paradrop")); // FEC14
 
         // Add special restrictions
         if (area.Value.Comp.NoTunnel)
-            restrictedActions.Add("Tunneling");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-tunneling")); // FEC14
         if (area.Value.Comp.Unweedable)
-            restrictedActions.Add("Weed Placement");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-weeds")); // FEC14
         else if (!area.Value.Comp.ResinAllowed)
-            restrictedActions.Add("Resin Structures");
+            restrictedActions.Add(Loc.GetString("fec-code-area-info-resin")); // FEC14
 
         var weedkillerZones = new List<string>();
         var check = new string(area.Value.Comp.LinkedLz);
         if (!string.IsNullOrWhiteSpace(check))
             if (check.Contains("dropship_lz1"))
-                weedkillerZones.Add("Landing Zone One");
+                weedkillerZones.Add(Loc.GetString("fec-code-area-info-lz1")); // FEC14
             if (check.Contains("dropship_lz2"))
-                weedkillerZones.Add("Landing Zone Two");
+                weedkillerZones.Add(Loc.GetString("fec-code-area-info-lz2")); // FEC14
             if (check.Contains("dropship_lz3"))
-                weedkillerZones.Add("Landing Zone Three");
+                weedkillerZones.Add(Loc.GetString("fec-code-area-info-lz3")); // FEC14
 
         var protectionSource = "";
         if (hasHiveCoreProtection)
-            protectionSource = "\nProtection: Hive Core";
+            protectionSource = "\n" + Loc.GetString("fec-code-area-info-protection-core"); // FEC14
         else if (hasPylonProtection)
-            protectionSource = "\nProtection: Hive Pylon";
+            protectionSource = "\n" + Loc.GetString("fec-code-area-info-protection-pylon"); // FEC14
 
-        var restrictionsStr = $"\nCeiling level: {ceilingLevel}{protectionSource}";
+        var restrictionsStr = "\n" + Loc.GetString("fec-code-area-info-ceiling", ("level", ceilingLevel)) + protectionSource; // FEC14
 
         if (allowedActions.Count > 0)
         {
-            restrictionsStr += "\n\nAllowed:";
+            restrictionsStr += "\n\n" + Loc.GetString("fec-code-area-info-allowed"); // FEC14
             restrictionsStr += "\n• " + string.Join("\n• ", allowedActions);
         }
 
         if (restrictedActions.Count > 0)
         {
-            restrictionsStr += "\n\nBlocked:";
+            restrictionsStr += "\n\n" + Loc.GetString("fec-code-area-info-blocked"); // FEC14
             restrictionsStr += "\n• " + string.Join("\n• ", restrictedActions);
         }
 
         if (weedkillerZones.Count > 0)
         {
-            restrictionsStr += "\n\nWeedkiller:";
+            restrictionsStr += "\n\n" + Loc.GetString("fec-code-area-info-weedkiller"); // FEC14
             restrictionsStr += "\n• " + string.Join("\n• ", weedkillerZones);
         }
 

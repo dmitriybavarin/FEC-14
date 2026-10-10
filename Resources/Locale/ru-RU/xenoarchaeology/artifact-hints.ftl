@@ -64,6 +64,6 @@ xenoarch-trigger-examine-wrenching = Тут крутится незакрепл�
 xenoarch-trigger-examine-prying = Из поверхности выступает панель.
 xenoarch-trigger-examine-screwing = Тут есть выпуклый участок с маленьким углублением.
 xenoarch-trigger-examine-pulsing = Из поверхности артефакта торчит открытый диод.
-xenoarch-trigger-examine-timer = Поверхность покрыта резьбой и царапинами... Едва удается разобрать число: [italic]{$time}[/italic]
+xenoarch-trigger-examine-timer = Поверхность покрыта резьбой и царапинами... Едва удается разобрать число [italic]{$time}[/italic].
 xenoarch-effect-puddle = Создает лужу реагентов: {$reagent}
 xenoarch-effect-foam = Создает пену реагентов: {$reagent}

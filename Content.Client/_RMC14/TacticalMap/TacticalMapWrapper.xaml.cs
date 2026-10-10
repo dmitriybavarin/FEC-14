@@ -294,11 +294,9 @@ public sealed partial class TacticalMapWrapper : Control
 
     private void SetupControls()
     {
-        ClearCanvasButton.OnPressed += _ => {
-            Canvas.Lines.Clear();
-            Canvas.LineThicknesses.Clear();
-        };
-        UndoButton.OnPressed += _ => OnUndoPressed();
+        ClearCanvasButton.OnPressed += _ => Canvas.FECClear(); // FEC14
+        UndoButton.OnPressed += _ => Canvas.FECUndo(); // FEC14
+        FECSetupCanvasTools(); // FEC14
         Canvas.Color = Color.Black;
 
         SetupColorButton();

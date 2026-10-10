@@ -27,7 +27,7 @@ network-configurator-tooltip-copy = Скопировать список устр
 network-configurator-tooltip-show = Показать голограмму списка устройств цели
 network-configurator-examine-mode-link = [color=red]Связь[/color]
 network-configurator-examine-mode-list = [color=green]Список[/color]
-network-configurator-examine-current-mode = Текущий режим: {$mode}
+network-configurator-examine-current-mode = Сейчас включен режим {$mode}.
 network-configurator-examine-switch-modes = Нажмите {$key}, чтобы сменить режим
 network-configurator-item-status-label = Режим: {$mode}
     Смена: {$keybinding}

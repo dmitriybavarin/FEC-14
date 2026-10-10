@@ -1,5 +1,5 @@
 game-hud-open-escape-menu-button-tooltip = Открыть меню игры.
-game-hud-open-guide-menu-button-tooltip = Открыть справочник.
+game-hud-open-guide-menu-button-tooltip = Открыть руководство.
 game-hud-open-character-menu-button-tooltip = Открыть меню персонажа.
 game-hud-open-emotes-menu-button-tooltip = Открыть меню эмоций.
 game-hud-open-inventory-menu-button-tooltip = Открыть инвентарь.

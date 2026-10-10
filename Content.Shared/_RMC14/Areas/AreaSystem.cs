@@ -225,10 +225,19 @@ public sealed class AreaSystem : EntitySystem
     public bool IsWeatherEnabled(Entity<MapGridComponent> grid, Vector2i indices)
     {
         if (!TryGetArea(grid, indices, out var area, out _))
-            return false;
+            return true; // FEC14
 
         if (IsRoofed(new EntityCoordinates(grid.Owner, indices), r => !r.Comp.CanMortarPlace))
             return false;
+
+        // FEC14
+        var comp = area.Value.Comp;
+        if (!comp.OB || !comp.CAS || !comp.SupplyDrop || !comp.MortarFire ||
+            !comp.MortarPlacement || !comp.Lasing || !comp.Medevac || !comp.Paradropping)
+        {
+            return false;
+        }
+        // FEC14
 
         return area.Value.Comp.WeatherEnabled;
     }
@@ -381,7 +390,7 @@ public sealed class AreaSystem : EntitySystem
         if (area.Value.Comp.WeedKilling)
         {
             if (user != null && popup)
-                _popup.PopupClient("This area is unsuited to host the hive!", user.Value, user.Value, PopupType.MediumCaution);
+                _popup.PopupClient(Loc.GetString("fec-code-hive-area-unsuited"), user.Value, user.Value, PopupType.MediumCaution); // FEC14
 
             return false;
         }
@@ -394,7 +403,7 @@ public sealed class AreaSystem : EntitySystem
             return true;
 
         if (user != null && popup)
-            _popup.PopupClient("It's too early to spread the hive this far.", user.Value, user.Value, PopupType.MediumCaution);
+            _popup.PopupClient(Loc.GetString("fec-code-hive-area-too-early"), user.Value, user.Value, PopupType.MediumCaution); // FEC14
 
         return false;
     }

@@ -1,6 +1,6 @@
-ent-RMCSupplyDropConsole = Консоль сброса снабжения
-    .desc = Старомодный компьютер, подключенный к ближайшей системе сброса снабжения.
-ent-RMCSupplyDropPadBase = Площадка сброса снабжения
+ent-RMCSupplyDropConsole = Консоль сброса поставок
+    .desc = Старомодный компьютер, подключенный к ближайшей системе сброса поставок.
+ent-RMCSupplyDropPadBase = Площадка сброса поставок
 ent-RMCSupplyDropPadAlpha = { ent-RMCSupplyDropPadBase }
     .desc = { "" }
     .suffix = Альфа

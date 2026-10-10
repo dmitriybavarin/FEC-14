@@ -128,8 +128,8 @@ public sealed class ARESExternalTerminalBui : BoundUserInterface, IRefreshableBu
                     _logIndex = 0;
                     _previousMenu = _menu;
                     _menu = Menu.LogMenu;
-                    _window.LogsName.Text = $"[font size=16]Logs: {logName}[/font]";
-                    _window.LogsDescription.Text = $"[font size=12]Description: {proto.Description}[/font]";
+                    _window.LogsName.Text = Loc.GetString("fec-code-ares-logs-name", ("name", logName)); // FEC14
+                    _window.LogsDescription.Text = Loc.GetString("fec-code-ares-logs-description", ("description", proto.Description)); // FEC14
                     Refresh();
                 };
 

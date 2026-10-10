@@ -114,12 +114,12 @@ public sealed class RMCChemicalDispenserBui : BoundUserInterface
 
         var energy = dispenser.Energy;
         _window.EnergyBar.Value = energy.Float();
-        _window.EnergyLabel.Text = $"{energy.Int()} energy";
+        _window.EnergyLabel.Text = Loc.GetString("fec-code-chem-dispenser-energy", ("energy", energy.Int())); // FEC14
 
         if (!_container.TryGetContainer(Owner, dispenser.ContainerSlotId, out var container) ||
             !container.ContainedEntities.TryFirstOrNull(out var contained))
         {
-            _window.BeakerStatus.Text = "No beaker loaded!";
+            _window.BeakerStatus.Text = Loc.GetString("fec-code-chem-dispenser-no-beaker"); // FEC14
             _window.EjectBeakerButton.Visible = false;
             _window.ContentsNone.Visible = true;
             _window.BeakerContents.Visible = false;
@@ -159,12 +159,12 @@ public sealed class RMCChemicalDispenserBui : BoundUserInterface
 
                     _window.BeakerContents.AddChild(new Label
                     {
-                        Text = $"{reagent.Quantity} units of {reagentName}",
+                        Text = Loc.GetString("fec-code-chem-dispenser-reagent", ("amount", reagent.Quantity), ("name", reagentName)), // FEC14
                     });
                 }
             }
 
-            _window.BeakerStatus.Text = $"{units}/{maxUnits} units";
+            _window.BeakerStatus.Text = Loc.GetString("fec-code-chem-dispenser-volume", ("units", units), ("max", maxUnits)); // FEC14
         }
 
         foreach (var (button, amount) in _dispenseButtons)

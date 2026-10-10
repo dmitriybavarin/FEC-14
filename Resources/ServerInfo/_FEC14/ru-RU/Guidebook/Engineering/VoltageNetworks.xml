@@ -1,0 +1,95 @@
+<Document>
+  # Сети напряжения
+  В Space Station 14 энергия распределяется по трем отдельным сетям напряжения.
+  Это сеть [color=green]низкого напряжения[/color], сеть [color=Yellow]среднего напряжения[/color] и сеть [color=orange]высокого напряжения[/color].
+
+  Эти сети питают разные виды оборудования станции.
+
+  <Box>
+    <GuideEntityEmbed Entity="CableHVStack"/>
+    <GuideEntityEmbed Entity="CableMVStack"/>
+    <GuideEntityEmbed Entity="CableApcStack"/>
+  </Box>
+
+  ## Сеть низкого напряжения
+  Сеть [color=green]низкого напряжения[/color] питает почти все небольшие машины на станции: свет, компьютеры и другие мелкие устройства.
+
+  <Box>
+    <GuideEntityEmbed Entity="PoweredSmallLight" Caption=""/>
+    <GuideEntityEmbed Entity="ComputerShuttleCargo" Caption=""/>
+    <GuideEntityEmbed Entity="ComputerComms" Caption=""/>
+    <GuideEntityEmbed Entity="Autolathe" Caption=""/>
+    <GuideEntityEmbed Entity="VendingMachineEngivend" Caption=""/>
+    <GuideEntityEmbed Entity="VendingMachineMedical" Caption=""/>
+    <GuideEntityEmbed Entity="AlwaysPoweredWallLight" Caption=""/>
+  </Box>
+
+  Энергию [color=green]низкого напряжения[/color] дают ЛКП: настенные устройства, которые преобразуют энергию сети [color=Yellow]среднего напряжения[/color] в [color=green]низкое[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
+
+  Кабель [color=green]низкого напряжения[/color] не обязательно тянуть к каждой машине: он питает несколько машин, если они достаточно близко.
+  Он питает машины в радиусе 2 клеток и на 3 клетки по каждому из основных направлений.
+
+  ## Сеть среднего напряжения
+  Сеть [color=Yellow]среднего напряжения[/color] питает ЛКП и другое прожорливое оборудование, которое принимает только [color=Yellow]среднее напряжение[/color].
+  Пример: ускоритель частиц, он работает от [color=Yellow]среднего напряжения[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEndCap" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorControlBox" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorFuelChamber" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="CableMV" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorPowerBox" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterStarboard" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterFore" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterPort" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    [color=#999999][italic]Ускоритель частиц[italic][/color]
+  </Box>
+
+  Энергию [color=Yellow]среднего напряжения[/color] дают подстанции: большие машины, которые преобразуют энергию сети [color=Orange]высокого напряжения[/color] в [color=Yellow]среднее[/color].
+
+  Для тесных мест, например шаттлов, есть настенные варианты подстанций.
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="SubstationBasic"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="SubstationWallBasic"/>
+    </Box>
+  </Box>
+
+  ## Сеть высокого напряжения
+  Сеть [color=Orange]высокого напряжения[/color] передает большие объемы энергии по станции. Она питает большую часть силового оборудования, например СМЭС и подстанции.
+
+  Большинство мощных генераторов отдают энергию в сеть [color=Orange]высокого напряжения[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="SMESBasic"/>
+    <GuideEntityEmbed Entity="RadiationCollector"/>
+    <GuideEntityEmbed Entity="TeslaCoil"/>
+    <GuideEntityEmbed Entity="SubstationBasic"/>
+  </Box>
+
+  ## Удар током
+  Удар током от кабеля под напряжением наносит урон. Его сила зависит от напряжения кабеля.
+
+  Кабели [color=green]низкого напряжения[/color] бьют слабее кабелей [color=Yellow]среднего[/color], а те слабее кабелей [color=Orange]высокого напряжения[/color].
+
+  Кабели [color=Orange]высокого[/color] и [color=Yellow]среднего напряжения[/color] под током бьют больно, поэтому работайте с ними в изолированных перчатках.
+
+</Document>

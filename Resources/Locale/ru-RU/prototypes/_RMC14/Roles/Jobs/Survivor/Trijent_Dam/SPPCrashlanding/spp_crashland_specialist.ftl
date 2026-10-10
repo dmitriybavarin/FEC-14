@@ -1,3 +1,3 @@
-ent-CMSpawnPointSPPCrashlandSpec = Точка появления особого выжившего крушения SPP: специалист
+ent-CMSpawnPointSPPCrashlandSpec = Точка появления особого выжившего крушения СССП: специалист
     .desc = { ent-CMSpawnPointJobBase.desc }
     .suffix = { ent-CMSpawnPointJobBase.suffix }

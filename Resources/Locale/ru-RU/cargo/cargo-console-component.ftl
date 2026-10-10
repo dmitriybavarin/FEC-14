@@ -1,4 +1,4 @@
-cargo-console-menu-title = Консоль заказов снабжения
+cargo-console-menu-title = Консоль заказов поставок
 cargo-console-menu-account-name-label = Счет:{" "}
 cargo-console-menu-account-name-none-text = Нет
 cargo-console-menu-account-name-format = [bold][color={$color}]{$name}[/color][/bold] [font="Monospace"]\[{$code}\][/font]
@@ -63,9 +63,9 @@ cargo-funding-alloc-console-label-account = [bold]Счет[/bold]
 cargo-funding-alloc-console-label-code = [bold] Код [/bold]
 cargo-funding-alloc-console-label-balance = [bold] Баланс [/bold]
 cargo-funding-alloc-console-label-cut = [bold] Доля дохода (%) [/bold]
-cargo-funding-alloc-console-label-primary-cut = Доля снабжения с продаж вне сейфов (%):
-cargo-funding-alloc-console-label-lockbox-cut = Доля снабжения с продаж из сейфов (%):
-cargo-funding-alloc-console-label-help-non-adjustible = Снабжение получает {$percent}% прибыли с продаж вне сейфов. Остальное делится так, как указано ниже:
+cargo-funding-alloc-console-label-primary-cut = Доля отдела поставок с продаж вне сейфов (%):
+cargo-funding-alloc-console-label-lockbox-cut = Доля отдела поставок с продаж из сейфов (%):
+cargo-funding-alloc-console-label-help-non-adjustible = Отдел поставок получает {$percent}% прибыли с продаж вне сейфов. Остальное делится так, как указано ниже:
 cargo-funding-alloc-console-label-help-adjustible = Остаток средств с продаж вне сейфов делится так, как указано ниже:
 cargo-funding-alloc-console-button-save = Сохранить изменения
 cargo-funding-alloc-console-label-save-fail = [bold]Неверное распределение дохода![/bold] [color=red]({$pos ->

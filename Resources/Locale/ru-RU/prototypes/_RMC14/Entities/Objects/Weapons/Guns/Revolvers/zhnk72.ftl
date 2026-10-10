@@ -1,5 +1,5 @@
 ent-RMCWeaponRevolverZHNK72 = Револьвер ZHNK-72
-    .desc = ZHNK-72: револьвер разработки SPP. Используется вооруженными силами SPP в полицейских задачах, а в небольших количествах есть у старших сержантов.
+    .desc = ZHNK-72: револьвер разработки СССП. Используется вооруженными силами СССП в полицейских задачах, а в небольших количествах есть у старших сержантов.
 ent-RMCWeaponRevolverZHNK72Empty = { ent-RMCWeaponRevolverZHNK72 }
     .desc = { ent-RMCWeaponRevolverZHNK72.desc }
     .suffix = Пустая

@@ -48,5 +48,5 @@ rmc-commendation-description = Награждает: [bold]{ $giver }[/bold]. Н
 
 rmc-commendation-examine-title = Надпись
 rmc-commendation-examine-1 = На награде выгравировано:
-rmc-commendation-examine-2 = [italic]Награжден: [bolditalic]{ $receiver }[/bolditalic]. Наградил: [bolditalic]{ $giver }[/bolditalic]. Основание: { $text }[/italic]
+rmc-commendation-examine-2 = [italic]Получатель [bolditalic]{ $receiver }[/bolditalic]. Вручает [bolditalic]{ $giver }[/bolditalic]. Основание награждения. { $text }[/italic]
 rmc-commendation-examine-hover = Прочитать надпись на награде полностью

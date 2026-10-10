@@ -9,7 +9,7 @@ requisition-paper-print-manifest = [head=2]
     С/Н {$serialNumber}[/head]
 requisition-paper-print-content = - {$count} {$item}
 
-ui-supply-drop-consle-name = Консоль сброса снабжения
+ui-supply-drop-consle-name = Консоль сброса поставок
 ui-supply-drop-console-name-bolded = [bold]СБРОС СНАБЖЕНИЯ[/bold]
 ui-supply-drop-console-longitude = Долгота:
 ui-supply-drop-console-latitude = Широта:
@@ -17,7 +17,7 @@ ui-supply-drop-pad-status = [bold]Состояние площадки[/bold]
 ui-supply-drop-console-update = Обновить
 ui-supply-drop-console-ready = Готово к запуску!
 ui-supply-drop-console-launch = ЗАПУСТИТЬ СБРОС СНАБЖЕНИЯ
-ui-supply-drop-console-launch-confirmation = Подтвердить сброс снабжения?
+ui-supply-drop-console-launch-confirmation = Подтвердить сброс поставок?
 ui-supply-drop-console-cooldown = До следующего запуска: {$time} сек.
 ui-supply-drop-crate-status =
     { $hasCrate ->

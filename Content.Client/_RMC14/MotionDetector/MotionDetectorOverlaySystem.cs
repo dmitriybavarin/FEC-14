@@ -9,6 +9,7 @@ using Content.Shared.Storage;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Client.UserInterface; // FEC14
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
@@ -24,6 +25,7 @@ public sealed class MotionDetectorOverlaySystem : EntitySystem
     [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IUserInterfaceManager _ui = default!; // FEC14
 
     public override void Initialize()
     {
@@ -45,7 +47,7 @@ public sealed class MotionDetectorOverlaySystem : EntitySystem
         var playerCoords = transform.GetMapCoordinates(player);
 
         float vpHeight = ViewportUIController.ViewportHeight;
-        float vpWidth = _config.GetCVar(CCVars.ViewportWidth);
+        float vpWidth = _ui.GetUIController<ViewportUIController>().CurrentWidth; // FEC14
 
         var eye = _eye.CurrentEye;
         var vpSize = eye.Zoom;

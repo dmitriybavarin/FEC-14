@@ -50,16 +50,47 @@ public sealed class ViewportUIController : UIController
 
         if (verticalfit)
         {
-            width = max;
+            width = FECAspectWidth(min, max); // FEC14
         }
         else if (width < min || width > max)
         {
             width = CCVars.ViewportWidth.DefaultValue;
         }
 
+        CurrentWidth = width; // FEC14
         Viewport.Viewport.ViewportSize = (EyeManager.PixelsPerMeter * width, EyeManager.PixelsPerMeter * ViewportHeight);
         Viewport.UpdateCfg();
     }
+
+    // FEC14
+    public int CurrentWidth { get; private set; } = CCVars.ViewportWidth.DefaultValue;
+
+    private MainViewport? _fecResizeTarget;
+
+    private int FECAspectWidth(int min, int max)
+    {
+        if (Viewport is not { } viewport || viewport.PixelSize.Y <= 0)
+            return max;
+
+        var aspect = (float) viewport.PixelSize.X / viewport.PixelSize.Y;
+        var width = (int) MathF.Ceiling(ViewportHeight * aspect);
+        return Math.Clamp(width, min, Math.Max(min, max));
+    }
+
+    private void FECTrackResize()
+    {
+        if (_fecResizeTarget == Viewport)
+            return;
+
+        if (_fecResizeTarget != null)
+            _fecResizeTarget.OnResized -= UpdateViewportRatio;
+
+        _fecResizeTarget = Viewport;
+
+        if (_fecResizeTarget != null)
+            _fecResizeTarget.OnResized += UpdateViewportRatio;
+    }
+    // FEC14
 
     public void ReloadViewport()
     {
@@ -68,6 +99,7 @@ public sealed class ViewportUIController : UIController
             return;
         }
 
+        FECTrackResize(); // FEC14
         UpdateViewportRatio();
         Viewport.Viewport.HorizontalExpand = true;
         Viewport.Viewport.VerticalExpand = true;

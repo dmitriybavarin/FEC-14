@@ -1,0 +1,32 @@
+<Document>
+# Медотдел
+Сюда идут пострадавшие, и чинить их предстоит тем, кто здесь работает.
+
+## Состав
+В [color=#5b97bc]медотдел[/color] входят интерны, врачи, парамедики и химики. Руководит [color=#5b97bc]медотделом[/color] главврач.
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineMedicalDoctor" Caption="Врач"/>
+    <GuideEntityEmbed Entity="ToyFigurineParamedic" Caption="Парамедик"/>
+    <GuideEntityEmbed Entity="ToyFigurineChemist" Caption="Химик"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="Главврач"/>
+  </Box>
+
+Сейчас помощь в медотсеке делится на два направления:
+
+## Лечение
+  <Box>
+    <GuideEntityEmbed Entity="Brutepack"/>
+    <GuideEntityEmbed Entity="Bloodpack"/>
+    <GuideEntityEmbed Entity="Ointment"/>
+    <GuideEntityEmbed Entity="Gauze"/>
+    <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
+  </Box>
+## Производство химикатов
+  <Box>
+    <GuideEntityEmbed Entity="ChemDispenser"/>
+    <GuideEntityEmbed Entity="LargeBeaker"/>
+    <GuideEntityEmbed Entity="PillCanister"/>
+    <GuideEntityEmbed Entity="ChemMaster"/>
+  </Box>
+</Document>

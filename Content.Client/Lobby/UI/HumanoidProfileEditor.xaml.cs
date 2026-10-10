@@ -1,4 +1,5 @@
 using Content.Shared._FEC14.Species; // FEC14
+using Content.Shared._FEC14.JobWhitelist; // FEC14
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -764,6 +765,7 @@ namespace Content.Client.Lobby.UI
 
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => FECSpeciesRestriction.IsAllowed(o, _cfgManager))); // FEC14
             SpeciesButton.Disabled = _species.Count <= 1; // FEC14
+            FECSpeciesRow.Visible = _species.Count > 1; // FEC14
             var speciesIds = _species.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _species.Count; i++)
@@ -1054,7 +1056,7 @@ namespace Content.Client.Lobby.UI
                         {
                             new Label
                             {
-                                Text = department.CustomName ?? Loc.GetString("humanoid-profile-editor-department-jobs-label", ("departmentName", departmentName)),
+                                Text = department.CustomName != null ? Loc.GetString(department.CustomName) : Loc.GetString("humanoid-profile-editor-department-jobs-label", ("departmentName", departmentName)), // FEC14
                                 Margin = new Thickness(5f, 0, 0, 0)
                             }
                         }
@@ -1073,6 +1075,49 @@ namespace Content.Client.Lobby.UI
 
                 foreach (var job in jobs)
                 {
+                    FECAddJobRow(job, category); // FEC14
+                }
+            }
+
+            // FEC14
+            var fecOtherJobs = FECLobbyJobs.Other(_prototypeManager, _requirements.FECJobWhitelists);
+            if (fecOtherJobs.Count > 0)
+            {
+                var fecOtherCategory = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    Name = "FECOtherJobs",
+                };
+
+                if (!firstCategory)
+                    fecOtherCategory.AddChild(new Control { MinSize = new Vector2(0, 23) });
+
+                fecOtherCategory.AddChild(new PanelContainer
+                {
+                    PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                    Children =
+                    {
+                        new Label
+                        {
+                            Text = Loc.GetString("fec-lobby-other-jobs"),
+                            Margin = new Thickness(5f, 0, 0, 0),
+                        },
+                    },
+                });
+
+                JobList.AddChild(fecOtherCategory);
+                foreach (var job in fecOtherJobs)
+                {
+                    FECAddJobRow(job, fecOtherCategory);
+                }
+            }
+
+            UpdateJobPriorities();
+            UpdatePlaytimeRankPreferenceControls();
+
+            void FECAddJobRow(JobPrototype job, BoxContainer category)
+            {
+            // FEC14
                     var jobContainer = new BoxContainer()
                     {
                         Orientation = LayoutOrientation.Horizontal,
@@ -1101,6 +1146,9 @@ namespace Content.Client.Lobby.UI
                     {
                         selector.UnlockRequirements();
                     }
+
+                    if (!job.SetPreference) // FEC14
+                        selector.LockRequirements(FormattedMessage.FromUnformatted(Loc.GetString("fec-lobby-other-job-no-preference"))); // FEC14
 
                     selector.OnSelected += selectedPrio =>
                     {
@@ -1221,11 +1269,9 @@ namespace Content.Client.Lobby.UI
                     jobContainer.AddChild(loadoutWindowBtn);
                     jobContainer.AddChild(rankOptions);
                     category.AddChild(jobContainer);
-                }
+            // FEC14
             }
-
-            UpdateJobPriorities();
-            UpdatePlaytimeRankPreferenceControls();
+            // FEC14
         }
 
         private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)

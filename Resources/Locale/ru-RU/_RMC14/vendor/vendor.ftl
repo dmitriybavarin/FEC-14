@@ -2,7 +2,7 @@ cm-vending-machine-wrong-card = ID-карта принадлежит друго�
 cm-vending-machine-access-denied = Доступ запрещен.
 cm-vending-machine-specialist-max = Этот набор уже взят.
 
-rmc-vending-machine-supply-link-connected = [color=green]Подключена линия снабжения.[/color]
+rmc-vending-machine-supply-link-connected = [color=green]Подключена линия поставок.[/color]
 rmc-vending-machine-can-hack = Кажется, этот можно взломать [color=cyan]тюнером доступа[/color] и снять требования к доступу.
 rmc-vending-machine-cannot-hack = Взломать ограничения доступа этого раздатчика не получается.
 rmc-vending-machine-hack-no-skill = Вы не понимаете, как перенастроить доступ этого раздатчика.

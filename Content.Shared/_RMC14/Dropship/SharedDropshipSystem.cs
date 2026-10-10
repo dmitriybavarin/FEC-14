@@ -1,3 +1,4 @@
+using Content.Shared._FEC14.Localization; // FEC14
 using System.Linq;
 using Content.Shared._RMC14.ARES;
 using Content.Shared._RMC14.ARES.Logs;
@@ -224,7 +225,7 @@ public abstract class SharedDropshipSystem : EntitySystem
         var query = EntityQueryEnumerator<DropshipHijackDestinationComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            destinations.Add((GetNetEntity(uid), Name(uid)));
+            destinations.Add((GetNetEntity(uid), FECMapText.Localize("fec-lz-", Name(uid)))); // FEC14
         }
 
         _ui.OpenUi(ent.Owner, DropshipHijackerUiKey.Key, args.User);
@@ -335,7 +336,7 @@ public abstract class SharedDropshipSystem : EntitySystem
                     if (_areas.TryGetArea(closestDestination.Value, out _, out var areaProto))
                         locationName = areaProto.Name;
 
-                    _xenoAnnounce.AnnounceSameHiveDefaultSound(user, $"The Queen has commanded the metal bird to the hive at {locationName}");
+                    _xenoAnnounce.AnnounceSameHiveDefaultSound(user, Loc.GetString("fec-code-dropship-hijack-announce", ("location", locationName))); // FEC14
                     return;
                 }
             }
@@ -385,7 +386,7 @@ public abstract class SharedDropshipSystem : EntitySystem
             }
         }
 
-        var state = new DropshipTerminalBuiState(Name(lz), dropships);
+        var state = new DropshipTerminalBuiState(FECMapText.Localize("fec-lz-", Name(lz)), dropships); // FEC14
         _ui.SetUiState(terminal.Owner, DropshipTerminalUiKey.Key, state);
     }
 
@@ -526,7 +527,7 @@ public abstract class SharedDropshipSystem : EntitySystem
 
         var grid = _transform.GetGrid((ent.Owner, Transform(ent.Owner)));
         if (grid != null)
-            _core.CreateARESLog(ent.Comp.Faction, LogCat, (string)$"{Name(args.Actor)} launched the {Name(grid.Value)} to {Name(destination.Value)}");
+            _core.CreateARESLog(ent.Comp.Faction, LogCat, Loc.GetString("fec-code-ares-dropship-launch", ("user", Name(args.Actor)), ("ship", Name(grid.Value)), ("destination", FECMapText.Localize("fec-lz-", Name(destination.Value))))); // FEC14
     }
 
     private void OnDropshipNavigationCancelMsg(Entity<DropshipNavigationComputerComponent> ent,
@@ -767,7 +768,7 @@ public abstract class SharedDropshipSystem : EntitySystem
         EnsureComp<RMCTrackableComponent>(lz);
         RefreshUI();
 
-        var message = Loc.GetString("rmc-announcement-ares-lz-designated", ("name", Name(lz)));
+        var message = Loc.GetString("rmc-announcement-ares-lz-designated", ("name", FECMapText.Localize("fec-lz-", Name(lz)))); // FEC14
         _marineAnnounce.AnnounceARESStaging(actor, message);
 
         return true;

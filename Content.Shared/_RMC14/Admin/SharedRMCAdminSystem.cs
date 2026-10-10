@@ -26,6 +26,7 @@ public abstract class SharedRMCAdminSystem : EntitySystem
         args.Verbs.Add(new RMCAdminVerb
         {
             Text = Loc.GetString("rmc-ui-open-rmc-actions"),
+            Category = VerbCategory.Admin, // FEC14
             Act = () =>
             {
                 OpenBui(player, args.Target);

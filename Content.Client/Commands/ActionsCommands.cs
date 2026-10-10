@@ -11,7 +11,7 @@ namespace Content.Client.Commands;
 public sealed class SaveActionsCommand : IConsoleCommand
 {
     public string Command => "saveacts";
-    public string Description => "Saves the current action toolbar assignments to a file";
+    public string Description => Loc.GetString("fec-cmd-actionss-desc"); // FEC14
     public string Help => $"Usage: {Command} <user resource path>";
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {

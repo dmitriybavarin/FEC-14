@@ -62,6 +62,7 @@
     sprite: _RMC14/Objects/CMIDs/general.rsi
   - type: Item
     heldPrefix: green
+  - type: FECAllAccess
   - type: Access
     groups:
     - ShipMasterAccess

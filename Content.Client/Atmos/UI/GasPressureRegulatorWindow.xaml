@@ -13,7 +13,7 @@
             <BoxContainer Orientation="Vertical" Align="Center">
                 <Label Text="{Loc gas-pressure-regulator-ui-outlet}" Align="Center" StyleClasses="LabelKeyText" />
                 <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Name="OutletPressureLabel" Text="N/A" Margin="0 0 4 0" />
+                    <Label Name="OutletPressureLabel" Text="{Loc 'fec-xaml-n-a'}" Margin="0 0 4 0" />
                     <Label Text="{Loc gas-pressure-regulator-ui-pressure-unit}" />
                 </BoxContainer>
             </BoxContainer>
@@ -36,7 +36,7 @@
                 <BoxContainer Orientation="Vertical" Align="Center" HorizontalExpand="True">
                     <Label Text="{Loc gas-pressure-regulator-ui-flow}" StyleClasses="LabelKeyText" />
                     <BoxContainer Orientation="Horizontal">
-                        <Label Name="CurrentFlowLabel" Text="N/A" Margin="0 0 4 0" />
+                        <Label Name="CurrentFlowLabel" Text="{Loc 'fec-xaml-n-a'}" Margin="0 0 4 0" />
                         <Label Text="{Loc gas-pressure-regulator-ui-flow-rate-unit}" />
                     </BoxContainer>
                 </BoxContainer>
@@ -45,7 +45,7 @@
             <BoxContainer Orientation="Vertical" Align="Center" Margin="1">
                 <Label Text="{Loc gas-pressure-regulator-ui-inlet}" Align="Center" StyleClasses="LabelKeyText" />
                 <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Name="InletPressureLabel" Text="N/A" Margin="0 0 4 0" />
+                    <Label Name="InletPressureLabel" Text="{Loc 'fec-xaml-n-a'}" Margin="0 0 4 0" />
                     <Label Text="{Loc gas-pressure-regulator-ui-pressure-unit}" />
                 </BoxContainer>
             </BoxContainer>

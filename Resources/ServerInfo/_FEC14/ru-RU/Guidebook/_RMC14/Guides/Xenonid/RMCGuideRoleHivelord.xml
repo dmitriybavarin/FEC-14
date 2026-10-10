@@ -1,0 +1,26 @@
+<Document>
+  #Владыка улья, уровень 2
+  <GuideEntityEmbed Entity="CMXenoHivelord"/>
+  ##Игра за владыку улья
+  Вы улучшенный трутень и быстрее строите толстые смоляные постройки. На передовой работать опасно: вы легко гибнете от взрывов и "небесных плевков" (авиаподдержки). Поэтому лучше работать в тылу, тем более что благодаря бегу по смоле владыки улья быстро передвигаются по смоле.
+
+  Еще владыки улья отлично валят противников, так что на передовой от них тоже есть толк, если носитель зайдет на их смолу.
+
+  ##Способности:
+  - [bold]Посадить смолу[/bold]: ставит узел смолы, от которого смола разрастается на большую площадь.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoPlantWeeds"/>
+  - [bold]Выбрать смоляную постройку[/bold]: выбирает, что строить способностью "Выделить смолу".
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoChooseResinStructure"/>
+  - [bold]Выделить смолу[/bold]: строит выбранную постройку на клетке, по которой вы щелкнули.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoSecreteResin"/>
+  - [bold]Наметить строительство[/bold]: размечает строительство постройки улья.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoOrderConstruction"/>
+  - [bold]Передать плазму[/bold]: передает вашу плазму сестре, улучшенная версия.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoTransferPlasma"/>
+  - [bold]Разъедающая кислота[/bold]: выделяет на предмет каплю кислоты, которая его растворяет.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoCorrosiveAcid"/>
+  - [bold]Выделять феромоны[/bold]: выделяет один из трех видов феромонов. Их сила зависит от касты, а феромоны одного вида не складываются.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoPheromones"/>
+  - [bold]Бег по смоле[/bold]: ускоряет вас на смоле, но быстро расходует плазму.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoResinWalker"/>
+</Document>

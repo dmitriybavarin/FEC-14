@@ -49,35 +49,35 @@ public sealed class RequisitionsBui(EntityUid owner, Enum uiKey) : BoundUserInte
     {
         _window ??= this.CreateWindow<RequisitionsWindow>();
 
-        var platformLabel = "No platform";
-        var platformButtonLabel = "No platform";
+        var platformLabel = Loc.GetString("fec-code-req-no-platform"); // FEC14
+        var platformButtonLabel = Loc.GetString("fec-code-req-no-platform"); // FEC14
         var platformButtonDisabled = false;
         bool? raise = null;
         switch (uiState.PlatformLowered)
         {
             case Lowered or Raised when uiState.Busy:
-                platformLabel = $"Platform position: {uiState.PlatformLowered}";
-                platformButtonLabel = "ASRS is busy";
+                platformLabel = uiState.PlatformLowered == Lowered ? Loc.GetString("fec-code-req-platform-lowered") : Loc.GetString("fec-code-req-platform-raised"); // FEC14
+                platformButtonLabel = Loc.GetString("fec-code-req-asrs-busy"); // FEC14
                 platformButtonDisabled = true;
                 break;
             case Lowered:
-                platformButtonLabel = "Raise platform";
-                platformLabel = "Platform position: Lowered";
+                platformButtonLabel = Loc.GetString("fec-code-req-raise-platform"); // FEC14
+                platformLabel = Loc.GetString("fec-code-req-platform-lowered"); // FEC14
                 raise = true;
                 break;
             case Raised:
-                platformButtonLabel = "Lower platform";
-                platformLabel = "Platform position: Raised";
+                platformButtonLabel = Loc.GetString("fec-code-req-lower-platform"); // FEC14
+                platformLabel = Loc.GetString("fec-code-req-platform-raised"); // FEC14
                 raise = false;
                 break;
             case Lowering:
-                platformButtonLabel = "Please wait";
-                platformLabel = "Platform lowering...";
+                platformButtonLabel = Loc.GetString("fec-code-req-please-wait"); // FEC14
+                platformLabel = Loc.GetString("fec-code-req-platform-lowering"); // FEC14
                 platformButtonDisabled = true;
                 break;
             case Raising:
-                platformButtonLabel = "Please wait";
-                platformLabel = "Platform raising...";
+                platformButtonLabel = Loc.GetString("fec-code-req-please-wait"); // FEC14
+                platformLabel = Loc.GetString("fec-code-req-platform-raising"); // FEC14
                 platformButtonDisabled = true;
                 break;
             case null:
@@ -96,14 +96,14 @@ public sealed class RequisitionsBui(EntityUid owner, Enum uiKey) : BoundUserInte
         }
 
         var budget = new FormattedMessage();
-        budget.AddMarkupOrThrow($"[bold]Supply budget: ${uiState.Balance}[/bold]");
+        budget.AddMarkupOrThrow(Loc.GetString("fec-code-req-budget", ("balance", uiState.Balance))); // FEC14
         _window.MainView.BudgetLabel.SetMessage(budget);
         _window.OrderCategoriesView.BudgetLabel.SetMessage(budget);
         _window.CategoryView.BudgetLabel.SetMessage(budget);
         _window.OrderSearchView.BudgetLabel.SetMessage(budget);
 
         var categoryHeader = new FormattedMessage();
-        categoryHeader.AddMarkupOrThrow("[bold]Select a category[/bold]");
+        categoryHeader.AddMarkupOrThrow(Loc.GetString("fec-code-req-select-category")); // FEC14
         _window.OrderCategoriesView.CategoryHeaderLabel.SetMessage(categoryHeader);
         _window.OrderCategoriesView.CategoriesContainer.DisposeAllChildren();
 
@@ -165,7 +165,7 @@ public sealed class RequisitionsBui(EntityUid owner, Enum uiKey) : BoundUserInte
 
         var category = computer.Categories[categoryIndex];
         var requestMsg = new FormattedMessage();
-        requestMsg.AddMarkupOrThrow($"[bold]Request from: {category.Name}[/bold]");
+        requestMsg.AddMarkupOrThrow(Loc.GetString("fec-code-req-request-from", ("category", category.Name))); // FEC14
         _window.CategoryView.RequestFromLabel.SetMessage(requestMsg);
 
         var state = State as RequisitionsBuiState;
@@ -229,7 +229,7 @@ public sealed class RequisitionsBui(EntityUid owner, Enum uiKey) : BoundUserInte
                 continue;
 
             var categoryHeader = new FormattedMessage();
-            categoryHeader.AddMarkupOrThrow($"[bold]Request from: {category.Name}[/bold]");
+            categoryHeader.AddMarkupOrThrow(Loc.GetString("fec-code-req-request-from", ("category", category.Name))); // FEC14
             categoryGroup.GroupLabel.SetMessage(categoryHeader);
 
             _window.OrderSearchView.ResultContainer.AddChild(categoryGroup);

@@ -25,7 +25,7 @@ public sealed class VehicleFlamerTankSlotsSystem : EntitySystem
         for (var i = 0; i < ent.Comp.MaxTanks; i++)
         {
             var slotId = GetSlotId(activeSlotId, i);
-            var slot = new ItemSlot { Name = i == 0 ? "Tank" : "Spare Tank" };
+            var slot = new ItemSlot { Name = i == 0 ? Loc.GetString("fec-code-flamer-slot-tank") : Loc.GetString("fec-code-flamer-slot-spare") }; // FEC14
             _itemSlots.AddItemSlot(ent, slotId, slot);
 
             if (ent.Comp.StartingItem is { } startingItem)

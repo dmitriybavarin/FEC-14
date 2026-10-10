@@ -288,9 +288,9 @@ public sealed class VisorSystem : EntitySystem
         }
 
         if (anyRemoved)
-            _popup.PopupClient("You remove the inserted visors", args.Target, args.User);
+            _popup.PopupClient(Loc.GetString("fec-code-visor-removed"), args.Target, args.User); // FEC14
         else
-            _popup.PopupClient("There are no visors left to take out!", args.Target, args.User);
+            _popup.PopupClient(Loc.GetString("fec-code-visor-none-left"), args.Target, args.User); // FEC14
 
         ent.Comp.CurrentVisor = null;
         Dirty(ent);
@@ -392,13 +392,13 @@ public sealed class VisorSystem : EntitySystem
             var container = _container.EnsureContainer<ContainerSlot>(cycleable, id);
             if (_container.Insert(visor.Owner, container))
             {
-                msg = $"You connect the {Name(visor)} to {Name(cycleable)}.";
+                msg = Loc.GetString("fec-code-visor-connected"); // FEC14
                 _popup.PopupClient(msg, cycleable, user);
                 return true;
             }
         }
 
-        msg = $"{Name(cycleable)} has used all of its visor attachment sockets.";
+        msg = Loc.GetString("fec-code-visor-sockets-full"); // FEC14
         _popup.PopupClient(msg, cycleable, user, PopupType.SmallCaution);
         return true;
     }

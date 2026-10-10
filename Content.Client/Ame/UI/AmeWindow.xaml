@@ -47,14 +47,14 @@
             <Label Text="{Loc 'ame-window-power-currentsupply-label'}" />
             <Label Text=" " />
             <Label Name="CurrentPowerSupply" Text="0" />
-            <Label Text=" kW" />
+            <Label Text="{Loc 'fec-xaml-kw'}" />
         </BoxContainer>
         <BoxContainer></BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'ame-window-power-targetsupply-label'}" />
             <Label Text=" " />
             <Label Name="TargetedPowerSupply" Text="0" />
-            <Label Text=" kW" />
+            <Label Text="{Loc 'fec-xaml-kw'}" />
         </BoxContainer>
     </GridContainer>
 </DefaultWindow>

@@ -51,11 +51,11 @@ public sealed partial class HiveTeamPanelControl : BoxContainer
         Action<int, NetEntity> onRemoveMember,
         Action<int, int> onSetRole)
     {
-        TeamTitle.Text = $"HiveTeam {index + 1}";
+        TeamTitle.Text = Loc.GetString("fec-code-hive-team-title", ("number", index + 1)); // FEC14
 
         RoleBox.Clear();
         for (var i = 0; i < HiveTeamsComponent.RoleNames.Length; i++)
-            RoleBox.AddItem(HiveTeamsComponent.RoleNames[i], i);
+            RoleBox.AddItem(Loc.GetString($"fec-code-hive-team-role-{i}"), i); // FEC14
         RoleBox.SelectId(entry?.Role ?? 0);
         RoleBox.OnItemSelected += args => onSetRole(index, args.Id);
 
@@ -80,7 +80,7 @@ public sealed partial class HiveTeamPanelControl : BoxContainer
             hbox.AddChild(new Label { Text = leaderXeno.Name, VerticalAlignment = VAlignment.Center });
             btn.AddChild(hbox);
             btn.OnPressed += _ => onRemoveLeader(index);
-            btn.ToolTip = "Click to remove as leader";
+            btn.ToolTip = Loc.GetString("fec-code-hive-team-remove-leader"); // FEC14
             LeaderSlot.AddChild(btn);
         }
         else
@@ -114,7 +114,7 @@ public sealed partial class HiveTeamPanelControl : BoxContainer
                 control.SetHeight = 48;
                 var capturedMember = memberNet;
                 control.Button.OnPressed += _ => onRemoveMember(index, capturedMember);
-                control.Button.ToolTip = "Click to remove from team";
+                control.Button.ToolTip = Loc.GetString("fec-code-hive-team-remove-member"); // FEC14
                 MembersGrid.AddChild(control);
             }
         }

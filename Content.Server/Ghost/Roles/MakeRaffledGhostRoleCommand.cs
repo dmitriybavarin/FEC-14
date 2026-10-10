@@ -17,7 +17,7 @@ namespace Content.Server.Ghost.Roles
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "makeghostroleraffled";
-        public string Description => "Turns an entity into a raffled ghost role.";
+        public string Description => Loc.GetString("fec-cmd-make-raffled-ghost-role-desc"); // FEC14
         public string Help => $"Usage: {Command} <entity uid> <name> <description> (<settings prototype> | <initial duration> <extend by> <max duration>) [<rules>]\n" +
                               $"Durations are in seconds.";
 

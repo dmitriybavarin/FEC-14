@@ -27,7 +27,7 @@ language-Scandinavian-description = Земной язык.
 language-SignLanguage-description = Визуальный язык жестов и движений тела.
 language-Primitive-description = Примитивный язык из визга, уханья и жестов.
 
-game-hud-open-language-menu-button-tooltip = Меню языков (сменить язык речи)
+game-hud-open-language-menu-button-tooltip = Меню языков
 
 language-learning-overall-progress = Всего: { $progress }
 language-learning-word-count = Слов: { $count }

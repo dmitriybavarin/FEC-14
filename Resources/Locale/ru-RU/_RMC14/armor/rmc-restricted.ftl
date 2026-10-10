@@ -12,7 +12,7 @@ rmc-armor-not-cmp-jumpsuit = Это можно надеть только пов�
 
 rmc-armor-not-pmc-jumpsuit = Это можно надеть только поверх формы PMC.
 
-rmc-armor-not-spp-jumpsuit = Это можно надеть только поверх формы SPP.
+rmc-armor-not-spp-jumpsuit = Это можно надеть только поверх формы СССП.
 
 rmc-armor-not-cmb-jumpsuit = Это можно надеть только поверх формы CMB.
 

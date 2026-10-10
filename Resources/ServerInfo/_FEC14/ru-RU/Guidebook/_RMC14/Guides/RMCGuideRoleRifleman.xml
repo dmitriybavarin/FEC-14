@@ -1,0 +1,85 @@
+<Document>
+[color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСКОЙ ПЕХОТЫ США[/bold][/head]\n
+[color=#5f698a]▀ ▄▀ █ ▀█ [/color]
+
+# Памятка стрелка КМП США
+
+  <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2">
+    <Box HorizontalAlignment="Left" Margin="8">[bold][color=#ff8a8a]Подъем, боец! Встать и собраться![/color][/bold]</Box>
+  </ColorBox>
+
+  ## Шаг 1. Завтрак
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Вы только проснулись и голодны. Идите к раздатчику еды, возьмите два пайка и закиньте их в себя. Жалобы на еду можете направить тому, кому не все равно!
+      <Box>
+        <GuideEntityEmbed Entity="ColMarTechFood"/>
+        <GuideEntityEmbed Entity="CMMarinePreparedMealChicken"/>
+      </Box>
+      - Подносы с собой брать нельзя. Оставьте их на ближайшем столе или выкиньте в мусоропровод. Помоги вам бог, если я увижу, что вы бросили их где-то еще!
+    </Box>
+  </ColorBox>
+
+  <Box>[color=red]МОРПЕХ! В трусах не воюют! Одеться! БЕГОМ!![/color]</Box>
+
+  ## Шаг 2. Форма
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Тащите свою задницу к автоматическому раздатчику снаряжения и оденьтесь. Нажмите на раздатчик, затем на "Стандартная форма морпеха".
+      - Вы получите форму: нательное белье, ботинки, перчатки, шлем и гарнитуру. Носить их нужно ВСЕГДА.
+      <GuideEntityEmbed Entity="ColMarTechEquipment"/>
+      - Запомните цвет на шлеме, он обозначает ваше отделение:\n[color=#E61919]красный: Альфа[/color], [color=#FFC32D]желтый: Браво[/color], [color=#C864C8]фиолетовый: Чарли[/color], [color=#4148C8]синий: Дельта[/color].
+    </Box>
+  </ColorBox>
+
+  ## Шаг 3. Снаряжение
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Теперь выберите снаряжение. Из каждой категории дают только один предмет (подсумков два), так что выбирайте с умом. Все, что отмечено [color=green]зеленым[/color], рекомендовано для вашей роли. Возьмите легкую или среднюю броню, разгрузку M276, пару подсумков с аптечкой и, если хотите, противогаз или подшлемник.
+      <Box>
+        <GuideEntityEmbed Entity="CMBeltMarine"/>
+        <GuideEntityEmbed Entity="RMCPouchFirstAid"/>
+      </Box>
+      - На дополнительное снаряжение у вас есть 45 очков: гранаты, инструменты, особые патроны! У каждого предмета своя цена, и одни вещи выгоднее других. Для начала возьмите удлиненные или бронебойные магазины для M54C и уберите их в разгрузку.
+    </Box>
+  </ColorBox>
+
+  <Box>[color=red]Вот теперь вы похожи на морпеха![/color]</Box>
+
+  ## Шаг 4. Оружие
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - На выпускной вы готовы, но без сопровождающего из дома не выйдете!
+      - Подойдите к автоматической оружейной стойке и выберите оружие. Как и раньше, рекомендованное отмечено [color=green]зеленым[/color].
+      <Box>
+        <GuideEntityEmbed Entity="ColMarTechGuns"/>
+      </Box>
+      - Знакомьтесь с новым лучшим другом: [bold]штурмовая винтовка M54C MK2[/bold]. Возьмите запасные магазины, уберите их в разгрузку или подсумки и не забудьте зарядить винтовку.
+      - Наверняка захочется опробовать нового приятеля и познакомиться поближе. Если хотите потренироваться в стрельбе, идите в тир.
+      - Вне тира вы [color=red]не стреляете[/color]!
+      <GuideEntityEmbed Entity="RMCWeaponRifleM54C"/>
+      - Возьмите обычные и бронебойные (AP) магазины. Бронебойные пробивают крепкие цели, и морпехов в том числе, так что СЛЕДИТЕ. ЗА. ОГНЕМ.
+      <Box>
+        <GuideEntityEmbed Entity="CMMagazineRifleM54C"/>
+        <GuideEntityEmbed Entity="CMMagazineRifleM54CAP"/>
+      </Box>
+      - В оружейной также есть раздатчики запасной формы, инструментов, боеприпасов и оружейных модулей. Про модули поговорим в другой раз.
+    </Box>
+  </ColorBox>
+
+  <Box>[color=red]Злой, зеленый, морпех КМП США! УРА!![/color]</Box>
+
+  ## Шаг 5. Брифинг и помощь
+  <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Найдите товарищей по отделению и идите на брифинг. Если опоздали, сразу идите на запад в ангар и готовьтесь к высадке.
+      - За помощью можно обратиться к любому морпеху или к местному наставнику, старшему сержанту-советнику.
+      - Если нужна дополнительная помощь или возникла проблема, нажмите F1, чтобы написать ментору.
+      <Box>
+        <GuideEntityEmbed Entity="CMGuidebookRoleSEA"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+<Box>[color=red]SEMPER FI, МОРПЕХ! РАЗОЙДИСЬ![/color]</Box>
+</Document>

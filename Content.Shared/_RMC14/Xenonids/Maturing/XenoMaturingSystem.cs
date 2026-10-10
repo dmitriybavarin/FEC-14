@@ -43,7 +43,7 @@ public sealed class XenoMaturingSystem : EntitySystem
 
     private void OnRefreshNameModifiers(Entity<XenoMaturingComponent> ent, ref RefreshNameModifiersEvent args)
     {
-        args.AddModifier("rmc-xeno-immature-prefix");
+        args.AddModifier("rmc-xeno-immature-prefix", 0, ("feminine", args.BaseName.EndsWith('а') || args.BaseName.EndsWith('я') ? "yes" : "no")); // FEC14
     }
 
     private void OnExamined(Entity<XenoMaturingComponent> ent, ref ExaminedEvent args)

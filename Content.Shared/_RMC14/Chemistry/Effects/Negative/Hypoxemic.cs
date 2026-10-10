@@ -18,9 +18,7 @@ public sealed partial class Hypoxemic : RMCChemicalEffect
 
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return $"Deals [color=red]{PotencyPerSecond * 2}[/color] airloss damage and causes the victim to gasp for air.\n" +
-               $"Overdoses cause [color=red]{PotencyPerSecond}[/color] brute, [color=red]{PotencyPerSecond}[/color] toxin, and [color=red]{PotencyPerSecond * 5}[/color] airloss damage.\n" +
-               $"Critical overdoses cause [color=red]{PotencyPerSecond * 5}[/color] brute and [color=red]{PotencyPerSecond * 2}[/color] toxin damage";
+        return Loc.GetString("fec-code-chem-effect-hypoxemic", ("v1", PotencyPerSecond * 2), ("v2", PotencyPerSecond), ("v3", PotencyPerSecond * 5)); // FEC14
     }
 
     protected override void Tick(DamageableSystem damageable, FixedPoint2 potency, EntityEffectReagentArgs args)

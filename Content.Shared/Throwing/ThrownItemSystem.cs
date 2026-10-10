@@ -26,6 +26,7 @@ namespace Content.Shared.Throwing
         [Dependency] private readonly SharedBroadphaseSystem _broadphase = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly SharedGravitySystem _gravity = default!;
+        [Dependency] private readonly Content.Shared._RMC14.Marines.Skills.SkillsSystem _fecSkills = default!; // FEC14
 
         private const string ThrowingFixture = "throw-fixture";
 
@@ -146,6 +147,12 @@ namespace Content.Shared.Throwing
                     $"{ToPrettyString(thrown):thrown} thrown by {ToPrettyString(component.Thrower.Value):thrower} hit {ToPrettyString(target):target}.");
 
             RaiseLocalEvent(target, new ThrowHitByEvent(thrown, target, component), true);
+
+            // FEC14
+            if (!_fecSkills.FECCanThrowHit(thrown, component.Thrower))
+                return;
+            // FEC14
+
             RaiseLocalEvent(thrown, new ThrowDoHitEvent(thrown, target, component), true);
         }
 

@@ -1,0 +1,58 @@
+<Document>
+  # Атмосферные системы
+  У атмосферного отдела много разных устройств для перемещения газа, управления им и прочих манипуляций.
+  Обычно они работают вместе, поддерживая для экипажа безопасную пригодную для дыхания атмосферу или решая общую задачу.
+
+  В этом разделе разобраны системы атмосферного отдела, как они соединяются и как ими лучше пользоваться.
+
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption=""/>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption=""/>
+  </Box>
+  <Box>
+    ## Трубопроводные сети
+  </Box>
+  <Box>
+    [color=#999999][italic]Соединенные трубы с общей задачей, их часто называют трубосетями[/italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
+    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+  </Box>
+  <Box>
+    ## Мониторинг и управление устройствами
+  </Box>
+  <Box>
+    [color=#999999][italic]Наблюдение за устройствами, управляющими местной атмосферой, и управление ими[/italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="Firelock" Caption=""/>
+    <GuideEntityEmbed Entity="FireAlarm" Caption=""/>
+  </Box>
+  <Box>
+    ## Контроль пожаров и газа
+  </Box>
+  <Box>
+    [color=#999999][italic]Устройства, которые сдерживают и предотвращают утечки газа и пожары[/italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasMinerOxygenStation" Caption=""/>
+    <GuideEntityEmbed Entity="AirCanister" Caption=""/>
+  </Box>
+  <Box>
+    ## Добыча и хранение газа
+  </Box>
+  <Box>
+    [color=#999999][italic]Устройства, которые добывают новый газ для станции и хранят его на потом[/italic][/color]
+  </Box>
+
+</Document>

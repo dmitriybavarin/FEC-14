@@ -1,0 +1,34 @@
+<Document>
+# Сервис
+[color=#9fed58]Сервис[/color] поддерживает на станции чистоту, порядок и здравомыслие, чтобы остальные отделы лучше работали, а их сотрудники были довольны. Еще на них ложится большая часть бумажной работы станции.
+
+## Состав
+В [color=#9fed58]сервис[/color] входят работники сервиса, повара, ботаники, бармены, уборщики, священники, клоуны, мимы, музыканты, юристы, библиотекари и пассажиры. Руководит сервисом глава персонала.
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Повар"/>
+    <GuideEntityEmbed Entity="ToyFigurineBotanist" Caption="Ботаник"/>
+    <GuideEntityEmbed Entity="ToyFigurineBartender" Caption="Бармен"/>
+    <GuideEntityEmbed Entity="ToyFigurineJanitor" Caption="Уборщик"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineChaplain" Caption="Священник"/>
+    <GuideEntityEmbed Entity="ToyFigurineClown" Caption="Клоун"/>
+    <GuideEntityEmbed Entity="ToyFigurineMime" Caption="Мим"/>
+    <GuideEntityEmbed Entity="ToyFigurineMusician" Caption="Музыкант"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Юрист"/>
+    <GuideEntityEmbed Entity="ToyFigurineLibrarian" Caption="Библиотекарь"/>
+    <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Пассажир"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="Глава персонала"/>
+  </Box>
+
+## Совместная работа
+[color=#9fed58]Сервис[/color] самый разнообразный отдел и при этом, пожалуй, самый [color=#a4885c]взаимосвязанный[/color].
+Большинству должностей [color=#9fed58]сервиса[/color] нужно [color=#a4885c]сотрудничество[/color] друг с другом.
+Поварам часто нужны продукты, которые хорошо умеют выращивать только ботаники. Бармен может попросить бананы, которых в избытке только у клоунов.
+Юрист может позвать мима сыграть в шарады, чтобы убедить судью в невиновности клиента.
+
+[color=#a4885c]Сотрудничать[/color] нужно много, и внутри [color=#9fed58]сервиса[/color], и с другими. Другим отделам часто нужен [color=#9fed58]сервис[/color], так что будьте начеку.
+</Document>

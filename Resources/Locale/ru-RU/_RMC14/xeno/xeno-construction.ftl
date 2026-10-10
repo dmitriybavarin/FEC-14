@@ -95,7 +95,7 @@ rmc-xeno-construction-egg-morpher-already-full = Этот яйцеморф уж�
 
 rmc-xeno-egg-morpher-return-self = { CAPITALIZE($parasite) } заползает в яйцеморф.
 
-rmc-xeno-construction-egg-morpher-examine = Укрыто детей: { $cur_paras }/{ $max_paras }.
+rmc-xeno-construction-egg-morpher-examine = Внутри укрыто детей { $cur_paras } из { $max_paras }.
 
 rmc-xeno-construction-recovery-node-heal-target = Нас окутывает теплая аура.
 rmc-xeno-construction-recovery-node-heal-other = { CAPITALIZE($target) } светится, окутанная теплой аурой.

@@ -33,7 +33,6 @@ public sealed class SkillsSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
@@ -68,7 +67,6 @@ public sealed class SkillsSystem : EntitySystem
         SubscribeLocalEvent<RequiresSkillComponent, UseInHandEvent>(OnRequiresSkillUseInHand, before: [typeof(HypospraySystem), typeof(SharedFlashSystem)]);
 
         SubscribeLocalEvent<MeleeRequiresSkillComponent, AttemptMeleeEvent>(OnMeleeRequiresSkillAttemptMelee);
-        SubscribeLocalEvent<MeleeRequiresSkillComponent, ThrowItemAttemptEvent>(OnMeleeRequiresSkillThrowAttempt);
         SubscribeLocalEvent<MeleeRequiresSkillComponent, UseInHandEvent>(OnMeleeRequiresSkillUseInHand, before: [typeof(HypospraySystem), typeof(SharedFlashSystem)]);
 
         SubscribeLocalEvent<ItemToggleRequiresSkillComponent, ItemToggleActivateAttemptEvent>(OnItemToggleRequiresSkill);
@@ -211,19 +209,15 @@ public sealed class SkillsSystem : EntitySystem
         }
     }
 
-    private void OnMeleeRequiresSkillThrowAttempt(Entity<MeleeRequiresSkillComponent> ent, ref ThrowItemAttemptEvent args)
+    // FEC14
+    public bool FECCanThrowHit(EntityUid thrown, EntityUid? thrower)
     {
-        if (!HasAllSkills(args.User, ent.Comp.Skills))
-        {
-            if (_net.IsServer)
-            {
-                var msg = Loc.GetString("rmc-skills-cant-use", ("item", ent));
-                _popup.PopupEntity(msg, args.User, args.User, PopupType.SmallCaution);
-            }
+        if (thrower == null || !TryComp(thrown, out MeleeRequiresSkillComponent? required))
+            return true;
 
-            args.Cancelled = true;
-        }
+        return HasAllSkills(thrower.Value, required.Skills);
     }
+    // FEC14
 
     private void OnMeleeRequiresSkillUseInHand(Entity<MeleeRequiresSkillComponent> ent, ref UseInHandEvent args)
     {

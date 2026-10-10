@@ -1,0 +1,66 @@
+<Document>
+  # Добыча и хранение газов
+  Газы часто расходуются безвозвратно. Улетают ли они в [textlink="космос" link="Spacing"] или сгорают в камере сгорания, станция должна вырабатывать новый газ взамен потерянного.
+  А еще его нужно хранить безопасно и рационально.
+
+  ## Газодобытчики
+  Газодобытчики пополняют запасы газа станции. Они стоят в газовых хранилищах атмосферного отдела.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasMinerOxygenStation"/>
+    <GuideEntityEmbed Entity="GasMinerNitrogenStation"/>
+  </Box>
+
+  Газодобытчики постоянно вырабатывают газ комнатной температуры и выпускают его в окружающую атмосферу. Электричество им не нужно, и они работают без остановки, пока не достигнут заданного [bold]давления отсечки[/bold].
+
+  Подробнее о газодобытчике можно узнать, осмотрев его клавишей [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
+  Попробуйте осмотреть газодобытчики выше.
+
+  Газодобытчики бывают разных уровней: у больших давление отсечки выше, чем у маленьких.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasMinerNitrogen" Caption="300 кПа"/>
+    <GuideEntityEmbed Entity="GasMinerNitrogenStation" Caption="1000 кПа"/>
+    <GuideEntityEmbed Entity="GasMinerNitrogenStationLarge" Caption="4500 кПа"/>
+  </Box>
+
+  Если газодобытчик открепили от станции, его можно прикрепить обратно обычным гаечным ключом.
+
+  ## Хранение газов
+  Газовые хранилища держат газ от газодобытчиков и отдают его другим процессам. Они находятся в атмосферном отделе.
+
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasOutletInjector" Rotation="270" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasMinerOxygenStation" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    [color=#999999][italic]Пример небольшого газового хранилища[italic][/color]
+  </Box>
+
+  Разные атмосферные процессы добавляют газы в хранилища и забирают их оттуда.
+  Например:
+  - Газодобытчик подает в хранилище свежий газ, если там есть место.
+  - Сеть переработки возвращает очищенные газы в хранилища для повторного использования.
+  - Распределительная сеть, камера сгорания и подобные схемы забирают газы из хранилищ.
+
+  Газовые хранилища устроены так, чтобы их можно было измерить [textlink="газоанализатором" link="AtmosTools"].
+  Выходная вентиляция здесь [textlink="пассивная" link="PassiveVent"], поэтому [textlink="газоанализатором" link="AtmosTools"] можно измерить состав газа на входе [textlink="насоса" link="Pumps"], который забирает газ из хранилища.
+</Document>

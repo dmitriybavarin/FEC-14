@@ -115,7 +115,7 @@ public sealed class HiveLeaderSystem : EntitySystem
         {
             if (leaders.Count == 0)
             {
-                msg = "There are no Xenonid leaders. Overwatch a Xenonid to make it a leader.";
+                msg = Loc.GetString("fec-code-hive-leader-none"); // FEC14
                 _popup.PopupClient(msg, ent, ent, PopupType.MediumCaution);
                 return;
             }
@@ -126,7 +126,7 @@ public sealed class HiveLeaderSystem : EntitySystem
                 options.Add(new DialogOption(Name(leader), new HiveLeaderWatchEvent(GetNetEntity(leader))));
             }
 
-            _dialog.OpenOptions(ent, "Watch with leader?", options, "Target");
+            _dialog.OpenOptions(ent, Loc.GetString("fec-code-hive-leader-watch-title"), options, Loc.GetString("fec-code-hive-leader-watch-target")); // FEC14
             return;
         }
 
@@ -135,7 +135,7 @@ public sealed class HiveLeaderSystem : EntitySystem
 
         if (!HasComp<HiveLeaderComponent>(watching) && leaders.Count >= max)
         {
-            msg = $"You can't have more than {max} promoted leaders.";
+            msg = Loc.GetString("fec-code-hive-leader-max", ("max", max)); // FEC14
             _popup.PopupClient(msg, watching, ent, PopupType.MediumCaution);
             return;
         }
@@ -146,10 +146,10 @@ public sealed class HiveLeaderSystem : EntitySystem
             RemComp<RMCTrackableComponent>(watching);
             ent.Comp.Leaders.Remove(watching);
 
-            msg = $"You've demoted {Name(watching)} from Hive Leader.";
+            msg = Loc.GetString("fec-code-hive-leader-demoted", ("name", Name(watching))); // FEC14
             _popup.PopupClient(msg, watching, ent, PopupType.MediumCaution);
 
-            msg = $"{Name(ent)} has demoted you from Hive Leader. Your leadership rights and abilities have waned.";
+            msg = Loc.GetString("fec-code-hive-leader-demoted-target", ("name", Name(ent))); // FEC14
             _popup.PopupEntity(msg, watching, watching, PopupType.MediumCaution);
             _rmcChat.ChatMessageToOne(msg, watching);
             var evn = new HiveLeaderStatusChangedEvent(false);
@@ -166,9 +166,9 @@ public sealed class HiveLeaderSystem : EntitySystem
         SyncPheromones(ent);
         Dirty(ent);
 
-        msg = $"You've selected {Name(watching)} as a Hive Leader.";
+        msg = Loc.GetString("fec-code-hive-leader-selected", ("name", Name(watching))); // FEC14
         _popup.PopupClient(msg, watching, ent, PopupType.Medium);
-        msg = $"{Name(ent)} has selected you as a Hive Leader. The other Xenonids must listen to you. You will also act as a beacon for the Queen's pheromones.";
+        msg = Loc.GetString("fec-code-hive-leader-selected-target", ("name", Name(ent))); // FEC14
         _popup.PopupClient(msg, watching, watching, PopupType.Medium);
         _rmcChat.ChatMessageToOne(msg, watching);
     }

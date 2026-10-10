@@ -6,5 +6,5 @@ namespace Content.Shared._RMC14.Medical.Surgery.Tools;
 [Access(typeof(SharedCMSurgerySystem))]
 public sealed partial class CMBoneSawComponent : Component, ICMSurgeryToolComponent
 {
-    public string ToolName => "a bone saw";
+    public string ToolName => Loc.GetString("fec-code-surgery-tool-bone-saw"); // FEC14
 }

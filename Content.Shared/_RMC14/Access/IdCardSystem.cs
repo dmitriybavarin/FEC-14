@@ -29,7 +29,7 @@ public sealed class IdCardSystem : EntitySystem
         if (args.Handled || !TryComp(args.Used, out IdCardComponent? idCard) || idCard.OriginalOwner != null)
             return;
         idCard.OriginalOwner = args.Target;
-        var popupMessage = $"{Name(args.User)} bound an ID to {Name(args.Target)}.";
+        var popupMessage = Loc.GetString("fec-code-id-card-bound", ("user", Name(args.User))); // FEC14
         _popup.PopupPredicted(popupMessage, args.Target, args.User, PopupType.Small);
         _adminLogger.Add(LogType.RMCIdModify,
             LogImpact.High,
@@ -42,7 +42,7 @@ public sealed class IdCardSystem : EntitySystem
     {
         if (ent.Comp.OriginalOwner == null)
         {
-            args.PushMarkup("[color=orange]To claim ownership, interact with the card or another person to bind it to them.[/color]");
+            args.PushMarkup(Loc.GetString("fec-code-id-card-examine-unbound")); // FEC14
         }
     }
 
@@ -53,7 +53,7 @@ public sealed class IdCardSystem : EntitySystem
 
         ent.Comp.OriginalOwner = args.User;
         args.Handled = true;
-        var popupMessage = $"Bound ID to yourself.";
+        var popupMessage = Loc.GetString("fec-code-id-card-bound-self"); // FEC14
         _popup.PopupClient(popupMessage, args.User, PopupType.Small);
         _adminLogger.Add(LogType.RMCIdModify,
             LogImpact.Medium,

@@ -1,0 +1,161 @@
+<Document>
+  # Шлюзы
+  Шлюзы ограничивают доступ в разные зоны станции.
+
+  <Box>
+    <GuideEntityEmbed Entity="Airlock" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
+  </Box>
+
+  Шлюз открывается клавишей [color=yellow][bold][keybind="Use"][/bold][/color] пустой рукой, клавишей [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color], если руки заняты, или если просто в него упереться.
+
+  Шлюз откроется, только если у вас ID-карта с нужным уровнем доступа.
+  ID-карта должна быть в руке или в слоте ID.
+  Если ID-карт несколько, шлюз проверит их все.
+  То же относится к ID-карте в КПК.
+
+  Нужный для двери уровень доступа меняется конфигуратором доступа или мультитулом на электронике двери (для этого шлюз нужно разобрать).
+
+  <Box>
+    <GuideEntityEmbed Entity="AccessConfigurator" Caption=""/>
+    <GuideEntityEmbed Entity="Multitool" Caption=""/>
+    <GuideEntityEmbed Entity="DoorElectronics" Caption=""/>
+  </Box>
+
+  Шлюзы не пропускают газ, поэтому ими можно отсечь зону при [textlink="пробое корпуса" link="Spacing"] или [textlink="пожаре." link="Fires"]
+  Даже закрытые, они хранят газ на своей клетке, так что открывайте их осторожно во время или после утечки газа.
+
+  ## Болты и аварийный доступ
+  На шлюзе можно опустить болты, и тогда его нельзя открыть или вскрыть руками. Сверху на двери при этом горят красные лампы.
+
+  Еще шлюз можно перевести в аварийный доступ. В этом режиме его может открыть кто угодно, независимо от уровня доступа. Сверху на двери при этом мигают желтые лампы.
+
+  ## Дистанционное управление
+  Шлюзами можно управлять дистанционно: это может ИИ станции или владелец пульта дверей.
+  <Box>
+    <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption=""/>
+  </Box>
+  <Box>
+    [color=#999999][italic]ИИ станции, который дистанционно управляет всеми шлюзами[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="DoorRemoteEngineering" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteCommand" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteMedical" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteService" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteSecurity" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteResearch" Caption=""/>
+  </Box>
+  <Box>
+    [color=#999999][italic]Бесценные пульты дверей. С безграничной властью...[italic][/color]
+  </Box>
+
+
+  Главы отделов обычно получают пульты дверей своего отдела.
+
+  Пультом можно открывать и закрывать двери, опускать болты и включать аварийный доступ.
+
+  ## Связь
+  Шлюзы можно связать с другими устройствами через систему [textlink="связи" link="Networking"].
+  Так делают правильные шлюзы в космос или связывают несколько шлюзов между собой.
+
+  ## Оформление
+  Шлюзы бывают разных стилей под отделы станции. Стиль отдела обычно соответствует нужному уровню доступа.
+
+  <Box>
+    <GuideEntityEmbed Entity="Airlock" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCargo" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCommand" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockEngineering" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockMedical" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockScience" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockSecurity" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCargoGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCommandGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockEngineeringGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockMedicalGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockScienceGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockSecurityGlass" Caption=""/>
+  </Box>
+
+  Шлюзы можно перекрасить краскопультом.
+  <Box>
+    <GuideEntityEmbed Entity="SprayPainter" Caption=""/>
+  </Box>
+
+  ## Проводка
+  Под панелью обслуживания шлюза, которая открывается отверткой, есть проводка.
+  Каждый провод отвечает за свою функцию шлюза.
+  Импульс, перерезание и починка провода влияют на шлюз по-разному.
+
+  Лампы рядом с проводами показывают их состояние:
+  - Ровный свет: система работает нормально.
+  - Мигающий свет: система неисправна, то есть не работает или ведет себя не так, как задумано.
+  - Нет света: система обесточена.
+
+  Провода и их функции:
+
+  <Table Columns="2">
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Болты (БОЛТ)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Опускает или поднимает болты двери.
+        - [color=red]Перерезать[/color]: Опускает болты двери.
+        - [color=green]Починить[/color]: Ничего не делает.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Питание (ПИТН)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Ненадолго обесточивает дверь.
+        - [color=red]Перерезать[/color]: Если перерезаны оба провода питания, дверь обесточивается. Если только один, происходит короткое замыкание, и всех без изолированных перчаток бьет током.
+        - [color=green]Починить[/color]: Если перерезаны оба провода, возвращает двери питание. Если один, прекращает короткое замыкание.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Журнал (ЖУРН)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Временно отключает журнал двери.
+        - [color=red]Перерезать[/color]: Отключает журнал двери.
+        - [color=green]Починить[/color]: Снова включает журнал двери.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Свет болтов (СВЕТ)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Временно выключает систему или включает обратно.
+        - [color=red]Перерезать[/color]: Не дает загореться лампе болтов, которая показывает, опущены ли болты.
+        - [color=green]Починить[/color]: Снова включает систему.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Таймер (ТАЙМ)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Временно сокращает таймер двери.
+        - [color=red]Перерезать[/color]: Отключает таймер. Дверь закроется, как только это будет безопасно.
+        - [color=green]Починить[/color]: Снова включает таймер.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Безопасность (БЕЗП)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Временно отключает систему безопасности.
+        - [color=red]Перерезать[/color]: Отключает систему безопасности. Дверь закроется, даже если что-то мешает.
+        - [color=green]Починить[/color]: Снова включает систему безопасности.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a14" OutlineColor="#a4885c" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#a4885c]Доступ ИИ (ИИД)[/color][/bold]
+        - [color=yellow]Импульс[/color]: Ничего не делает.
+        - [color=red]Перерезать[/color]: Отключает доступ ИИ. ИИ больше не может управлять дверью.
+        - [color=green]Починить[/color]: Снова включает доступ ИИ.
+      </Box>
+    </ColorBox>
+  </Table>
+
+</Document>

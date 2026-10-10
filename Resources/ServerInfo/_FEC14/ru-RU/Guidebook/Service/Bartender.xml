@@ -1,0 +1,27 @@
+<Document>
+# Бармен
+У бармена простая работа: подавать напитки. Люди подходят и просят напиток, а вам нужно просто им его дать.
+
+[textlink="Нажмите сюда, чтобы открыть полный список напитков." link="Drinks"]
+
+<Box>
+Ингредиенты для напитков можно найти в разных местах:
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BoozeDispenser"/>
+<GuideEntityEmbed Entity="SodaDispenser"/>
+<GuideEntityEmbed Entity="VendingMachineBooze"/>
+</Box>
+
+<Box>
+Не забудьте посуду, в которой их подавать!
+</Box>
+<Box>
+<GuideEntityEmbed Entity="DrinkGlass" Caption="Стакан"/>
+<GuideEntityEmbed Entity="DrinkGlassCoupeShaped"/>
+<GuideEntityEmbed Entity="DrinkShaker"/>
+<GuideEntityEmbed Entity="DrinkJigger"/>
+</Box>
+
+Список всех напитков, которые могут заказать, есть в разделе справочных таблиц.
+</Document>

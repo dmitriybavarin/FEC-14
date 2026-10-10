@@ -1,0 +1,159 @@
+- type: entity
+  parent: CMAirlockMedicalLocked
+  id: FECAirlockSPPMedicalLocked
+  suffix: SPP Medical, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPMedical" ] ]
+
+- type: entity
+  parent: CMAirlockGlassMedicalLocked
+  id: FECAirlockGlassSPPMedicalLocked
+  suffix: SPP Medical, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPMedical" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockSPPEngineeringLocked
+  suffix: SPP Engineering, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPEngineering" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPEngineeringLocked
+  suffix: SPP Engineering, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPEngineering" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockSPPArmoryLocked
+  suffix: SPP Armory, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPArmory" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPArmoryLocked
+  suffix: SPP Armory, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPArmory" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockSPPFlightLocked
+  suffix: SPP Flight, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPflight" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPFlightLocked
+  suffix: SPP Flight, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPflight" ] ]
+
+- type: entity
+  parent: CMAirlockResearchLocked
+  id: FECAirlockSPPResearchLocked
+  suffix: SPP Research, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPResearch" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPResearchLocked
+  suffix: SPP Research, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPResearch" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockSPPCommandoLocked
+  suffix: SPP Commando, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPCommando" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPCommandoLocked
+  suffix: SPP Commando, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPCommando" ] ]
+
+- type: entity
+  parent: CMAirlockCommandLocked
+  id: FECAirlockSPPLeadershipLocked
+  suffix: SPP Leadership, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPLeadership" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPLeadershipLocked
+  suffix: SPP Leadership, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPLeadership" ] ]
+
+- type: entity
+  parent: CMAirlockCommandLocked
+  id: FECAirlockSPPSeniorLeadLocked
+  suffix: SPP Senior Lead, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPSeniorLead" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassSPPSeniorLeadLocked
+  suffix: SPP Senior Lead, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessSPPSeniorLead" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockTSEPAInspectorLocked
+  suffix: TSEPA Inspector, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessTSEPAInspector" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassTSEPAInspectorLocked
+  suffix: TSEPA Inspector, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessTSEPAInspector" ] ]
+
+- type: entity
+  parent: CMAirlockSecurityLocked
+  id: FECAirlockWeYaFlightLocked
+  suffix: WeYa Flight, Solid, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessWeYaFlight" ] ]
+
+- type: entity
+  parent: CMAirlockGlassSecurityLocked
+  id: FECAirlockGlassWeYaFlightLocked
+  suffix: WeYa Flight, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessWeYaFlight" ] ]

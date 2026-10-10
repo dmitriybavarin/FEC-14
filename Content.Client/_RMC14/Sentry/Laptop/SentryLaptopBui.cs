@@ -105,7 +105,7 @@ public sealed class SentryLaptopBui : BoundUserInterface
 
         var selectAllButton = new SentryButton
         {
-            Text = "Select All",
+            Text = Loc.GetString("fec-code-sentry-laptop-select-all"), // FEC14
             HorizontalExpand = true,
             Margin = new Thickness(0, 0, 2, 0),
             BackgroundColor = Color.FromHex("#1A3D5C"),
@@ -115,7 +115,7 @@ public sealed class SentryLaptopBui : BoundUserInterface
 
         var deselectAllButton = new SentryButton
         {
-            Text = "Deselect All",
+            Text = Loc.GetString("fec-code-sentry-laptop-deselect-all"), // FEC14
             HorizontalExpand = true,
             Margin = new Thickness(2, 0, 0, 0),
             BackgroundColor = Color.FromHex("#5C1A1A"),
@@ -329,7 +329,7 @@ public sealed class SentryLaptopBui : BoundUserInterface
             var sentryCount = state.Sentries.Count;
             var maxSentries = laptop.MaxLinkedSentries;
 
-            _window!.LaptopHeader.SetMarkupPermissive($"[color=#88C7FA][font size=16][bold]SENTRY NETWORK - {sentryCount}/{maxSentries} LINKED[/bold][/font][/color]");
+            _window!.LaptopHeader.SetMarkupPermissive(Loc.GetString("fec-code-sentry-laptop-header", ("count", sentryCount), ("max", maxSentries))); // FEC14
         }
     }
 
@@ -346,13 +346,13 @@ public sealed class SentryLaptopBui : BoundUserInterface
 
         if (state.Sentries.Count == 0)
         {
-            _window!.StatusLabel.Text = "Status: No sentries linked";
+            _window!.StatusLabel.Text = Loc.GetString("fec-code-sentry-laptop-status-none"); // FEC14
             _window.StatusLabel.FontColorOverride = Color.FromHex("#A42625");
             return;
         }
 
         var onlineCount = state.Sentries.Count(s => s.Mode == SentryMode.On);
-        _window!.StatusLabel.Text = $"Status: {onlineCount}/{state.Sentries.Count} Online";
+        _window!.StatusLabel.Text = Loc.GetString("fec-code-sentry-laptop-status", ("online", onlineCount), ("total", state.Sentries.Count)); // FEC14
         _window.StatusLabel.FontColorOverride = onlineCount > 0 ? Color.FromHex("#229132") : Color.FromHex("#CED22B");
     }
 

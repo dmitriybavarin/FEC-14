@@ -1,9 +1,9 @@
-squad-alpha = Отделение Альфа
-squad-bravo = Отделение Браво
-squad-charlie = Отделение Чарли
-squad-delta = Отделение Дельта
-squad-echo = Отделение Эхо
-squad-foxtrot = Отделение Фокстрот
+squad-alpha = Отряд Альфа
+squad-bravo = Отряд Браво
+squad-charlie = Отряд Чарли
+squad-delta = Отряд Дельта
+squad-echo = Отряд Эхо
+squad-foxtrot = Отряд Фокстрот
 
 squad-alpha-name = { $name } Альфы
 squad-bravo-name = { $name } Браво

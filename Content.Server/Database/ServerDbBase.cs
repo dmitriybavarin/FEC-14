@@ -1810,6 +1810,18 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return true;
         }
 
+        // FEC14
+        public async Task<List<(Guid UserId, string Name, string RoleId)>> FECGetAllJobWhitelists()
+        {
+            await using var db = await GetDb();
+            var rows = await db.DbContext.RoleWhitelists
+                .Select(w => new { w.PlayerUserId, w.Player.LastSeenUserName, w.RoleId })
+                .ToListAsync();
+
+            return rows.Select(r => (r.PlayerUserId, r.LastSeenUserName, r.RoleId)).ToList();
+        }
+        // FEC14
+
         #endregion
 
         # region IPIntel

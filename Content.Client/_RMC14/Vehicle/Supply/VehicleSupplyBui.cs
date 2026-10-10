@@ -85,11 +85,11 @@ public sealed class VehicleSupplyBui : BoundUserInterface, IRefreshableBui
         if (_window == null)
             return;
 
-        var modeText = state.LiftMode?.ToString() ?? "No lift";
-        var activeText = string.IsNullOrWhiteSpace(state.ActiveVehicleId) ? "none" : state.ActiveVehicleId;
-        var busyText = state.Busy ? "busy" : "idle";
+        var modeText = state.LiftMode?.ToString() ?? Loc.GetString("fec-code-vehicle-supply-no-lift"); // FEC14
+        var activeText = string.IsNullOrWhiteSpace(state.ActiveVehicleId) ? Loc.GetString("fec-code-vehicle-supply-none") : state.ActiveVehicleId; // FEC14
+        var busyText = state.Busy ? Loc.GetString("fec-code-vehicle-supply-busy") : Loc.GetString("fec-code-vehicle-supply-idle"); // FEC14
 
-        _window.StatusLabel.Text = $"Lift: {modeText} | Status: {busyText} | Active: {activeText}";
+        _window.StatusLabel.Text = Loc.GetString("fec-code-vehicle-supply-status", ("mode", modeText), ("busy", busyText), ("active", activeText)); // FEC14
 
         var raising = state.LiftMode == VehicleSupplyLiftMode.Raising;
         var lowering = state.LiftMode == VehicleSupplyLiftMode.Lowering;
@@ -171,7 +171,7 @@ public sealed class VehicleSupplyBui : BoundUserInterface, IRefreshableBui
             {
                 var copyToggle = new HardpointButton
                 {
-                    LabelText = _copyExpanded.Contains(vehicleId) ? "Copies v" : "Copies >",
+                    LabelText = _copyExpanded.Contains(vehicleId) ? Loc.GetString("fec-code-vehicle-supply-copies-open") : Loc.GetString("fec-code-vehicle-supply-copies-closed"), // FEC14
                     MinSize = new Vector2(110, 0)
                 };
 
@@ -306,7 +306,7 @@ public sealed class VehicleSupplyBui : BoundUserInterface, IRefreshableBui
 
         var expanded = _copyExpanded.Contains(vehicleId);
         container.Visible = expanded;
-        toggle.LabelText = expanded ? "Copies v" : "Copies >";
+        toggle.LabelText = expanded ? Loc.GetString("fec-code-vehicle-supply-copies-open") : Loc.GetString("fec-code-vehicle-supply-copies-closed"); // FEC14
     }
 
     private static void ApplySelectionStyle(HardpointButton button, bool selected)

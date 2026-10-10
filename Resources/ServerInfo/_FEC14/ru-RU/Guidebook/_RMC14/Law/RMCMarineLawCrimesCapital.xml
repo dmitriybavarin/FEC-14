@@ -1,0 +1,90 @@
+<Document>
+  # Особо тяжкие преступления
+  - Это преступления крайней тяжести.
+  - Любое из них может караться [bold]бессрочным заключением и понижением или казнью и аннулированием ID.[/bold]
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Обвинение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Описание
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Побег
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Сбежать, помочь в побеге, пытаться сбежать или сознательно и добровольно позволить освободить себя из камеры.
+      </Box>
+    </ColorBox>
+
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Покушение на убийство
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Попытка убить человека, которая не удалась. Применяется, если доказательства показывают, что арестованный явно и со злым умыслом пытался кого-то убить, но не довел дело до конца.
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Убийство или самовольная казнь
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Убийство с умыслом. Сюда относятся и синтетики. Обвинение применяется, даже если жертву потом реанимировали.
+        \n\- Отказ реанимировать или препятствование реанимации того, кто не был казнен по установленной процедуре.
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Подстрекательство к мятежу
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Действия или отказ выполнять приказы с целью свергнуть законную командную структуру или захватить власть.
+        \n\- Создание угрозы кода [bold][color=red]красный[/color][/bold] для корабля.
+        \n\- Заявление о верности так называемому CLF или действия от его имени считаются подстрекательством к мятежу против ООН.
+        \n\- При неудавшемся мятеже [color=#008000][bold]командующий[/bold][/color] может отказать в лечении или реанимации мятежникам, которые не сдались, ссылаясь на подстрекательство к мятежу.
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Дезертирство
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Отказ выполнять обязанности, без которых невозможна служба на посту, или самовольное оставление поста без намерения вернуться. (Отступление с планеты при прорыве передовой базы не дезертирство, а отказ вернуться по приказу уже да.)
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Преступления против межзвездной жизни
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Действия, нарушающие права межзвездной жизни или иным образом являющиеся злодеяниями против нее.
+        \n\- Пытки, каннибализм и насильственное заражение любого рода.
+      </Box>
+    </ColorBox>
+
+  </Table>
+</Document>

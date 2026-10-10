@@ -1,0 +1,27 @@
+<Document>
+  # Строительство
+
+  <Box>
+    <GuideEntityEmbed Entity="Bed" Caption=""/>
+    <GuideEntityEmbed Entity="TableReinforced" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponImprovisedPneumaticCannon" Caption=""/>
+    <GuideEntityEmbed Entity="Chair" Caption=""/>
+  </Box>
+
+
+  В меню строительства в игре строят и создают предметы.
+  Открывается оно клавишей [color=yellow][bold][keybind="OpenCraftingMenu"][/bold][/color].
+
+  Ставя объекты, которые "привязываются" к сетке, можно зажать [color=yellow][bold][keybind="EditorLinePlace"][/bold][/color], чтобы поставить целую линию, и [color=yellow][bold][keybind="EditorGridPlace"][/bold][/color], чтобы поставить целую сетку.
+
+  Создавая объекты из множества ингредиентов, помните, что держать все сразу не нужно: просто положите ингредиенты на пол, в рюкзак или на стол рядом, и они будут израсходованы при создании как обычно.
+
+  Ставя "призрак постройки", нажмите [color=yellow][bold][keybind="EditorRotateObject"][/bold][/color], чтобы повернуть его по часовой стрелке.
+  Если строите отражаемый компонент (например, газовые смесители и фильтры), нажмите [color=yellow][bold][keybind="EditorFlipObject"][/bold][/color], чтобы отразить призрак.
+
+  Уже построенный объект можно повернуть по часовой или против часовой стрелки клавишами [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] и [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], если он не закреплен (откручен).
+
+
+
+
+</Document>

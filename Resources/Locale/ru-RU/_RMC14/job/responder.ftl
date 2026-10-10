@@ -28,8 +28,8 @@ rmc-job-name-clf-responder = Связной CLF
 rmc-job-description-clf-responder = "Вы состоите в региональной ячейке CLF. Передавайте сведения местным ячейкам и получайте их."
 rmc-job-prefix-clf-responder = INFO
 
-rmc-job-name-spp-responder = Офицер связи SPP
-rmc-job-description-spp-responder = "Вы действуете от имени регионального командования SPP и отвечаете на факсы, отправленные командованию SPP."
+rmc-job-name-spp-responder = Офицер связи СССП
+rmc-job-description-spp-responder = "Вы действуете от имени регионального командования СССП и отвечаете на факсы, отправленные командованию СССП."
 
 rmc-job-name-tse-responder = Офицер связи TSE
 rmc-job-description-tse-responder = "Вы действуете от имени регионального командования TSE и отвечаете на факсы, отправленные командованию TSE."

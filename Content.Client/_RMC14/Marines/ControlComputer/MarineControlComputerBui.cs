@@ -51,9 +51,9 @@ public sealed class MarineControlComputerBui(EntityUid owner, Enum uiKey) : Boun
 
         // TODO RMC14 estimated time until escape pod launch
         if (_confirmingEvacuation)
-            _window.EvacuationButton.Text = "Confirm?";
+            _window.EvacuationButton.Text = Loc.GetString("fec-code-confirm-question"); // FEC14
         else
-            _window.EvacuationButton.Text = computer.Evacuating ? "Cancel Evacuation" : "Initiate Evacuation";
+            _window.EvacuationButton.Text = computer.Evacuating ? Loc.GetString("fec-code-evac-cancel") : Loc.GetString("fec-code-evac-initiate"); // FEC14
 
         _window.EvacuationButton.Disabled = !computer.CanEvacuate;
     }

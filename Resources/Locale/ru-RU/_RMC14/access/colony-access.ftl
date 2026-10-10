@@ -1,12 +1,12 @@
-cm-access-colony-public = Колония: общий
-cm-access-colony-logistics = Колония: логистика
-cm-access-colony-engineering = Колония: инженерный
-cm-access-colony-research = Колония: исследования
-cm-access-colony-brig = Колония: гауптвахта
-cm-access-colony-medbay = Колония: медотсек
-cm-access-colony-command = Колония: командование
-rmc-access-colony-armory = Колония: оружейная
+cm-access-colony-public = Колония - Общий
+cm-access-colony-logistics = Колония - Логистика
+cm-access-colony-engineering = Колония - Инженерный
+cm-access-colony-research = Колония - Исследования
+cm-access-colony-brig = Колония - Гауптвахта
+cm-access-colony-medbay = Колония - Медотсек
+cm-access-colony-command = Колония - Командование
+rmc-access-colony-armory = Колония - Оружейная
 
 rmc-access-tsepa = TSEPA
-rmc-access-tsepa-brig = TSEPA: гауптвахта
-rmc-access-tsepa-inspector = TSEPA: инспектор
+rmc-access-tsepa-brig = TSEPA - Гауптвахта
+rmc-access-tsepa-inspector = TSEPA - Инспектор

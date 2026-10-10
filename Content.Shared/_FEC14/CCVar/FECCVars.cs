@@ -12,6 +12,9 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> OocColors =
         CVarDef.Create("fec.ooc_colors", "", CVar.SERVERONLY);
 
+    public static readonly CVarDef<string> AdminWeightsFile =
+        CVarDef.Create("fec.admin_weights_file", ".CONFIG/admin_weights.json", CVar.SERVERONLY);
+
     public static readonly CVarDef<string> OocColorsFile =
         CVarDef.Create("fec.ooc_colors_file", ".CONFIG/ooc_colors.json", CVar.SERVERONLY);
 }

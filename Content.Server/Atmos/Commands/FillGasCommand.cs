@@ -13,7 +13,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "fillgas";
-        public string Description => "Adds gas to all tiles in a grid.";
+        public string Description => Loc.GetString("fec-cmd-fill-gas-desc"); // FEC14
         public string Help => "fillgas <GridEid> <Gas> <moles>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

@@ -219,7 +219,7 @@ public abstract class SharedRMCFlammableSystem : EntitySystem
 
         using (args.PushGroup(nameof(CraftsIntoMolotovComponent)))
         {
-            args.PushMarkup("[color=cyan]You can turn this into a molotov with a piece of paper![/color]");
+            args.PushMarkup(Loc.GetString("fec-code-flammable-molotov-hint")); // FEC14
         }
     }
 
@@ -351,11 +351,11 @@ public abstract class SharedRMCFlammableSystem : EntitySystem
         Pat(ent.Owner, patter.Stacks);
 
         _audio.PlayPredicted(patter.Sound, user, user);
-        _popup.PopupClient($"You try to put out the fire on {Name(ent)}!", ent, user, PopupType.SmallCaution);
-        _popup.PopupEntity($"{Name(user)} tries to put out the fire on you!", ent, ent, PopupType.SmallCaution);
+        _popup.PopupClient(Loc.GetString("fec-code-flammable-pat-self"), ent, user, PopupType.SmallCaution); // FEC14
+        _popup.PopupEntity(Loc.GetString("fec-code-flammable-pat-target", ("user", Name(user))), ent, ent, PopupType.SmallCaution); // FEC14
 
         var others = Filter.PvsExcept(ent).RemoveWhereAttachedEntity(e => e == user || e == ent.Owner);
-        _popup.PopupEntity($"{Name(user)} tries to put out the fire on {Name(ent)}!", ent, others, true);
+        _popup.PopupEntity(Loc.GetString("fec-code-flammable-pat-others", ("user", Name(user))), ent, others, true); // FEC14
 
     }
 
@@ -661,7 +661,7 @@ public abstract class SharedRMCFlammableSystem : EntitySystem
             solution.Volume <= FixedPoint2.Zero)
         {
             if (popup)
-                _popup.PopupClient($"The {Name(ent)} is empty...", ent, user, PopupType.SmallCaution);
+                _popup.PopupClient(Loc.GetString("fec-code-flammable-empty"), ent, user, PopupType.SmallCaution); // FEC14
 
             return false;
         }
@@ -679,7 +679,7 @@ public abstract class SharedRMCFlammableSystem : EntitySystem
         {
             if (popup)
             {
-                var msg = $"There's not enough flammable liquid in the {Name(ent)}!";
+                var msg = Loc.GetString("fec-code-flammable-not-enough"); // FEC14
                 _popup.PopupClient(msg, ent, user, PopupType.SmallCaution);
             }
 

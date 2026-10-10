@@ -12,7 +12,7 @@ namespace Content.Server.Alert.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "clearalert";
-        public string Description => "Clears an alert for a player, defaulting to current player";
+        public string Description => Loc.GetString("fec-cmd-clear-alert-desc"); // FEC14
         public string Help => "clearalert <alertType> <name or userID, omit for current player>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

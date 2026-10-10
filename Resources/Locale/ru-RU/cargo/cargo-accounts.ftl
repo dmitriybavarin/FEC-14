@@ -1,4 +1,4 @@
-cargo-account-cargo-name = Бюджет снабжения станции
+cargo-account-cargo-name = Бюджет поставок станции
 cargo-account-cargo-code = SUP
 cargo-account-engineering-name = Сбережения на обслуживание
 cargo-account-engineering-code = ENG

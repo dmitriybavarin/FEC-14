@@ -119,7 +119,7 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
                 Dirty(sentry);
 
                 SendAlert(laptopUid, sentry, SentryAlertType.LowAmmo,
-                    $"{GetSentryDisplayName((laptopUid, laptop), sentry)}: LOW AMMO ({ammo}/{maxAmmo})");
+                    Loc.GetString("fec-code-sentry-alert-low-ammo", ("name", GetSentryDisplayName((laptopUid, laptop), sentry)), ("ammo", ammo), ("max", maxAmmo))); // FEC14
             }
         }
     }
@@ -135,7 +135,7 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
                 Dirty(sentry);
 
                 SendAlert(laptopUid, sentry, SentryAlertType.CriticalHealth,
-                    $"{GetSentryDisplayName((laptopUid, laptop), sentry)}: CRITICAL DAMAGE");
+                    Loc.GetString("fec-code-sentry-alert-critical", ("name", GetSentryDisplayName((laptopUid, laptop), sentry)))); // FEC14
             }
         }
     }
@@ -163,7 +163,7 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
 
         var laptopEntity = laptop!.Value;
         SendAlert(laptopEntity.Owner, sentry, SentryAlertType.Damaged,
-            $"{GetSentryDisplayName(laptopEntity, sentry)}: Taking damage! ({healthPercent}% health)");
+            Loc.GetString("fec-code-sentry-alert-damaged", ("name", GetSentryDisplayName(laptopEntity, sentry)), ("health", healthPercent))); // FEC14
     }
 
     private void OnSentryShot(Entity<SentryComponent> sentry, ref GunShotEvent args)
@@ -258,7 +258,7 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
         var parent = Transform(laptop).ParentUid;
         if (!HasComp<PlaceableSurfaceComponent>(parent))
         {
-            _popup.PopupClient("Place the laptop on a table first!", laptop, args.User);
+            _popup.PopupClient(Loc.GetString("fec-code-sentry-laptop-table-first"), laptop, args.User); // FEC14
             args.Cancel();
             return;
         }
@@ -456,13 +456,13 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
     {
         if (!laptop.Comp.IsOpen)
         {
-            _popup.PopupClient("The laptop must be opened first!", laptop, user);
+            _popup.PopupClient(Loc.GetString("fec-code-sentry-laptop-open-first"), laptop, user); // FEC14
             return false;
         }
 
         if (GetLinkedSentries(laptop).Count >= laptop.Comp.MaxLinkedSentries)
         {
-            _popup.PopupClient($"The laptop can only control {laptop.Comp.MaxLinkedSentries} sentries at once!", laptop, user);
+            _popup.PopupClient(Loc.GetString("fec-code-sentry-laptop-max", ("count", laptop.Comp.MaxLinkedSentries)), laptop, user); // FEC14
             return false;
         }
 
@@ -484,7 +484,7 @@ public abstract class SharedSentryLaptopSystem : EntitySystem
 
         InitializeSentryTargeting(sentry.Owner);
 
-        _popup.PopupEntity($"Successfully linked {Name(sentry)} to the laptop.", sentry, user);
+        _popup.PopupEntity(Loc.GetString("fec-code-sentry-laptop-linked", ("name", Name(sentry))), sentry, user); // FEC14
 
         if (laptop.Comp.LinkedSentries.Count == 1)
             SetPowered(laptop, true);

@@ -121,7 +121,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
                 age = Loc.GetString(humanoidRepComp.Age).ToLower();
         }
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        // FEC14
+        var ageId = age == Loc.GetString("identity-age-young") ? "young"
+            : age == Loc.GetString("identity-age-middle-aged") ? "middle"
+            : age == Loc.GetString("identity-age-old") ? "old"
+            : "other";
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species), ("ageid", ageId)));
+        // FEC14
     }
 
     /// <summary>

@@ -76,7 +76,7 @@ public sealed class JoinXenoSystem : EntitySystem
         var denyQueuing = _config.GetCVar(RMCCVars.RMCLarvaQueueRoundstartDelaySeconds);
         if (_gameTicker.RoundDuration().TotalSeconds <= denyQueuing)
         {
-            _popup.PopupEntity($"Joining a hive while observing is disabled for the first {denyQueuing} seconds of the round.", args.Performer, args.Performer);
+            _popup.PopupEntity(Loc.GetString("fec-code-join-xeno-too-early", ("seconds", denyQueuing)), args.Performer, args.Performer); // FEC14
             return;
         }
 
@@ -93,25 +93,25 @@ public sealed class JoinXenoSystem : EntitySystem
                 var pos = _larvaQueue.GetQueuePosition(actor.PlayerSession.UserId, hiveId);
                 if (pos > 0)
                 {
-                    optionText = $"Leave Larva Queue for ({Name(hiveId)})\n[Position: {pos}]";
+                    optionText = Loc.GetString("fec-code-join-xeno-leave-position", ("hive", Name(hiveId)), ("position", pos)); // FEC14
                 }
                 else
                 {
                     var remaining = _larvaQueue.GetPreQueueTimeRemaining(actor.PlayerSession.UserId, hiveId);
                     optionText = remaining.HasValue
-                        ? $"Leave Larva Queue for ({Name(hiveId)})\n[Waiting: {remaining.Value.TotalSeconds:F0}s remaining]"
-                        : $"Leave Larva Queue for ({Name(hiveId)})";
+                        ? Loc.GetString("fec-code-join-xeno-leave-waiting", ("hive", Name(hiveId)), ("seconds", remaining.Value.TotalSeconds.ToString("F0"))) // FEC14
+                        : Loc.GetString("fec-code-join-xeno-leave", ("hive", Name(hiveId))); // FEC14
                 }
             }
             else
             {
-                optionText = $"Join Larva Queue for ({Name(hiveId)})";
+                optionText = Loc.GetString("fec-code-join-xeno-join", ("hive", Name(hiveId))); // FEC14
             }
 
             options.Add(new DialogOption(optionText, new JoinLarvaQueueEvent(GetNetEntity(hiveId))));
         }
 
-        _dialog.OpenOptions(ent, "Join as Xeno", options, "Available Hives");
+        _dialog.OpenOptions(ent, Loc.GetString("fec-code-join-xeno-title"), options, Loc.GetString("fec-code-join-xeno-hives")); // FEC14
     }
 
     public bool CanJoinXeno(EntityUid user)

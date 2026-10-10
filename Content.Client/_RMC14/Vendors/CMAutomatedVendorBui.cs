@@ -47,7 +47,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
     {
         base.Open();
         _window = this.CreateWindow<CMAutomatedVendorWindow>();
-        _window.Title = EntMan.GetComponentOrNull<MetaDataComponent>(Owner)?.EntityName ?? "ASRS Vendor";
+        _window.Title = EntMan.GetComponentOrNull<MetaDataComponent>(Owner)?.EntityName ?? Loc.GetString("fec-code-vendor-default-title"); // FEC14
         _window.ReagentsBar.ForegroundStyleBoxOverride = new StyleBoxFlat(Color.FromHex("#AF7F38"));
 
         if (EntMan.TryGetComponent(Owner, out CMAutomatedVendorComponent? vendor))
@@ -339,7 +339,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         }
 
         ApplySearchFilter(_window.Search.Text);
-        _window.PointsLabel.Text = anyEntryWithPoints ? $"Points Remaining: {userPoints}" : string.Empty;
+        _window.PointsLabel.Text = anyEntryWithPoints ? Loc.GetString("fec-code-vendor-points", ("points", userPoints)) : string.Empty; // FEC14
 
         if (!EntMan.TryGetComponent(Owner, out CMSolutionRefillerComponent? refiller))
         {
@@ -354,7 +354,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         _window.ReagentsBar.MinValue = 0;
         _window.ReagentsBar.MaxValue = max.Int();
         _window.ReagentsBar.SetAsRatio((refiller.Current / refiller.Max).Float());
-        _window.ReagentsLabel.Text = $"{current.Int()} units";
+        _window.ReagentsLabel.Text = Loc.GetString("fec-code-units", ("units", current.Int())); // FEC14
     }
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
@@ -380,7 +380,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
             {
                 if (takeAll == null || !takeAll.Contains((section.TakeAll, entry.Id)))
                 {
-                    name.AddText(" (TAKE ALL)");
+                    name.AddText(" " + Loc.GetString("fec-code-vendor-take-all")); // FEC14
                     break;
                 }
             }
@@ -389,7 +389,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         {
             var takeOne = user?.TakeOne;
             if (takeOne == null || !takeOne.Contains(section.TakeOne))
-                name.AddText(" (TAKE ONE)");
+                name.AddText(" " + Loc.GetString("fec-code-vendor-take-one")); // FEC14
         }
         else if (section.Choices is { } choices)
         {

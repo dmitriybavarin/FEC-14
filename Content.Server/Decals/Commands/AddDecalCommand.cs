@@ -18,7 +18,7 @@ namespace Content.Server.Decals.Commands
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
         public string Command => "adddecal";
-        public string Description => "Creates a decal on the map";
+        public string Description => Loc.GetString("fec-cmd-add-decal-desc"); // FEC14
         public string Help => $"{Command} <id> <x position> <y position> <gridId> [angle=<angle> zIndex=<zIndex> color=<color>]";
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {

@@ -9,4 +9,4 @@ ent-RMCCrateSupplyJanitor = Набор принадлежностей для у�
 ent-RMCCrateSuppliesCrayons = Коробки мелков
     .desc = { ent-RMCCrateSupply.desc }
 ent-RMCCrateAegisLobby = Ящик оборудования слежения AEGIS (пинпоинтеры x3, брошюра x1)
-    .desc = Ящик снабжения с оборудованием слежения AEGIS по ID-картам и документацией.
+    .desc = Ящик поставок с оборудованием слежения AEGIS по ID-картам и документацией.

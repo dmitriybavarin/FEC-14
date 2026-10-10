@@ -111,18 +111,18 @@ public sealed class SensorTowerSystem : EntitySystem
 
         if (!_skills.HasSkill(user, ent.Comp.Skill, ent.Comp.SkillLevel))
         {
-            _popup.PopupClient("You have no clue how this thing works...", ent, user, PopupType.SmallCaution);
+            _popup.PopupClient(Loc.GetString("fec-code-sensor-no-clue"), ent, user, PopupType.SmallCaution); // FEC14
             return;
         }
 
         ref var state = ref ent.Comp.State;
         var popup = state switch
         {
-            SensorTowerState.Weld => "Use a blowtorch, then wirecutters, then wrench to repair it.",
-            SensorTowerState.Wire => "Use some wirecutters, then wrench to repair it.",
-            SensorTowerState.Wrench => "Use a wrench to repair it.",
-            SensorTowerState.Off => $"The {Name(ent)} lights up.",
-            SensorTowerState.On => $"The {Name(ent)} goes dark.",
+            SensorTowerState.Weld => Loc.GetString("fec-code-sensor-repair-weld"), // FEC14
+            SensorTowerState.Wire => Loc.GetString("fec-code-sensor-repair-wire"), // FEC14
+            SensorTowerState.Wrench => Loc.GetString("fec-code-sensor-repair-wrench"), // FEC14
+            SensorTowerState.Off => Loc.GetString("fec-code-sensor-lights-up"), // FEC14
+            SensorTowerState.On => Loc.GetString("fec-code-sensor-goes-dark"), // FEC14
             _ => throw new ArgumentOutOfRangeException(),
         };
         _popup.PopupClient(popup, ent, user, PopupType.Medium);
@@ -154,11 +154,11 @@ public sealed class SensorTowerSystem : EntitySystem
             // TODO: localize
             var text = ent.Comp.State switch
             {
-                SensorTowerState.Weld => "This one is heavily damaged. Use a blowtorch, wirecutters, then a wrench to repair it.",
-                SensorTowerState.Wire => "This one is heavily damaged. Use wirecutters, then a wrench to repair it.",
-                SensorTowerState.Wrench => "This one is heavily damaged. Use a wrench to repair it.",
-                SensorTowerState.Off => "It looks like it is offline.",
-                SensorTowerState.On => "It looks like it is online.",
+                SensorTowerState.Weld => Loc.GetString("fec-code-sensor-examine-weld"), // FEC14
+                SensorTowerState.Wire => Loc.GetString("fec-code-sensor-examine-wire"), // FEC14
+                SensorTowerState.Wrench => Loc.GetString("fec-code-sensor-examine-wrench"), // FEC14
+                SensorTowerState.Off => Loc.GetString("fec-code-sensor-examine-offline"), // FEC14
+                SensorTowerState.On => Loc.GetString("fec-code-sensor-examine-online"), // FEC14
                 _ => throw new ArgumentOutOfRangeException(),
             };
             args.PushText(text);
@@ -167,13 +167,13 @@ public sealed class SensorTowerSystem : EntitySystem
             {
                 var tool = ent.Comp.State switch
                 {
-                    SensorTowerState.Wrench => "a [color=cyan]Wrench[/color]",
-                    SensorTowerState.Wire => "[color=cyan]Wirecutters[/color]",
-                    SensorTowerState.Weld => "a [color=cyan]Welder[/color]",
+                    SensorTowerState.Wrench => Loc.GetString("fec-code-repair-tool-wrench"), // FEC14
+                    SensorTowerState.Wire => Loc.GetString("fec-code-repair-tool-wirecutters"), // FEC14
+                    SensorTowerState.Weld => Loc.GetString("fec-code-repair-tool-welder"), // FEC14
                     _ => throw new ArgumentOutOfRangeException(),
                 };
 
-                args.PushMarkup($"Use {tool} to repair it!");
+                args.PushMarkup(Loc.GetString("fec-code-repair-use-tool", ("tool", tool))); // FEC14
             }
         }
     }
@@ -269,7 +269,7 @@ public sealed class SensorTowerSystem : EntitySystem
     {
         if (tower.Comp.State == SensorTowerState.Weld)
         {
-            _popup.PopupClient("We stare at the experimental sensor tower cluelessly.", user, user, PopupType.SmallCaution);
+            _popup.PopupClient(Loc.GetString("fec-code-sensor-xeno-clueless"), user, user, PopupType.SmallCaution); // FEC14
             return;
         }
 
@@ -281,7 +281,7 @@ public sealed class SensorTowerSystem : EntitySystem
 
         if (_doAfter.TryStartDoAfter(doAfter))
         {
-            _popup.PopupClient($"You start wrenching apart the {Name(tower)}'s panels and reaching inside it!", tower, user, PopupType.Medium);
+            _popup.PopupClient(Loc.GetString("fec-code-sensor-xeno-wrench-start"), tower, user, PopupType.Medium); // FEC14
         }
     }
 
@@ -310,12 +310,12 @@ public sealed class SensorTowerSystem : EntitySystem
 
             if (_random.Prob(0.75f))
             {
-                _popup.PopupEntity($"The {Name(uid)} beeps wildly and sprays random pieces everywhere! Use a wrench to repair it.", uid, PopupType.LargeCaution);
+                _popup.PopupEntity(Loc.GetString("fec-code-sensor-break-wrench"), uid, PopupType.LargeCaution); // FEC14
                 tower.State = SensorTowerState.Wrench;
             }
             else
             {
-                _popup.PopupEntity($"The {Name(uid)} beeps wildly and a fuse blows! Use wirecutters, then a wrench to repair it.", uid, PopupType.LargeCaution);
+                _popup.PopupEntity(Loc.GetString("fec-code-sensor-break-wire"), uid, PopupType.LargeCaution); // FEC14
                 tower.State = SensorTowerState.Wire;
             }
 

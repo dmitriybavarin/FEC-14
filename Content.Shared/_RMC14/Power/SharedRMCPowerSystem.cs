@@ -166,7 +166,7 @@ public abstract class SharedRMCPowerSystem : EntitySystem
         var user = args.User;
         if (!_skills.HasSkill(user, ent.Comp.Skill, ent.Comp.SkillLevel))
         {
-            _popup.PopupClient($"You don't know how to use the {Name(ent)}'s interface.", ent, user, SmallCaution);
+            _popup.PopupClient(Loc.GetString("fec-code-power-no-skill"), ent, user, SmallCaution); // FEC14
             return;
         }
 
@@ -179,7 +179,7 @@ public abstract class SharedRMCPowerSystem : EntitySystem
                 case RMCApcState.WiresExposed:
                     if (ent.Comp.CoverLockedButton)
                     {
-                        _popup.PopupClient("The cover is locked and cannot be opened.", user, user, MediumCaution);
+                        _popup.PopupClient(Loc.GetString("fec-code-power-cover-locked"), user, user, MediumCaution); // FEC14
                         return;
                     }
 
@@ -281,7 +281,7 @@ public abstract class SharedRMCPowerSystem : EntitySystem
         if (!_skills.HasSkill(args.User, ent.Comp.Skill, ent.Comp.SkillLevel))
         {
             args.Cancel();
-            _popup.PopupClient($"You don't know how to use the {Name(ent)}'s interface.", ent, args.User, SmallCaution);
+            _popup.PopupClient(Loc.GetString("fec-code-power-no-skill"), ent, args.User, SmallCaution); // FEC14
             return;
         }
 
@@ -298,13 +298,10 @@ public abstract class SharedRMCPowerSystem : EntitySystem
         {
             var markup = ent.Comp.State switch
             {
-                RMCApcState.Working => "Use:\n" +
-                                       "- An [color=cyan]engineering ID[/color] to lock or unlock the interface.\n" +
-                                       "- A [color=cyan]crowbar[/color] to open the cover.\n" +
-                                       "- A [color=cyan]screwdriver[/color] to expose the wires.",
-                RMCApcState.WiresExposed => "Use a [color=cyan]screwdriver[/color] to unexpose the wires or a [color=cyan]crowbar[/color] to open the cover!",
-                RMCApcState.CoverOpenBattery => "Use an [color=cyan]empty hand[/color] to remove the battery or a [color=cyan]crowbar[/color] to close the cover!",
-                RMCApcState.CoverOpenNoBattery => "Use a [color=cyan]battery[/color] to put in a battery!",
+                RMCApcState.Working => Loc.GetString("fec-code-apc-examine-working"), // FEC14
+                RMCApcState.WiresExposed => Loc.GetString("fec-code-apc-examine-wires-exposed"), // FEC14
+                RMCApcState.CoverOpenBattery => Loc.GetString("fec-code-apc-examine-cover-open-battery"), // FEC14
+                RMCApcState.CoverOpenNoBattery => Loc.GetString("fec-code-apc-examine-cover-open-no-battery"), // FEC14
                 _ => null,
             };
 
@@ -642,20 +639,20 @@ public abstract class SharedRMCPowerSystem : EntitySystem
                 // TODO: localize
                 var tool = ent.Comp.State switch
                 {
-                    RMCFusionReactorState.Wrench => "a [color=cyan]Wrench[/color]",
-                    RMCFusionReactorState.Wire => "[color=cyan]Wirecutters[/color]",
-                    RMCFusionReactorState.Weld => "a [color=cyan]Welder[/color]",
+                    RMCFusionReactorState.Wrench => Loc.GetString("fec-code-repair-tool-wrench"), // FEC14
+                    RMCFusionReactorState.Wire => Loc.GetString("fec-code-repair-tool-wirecutters"), // FEC14
+                    RMCFusionReactorState.Weld => Loc.GetString("fec-code-repair-tool-welder"), // FEC14
                     _ => throw new ArgumentOutOfRangeException(),
                 };
 
-                args.PushMarkup($"Use {tool} to repair it!");
+                args.PushMarkup(Loc.GetString("fec-code-repair-use-tool", ("tool", tool))); // FEC14
             }
 
             if (!_container.TryGetContainer(ent, ent.Comp.CellContainerSlot, out var container) ||
                 container.ContainedEntities.Count == 0)
             {
                 // TODO: localize
-                args.PushMarkup("It needs a [color=cyan]fuel cell[/color]!");
+                args.PushMarkup(Loc.GetString("fec-code-power-needs-fuel-cell")); // FEC14
             }
 
             var overload = new RMCFusionReactorOverloadStatusEvent(ent, args.Examiner);

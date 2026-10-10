@@ -1,0 +1,75 @@
+<Document>
+  # Термомашины
+  Термомашины это устройства, которые меняют температуру газов в [textlink="трубосети" link="PipeNetworks"] или окружающей атмосфере.
+  <Box>
+    <GuideEntityEmbed Entity="SpaceHeater" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineHeater" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezer" Caption=""/>
+  </Box>
+  Без них не поддержать нужную температуру газов для разных задач.
+
+  Все термомашины нагревают или охлаждают атмосферу за счет [textlink="электричества" link="Power"].
+  Насколько сильно, прямо зависит от потребляемой мощности.
+
+  Еще у термомашин есть коэффициент эффективности: насколько они нагревают или охлаждают атмосферу на единицу потребленной энергии.
+
+  Чтобы не проскочить целевое значение, термомашины снижают мощность нагрева или охлаждения по мере приближения к целевой температуре.
+  Но электричества они потребляют столько же, даже простаивая.
+
+  Допуск по целевой температуре у всех термомашин [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] К[/color]: они перестают нагревать или охлаждать, когда температура в пределах [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] К[/color] от целевой.
+
+  ## Обогреватель
+  Обогреватель это переносной регулятор температуры, который нагревает или охлаждает газ в окружающей атмосфере.
+  Это простой и эффективный способ поддерживать температуру в помещении без трубосети или другой системы.
+
+  <Box>
+    <GuideEntityEmbed Entity="SpaceHeater"/>
+  </Box>
+
+  Обычно они стоят в атмосферном отделе, а нужную плату можно напечатать на принтере плат, который обычно есть в научном отделе.
+
+  Обогреватель охлаждает до [color=orange][protodata="SpaceHeater" comp="SpaceHeater" member="MinTemperature"/] К[/color] и нагревает до [color=orange][protodata="SpaceHeater" comp="SpaceHeater" member="MaxTemperature"/] К[/color].
+
+  У него три уровня мощности, от которых зависит, как быстро он нагревает или охлаждает атмосферу.
+
+  Ботаники или ученые часто просят их, чтобы поддерживать температуру растений или отдела.
+
+  ## Термомашины трубосети (охладитель и нагреватель)
+  Термомашины трубосети это более мощные стационарные регуляторы температуры для нагрева или охлаждения газа в [textlink="трубосети." link="PipeNetworks"]
+
+  <Box>
+    <GuideEntityEmbed Entity="GasThermoMachineHeater"/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezer"/>
+  </Box>
+
+  Они потребляют [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] Вт[/color] и нагревают газ в трубосети до [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MaxTemperature"/] К[/color] или охлаждают до [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] К[/color].
+
+  Режим термомашины можно сменить, разобрав ее и применив отвертку к плате.
+  Плату можно напечатать на принтере плат, который обычно есть в научном отделе.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezer" Caption=""/>
+    <GuideEntityEmbed Entity="MachineFrame" Caption=""/>
+    <GuideEntityEmbed Entity="ThermomachineFreezerMachineCircuitBoard" Caption=""/>
+    <GuideEntityEmbed Entity="Screwdriver" Caption=""/>
+    <GuideEntityEmbed Entity="ThermomachineHeaterMachineCircuitBoard" Caption=""/>
+    <GuideEntityEmbed Entity="MachineFrame" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineHeater" Caption=""/>
+
+  </Box>
+
+  ## Термомашины из ада
+  Научный отдел может исследовать более мощные термомашины, метко названные адскими нагревателями и охладителями.
+  Они гораздо мощнее обычных, но и электричества потребляют больше.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasThermoMachineHellfireHeater"/>
+    <GuideEntityEmbed Entity="GasThermoMachineHellfireFreezer"/>
+  </Box>
+
+  Они потребляют [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] Вт[/color] и нагревают газ в трубосети до [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MaxTemperature"/] К[/color] или охлаждают до [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] К[/color].
+
+  Но при этом [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="EnergyLeakPercentage" format="P0"/][/color] энергии утекает в окружающую среду, соответственно нагревая или охлаждая атмосферу вокруг.
+  Без должного контроля это опасно.
+
+</Document>

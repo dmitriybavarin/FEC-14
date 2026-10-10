@@ -19,9 +19,7 @@ public sealed partial class Neogenetic : RMCChemicalEffect
         if (ActualPotency > 2)
             healing += PotencyPerSecond * 0.5f;
 
-        return $"Heals [color=green]{healing}[/color] brute damage.\n" +
-               $"Overdoses cause [color=red]{PotencyPerSecond}[/color] burn damage.\n" +
-               $"Critical overdoses cause [color=red]{PotencyPerSecond * 5}[/color] burn and [color=red]{PotencyPerSecond * 2}[/color] toxin damage";
+        return Loc.GetString("fec-code-chem-effect-neogenetic", ("v1", healing), ("v2", PotencyPerSecond), ("v3", PotencyPerSecond * 5), ("v4", PotencyPerSecond * 2)); // FEC14
     }
 
     protected override void Tick(DamageableSystem damageable, FixedPoint2 potency, EntityEffectReagentArgs args)

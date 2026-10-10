@@ -1,0 +1,54 @@
+<Document>
+# Криогеника
+Разобраться в криогенике поначалу непросто, но, надеюсь, после краткого разбора схемы вы поймете, как с ней работать! Посмотрим, что делает каждая часть:
+
+- Вход воздуха: сюда поступает воздух из распределительной сети или баллона, чтобы тем, кто внутри, было чем дышать, а морозильнику было что охлаждать.
+- Газовый насос: ограничивает давление в сети, чтобы тех, кто в капсуле, не раздавило.
+- Морозильник: охлаждает воздух, а с ним и пациентов в капсуле, чтобы сработал криоксадон.
+- Газовые фильтры: убирают из контура отработанные газы (углекислый газ и закись азота).
+- Выход воздуха: сюда уходят отработанные газы, в баллон-хранилище или в сеть отходов.
+<Box>
+<GuideEntityEmbed Entity="GasPipeBend" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeBend" Rotation="0"/>
+<GuideEntityEmbed Entity="CryoPod" Caption="криокапсула" Rotation="0"/>
+<GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Rotation="0"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="GasPipeBend" Rotation="180"/>
+<GuideEntityEmbed Entity="GasFilterFlipped" Rotation="90"/>
+<GuideEntityEmbed Entity="GasFilterFlipped" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180"/>
+<GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180"/>
+<GuideEntityEmbed Entity="GasPipeTJunction" Rotation="270"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="GasPort" Caption="выход воздуха" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180"/>
+<GuideEntityEmbed Entity="GasPipeBend" Rotation="270"/>
+<GuideEntityEmbed Entity="GasPort" Caption="вход воздуха" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPressurePump" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPipeBend" Rotation="270"/>
+</Box>
+
+Не каждая сеть выглядит так, но этого, надеюсь, хватит, чтобы понять общий принцип.
+
+Важно: зимняя одежда (и скафандры) снижает эффективность криогенного лечения или сводит ее на нет. Снимите с пациента теплую одежду, прежде чем класть его в капсулу.
+
+## Работа с капсулой
+Когда все настроено, понадобится особое лекарство, криоксадон. Он лечит все виды урона, когда пациент охлажден, и его можно дать заранее (таблеткой) или загрузить прямо в капсулу в мензурке. Учтите, что лечение начнется, только когда пациент остынет до нужной температуры, так что, возможно, стоит немного подождать, прежде чем ставить мензурку.
+
+## Дополнительно:
+
+Стандартное давление газового насоса 100,325 кПа. Криоксадон работает ниже 170 К, но обычно морозильник ставят на 100 К, чтобы охлаждать быстрее.
+
+<GuideReagentEmbed Reagent="Aloxadone"/>
+<GuideReagentEmbed Reagent="Cryoxadone"/>
+<GuideReagentEmbed Reagent="Doxarubixadone"/>
+<GuideReagentEmbed Reagent="Dexalin"/>
+<GuideReagentEmbed Reagent="Leporazine"/>
+<GuideReagentEmbed Reagent="Necrosol"/>
+<GuideReagentEmbed Reagent="Opporozidone"/>
+
+</Document>

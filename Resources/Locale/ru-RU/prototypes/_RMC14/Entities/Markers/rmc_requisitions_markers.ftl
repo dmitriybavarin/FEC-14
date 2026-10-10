@@ -1,4 +1,4 @@
-ent-RMCRequisitionsChairMarker = Метка стула снабжения
+ent-RMCRequisitionsChairMarker = Метка стула поставок
     .desc = { "" }
     .suffix = FEC14
 ent-RMCRequisitionsChairMarkerNorth = { ent-RMCRequisitionsChairMarker }

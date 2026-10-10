@@ -103,7 +103,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
             LogImpact.Low,
             $"{ToPrettyString(args.Actor):player} has changed the accesses of {ToPrettyString(uid):entity} to {accessGroupPrototype.Name}");
 
-        _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} modified ID: {Name(uid.Value)} to {accessGroupPrototype.Name}");
+        _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-modified", ("actor", Name(args.Actor)), ("target", Name(uid.Value)), ("group", accessGroupPrototype.Name ?? string.Empty))); // FEC14
     }
 
     private void OnTerminateConfirmMsg(Entity<IdModificationConsoleComponent> ent,
@@ -129,7 +129,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
             access.Tags.Remove(accessToRemove);
         }
 
-        idCard._jobTitle = "Civilian";
+        idCard._jobTitle = Loc.GetString("fec-code-id-console-civilian"); // FEC14
         Dirty(uid.Value, idCard);
         Dirty(uid.Value, access);
         if (idCard.OriginalOwner != null)
@@ -145,7 +145,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
             $"{ToPrettyString(args.Actor):player} has terminated {ToPrettyString(uid):entity} & {ToPrettyString(idCard.OriginalOwner):player}");
 
         if(idCard.OriginalOwner != null)
-            _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has terminated {Name(idCard.OriginalOwner.Value)}");
+            _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-terminated", ("actor", Name(args.Actor)), ("target", Name(idCard.OriginalOwner.Value)))); // FEC14
     }
 
     private void OnIFFChangeMsg(Entity<IdModificationConsoleComponent> ent,
@@ -170,7 +170,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                 LogImpact.Medium,
                 $"{ToPrettyString(args.Actor):player} has granted the {targetFaction} IFF for {ToPrettyString(uid):entity}");
 
-            _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has granted IFF for ID card: {Name(uid.Value)}");
+            _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-iff-granted", ("actor", Name(args.Actor)), ("target", Name(uid.Value)))); // FEC14
             ent.Comp.HasIFF = true;
         }
         else
@@ -190,7 +190,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                 $"{ToPrettyString(args.Actor):player} has revoked the {ent.Comp.Faction} IFF for {ToPrettyString(uid):entity}");
             _core.CreateARESLog(ent,
                 LogCat,
-                (string)$"{Name(args.Actor)} has revoked IFF for ID card: {Name(uid.Value)}");
+                Loc.GetString("fec-code-ares-id-iff-revoked", ("actor", Name(args.Actor)), ("target", Name(uid.Value)))); // FEC14
 
             if (removed)
             {
@@ -265,7 +265,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                     LogImpact.Medium,
                     $"{ToPrettyString(args.Actor):player} has granted all accesses for {args.AccessList} on {ToPrettyString(uid):entity}");
 
-                _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has granted all accesses for {args.AccessList} for ID card: {Name(uid.Value)}");
+                _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-group-granted", ("actor", Name(args.Actor)), ("group", args.AccessList), ("target", Name(uid.Value)))); // FEC14
                 break;
             case "RevokeAll":
                 foreach (var accessToRemove in ent.Comp.AccessList)
@@ -279,7 +279,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                 _adminLogger.Add(LogType.RMCIdModify,
                     LogImpact.Medium,
                     $"{ToPrettyString(args.Actor):player} has revoked all accesses for {args.AccessList} on {ToPrettyString(uid):entity}");
-                _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has revoked all accesses for {args.AccessList} for ID card: {Name(uid.Value)}");
+                _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-group-revoked", ("actor", Name(args.Actor)), ("group", args.AccessList), ("target", Name(uid.Value)))); // FEC14
                 break;
             case "GrantAllGroup":
                 foreach (var accessToAdd in ent.Comp.AccessList)
@@ -290,7 +290,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                 _adminLogger.Add(LogType.RMCIdModify,
                     LogImpact.Medium,
                     $"{ToPrettyString(args.Actor):player} has granted all accesses on {ToPrettyString(uid):entity}");
-                _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has granted all accesses on ID card: {Name(uid.Value)}");
+                _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-all-granted", ("actor", Name(args.Actor)), ("target", Name(uid.Value)))); // FEC14
                 break;
             case "RevokeAllGroup":
                 foreach (var accessToRemove in ent.Comp.AccessList)
@@ -301,7 +301,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
                 _adminLogger.Add(LogType.RMCIdModify,
                     LogImpact.Medium,
                     $"{ToPrettyString(args.Actor):player} has revoked all accesses on {ToPrettyString(uid):entity}");
-                _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} has revoked all accesses on ID card: {Name(uid.Value)}");
+                _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-id-all-revoked", ("actor", Name(args.Actor)), ("target", Name(uid.Value)))); // FEC14
                 break;
         }
 
@@ -537,7 +537,7 @@ public sealed class IdModificationConsoleSystem : EntitySystem
         {
             if (ent.Comp.DisallowSquadUnassignment.Contains(job.Id))
             {
-                _popup.PopupCursor($"You cannot unassign a {jobName}!", actor, PopupType.LargeCaution);
+                _popup.PopupCursor(Loc.GetString("fec-code-id-console-cannot-unassign", ("job", jobName)), actor, PopupType.LargeCaution); // FEC14
                 return;
             }
 
@@ -548,11 +548,11 @@ public sealed class IdModificationConsoleSystem : EntitySystem
             idCard._jobTitle = jobName;
             Dirty(uid.Value, idCard);
 
-            var selfMsgUnassign = $"{Name(marineId)} has been unassigned.";
+            var selfMsgUnassign = Loc.GetString("fec-code-id-console-unassigned", ("name", Name(marineId))); // FEC14
             _marineAnnounce.AnnounceSingle(selfMsgUnassign, actor);
             _popup.PopupCursor(selfMsgUnassign, actor, PopupType.Large);
 
-            var targetMsgUnassign = "You've been unassigned from your squad.";
+            var targetMsgUnassign = Loc.GetString("fec-code-id-console-unassigned-target"); // FEC14
             _marineAnnounce.AnnounceSingle(targetMsgUnassign, marineId);
             _popup.PopupEntity(targetMsgUnassign, marineId, marineId, PopupType.Large);
 
@@ -564,20 +564,20 @@ public sealed class IdModificationConsoleSystem : EntitySystem
 
         if (!TryGetEntity(squadNetEnt, out var newSquadEnt))
         {
-            _popup.PopupCursor($"There was an error assigning {Name(marineId)}.", actor, PopupType.LargeCaution);
+            _popup.PopupCursor(Loc.GetString("fec-code-id-console-assign-error", ("name", Name(marineId))), actor, PopupType.LargeCaution); // FEC14
             return;
         }
 
         if (TryComp(newSquadEnt, out SquadTeamComponent? newSquadComp) &&
             !_squad.HasSpaceForRole((newSquadEnt.Value, newSquadComp), job))
         {
-            _popup.PopupCursor($"{Name(newSquadEnt.Value)} can't have another {jobName}.", actor, PopupType.LargeCaution);
+            _popup.PopupCursor(Loc.GetString("fec-code-id-console-squad-full", ("squad", Name(newSquadEnt.Value)), ("job", jobName)), actor, PopupType.LargeCaution); // FEC14
             return;
         }
 
         if (ent.Comp.EnlistmentRequirement is { } requirements && !_skills.HasAllSkills(marineId, requirements))
         {
-            _popup.PopupCursor("You cannot assign untrained civilians to squads!", actor, PopupType.LargeCaution);
+            _popup.PopupCursor(Loc.GetString("fec-code-id-console-untrained"), actor, PopupType.LargeCaution); // FEC14
             return;
         }
 
@@ -591,11 +591,11 @@ public sealed class IdModificationConsoleSystem : EntitySystem
         idCard._jobTitle = $"{newSquadName} {jobName}";
         Dirty(uid.Value, idCard);
 
-        var selfMsg = $"{Name(marineId)} has been assigned to {Name(newSquadEnt.Value)}.";
+        var selfMsg = Loc.GetString("fec-code-id-console-assigned", ("name", Name(marineId)), ("squad", Name(newSquadEnt.Value))); // FEC14
         _marineAnnounce.AnnounceSingle(selfMsg, actor);
         _popup.PopupCursor(selfMsg, actor, PopupType.Large);
 
-        var targetMsg = $"You've been transferred to {Name(newSquadEnt.Value)}!";
+        var targetMsg = Loc.GetString("fec-code-id-console-transferred", ("squad", Name(newSquadEnt.Value))); // FEC14
         _marineAnnounce.AnnounceSingle(targetMsg, marineId);
         _popup.PopupEntity(targetMsg, marineId, marineId, PopupType.Large);
 

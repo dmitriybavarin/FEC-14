@@ -48,29 +48,29 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
             return;
 
         var lockedMsg = apc.Locked
-            ? "[italic]Swipe an ID card or dogtags to unlock this interface.[/italic]"
-            : "[italic]Swipe an ID card or dogtags to lock this interface.[/italic]";
+            ? Loc.GetString("fec-code-apc-swipe-unlock") // FEC14
+            : Loc.GetString("fec-code-apc-swipe-lock"); // FEC14
         _window.LockedLabel.SetMarkupPermissive(lockedMsg);
 
-        _window.PowerStatusLabel.SetMarkupPermissive(Header("Power Status"));
-        _window.PowerChannelsLabel.SetMarkupPermissive(Header("Power Channels"));
-        _window.MiscLabel.SetMarkupPermissive(Header("Misc"));
+        _window.PowerStatusLabel.SetMarkupPermissive(Header(Loc.GetString("fec-code-apc-header-power-status"))); // FEC14
+        _window.PowerChannelsLabel.SetMarkupPermissive(Header(Loc.GetString("fec-code-apc-header-power-channels"))); // FEC14
+        _window.MiscLabel.SetMarkupPermissive(Header(Loc.GetString("fec-code-apc-header-misc"))); // FEC14
 
-        _window.MainBreakerButton.Text = apc.MainBreakerButton ? "On" : "Off";
+        _window.MainBreakerButton.Text = apc.MainBreakerButton ? Loc.GetString("fec-code-apc-breaker-on") : Loc.GetString("fec-code-apc-breaker-off"); // FEC14
         if (apc.MainBreakerButton)
         {
-            _window.MainBreakerButton.Text = "On";
+            _window.MainBreakerButton.Text = Loc.GetString("fec-code-apc-breaker-on"); // FEC14
             _window.MainBreakerButton.Pressed = true;
         }
         else
         {
-            _window.MainBreakerButton.Text = "Off";
+            _window.MainBreakerButton.Text = Loc.GetString("fec-code-apc-breaker-off"); // FEC14
             _window.MainBreakerButton.Pressed = false;
         }
 
         _window.MainBreakerStatus.SetMarkupPermissive(apc.ExternalPower
-            ? Green("[ External Power ]")
-            : Red("[ No External Power ]")
+            ? Green(Loc.GetString("fec-code-apc-external-power")) // FEC14
+            : Red(Loc.GetString("fec-code-apc-no-external-power")) // FEC14
         );
 
         _window.PowerBar.MinValue = 0;
@@ -80,14 +80,14 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
 
         var chargeMode = apc.ChargeStatus switch
         {
-            RMCApcChargeStatus.NotCharging => Red("[ Not Charging ]"),
-            RMCApcChargeStatus.Charging => Orange("[ Charging ]"),
-            RMCApcChargeStatus.FullCharge => Green("[ Fully Charged ]"),
+            RMCApcChargeStatus.NotCharging => Red(Loc.GetString("fec-code-apc-not-charging")), // FEC14
+            RMCApcChargeStatus.Charging => Orange(Loc.GetString("fec-code-apc-charging")), // FEC14
+            RMCApcChargeStatus.FullCharge => Green(Loc.GetString("fec-code-apc-fully-charged")), // FEC14
             _ => throw new ArgumentOutOfRangeException(),
         };
 
         _window.ChargeMode.SetMarkupPermissive(chargeMode);
-        _window.ChargeModeButton.Text = apc.ChargeModeButton ? "Auto" : "Off";
+        _window.ChargeModeButton.Text = apc.ChargeModeButton ? Loc.GetString("fec-code-apc-auto") : Loc.GetString("fec-code-apc-breaker-off"); // FEC14
 
         foreach (int channel in Enum.GetValues<RMCPowerChannel>())
         {

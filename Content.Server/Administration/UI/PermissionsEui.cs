@@ -18,6 +18,7 @@ namespace Content.Server.Administration.UI
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly Content.Server._FEC14.Administration.FECAdminWeightManager _fecWeight = default!; // FEC14
         [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly ISawmill _sawmill;
@@ -83,7 +84,8 @@ namespace Content.Server.Administration.UI
                 AdminRanks = _adminRanks.ToDictionary(a => a.Id, a => new PermissionsEuiState.AdminRankData
                 {
                     Flags = AdminFlagsHelper.NamesToFlags(a.Flags.Select(p => p.Flag)),
-                    Name = a.Name
+                    Name = a.Name,
+                    FECWeight = _fecWeight.GetRankWeight(a.Id), // FEC14
                 })
             };
         }
@@ -152,6 +154,7 @@ namespace Content.Server.Administration.UI
             }
 
             await _db.RemoveAdminRankAsync(rr.Id);
+            _fecWeight.RemoveRank(rr.Id); // FEC14
 
             _adminManager.ReloadAdminsWithRank(rr.Id);
         }
@@ -180,6 +183,7 @@ namespace Content.Server.Administration.UI
             rank.Name = ur.Name;
 
             await _db.UpdateAdminRankAsync(rank);
+            FECApplyWeight(rank, ur.FECWeight); // FEC14
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ur.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} updated admin rank {rank.Name}/{flagText}.");
@@ -202,6 +206,7 @@ namespace Content.Server.Administration.UI
             };
 
             await _db.AddAdminRankAsync(rank);
+            FECApplyWeight(rank, ar.FECWeight); // FEC14
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ar.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} added admin rank {rank.Name}/{flagText}.");
@@ -444,14 +449,48 @@ namespace Content.Server.Administration.UI
                 admin.AdminRank?.Flags.Select(f => f.Flag) ?? Array.Empty<string>());
 
             var totalFlags = posFlags | rankFlags;
-            return UserAdminFlagCheck(totalFlags);
+            return UserAdminFlagCheck(totalFlags) && FECCanTouchWeight(totalFlags, admin.AdminRankId); // FEC14
         }
 
         private bool CanTouchRank(DbAdminRank rank)
         {
             var rankFlags = AdminFlagsHelper.NamesToFlags(rank.Flags.Select(f => f.Flag));
 
-            return UserAdminFlagCheck(rankFlags);
+            return UserAdminFlagCheck(rankFlags) && FECCanTouchWeight(rankFlags, rank.Id); // FEC14
         }
+
+        // FEC14
+        private bool FECCanTouchWeight(AdminFlags targetFlags, int? rankId)
+        {
+            var actor = _fecWeight.GetWeight(Player);
+            var target = (targetFlags & AdminFlags.Host) != 0
+                ? Content.Server._FEC14.Administration.FECAdminWeightManager.HostWeight
+                : _fecWeight.GetRankWeight(rankId);
+
+            return actor >= target;
+        }
+
+        private void FECApplyWeight(DbAdminRank rank, int? weight)
+        {
+            if (weight is not { } value || !UserAdminFlagCheck(AdminFlags.AdminWeight))
+            {
+                if (_fecWeight.GetRankWeights().ContainsKey(rank.Id))
+                    _fecWeight.SetRankWeight(rank.Id, rank.Name, _fecWeight.GetRankWeight(rank.Id));
+
+                return;
+            }
+
+            value = Math.Max(0, value);
+            var actor = _fecWeight.GetWeight(Player);
+            if (actor != Content.Server._FEC14.Administration.FECAdminWeightManager.HostWeight && value > actor)
+            {
+                _sawmill.Warning($"{Player} tried to set rank {rank.Name} weight {value} above their own {actor}.");
+                return;
+            }
+
+            _fecWeight.SetRankWeight(rank.Id, rank.Name, value);
+            _sawmill.Info($"{Player} set admin rank {rank.Name} weight to {value}.");
+        }
+        // FEC14
     }
 }

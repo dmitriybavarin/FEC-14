@@ -9,7 +9,7 @@ rmc-hardpoint-remove-verb = Снять: { $slot }
 rmc-hardpoint-repaired = Точка подвески починена.
 rmc-hardpoint-intact = Точка подвески и так цела.
 rmc-hardpoint-integrity-examine = Целостность: [color={ $color }]{ $current }/{ $max } ({ $percent }%)[/color]
-rmc-hardpoint-ammo-type-examine = Тип боеприпасов: { $type }
+rmc-hardpoint-ammo-type-examine = Заряжено боеприпасами типа { $type }.
 rmc-hardpoint-armor-modifiers-examine = Модификаторы урона: кислота { $acid }, рубящий { $slash }, пули { $bullet }, взрывы { $explosive }, дробящий { $blunt }
 rmc-hardpoint-ui-title = Точки подвески
 rmc-hardpoint-ui-empty-slot = Пусто

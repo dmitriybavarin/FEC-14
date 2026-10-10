@@ -19,12 +19,10 @@ public sealed partial class Focusing : RMCChemicalEffect
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var focusing = ActualPotency >= 3
-            ? ". Also powerful enough to instantly cure mute and blindness."
-            : ".";
+            ? Loc.GetString("fec-code-chem-effect-focusing-strong") // FEC14
+            : Loc.GetString("fec-code-chem-effect-focusing-end"); // FEC14
 
-        return $"Removes [color=green]{PotencyPerSecond}[/color] units of alcoholic substances and [color=green]{PotencyPerSecond * 2}[/color] seconds of drunkenness{focusing}\n" +
-               $"Overdoses cause [color=red]{PotencyPerSecond}[/color] toxin damage.\n" +
-               $"Critical overdoses cause [color=red]{PotencyPerSecond * 3}[/color] toxin damage";
+        return Loc.GetString("fec-code-chem-effect-focusing", ("v1", PotencyPerSecond), ("v2", PotencyPerSecond * 2), ("v3", focusing), ("v4", PotencyPerSecond * 3)); // FEC14
     }
 
     protected override void Tick(DamageableSystem damageable, FixedPoint2 potency, EntityEffectReagentArgs args)

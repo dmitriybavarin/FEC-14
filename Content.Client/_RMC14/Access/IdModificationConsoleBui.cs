@@ -45,25 +45,25 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
         EntMan.TryGetComponent(target, out AccessComponent? targetCardAccessComponent);
 
         if (console.Authenticated)
-            _window.SignInButton.Text = "Log Out";
+            _window.SignInButton.Text = Loc.GetString("fec-code-id-console-log-out"); // FEC14
         else if (privileged != null)
-            _window.SignInButton.Text = "Eject Card";
+            _window.SignInButton.Text = Loc.GetString("fec-code-id-console-eject"); // FEC14
         else
-            _window.SignInButton.Text = "Sign In";
+            _window.SignInButton.Text = Loc.GetString("fec-code-id-console-sign-in"); // FEC14
 
         if (target != null)
         {
-            var entityName = metaData?.EntityName ?? "Unknown Name";
-            var fullName = targetCardComponent?.FullName ?? "Unknown Name";
+            var entityName = metaData?.EntityName ?? Loc.GetString("fec-code-id-console-unknown-name"); // FEC14
+            var fullName = targetCardComponent?.FullName ?? Loc.GetString("fec-code-id-console-unknown-name"); // FEC14
 
-            _window.SignInTargetButton.Text = $"Eject Card: {entityName}";
-            _window.SignInTargetAccount.Text = $"{fullName}'s Account Number:"; //todo RMC14 Account Numbers
+            _window.SignInTargetButton.Text = Loc.GetString("fec-code-id-console-eject-target", ("name", entityName)); // FEC14
+            _window.SignInTargetAccount.Text = Loc.GetString("fec-code-id-console-account", ("name", fullName)); //todo RMC14 Account Numbers // FEC14
             _window.SignInTargetName.Text = fullName;
         }
         else
         {
-            _window.SignInTargetButton.Text = "Insert Id To Modify";
-            _window.SignInTargetAccount.Text = "No Card Inserted";
+            _window.SignInTargetButton.Text = Loc.GetString("fec-code-id-console-insert-target"); // FEC14
+            _window.SignInTargetAccount.Text = Loc.GetString("fec-code-id-console-no-card"); // FEC14
             _window.SignInTargetName.Text = string.Empty;
         }
 
@@ -138,7 +138,7 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
         };
 
         var tab1 = new IdModificationConsoleTabButton();
-        tab1.TabButton.Text = "Access";
+        tab1.TabButton.Text = Loc.GetString("fec-code-id-console-tab-access"); // FEC14
         tab1.TabButton.Disabled = true;
         tab1.TabButton.OnPressed += _ =>
         {
@@ -208,7 +208,7 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
 
         // Jobs
         var tab2 = new IdModificationConsoleTabButton();
-        tab2.TabButton.Text = "Jobs";
+        tab2.TabButton.Text = Loc.GetString("fec-code-id-console-tab-jobs"); // FEC14
         tab2.TabButton.OnPressed += _ =>
         {
             _currenttab = "Jobs";
@@ -227,7 +227,7 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
 
         _window.TerminateConfirm.OnPressed += _ =>
         {
-            _window.TerminateConfirm.Text = "ID Terminated";
+            _window.TerminateConfirm.Text = Loc.GetString("fec-code-id-console-terminated"); // FEC14
             _window.TerminateConfirm.Disabled = true;
             SendPredictedMessage(new IdModificationConsoleTerminateConfirmBuiMsg());
         };
@@ -248,7 +248,7 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
 
         // Squads
         var tab4 = new IdModificationConsoleTabButton();
-        tab4.TabButton.Text = "Squads";
+        tab4.TabButton.Text = Loc.GetString("fec-code-id-console-tab-squads"); // FEC14
         tab4.TabButton.OnPressed += _ =>
         {
             _currenttab = "Squads";
@@ -275,12 +275,12 @@ public sealed class IdModificationConsoleBui : BoundUserInterface, IRefreshableB
         if (console.HasIFF)
         {
             _window.IFF.ModulateSelfOverride = Color.Maroon;
-            _window.IFF.Text = "Revoke IFF";
+            _window.IFF.Text = Loc.GetString("fec-code-id-console-iff-revoke"); // FEC14
             return;
         }
 
         _window.IFF.ModulateSelfOverride = Color.Green;
-        _window.IFF.Text = "Grant IFF";
+        _window.IFF.Text = Loc.GetString("fec-code-id-console-iff-grant"); // FEC14
     }
 
     private void DisplayAccessGroups(IdModificationConsoleComponent console)

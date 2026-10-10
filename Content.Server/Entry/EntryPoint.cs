@@ -199,6 +199,12 @@ namespace Content.Server.Entry
             LoadBuildConfigPresets(cfg, res, sawmill);
 
             var presets = cfg.GetCVar(CCVars.ConfigPresets);
+            // FEC14
+#if !DEBUG && !TOOLS
+            if (presets == "")
+                presets = "RMC14/rmc,_FEC14/fec";
+#endif
+            // FEC14
             if (presets == "")
                 return;
 

@@ -40,13 +40,13 @@ public sealed class LarvaQueueOfferSystem : EntitySystem
 
         _window.OfferTypeLabel.Text = ev.OfferType switch
         {
-            "Burst Victim" => "Burst Victim Priority",
-            "Infector"     => "Infector Priority",
-            _              => "Larva Available",
+            "Burst Victim" => Loc.GetString("fec-code-larva-offer-burst-victim"), // FEC14
+            "Infector"     => Loc.GetString("fec-code-larva-offer-infector"), // FEC14
+            _              => Loc.GetString("fec-code-larva-offer-available"), // FEC14
         };
 
-        _window.PositionLabel.Text = $"Queue Position: {ev.QueuePosition}";
-        _window.HiveLabel.Text = $"Hive: {ev.HiveName}";
+        _window.PositionLabel.Text = Loc.GetString("fec-code-larva-queue-position", ("position", ev.QueuePosition)); // FEC14
+        _window.HiveLabel.Text = Loc.GetString("fec-code-larva-queue-hive", ("hive", ev.HiveName)); // FEC14
         UpdateCountdown();
 
         _window.AcceptButton.OnPressed += _ =>
@@ -87,7 +87,7 @@ public sealed class LarvaQueueOfferSystem : EntitySystem
         if (ev.LarvaDied)
         {
             _offerExpiredAt = _timing.CurTime.TotalSeconds;
-            _window.CountdownLabel.Text = $"{_offeredEntityName} died — you will remain in the queue";
+            _window.CountdownLabel.Text = Loc.GetString("fec-code-larva-queue-offer-died", ("name", _offeredEntityName)); // FEC14
             _window.AcceptButton.Visible = false;
             _window.DeclineButton.Visible = false;
             _window.FollowButton.Visible = false;
@@ -125,11 +125,11 @@ public sealed class LarvaQueueOfferSystem : EntitySystem
         var remaining = _currentOffer.ExpiresAt - _timing.CurTime.TotalSeconds;
         if (remaining <= 0)
         {
-            _window.CountdownLabel.Text = "Offer expired.";
+            _window.CountdownLabel.Text = Loc.GetString("fec-code-larva-queue-offer-expired"); // FEC14
             return;
         }
 
-        _window.CountdownLabel.Text = $"Time remaining: {remaining:F0}s";
+        _window.CountdownLabel.Text = Loc.GetString("fec-code-larva-queue-time-remaining", ("seconds", remaining.ToString("F0"))); // FEC14
     }
 
     private void CloseWindow()

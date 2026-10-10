@@ -32,6 +32,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     private readonly Dictionary<string, TimeSpan> _roles = new();
     private readonly List<string> _roleBans = new();
     private readonly List<string> _jobWhitelists = new();
+    public IReadOnlyList<string> FECJobWhitelists => _jobWhitelists; // FEC14
 
     private ISawmill _sawmill = default!;
 

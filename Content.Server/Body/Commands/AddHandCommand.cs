@@ -20,7 +20,7 @@ namespace Content.Server.Body.Commands
         private static readonly EntProtoId DefaultHandPrototype = "LeftHandHuman";
 
         public string Command => "addhand";
-        public string Description => "Adds a hand to your entity.";
+        public string Description => Loc.GetString("fec-cmd-add-hand-desc"); // FEC14
         public string Help => $"Usage: {Command} <entityUid> <handPrototypeId> / {Command} <entityUid> / {Command} <handPrototypeId> / {Command}";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

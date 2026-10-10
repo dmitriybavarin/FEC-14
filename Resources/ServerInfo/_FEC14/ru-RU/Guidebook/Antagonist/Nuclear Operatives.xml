@@ -1,0 +1,138 @@
+<Document>
+  # Ядерные оперативники
+
+  <Box>
+    [color=#999999][italic]"ОПЕРАТИВНИКИ, ВНИМАНИЕ. ЗАДАЧИ ПРОСТЫ.[/italic][/color]
+  </Box>
+  <Box>
+    [color=#999999][italic]ДОСТАВЬТЕ ЗАРЯД И УХОДИТЕ ДО ЕГО ПОДРЫВА. НАЧАТЬ ОПЕРАЦИЮ."[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
+  </Box>
+
+  Вас только что выбрали ядерным оперативником [color=#ff0000]Синдиката[/color]. У вас одна цель: взорвать один из лучших кораблей Nanotrasen ядерным зарядом.
+
+  ## Оперативники
+  В вашей команде несколько ролей:
+  - [bold]Оперативники[/bold], обычные бойцы, на которых держится черная работа.
+  - [bold]Санитар[/bold], который делает из реагентов лекарства или химическое оружие.
+  - [bold]Командир[/bold], который составляет план и ведет команду.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="скафандр санитара"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="скафандр командира"/>
+  </Box>
+
+  Если вас выбрали санитаром или командиром, а вы не чувствуете себя готовым, эти обязанности может взять кто-то из товарищей.
+
+  ## Диск
+
+  У каждого оперативника с собой [color=cyan]пинпоинтер[/color]. Включите его и всегда держите при себе. Он всегда указывает на [color=cyan]диск ядерной аутентификации.[/color]
+  Диск принадлежит [color=yellow]капитану[/color], и почти всегда он при нем. Идите по стрелке пинпоинтера к диску и [italic]любой ценой добудьте его[/italic].
+
+  <Box>
+    <GuideEntityEmbed Entity="PinpointerNuclear"/>
+    <GuideEntityEmbed Entity="NukeDisk"/>
+  </Box>
+
+  ## Подготовка
+  Каждому в отряде выдан [color=cyan]аплинк[/color], чтобы купить все нужное для задания, как у [textlink="предателей." link="Traitors"]
+
+  <Box>
+    <GuideEntityEmbed Entity="BaseUplinkRadio40TC" Caption="ваш аплинк"/>
+  </Box>
+
+  Купить можно то же, что и предатели, но вам доступно снаряжение получше и телекристаллов больше.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponLightMachineGunL6" Caption="Оружие"/>
+    <GuideEntityEmbed Entity="MagazineLightRifleBox" State="icon" Caption="Патроны"/>
+    <GuideEntityEmbed Entity="C4" Caption="Взрывчатка"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitJuggernaut" Caption="Одежда"/>
+    <GuideEntityEmbed Entity="Stimpack" Caption="Химикаты"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Обман"/>
+    <GuideEntityEmbed Entity="Emag" Caption="Саботаж"/>
+    <GuideEntityEmbed Entity="MacroBombImplanter" Caption="Импланты"/>
+    <GuideEntityEmbed Entity="BorgChassisSyndicateAssault" Caption="Союзники"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesOutlawGlasses" Caption="Бесполезное"/>
+  </Box>
+
+  Еще придется решить, [color=red]объявлять войну[/color] или нет. Объявление дает [bold]каждому в команде по 40 дополнительных телекристаллов[/bold].
+  Но экипаж сразу узнает о вас, и у него будет вдоволь времени подготовиться к вашему прибытию.
+
+  Объявить войну может только [bold]командир[/bold]. Решайте быстро, [italic]предложение ограничено по времени![/italic]
+  <Box>
+    <GuideEntityEmbed Entity="NukeOpsDeclarationOfWar"/>
+  </Box>
+
+  ## Как добраться до станции
+  План есть, снаряжение есть. Теперь действуйте.
+
+  Возьмите [bold]джетпак[/bold] в оружейной и вместе с остальными идите на [color=cyan]шаттл[/color].
+  Среди прочего на шаттле есть [bold]компьютер "свой-чужой"[/bold]. Если выключить в нем [italic]"Показывать IFF"[/italic] и [italic]"Показывать корабль"[/italic], вы будете скрыты от других кораблей и сканеров массы.
+
+  Когда все будут готовы, совершите прыжок к станции и долетите до нее на джетпаке. Не забудьте код, пинпоинтеры и бомбу, если берете ее с собой.
+
+  <Box>
+    <GuideEntityEmbed Entity="JetpackBlack"/>
+    <GuideEntityEmbed Entity="ComputerIFFSyndicate"/>
+  </Box>
+
+  ## Бомба и порядок взведения
+  На шаттле лежит бумага с [color=cyan]кодами ядерной аутентификации[/color]. [bold]Проверьте, совпадает ли ID бомбы с указанным на шаттле.[/bold] Если нет, взводить придется бомбу станции.
+
+  - Добудьте [bold]диск ядерной аутентификации[/bold] и вставьте его в бомбу.
+  - Наберите [bold]код ядерной аутентификации[/bold] и нажмите на клавиатуре "[bold]E[/bold]", чтобы ввести его.
+  - [bold]Чтобы начать самоуничтожение, нажмите [color=#EB2D3A]ВЗВЕСТИ[/color][/bold]. Через 300 секунд бомба взорвется.
+  - [bold]Защищайте бомбу[/bold], даже ценой своих жизней! Возвращение в условия задания не входит.
+  - Чтобы [bold]обезвредить[/bold] бомбу, нужно 30 секунд. Снова взвести ее можно, но если до этого дойдет, шансы на успех падают.
+  - Если бомбу взвели снова, таймер продолжит с того места, где остановился.
+
+  <Box>
+    <GuideEntityEmbed Entity="NuclearBomb" Caption="Ядерный заряд"/>
+  </Box>
+
+  ## Условия победы
+
+  [color=#00ff00]Победитель[/color] раунда и масштаб победы объявляются на экране конца раунда.
+
+  <Table Columns="2">
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=red]Крупная победа Синдиката![/color][/bold]
+        - Бомба взорвалась на станции.
+        - Экипаж эвакуировался, но бомба все еще взведена.
+        - Взведенную бомбу доставили на Центральное командование на эвакуационном шаттле.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2a1414" OutlineColor="#7a3a3a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=red]Малая победа Синдиката[/color][/bold]
+        - Экипаж эвакуировался, но все оперативники выжили.
+        - Экипаж эвакуировался, часть оперативников погибла, но экипаж потерял диск.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#999999" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#999999]Ничья[/color][/bold]
+        - Бомба взорвалась не на станции.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#3a7a4a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=green]Малая победа экипажа[/color][/bold]
+        - Экипаж эвакуировался с диском, часть оперативников погибла.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=green]Крупная победа экипажа![/color][/bold]
+        - Все оперативники погибли.
+        - Экипаж взорвал аванпост ядерных оперативников их же бомбой.
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

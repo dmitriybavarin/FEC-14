@@ -61,6 +61,32 @@
     # Resources/Prototypes/_RMC14/Access/xeno_access.yml
     - CMAccessXeno
     - CMAccessXenoQueen
+    - RMCAccessVehicleCrew
+    - RMCAccessMorgue
+    - RMCAccessSynth
+    - RMCAccessLogs
+    - CMAccessColonyArmory
+    - RMCAccessTSEPA
+    - RMCAccessTSEPABrig
+    - RMCAccessTSEPAInspector
+    - RMCAccessDatabase
+    - RMCAccessSeniorCommand
+    - RMCAccessEcho
+    - RMCAccessFoxtrot
+    - CMAccessAegis
+    - CMAccessIllegal
+    - RMCAccessSPPGeneral
+    - RMCAccessSPPMedical
+    - RMCAccessSPPEngineering
+    - RMCAccessSPPSecurity
+    - RMCAccessSPPArmory
+    - RMCAccessSPPflight
+    - RMCAccessSPPResearch
+    - RMCAccessSPPCommando
+    - RMCAccessSPPLeadership
+    - RMCAccessSPPSeniorLead
+    - RMCAccessWeYa
+    - RMCAccessWeYaFlight
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg

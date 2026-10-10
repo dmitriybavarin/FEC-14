@@ -14,4 +14,4 @@ ent-RMCCalendarTWE = { ent-RMCCalendarBase }
     .suffix = TWE
 ent-RMCCalendarSPP = { ent-RMCCalendarBase }
     .desc = { ent-RMCCalendarBase.desc }
-    .suffix = SPP
+    .suffix = СССП

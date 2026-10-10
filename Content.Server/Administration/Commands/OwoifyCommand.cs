@@ -12,7 +12,7 @@ public sealed class OwoifyCommand : IConsoleCommand
 
     public string Command => "owoify";
 
-    public string Description => "For when you need everything to be cat. Uses OwOAccent's formatting on the name and description of an entity.";
+    public string Description => Loc.GetString("fec-cmd-owoify-desc"); // FEC14
 
     public string Help => "owoify <id>";
 

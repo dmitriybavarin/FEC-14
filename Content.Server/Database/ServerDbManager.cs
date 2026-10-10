@@ -334,6 +334,8 @@ namespace Content.Server.Database
 
         Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
 
+        Task<List<(Guid UserId, string Name, string RoleId)>> FECGetAllJobWhitelists(); // FEC14
+
         #endregion
 
         #region IPintel
@@ -1120,6 +1122,14 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
         }
+
+        // FEC14
+        public Task<List<(Guid UserId, string Name, string RoleId)>> FECGetAllJobWhitelists()
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.FECGetAllJobWhitelists());
+        }
+        // FEC14
 
         public Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
         {

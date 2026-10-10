@@ -134,7 +134,7 @@ public sealed class XenoParasiteThrowerSystem : SharedXenoParasiteThrowerSystem
 
         if (HasComp<OnFireComponent>(xeno))
         {
-            _popup.PopupEntity("Retrieving a stored parasite while we're on fire would burn it!", xeno, args.Performer, PopupType.MediumCaution);
+            _popup.PopupEntity(Loc.GetString("fec-code-parasite-retrieve-on-fire"), xeno, args.Performer, PopupType.MediumCaution); // FEC14
             return;
         }
 

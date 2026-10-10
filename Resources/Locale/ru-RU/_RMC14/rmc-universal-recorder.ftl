@@ -1,6 +1,6 @@
 rmc-universal-recorder-examine-actions = Используйте в руке, чтобы открыть управление диктофоном. Alt-клик и контекстное меню тоже дают доступ к управлению.
-rmc-universal-recorder-examine-tape = Внутри кассета: { $tape }.
-rmc-universal-recorder-examine-display = На дисплее: [color=lightblue]{ $value }[/color]
+rmc-universal-recorder-examine-tape = Внутри кассета { $tape }.
+rmc-universal-recorder-examine-display = На дисплее [color=lightblue]{ $value }[/color].
 rmc-universal-recorder-examine-broken = Кассета внутри сломана.
 
 rmc-universal-recorder-state-idle = ожидание

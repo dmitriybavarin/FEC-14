@@ -57,7 +57,7 @@ public sealed class CMSurgeryBui : BoundUserInterface
         {
             _window = this.CreateWindow<CMSurgeryWindow>();
             _window.OnClose += () => _system.OnRefresh -= RefreshUI;
-            _window.Title = "Surgery";
+            _window.Title = Loc.GetString("fec-code-surgery-title"); // FEC14
 
             _window.PartsButton.OnPressed += _ =>
             {
@@ -335,16 +335,16 @@ public sealed class CMSurgeryBui : BoundUserInterface
                     switch (reason)
                     {
                         case StepInvalidReason.MissingSkills:
-                            stepName.AddMarkupOrThrow(" [color=red](Missing surgery skill)[/color]");
+                            stepName.AddMarkupOrThrow(" " + Loc.GetString("fec-code-surgery-step-no-skill")); // FEC14
                             break;
                         case StepInvalidReason.NeedsOperatingTable:
-                            stepName.AddMarkupOrThrow(" [color=red](Needs operating table)[/color]");
+                            stepName.AddMarkupOrThrow(" " + Loc.GetString("fec-code-surgery-step-no-table")); // FEC14
                             break;
                         case StepInvalidReason.Armor:
-                            stepName.AddMarkupOrThrow(" [color=red](Remove their armor!)[/color]");
+                            stepName.AddMarkupOrThrow(" " + Loc.GetString("fec-code-surgery-step-armor")); // FEC14
                             break;
                         case StepInvalidReason.MissingTool:
-                            stepName.AddMarkupOrThrow(" [color=red](Missing tool)[/color]");
+                            stepName.AddMarkupOrThrow(" " + Loc.GetString("fec-code-surgery-step-no-tool")); // FEC14
                             break;
                     }
                 }
@@ -373,7 +373,7 @@ public sealed class CMSurgeryBui : BoundUserInterface
         _window.DisabledPanel.Visible = true;
 
         var text = new FormattedMessage();
-        text.AddMarkupOrThrow("[color=red][font size=16]They need to be lying down![/font][/color]");
+        text.AddMarkupOrThrow(Loc.GetString("fec-code-surgery-lie-down")); // FEC14
         _window.DisabledLabel.SetMessage(text);
         _window.DisabledPanel.MouseFilter = MouseFilterMode.Stop;
     }
@@ -397,15 +397,15 @@ public sealed class CMSurgeryBui : BoundUserInterface
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
         {
-            _window.Title = $"Surgery - {partMeta.EntityName}, {surgeryMeta.EntityName}";
+            _window.Title = Loc.GetString("fec-code-surgery-title-part-surgery", ("part", partMeta.EntityName), ("surgery", surgeryMeta.EntityName)); // FEC14
         }
         else if (partMeta != null)
         {
-            _window.Title = $"Surgery - {partMeta.EntityName}";
+            _window.Title = Loc.GetString("fec-code-surgery-title-part", ("part", partMeta.EntityName)); // FEC14
         }
         else
         {
-            _window.Title = "Surgery";
+            _window.Title = Loc.GetString("fec-code-surgery-title"); // FEC14
         }
     }
 

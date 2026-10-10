@@ -45,8 +45,8 @@ public sealed partial class SelectDestinationTunnelWindow : DefaultWindow
     {
         if (selectedTunnelName == null)
         {
-            SelectedTunnelLabel.Text = "None selected";
-            SelectedTunnelLabel.ToolTip = "None selected";
+            SelectedTunnelLabel.Text = Loc.GetString("fec-code-tunnel-none-selected"); // FEC14
+            SelectedTunnelLabel.ToolTip = Loc.GetString("fec-code-tunnel-none-selected"); // FEC14
             SelectedTunnelLabel.StyleClasses.Clear();
             SelectedTunnelLabel.StyleClasses.Add("LabelSecondary");
             SelectButton.Disabled = true;

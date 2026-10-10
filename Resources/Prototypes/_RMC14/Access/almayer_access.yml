@@ -4,7 +4,7 @@
 - type: accessLevel
   id: CMAccessRequisitions
   parent: RMCBaseCommandAccess
-  name: Requisitions
+  name: fec-access-requisitions
 
 
 - type: accessLevel
@@ -17,7 +17,7 @@
 - type: accessLevel
   id: RMCAccessVehicleCrew
   parent: RMCBaseMarineAccess
-  name: Vehicle Bay
+  name: fec-access-vehicle-bay
 
 
 #engineering

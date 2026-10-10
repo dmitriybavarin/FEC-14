@@ -16,7 +16,7 @@ public sealed class RMCGameStateSystem : EntitySystem
     {
         _console.RegisterCommand(
             "enableprediction",
-            "Enables prediction for a player",
+            Loc.GetString("fec-code-cmd-enableprediction-desc"), // FEC14
             "enableprediction <player>",
             EnablePrediction,
             EnablePredictionCompletions
@@ -24,7 +24,7 @@ public sealed class RMCGameStateSystem : EntitySystem
 
         _console.RegisterCommand(
             "disableprediction",
-            "Disables prediction for a player",
+            Loc.GetString("fec-code-cmd-disableprediction-desc"), // FEC14
             "disableprediction <player>",
             DisablePrediction,
             EnablePredictionCompletions

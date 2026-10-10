@@ -440,6 +440,78 @@
             "problemMatcher": []
         },
         {
+            "label": "FEC: Движок: состояние",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "status"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: скачать версии",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "fetch"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: как у RMC-14",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "rmc"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: переключить на версию",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "use", "${input:fecEngineRef}"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: влить версию в ветку форка",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "merge", "${input:fecEngineRef}"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: конфликты",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "conflicts"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: отменить слияние",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "abort"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: вернуть версию из коммита",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "restore"],
+            "problemMatcher": [],
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "FEC: Движок: сборка с отчетом об ошибках",
+            "type": "process",
+            "command": "python",
+            "args": ["Tools/_FEC14/engine.py", "build"],
+            "problemMatcher": "$msCompile",
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
             "label": "FEC: Очистить сборку",
             "type": "process",
             "command": "dotnet",
@@ -548,6 +620,14 @@
                 "FEC: _клиент без сборки (Release)"
             ],
             "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "fecEngineRef",
+            "type": "promptString",
+            "description": "Версия движка (292.0.0), коммит или ветка",
+            "default": "292.0.0"
         }
     ]
 }

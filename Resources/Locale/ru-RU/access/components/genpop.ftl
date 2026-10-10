@@ -1,9 +1,9 @@
 genpop-prisoner-id-expire = Вы отбыли срок! Теперь можно выйти из тюрьмы через турникеты и забрать свои вещи.
 genpop-prisoner-id-popup-not-served = Срок еще не отбыт!
 genpop-prisoner-id-crime-default = [Засекречено]
-genpop-prisoner-id-examine-wait = Отбыто {$minutes} мин {$seconds} с из {$sentence} мин срока. Преступление: {$crime}.
-genpop-prisoner-id-examine-wait-perm = Вы отбываете пожизненный срок. Преступление: {$crime}.
-genpop-prisoner-id-examine-served = Вы отбыли срок. Преступление: {$crime}.
+genpop-prisoner-id-examine-wait = Отбыто {$minutes} мин {$seconds} с из {$sentence} мин срока. Осужден за преступление "{$crime}".
+genpop-prisoner-id-examine-wait-perm = Вы отбываете пожизненный срок за преступление "{$crime}".
+genpop-prisoner-id-examine-served = Вы отбыли срок за преступление "{$crime}".
 genpop-locker-name-default = Шкаф заключенного
 genpop-locker-desc-default = Надежный шкаф для личных вещей заключенного на время его срока.
 genpop-locker-name-used = Шкаф заключенного ({$name})

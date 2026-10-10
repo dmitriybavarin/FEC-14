@@ -1,4 +1,4 @@
-ui-tactical-map-window-title = Карта
+ui-tactical-map-window-title = Тактическая карта
 ui-tactical-map-tab-map = Карта
 ui-tactical-map-tab-canvas = Холст
 

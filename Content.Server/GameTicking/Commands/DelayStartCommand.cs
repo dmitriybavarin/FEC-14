@@ -11,7 +11,7 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "delaystart";
-        public string Description => "Delays the round start.";
+        public string Description => Loc.GetString("fec-cmd-delay-start-desc"); // FEC14
         public string Help => $"Usage: {Command} <seconds>\nPauses/Resumes the countdown if no argument is provided.";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

@@ -26,6 +26,7 @@ public abstract class SharedCampfireSystem : EntitySystem
         SubscribeLocalEvent<CampfireComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CampfireComponent, ActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<CampfireComponent, CampfireExtinguishDoAfterEvent>(OnExtinguishDoAfter);
+        SubscribeLocalEvent<CampfireComponent, CampfireWeatherSmotherEvent>(OnWeatherSmother);
     }
 
     private void OnStartup(Entity<CampfireComponent> ent, ref ComponentStartup args)
@@ -47,29 +48,68 @@ public abstract class SharedCampfireSystem : EntitySystem
         var query = EntityQueryEnumerator<CampfireComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (!comp.Lit || comp.LitAt == null || !comp.FuelRequired)
-                continue;
+            UpdateFuel((uid, comp));
+        }
+    }
 
-            var elapsed = _timing.CurTime - comp.LitAt.Value;
-            if (elapsed >= comp.BurnDuration)
+    private void OnWeatherSmother(Entity<CampfireComponent> ent, ref CampfireWeatherSmotherEvent args)
+    {
+        // Weather uses the same fuel consumption path as normal burning, preserving campfire popups and visuals.
+        Smother(ent, args.Reduction);
+    }
+
+    private void Smother(Entity<CampfireComponent> ent, TimeSpan reduction)
+    {
+        if (!ent.Comp.Lit ||
+            !ent.Comp.FuelRequired ||
+            reduction <= TimeSpan.Zero)
+        {
+            return;
+        }
+
+        ent.Comp.LitAt ??= _timing.CurTime;
+        // Move the start time backwards so the next UpdateFuel consumes fuel as if the fire had burned longer.
+        ent.Comp.LitAt -= reduction;
+        Dirty(ent);
+
+        UpdateFuel(ent);
+    }
+
+    private void UpdateFuel(Entity<CampfireComponent> ent)
+    {
+        // Shared burn-out path for natural ticking and weather smothering.
+        if (!ent.Comp.Lit || ent.Comp.LitAt == null || !ent.Comp.FuelRequired)
+            return;
+
+        if (ent.Comp.BurnDuration <= TimeSpan.Zero)
+        {
+            ent.Comp.Fuel = 0;
+            Dirty(ent);
+            SetLit(ent, false);
+            if (_net.IsServer)
+                _popup.PopupEntity(Loc.GetString("fec-code-campfire-goes-out"), ent); // FEC14
+
+            return;
+        }
+
+        var elapsed = _timing.CurTime - ent.Comp.LitAt.Value;
+        while (elapsed >= ent.Comp.BurnDuration)
+        {
+            ent.Comp.Fuel--;
+            if (ent.Comp.Fuel <= 0)
             {
-                // Consume one fuel
-                comp.Fuel--;
-                Dirty(uid, comp);
+                ent.Comp.Fuel = 0;
+                Dirty(ent);
+                SetLit(ent, false);
+                if (_net.IsServer)
+                    _popup.PopupEntity(Loc.GetString("fec-code-campfire-goes-out"), ent); // FEC14
 
-                if (comp.Fuel > 0)
-                {
-                    // Reset timer for next fuel unit
-                    comp.LitAt = _timing.CurTime;
-                }
-                else
-                {
-                    // Out of fuel, extinguish
-                    SetLit((uid, comp), false);
-                    if (_net.IsServer)
-                        _popup.PopupEntity("The fire goes out.", uid);
-                }
+                return;
             }
+
+            elapsed -= ent.Comp.BurnDuration;
+            ent.Comp.LitAt = _timing.CurTime - elapsed;
+            Dirty(ent);
         }
     }
 
@@ -89,7 +129,7 @@ public abstract class SharedCampfireSystem : EntitySystem
         if (_doAfter.TryStartDoAfter(doAfterArgs))
         {
             if (_net.IsServer)
-                _popup.PopupEntity("You start extinguishing the fire...", ent, args.User);
+                _popup.PopupEntity(Loc.GetString("fec-code-campfire-extinguish-start"), ent, args.User); // FEC14
         }
     }
 
@@ -102,7 +142,7 @@ public abstract class SharedCampfireSystem : EntitySystem
         SetLit(ent, false, args.User);
 
         if (_net.IsServer)
-            _popup.PopupEntity("You extinguish the fire.", ent, args.User);
+            _popup.PopupEntity(Loc.GetString("fec-code-campfire-extinguish"), ent, args.User); // FEC14
     }
 
     private void OnInteractUsing(Entity<CampfireComponent> ent, ref InteractUsingEvent args)
@@ -120,7 +160,7 @@ public abstract class SharedCampfireSystem : EntitySystem
             if (ent.Comp.Fuel >= ent.Comp.MaxFuel)
             {
                 if (_net.IsServer)
-                    _popup.PopupEntity("It looks fully fueled.", ent, args.User);
+                    _popup.PopupEntity(Loc.GetString("fec-code-campfire-full"), ent, args.User); // FEC14
                 return;
             }
 
@@ -141,7 +181,7 @@ public abstract class SharedCampfireSystem : EntitySystem
             }
 
             if (_net.IsServer)
-                _popup.PopupEntity("You add fuel to the fire.", ent, args.User);
+                _popup.PopupEntity(Loc.GetString("fec-code-campfire-add-fuel"), ent, args.User); // FEC14
 
             return;
         }
@@ -159,7 +199,7 @@ public abstract class SharedCampfireSystem : EntitySystem
         if (ent.Comp.FuelRequired && ent.Comp.Fuel <= 0)
         {
             if (_net.IsServer)
-                _popup.PopupEntity("The fire needs fuel. Add something to fuel it.", ent, args.User);
+                _popup.PopupEntity(Loc.GetString("fec-code-campfire-needs-fuel"), ent, args.User); // FEC14
             return;
         }
 
@@ -194,7 +234,7 @@ public abstract class SharedCampfireSystem : EntitySystem
                 _audio.PlayPvs(ent.Comp.LitSound, ent);
 
             if (user != null)
-                _popup.PopupEntity("You light the fire.", ent, user.Value);
+                _popup.PopupEntity(Loc.GetString("fec-code-campfire-light"), ent, user.Value); // FEC14
         }
 
         UpdateAppearance(ent);

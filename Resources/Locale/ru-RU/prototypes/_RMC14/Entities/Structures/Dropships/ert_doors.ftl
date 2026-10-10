@@ -1,13 +1,13 @@
 ent-RMCERTDoorPort = Люк экипажа ОБР
     .desc = { "" }
     .suffix = { ent-RMCDropshipDoorPortBase.suffix }
-ent-RMCSPPDoorPort = Люк экипажа SPP
+ent-RMCSPPDoorPort = Люк экипажа СССП
     .desc = { "" }
     .suffix = { ent-RMCDropshipDoorPortBase.suffix }
 ent-RMCERTDoorAft = Грузовая дверь ОБР
     .desc = { "" }
     .suffix = { ent-RMCDropshipDoorAftBase.suffix }
-ent-RMCSPPDoorAft = Грузовая дверь SPP
+ent-RMCSPPDoorAft = Грузовая дверь СССП
     .desc = { "" }
     .suffix = { ent-RMCDropshipDoorAftBase.suffix }
 ent-RMCTSEDoorAft = Грузовая дверь TSE

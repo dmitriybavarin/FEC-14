@@ -5,7 +5,7 @@ sandbox-window-visibility-label = Видимость
 sandbox-window-your-character-label = Ваш персонаж
 
 sandbox-window-ai-overlay-button = Оверлей ИИ
-sandbox-window-respawn-button = Возродиться
+sandbox-window-respawn-button = В лобби
 sandbox-window-spawn-entities-button = Создать сущности
 sandbox-window-spawn-tiles-button = Создать тайлы
 sandbox-window-spawn-decals-button = Создать декали

@@ -15,9 +15,9 @@ rmc-laser-designator-target-name-squad = лазер {$squad}-{$id}
 rmc-laser-designator-target-name = лазер {$id}
 rmc-laser-designator-target-abbreviation-squad = {$letter}-{$id}
 rmc-laser-designator-target-abbreviation = {$id}
-rmc-laser-designator-examine-id = ID отслеживания для авиаподдержки: {$id}.
+rmc-laser-designator-examine-id = ID отслеживания для авиаподдержки {$id}.
 rmc-laser-designator-signal-flare-examine = [color=red]Пока горит, поднять ее нельзя.[/color]
-rmc-laser-designator-signal-flare-examine-id = Обозначение цели: [color=#ad3b98][bold]{$id}[/bold][/color]
+rmc-laser-designator-signal-flare-examine-id = Обозначение цели [color=#ad3b98][bold]{$id}[/bold][/color].
 rmc-laser-designator-switch-mode = Переключить в режим "{$mode}"
 rmc-laser-designator-in-rangefinder-mode = Сейчас включен режим дальномера.
 rmc-laser-designator-in-designator-mode = Сейчас включен режим подсветки целей для авиаподдержки.

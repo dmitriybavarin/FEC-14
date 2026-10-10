@@ -11,7 +11,7 @@ namespace Content.Server.Decals.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "rmdecal";
-        public string Description => "removes a decal";
+        public string Description => Loc.GetString("fec-cmd-remove-decal-desc"); // FEC14
         public string Help => $"{Command} <uid> <gridId>";
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {

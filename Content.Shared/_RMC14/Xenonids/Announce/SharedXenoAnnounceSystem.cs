@@ -55,13 +55,15 @@ public abstract class SharedXenoAnnounceSystem : EntitySystem
     /// <param name="sound"></param>
     /// <param name="popup"></param>
     /// <param name="needsQueen">Whether the message can only be sent if the hive has an active queen</param>
+    /// <param name="includeGhosts">Whether to add all ghosts to the recipients outside the provided filter.</param>
     public virtual void Announce(EntityUid source,
         Filter filter,
         string message,
         string wrapped,
         SoundSpecifier? sound = null,
         PopupType? popup = null,
-        bool needsQueen = false)
+        bool needsQueen = false,
+        bool includeGhosts = true)
     {
     }
 
@@ -126,6 +128,6 @@ public abstract class SharedXenoAnnounceSystem : EntitySystem
 
     public string FormatQueenMother(string message)
     {
-        return $"\n[bold][color=#7575F3][font size=24]Queen Mother Psychic Directive[/font][/color][/bold]\n\n[color=red][font size=14]{message}[/font][/color]\n\n";
+        return $"\n[bold][color=#7575F3][font size=24]{Loc.GetString("fec-code-queen-mother-directive")}[/font][/color][/bold]\n\n[color=red][font size=14]{message}[/font][/color]\n\n"; // FEC14
     }
 }

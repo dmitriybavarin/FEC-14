@@ -1,0 +1,36 @@
+<Document>
+  #Смоляные ловушки
+
+  Создавать смоляные ловушки умеют копатель и носитель, а заполнить их может любая каста с кислотой: просто щелкните по ловушке с выключенным режимом вреда!
+
+  <Box>
+    <GuideEntityEmbed Entity="CMXenoBurrower"/>
+    <GuideEntityEmbed Entity="CMXenoCarrier"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="XenoResinHole"/>
+  </Box>
+
+  ##Где ставить?
+  Ловушки можно прятать под мусором, например под досками и некоторыми стульями. Пользуйтесь этим, чтобы подкрадываться к носителям и захватывать их. Ставить их лучше в тылу: на передовой часто бывают взрывы, а ловушки от них легко разрушаются.
+
+  Совет: ломайте деревянные стулья и баррикады, чтобы получить доски и прятать под ними ловушки!
+
+  При разрушении ловушка подает сигнал. Так можно собирать сведения или перекрывать обходные пути, которыми могут пойти носители!
+
+  ##Виды
+  <Table Columns="2">
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#9be39b]Слабая кислотная ловушка[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Заполняют малые трутни, трутни и стражи. Урон минимальный, оглушения НЕТ.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#5fd35f]Обычная кислотная ловушка[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Заполняют обычный преторианец, плевун, королева и владыка улья. Неплохой урон и короткое оглушение.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#2fa82f]Сильная кислотная ловушка[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Заполняют копатели. Долгое оглушение и высокий урон.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=yellow]Ловушка с нейротоксином[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Заполняет бойлер с выбранным нейротоксином. Выпускает нейротоксичный газ, который дезориентирует, оглушает и ранит.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#7fff00]Ловушка с кислотным газом[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Заполняет бойлер с выбранной кислотой. Выпускает кислотный газ, наносящий носителям большой урон.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#d39cff]Ловушка с лицехватом[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Оглушает наступившего носителя, затем лицехват выпрыгивает и заражает его. Заполнить может любая каста, которая умеет брать лицехватов, но чаще всего это делают носители.</Box></ColorBox>
+  </Table>
+</Document>

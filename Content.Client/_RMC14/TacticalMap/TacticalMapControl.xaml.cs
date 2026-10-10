@@ -819,6 +819,15 @@ public sealed partial class TacticalMapControl : TextureRect
 
         if (Drawing && !LabelEditMode)
         {
+            // FEC14
+            if (FECStartPointer(args.RelativePosition))
+            {
+                OnUserInteraction?.Invoke();
+                args.Handle();
+                return;
+            }
+            // FEC14
+
             _dragging = true;
             _dragStart = LogicalToPixel(args.RelativePosition).Floored();
             _lastDrag = _dragStart;
@@ -869,6 +878,15 @@ public sealed partial class TacticalMapControl : TextureRect
 
         if (args.Function == EngineKeyFunctions.UIClick)
         {
+            // FEC14
+            if (_fecErasing)
+            {
+                FECEndPointer();
+                args.Handle();
+                return;
+            }
+            // FEC14
+
             if (_draggingLabel != null && _labelDragStart != null && _currentDragPosition != null)
             {
                 Vector2 currentPixelPos = LogicalToPixel(args.RelativePosition);
@@ -914,6 +932,7 @@ public sealed partial class TacticalMapControl : TextureRect
                     }
                 }
 
+                FECEndPointer(); // FEC14
                 _dragging = false;
                 _lastDrag = null;
                 _dragStart = null;
@@ -932,6 +951,14 @@ public sealed partial class TacticalMapControl : TextureRect
     protected override void MouseMove(GUIMouseMoveEventArgs args)
     {
         base.MouseMove(args);
+
+        // FEC14
+        if (FECMovePointer(args.RelativePosition))
+        {
+            args.Handle();
+            return;
+        }
+        // FEC14
 
         if (_draggingLabel != null)
         {

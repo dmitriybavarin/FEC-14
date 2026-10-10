@@ -1,0 +1,31 @@
+<Document>
+## Значки новичков
+В некоторых ролях морпехов, например у [textlink="командира отряда" link="RMCGuideSquadLeader"] или глав отделов, над головами игроков видны значки [bold]"NEW"[/bold].
+Они показывают опыт игрока и в игре в целом, и в его текущей роли.
+
+<Table Columns="2">
+  <ColorBox Color="#24142e" OutlineColor="#BF40BF"><Box Margin="4"><GuideEntityEmbed Entity="RMCNewIconGuidebookPurple" Caption="Фиолетовый"/></Box></ColorBox>
+  <ColorBox Color="#24142e" OutlineColor="#BF40BF"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+    [bold][color=#BF40BF]Фиолетовый[/color][/bold]\nОбычно это первая игра человека в этой роли: в ней у него меньше часа.\nКогда условие перестает выполняться, значок сменится на [bold][color=#ff000d]красный[/color][/bold] или [bold][color=#008000]зеленый[/color][/bold].
+  </Box></ColorBox>
+
+  <ColorBox Color="#2a1414" OutlineColor="#ff000d"><Box Margin="4"><GuideEntityEmbed Entity="RMCNewIconGuidebookRed" Caption="Красный"/></Box></ColorBox>
+  <ColorBox Color="#2a1414" OutlineColor="#ff000d"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+    [bold][color=#ff000d]Красный[/color][/bold]\nНовичок и в игре, и в текущей роли.\nМеньше двадцати пяти (25) часов в игре всего и меньше десяти (10) часов в этой роли.
+  </Box></ColorBox>
+
+  <ColorBox Color="#2a2a14" OutlineColor="#B8B823"><Box Margin="4"><GuideEntityEmbed Entity="RMCNewIconGuidebookYellow" Caption="Желтый"/></Box></ColorBox>
+  <ColorBox Color="#2a2a14" OutlineColor="#B8B823"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+    [bold][color=#B8B823]Желтый[/color][/bold]\nНовичок в игре, но в этой роли опыт уже есть.\nЧаще всего встречается у стрелков, интернов и в похожих ролях.
+  </Box></ColorBox>
+
+  <ColorBox Color="#142a18" OutlineColor="#008000"><Box Margin="4"><GuideEntityEmbed Entity="RMCNewIconGuidebookGreen" Caption="Зеленый"/></Box></ColorBox>
+  <ColorBox Color="#142a18" OutlineColor="#008000"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+    [bold][color=#008000]Зеленый[/color][/bold]\nНовичок в должности, но не в игре.\nВместе с [bold][color=#BF40BF]фиолетовым[/color][/bold] это самые частые значки.
+  </Box></ColorBox>
+</Table>
+
+Используйте эти значки, чтобы помогать новичкам и понимать, кому может понадобиться подсказка, если об этом попросят. Всегда проявляйте к новым игрокам хотя бы терпение и понимание.\n
+
+Сейчас иногда случается ошибка: у игрока без наигранного времени в роли значок не отображается. Если сомневаетесь, вспомните, что опыт часто можно примерно оценить по званию (например, рядовой стрелок или рядовой первого класса санитар).
+</Document>

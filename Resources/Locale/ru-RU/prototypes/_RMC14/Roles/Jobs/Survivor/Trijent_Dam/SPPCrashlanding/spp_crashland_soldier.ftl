@@ -1,3 +1,3 @@
-ent-CMSpawnPointSPPCrashlandRifleman = Точка появления особого выжившего крушения SPP: стрелок
+ent-CMSpawnPointSPPCrashlandRifleman = Точка появления особого выжившего крушения СССП: стрелок
     .desc = { ent-CMSpawnPointJobBase.desc }
     .suffix = { ent-CMSpawnPointJobBase.suffix }

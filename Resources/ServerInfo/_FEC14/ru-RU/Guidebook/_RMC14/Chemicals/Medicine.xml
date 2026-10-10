@@ -1,0 +1,33 @@
+<Document>
+
+  # Основные лекарства
+
+  Эти лекарства почти всегда так или иначе пригодятся.
+
+  <GuideReagentEmbed Reagent="CMTricordrazine"/>
+  <GuideReagentEmbed Reagent="CMBicaridine"/>
+  <GuideReagentEmbed Reagent="CMKelotane"/>
+  <GuideReagentEmbed Reagent="CMDylovene"/>
+  <GuideReagentEmbed Reagent="CMDexalin"/>
+  <GuideReagentEmbed Reagent="CMDexalinPlus"/>
+  <GuideReagentEmbed Reagent="CMMeralyne"/>
+  <GuideReagentEmbed Reagent="CMDermaline"/>
+
+  # Специальные лекарства
+
+  У этих лекарств обычно особые случаи применения.
+
+  <GuideReagentEmbed Reagent="CMInaprovaline"/>
+  <GuideReagentEmbed Reagent="CMEpinephrine"/>
+  <GuideReagentEmbed Reagent="CMEthylredoxrazine"/>
+  <GuideReagentEmbed Reagent="CMArithrazine"/>
+  <GuideReagentEmbed Reagent="CMLeporazine"/>
+  <GuideReagentEmbed Reagent="CMCryoxadone"/>
+
+  # Все лекарства
+
+  Список [italic]всех[/italic] доступных лекарств, включая перечисленные выше.
+
+  <GuideReagentGroupEmbed Group="Medicine"/>
+
+</Document>

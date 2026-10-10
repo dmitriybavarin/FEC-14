@@ -1,0 +1,95 @@
+<Document>
+
+  #Медицина
+
+  <Table Columns="2">
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#ff8a8a]Сердечно-легочная реанимация[/color][/bold]
+        - Снимите с пациента маску.
+        - Нажмите на пациента, чтобы начать СЛР.
+        - Если делать это раз в 7 секунд, удушье будет снижаться.
+        - Каждый раз это еще и немного продлевает время, в течение которого тело можно реанимировать.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]Обработка {ран}[/color][/bold]
+        - Получая урон, морпех получает раны, которые можно обработать.
+        - Необработанные раны обозначаются [bold]"{  }"[/bold] вокруг чисел урона.
+        - После обработки ран морпех начинает очень медленно лечиться сам.
+        - Обработка ран также останавливает кровотечение.
+        - Лекарства ускоряют лечение урона.
+        - [textlink="Лекарства" link="RMCMedicine"]
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ##Чем обрабатывать {раны}
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Наборы от травм и от ожогов обрабатывают все раны за одно применение и немного дополнительно лечат.
+      - Хирургическая нить и синтетический трансплантат обрабатывают часть ран за применение и каждый раз немного лечат.
+      - Бинт и мазь обрабатывают все раны за применение, но немного дополнительно лечит только мазь.
+      - Хирургическую нить и синтетический трансплантат можно применять и после набора от травм или от ожогов.
+      <Box>
+        <GuideEntityEmbed Entity="CMTraumaKit10"/>
+        <GuideEntityEmbed Entity="CMBurnKit10"/>
+      </Box>
+      <Box>
+        <GuideEntityEmbed Entity="CMSurgicalLine"/>
+        <GuideEntityEmbed Entity="CMSynthGraft"/>
+      </Box>
+      <Box>
+        <GuideEntityEmbed Entity="CMGauze10"/>
+        <GuideEntityEmbed Entity="CMOintment10"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ##Кровь и кровопотеря
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Когда крови у морпеха мало, он начинает получать урон от удушья.
+      - Чтобы восполнить кровь, используйте пакеты с кровью.
+      - Их можно ввести пациенту вручную или через капельницу.
+      - Чтобы ввести пакет вручную, нажмите им на пациента.
+      - Нажмите на пациента еще раз, чтобы вынуть иглу.
+      - Чтобы использовать капельницу, повесьте на нее пакет и перетащите спрайт капельницы на пациента.
+      - Нажмите на капельницу, чтобы отсоединить ее от пациента.
+      <Box>
+        <GuideEntityEmbed Entity="CMBloodPackFull"/>
+        <GuideEntityEmbed Entity="CMIV"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  <Table Columns="2">
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fe39c]Дефибрилляторы[/color][/bold]
+        - Дефибриллятором можно реанимировать морпеха, у которого меньше 200 урона.
+        - Эпинефрин лечит морпеха при дефибрилляции.
+        <Box>
+          <GuideEntityEmbed Entity="CMDefibrillator"/>
+          <GuideEntityEmbed Entity="CMEpinephrineAutoInjector"/>
+        </Box>
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]Хирургия[/color][/bold]
+        - Чтобы начать операцию, примените к пациенту хирургический инструмент.
+        - Выберите часть тела и следуйте шагам выбранной операции.
+        - Удалять личинку может только обученный врач, а не интерн или санитар.
+        - Положите пациента на операционный стол и начинайте операцию.
+        <Box>
+          <GuideEntityEmbed Entity="CMCrateSecureSurgery"/>
+          <GuideEntityEmbed Entity="CMScalpel"/>
+          <GuideEntityEmbed Entity="CMOperatingTable"/>
+        </Box>
+      </Box>
+    </ColorBox>
+  </Table>
+
+</Document>

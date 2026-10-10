@@ -1,0 +1,190 @@
+<Document>
+  # Тяжкие преступления
+  - Это преступления высокой тяжести.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Обвинение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Описание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Наказание
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Самовольная высадка
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Высадка в район операции без разрешения своего главы отдела или [color=#008000][bold]командующего[/bold][/color], продолжая выполнять свои обязанности, например врач, проводящий операции.\nВысадка без намерения выполнять свои обязанности считается [bold]дезертирством[/bold].
+        \n- Свой глава отдела или, где уместно, [color=#008000][bold]командующий[/bold][/color] может задним числом разрешить высадку и снять обвинение. [color=#008000][bold]Командующий[/bold][/color] может отменить это решение.
+        \n- Свой глава отдела или [color=#008000][bold]командующий[/bold][/color] может назначить другого человека, который как можно скорее высадится и заменит самовольно высадившегося.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]10 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Нарушение порядка
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Прямое и намеренное нарушение основной работы корабля. Драка в очереди в отдел поставок, долгий или неоднократный срыв брифинга.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]10 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Подрывная деятельность
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Действия против КМП США или связь с материалами, описывающими запланированные действия против КМП США. Нужны веские доказательства, что человек работает против КМП США.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]15 минут, изъятие ID и увольнение со службы с высадкой на планету.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Неисполнение обязанностей
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Неспособность выполнять свою роль на приемлемом уровне.
+        \n\- [color=#008000][bold]Командующий[/bold][/color], не сумевший как следует организовать персонал и обеспечить его приказами.
+        \n\- Невыполнение своих обязанностей или несоблюдение процедуры в ущерб своим обязанностям.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Нападение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Угроза физической силой или ее применение против кого-либо со злым умыслом, но без намерения убить.
+        \n\- Угроза убийством.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Злоупотребление при аресте
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Намеренный арест человека по ложному обвинению по собственной инициативе.
+        \n\- Неправомерное или оскорбительное дисциплинарное взыскание.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]20 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Незаконное лишение свободы
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Незаконное удержание человека против его воли, например похищение и захват заложников.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]20 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Превышение полномочий
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Применение [color=#ff000d][bold]ВП[/bold][/color] власти [bold]со злым умыслом[/bold].
+        \n\- Чрезмерное применение вредящей или нелетальной силы или другие злоупотребления, которые причинили вред задержанному.\n\- К задержанным подозреваемым нельзя применять больше силы, чем нужно, чтобы утихомирить их и не дать сбежать во время оформления.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]20 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Непредумышленное убийство
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Убийство без злого умысла. Применяется, если кто-то погиб в драке, в которой не было намерения убить.
+        \n\- Сюда же относится и то, что человека, не казненного по процедуре, не реанимировали, даже не попытавшись как следует.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]20 минут и/или понижение.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Жестокое обращение с животными
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Ранение или убийство любого домашнего или дикого животного со злым умыслом. Исключение составляют подопытные обезьяны для химических и научных исследований и враждебная дикая фауна.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]30 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+  </Table>
+</Document>

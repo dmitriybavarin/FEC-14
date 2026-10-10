@@ -39,7 +39,7 @@ public sealed class ResinWhispererSystem : EntitySystem
         var user = args.User;
         args.Verbs.Add(new AlternativeVerb()
         {
-            Text = "Open Door",
+            Text = Loc.GetString("fec-code-resin-whisper-open-door"), // FEC14
             Impact = LogImpact.Low,
             Act = () =>
             {

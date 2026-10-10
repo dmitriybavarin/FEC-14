@@ -311,7 +311,7 @@ public abstract class SharedMarineControlComputerSystem : EntitySystem
             filter: Filter.BroadcastMap(map).RemoveWhereAttachedEntity(e => !HasComp<MarineComponent>(e) && !HasComp<GhostComponent>(e))
         );
 
-        _core.CreateARESLog(ent, LogCat, (string)$"{Name(user)} sent a Warship Announcement: {args.Message}");
+        _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-warship-announcement", ("user", Name(user)), ("message", args.Message))); // FEC14
     }
 
     private void OnMedal(Entity<MarineControlComputerComponent> ent, ref MarineControlComputerMedalMsg args)

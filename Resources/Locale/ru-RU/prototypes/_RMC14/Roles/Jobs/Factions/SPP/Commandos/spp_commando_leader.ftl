@@ -1,3 +1,3 @@
-ent-RMCRandomHumanoidSPPCommandoLeader = ОТРЯД СМЕРТИ, роль призрака SPP: командир коммандос
+ent-RMCRandomHumanoidSPPCommandoLeader = ОТРЯД СМЕРТИ, роль призрака СССП: командир коммандос
     .desc = { "" }
     .suffix = Спавнер, игрок

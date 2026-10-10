@@ -53,10 +53,10 @@ public sealed class DropshipNavigationBui : BoundUserInterface
 
         _window = this.CreateWindow<DropshipNavigationWindow>();
         _window.OnClose += OnClose;
-        SetFlightHeader("Flight Controls");
-        SetDoorHeader("Door Controls");
-        SetRemoteControlHeader("Remote Control:");
-        SetLaunchAlarmHeader("Launch Announcement Alarm");
+        SetFlightHeader(Loc.GetString("fec-code-dropship-nav-flight-controls")); // FEC14
+        SetDoorHeader(Loc.GetString("fec-code-dropship-nav-door-controls")); // FEC14
+        SetRemoteControlHeader(Loc.GetString("fec-code-dropship-nav-remote-control")); // FEC14
+        SetLaunchAlarmHeader(Loc.GetString("fec-code-dropship-nav-launch-alarm")); // FEC14
 
         if (_entities.TryGetComponent(Owner, out TransformComponent? transform) &&
             _entities.TryGetComponent(transform.ParentUid, out MetaDataComponent? metaData))
@@ -103,7 +103,7 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         if (_window == null)
             return;
 
-        SetFlightHeader("Flight Controls");
+        SetFlightHeader(Loc.GetString("fec-code-dropship-nav-flight-controls")); // FEC14
 
         _window.DestinationsContainer.Visible = true;
         _window.ProgressBarContainer.Visible = false;
@@ -184,25 +184,25 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         switch (travelling.State)
         {
             case FTLState.Starting:
-                SetFlightHeader("Launch in progress");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Launching in T-{time}s to {destination}"));
+                SetFlightHeader(Loc.GetString("fec-code-dropship-nav-launch-in-progress")); // FEC14
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("fec-code-dropship-nav-launching", ("time", time), ("destination", destination)))); // FEC14
                 SetLockDownDisabled(false);
                 break;
             case FTLState.Travelling:
-                SetFlightHeader($"In flight: {destination}");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Time until destination: T-{time}s"));
+                SetFlightHeader(Loc.GetString("fec-code-dropship-nav-in-flight", ("destination", destination))); // FEC14
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("fec-code-dropship-nav-time-until-destination", ("time", time)))); // FEC14
                 SetLockDownDisabled(true);
                 SetCancelDisabled(false);
                 break;
             case FTLState.Arriving:
-                SetFlightHeader($"Final Approach: {destination}");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Time until landing: T-{time}s"));
+                SetFlightHeader(Loc.GetString("fec-code-dropship-nav-final-approach", ("destination", destination))); // FEC14
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("fec-code-dropship-nav-time-until-landing", ("time", time)))); // FEC14
                 SetLockDownDisabled(true);
                 SetCancelDisabled(true);
                 break;
             case FTLState.Cooldown:
-                SetFlightHeader("Refueling in progress");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Ready to launch in T-{time}s"));
+                SetFlightHeader(Loc.GetString("fec-code-dropship-nav-refueling")); // FEC14
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("fec-code-dropship-nav-ready-in", ("time", time)))); // FEC14
                 SetLockDownDisabled(false);
                 SetCancelDisabled(true);
                 break;
@@ -310,10 +310,10 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         dooorLockStatus.TryGetValue(DoorLocation.Starboard, out var starboardStatus);
         var lockdownStatus = aftStatus && portStatus && starboardStatus;
 
-        _window.LockdownButton.Text = lockdownStatus ? "Lift Lockdown" : "Lockdown";
-        _window.LockdownButtonAft.Text = aftStatus ? "Unlock Aft" : "Lock Aft";
-        _window.LockdownButtonPort.Text = portStatus ? "Unlock Port" : "Lock Port";
-        _window.LockdownButtonStarboard.Text = starboardStatus ? "Unlock Starboard" : "Lock Starboard";
+        _window.LockdownButton.Text = lockdownStatus ? Loc.GetString("fec-code-dropship-nav-lift-lockdown") : Loc.GetString("fec-code-dropship-nav-lockdown"); // FEC14
+        _window.LockdownButtonAft.Text = aftStatus ? Loc.GetString("fec-code-dropship-nav-unlock-aft") : Loc.GetString("fec-code-dropship-nav-lock-aft"); // FEC14
+        _window.LockdownButtonPort.Text = portStatus ? Loc.GetString("fec-code-dropship-nav-unlock-port") : Loc.GetString("fec-code-dropship-nav-lock-port"); // FEC14
+        _window.LockdownButtonStarboard.Text = starboardStatus ? Loc.GetString("fec-code-dropship-nav-unlock-starboard") : Loc.GetString("fec-code-dropship-nav-lock-starboard"); // FEC14
     }
 
     private void RefreshLaunchAlarmStatus(bool launchAlarmStatus)
@@ -321,7 +321,7 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         if (_window == null)
             return;
 
-        _window.LaunchAlarmButton.Text = launchAlarmStatus ? "Stop Alarm" : "Start Alarm";
+        _window.LaunchAlarmButton.Text = launchAlarmStatus ? Loc.GetString("fec-code-dropship-nav-stop-alarm") : Loc.GetString("fec-code-dropship-nav-start-alarm"); // FEC14
     }
 
     public void Update()

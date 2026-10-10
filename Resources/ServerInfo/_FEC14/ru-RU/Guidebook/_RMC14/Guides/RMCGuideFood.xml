@@ -1,0 +1,50 @@
+<Document>
+
+  # Рецепты для микроволновки
+
+  ## Пиццы
+  <GuideMicrowaveGroupEmbed Group="Pizza"/>
+
+  ## Горячие блюда
+  <GuideMicrowaveGroupEmbed Group="Savory"/>
+
+  ## Хлеб
+  <GuideMicrowaveGroupEmbed Group="Breads"/>
+
+  ## Завтраки
+  <GuideMicrowaveGroupEmbed Group="Breakfast"/>
+
+  ## Блюда нианов
+  <GuideMicrowaveGroupEmbed Group="Moth"/>
+
+  ## Паста и лапша
+  <GuideMicrowaveGroupEmbed Group="Pasta"/>
+
+  ## Выпечка и десерты
+  <GuideMicrowaveGroupEmbed Group="Dessert"/>
+
+  ## Супы и рагу
+  <GuideMicrowaveGroupEmbed Group="Soup"/>
+
+  ## Пироги и тарты
+  <GuideMicrowaveGroupEmbed Group="Pie"/>
+
+  ## Батончики и печенье
+  <GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
+
+  ## Торты
+  <GuideMicrowaveGroupEmbed Group="Cake"/>
+
+  ## Салаты
+  <GuideMicrowaveGroupEmbed Group="Salad"/>
+
+  ## Лечебные
+  <GuideMicrowaveGroupEmbed Group="Medicinal"/>
+
+  ## Прочее
+  <GuideMicrowaveGroupEmbed Group="Other"/>
+
+  ## Секретные
+  <GuideMicrowaveGroupEmbed Group="Secret"/>
+
+</Document>

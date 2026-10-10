@@ -82,7 +82,7 @@ public sealed class MarineAnnounceSystem : SharedMarineAnnounceSystem
         }
 
         _dropship.TryDesignatePrimaryLZ(user, lz.Value);
-        _core.CreateARESLog(computer, LogCat, (string)$"{Name(args.Actor)} designated Primary LZ as: {Name(lz.Value)}");
+        _core.CreateARESLog(computer, LogCat, Loc.GetString("fec-code-ares-primary-lz", ("user", Name(args.Actor)), ("lz", Name(lz.Value)))); // FEC14
     }
 
     private void UpdatePlanetMap(Entity<MarineCommunicationsComputerComponent> computer)

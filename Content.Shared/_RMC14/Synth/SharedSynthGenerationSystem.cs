@@ -135,7 +135,7 @@ public sealed class SharedSynthGenerationSystem : EntitySystem
             options.Add(new DialogOption(proto.Name, new GenerationSelectedActionEvent(proto.ID), description: desc));
         }
 
-        _dialog.OpenOptions(ent.Owner, "Select a Generation", options, "Available Generations", enableSearch: false);
+        _dialog.OpenOptions(ent.Owner, Loc.GetString("fec-code-synth-generation-title"), options, Loc.GetString("fec-code-synth-generation-list"), enableSearch: false); // FEC14
     }
 
     private void OnGenerationSelectedAction(Entity<SynthGenerationComponent> ent, ref GenerationSelectedActionEvent args)
@@ -151,8 +151,8 @@ public sealed class SharedSynthGenerationSystem : EntitySystem
 
         _dialog.OpenConfirmation(
             ent.Owner,
-            "Confirm Generation",
-            $"Please confirm {proto.Name} selection.",
+            Loc.GetString("fec-code-synth-generation-confirm-title"), // FEC14
+            Loc.GetString("fec-code-synth-generation-confirm-text", ("generation", proto.Name)), // FEC14
             new GenerationConfirmedEvent(args.Generation));
     }
 

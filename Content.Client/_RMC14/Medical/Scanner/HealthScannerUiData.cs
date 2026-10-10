@@ -196,7 +196,7 @@ public sealed class HealthScannerUiData
         window.ChemicalContentsSeparator.Visible = anyChemicals;
         window.ChemicalsContainer.Visible = anyChemicals;
 
-        window.BloodTypeLabel.Text = "Blood:";
+        window.BloodTypeLabel.Text = Loc.GetString("fec-code-health-scanner-blood"); // FEC14
         var bloodMsg = new FormattedMessage();
         bloodMsg.PushColor(Color.FromHex("#25B732"));
 

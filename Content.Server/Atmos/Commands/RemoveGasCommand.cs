@@ -12,7 +12,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "removegas";
-        public string Description => "Removes an amount of gases.";
+        public string Description => Loc.GetString("fec-cmd-remove-gas-desc"); // FEC14
         public string Help => "removegas <X> <Y> <GridId> <amount> <ratio>\nIf <ratio> is true, amount will be treated as the ratio of gas to be removed.";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

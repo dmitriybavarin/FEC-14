@@ -153,6 +153,8 @@
 
         // FEC14
         JobWhitelist = 1ul << 48,
+        AdminWeight = 1ul << 49,
+        Weather = 1ul << 50,
         // FEC14
     }
 }

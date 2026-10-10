@@ -1,0 +1,16 @@
+<Document>
+  # Клапаны
+  Клапаны быстро перекрывают или пропускают газ в [textlink="трубосети" link="PipeNetworks"].
+  <Box>
+    <GuideEntityEmbed Entity="GasValve"/>
+    <GuideEntityEmbed Entity="SignalControlledValve"/>
+    <GuideEntityEmbed Entity="PressureControlledValve"/>
+    <GuideEntityEmbed Entity="GasPassiveGate"/>
+    <GuideEntityEmbed Entity="GasPressureRegulator"/>
+  </Box>
+  Ни одному клапану не нужно [textlink="электричество" link="Power"].
+
+  Клапаны выглядят просто, но позволяют строить самые разные сложные трубопроводные системы, например:
+  - Сигнальные клапаны, реагирующие на воздушную сигнализацию или выходы логических элементов.
+  - Пневматические клапаны, регулирующие сброс отработанных газов из камеры сгорания.
+</Document>

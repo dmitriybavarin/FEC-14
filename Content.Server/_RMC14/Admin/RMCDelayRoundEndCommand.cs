@@ -19,7 +19,7 @@ public sealed class RMCDelayRoundEndCommand : LocalizedEntityCommands
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     public override string Command => "rmcdelayroundend";
-    public override string Description => "Delay the round end.";
+    public override string Description => Loc.GetString("fec-cmd-r-m-c-delay-round-end-desc"); // FEC14
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var currentValue = _cfg.GetCVar(RMCCVars.RMCDelayRoundEnd);

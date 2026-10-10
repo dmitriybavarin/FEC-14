@@ -45,6 +45,8 @@ public sealed class LanguageUIController : UIController, IOnStateEntered<Gamepla
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenLanguageMenu, InputCmdHandler.FromDelegate(_ => ToggleWindow()))
             .Register<LanguageUIController>();
+
+        UpdateLanguageButtonIcon(); // FEC14
     }
 
     public void OnStateExited(GameplayState state)
@@ -149,8 +151,26 @@ public sealed class LanguageUIController : UIController, IOnStateEntered<Gamepla
         UpdateLanguageWindow();
     }
 
+    // FEC14
+    private EntityUid? _fecShownEntity;
+    private ProtoId<LanguagePrototype>? _fecShownLanguage;
+
+    public override void FrameUpdate(Robust.Shared.Timing.FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        if (_languageButton == null || _player.LocalSession?.AttachedEntity is not { } entity)
+            return;
+
+        _languageSystem ??= _entitySystemManager.GetEntitySystem<LanguageSystem>();
+        if (entity != _fecShownEntity || _languageSystem.GetCurrentLanguage(entity) != _fecShownLanguage)
+            UpdateLanguageButtonIcon();
+    }
+    // FEC14
+
     private void UpdateLanguageButtonIcon()
     {
+        _languageSystem ??= _entitySystemManager.GetEntitySystem<LanguageSystem>(); // FEC14
         if (_languageButton == null ||
             _languageSystem == null ||
             _player.LocalSession?.AttachedEntity is not { } entity)
@@ -159,6 +179,8 @@ public sealed class LanguageUIController : UIController, IOnStateEntered<Gamepla
         }
 
         var currentLanguage = _languageSystem.GetCurrentLanguage(entity);
+        _fecShownEntity = entity; // FEC14
+        _fecShownLanguage = currentLanguage; // FEC14
         if (_prototypeManager.TryIndex<LanguagePrototype>(currentLanguage, out var prototype) &&
             GetLanguageIcon(prototype.LanguageIcon) is { } texture)
         {

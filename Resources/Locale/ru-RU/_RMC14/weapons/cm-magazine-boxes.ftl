@@ -6,5 +6,5 @@ cm-magazine-box-examine-empty = На ощупь пустая.
 cm-magazine-box-examine-almost-empty = На ощупь почти пустая.
 cm-magazine-box-examine-half-full = На ощупь заполнена наполовину.
 cm-magazine-box-examine-almost-full = На ощупь почти полная.
-cm-magazine-box-examine-magazines = Магазинов: {$filled} из {$total}.
+cm-magazine-box-examine-magazines = Внутри {$filled} из {$total} магазинов.
 cm-magazine-box-pick-up = Поднять

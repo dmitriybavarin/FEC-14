@@ -15,7 +15,7 @@ cm-iv-verb-toggle-inject = Переключить вливание
 
 cm-iv-examine-injecting = Капельница работает на вливание.
 cm-iv-examine-drawing = Капельница работает на забор крови.
-cm-iv-examine-chemicals = Подключено: {$attached}, жидкости {$units} ед.
+cm-iv-examine-chemicals = Подключена емкость {$attached}, в ней {$units} ед. жидкости.
 cm-iv-examine-chemicals-none = Емкость не подключена.
 cm-iv-examine-attached = Подключен пациент: {$attached}.
 cm-iv-examine-attached-none = Никто не подключен.

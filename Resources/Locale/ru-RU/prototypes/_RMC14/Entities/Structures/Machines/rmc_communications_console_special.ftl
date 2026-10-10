@@ -1,9 +1,9 @@
 ent-RMCOverwatchConsoleSPP = { ent-RMCOverwatchConsoleBase }
     .desc = { ent-RMCOverwatchConsoleBase.desc }
-    .suffix = SPP
+    .suffix = СССП
 ent-RMCOverwatchConsoleSPPRotating = { ent-RMCOverwatchConsoleBase }
     .desc = { ent-RMCOverwatchConsoleBase.desc }
-    .suffix = SPP, вращается
+    .suffix = СССП, вращается
 ent-RMCOverwatchConsoleAdmin = { ent-RMCOverwatchConsoleBase }
     .desc = { ent-RMCOverwatchConsoleBase.desc }
     .suffix = Админ

@@ -1,0 +1,76 @@
+<Document>
+  # Антиматериальный двигатель (АМД)
+  Антиматериальный двигатель это вспомогательный генератор станции на короткий срок: он дает много энергии, но ограниченное время.
+
+  В основном он помогает инженерам запустить большие двигатели, например [textlink="двигатель сингулярности" link="SingularityEngine"] или [textlink="двигатель теслы" link="TeslaEngine"], частично подпитывая [textlink="аккумуляторы" link="PowerStorage"] станции и продлевая их работу.
+
+  ## Сборка
+  <Box>Нужные детали:</Box>
+  <Box>
+  <GuideEntityEmbed Entity="AmeController"/>
+  <GuideEntityEmbed Entity="AmePartFlatpack"/>
+  <GuideEntityEmbed Entity="AmeJar"/>
+  </Box>
+
+  Контроллер АМД это часть АМД, которая отдает энергию в сеть станции через [textlink="подключение ВН" link="VoltageNetworks"].
+  Поэтому сборку АМД начинают с контроллера, установленного над [color=orange]кабелем ВН[/color].
+
+  На большинстве станций есть открытые [color=orange]кабели ВН[/color] или отведенные места, где можно прикрутить контроллер АМД, чтобы он подключился к сети.
+
+  Экранирование АМД это сама конструкция антиматериального двигателя. Его делают из упакованных деталей АМД с помощью мультитула.
+
+  Чтобы собрать АМД, выложите квадрат 3x3 или больше из упакованных деталей АМД. Постарайтесь, чтобы было как можно больше "центральных" деталей, окруженных со всех восьми сторон.
+  Чем больше центральных деталей, тем больше ядер у АМД и тем больше энергии он безопасно выдаст.
+
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+
+  Затем мультитулом превратите каждую упакованную деталь в экранирование, и получится готовый АМД.
+
+  <GuideEntityEmbed Entity="AmeController" Caption=""/>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    [color=#999999][italic]Пример АМД с одним ядром[italic][/color]
+  </Box>
+
+  ## Работа
+  Чтобы запустить АМД, вставьте в контроллер банку с топливом и задайте безопасную скорость впрыска.
+
+  Безопасная скорость впрыска та, при которой АМД работает без перегрева и выдает максимум энергии.
+
+  Она всегда вдвое больше числа ядер.
+
+  Например, для АМД с одним ядром безопасная скорость впрыска 2, с двумя ядрами 4 и так далее.
+
+  Если ее превысить, двигатель рано или поздно [color=#ff0000]перегреется[/color], а вскоре после этого [color=#ff0000]взорвется[/color].
+
+  Контроллер АМД [textlink="показывает" link="InspectingPower"], сколько энергии он отдает в сеть и сколько теоретически может отдать при спросе.
+
+</Document>

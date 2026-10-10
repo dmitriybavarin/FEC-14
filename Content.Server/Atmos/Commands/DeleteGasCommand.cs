@@ -13,7 +13,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "deletegas";
-        public string Description => "Removes all gases from a grid, or just of one type if specified.";
+        public string Description => Loc.GetString("fec-cmd-delete-gas-desc"); // FEC14
         public string Help => $"Usage: {Command} <GridId> <Gas> / {Command} <GridId> / {Command} <Gas> / {Command}";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

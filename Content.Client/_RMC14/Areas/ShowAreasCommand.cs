@@ -7,7 +7,7 @@ public sealed class ShowAreasCommand : IConsoleCommand
     [Dependency] private readonly IEntityManager _entities = default!;
 
     public string Command => "showareas";
-    public string Description => "Shows areas depending on their properties.";
+    public string Description => Loc.GetString("fec-cmd-show-areas-desc"); // FEC14
     public string Help => $"Usage: {Command} disable | {Command} cas";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

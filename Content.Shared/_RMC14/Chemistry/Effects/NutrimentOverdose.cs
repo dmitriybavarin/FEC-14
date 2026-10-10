@@ -24,8 +24,7 @@ public sealed partial class NutrimentOverdose : EntityEffect
 
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return $"Causes [color=yellow]vomiting[/color] and [color=red]slowdown[/color] above [color=yellow]{Overdose}u[/color].\n" +
-               $"Removes [color=green]{PercentRate * 100}%[/color] or [color=green]{MinimumRate}u[/color] of Nutriment per second while above [color=yellow]{Overdose}u[/color]";
+        return Loc.GetString("fec-code-chem-effect-nutriment-overdose", ("v1", Overdose), ("v2", PercentRate * 100), ("v3", MinimumRate)); // FEC14
     }
 
     public override void Effect(EntityEffectBaseArgs args)

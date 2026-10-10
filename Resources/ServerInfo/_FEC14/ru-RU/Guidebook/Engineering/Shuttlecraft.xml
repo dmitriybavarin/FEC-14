@@ -1,0 +1,136 @@
+<Document>
+  # Постройка шаттлов
+
+  Построить шаттл несложно, хотя довольно дорого, и уложиться в час непросто.
+
+  Хорошее занятие, если у вас много свободного времени и хочется испытания.
+
+  ## С чего начать
+  <Box>Нужные детали:</Box>
+  <Box>
+  <GuideEntityEmbed Entity="Thruster"/>
+  <GuideEntityEmbed Entity="Gyroscope"/>
+  <GuideEntityEmbed Entity="ComputerShuttle"/>
+  <GuideEntityEmbed Entity="SubstationBasic"/>
+  <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="CableHVStack"/>
+  <GuideEntityEmbed Entity="CableMVStack"/>
+  <GuideEntityEmbed Entity="CableApcStack"/>
+  <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
+
+  <Box>Необязательные детали:</Box>
+  <Box>
+  <GuideEntityEmbed Entity="AirCanister"/>
+  <GuideEntityEmbed Entity="LightTube" Caption="Освещение"/>
+  <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
+  <GuideEntityEmbed Entity="SMESBasic"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobCorgiIan"/>
+  <GuideEntityEmbed Entity="NuclearBomb"/>
+  </Box>
+
+  ## Основание
+  Для этого шага понадобятся листы стали, металлические стержни и, по желанию, напольная плитка.
+
+  <Box>
+    <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
+    <GuideEntityEmbed Entity="PartRodMetal" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemDark" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
+  </Box>
+
+  Выйдите в космос с листами стали и металлическими стержнями в руках и нажмите на край станции, чтобы положить решетку.
+
+  Проложите линию решетки клетки на 3-4 от станции, а затем начните строить из решетки платформу.
+
+  Продолжайте, пока не получится платформа хотя бы 3x3, соединенная со станцией одной линией решетки.
+
+  Закончив основание шаттла, перекусите кусачками решетку, которая соединяет новый корабль со станцией.
+
+  Эта платформа считается отдельным гридом, поэтому на ней нет гравитации и ее не держит якорь станции: она свободно движется.
+
+  Платформу можно расширять дальше, нажимая со стержнями в руках рядом с ее краем.
+
+  ## Стыковочные порты
+  Шлюзы шаттла служат стыковочными портами, через которые корабли безопасно стыкуются со станциями.
+
+  Важно, как повернут стыковочный порт: от этого зависит, какой стороной пристыкуется шаттл.
+
+  Направление порта показывает маленький выступ внизу стыковочного порта.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirlockShuttle"/>
+    <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
+  </Box>
+
+  ## Управление направлением
+  Когда платформа примет нужную форму, поставьте по краям двигатели.
+
+  <Box>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="0"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="180"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="270"/>
+  </Box>
+
+  Лучше поставить четыре двигателя, по одному с каждой стороны платформы, чтобы двигаться в любом направлении.
+
+  Чтобы работать, двигатель должен смотреть наружу, в космос, и не включится, если перед соплом есть плитка.
+  Двигатели, даже закрепленные, можно поворачивать по часовой стрелке клавишей [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] или против часовой клавишей [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color].
+
+  Двигатель включается и выключается клавишей [color=yellow][bold][keybind="Use"][/bold][/color] пустой рукой или клавишей [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+
+  ## Управление поворотом
+  Теперь, когда можно двигаться, нужно поставить гироскоп, чтобы поворачивать.
+
+  <Box>
+    <GuideEntityEmbed Entity="Gyroscope"/>
+  </Box>
+  Место гироскопа не так важно, как место двигателей, но ставьте его там, где к нему удобно подойти и подвести питание.
+
+  Учтите, что тяжелому кораблю для нормального поворота может понадобиться несколько гироскопов.
+
+  ## Питание
+  Все системы на месте, теперь их нужно запитать.
+
+  Для маленьких шаттлов хорошо подходит переносной генератор вроде J.R.P.A.C.M.A.N. Он дает сразу энергию НН, так что трансформаторы не нужны.
+  Топливо для генератора тоже часто лежит в техтоннелях.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N."/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="WeldingFuelTankFull"/>
+    </Box>
+  </Box>
+
+  Но на некоторых станциях есть генераторы гораздо лучше и компактные решения вроде ВСУ шаттла или стационарного генератора.
+  Они выдают ВН, и его придется понижать до СН и НН.
+  К счастью, на таких станциях обычно есть и платы настенных подстанций для этого.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="GeneratorWallmountAPU"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="GeneratorBasic15kW"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="SubstationWallBasic"/>
+    </Box>
+  </Box>
+
+  ## Пилотирование
+  Наконец, поставьте консоль шаттла в удобном месте и убедитесь, что все двигатели и гироскопы получают питание (не забудьте проложить сети СН и НН!).
+  Если получают, поздравляем! У вас рабочий шаттл!
+
+  Сделать его уютным и красивым оставим читателю в качестве упражнения.
+</Document>

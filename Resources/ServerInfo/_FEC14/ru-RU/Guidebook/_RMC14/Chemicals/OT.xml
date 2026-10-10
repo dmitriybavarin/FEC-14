@@ -1,0 +1,30 @@
+<Document>
+
+  # Топливо для огнеметов
+
+  <GuideReagentEmbed Reagent="RMCNapalmSticky"/>
+  <GuideReagentEmbed Reagent="RMCNapalmHighCombustion"/>
+
+  ## Ограниченное
+
+  ### Можно купить
+
+  <GuideReagentEmbed Reagent="WeldingFuel"/>
+  <GuideReagentEmbed Reagent="RMCNapalmUT"/>
+  <GuideReagentEmbed Reagent="RMCBGel"/>
+  <GuideReagentEmbed Reagent="RMCNapalmB"/>
+  <GuideReagentEmbed Reagent="RMCNapalmX"/>
+
+  ### Нельзя купить
+
+  <GuideReagentEmbed Reagent="RMCNapalmE"/>
+  <GuideReagentEmbed Reagent="RMCNapalmEX"/>
+  <GuideReagentEmbed Reagent="RMCR189"/>
+
+  # Прекурсоры
+
+  <GuideReagentEmbed Reagent="RMCCLF3"/>
+  <GuideReagentEmbed Reagent="RMCSulphuricAcid"/>
+  <GuideReagentEmbed Reagent="RMCNapalm"/>
+
+</Document>

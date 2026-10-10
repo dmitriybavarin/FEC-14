@@ -207,7 +207,7 @@ public sealed class MentorManager : IPostInjectInit
             destinationSession.Name,
             null,
             null,
-            $"SERVER: {author.UserName} has claimed this mentor help",
+            Loc.GetString("fec-code-mentor-claimed", ("user", author.UserName)), // FEC14
             DateTime.Now,
             true,
             isAdmin,
@@ -246,7 +246,7 @@ public sealed class MentorManager : IPostInjectInit
     {
         try
         {
-            var msg = $"SERVER: {args.Channel.UserName} has reconnected to the server.";
+            var msg = Loc.GetString("fec-code-mentor-reconnected", ("user", args.Channel.UserName)); // FEC14
             SendMentorMessage(args.Channel.UserId, args.Channel.UserName, null, null, msg, args.Channel, false);
         }
         catch (Exception e)
@@ -259,7 +259,7 @@ public sealed class MentorManager : IPostInjectInit
     {
         try
         {
-            var msg = $"SERVER: {args.Channel.UserName} has disconnected.";
+            var msg = Loc.GetString("fec-code-mentor-disconnected", ("user", args.Channel.UserName)); // FEC14
             SendMentorMessage(args.Channel.UserId, args.Channel.UserName, null, null, msg, args.Channel, false);
         }
         catch (Exception e)
@@ -327,7 +327,7 @@ public sealed class MentorManager : IPostInjectInit
             destinationData.UserName,
             null,
             null,
-            $"SERVER: {author.UserName} has given up their claim for this mentor help",
+            Loc.GetString("fec-code-mentor-unclaimed", ("user", author.UserName)), // FEC14
             DateTime.Now,
             true,
             isAdmin,

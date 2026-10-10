@@ -20,7 +20,7 @@ public sealed class FixRotationsCommand : IConsoleCommand
 
     // ReSharper disable once StringLiteralTypo
     public string Command => "fixrotations";
-    public string Description => "Sets the rotation of all occluders, low walls and windows to south.";
+    public string Description => Loc.GetString("fec-cmd-fix-rotations-desc"); // FEC14
     public string Help => $"Usage: {Command} <gridId> | {Command}";
 
     public void Execute(IConsoleShell shell, string argsOther, string[] args)

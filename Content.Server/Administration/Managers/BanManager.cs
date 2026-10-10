@@ -140,6 +140,9 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Server Bans
     public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason)
     {
+        if (!await FECCanBan(banningAdmin, target)) // FEC14
+            return; // FEC14
+
         DateTimeOffset? expires = null;
         if (minutes > 0)
         {
@@ -237,6 +240,9 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     // Removing it will clutter the note list. Please also make sure that department bans are applied to roles with the same DateTimeOffset.
     public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
     {
+        if (!await FECCanBan(banningAdmin, target)) // FEC14
+            return; // FEC14
+
         if (!_prototypeManager.TryIndex(role, out JobPrototype? _))
         {
             throw new ArgumentException($"Invalid role '{role}'", nameof(role));
@@ -282,6 +288,22 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             SendRoleBans(session);
         }
     }
+
+    // FEC14
+    private async Task<bool> FECCanBan(NetUserId? admin, NetUserId? target)
+    {
+        if (admin == null || target == null)
+            return true;
+
+        if (await IoCManager.Resolve<Content.Server._FEC14.Administration.FECAdminWeightManager>().CanTargetAsync(admin.Value, target.Value))
+            return true;
+
+        if (_playerManager.TryGetSessionById(admin.Value, out var session))
+            _chat.DispatchServerMessage(session, Loc.GetString("fec-admin-weight-blocked"));
+
+        return false;
+    }
+    // FEC14
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)
     {

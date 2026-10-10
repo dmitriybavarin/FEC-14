@@ -71,7 +71,7 @@ public sealed class GMRequestManager
 
         Logs.Add(NextLogId, log);
         LogUpdate?.Invoke(_currentLogId, true);
-        _chatManager.SendAdminAnnouncement($"REQUEST <{sender.Name}> has sent a request!");
+        _chatManager.SendAdminAnnouncement(Loc.GetString("fec-code-gm-request-sent", ("player", sender.Name))); // FEC14
     }
 
 

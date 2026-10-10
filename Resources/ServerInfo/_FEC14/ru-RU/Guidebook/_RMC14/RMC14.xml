@@ -1,0 +1,104 @@
+<Document>
+  # Руководство FEC-14
+
+  <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+      [bold][color=#8fc3ff]Добро пожаловать в Frontier Expeditionary Corps 14![/color][/bold]\nЭто асимметричная игра со средним уровнем отыгрыша (MRP): морпехи против ксеноморфов.
+
+      Справочник, план разработки и правила открываются из лобби и в любой момент из меню по [color=yellow][bold]Esc[/bold][/color]. Разделы слева рассказывают о FEC-14 и его особенностях.
+    </Box>
+  </ColorBox>
+
+  ## С чего начать
+
+  <Table Columns="2">
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#ff8a8a]1. Правила[/color][/bold]\nПрочитайте их до первой игры, даже если вы уже играли в SS14.\n[textlink="Открыть правила" link="RMCOverview"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fe39c]2. Руководство новичка[/color][/bold]\nУправление, горячие клавиши и основы игры.\n[textlink="Открыть руководство" link="RMCGuideNewPlayer"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]3. Первый день стрелка[/color][/bold]\nЛучшая роль для первой игры за морпехов.\n[textlink="Ваш первый день стрелком" link="RMCGuideRoleRifleman"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]4. Первый день в улье[/color][/bold]\nВы только что родились трутнем. Что дальше?\n[textlink="Руководство трутня" link="RMCGuideRoleDrone"]
+      </Box>
+    </ColorBox>
+  </Table>
+
+  [color=#ffcc66]Внимание:[/color] даже если вы играли в RMC-14 или другие игры на основе SS14, многие механики и числа здесь работают иначе.
+
+  ## Для опытных игроков
+
+  Многие из этих руководств также открываются при осмотре роли или предмета, к которому они относятся. Добавить свое руководство может любой, через Discord или GitHub.
+
+  ### Морпехи
+
+  <Table Columns="3">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]Роли[/color][/bold]
+        - [textlink="Выживший" link="RMCSurvivor"]
+        - [textlink="Медицина" link="RMCMedical"]
+        - [textlink="Поставки" link="RMCRequisitions"]
+        - [textlink="Офицер разведки" link="RMCIntel"]
+        - [textlink="Военная полиция" link="RMCGuideRoleMilitaryPolice"]
+        - [textlink="Боевой техник" link="RMCGuideRoleCombatTechnician"]
+        - [textlink="Ремонтник" link="RMCGuideRoleMaintenanceTechnician"]
+        - [textlink="Смартганнер" link="RMCGuideRoleSGO"]
+        - [textlink="Специалисты" link="RMCGuideRoleSpec"]
+        - [textlink="Корпоративный связной" link="RMCGuideCorporateLiaison"]
+        - [textlink="Командир отряда" link="RMCGuideSquadLeader"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]Общее[/color][/bold]
+        - [textlink="Кто командует?" link="RMCGuideCommandRoles"]
+        - [textlink="Десантные корабли и авиаподдержка" link="RMCGuideRoleCAS"]
+        - [textlink="Связь морпехов" link="RMCGuideMarineCommunications"]
+        - [textlink="Рецепты напитков" link="RMCGuideDrinks"]
+        - [textlink="Рецепты блюд" link="RMCGuideFood"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]Сооружения[/color][/bold]
+        - [textlink="Вышки связи и сенсорные вышки" link="RMCGuideCommunicationsTowers"]
+        - [textlink="Миномет" link="RMCGuideRoleMortar"]
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ### Ксеноморфы
+
+  <Table Columns="3">
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]Роли[/color][/bold]
+        - [textlink="Список каст" link="RMCGuideXenonidRoles"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]Сооружения[/color][/bold]
+        - [textlink="Постройки улья" link="RMCGuideHiveStructures"]
+        - [textlink="Смоляные ловушки" link="RMCGuideResinHoles"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]Общее[/color][/bold]
+        - [textlink="Значки на карте улья" link="RMCGuideXenonidMap"]
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

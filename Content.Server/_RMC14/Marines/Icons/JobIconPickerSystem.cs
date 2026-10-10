@@ -33,7 +33,7 @@ public sealed class JobIconPickerSystem : EntitySystem
         var target = GetNetEntity(ent.Owner);
         args.Verbs.Add(new Verb
         {
-            Text = "Set Job Icon",
+            Text = Loc.GetString("fec-code-job-icon-set"), // FEC14
             Category = VerbCategory.Debug,
             Act = () =>
             {

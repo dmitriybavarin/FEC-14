@@ -14,7 +14,7 @@
                                 Visible="False" StyleClasses="OpenRight" HorizontalExpand="True" />
                         <Button Name="PatreonButton" Access="Public" Text="{Loc 'rmc-ui-patreon'}"
                                 Visible="False" StyleClasses="OpenBoth" HorizontalExpand="True" />
-                        <Button Name="CreditsButton" Access="Public" Text="{Loc 'fec-roadmap-credits'}" StyleClasses="OpenLeft" />
+                        <Button Name="CreditsButton" Access="Public" Text="{Loc 'fec-roadmap-credits'}" StyleClasses="OpenLeft" MinWidth="170" />
                     </BoxContainer>
                     <Label HorizontalExpand="True" Align="Right" VerticalAlignment="Bottom"
                            Text="{Loc 'fec-roadmap-not-exhaustive'}" />

@@ -116,7 +116,7 @@ rmc-night-vision-mode-verb = Ночное зрение: { $mode }
 rmc-area-info = { $area }{ $restrictions }
 rmc-tacmap-alert-ceiling-level-0 = [color=green]✓[/color] Доступны все действия
 rmc-tacmap-alert-ceiling-level-1 = [color=red]✗[/color] Установка миномета, лазерная наводка, медэвак
-rmc-tacmap-alert-ceiling-level-2 = [color=red]✗[/color] Сброс снабжения, огонь из миномета
+rmc-tacmap-alert-ceiling-level-2 = [color=red]✗[/color] Сброс поставок, огонь из миномета
 rmc-tacmap-alert-ceiling-level-3 = [color=red]✗[/color] Авиаподдержка
 rmc-tacmap-alert-ceiling-level-4 = [color=red]✗[/color] Орбитальная бомбардировка
 rmc-tacmap-alert-allowed-actions = [color=green]✓[/color] { $actions }

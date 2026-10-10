@@ -1,0 +1,20 @@
+<Document>
+# Технологии
+
+У каждой технологии есть цена и требуемый уровень. Открытая технология добавляет рецепты, которые можно печатать на разных станках.
+
+Ниже перечислены технологии и их направления.
+
+## Промышленность
+<GuideTechDisciplineEmbed Discipline="Industrial"/>
+
+## Арсенал
+<GuideTechDisciplineEmbed Discipline="Arsenal"/>
+
+## Эксперименты
+<GuideTechDisciplineEmbed Discipline="Experimental"/>
+
+## Гражданские службы
+<GuideTechDisciplineEmbed Discipline="CivilianServices"/>
+
+</Document>

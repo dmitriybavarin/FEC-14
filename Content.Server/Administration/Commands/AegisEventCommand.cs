@@ -10,7 +10,7 @@ namespace Content.Server.Administration.Commands;
 public sealed class AegisEventCommand : IConsoleCommand
 {
     public string Command => "aegis:normal";
-    public string Description => "Starts an AEGIS event immediately. Sends a fax to CIC and an AEGIS keycard and powerloader pamphlet will arrive through ASRS. You still need to spawn the crate yourself.";
+    public string Description => Loc.GetString("fec-cmd-aegis-event-desc"); // FEC14
     public string Help => $"Usage: {Command} [optional message]";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -40,7 +40,7 @@ public sealed class AegisEventCommand : IConsoleCommand
 public sealed class AegisSpawnCommand : IConsoleCommand
 {
     public string Command => "aegis:lobby";
-    public string Description => "Schedules the AEGIS event for the next round. Announcements, fax, and ASRS delivery will happen automatically 1 minute after round starts.";
+    public string Description => Loc.GetString("fec-cmd-aegis-event-desc-2"); // FEC14
     public string Help => $"Usage: {Command} [optional message]";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -74,7 +74,7 @@ public sealed class AegisSpawnCommand : IConsoleCommand
 public sealed class AegisStatusCommand : IConsoleCommand
 {
     public string Command => "aegis:status";
-    public string Description => "Shows the current status of AEGIS spawner flags.";
+    public string Description => Loc.GetString("fec-cmd-aegis-event-desc-3"); // FEC14
     public string Help => $"Usage: {Command}";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -131,7 +131,7 @@ public sealed class AegisStatusCommand : IConsoleCommand
 public sealed class AegisResetCommand : IConsoleCommand
 {
     public string Command => "aegis:reset";
-    public string Description => "Cancels the AEGIS event for the next round.";
+    public string Description => Loc.GetString("fec-cmd-aegis-event-desc-4"); // FEC14
     public string Help => $"Usage: {Command}";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

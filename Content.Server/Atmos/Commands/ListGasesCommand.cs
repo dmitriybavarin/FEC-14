@@ -11,7 +11,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "listgases";
-        public string Description => "Prints a list of gases and their indices.";
+        public string Description => Loc.GetString("fec-cmd-list-gases-desc"); // FEC14
         public string Help => "listgases";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

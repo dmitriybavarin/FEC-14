@@ -4,6 +4,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using Content.Shared.Guidebook;
+using Content.Shared._FEC14.Guidebook; // FEC14
 using Robust.Shared.Configuration;
 using Robust.UnitTesting;
 using Robust.Shared.Log;
@@ -38,7 +39,7 @@ public sealed class GuideEntryPrototypeTests
         {
             await client.WaitAssertion(() =>
             {
-                using var reader = resMan.ContentFileReadText(proto.Text);
+                using var reader = resMan.ContentFileReadText(FECLocalizedServerInfo.Resolve(resMan, proto.Text)); // FEC14
                 var text = reader.ReadToEnd();
                 Assert.That(parser.TryAddMarkup(new Document(), text), $"Failed to parse guidebook: {proto.Id}");
             });

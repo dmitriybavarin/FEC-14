@@ -11,7 +11,7 @@ namespace Content.Server.Chat.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "looc";
-        public string Description => "Send Local Out Of Character chat messages.";
+        public string Description => Loc.GetString("fec-cmd-l-o-o-c-desc"); // FEC14
         public string Help => "looc <text>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

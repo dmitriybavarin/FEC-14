@@ -1,6 +1,7 @@
 ﻿- type: entity
   id: RMCGeneratorFusionFake
   name: permanently destroyed S-52 fusion reactor
+  description: A fusion reactor wrecked beyond repair. It will never produce power again.
   placement:
     mode: SnapgridCenter
   components:
@@ -31,6 +32,7 @@
   parent: RMCGeneratorFusionFake
   id: RMCGeneratorFusion
   name: S-52 fusion reactor
+  description: A fusion reactor that burns fuel cells to power the colony. It needs regular maintenance to keep running.
   placement:
     mode: SnapgridCenter
   components:

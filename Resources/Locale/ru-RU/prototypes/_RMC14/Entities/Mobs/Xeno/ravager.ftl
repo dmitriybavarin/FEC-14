@@ -1,4 +1,4 @@
-ent-RMCXenoRavagerBase = Разрушитель
+ent-RMCXenoRavagerBase = Опустошитель
     .desc = Огромный мерзкий красный ксеноморф с громадными когтями-косами.
 ent-CMXenoRavager = { ent-RMCXenoRavagerBase }
     .desc = { ent-RMCXenoRavagerBase.desc }

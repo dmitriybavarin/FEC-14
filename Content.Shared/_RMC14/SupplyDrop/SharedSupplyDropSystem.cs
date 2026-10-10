@@ -287,7 +287,7 @@ public abstract class SharedSupplyDropSystem : EntitySystem
         computer.Comp.LastLaunchAt = time;
         computer.Comp.NextLaunchAt = time + computer.Comp.Cooldown;
         Dirty(computer);
-        _core.CreateARESLog(computer.Owner, LogCat, (string)$"{Name(user)} Launched a crate {Name(crate)} to {mapCoordinates.X}, {mapCoordinates.Y}.");
+        _core.CreateARESLog(computer.Owner, LogCat, Loc.GetString("fec-code-ares-supply-drop", ("user", Name(user)), ("crate", Name(crate)), ("x", mapCoordinates.X), ("y", mapCoordinates.Y))); // FEC14
         return true;
     }
 

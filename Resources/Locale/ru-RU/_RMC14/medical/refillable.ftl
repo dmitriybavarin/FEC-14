@@ -11,7 +11,7 @@ rmc-refillsolution-flush-start = Вы зажимаете кнопку авари
 
 rmc-reagent-pouch-no-canister = Внутри подсумка нет емкости!
 rmc-reagent-pouch-unskilled = Вы не знаете, что внутри.
-rmc-reagent-pouch-examine-contains = Содержимое подсумка: {$reagents}
+rmc-reagent-pouch-examine-contains = В подсумке {$reagents}.
 rmc-reagent-pouch-examine-empty = Подсумок пуст, реагентов нет.
 
 rmc-smart-refill-not-enough = В баке нет нужных веществ.

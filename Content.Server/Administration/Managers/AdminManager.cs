@@ -658,6 +658,13 @@ namespace Content.Server.Administration.Managers
             return GetAdminData(session)?.CanAdminReloadPrototypes() ?? false;
         }
 
+        // FEC14
+        public int? FECGetRankId(ICommonSession session)
+        {
+            return _admins.TryGetValue(session, out var reg) ? reg.RankId : null;
+        }
+        // FEC14
+
         private void SendPermsChangedEvent(ICommonSession session)
         {
             var flags = GetAdminData(session)?.Flags;

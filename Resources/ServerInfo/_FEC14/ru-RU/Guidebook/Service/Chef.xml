@@ -1,0 +1,75 @@
+<Document>
+# Повар
+Всем нужно есть, и повар следит, чтобы людям было что пожевать, кроме всякой ерунды.
+
+
+[textlink="Нажмите сюда, чтобы открыть список рецептов." link="FoodRecipes"]
+
+Прежде всего познакомьтесь с кухней и доступными инструментами.
+
+<Box>
+<GuideEntityEmbed Entity="KitchenKnife"/>
+<GuideEntityEmbed Entity="LargeBeaker"/>
+<GuideEntityEmbed Entity="ReagentContainerFlour"/>
+<GuideEntityEmbed Entity="FoodContainerEgg"/>
+<GuideEntityEmbed Entity="MobCow"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="VendingMachineChefvend" Caption="Раздатчик повара"/>
+<GuideEntityEmbed Entity="KitchenMicrowave"/>
+<GuideEntityEmbed Entity="KitchenSpike"/>
+<GuideEntityEmbed Entity="VendingMachineDinnerware" Caption="Раздатчик посуды"/>
+</Box>
+
+## Подготовка кухни:
+
+Трудно объяснить игру за повара так, чтобы это не звучало как приказы, но вот основы.
+
+- Проверьте, какие продукты есть под рукой. На большинстве кухонь для начала есть мука, рис, яйца, кубики обезьян и кое-что еще.
+- Попробуйте замесить тесто, смешав в мензурке воду и муку. (Пользуйтесь раковинами!)
+- Посмотрите на вики (или в рецептах) справочника, что можно приготовить, и положите все ингредиенты в микроволновку, чтобы получилось блюдо.
+- Поставьте мышеловки. Да, серьезно. Если не принять мер против нашествия мышей, весь ваш труд легко может пропасть.
+
+Когда освоитесь и узнаете, что можно готовить, стоит составить несколько меню или "шпаргалку", чтобы давать ботаникам список продуктов.
+
+## Как замесить тесто:
+Смешайте в мензурке муку и воду. (Воду берите из раковины!)
+<Box>
+<GuideEntityEmbed Entity="LargeBeaker"/>
+<GuideEntityEmbed Entity="ReagentContainerFlour"/>
+<GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="вода"/>
+<GuideEntityEmbed Entity="FoodDough"/>
+</Box>
+## Как сделать муку:
+Положите пшеницу в измельчитель (с мензуркой внутри) и перемелите!
+<Box>
+<GuideEntityEmbed Entity="KitchenReagentGrinder"/>
+<GuideEntityEmbed Entity="LargeBeaker"/>
+<GuideEntityEmbed Entity="WheatBushel"/>
+<GuideEntityEmbed Entity="ReagentContainerFlour"/>
+</Box>
+## Где взять растения:
+Попросите нужное у ботаников. Если ботаника нет, возможно, придется выращивать самому.
+<Box>
+<GuideEntityEmbed Entity="SignHydro1" Caption=" "/>
+<GuideEntityEmbed Entity="hydroponicsTray"/>
+<GuideEntityEmbed Entity="WheatBushel"/>
+</Box>
+## Как надоить молоко:
+С емкостью в руке (мензурка, ведро, кувшин для молока и т. п.) нажмите по корове с зажатым Alt.
+<Box>
+<GuideEntityEmbed Entity="Bucket"/>
+<GuideEntityEmbed Entity="MobCow"/>
+<GuideEntityEmbed Entity="DrinkMilkCarton"/>
+</Box>
+## Как разделывать:
+Обычно можно просто применить нож к мертвому существу. Лучше делать это в морозильнике, потому что результат... грязный.
+
+А вот обезьян (и других гуманоидов) для разделки нужно затащить на мясной крюк.
+<Box>
+<GuideEntityEmbed Entity="KitchenSpike"/>
+<GuideEntityEmbed Entity="KitchenKnife"/>
+<GuideEntityEmbed Entity="MobMonkey"/>
+<GuideEntityEmbed Entity="FoodMeat"/>
+</Box>
+</Document>

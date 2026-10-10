@@ -1,0 +1,31 @@
+<Document>
+  # Инженерия
+  [color=#f39f27]Инженерный отдел[/color] это сочетание [textlink="строительства" link="Construction"], [textlink="ремонта" link="ExpandingRepairingStation"], обслуживания машины смерти, которая заодно дает [textlink="электричество" link="Power"], и заботы о том, чтобы на станции был [textlink="пригодный для дыхания воздух" link="Atmospherics"].
+
+  ## Состав
+  В [color=#f39f27]инженерный отдел[/color] входят технические ассистенты, инженеры станции и атмосферные техники.
+  Руководит инженерным отделом главный инженер.
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Инженер"/>
+    <GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Атмосик"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="СИ"/>
+  </Box>
+
+  ## Инструменты
+  <Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+    <GuideEntityEmbed Entity="Crowbar"/>
+    <GuideEntityEmbed Entity="Screwdriver"/>
+    <GuideEntityEmbed Entity="Wirecutter"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="Welder"/>
+    <GuideEntityEmbed Entity="Multitool"/>
+    <GuideEntityEmbed Entity="NetworkConfigurator"/>
+  </Box>
+  Ваш основной набор состоит из нескольких инструментов.
+  Если вы инженер, у вас на поясе должно быть по одному каждого. Если нет, их, скорее всего, можно найти в техтоннелях и на складе инструментов в ящиках для инструментов и торговых автоматах.
+
+  У большинства задач при осмотре есть подсказка, как их выполнять. Например, если вы [textlink="строите" link="Construction"] стену, приглядитесь к ней, и она подскажет следующий шаг.
+</Document>

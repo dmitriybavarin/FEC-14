@@ -1,3 +1,3 @@
-ent-RMCSpawnerCorpseSPPSoldier = Спавнер трупа: солдат SPP
+ent-RMCSpawnerCorpseSPPSoldier = Спавнер трупа: солдат СССП
     .desc = { "" }
     .suffix = { ent-RMCSpawnerCorpse.suffix }

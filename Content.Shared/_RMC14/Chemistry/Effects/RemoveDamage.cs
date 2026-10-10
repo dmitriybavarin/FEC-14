@@ -17,7 +17,7 @@ public sealed partial class RemoveDamage : EntityEffect
         if (!prototype.TryIndex(Group, out var type))
             return null;
 
-        return $"Removes all {type.LocalizedName} damage";
+        return Loc.GetString("fec-code-chem-effect-remove-damage", ("v1", type.LocalizedName)); // FEC14
     }
 
     public override void Effect(EntityEffectBaseArgs args)

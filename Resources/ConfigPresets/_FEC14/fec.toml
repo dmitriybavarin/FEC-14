@@ -1,0 +1,24 @@
+[adminlogs]
+server_name = "fec"
+
+[game]
+hostname = "[RU] Frontier Expeditionary Corps 14"
+
+[hub]
+advertise = false
+tags = "lang:ru,region:eu_e,rp:med"
+
+[infolinks]
+bug_report = "https://github.com/dmitriybavarin/FEC-14/issues"
+discord = "https://discord.gg/7jkQ7mJDXg"
+github = "https://github.com/dmitriybavarin/FEC-14"
+patreon = ""
+wiki = ""
+
+[net]
+max_connections = 1024
+
+[status]
+privacy_policy_link = ""
+privacy_policy_identifier = ""
+privacy_policy_version = ""

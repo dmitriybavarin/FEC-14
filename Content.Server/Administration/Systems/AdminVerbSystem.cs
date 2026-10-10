@@ -75,6 +75,7 @@ namespace Content.Server.Administration.Systems
 
         // RMC14
         [Dependency] private readonly DialogSystem _dialog = default!;
+        [Dependency] private readonly Content.Server._FEC14.Administration.FECAdminWeightManager _fecWeight = default!; // FEC14
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -87,6 +88,15 @@ namespace Content.Server.Administration.Systems
 
         private void GetVerbs(GetVerbsEvent<Verb> ev)
         {
+            // FEC14
+            if (TryComp(ev.User, out ActorComponent? fecUser) &&
+                TryComp(ev.Target, out ActorComponent? fecTarget) &&
+                !_fecWeight.CanTarget(fecUser.PlayerSession, fecTarget.PlayerSession))
+            {
+                return;
+            }
+            // FEC14
+
             AddAdminVerbs(ev);
             AddDebugVerbs(ev);
             AddSmiteVerbs(ev);

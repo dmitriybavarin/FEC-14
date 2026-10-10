@@ -1,0 +1,58 @@
+<Document>
+# Уборка
+
+Вы поддерживаете чистоту. Иногда это тяжелая работа, но кто-то должен ее делать. Здесь рассказано об инструментах ремесла и о том, как ими пользоваться.
+
+## Основное снаряжение
+<Box>
+<GuideEntityEmbed Entity="MopItem"/>
+<GuideEntityEmbed Entity="JanitorialTrolley"/>
+<GuideEntityEmbed Entity="MopBucket"/>
+<GuideEntityEmbed Entity="Bucket"/>
+<GuideEntityEmbed Entity="TrashBag"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="SprayBottleSpaceCleaner"/>
+<GuideEntityEmbed Entity="BoxLightMixed"/>
+<GuideEntityEmbed Entity="SoapNT"/>
+<GuideEntityEmbed Entity="Mousetrap"/>
+</Box>
+
+## Дополнительное снаряжение
+<Box>
+<GuideEntityEmbed Entity="WetFloorSign"/>
+<GuideEntityEmbed Entity="Holoprojector" Caption="голопроектор знаков"/>
+<GuideEntityEmbed Entity="LightReplacer"/>
+<GuideEntityEmbed Entity="WireBrush"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="AdvMopItem" Caption="Продвинутая швабра, спросите в НИО"/>
+</Box>
+
+## Где брать жидкость и куда сливать
+<Box>
+<GuideEntityEmbed Entity="WaterTankFull"/>
+<GuideEntityEmbed Entity="Sink"/>
+<GuideEntityEmbed Entity="FloorDrain"/>
+</Box>
+
+## Наводим порядок.
+Перейдем к самому главному. Мы же здесь, чтобы убирать? Начнем с простого. Основные инструменты: верная швабра, мешок для мусора, космический очиститель и одно из трех ведер.
+
+Мытье полов: наполните тележку водой и ищите лужи! Намочите швабру и вытрите их, оставшаяся лужица воды скоро высохнет. Не забудьте знаки мокрого пола!
+- Чтобы слить воду из тележки, перетащите ее курсором на сливной трап. Вся жидкость выльется! Трапы обычно есть где-то в медотсеке, в морозильнике кухни и, конечно, в каморке уборщика.
+
+Мусор: кладите его прямо в мешок или держите в руке. Нажмите -рядом- с мусором, чтобы собрать -весь- хлам вокруг, или нажимайте на каждый кусок отдельно. Если применить мешок к мусоропроводу, он опустеет.
+- Отделу поставок может пригодиться часть вашего мусора, стоит иногда к ним заглядывать!
+
+Космический очиститель: это чудо-средство умеет две вещи: смывать граффити и в крайнем случае убирать лужи!
+- Возможно, больше можно взять в химлаборатории.
+
+## Дополнительные обязанности
+Хороший уборщик всегда ищет, чем еще заняться, и инструментов для этого полно. Следите за перегоревшими лампами, помогайте повару с мышами на кухне, а если вы -очень- щедры, попробуйте пополнить торговые автоматы и аварийные шкафы по всей станции!
+
+##Дополнительно:
+<GuideReagentEmbed Reagent="SpaceCleaner"/>
+<GuideReagentEmbed Reagent="Ammonia"/>
+
+</Document>

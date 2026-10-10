@@ -7,7 +7,7 @@ chat-radio-marine-engineer = Инженеры
 chat-radio-marine-military-police = ВП
 chat-radio-marine-requisition = Поставки
 chat-radio-marine-intel = Разведка
-chat-radio-marine-jtac = JTAC
+chat-radio-marine-jtac = СКАТ
 
 chat-radio-marine-alpha = Альфа
 chat-radio-marine-bravo = Браво
@@ -24,11 +24,11 @@ chat-radio-WY = Ве-Я
 chat-radio-CMB = CMB
 chat-radio-provost = Прокуратура
 
-chat-radio-spp-command = Командование SPP
-chat-radio-spp = SPP
-chat-radio-spp-engi = Инженеры SPP
-chat-radio-spp-med = Медики SPP
-chat-radio-spp-cct = SPP CCT
+chat-radio-spp-command = Командование СССП
+chat-radio-spp = СССП
+chat-radio-spp-engi = Инженеры СССП
+chat-radio-spp-med = Медики СССП
+chat-radio-spp-cct = СССП CCT
 chat-radio-halcyon = Halcyon Dynamics
 
 chat-radio-royal-marine = Королевские морпехи

@@ -16,7 +16,7 @@ public sealed class NPCDomainCommand : IConsoleCommand
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     public string Command => "npcdomain";
-    public string Description => "Lists the domain of a particular HTN compound task";
+    public string Description => Loc.GetString("fec-cmd-n-p-c-domain-desc"); // FEC14
     public string Help => $"{Command} <htncompoundtask>";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

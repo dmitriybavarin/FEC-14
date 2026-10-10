@@ -1,0 +1,15 @@
+- type: entity
+  parent: CMDropshipDestination
+  id: FECDropshipDestinationAlamo
+  suffix: Alamo, FEC
+  components:
+  - type: DropshipDestination
+    spawn: /Maps/_RMC14/Shuttles/dropship_alamo_pve.yml
+
+- type: entity
+  parent: CMDropshipDestination
+  id: FECDropshipDestinationNormandy
+  suffix: Normandy, FEC
+  components:
+  - type: DropshipDestination
+    spawn: /Maps/_RMC14/Shuttles/dropship_normandy_pve.yml

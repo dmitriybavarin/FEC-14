@@ -19,7 +19,7 @@ namespace Content.Server.Administration.Commands
         [Dependency] private readonly IEntityManager _entManager = default!;
 
         public string Command => "warp";
-        public string Description => "Teleports you to predefined areas on the map.";
+        public string Description => Loc.GetString("fec-cmd-warp-desc"); // FEC14
 
         public string Help =>
             "warp <location>\nLocations you can teleport to are predefined by the map. " +

@@ -27,7 +27,7 @@
             <LineEdit Name="AddressBox"
                       Access="Public"
                       Text="localhost"
-                      PlaceHolder="server address:port"
+                      PlaceHolder="{Loc 'fec-xaml-server-address-port'}"
                       HorizontalExpand="True" />
         </GridContainer>
         <Button Name="DirectConnectButton"

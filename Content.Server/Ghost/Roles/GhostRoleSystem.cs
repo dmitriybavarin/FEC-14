@@ -886,7 +886,7 @@ public sealed class GhostRoles : IConsoleCommand
     [Dependency] private readonly IEntityManager _e = default!;
 
     public string Command => "ghostroles";
-    public string Description => "Opens the ghost role request window.";
+    public string Description => Loc.GetString("fec-cmd-ghost-role-system-desc"); // FEC14
     public string Help => $"{Command}";
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {

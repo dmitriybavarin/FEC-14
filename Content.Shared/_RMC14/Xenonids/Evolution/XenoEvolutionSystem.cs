@@ -16,6 +16,8 @@ using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Doors.Components;
 using Content.Shared.FixedPoint;
+using Content.Shared.Follower; // FEC14
+using Content.Shared.Follower.Components; // FEC14
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -52,6 +54,7 @@ public sealed class XenoEvolutionSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly FollowerSystem _follower = default!; // FEC14
     [Dependency] private readonly SharedGameTicker _gameTicker = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
@@ -1147,6 +1150,16 @@ public sealed class XenoEvolutionSystem : EntitySystem
         if (Prototype(xeno)?.ID is { } oldId)
             newRecently.Recent[oldId] = _timing.CurTime;
 
+        // FEC14
+        if (TryComp(xeno, out FollowedComponent? followed))
+        {
+            foreach (var follower in followed.Following.ToArray())
+            {
+                _follower.StartFollowingEntity(follower, newXeno);
+            }
+        }
+        // FEC14
+
         return newXeno;
     }
 
@@ -1241,7 +1254,7 @@ public sealed class XenoEvolutionSystem : EntitySystem
                 granter.GotOvipositorPopup = true;
                 Dirty(uid, granter);
 
-                _popup.PopupEntity("It is time to settle down and let your children grow.",
+                _popup.PopupEntity(Loc.GetString("fec-code-xeno-evolution-settle-down"), // FEC14
                     uid,
                     uid,
                     PopupType.LargeCaution

@@ -10,20 +10,20 @@ rmc-announcement-message-signed = [font size=16][bold][color=#CECECE]Объяв�
 
     {$message}[italic]
 
-    Подпись:
+    Подпись
     {$name}[/italic][/color][/font]
 
 rmc-announcement-message-raw = [font size=16][bold][color=#CECECE]{$author}[/color][/bold][/font][font size=16][color=red]
 
     {$message}
 
-rmc-announcement-ares-message = [color=#CECECE][font size=16][bold]ARES v3.2: Приказ о подготовке операции[/bold][/font][/color][color=red][font size=16][bold]
+rmc-announcement-ares-message = [color=#CECECE][font size=16][bold]Приказ ARES v3.2 о подготовке операции[/bold][/font][/color][color=red][font size=16][bold]
 
     {$message}[/bold][/font][/color]
 
-rmc-announcement-ares-lz-designated = Приказ командования:
+rmc-announcement-ares-lz-designated = Командование отдает приказ.
 
-    Основная зона посадки: {$name}.
+    Зона {$name} назначена основной зоной посадки.
 
 rmc-announcement-ares-online = [color=#CECECE][font size=16][bold]ARES в сети[/bold][/font][/color][color=red][font size=16][bold]
 

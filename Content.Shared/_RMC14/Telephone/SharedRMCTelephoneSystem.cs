@@ -220,14 +220,14 @@ public abstract class SharedRMCTelephoneSystem : EntitySystem
         var user = args.Actor;
         if (IsPhoneBusy(target))
         {
-            _popup.PopupEntity("That phone is busy!", user, user, PopupType.MediumCaution);
+            _popup.PopupEntity(Loc.GetString("fec-code-phone-busy"), user, user, PopupType.MediumCaution); // FEC14
             return;
         }
 
         if (HasComp<RotaryPhoneBackpackComponent>(target) &&
             !TryGetPhoneBackpackHolder(target, out _))
         {
-            _popup.PopupEntity("No transmitters could be located to call!", user, user, PopupType.MediumCaution);
+            _popup.PopupEntity(Loc.GetString("fec-code-phone-no-transmitters"), user, user, PopupType.MediumCaution); // FEC14
             return;
         }
 
@@ -237,7 +237,7 @@ public abstract class SharedRMCTelephoneSystem : EntitySystem
             TryComp(user, out MetaDataComponent? marineMeta) &&
             TryComp(ent, out MetaDataComponent? phoneMeta))
         {
-            _popup.PopupEntity($"{marineMeta.EntityName} dials a number on the {phoneMeta.EntityName}.", ent);
+            _popup.PopupEntity(Loc.GetString("fec-code-phone-dials", ("user", marineMeta.EntityName)), ent); // FEC14
         }
 
         ent.Comp.Idle = false;
@@ -697,14 +697,14 @@ public abstract class SharedRMCTelephoneSystem : EntitySystem
             if (ShouldReturnPickedUpPhone(uid, pickedUp, rotary))
             {
                 if (ReturnPickedUpPhone(rotary, uid, null))
-                    _popup.PopupEntity($"The {Name(uid)} snaps back to the {Name(rotary)}!", uid, PopupType.MediumCaution);
+                    _popup.PopupEntity(Loc.GetString("fec-code-phone-snaps-back"), uid, PopupType.MediumCaution); // FEC14
 
                 continue;
             }
 
             void PhoneSnapBackPopup()
             {
-                _popup.PopupEntity($"The {Name(uid)} snaps back to the {Name(rotary)}!", uid, PopupType.MediumCaution);
+                _popup.PopupEntity(Loc.GetString("fec-code-phone-snaps-back"), uid, PopupType.MediumCaution); // FEC14
             }
 
             var phonePosition = _transform.GetMoverCoordinates(uid);

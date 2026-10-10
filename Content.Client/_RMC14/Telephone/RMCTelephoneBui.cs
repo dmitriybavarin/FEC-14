@@ -1,3 +1,4 @@
+using Content.Client._FEC14.Telephone; // FEC14
 using Content.Client.UserInterface.ControlExtensions;
 using Content.Shared._RMC14.Telephone;
 using Robust.Client.UserInterface;
@@ -18,7 +19,7 @@ public sealed class RMCTelephoneBui(EntityUid owner, Enum uiKey) : BoundUserInte
         _window = this.CreateWindow<TelephoneWindow>();
 
         if (EntMan.TryGetComponent(Owner, out MetaDataComponent? metaData))
-            _window.Title = metaData.EntityName;
+            _window.Title = FECPhoneNames.Localize(metaData.EntityName); // FEC14
 
         Refresh();
     }
@@ -40,10 +41,11 @@ public sealed class RMCTelephoneBui(EntityUid owner, Enum uiKey) : BoundUserInte
         var tabs = new Dictionary<string, BoxContainer>();
         foreach (var phone in state.Phones)
         {
-            if (!tabs.TryGetValue(phone.Category, out var tab))
+            var categoryKey = FECPhoneNames.Localize(phone.Category); // FEC14
+            if (!tabs.TryGetValue(categoryKey, out var tab)) // FEC14
             {
                 tab = new BoxContainer { Orientation = LayoutOrientation.Vertical };
-                tabs[phone.Category] = tab;
+                tabs[categoryKey] = tab; // FEC14
 
                 var scroll = new ScrollContainer
                 {
@@ -93,7 +95,7 @@ public sealed class RMCTelephoneBui(EntityUid owner, Enum uiKey) : BoundUserInte
 
                     var phoneButton = new Button
                     {
-                        Text = phone.Name,
+                        Text = FECPhoneNames.Localize(phone.Name), // FEC14
                         StyleClasses = { "OpenBoth" },
                     };
                     phoneButton.OnPressed += _ => SendPredictedMessage(new RMCTelephoneCallBuiMsg(phone.Id));
@@ -105,10 +107,10 @@ public sealed class RMCTelephoneBui(EntityUid owner, Enum uiKey) : BoundUserInte
 
         foreach (var categoryName in TabOrder)
         {
-            if (tabs.Remove(categoryName, out var category))
+            if (tabs.Remove(FECPhoneNames.Localize(categoryName), out var category)) // FEC14
             {
                 _window.Tabs.AddChild(category);
-                TabContainer.SetTabTitle(category, categoryName);
+                TabContainer.SetTabTitle(category, FECPhoneNames.Localize(categoryName)); // FEC14
             }
         }
 

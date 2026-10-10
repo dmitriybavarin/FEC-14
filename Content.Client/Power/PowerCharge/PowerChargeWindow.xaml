@@ -44,7 +44,7 @@
                 <Control /> <!-- Empty control to act as a spacer in the grid. -->
 
                 <Label Name="PowerLabel"
-                    Text="0 / 0 W" />
+                    Text="{Loc 'fec-xaml-0-0-w'}" />
 
                 <!-- Status -->
                 <Label
@@ -58,7 +58,7 @@
                     Text="{Loc 'power-charge-window-eta'}"
                     StyleClasses="StatusFieldTitle" />
                 <Label Name="EtaLabel"
-                    Text="N/A" />
+                    Text="{Loc 'fec-xaml-n-a'}" />
 
                 <!-- Charge -->
                 <Label

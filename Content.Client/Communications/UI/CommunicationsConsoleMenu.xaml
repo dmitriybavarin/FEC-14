@@ -54,7 +54,7 @@
 
                 <Button Name="EmergencyShuttleButton"
                     Access="Public" 
-                    Text="Placeholder Text"
+                    Text="{Loc 'fec-xaml-placeholder-text'}"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"/>
             </BoxContainer>
         </BoxContainer>

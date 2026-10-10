@@ -55,6 +55,7 @@ public sealed class AdminSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly Content.Server._FEC14.Administration.FECPlayerFactionSystem _fecFaction = default!; // FEC14
 
     private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
@@ -248,6 +249,7 @@ public sealed class AdminSystem : EntitySystem
 
             antag = _role.MindIsAntagonist(mindId);
             startingRole = _jobs.MindTryGetJobName(mindId);
+            subtype ??= _fecFaction.GetSubtype(roleType?.ID, mindComp.OwnedEntity); // FEC14
         }
 
         // Connection status and playtime

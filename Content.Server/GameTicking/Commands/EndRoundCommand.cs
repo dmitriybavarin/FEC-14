@@ -14,7 +14,7 @@ namespace Content.Server.GameTicking.Commands
 
 
         public string Command => "endround";
-        public string Description => "Ends the round and moves the server to PostRound.";
+        public string Description => Loc.GetString("fec-cmd-end-round-desc"); // FEC14
         public string Help => String.Empty;
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

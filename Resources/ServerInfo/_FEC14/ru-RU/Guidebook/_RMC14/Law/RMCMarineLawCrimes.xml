@@ -1,0 +1,20 @@
+<Document>
+  # Преступления
+
+  ## Дух закона
+  Законы нужно толковать по духу, а не всегда буквально. Перечислены не все примеры преступлений. При разногласиях в толковании закона всегда руководствуйтесь иерархией военного закона.
+
+  ## Об угрозах нарушить военный закон
+  - Угрозу совершить тяжкое или особо тяжкое преступление, например нападение, можно квалифицировать как само это преступление, если есть обоснованные ожидания и возможность, что закон будет нарушен.\n\n(Кроме угроз убийством: они считаются нападением.)
+  - Вооруженный человек скорее совершит такое преступление, а угрозы запертого заключенного обычно можно считать пустыми.
+  - Можно учитывать прошлые преступления и поступки.
+
+  ## Категории
+  <Table Columns="5">
+    <ColorBox Color="#2a2a14" OutlineColor="#B8B823" Margin="2"><Box Margin="6">[textlink="Переменные" link="RMCMarineLawCrimesVariable"]</Box></ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2"><Box Margin="6">[textlink="Мелкие" link="RMCMarineLawCrimesMinor"]</Box></ColorBox>
+    <ColorBox Color="#2a1e14" OutlineColor="#d18a3a" Margin="2"><Box Margin="6">[textlink="Тяжкие" link="RMCMarineLawCrimesMajor"]</Box></ColorBox>
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2"><Box Margin="6">[textlink="Особо тяжкие" link="RMCMarineLawCrimesCapital"]</Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="2"><Box Margin="6">[textlink="Превентивные" link="RMCMarineLawCrimesPrecautionary"]</Box></ColorBox>
+  </Table>
+</Document>

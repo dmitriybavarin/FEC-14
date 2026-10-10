@@ -1,0 +1,57 @@
+<Document>
+  # Химикаты
+
+  Химикаты сильный инструмент: при употреблении они вызывают самые разные эффекты. Одни можно взять в раздатчиках, другие купить в отделе поставок или синтезировать, смешивая с другими химикатами.
+
+  Знать разные химикаты и их действие важно, чтобы справляться с ранениями и опасностями.
+
+  ## Элементы
+  <GuideReagentGroupEmbed Group="Elements"/>
+
+  \n
+
+  ## Лекарства
+  <GuideReagentGroupEmbed Group="Medicine"/>
+
+  \n
+
+  ## Наркотики
+  <GuideReagentGroupEmbed Group="Narcotics"/>
+
+  \n
+
+
+  ## Пиротехника
+  <GuideReagentGroupEmbed Group="Pyrotechnic"/>
+
+  \n
+
+
+  ## Токсины
+  <GuideReagentGroupEmbed Group="Toxins"/>
+
+  \n
+
+
+  ## Еда
+  <GuideReagentGroupEmbed Group="Foods"/>
+
+  \n
+
+
+  ## Растительные
+  <GuideReagentGroupEmbed Group="Botanical"/>
+
+  \n
+
+
+  ## Биологические
+  <GuideReagentGroupEmbed Group="Biological"/>
+
+  \n
+
+
+  ## Прочие
+  <GuideReagentGroupEmbed Group="Unknown"/>
+
+</Document>

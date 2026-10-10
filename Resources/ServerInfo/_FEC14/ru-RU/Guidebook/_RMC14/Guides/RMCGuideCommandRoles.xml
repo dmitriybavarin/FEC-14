@@ -1,0 +1,60 @@
+<Document>
+  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСКОЙ ПЕХОТЫ США[/bold][/head]\n
+  [color=#5f698a]▀ ▄▀ █ ▀█ [/color]
+
+  # Знай свое начальство
+  ## Командный состав и главы отделов
+
+  Итак, вы проснулись, поели, оделись и вооружились. Вы дошли до брифинга и теперь думаете, перед кем выслужиться ради медали или повышения. Вот краткий обзор начальства, чтобы было ясно, к кому подлизываться:
+
+  <Table Columns="2">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleCO"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Командующий офицер (CO)[/color][/bold]\nГлавный на корабле. Он говорит остальным офицерам, что делать, чтобы они говорили, что делать ВАМ.\nЭту должность получают только те, кто доказал свою храбрость, верность и компетентность. На корабле у CO высшая власть, отвечает он только перед Верховным командованием.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleXO"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Исполнительный офицер (XO)[/color][/bold]\nВторой после командующего офицера. Если CO мозг, то XO руки.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleSO"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Офицер штаба (SO)[/color][/bold]\nРаботает с командирами отрядов, передает приказы и разведданные XO и CO. Ведет наблюдение за отделением и видит все через камеру на вашем шлеме (вы ведь его НОСИТЕ, правда?).
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleCMP"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Начальник военной полиции[/color][/bold]\nРуководит военной полицией и следит, чтобы военный закон соблюдался и исполнялся.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleCMO"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Главврач[/color][/bold]\nРуководит медотсеком: следит, чтобы медперсонал работал слаженно, а исследования велись безопасно и этично.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleASO"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Офицер вспомогательной поддержки[/color][/bold]\nРуководит ангаром, разведкой и инженерным отделом. У инженеров есть свой глава, но ASO может приказывать им напрямую.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleCE"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Главный инженер[/color][/bold]\nРуководит ремонтниками и техниками по боеприпасам.
+    </Box></ColorBox>
+
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Margin="4"><GuideEntityEmbed Entity="RMCGuidebookRoleQM"/></Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][color=#8fc3ff]Квартирмейстер[/color][/bold]\nУправляет отделом поставок и руководит техниками поставок.
+    </Box></ColorBox>
+  </Table>
+
+  <Box>
+  Порядок передачи командования смотрите в разделе о преемственности командования. И запомните:
+  </Box>
+  <Box>
+    [bold]ОТДАТЬ ЧЕСТЬ![/bold]
+  </Box>
+
+  ### Автор руководства: teatotaltemplar
+</Document>

@@ -179,9 +179,9 @@ public sealed partial class RequisitionsSystem : SharedRequisitionsSystem
         Dirty(elevator);
 
         if (nextMode == Raising)
-            _core.CreateARESLog(computer.Owner, LogCat, (string)$"{Name(args.Actor)} raised the requisitions elevator");
+            _core.CreateARESLog(computer.Owner, LogCat, Loc.GetString("fec-code-ares-req-raised", ("user", Name(args.Actor)))); // FEC14
         if (nextMode == Lowering)
-            _core.CreateARESLog(computer.Owner, LogCat, (string)$"{Name(args.Actor)} lowered the requisitions elevator");
+            _core.CreateARESLog(computer.Owner, LogCat, Loc.GetString("fec-code-ares-req-lowered", ("user", Name(args.Actor)))); // FEC14
     }
 
     private Entity<RequisitionsAccountComponent> GetAccount()

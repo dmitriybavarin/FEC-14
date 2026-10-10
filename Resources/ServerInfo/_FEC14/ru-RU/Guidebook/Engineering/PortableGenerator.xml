@@ -1,0 +1,47 @@
+<Document>
+  # Переносные генераторы
+
+  Переносные генераторы линейки "P.A.C.M.A.N." дают аварийное или дополнительное питание важным помещениям, зонам и даже целым отделам.
+  Их легко запустить и обслуживать, и при отключении электричества ими можно запитать важные системы и зоны.
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="PortableGeneratorSuperPacman" Caption="S.U.P.E.R.P.A.C.M.A.N." />
+  </Box>
+
+  # Младший
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="WeldingFuelTank" />
+  </Box>
+
+  J.R.P.A.C.M.A.N. стоят по всей станции в техтоннелях, и экипаж может сам запускать их при проблемах с электричеством.
+  Их мощности до [color=orange][protodata="PortableGeneratorJrPacman" comp="FuelGenerator" member="MaxTargetPower" format="N0"/] Вт[/color] хватает на одно-два помещения, а в медотсеке или химлаборатории это бывает бесценно.
+
+  Запустить его проще простого: прикрутите ключом над кабелем [color=green]НН[/color], залейте сварочное топливо и включите.
+
+  J.R.P.A.C.M.A.N. работает только на сварочном топливе, а его можно найти в баках со сварочным топливом по всей станции, обычно в техтоннелях.
+
+  # Большие
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="SheetPlasma" />
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorSuperPacman" Caption="S.U.P.E.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="SheetUranium" />
+  </Box>
+
+  P.A.C.M.A.N. и S.U.P.E.R.P.A.C.M.A.N. предназначены для инженеров: при крупных отключениях и для подпитки сети при нехватке энергии.
+  Ими запускают большие [textlink="двигатели" link="SingularityTeslaEngine"], питают отделы и так далее.
+
+  S.U.P.E.R.P.A.C.M.A.N. мощнее (до [color=orange][protodata="PortableGeneratorSuperPacman" comp="FuelGenerator" member="MaxTargetPower" format="N0"/] Вт[/color]) и дольше работает на полной мощности, но на низкой мощности менее экономичен.
+
+  Они подключаются прямо к [textlink="кабелям" link="VoltageNetworks"] [color=yellow]СН[/color] или [color=orange]ВН[/color] и могут переключаться между ними.
+
+  S.U.P.E.R.P.A.C.M.A.N. работает на листах урана, а P.A.C.M.A.N. на листах плазмы.
+</Document>

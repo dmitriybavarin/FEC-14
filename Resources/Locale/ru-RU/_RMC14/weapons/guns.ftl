@@ -37,7 +37,7 @@ rmc-iff-toggle-on = включаете
 
 rmc-revolver-spin = Вы раскручиваете барабан.
 
-rmc-examine-text-weapon-accuracy = Текущий множитель точности: [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
+rmc-examine-text-weapon-accuracy = Множитель точности сейчас [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
 
 rmc-examine-text-scatter-max = Текущий максимальный разброс: [color={$colour}]{TOSTRING($scatter, "F1")}[/color] град.
 rmc-examine-text-scatter-min = Текущий минимальный разброс: [color={$colour}]{TOSTRING($scatter, "F1")}[/color] град.
@@ -70,7 +70,7 @@ rmc-gun-shoot-air-examine = [bold]Чтобы выстрелить в возду�
     *[false] {""}
     }.[/bold]
 
-rmc-flare-gun-examine = Обозначение последней выпущенной ракеты-маркера: [color=#ad3b98][bold]{$id}[/bold][/color]
+rmc-flare-gun-examine = Последняя ракета-маркер выпущена с обозначением [color=#ad3b98][bold]{$id}[/bold][/color].
 
 expendable-light-starshell-ash-empty-name = потухший пепел осветительного снаряда
 expendable-light-starshell-ash-empty-desc = Выгоревшие остатки осветительного снаряда

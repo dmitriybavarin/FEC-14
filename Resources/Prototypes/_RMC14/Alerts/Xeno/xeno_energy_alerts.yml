@@ -40,31 +40,31 @@
     state: power_display_0
   - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
     state: power_display_empty
-  name: Energy reserves
-  description: Your stored energy. Used by different abilities
+  name: fec-alert-xeno-energy-base-name
+  description: fec-alert-xeno-energy-base-desc
   minSeverity: 0
   maxSeverity: 18
 
 - type: alert
   parent: XenoEnergyBase
   id: XenoEnergyAcider
-  name: Acid reserves
-  description: Your stored acid. Used by different abilities. You can only passively generate up to 400.
+  name: fec-alert-xeno-energy-acider-name
+  description: fec-alert-xeno-energy-acider-desc
 
 - type: alert
   parent: XenoEnergyBase
   id: XenoEnergyValkyrie
-  name: Fury
-  description: Your built-up rage. Used by different abilities.
+  name: fec-alert-xeno-energy-valkyrie-name
+  description: fec-alert-xeno-energy-valkyrie-desc
 
 - type: alert
   parent: XenoEnergyBase
   id: XenoEnergyHealer
-  name: Transferred health
-  description: Your total health transferred. If full you'll revive after using sacrifice.
+  name: fec-alert-xeno-energy-healer-name
+  description: fec-alert-xeno-energy-healer-desc
 
 - type: alert
   parent: XenoEnergyBase
   id: XenoEnergyShards
-  name: Shards
-  description: Your built-up shards. Used by different abilities. You gain more armor with more shards.
+  name: fec-alert-xeno-energy-shards-name
+  description: fec-alert-xeno-energy-shards-desc

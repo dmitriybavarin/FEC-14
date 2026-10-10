@@ -1,0 +1,49 @@
+<Document>
+  #Постройки улья
+  Ксеноморфы процветают благодаря особым постройкам. Строить их может только представитель линии трутней: способностью "Наметить строительство" на смоле улья, после чего постройку нужно заполнить плазмой.
+  <Box>
+    <GuideEntityEmbed Entity="XenoHiveWeeds"/>
+    <GuideEntityEmbed Entity="RMCGuidebookActionXenoOrderConstruction"/>
+  </Box>
+
+  ## Что они делают и сколько их может быть
+
+  <Table Columns="3">
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0"><Box Margin="4"><GuideEntityEmbed Entity="HiveCoreXeno"/></Box></ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0"><Box Margin="4">[bold][color=#d39cff]1[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0"><Box HorizontalAlignment="Left" Margin="6">[bold]Ядро улья[/bold]: обычно его строит королева в начале матча, чтобы обозначить место улья. Без ядра нельзя строить другие постройки. Ядро ускоряет набор очков эволюции, дает энергию для появления малых трутней, смолу улья и крышу, защищающую от "небесного огня" (орбитальной бомбардировки) и "небесного плевка" (авиаподдержки). Если принести к ядру мертвую личинку, появится закопанная личинка и родится новая сестра! Если ядро уничтожат, новое можно будет построить только через 5 минут, так что берегите его!</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HiveEggMorpherXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]6[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Яйцеморф[/bold]: большое яйцо, которое бросает лицехватов на любого носителя поблизости. Постепенно производит до 6 лицехватов и хранит до 12, их могут забирать ксеноморфы.</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HivePylonXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]2[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Пилон улья[/bold]: появляется, если поставить кластер улья рядом с сигнальной вышкой и заполнить его. Когда смола кластера дойдет до вышки, он превратится в пилон. Пилоны производят малых трутней и дают крышу от "небесного плевка".</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HiveClusterXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]8[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Кластер улья[/bold]: выделяет смолу улья, на которой можно строить другие постройки. Если кластер теряет смолу или здоровье, его можно починить плазмой.</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HiveRecoveryNodeXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]6[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Узел восстановления[/bold]: лечит ксеноморфов, которые отдыхают рядом. За раз лечит только одного.</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HivePlasmaTreeXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]3[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Плазменное дерево[/bold]: как узел восстановления, но вместо лечения восполняет ксеноморфам плазму.</Box></ColorBox>
+
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4"><GuideEntityEmbed Entity="HiveAcidPillarXeno"/></Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box Margin="4">[bold][color=#d39cff]1[/color][/bold] на владыку улья или королеву</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="6">[bold]Кислотный столп[/bold]: тушит пожары поблизости.</Box></ColorBox>
+  </Table>
+
+  ## Где ставить
+  Число построек ограничено, поэтому, ставя их, всегда сообщайте об этом улью.
+
+  Кластеры улья можно ставить на передовой, чтобы задерживать наступление носителей, или в тылу под гнезда. Рядом с гнездами обычно роют туннель и ставят 2 и больше яйцеморфа.
+
+  Узлы восстановления ставьте на передовой рядом с кластером, чтобы сестры могли выдерживать затяжные бои.
+
+  Плазменные деревья полезны и на передовой (для лекарей и строителей на передовой), и в тылу (для строителей в тылу).
+</Document>

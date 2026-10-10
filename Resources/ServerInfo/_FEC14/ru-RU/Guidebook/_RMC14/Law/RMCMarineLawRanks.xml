@@ -1,0 +1,78 @@
+<Document>
+  # Звания
+
+  ## Офицеры
+  <Table Columns="3">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Звание[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Префикс[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Разряд[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Бригадный генерал</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Бриг. ген.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O7</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Полковник</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Полк.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O6</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Подполковник</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Подполк.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O5</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Майор</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Майор</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O4</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Капитан</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Капт.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O3</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Первый лейтенант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">1-й лейт.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O2</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Второй лейтенант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">2-й лейт.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O1</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Старший уоррент-офицер</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Ст. уорр.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O0-2</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Уоррент-офицер</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Уорр.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">O0-1</Box></ColorBox>
+  </Table>
+
+  ## Рядовой и сержантский состав
+  <Table Columns="3">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Звание[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Префикс[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a"><Box HorizontalAlignment="Left" Margin="4">[bold][color=#8fc3ff]Разряд[/color][/bold]</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Сержант-майор</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Серж.-майор</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E9E</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Мастер-комендор-сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Маст.-ком.-серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E9</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Первый сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">1-й серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E8E</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Мастер-сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Маст.-серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E8</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Комендор-сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Ком.-серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E7</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Штаб-сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Шт.-серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E6</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Сержант</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Серж.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E5</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Капрал</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Кпл.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E4</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Младший капрал</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Мл. кпл.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E3</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Рядовой первого класса</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Ряд. 1 кл.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E2</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Рядовой</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Ряд.</Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">E1</Box></ColorBox>
+  </Table>
+
+</Document>

@@ -1,10 +1,10 @@
 cargo-gifts-event-announcement = Поздравляем! { $sender } отправляет на станцию подарок: { $description }. Получатель: { $dest }. Ищите его в следующей поставке.
 cargo-gift-default-description = Набор подарков
 cargo-gift-default-sender = NanoTrasen
-cargo-gift-default-dest = Отдел снабжения
+cargo-gift-default-dest = Отдел поставок
 cargo-gift-dest-bar = Бар
 cargo-gift-dest-eng = Инженерный отдел
-cargo-gift-dest-supp = Отдел снабжения
+cargo-gift-dest-supp = Отдел поставок
 cargo-gift-dest-janitor = Отдел сервиса
 cargo-gift-dest-med = Медицинский отдел
 cargo-gift-dest-sec = Служба безопасности

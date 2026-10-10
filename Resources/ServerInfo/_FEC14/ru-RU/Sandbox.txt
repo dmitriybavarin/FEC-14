@@ -1,0 +1,15 @@
+[color=#ffffff]Параметры панели создания сущностей[/color]
+[color=#a4885c]Default[/color] создает маленькие сущности вроде кружек без выравнивания, а блоки вроде стен выравнивает по сетке.
+[color=#a4885c]PlaceFree[/color] создает все сущности без выравнивания.
+[color=#a4885c]PlaceNearby[/color] ограничивает радиус создания примерно 2 клетками.
+[color=#a4885c]SnapgridCenter[/color] выравнивает сущность по центру клетки.
+[color=#a4885c]SnapgridBorder[/color] выравнивает сущность по границе клетки.
+
+[color=#ffffff]Параметры выравнивания по сетке[/color]
+[color=#a4885c]AlignSimilar[/color] привязывает сущность к похожим сущностям. Сейчас не работает.
+[color=#a4885c]AlignTileAny[/color] выравнивает сущность по сетке.
+[color=#a4885c]AlignTileEmpty[/color]: целевая клетка должна быть пустой.
+[color=#a4885c]AlignTileNonDense[/color]: в целевой клетке не должно быть коллайдеров.
+[color=#a4885c]AlignTileDense[/color]: в целевой клетке должны быть коллайдеры.
+[color=#a4885c]AlignWall[/color] привязывает к вертикальным полуклеткам.
+[color=#a4885c]AlignWallProper[/color] привязывает сущность к середине краев клетки.

@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Reflection;
 using Content.Server._RMC14.LinkAccount;
+using Content.Server.Administration.Managers; // FEC14
+using Content.Shared.Administration; // FEC14
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Server.Storage.EntitySystems;
@@ -27,6 +29,10 @@ public sealed class FigurineSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StorageSystem _storage = default!;
+    [Dependency] private readonly IAdminManager _admin = default!; // FEC14
+
+    private const int FECMaxFigurineImageBytes = 1024 * 1024; // FEC14
+    private static readonly byte[] FECPngSignature = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]; // FEC14
 
     private readonly Dictionary<string, EntProtoId> _allFigurines = new();
     private readonly HashSet<EntProtoId> _figurines = [];
@@ -145,6 +151,15 @@ public sealed class FigurineSystem : EntitySystem
     {
         if (args.SenderSession.AttachedEntity is not { } ent)
             return;
+
+        // FEC14
+        if (!_admin.HasAdminFlag(args.SenderSession, AdminFlags.Host) ||
+            ev.Image.Length is 0 or > FECMaxFigurineImageBytes ||
+            !ev.Image.AsSpan().StartsWith(FECPngSignature))
+        {
+            return;
+        }
+        // FEC14
 
         var name = FormatSpriteName(Name(ent)).ToLowerInvariant();
         var rsi = GetRsiPath();

@@ -58,7 +58,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = traitorName, // FEC14
         };
         args.Verbs.Add(traitor);
 
@@ -73,7 +73,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<ZombieRuleComponent>(targetPlayer, DefaultInitialInfectedRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", initialInfectedName, Loc.GetString("admin-verb-make-initial-infected")),
+            Message = initialInfectedName, // FEC14
         };
         args.Verbs.Add(initialInfected);
 
@@ -88,7 +88,7 @@ public sealed partial class AdminVerbSystem
                 _zombie.ZombifyEntity(args.Target);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", zombieName, Loc.GetString("admin-verb-make-zombie")),
+            Message = zombieName, // FEC14
         };
         args.Verbs.Add(zombie);
 
@@ -103,7 +103,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultNukeOpRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", nukeOpName, Loc.GetString("admin-verb-make-nuclear-operative")),
+            Message = nukeOpName, // FEC14
         };
         args.Verbs.Add(nukeOp);
 
@@ -119,7 +119,7 @@ public sealed partial class AdminVerbSystem
                 _outfit.SetOutfit(args.Target, PirateGearId);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", pirateName, Loc.GetString("admin-verb-make-pirate")),
+            Message = pirateName, // FEC14
         };
         args.Verbs.Add(pirate);
 
@@ -134,7 +134,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<RevolutionaryRuleComponent>(targetPlayer, DefaultRevsRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", headRevName, Loc.GetString("admin-verb-make-head-rev")),
+            Message = headRevName, // FEC14
         };
         args.Verbs.Add(headRev);
 
@@ -149,7 +149,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<ThiefRuleComponent>(targetPlayer, DefaultThiefRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", thiefName, Loc.GetString("admin-verb-make-thief")),
+            Message = thiefName, // FEC14
         };
         args.Verbs.Add(thief);
 
@@ -171,7 +171,7 @@ public sealed partial class AdminVerbSystem
                 _gameTicker.StartGameRule(ruleEnt);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
+            Message = paradoxCloneName, // FEC14
         };
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned

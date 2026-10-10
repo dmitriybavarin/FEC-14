@@ -10,7 +10,7 @@ public sealed class MentorChatCommand : IConsoleCommand
     [Dependency] private readonly MentorManager _mentor = default!;
 
     public string Command => "msay";
-    public string Description => "Send chat messages to the private mentor chat channel.";
+    public string Description => Loc.GetString("fec-cmd-mentor-chat-desc"); // FEC14
     public string Help => "msay <text>";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

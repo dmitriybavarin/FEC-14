@@ -62,7 +62,7 @@ public sealed partial class HiveLeaderSquadWindow : DefaultWindow
         _onRemoveMember = onRemoveMember;
 
         Title = roleName;
-        AnnounceBox.PlaceHolder = $"Announce to {roleName}...";
+        AnnounceBox.PlaceHolder = Loc.GetString("fec-code-hive-team-announce", ("role", roleName)); // FEC14
 
         LeaderSlot.DisposeAllChildren();
         if (entry.Leader is { } leaderNet)
@@ -78,7 +78,7 @@ public sealed partial class HiveLeaderSquadWindow : DefaultWindow
         {
             LeaderSlot.AddChild(new Label
             {
-                Text = "No leader assigned",
+                Text = Loc.GetString("fec-code-hive-team-no-leader"), // FEC14
                 HorizontalAlignment = HAlignment.Center,
                 FontColorOverride = Color.FromHex("#666666"),
             });
@@ -89,7 +89,7 @@ public sealed partial class HiveLeaderSquadWindow : DefaultWindow
         {
             MembersSlot.AddChild(new Label
             {
-                Text = "No members assigned",
+                Text = Loc.GetString("fec-code-hive-team-no-members"), // FEC14
                 HorizontalAlignment = HAlignment.Center,
                 FontColorOverride = Color.FromHex("#666666"),
             });
@@ -105,7 +105,7 @@ public sealed partial class HiveLeaderSquadWindow : DefaultWindow
                 control.SetHeight = 48;
                 var capturedMember = memberNet;
                 control.Button.OnPressed += _ => _onRemoveMember?.Invoke(capturedMember);
-                control.Button.ToolTip = "Click to remove from team";
+                control.Button.ToolTip = Loc.GetString("fec-code-hive-team-remove-member"); // FEC14
                 MembersSlot.AddChild(control);
             }
         }

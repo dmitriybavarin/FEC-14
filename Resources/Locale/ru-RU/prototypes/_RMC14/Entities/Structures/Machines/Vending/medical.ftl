@@ -1,4 +1,4 @@
-ent-CMMedilinkSupplyPort = Порт снабжения Medilink
+ent-CMMedilinkSupplyPort = Порт поставок Medilink
     .desc = Сложная сеть труб и механизмов, связанная с большими хранилищами под палубой. Медицинские раздатчики, подключенные к этому порту, могут пополняться бесконечно.
 ent-RMCMedilinkSupplyPortGrey = { ent-CMMedilinkSupplyPort }
     .desc = { ent-CMMedilinkSupplyPort.desc }

@@ -10,7 +10,7 @@ namespace Content.Server._RMC14.Xenonids;
 public sealed class XenoAnnounceCommand : IConsoleCommand
 {
     public string Command => "xenoannounce";
-    public string Description => "Announces a message to all xenos.";
+    public string Description => Loc.GetString("fec-cmd-xeno-announce-desc"); // FEC14
     public string Help => $"Usage: {Command} message";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

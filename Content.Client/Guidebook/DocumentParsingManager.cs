@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Client.Guidebook.Controls;
 using Content.Client.Guidebook.Richtext;
 using Content.Shared.Guidebook;
+using Content.Shared._FEC14.Guidebook; // FEC14
 using Pidgin;
 using Robust.Client.UserInterface;
 using Robust.Shared.ContentPack;
@@ -56,13 +57,13 @@ public sealed partial class DocumentParsingManager
         if (!_prototype.TryIndex(entryId, out var entry))
             return false;
 
-        using var file = _resourceManager.ContentFileReadText(entry.Text);
+        using var file = _resourceManager.ContentFileReadText(FECLocalizedServerInfo.Resolve(_resourceManager, entry.Text)); // FEC14
         return TryAddMarkup(control, file.ReadToEnd(), log);
     }
 
     public bool TryAddMarkup(Control control, GuideEntry entry, bool log = true)
     {
-        using var file = _resourceManager.ContentFileReadText(entry.Text);
+        using var file = _resourceManager.ContentFileReadText(FECLocalizedServerInfo.Resolve(_resourceManager, entry.Text)); // FEC14
         return TryAddMarkup(control, file.ReadToEnd(), log);
     }
 

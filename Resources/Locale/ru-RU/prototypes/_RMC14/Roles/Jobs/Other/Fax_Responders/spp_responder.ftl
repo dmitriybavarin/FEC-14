@@ -1,2 +1,2 @@
-ent-RMCIDCardSPPResponder = ID-карта офицера связи SPP
+ent-RMCIDCardSPPResponder = ID-карта офицера связи СССП
     .desc = ID-карта, выдаваемая младшим офицерам армии Социалистических Прогрессивных Народов.

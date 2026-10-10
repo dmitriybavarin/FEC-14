@@ -1,5 +1,5 @@
 ent-PaperAcquisitionSlip = Бланк заказа
-    .desc = Бланк с деталями заказа. Его можно отдать в снабжение, чтобы завершить заказ.
+    .desc = Бланк с деталями заказа. Его можно отдать в отдел поставок, чтобы завершить заказ.
 ent-PaperAcquisitionSlipMedical = { ent-PaperAcquisitionSlip }
     .desc = { ent-PaperAcquisitionSlip.desc }
     .suffix = Медицина
@@ -14,7 +14,7 @@ ent-PaperAcquisitionSlipService = { ent-PaperAcquisitionSlip }
     .suffix = Сервис
 ent-PaperAcquisitionSlipCargo = { ent-PaperAcquisitionSlip }
     .desc = { ent-PaperAcquisitionSlip.desc }
-    .suffix = Снабжение
+    .suffix = Поставки
 ent-PaperAcquisitionSlipEngineering = { ent-PaperAcquisitionSlip }
     .desc = { ent-PaperAcquisitionSlip.desc }
     .suffix = Инженерия

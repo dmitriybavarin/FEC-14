@@ -14,7 +14,7 @@ public sealed partial class StabilizeTemperature : EntityEffect
 
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return $"Stabilizes the temperature of the body that it is in to {Stable} degrees, by {Change} degrees at a time";
+        return Loc.GetString("fec-code-chem-effect-stabilize-temperature", ("v1", Stable), ("v2", Change)); // FEC14
     }
 
     public override void Effect(EntityEffectBaseArgs args)

@@ -1,0 +1,12 @@
+fec-faction-unmc = Marines
+fec-faction-rmcxeno = Xenonids
+fec-faction-rmcdumb = Animals
+fec-faction-spp = SPP
+fec-faction-halcyon = Halcyon
+fec-faction-clf = CLF
+fec-faction-weya = Weston-Yamada
+fec-faction-civilian = Civilians
+fec-faction-royalmarines = Royal Marines
+fec-faction-bureau = Bureau
+fec-faction-tse = TSE
+fec-faction-hefa = HEFA

@@ -1,0 +1,78 @@
+<Document>
+  ## Элита КМП США
+  Специалисты отделений одни из самых мощных сил, которые высаживает КМП США. С первых минут они способны резко повлиять на исход любого боя.
+
+  У них есть уникальные наборы и мощное оружие поддержки отделения, но они [bold]не[/bold] одиночки и не "рэмбо": они должны работать как неотъемлемая часть команды.
+  Чтобы специалист приносил машине войны морпехов максимум пользы, важно понимать роль каждого.
+
+  На этой странице общие советы для новых специалистов и краткое знакомство с каждым набором, а оттуда ссылки на подробные руководства.
+
+  ## Общие советы для всех специалистов
+
+  <Table Columns="2">
+    <ColorBox Color="#2a2a14" OutlineColor="#B8B823" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#ffcc00]Боеприпасы на вес золота[/color][/bold]
+        - Большинство боеприпасов специалистов мощные и дорогие (по очкам поставок или редкости). [color=#ffcc00]Берегите их.[/color]
+        - Для многих наборов стоит попросить в отделе поставок дополнительные боеприпасы еще в начале раунда, чтобы они не кончились в решающий момент.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#8fc3ff]Знайте снаряжение и роль[/color][/bold]
+        - Понимайте сильные и слабые стороны своего набора и его оружия и где он лучше всего работает. Не тратьте противотанковую ракету на одинокого трутня, если она нужна команде против крушителя.
+        - Перед высадкой досконально изучите каждый предмет набора. Знайте, как быстро сменить тип боеприпаса, на какую дальность бьет оружие, каков радиус взрыва и особенности ваших боеприпасов и способностей.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#ff8a8a]Главное внимание к обстановке[/color][/bold]
+        - Вы ценная цель, и враги будут [italic]охотиться[/italic] за вами. Будьте все время начеку, особенно на флангах.
+        - Иногда помогает носить обычную броню морпеха вместо брони специалиста, но тогда вы теряете ее преимущества.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#8fe39c]Выживайте, вы множитель силы[/color][/bold]
+        - Жизнь каждого морпеха ценна, но у специалиста уникальные возможности, способные переломить ход боя. Играйте с умом, не рискуйте зря и ставьте выживание на первое место, чтобы и дальше поддерживать команду. Ваша потеря часто сильнее бьет по боеспособности отделения.
+      </Box>
+    </ColorBox>
+  </Table>
+
+
+  ## Наборы специалистов
+  Нажмите на название специалиста, чтобы открыть подробное руководство о его снаряжении, тактике и особенностях.
+
+  <ColorBox Color="#2a1e14" OutlineColor="#d18a3a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][textlink="Тяжелый гренадер" link="RMCGuideRoleGrenadierSpec"][/textlink][/bold] - "фанат Майкла Бэя"
+      - Расточители взрывчатки: тяжелые гренадеры точно отправляют самые разные гранаты из многозарядного гранатомета M83, расчищая путь и оглушая скопления врагов. Броня M3-G4 дает серьезную защиту.
+      <Box> <GuideEntityEmbed Entity="WeaponLauncherM83" Context=""/> <GuideEntityEmbed Entity="RMCArmorM3G4" Context=""/> <GuideEntityEmbed Entity="CMGrenadeFrag" Context=""/> <GuideEntityEmbed Entity="CMGrenadeHighExplosive" Context=""/> <GuideEntityEmbed Entity="RMCGrenadeIncendiary" Context=""/> </Box>
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][textlink="Специалист по взрывчатке" link="RMCGuideRoleDemoSpec"][/textlink][/bold] - "против всего"
+      - Когда что-то нужно стереть в порошок, специалист по взрывчатке берет противотанковый гранатомет M5. Он стреляет фугасными и бронебойными ракетами и губителен для тяжелых целей и укрепленных позиций.
+      <Box> <GuideEntityEmbed Entity="RMCWeaponLauncherM5ATL" Context="" /> <GuideEntityEmbed Entity="RMCRocket84mm" Context=""/> <GuideEntityEmbed Entity="RMCRocket84mmAntiArmor" Context=""/> <GuideEntityEmbed Entity="RMCExplosivePlastic" Context=""/> </Box>
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][textlink="Снайпер" link="RMCGuideRoleSniperSpec"][/textlink][/bold] - "дальнее сдерживание"
+      - С снайперской винтовкой M96S или противотанковым ружьем XM43E1 этот специалист дает важную огневую поддержку издалека: замедляет ключевые цели и мощно сдерживает наступление ксеноморфов морально. В комплекте набор наводчика для стрелка.
+      <Box> <GuideEntityEmbed Entity="CMM96SSniperRifle" Context=""/> <GuideEntityEmbed Entity="RMCXM43E1AntiMaterielRifle" Context=""/> <GuideEntityEmbed Entity="RMCKitSpotter" Context=""/> </Box>
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [bold][textlink="Разведчик" link="RMCGuideRoleScoutSpec"][/textlink][/bold] - "тихий охотник и разведка"
+      - С мощной боевой винтовкой M4SPR особой сборки и термоплащом M68 разведчик хорош в разведке, целеуказании своим целеуказателем разведчика и точечных ударах.
+      <Box> <GuideEntityEmbed Entity="WeaponRifleM4SPRCustom" Context=""/> <GuideEntityEmbed Entity="RMCBackpackScout" Context=""/> <GuideEntityEmbed Entity="RMCLaserDesignatorScout" Context=""/> </Box>
+    </Box>
+  </ColorBox>
+
+</Document>

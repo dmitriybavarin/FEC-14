@@ -1,3 +1,3 @@
-ent-CMSpawnPointSPPCrashlandSynth = Точка появления особого выжившего крушения SPP: синтетик
+ent-CMSpawnPointSPPCrashlandSynth = Точка появления особого выжившего крушения СССП: синтетик
     .desc = { ent-CMSpawnPointJobBase.desc }
     .suffix = { ent-CMSpawnPointJobBase.suffix }

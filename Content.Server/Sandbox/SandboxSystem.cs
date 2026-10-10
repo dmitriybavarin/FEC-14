@@ -1,5 +1,10 @@
 using System.Linq;
 using Content.Server.GameTicking;
+using Content.Server.Administration.Logs; // FEC14
+using Content.Server.Ghost; // FEC14
+using Content.Shared.Database; // FEC14
+using Content.Shared.Ghost; // FEC14
+using Content.Shared.Mind; // FEC14
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -29,6 +34,11 @@ namespace Content.Server.Sandbox
         [Dependency] private readonly ItemSlotsSystem _slots = default!;
         [Dependency] private readonly GameTicker _ticker = default!;
         [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+        // FEC14
+        [Dependency] private readonly GhostSystem _ghost = default!;
+        [Dependency] private readonly SharedMindSystem _mind = default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        // FEC14
 
         private bool _isSandboxEnabled;
 
@@ -100,18 +110,18 @@ namespace Content.Server.Sandbox
 
         private void SandboxRespawnReceived(MsgSandboxRespawn message, EntitySessionEventArgs args)
         {
-            if (!IsSandboxEnabled)
+            if (!FECCanUse(args.SenderSession)) // FEC14
                 return;
 
             var player = _playerManager.GetSessionByChannel(args.SenderSession.Channel);
             if (player.AttachedEntity == null) return;
 
-            _ticker.Respawn(player);
+            _ticker.FECReturnToLobby(player); // FEC14
         }
 
         private void SandboxGiveAccessReceived(MsgSandboxGiveAccess message, EntitySessionEventArgs args)
         {
-            if (!IsSandboxEnabled)
+            if (!FECCanUse(args.SenderSession)) // FEC14
                 return;
 
             var player = _playerManager.GetSessionByChannel(args.SenderSession.Channel);
@@ -172,7 +182,7 @@ namespace Content.Server.Sandbox
 
         private void SandboxGiveAghostReceived(MsgSandboxGiveAghost message, EntitySessionEventArgs args)
         {
-            if (!IsSandboxEnabled)
+            if (!FECCanUse(args.SenderSession)) // FEC14
                 return;
 
             var player = _playerManager.GetSessionByChannel(args.SenderSession.Channel);
@@ -182,12 +192,30 @@ namespace Content.Server.Sandbox
 
         private void SandboxSuicideReceived(MsgSandboxSuicide message, EntitySessionEventArgs args)
         {
-            if (!IsSandboxEnabled)
+            if (!FECCanUse(args.SenderSession)) // FEC14
                 return;
 
+            // FEC14
             var player = _playerManager.GetSessionByChannel(args.SenderSession.Channel);
-            _host.ExecuteCommand(player, "suicide");
+            if (player.AttachedEntity is not { } body ||
+                HasComp<GhostComponent>(body) ||
+                !_mind.TryGetMind(player, out var mindId, out _))
+                return;
+
+            if (!_ghost.OnGhostAttempt(mindId, false, viaCommand: true, forced: true))
+                return;
+
+            _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(body):player} deleted their character via the sandbox panel");
+            QueueDel(body);
+            // FEC14
         }
+
+        // FEC14
+        private bool FECCanUse(ICommonSession session)
+        {
+            return IsSandboxEnabled || _conGroupController.CanAdminPlace(session);
+        }
+        // FEC14
 
         private void UpdateSandboxStatusForAll()
         {

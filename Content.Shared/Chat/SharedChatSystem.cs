@@ -76,6 +76,21 @@ public abstract class SharedChatSystem : EntitySystem
             }
         }
 
+        // FEC14
+        foreach (var radioChannel in _prototypeManager.EnumeratePrototypes<RadioChannelPrototype>())
+        {
+            if (!Content.Shared._FEC14.Radio.FECRadioKeyAliases.Aliases.TryGetValue(char.ToLowerInvariant(radioChannel.KeyCode), out var aliases))
+                continue;
+
+            foreach (var alias in aliases)
+            {
+                channelDict[$"{radioChannel.RadioPrefix}{alias}"] = radioChannel;
+                if (radioChannel.RadioPrefix == RadioChannelPrefix)
+                    channelDict[$"{RadioChannelAltPrefix}{alias}"] = radioChannel;
+            }
+        }
+        // FEC14
+
         _channelLookup = channelDict.ToFrozenDictionary();
         _validPrefixes = prefixSet.ToFrozenSet();
         // RMC14
@@ -203,7 +218,7 @@ public abstract class SharedChatSystem : EntitySystem
         var prefix = input[0];
         var channelKey = input[1];
         var lookupKey = $"{prefix}{char.ToLowerInvariant(channelKey)}";
-        var isDefaultChannel = channelKey == DefaultChannelKey || char.ToLowerInvariant(channelKey) == DefaultChannelKey;
+        var isDefaultChannel = channelKey == DefaultChannelKey || char.ToLowerInvariant(channelKey) == DefaultChannelKey || char.ToLowerInvariant(channelKey) == 'х'; // FEC14
         var foundChannel = _channelLookup.TryGetValue(lookupKey, out channel);
         output = SanitizeMessageCapital(input[2..].TrimStart());
 

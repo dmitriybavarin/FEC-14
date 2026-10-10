@@ -1,0 +1,14 @@
+<Document>
+  #Воздушный инжектор
+  Воздушный инжектор это особая вентиляция, которая нагнетает газы в окружающую атмосферу.
+  <Box>
+    <GuideEntityEmbed Entity="GasOutletInjector"/>
+  </Box>
+  В основном им нагнетают газы в помещения с высоким давлением, например [textlink="газовые хранилища" link="GasMiningAndStorage"] станции или камеру сгорания.
+
+  Воздушному инжектору не нужно [textlink="электричество" link="Power"].
+
+  Инжектор нагнетает газы в атмосферу, пока давление не достигнет [color=orange][protodata="GasOutletInjector" comp="GasOutletInjector" member="MaxPressure"/] кПа[/color].
+
+  Скорость инжектора пропорциональна количеству газа в нем.
+</Document>

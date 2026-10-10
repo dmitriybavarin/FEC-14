@@ -1,0 +1,53 @@
+<Document>
+  # Революционеры
+
+  <Box>
+    [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
+  </Box>
+
+  Революционеры это антагонисты-вербовщики под покровительством [color=#ff0000]Синдиката[/color], задача которых захватить станцию. У них нет хитрых приемов и дешевых трюков, только идея и сила числа.
+
+  ## Цели
+  Нужно завербовать, сковать или убить весь [textlink="командный состав" link="Command"] станции в любом порядке.
+
+  Ваша цель [bold]не уничтожить станцию[/bold], а [italic]захватить ее[/italic], так что по возможности сводите разрушения к минимуму.
+
+  [bold]Революция провалится[/bold], если погибнут все [bold][color=#5e9cff]лидеры революции[/color][/bold], и тогда все [color=red]революционеры[/color] перестанут быть ими.
+
+  ## Лидеры революции и вербовка
+  [bold][color=#5e9cff]Лидеров революции[/color][/bold] выбирают в начале смены, и у них с собой [color=cyan]вспышка[/color] и [color=cyan]солнцезащитные очки[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="Flash"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+  </Box>
+
+  Чтобы завербовать члена экипажа, возьмите любую [bold]вспышку[/bold] и атакуйте ею человека в [color=#ff0000]режиме вреда[/color].
+  Но [bold]если на цели [color=cyan]защита от вспышек[/color][/bold], например солнцезащитные очки или сварочная маска, завербовать ее нельзя.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
+  </Box>
+
+  Еще одно препятствие: надоедливые [color=cyan]имплантеры "Щит разума"[/color]. Они:
+  - Не дают завербовать человека с имплантом в [color=red]революционеры[/color].
+  - Отвращают революционеров, и те больше не преданы вашему делу.
+  - [bold]Заметно разрушаются при имплантации [color=#5e9cff]лидеру революции[/color][/bold], выдавая вас.
+  - НЕ защищают от дезориентации вспышкой.
+
+  Считайте, что вся [color=#cb0000]служба безопасности[/color] и [color=#1b67a5]командование[/color] уже с имплантами, [bold]но их можно извлечь пустым имплантером, который делают в медфабрикаторе медотдела.[/bold]
+
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter"/>
+  </Box>
+
+  ## Революционер
+  [color=red]Революционер[/color] это член экипажа, которого завербовал [bold][color=#5e9cff]лидер революции[/color][/bold].
+
+  [bold][color=red]Революционеры[/color] сами вербовать не могут,[/bold] но вполне способны делать грязную работу и выполнять приказы.
+</Document>

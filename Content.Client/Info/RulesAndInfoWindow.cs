@@ -4,6 +4,8 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.ContentPack;
+using Content.Shared._FEC14.Guidebook; // FEC14
+using Robust.Shared.Utility; // FEC14
 
 namespace Content.Client.Info
 {
@@ -64,7 +66,7 @@ namespace Content.Client.Info
 
         private static Control MakeSection(string title, string path, bool markup, IResourceManager res)
         {
-            return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/{path}"), markup);
+            return new InfoSection(title, res.ContentFileReadAllText(FECLocalizedServerInfo.Resolve(res, new ResPath($"/ServerInfo/{path}"))), markup); // FEC14
         }
 
     }

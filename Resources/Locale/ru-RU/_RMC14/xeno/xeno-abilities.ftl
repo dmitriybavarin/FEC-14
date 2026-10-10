@@ -15,7 +15,7 @@ rmc-xeno-psychic-target-unknown = этот разум
 rmc-xeno-psychic-radiance-message = Излучить мысленное послание.
 rmc-xeno-psychic-radiance-no-targets = Рядом нет разумов, которым можно излучить мысли.
 rmc-xeno-psychic-radiance-sent = Мы излучаем мысли ближайшим разумам: { $count }.
-rmc-xeno-psychic-give-order-message = Отдать приказ: { $target }.
+rmc-xeno-psychic-give-order-message = Отдать приказ ({ $target }).
 rmc-xeno-psychic-give-order-must-watch = Чтобы отдать приказ, нужно наблюдать за сестрой.
 rmc-xeno-psychic-give-order-sent = Мы отдаем приказ: { $target }.
 rmc-xeno-psychic-target-invalid = Этот разум нам больше недоступен.
@@ -377,7 +377,7 @@ rmc-xeno-apprehend-expire = Мы слишком долго ждали, удар 
 
 rmc-xeno-rage-lock = Достигнув предела ярости, мы чувствуем эйфорию! Ярость ЗАФИКСИРОВАНА на максимуме!
 rmc-xeno-rage-expire = Надпочечники сводит судорогой. { $cooldown } сек. мы не сможем копить ярость.
-rmc-xeno-rage-examine = Заряды ярости: { $amount }/{ $max }.
+rmc-xeno-rage-examine = Зарядов ярости { $amount } из { $max }.
 
 rmc-xeno-eviscerate-fail = Без зарядов ярости потрошение невозможно!
 

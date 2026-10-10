@@ -7,4 +7,4 @@ encryption-keys-panel-locked = Сначала откройте техничес�
 
 examine-encryption-channels-prefix = Доступные частоты:
 examine-encryption-channel = [color={$color}]{$key} для канала "{$id}" ({NATURALFIXED($freq, 1)})[/color]
-examine-encryption-default-channel = Основной канал: [color={$color}]{$channel}[/color].
+examine-encryption-default-channel = Основной канал [color={$color}]{$channel}[/color].

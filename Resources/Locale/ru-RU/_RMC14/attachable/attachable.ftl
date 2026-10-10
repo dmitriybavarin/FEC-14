@@ -45,13 +45,13 @@ rmc-attachable-examine-condition-unwielded = оружие [bold]не в двух
 rmc-attachable-examine-condition-active = модуль [bold]включен[/bold]
 rmc-attachable-examine-condition-inactive = модуль [bold]выключен[/bold]
 
-rmc-attachable-examine-condition-whitelist-comps = у оружия [bold]есть {$compNumber}[/bold] из компонентов: [bold]{$comps}[/bold]
+rmc-attachable-examine-condition-whitelist-comps = у оружия [bold]есть {$compNumber}[/bold] из компонентов [bold]{$comps}[/bold]
 rmc-attachable-examine-condition-whitelist-sizes = размер оружия [bold]один из[/bold]: [bold]{$sizes}[/bold]
-rmc-attachable-examine-condition-whitelist-tags = у оружия [bold]есть {$tagNumber}[/bold] из тегов: [bold]{$tags}[/bold]
+rmc-attachable-examine-condition-whitelist-tags = у оружия [bold]есть {$tagNumber}[/bold] из тегов [bold]{$tags}[/bold]
 
-rmc-attachable-examine-condition-blacklist-comps = у оружия [bold]нет {$compNumber}[/bold] из компонентов: [bold]{$comps}[/bold]
+rmc-attachable-examine-condition-blacklist-comps = у оружия [bold]нет {$compNumber}[/bold] из компонентов [bold]{$comps}[/bold]
 rmc-attachable-examine-condition-blacklist-sizes = размер оружия [bold]не из[/bold]: [bold]{$sizes}[/bold]
-rmc-attachable-examine-condition-blacklist-tags = у оружия [bold]нет {$tagNumber}[/bold] из тегов: [bold]{$tags}[/bold]
+rmc-attachable-examine-condition-blacklist-tags = у оружия [bold]нет {$tagNumber}[/bold] из тегов [bold]{$tags}[/bold]
 
 rmc-attachable-examine-ranged-accuracy = [color={$colour}]{$sign}{$accuracy}[/color] к множителю точности.
 rmc-attachable-examine-ranged-scatter = [color={$colour}]{$sign}{$scatter}[/color] град. разброса.

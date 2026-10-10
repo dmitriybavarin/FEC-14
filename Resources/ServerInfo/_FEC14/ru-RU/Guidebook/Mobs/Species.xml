@@ -1,0 +1,19 @@
+<Document>
+  # Расы
+
+  В Nanotrasen работают представители разных разумных рас.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнид"/>
+  <GuideEntityEmbed Entity="MobDiona" Caption="Диона"/>
+  <GuideEntityEmbed Entity="MobDwarf" Caption="Дварф"/>
+  <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobMoth" Caption="Ниан"/>
+  <GuideEntityEmbed Entity="MobReptilian" Caption="Унатх"/>
+  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слаймолюд"/>
+  <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
+  </Box>
+
+</Document>

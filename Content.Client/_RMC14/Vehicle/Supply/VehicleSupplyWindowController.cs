@@ -73,7 +73,7 @@ public sealed class VehicleSupplyWindowController : IDisposable
 
         if (preview == null || string.IsNullOrWhiteSpace(preview.VehicleId))
         {
-            _window.PreviewTitle.Text = "Vehicle Preview";
+            _window.PreviewTitle.Text = Loc.GetString("fec-code-vehicle-supply-preview"); // FEC14
             _window.VehiclePreview.SetPrototype(null);
             _previewLayers.Clear();
             _previewDirty = false;

@@ -1,0 +1,50 @@
+<Document>
+  # Хранение энергии
+  Из-за [textlink="разгона генераторов" link="Ramping"] важно иметь накопители энергии: они сглаживают скачки и провалы потребления и дают энергию, когда ее не хватает.
+
+  У каждого трансформатора своего уровня напряжения ([color=orange]ВН[/color], [color=yellow]СН[/color] и [color=green]НН[/color]) есть небольшой аккумулятор для мелких скачков и провалов, но при большой нехватке энергии в сети его не хватит.
+
+  ## СМЭС
+
+  Сверхпроводящий магнитный накопитель энергии (СМЭС) это устройство, которое запасает много энергии и быстро ее отдает.
+
+  <Box>
+    <GuideEntityEmbed Entity="SMESBasic"/>
+  </Box>
+
+  Чтобы зарядить СМЭС, подайте энергию [color=orange]ВН[/color] на кабельный терминал, направленный на СМЭС. СМЭС берет энергию из терминала и отдает ее снизу.
+
+  Терминал не дает [color=orange]входу ВН[/color] и [color=orange]выходу ВН[/color] соединиться.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="CableTerminal"/>
+    </Box>
+
+    <Box>
+      <GuideEntityEmbed Entity="CableHV" Caption="Выход"/>
+      <GuideEntityEmbed Entity="SMESBasic" Caption="" Margin="0"/>
+      <GuideEntityEmbed Entity="CableTerminal" Caption="" Margin="0" Rotation="270"/>
+      <GuideEntityEmbed Entity="CableHV" Caption="Вход"/>
+    </Box>
+  </Box>
+
+  СМЭС запасает [color=orange][protodata="SMESBasic" comp="Battery" member="MaxCharge" format="N0"/] Дж[/color] энергии и отдает максимум [color=orange][protodata="SMESBasic" comp="PowerNetworkBattery" member="MaxSupply" format="N0"/] Вт[/color].
+
+  Когда аккумулятор полон, СМЭС пропускает энергию с входного кабеля на выходной. При нехватке энергии СМЭС наращивает отдачу и покрывает потребление.
+
+  ## Продвинутый СМЭС
+  Продвинутый СМЭС это улучшенная версия СМЭС, которая запасает еще больше энергии.
+
+  <Box>
+    <GuideEntityEmbed Entity="SMESAdvanced"/>
+  </Box>
+
+  В основном их ставят в блоки СМЭС станции, чтобы запасать много энергии для электросети.
+  Они дают инженерам время запустить питание в начале раунда или надолго обеспечивают энергией при ее нехватке.
+
+  Продвинутый СМЭС запасает [color=orange][protodata="SMESAdvanced" comp="Battery" member="MaxCharge" format="N0"/] Дж[/color] энергии и отдает максимум [color=orange][protodata="SMESAdvanced" comp="PowerNetworkBattery" member="MaxSupply" format="N0"/] Вт[/color].
+
+  Помните, что это не волшебное средство от нехватки энергии, и бесконечно запасать энергию они не могут.
+  Нагрузка станции быстро их разрядит, если их не поддерживает хоть какой-то источник энергии.
+</Document>

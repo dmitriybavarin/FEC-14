@@ -29,6 +29,7 @@ namespace Content.Shared.Administration
         {
             public string Name;
             public AdminFlags Flags;
+            public int FECWeight; // FEC14
         }
     }
 
@@ -68,6 +69,7 @@ namespace Content.Shared.Administration
         {
             public string Name = string.Empty;
             public AdminFlags Flags;
+            public int? FECWeight; // FEC14
         }
 
         [Serializable, NetSerializable]
@@ -83,6 +85,7 @@ namespace Content.Shared.Administration
 
             public string Name = string.Empty;
             public AdminFlags Flags;
+            public int? FECWeight; // FEC14
         }
     }
 }

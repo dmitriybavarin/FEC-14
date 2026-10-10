@@ -1,0 +1,103 @@
+<Document>
+
+  # Руководство новичка
+
+  <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+      [bold][color=#8fe39c]Совет[/color][/bold]\nКлавишей осмотра [color=yellow][bold][keybind="ExamineEntity"][/bold][/color] можно осматривать любые предметы прямо в справочнике. Настройте управление под себя и обязательно загляните в клавиши, которые есть только в FEC-14.
+    </Box>
+  </ColorBox>
+
+  <Table Columns="2">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#8fc3ff]Играете за морпехов?[/color][/bold]\n[textlink="Ваш первый день стрелком" link="RMCGuideRoleRifleman"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="3">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+        [bold][color=#d39cff]Играете за ксеноморфов?[/color][/bold]\n[textlink="Вы только что родились в улье. Что дальше?" link="RMCGuideRoleDrone"]
+      </Box>
+    </ColorBox>
+  </Table>
+
+  # Управление
+
+  <Box>Клавиши можно поменять в любой момент здесь:</Box>
+  <Box Orientation="Vertical"><CommandButton Text="ui-options-tab-controls" Command="options 2"/></Box>
+
+  ## Особые клавиши FEC-14
+
+  <Table Columns="2">
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="CMUniqueAction"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Особое действие оружия: передернуть помпу дробовика, открыть гранатомет</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="CMXenoWideSwing"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Широкая атака ксеноморфа в ближнем бою</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCActivateAttachableUnderbarrel"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Включить подствольный модуль</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCCycleFireMode"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Сменить режим огня</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="CMHolsterPrimary"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Убрать или достать основное оружие</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="CMHolsterSecondary"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Убрать или достать дополнительное оружие</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCPickUpDroppedItems"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Поднять последний брошенный предмет</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCInteractWithOtherHand"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Действие неактивной рукой</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCActivateAttachableRail"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Включить модуль на планке (прицелы)</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">[color=yellow][bold][keybind="RMCActivateAttachableStock"][/bold][/color]</Box></ColorBox>
+    <ColorBox Color="#1c1c1c" OutlineColor="#555555"><Box HorizontalAlignment="Left" Margin="4">Включить модуль приклада</Box></ColorBox>
+  </Table>
+
+  ## Передвижение
+  Ходить по миру можно клавишами [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
+  Пока зажата [color=yellow][bold][keybind="Walk"][/bold][/color], персонаж идет шагом.
+
+  В настройках управления шаг можно сделать [color=cyan]переключателем[/color].
+
+  [color=cyan]Тащить[/color] предметы можно клавишей [color=yellow][bold][keybind="TryPullObject"][/bold][/color].
+  Пока вы что-то тащите, [color=yellow][bold][keybind="MovePulledObject"][/bold][/color] подтягивает это к курсору мыши.
+  [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color] отпускает то, что вы тащите.
+
+  ## Взаимодействие
+  Обычное взаимодействие выполняется клавишей [color=yellow][bold][keybind="Use"][/bold][/color].
+  Оно [bold]зависит от контекста[/bold] и от предмета в активной руке.
+  Клавишей [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] выполняется [bold]альтернативное действие[/bold].
+
+  Для [color=cyan]простого взаимодействия[/color] нажмите [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+  Это то же самое, что [bold]действие с пустыми руками[/bold].
+  [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] делает то же самое с предметом в руке.
+  Чаще всего это нужно, чтобы выполнить простое действие, когда руки заняты, например открыть дверь.
+
+  Если навести курсор на предмет и нажать [color=yellow][bold][keybind="UIRightClick"/][/bold][/color], откроется [color=cyan]контекстное меню[/color].
+  В нем удобно разбирать большие кучи предметов и выполнять [bold]дополнительные действия.[/bold]
+
+  [color=cyan]Осмотр[/color] выполняется клавишей [color=yellow][bold][keybind="ExamineEntity"][/bold][/color]: откроется окно с названием предмета, коротким описанием и другими важными подробностями.
+  [italic]Осматривайте все вокруг, так проще понять, что это за предмет и на что он способен[/italic].
+
+  ## Руки
+  [color=yellow][bold][keybind="Use"][/bold][/color] по предмету в мире берет его в активную руку.
+  Сменить активную руку можно клавишей [color=yellow][bold][keybind="SwapHands"][/bold][/color].
+
+  Предмет в руке можно [color=cyan]бросить[/color] клавишей [color=yellow][bold][keybind="Drop"][/bold][/color] или [color=cyan]кинуть[/color] в сторону курсора клавишей [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color].
+
+  ## Инвентарь
+  [color=cyan]Открыть[/color] инвентарь можно клавишей [color=yellow][bold][keybind="OpenInventoryMenu"][/bold][/color].
+  В каждую ячейку на экране можно положить подходящий [bold]предмет[/bold] или [bold]одежду[/bold].
+
+  Две ячейки на панели быстрого доступа отведены под [bold]рюкзак и пояс[/bold].
+  Открыть их можно клавишей [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] или щелчком по значку [bold]в правом нижнем углу[/bold].
+
+  [color=yellow][bold][keybind="MoveStoredItem"][/bold][/color] [color=cyan]достает предмет[/color] из сумки.
+  Пока вы перетаскиваете предмет, [color=yellow][bold][keybind="RotateStoredItem"][/bold][/color] его [color=cyan]поворачивает[/color].
+
+  С предметами в сумке можно делать все то же, что и обычно, в том числе [color=cyan]осматривать[/color] их и открывать [color=cyan]контекстное меню[/color].
+
+  ## Камера
+  Камеру можно [color=cyan]приближать[/color] и отдалять клавишами [color=yellow][bold][keybind="ZoomIn"][/bold][/color] и [color=yellow][bold][keybind="ZoomOut"][/bold][/color], а сбросить масштаб клавишей [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
+  Так же ее можно [color=cyan]поворачивать[/color] влево и вправо клавишами [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] и [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color].
+  Вернуть камеру к повороту карты можно клавишей [color=yellow][bold][keybind="CameraReset"][/bold][/color].
+
+</Document>

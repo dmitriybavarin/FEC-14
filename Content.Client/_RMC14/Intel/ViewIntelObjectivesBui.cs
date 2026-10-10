@@ -87,7 +87,7 @@ public sealed class ViewIntelObjectivesBui(EntityUid owner, Enum uiKey) : BoundU
         if (_window?.HideAreasButton == null)
             return;
 
-        _window.HideAreasButton.Text = _hideAreas ? "Show Areas" : "Hide Areas";
+        _window.HideAreasButton.Text = _hideAreas ? Loc.GetString("fec-code-intel-show-areas") : Loc.GetString("fec-code-intel-hide-areas"); // FEC14
     }
 
     private void ApplyFilter(string query)

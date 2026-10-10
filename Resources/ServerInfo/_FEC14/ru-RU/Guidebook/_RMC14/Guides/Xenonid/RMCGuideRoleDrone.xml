@@ -1,0 +1,85 @@
+<Document>
+
+  # Вы только что родились в улье!
+  ## Что дальше?
+
+  <ColorBox Color="#24142e" OutlineColor="#8a4ab0" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      [bold][color=#d39cff]Ликуйте![/color][/bold] Мы присоединились к улью личинкой. Пока мы умеем немного, но наш потенциал безграничен!
+      <Box>
+        <GuideEntityEmbed Entity="CMXenoLarva"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ## 1. Эволюция
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Пора за работу! Как только сможем, нужно эволюционировать. Для этого придется подождать и немного повзрослеть.
+      - Новичкам лучше становиться трутнем. Трутни отвечают за постройку обороны улья.
+      <Box>
+        <GuideEntityEmbed Entity="RMCGuidebookActionXenoEvolve"/>
+        <GuideEntityEmbed Entity="CMXenoDrone"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ## 2. Строительство
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Вот кое-что из того, что мы умеем строить!
+      <Box>
+        <GuideEntityEmbed Entity="WallXenoResin"/>
+        <GuideEntityEmbed Entity="WallXenoMembrane"/>
+        <GuideEntityEmbed Entity="DoorXenoResin"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ## 3. Смола
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Еще одна важная задача трутня: сажать смолу.
+      - На смоле можно отдыхать и восстанавливать здоровье и силы!
+      - Строить улей можно только на смоле.
+      <GuideEntityEmbed Entity="RMCGuidebookActionXenoRest"/>
+      <Box>
+        <GuideEntityEmbed Entity="XenoWeeds"/>
+        <GuideEntityEmbed Entity="XenoWeedsSource"/>
+        <GuideEntityEmbed Entity="XenoWeeds"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ## 4. Королева и яйца
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Наша главная цель: защищать королеву и откладывать ее яйца, чтобы улей рос!
+      - Яйца можно класть на смолу улья, внутри них лицехваты.
+      - Лицехвата можно достать из яйца, но вдали от смолы он живет недолго!
+      <Box>
+        <GuideEntityEmbed Entity="CMXenoQueen"/>
+        <GuideEntityEmbed Entity="XenoEgg"/>
+        <GuideEntityEmbed Entity="XenoHiveWeeds"/>
+        <GuideEntityEmbed Entity="CMXenoParasite"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+  ## 5. Пленники
+  <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2">
+    <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+      - Пленников можно проглотить и отнести в улей, чтобы замуровать их там!
+      - Найдите высокого и повалите его: включите режим вреда и нажмите на него правой кнопкой мыши.
+      - Когда он обездвижен, перетащите его спрайт на свой, чтобы начать глотать. Не забывайте и дальше валить его с ног!
+      - Проглотив, идите к ближайшему улью и заразите пленника от яйца, а затем тем же движением перетащите его на стену, чтобы замуровать.
+      - Когда лицехват попадает на живого носителя, рождается новая личинка! Ликуйте!
+      - Носители с растущей личинкой очень ценны. Как можно скорее закрепите их на смоляной стене, стоящей на смоле улья.
+      <Box>
+        <GuideEntityEmbed Entity="RMCGuidebookCorpseColonistBurst"/>
+        <GuideEntityEmbed Entity="CMXenoLarva"/>
+      </Box>
+    </Box>
+  </ColorBox>
+
+</Document>

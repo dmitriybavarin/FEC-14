@@ -13,7 +13,7 @@ namespace Content.Server.Atmos.Commands
         [Dependency] private readonly IEntityManager _entities = default!;
 
         public string Command => "settemp";
-        public string Description => "Sets a tile's temperature (in kelvin).";
+        public string Description => Loc.GetString("fec-cmd-set-temperature-desc"); // FEC14
         public string Help => "Usage: settemp <X> <Y> <GridId> <Temperature>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

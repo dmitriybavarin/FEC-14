@@ -1,0 +1,12 @@
+fec-faction-unmc = Морпехи
+fec-faction-rmcxeno = Ксеноморфы
+fec-faction-rmcdumb = Животные
+fec-faction-spp = СССП
+fec-faction-halcyon = Halcyon
+fec-faction-clf = CLF
+fec-faction-weya = Ве-Я
+fec-faction-civilian = Гражданские
+fec-faction-royalmarines = Королевские морпехи
+fec-faction-bureau = Бюро
+fec-faction-tse = TSE
+fec-faction-hefa = HEFA

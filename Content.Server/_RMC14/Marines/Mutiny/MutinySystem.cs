@@ -59,13 +59,13 @@ public sealed class MutinySystem : SharedMutinySystem
         {
             Verb mutineer = new()
             {
-                Text = "Make mutineer",
+                Text = Loc.GetString("fec-code-mutiny-verb-make"), // FEC14
                 Category = VerbCategory.Antag,
                 Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_RMC14/Interface/job_icons/Misc/mutiny.rsi"),
                     "hudmutineer"),
                 Act = () => { EnsureComp<MutineerComponent>(args.Target); },
                 Impact = LogImpact.High,
-                Message = "Make mutineer",
+                Message = Loc.GetString("fec-code-mutiny-verb-make"), // FEC14
             };
             args.Verbs.Add(mutineer);
         }
@@ -74,14 +74,14 @@ public sealed class MutinySystem : SharedMutinySystem
         {
             Verb leader = new()
             {
-                Text = "Make mutineer leader",
+                Text = Loc.GetString("fec-code-mutiny-verb-make-leader"), // FEC14
                 Category = VerbCategory.Antag,
                 // Use the regular mutineer icon for the admin verb until a unique leader icon exists
                 Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_RMC14/Interface/job_icons/Misc/mutiny.rsi"),
                     "hudmutineerleader"),
                 Act = () => { EnsureComp<MutineerLeaderComponent>(args.Target); },
                 Impact = LogImpact.High,
-                Message = "Make mutineer leader",
+                Message = Loc.GetString("fec-code-mutiny-verb-make-leader"), // FEC14
             };
             args.Verbs.Add(leader);
         }
@@ -100,7 +100,7 @@ public sealed class MutinySystem : SharedMutinySystem
         if (TryComp<ActorComponent>(ent, out var actor))
         {
             _chatManager.DispatchServerMessage(actor.PlayerSession, Loc.GetString("mutineer-status-added"));
-            _chatManager.SendAdminAnnouncement($"Player {actor.PlayerSession.Name} was made a mutineer.");
+            _chatManager.SendAdminAnnouncement(Loc.GetString("fec-code-mutiny-admin-made", ("player", actor.PlayerSession.Name))); // FEC14
         }
 
         Dirty(ent);
@@ -114,7 +114,7 @@ public sealed class MutinySystem : SharedMutinySystem
         if (TryComp<ActorComponent>(ent, out var actorComponent))
         {
             _chatManager.DispatchServerMessage(actorComponent.PlayerSession, Loc.GetString("mutineer-status-removed"));
-            _chatManager.SendAdminAnnouncement($"Player {actorComponent.PlayerSession.Name} is no longer a mutineer.");
+            _chatManager.SendAdminAnnouncement(Loc.GetString("fec-code-mutiny-admin-removed", ("player", actorComponent.PlayerSession.Name))); // FEC14
         }
 
         Dirty(ent);
@@ -137,7 +137,7 @@ public sealed class MutinySystem : SharedMutinySystem
         if (TryComp<ActorComponent>(ent, out var actor))
         {
             _chatManager.DispatchServerMessage(actor.PlayerSession, Loc.GetString("mutineer-leader-status-added"));
-            _chatManager.SendAdminAnnouncement($"Player {actor.PlayerSession.Name} was made a mutineer leader.");
+            _chatManager.SendAdminAnnouncement(Loc.GetString("fec-code-mutiny-admin-made-leader", ("player", actor.PlayerSession.Name))); // FEC14
         }
         Dirty(ent);
     }
@@ -147,7 +147,7 @@ public sealed class MutinySystem : SharedMutinySystem
         if (TryComp<ActorComponent>(ent, out var actor))
         {
             _chatManager.DispatchServerMessage(actor.PlayerSession, Loc.GetString("mutineer-leader-status-removed"));
-            _chatManager.SendAdminAnnouncement($"Player {actor.PlayerSession.Name} is no longer a mutineer leader.");
+            _chatManager.SendAdminAnnouncement(Loc.GetString("fec-code-mutiny-admin-removed-leader", ("player", actor.PlayerSession.Name))); // FEC14
         }
         _actions.RemoveAction(ent.Owner, ent.Comp.RecruitActionEntity);
         Dirty(ent);

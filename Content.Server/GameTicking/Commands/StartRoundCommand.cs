@@ -11,7 +11,7 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "startround";
-        public string Description => "Ends PreRoundLobby state and starts the round.";
+        public string Description => Loc.GetString("fec-cmd-start-round-desc"); // FEC14
         public string Help => String.Empty;
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

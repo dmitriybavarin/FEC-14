@@ -11,7 +11,7 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "restartround";
-        public string Description => "Ends the current round and starts the countdown for the next lobby.";
+        public string Description => Loc.GetString("fec-cmd-restart-round-desc"); // FEC14
         public string Help => string.Empty;
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -34,7 +34,7 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "restartroundnow";
-        public string Description => "Moves the server from PostRound to a new PreRoundLobby.";
+        public string Description => Loc.GetString("fec-cmd-restart-round-desc-2"); // FEC14
         public string Help => String.Empty;
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)

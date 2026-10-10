@@ -1,6 +1,6 @@
 paper-ui-blank-page-message = Эта страница намеренно оставлена пустой
 paper-component-examine-detail-has-words = На листе что-то написано.
-paper-component-examine-detail-stamped-by = Печати: {$stamps}.
+paper-component-examine-detail-stamped-by = На бумаге стоят печати {$stamps}.
 paper-component-illiterate = Вы не умеете писать.
 paper-component-illiterate-mime = Обет запрещает вам писать.
 paper-component-action-stamp-paper-other = {CAPITALIZE($user)} ставит печать.

@@ -9,4 +9,4 @@ swap-teleporter-popup-teleport-fail = Устройство срабатывае�
 swap-teleporter-verb-destroy-link = Разорвать квантовую связь
 swap-teleporter-examine-link-present = [color=forestgreen]Связано с другим устройством.[/color] Alt-клик, чтобы разорвать квантовую связь.
 swap-teleporter-examine-link-absent = [color=yellow]Сейчас ни с чем не связано.[/color] Используйте на другом устройстве, чтобы установить квантовую связь.
-swap-teleporter-examine-time-remaining = До перезарядки: [color=purple]{$second} с.[/color]
+swap-teleporter-examine-time-remaining = Перезарядка закончится через [color=purple]{$second} с[/color].

@@ -1,0 +1,54 @@
+<Document>
+  # Превентивные обвинения
+  - Применяются, чтобы держать людей под стражей бессрочно.
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Обвинение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Описание
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Невменяемость
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Объявляется [bold]главврачом[/bold] или синтетиком, если человек ведет себя так, что его нельзя считать находящимся в здравом уме.\nКогда его признают вменяемым, это обвинение с него можно снять.
+        \n\- Если их нет, [color=#008000][bold]командующий[/bold][/color] или [color=#8B0000][bold]начальник ВП[/bold][/color] может поручить оценку [bold]офицеру[/bold] медотдела. В этом случае назначенному нужно объяснить, что влечет обвинение в невменяемости.
+        \n\- При подтвержденном самоубийстве или попытке самоубийства невменяемость можно применить без оценки. Человек может это обжаловать, в том числе у любого медика.
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Военнопленный
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Враждебный представитель законного и признанного государства или любой, кого признали членом так называемой угрозы "CLF" или кто носит ее цвета или знаки различия.
+        \n\- Военнопленных нельзя казнить. Подробности и исключения в разделе [textlink="о третьих сторонах" link="RMCMarineSOPNONModThirdparty"].
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Задержание по усмотрению
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Обвинение на усмотрение [color=#00CBFE][bold]командующего офицера[/bold][/color]: позволяет задержать персонал по любой причине ради безопасности и пользы операции.
+        \n\- Обжаловать его можно только у [color=#00CBFE][bold]командующего офицера[/bold][/color] или в [color=#ffa500][bold]военной прокуратуре[/bold][/color], а [color=#00CBFE][bold]командующий офицер[/bold][/color] может снять его в любой момент.
+      </Box>
+    </ColorBox>
+
+  </Table>
+</Document>

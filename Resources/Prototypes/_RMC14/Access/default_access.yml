@@ -3,54 +3,54 @@
 #all of their children will be listed inside them
 - type: accessLevel
   id: RMCMarineDefaultAccess
-  name: Marine Default
+  name: fec-access-marine-default
   hidden: true
 
 - type: accessLevel
   id: RMCBaseHidden
-  name: protobaseaccess UNMC Hidden
+  name: fec-access-base-hidden
   faction: FactionMarine
   accessGroup: UNMC Hidden
   hidden: true
 
 - type: accessLevel
   id: RMCBaseCommandAccess
-  name: protobaseaccess UNMC Command
+  name: fec-access-base-command
   faction: FactionMarine
   accessGroup: UNMC Command
 
 - type: accessLevel
   id: RMCBaseMPAccess
-  name: protobaseaccess UNMC Military Police
+  name: fec-access-base-mp
   faction: FactionMarine
   accessGroup: UNMC Military Police
 
 - type: accessLevel
   id: RMCBaseMedicalAccess
-  name: protobaseaccess UNMC Medical
+  name: fec-access-base-medical
   faction: FactionMarine
   accessGroup: UNMC Medical
 
 - type: accessLevel
   id: RMCBaseEngineeringAccess
-  name: protobaseaccess UNMC Engineering
+  name: fec-access-base-engineering
   faction: FactionMarine
   accessGroup: UNMC Engineering
 
 - type: accessLevel
   id: RMCBaseMarineAccess
-  name: protobaseaccess UNMC Marine
+  name: fec-access-base-marine
   faction: FactionMarine
   accessGroup: UNMC Marine Access
 
 - type: accessLevel
   id: RMCBaseSquadAccess
-  name: protobaseaccess UNMC Squad
+  name: fec-access-base-squad
   faction: FactionMarine
   accessGroup: UNMC Squad
 
 - type: accessLevel
   id: RMCBaseARESAccess
-  name: protobaseaccess UNMC ARES
+  name: fec-access-base-ares
   faction: FactionMarine
   accessGroup: UNMC ARES

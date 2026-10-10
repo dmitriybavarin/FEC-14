@@ -1,0 +1,39 @@
+<Document>
+  ### Касты ксеноморфов
+
+  Руководства по штаммам прикреплены к их родительской касте.
+
+  <Table Columns="3">
+    <ColorBox Color="#1c1424" OutlineColor="#6a4a8a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#d39cff]Уровень 0-1[/color][/bold]
+        - [textlink="Личинка и трутень" link="RMCGuideRoleDrone"]
+        - [textlink="Защитник" link="RMCGuideRoleDefender"]
+        - [textlink="Страж" link="RMCGuideRoleSentinel"]
+        - [textlink="Бегун" link="RMCGuideRoleRunner"]
+        - [textlink="Лицехват" link="RMCGuideRoleParasite"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1424" OutlineColor="#6a4a8a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#d39cff]Уровень 2[/color][/bold]
+        - [textlink="Скрытень" link="RMCGuideRoleLurker"]
+        - [textlink="Воин" link="RMCGuideRoleWarrior"]
+        - [textlink="Владыка улья" link="RMCGuideRoleHivelord"]
+        - [textlink="Носитель" link="RMCGuideRoleCarrier"]
+        - [textlink="Копатель" link="RMCGuideRoleBurrower"]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1424" OutlineColor="#6a4a8a" Margin="2">
+      <Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+        [bold][color=#d39cff]Уровень 3 и королева[/color][/bold]
+        - [textlink="Опустошитель" link="RMCGuideRoleRavager"]
+        - [textlink="Преторианец" link="RMCGuideRolePraetorian"]
+        - [textlink="Бойлер" link="RMCGuideRoleBoiler"]
+        - [textlink="Крушитель" link="RMCGuideRoleCrusher"]
+        - [textlink="Королева" link="RMCGuideRoleQueen"]
+      </Box>
+    </ColorBox>
+  </Table>
+
+</Document>

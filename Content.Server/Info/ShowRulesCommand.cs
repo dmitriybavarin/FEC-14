@@ -17,7 +17,7 @@ public sealed class ShowRulesCommand : IConsoleCommand
     [Dependency] private readonly IPlayerManager _player = default!;
 
     public string Command => "showrules";
-    public string Description => "Opens the rules popup for the specified player.";
+    public string Description => Loc.GetString("fec-cmd-show-rules-desc"); // FEC14
     public string Help => "showrules <username> [seconds]";
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {

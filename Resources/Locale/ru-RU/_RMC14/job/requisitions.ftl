@@ -1,5 +1,5 @@
 cm-job-name-quartermaster = Квартирмейстер
-cm-job-description-quartermaster = Вы отвечаете за логистику корабля, в том числе за снабжение и провизию.
+cm-job-description-quartermaster = Вы отвечаете за логистику корабля, в том числе за поставки и провизию.
 cm-job-prefix-quartermaster = LO
 CMJobQuartermaster = Квартирмейстер
 

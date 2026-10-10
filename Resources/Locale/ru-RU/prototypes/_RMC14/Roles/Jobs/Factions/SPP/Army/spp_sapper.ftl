@@ -1,6 +1,6 @@
-ent-RMCRandomHumanoidSPPEngineerHostile = Роль призрака SPP: инженер
+ent-RMCRandomHumanoidSPPEngineerHostile = Роль призрака СССП: инженер
     .desc = { "" }
     .suffix = Спавнер, игрок, враг
-ent-RMCRandomHumanoidSPPEngineerFriendly = Роль призрака SPP: инженер
+ent-RMCRandomHumanoidSPPEngineerFriendly = Роль призрака СССП: инженер
     .desc = { "" }
     .suffix = Спавнер, игрок, союзник

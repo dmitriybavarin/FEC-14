@@ -97,6 +97,7 @@ namespace Content.Server.IoC
             IoCManager.Register<RMCActionsManager>();
             IoCManager.Register<RMCChatBansManager>();
             IoCManager.Register<GMRequestManager>();
+            IoCManager.Register<Content.Server._FEC14.Administration.FECAdminWeightManager>(); // FEC14
         }
     }
 }

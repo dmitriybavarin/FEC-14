@@ -18,7 +18,7 @@ public sealed partial class ConvertToReagent : EntityEffect
 
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return $"Converts to {TargetReagent} at {PercentRate * 100}% or {MinimumRate}u per second while in the body";
+        return Loc.GetString("fec-code-chem-effect-convert-to-reagent", ("v1", TargetReagent), ("v2", PercentRate * 100), ("v3", MinimumRate)); // FEC14
     }
 
     public override void Effect(EntityEffectBaseArgs args)

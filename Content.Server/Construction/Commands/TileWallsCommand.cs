@@ -18,7 +18,7 @@ public sealed class TileWallsCommand : IConsoleCommand
 
     // ReSharper disable once StringLiteralTypo
     public string Command => "tilewalls";
-    public string Description => "Puts an underplating tile below every wall on a grid.";
+    public string Description => Loc.GetString("fec-cmd-tile-walls-desc"); // FEC14
     public string Help => $"Usage: {Command} <gridId> | {Command}";
 
     public static readonly ProtoId<ContentTileDefinition> TilePrototypeId = "Plating";

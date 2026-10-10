@@ -396,7 +396,7 @@ public abstract class SharedOverwatchConsoleSystem : EntitySystem
         {
             if (_net.IsServer)
             {
-                _popup.PopupCursor("You're too busy peering through optics.", args.Actor, PopupType.MediumCaution);
+                _popup.PopupCursor(Loc.GetString("fec-code-overwatch-busy-optics"), args.Actor, PopupType.MediumCaution); // FEC14
             }
             return;
         }
@@ -568,8 +568,8 @@ public abstract class SharedOverwatchConsoleSystem : EntitySystem
         Dirty(ent);
 
         _adminLog.Add(LogType.RMCMarineAnnounce, $"{ToPrettyString(args.Actor)} sent {squadProto.Name} squad message: {args.Message}");
-        _core.CreateARESLog(ent, LogCat, (string)$"{Name(args.Actor)} sent a squad announcement: {args.Message}");
-        _marineAnnounce.AnnounceSquad($"[color=#3C70FF][bold]Overwatch:[/bold] {Name(args.Actor)} transmits: [font size=16][bold]{message}[/bold][/font][/color]", squadProto.ID);
+        _core.CreateARESLog(ent, LogCat, Loc.GetString("fec-code-ares-log-squad-announcement", ("sender", Name(args.Actor)), ("message", args.Message))); // FEC14
+        _marineAnnounce.AnnounceSquad(Loc.GetString("fec-code-overwatch-squad-announce", ("sender", Name(args.Actor)), ("message", message)), squadProto.ID); // FEC14
         _marineAnnounce.AnnounceSquad(Loc.GetString("rmc-overwatch-console-announce-message", ("operatorName", Name(args.Actor)), ("message", message)), squadProto.ID);
 
         var coordinates = TransformSystem.GetMapCoordinates(ent);

@@ -21,12 +21,10 @@ public sealed partial class Oxygenating : RMCChemicalEffect
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var healing = ActualPotency >= 3
-            ? $"Heals [color=green]all[/color] airloss damage and removes [color=green]{PotencyPerSecond}[/color] Lexorin from the bloodstream."
-            : $"Heals [color=green]{PotencyPerSecond}[/color] airloss damage and removes [color=green]{PotencyPerSecond}[/color] Lexorin from the bloodstream.";
+            ? Loc.GetString("fec-code-chem-effect-oxygenating-all", ("v1", PotencyPerSecond)) // FEC14
+            : Loc.GetString("fec-code-chem-effect-oxygenating-partial", ("v1", PotencyPerSecond)); // FEC14
 
-        return $"{healing}\n" +
-               $"Overdoses cause [color=red]{PotencyPerSecond * 0.5}[/color] toxin damage.\n" +
-               $"Critical overdoses cause [color=red]{PotencyPerSecond}[/color] brute and [color=red]{PotencyPerSecond * 2}[/color] toxin damage";
+        return Loc.GetString("fec-code-chem-effect-oxygenating", ("v1", healing), ("v2", PotencyPerSecond * 0.5), ("v3", PotencyPerSecond), ("v4", PotencyPerSecond * 2)); // FEC14
     }
 
     protected override void Tick(DamageableSystem damageable, FixedPoint2 potency, EntityEffectReagentArgs args)

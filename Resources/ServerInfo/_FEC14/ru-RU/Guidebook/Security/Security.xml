@@ -1,0 +1,43 @@
+<Document>
+# Служба безопасности
+Безопасность станции и экипажа для [color=#cb0000]службы безопасности[/color] превыше всего. Она готова к любой ситуации и всегда рядом, чтобы поддерживать порядок и сдерживать толпу.
+
+Ей противостоят [textlink="агенты Синдиката" link="Traitors"], [textlink="ядерные оперативники" link="NuclearOperatives"], [textlink="зомби" link="Zombies"] и буйные сотрудники.
+
+## Состав
+В [color=#cb0000]службу безопасности[/color] входят кадеты, офицеры безопасности и детектив. Руководят [color=#cb0000]службой безопасности[/color] надзиратель и глава службы безопасности.
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Офицер"/>
+    <GuideEntityEmbed Entity="ToyFigurineDetective" Caption="Детектив"/>
+    <GuideEntityEmbed Entity="ToyFigurineWarden" Caption="Надзиратель"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="ГСБ"/>
+  </Box>
+
+## Снаряжение
+Начнем с нелетальных средств, шаг выше просьбы подчиниться указаниям. И шоковая дубинка, и дизейблер могут ограничить движение нападающего, а наручники лишают преступника свободы движения и рук. Если при снятии наручников включен [color=red]режим вреда[/color], человек еще и упадет.
+  <Box>
+    <GuideEntityEmbed Entity="Stunbaton"/>
+    <GuideEntityEmbed Entity="Handcuffs"/>
+   <GuideEntityEmbed Entity="WeaponDisabler"/>
+  </Box>
+
+## Вспышки
+[color=#a4885c]Вспышки[/color] эффективно разгоняют толпу и помогают задерживать особенно увертливых: в большом радиусе они ослепляют всех без защиты.
+Стоит знать, что вспышку можно использовать и по площади (клавиша [color=yellow]Z[/color]), и атакуя ею кого-то в [color=red]режиме вреда[/color]. Важно: точечная вспышка действует в [color=yellow]2,5[/color] раза дольше, чем по площади.
+У [color=#cb0000]службы безопасности[/color] и [color=#a4885c]некоторых[/color] других сотрудников есть защита глаз от светошумовых гранат и вспышек.
+  <Box>
+    <GuideEntityEmbed Entity="Flash"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="GrenadeFlashBang"/>
+  </Box>
+
+## Летальное оружие
+Если обстановка требует, у [color=#cb0000]службы безопасности[/color] есть лазерные винтовки, дробовики, пистолеты и автоматы, способные обрушить мощный огонь на всех, кто встанет против станции.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
+    <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
+    <GuideEntityEmbed Entity="WeaponPistolMk58"/>
+    <GuideEntityEmbed Entity="WeaponRifleLecter"/>
+  </Box>
+</Document>

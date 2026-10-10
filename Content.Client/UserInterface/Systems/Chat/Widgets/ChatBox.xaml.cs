@@ -142,6 +142,10 @@ public partial class ChatBox : UIWidget
         // RMC14
         formatted.AddMarkupOrThrow(message);
         formatted.Pop();
+        // FEC14
+        if (message.Contains("[font size=", StringComparison.Ordinal))
+            formatted.AddText("\n");
+        // FEC14
 
         // RMC14
         formatted = FilterProblematicTags(formatted);

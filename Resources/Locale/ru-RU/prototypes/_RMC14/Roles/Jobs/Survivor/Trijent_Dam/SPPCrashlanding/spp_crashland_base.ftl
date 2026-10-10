@@ -1,3 +1,3 @@
-ent-RMCSurvivorPresetSPPCrashlandWeaponOnly = Пресет: выживший крушения SPP, только оружие
-ent-RMCSurvivorPresetSPPCrashlandNoBelt = Пресет: выживший крушения SPP, без пояса
-ent-RMCSurvivorPresetSPPCrashland = Пресет: выживший крушения SPP, все случайное
+ent-RMCSurvivorPresetSPPCrashlandWeaponOnly = Пресет: выживший крушения СССП, только оружие
+ent-RMCSurvivorPresetSPPCrashlandNoBelt = Пресет: выживший крушения СССП, без пояса
+ent-RMCSurvivorPresetSPPCrashland = Пресет: выживший крушения СССП, все случайное

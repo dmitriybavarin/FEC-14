@@ -1,0 +1,195 @@
+<Document>
+  # Переменные преступления
+  - Тяжесть этих преступлений бывает разной, и наказание зависит от нее.
+  <Table Columns="4">
+    <ColorBox>
+      <Box>
+        Обвинение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Описание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Мелкое
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Тяжкое
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Порча имущества КМП США
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Повреждение корабля или любые несанкционированные его модификации, как описано в стандартных процедурах.\nМатериалы для ремонта нужно брать со складов в техтоннелях.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Разбитое окно, поврежденная стена и т. п.\n[bold]Вернуть корабль в точности в прежнее состояние, а если это невозможно, отсидеть 7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- К тяжкому нарушению относятся разрушение или разбор стен либо нескольких окон.\n[bold]10 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Неподчинение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Невыполнение законного приказа старшего по званию или должности, находясь в его подчинении. \n[italic]Не относится к приказам, отданным при аресте: это [bold]сопротивление аресту[/bold][/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Невыполнение приказа, отданного не лично.\n[bold]7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Невыполнение приказа, отданного лично: по имени или с ясным указанием, что он адресован этому человеку.\n[bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Вмешательство
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Вмешательство в законный арест.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Вмешательство без злого умысла, например загородил дорогу или помог подняться.\n[bold]7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Вмешательство со злым умыслом или явно с целью помешать аресту.\n[bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Незаконное использование подслушивающих устройств
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Несанкционированное использование подслушивающих устройств в нарушение стандартных процедур.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Незаконная установка подслушивающего устройства в общественном месте, например в спортзале.\n[bold]7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Незаконная установка подслушивающего устройства в защищенной зоне или зоне со шторами приватности, например в CIC или кабинете связного.\n[italic]Если устройство к тому же связано с иностранным правительством или террористической организацией, это дополнительно считается подрывной деятельностью[/italic].\n[bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Сопротивление аресту
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Сопротивление или отказ подчиниться законному аресту, задержанию, обыску или дисциплинарному взысканию.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Отказ подчиниться.\n[bold]5 минут.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Сопротивление бегством или силой.\n[bold]10 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Пособничество
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Прямая или косвенная помощь другим в совершении преступления или подстрекательство к нему. Пособнику обязательно сообщают, в каких преступлениях обвиняется тот, кому он помогал.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]То же наказание, что и за совершенное преступление.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        [bold]То же наказание, что и за совершенное преступление.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Нарушение порядка \nв заключении
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Серьезное нарушение порядка в бриге под арестом. Может добавляться к любому обвинению.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Мелкое нарушение закона под арестом или в тюрьме.\n[bold]7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Тяжкое нарушение закона под арестом или в тюрьме.\n[bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Заведомо ложный донос
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        \- Ложное заявление, обвиняющее кого-либо в правонарушении. \nЛюбые действия, чтобы человека заподозрили в правонарушении, которого он не совершал. \n\- Сообщение о несовершенном правонарушении, чтобы отвести подозрения от себя. \n\- Ложные заявления, связанные с расследованием, считаются [bold]ложными показаниями[/bold].
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        По мелкому преступлению.\n[bold]7,5 минуты.[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        По тяжкому преступлению или более серьезному.\n[bold]15 минут.[/bold]
+      </Box>
+    </ColorBox>
+
+  </Table>
+</Document>

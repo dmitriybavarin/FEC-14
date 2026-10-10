@@ -43,7 +43,16 @@
                             HorizontalExpand="True" Margin="0 0 2 0" MinHeight="28" />
                     <Button Name="UndoButton" Access="Public" Text="{Loc ui-tactical-map-undo-button}" StyleClasses="OpenBoth"
                             HorizontalExpand="True" MinHeight="28" />
+                    <!-- FEC14 -->
+                    <Button Name="FECRedoButton" Access="Public" Text="{Loc fec-tacmap-redo-button}" StyleClasses="OpenBoth"
+                            HorizontalExpand="True" Margin="2 0 0 0" MinHeight="28" />
+                    <Button Name="FECEraserButton" Access="Public" Text="{Loc fec-tacmap-eraser-button}" StyleClasses="OpenBoth"
+                            HorizontalExpand="True" Margin="2 0 0 0" MinHeight="28" ToolTip="{Loc fec-tacmap-eraser-tooltip}" />
+                    <!-- FEC14 -->
                 </BoxContainer>
+                <!-- FEC14 -->
+                <Label Name="FECCanvasStatus" Access="Public" StyleClasses="LabelSmall" Margin="4 0" />
+                <!-- FEC14 -->
 
                 <!-- tools -->
                 <BoxContainer Orientation="Horizontal" Margin="2 2 2 0">

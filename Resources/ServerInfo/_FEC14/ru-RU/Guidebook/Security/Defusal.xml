@@ -1,0 +1,82 @@
+<Document>
+  # Обезвреживание большой бомбы
+  Итак, вы нашли большую бомбу, и она пищит. Такие бомбы долго не взрываются, но пробивают в корпусе большую дыру. Просто читайте дальше, и никто не взорвется.
+
+  ## Снаряжение
+  Для обезвреживания нужны два основных инструмента, но мультитул очень помогает опознавать провода.
+  <Box>
+    <GuideEntityEmbed Entity="Wirecutter"/>
+    <GuideEntityEmbed Entity="Screwdriver"/>
+    <GuideEntityEmbed Entity="Multitool"/>
+  </Box>
+
+  Из защиты поможет не разлететься на куски [color=yellow]костюм сапера[/color] или любое другое защитное снаряжение.
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadHelmetBombSuit"/>
+    <GuideEntityEmbed Entity="ClothingOuterSuitBomb"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitAtmos"/>
+  </Box>
+
+  ## Бомбы
+  Ниже два обычных вида бомб, которые вам попадутся. Учебная бомба лишь немного повредит корпус и обычно не убьет. А вот бомба Синдиката пробьет в корпусе большую дыру и разорвет вас на куски, если вы без защиты.
+  <Box>
+    <GuideEntityEmbed Entity="SyndicateBomb"/>
+    <GuideEntityEmbed Entity="TrainingBomb"/>
+  </Box>
+
+  ## Взведение
+  Чтобы взвести бомбу, нажмите по ней [color=yellow]правой кнопкой[/color] и выберите [color=yellow]"Начать отсчет"[/color] или нажмите по ней [color=yellow]с Alt[/color]. Она начнет пищать.
+
+  ## Время
+  У бомбы ограниченное время: минимум [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] секунд, максимум [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] секунд. Таймер видно при осмотре, если не перерезан провод PRCD. Когда таймер дойдет до нуля, бомба взорвется.
+
+  ## Болты
+  По умолчанию взведенная бомба прикрепляется болтами к полу. Найдите провод BOLT и перережьте его, чтобы отключить болты, после чего бомбу можно открутить ключом и выкинуть в космос.
+
+  ## Провода
+  Чтобы обезвредить бомбу, нужен доступ к проводам. Откройте панель доступа [color=yellow]отверткой[/color]. Внутри много разных проводов. В обычной бомбе Синдиката около [color=yellow]10 проводов[/color]: 3 пустышки, [color=red]3 вызывают взрыв[/color], а остальные описаны ниже (вместе с проводами BOOM). С каждым проводом можно сделать 3 вещи:
+  - [color=yellow]Подать импульс[/color] мультитулом: так можно безопасно опознать большинство проводов.
+  - [color=red]Перерезать[/color] кусачками: это может вызвать разные эффекты, не режьте без причины!
+  - [color=green]Починить[/color] кусачками: так можно вернуть часть функций бомбы, если она не одноразовая.
+
+  Теперь о видах проводов.
+
+  ## Виды проводов
+  <Table Columns="2">
+    <ColorBox Color="#142030" OutlineColor="#3f6f9a" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Провод активации (LIVE)[/bold][/color]
+      - [color=yellow]Импульс[/color]: провод чирикнет, а взрыв отложится на 30 секунд.
+      - [color=red]Перерезать[/color]: обезвреживает активную бомбу, иначе запускает таймер.
+      - [color=green]Починить[/color]: ничего.
+    </Box></ColorBox>
+    <ColorBox Color="#2a2a14" OutlineColor="#B8B823" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Провод отсчета (PRCD)[/bold][/color]
+      - [color=yellow]Импульс[/color]: таймер перескакивает на 15 секунд вперед.
+      - [color=red]Перерезать[/color]: таймер перестает показываться при осмотре.
+      - [color=green]Починить[/color]: ничего.
+    </Box></ColorBox>
+    <ColorBox Color="#142a18" OutlineColor="#4aa05a" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Провод задержки (DLAY)[/bold][/color]
+      - [color=yellow]Импульс[/color]: взрыв откладывается на 30 секунд.
+      - [color=red]Перерезать[/color]: ничего.
+      - [color=green]Починить[/color]: ничего.
+    </Box></ColorBox>
+    <ColorBox Color="#2a1414" OutlineColor="#b04a4a" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Провод взрыва (BOOM)[/bold][/color]
+      - [color=yellow]Импульс[/color]: [color=red]взведенная бомба взорвется![/color]
+      - [color=red]Перерезать[/color]: [color=red]взведенная бомба взорвется![/color] Иначе бомба отключится.
+      - [color=green]Починить[/color]: снова включает ранее отключенную бомбу.
+    </Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Провод болтов (BOLT)[/bold][/color]
+      - [color=yellow]Импульс[/color]: болты провернутся.
+      - [color=red]Перерезать[/color]: болты отключатся, выкидывайте бомбу в космос!
+      - [color=green]Починить[/color]: болты снова включатся.
+    </Box></ColorBox>
+    <ColorBox Color="#1a1a1a" OutlineColor="#555555" Margin="2"><Box Orientation="Vertical" HorizontalAlignment="Left" Margin="6">
+      [color=#a4885c][bold]Пустышка[/bold][/color]
+      - Пустышки ничего не делают. Их можно свободно импульсить, резать и чинить, на бомбу это никак не влияет.
+    </Box></ColorBox>
+  </Table>
+</Document>

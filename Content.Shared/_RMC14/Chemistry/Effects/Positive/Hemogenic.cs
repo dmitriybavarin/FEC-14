@@ -19,13 +19,10 @@ public sealed partial class Hemogenic : RMCChemicalEffect
 
     protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        var baseText = $"Restores [color=green]{PotencyPerSecond}[/color]cl of blood while not hungry.\n" +
-                       $"Causes [color=red]{PotencyPerSecond}[/color] nutrient loss per second.\n" +
-                       $"Overdoses cause [color=red]{PotencyPerSecond}[/color] toxin damage.\n" +
-                       $"Critical overdoses cause [color=red]{PotencyPerSecond * 5}[/color] additional nutrient loss";
+        var baseText = Loc.GetString("fec-code-chem-effect-hemogenic", ("v1", PotencyPerSecond), ("v2", PotencyPerSecond * 5)); // FEC14
 
         return ActualPotency > 3
-            ? $"Deals [color=red]{PotencyPerSecond}[/color] brute, [color=red]{PotencyPerSecond * 2}[/color] airloss damage, and slows you down.\n{baseText}"
+            ? Loc.GetString("fec-code-chem-effect-hemogenic-strong", ("v1", PotencyPerSecond), ("v2", PotencyPerSecond * 2), ("base", baseText)) // FEC14
             : baseText;
     }
 

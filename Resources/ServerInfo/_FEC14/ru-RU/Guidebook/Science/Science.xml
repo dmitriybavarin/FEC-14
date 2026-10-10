@@ -1,0 +1,54 @@
+<Document>
+# Научный отдел
+[color=#c96dbf]Научный отдел[/color], которого часто называют НИО (научно-исследовательский отдел), зарабатывает очки исследований, открывает на них новые технологии и с их помощью печатает на станках новые предметы в помощь станции.
+
+## Состав
+В [color=#c96dbf]научный отдел[/color] входят научные ассистенты и ученые. Руководит [color=#c96dbf]научным отделом[/color] научный руководитель.
+
+  <Box>
+   <GuideEntityEmbed Entity="ToyFigurineScientist" Caption="Ученый"/>
+   <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="НР"/>
+  </Box>
+
+## Технологии
+  <Box>
+    <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/>
+    <GuideEntityEmbed Entity="ResearchAndDevelopmentServer"/>
+  </Box>
+Самое важное в отделе: сервер НИО, который хранит открытые технологии, и компьютер НИО, на котором открывают [color=#a4885c]технологии[/color].
+
+Каждая технология стоит [color=#a4885c]очков исследований[/color] и открывает рецепты на станках. У некоторых технологий есть требования, которые нужно открыть, прежде чем их исследовать.
+
+[textlink="Нажмите сюда, чтобы открыть список технологий." link="Technologies"].
+
+## Направления
+Технологии разделены на 4 направления:
+  <Box>
+    <GuideEntityEmbed Entity="Wrench" Caption="Промышленность"/>
+    <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Эксперименты"/>
+    <GuideEntityEmbed Entity="ComputerTelevision" Caption="Гражданские службы"/>
+    <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Арсенал"/>
+  </Box>
+
+<GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Посмотрите на ближайшей консоли НИО, какие исследования в каком направлении.
+
+## Уровни
+В каждом направлении до 3 уровней технологий. В начале открыт и доступен только первый.
+
+Чтобы двигаться дальше, нужно исследовать [color=brown]75%[/color] текущего уровня. То есть чтобы открыть исследования второго уровня, нужно изучить 75% первого.
+
+А вот на [color=green]третьем уровне[/color] становится интересно. Если исследовать технологию третьего уровня, технологии третьего уровня других направлений [color=brown]закрываются[/color]. Если, конечно, не найти обходной путь... об этом лучше спросить [color=purple]научного руководителя[/color].
+
+## Станки
+  <Box>
+    <GuideEntityEmbed Entity="Protolathe"/>
+    <GuideEntityEmbed Entity="CircuitImprinter"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ExosuitFabricator"/>
+    <GuideEntityEmbed Entity="MedicalTechFab"/>
+    <GuideEntityEmbed Entity="SecurityTechFab"/>
+  </Box>
+В станке можно выбрать сервер, чтобы печатать все открытые рецепты. Для рецептов нужны разные материалы (сталь, стекло, пластик, золото, плазма), их можно получить в отделе поставок или у утилизаторов.
+
+</Document>

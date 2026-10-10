@@ -1,0 +1,23 @@
+<Document>
+  # Стандартные процедуры
+
+  Это свод положений и правил КМП США.
+  \nНесоблюдение стандартных процедур может повлечь обвинение в [bold]несоблюдении процедуры[/bold].
+
+ ## Разделы
+  - [textlink="Общие положения" link="RMCMarineSOPGeneral"]
+  - [textlink="Снаряжение" link="RMCMarineSOPEquipment"]
+  - [textlink="Отделы" link="RMCMarineSOPDepartment"]
+  - [textlink="Неизменяемые процедуры" link="RMCMarineSOPNONMod"]
+
+  ## Неизменяемые процедуры
+
+  Процедуры в этих разделах можно менять только с разрешения [color=#ffa500][bold]военной прокуратуры[/bold][/color].
+
+  - [textlink="Неизменяемые: отделы" link="RMCMarineSOPNONModDepartment"]
+  - [textlink="Неизменяемые: командование" link="RMCMarineSOPNONModCommand"]
+  - [textlink="Неизменяемые: ограничения высадки" link="RMCMarineSOPNONModDeployment"]
+  - [textlink="Неизменяемые: персонал третьих сторон" link="RMCMarineSOPNONModThirdparty"]
+
+
+</Document>

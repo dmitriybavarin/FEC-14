@@ -1,6 +1,6 @@
 tech-disk-inserted = Вы вставляете диск, на сервер добавлен новый рецепт.
 tech-disk-examine-none = Этикетка пустая.
-tech-disk-examine = На этикетке маленькое точечное изображение. На нем: {$result}.
+tech-disk-examine = На этикетке маленькое точечное изображение, на нем {$result}.
 tech-disk-examine-more = Есть и другие изображения, но они слишком мелкие, чтобы разобрать.
 tech-disk-name-format = {$baseName} ({$technology})
 tech-disk-ui-name = Терминал дисков технологий

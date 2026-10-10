@@ -11,7 +11,7 @@ namespace Content.Server.Administration.Commands
         [Dependency] private readonly IEntityManager _e = default!;
 
         public string Command => "readyall";
-        public string Description => "Readies up all players in the lobby, except for observers.";
+        public string Description => Loc.GetString("fec-cmd-ready-all-desc"); // FEC14
         public string Help => $"{Command} | ̣{Command} <ready>";
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
