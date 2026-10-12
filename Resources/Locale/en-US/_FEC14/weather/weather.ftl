@@ -29,6 +29,7 @@ fec-weather-ui-status =
 fec-meteo-station-forecast = [color=#7fb3ff][bold]Weather report: { $location }[/bold][/color]
     { $body }
 fec-meteo-station-location-unknown = area of operations
+fec-meteo-station-idle-clear = Clear. No precipitation expected in the near future.
 fec-meteo-station-idle = Clear. Next forecast update in about { $minutes } min.
 fec-meteo-station-cooldown = Calm after the storm. Stable weather for about { $minutes } more min.
 fec-meteo-station-warning = [color=orange]STORM WARNING:[/color] { $event } in { $seconds } s. Get under a roof.

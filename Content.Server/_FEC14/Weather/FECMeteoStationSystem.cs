@@ -80,6 +80,7 @@ public sealed class FECMeteoStationSystem : EntitySystem
                 ("event", forecast.EventName ?? string.Empty)),
             RMCWeatherCycleState.Cooldown => Loc.GetString("fec-meteo-station-cooldown",
                 ("minutes", minutes)),
+            _ when forecast.ClearRound => Loc.GetString("fec-meteo-station-idle-clear"),
             _ => Loc.GetString("fec-meteo-station-idle",
                 ("minutes", minutes)),
         };

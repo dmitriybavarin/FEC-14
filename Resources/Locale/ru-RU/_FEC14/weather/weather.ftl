@@ -26,9 +26,10 @@ fec-weather-ui-status =
        *[other] Сейчас на карте { $weather }.
     }
 
-fec-meteo-station-forecast = [color=#7fb3ff][bold]Метеосводка: { $location }[/bold][/color]
+fec-meteo-station-forecast = [color=#7fb3ff][bold]Метеосводка по { $location }[/bold][/color]
     { $body }
-fec-meteo-station-location-unknown = зона операции
+fec-meteo-station-location-unknown = зоне операции
+fec-meteo-station-idle-clear = Ясно. Осадков в ближайшее время не ожидается.
 fec-meteo-station-idle = Ясно. Следующее обновление прогноза примерно через { $minutes } мин.
 fec-meteo-station-cooldown = Затишье после непогоды. Стабильная погода ещё примерно { $minutes } мин.
 fec-meteo-station-warning = [color=orange]ШТОРМОВОЕ ПРЕДУПРЕЖДЕНИЕ:[/color] { $event } через { $seconds } с. Укройтесь под крышей.

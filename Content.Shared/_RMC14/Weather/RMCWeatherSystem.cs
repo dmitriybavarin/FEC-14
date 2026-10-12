@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._FEC14.CCVar; // FEC14
 using Content.Shared._RMC14.Areas;
 using Content.Shared._RMC14.Atmos;
 using Content.Shared._RMC14.Campfire;
@@ -21,6 +22,7 @@ using Content.Shared.Popups;
 using Content.Shared.Weather;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration; // FEC14
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
@@ -53,6 +55,7 @@ public sealed class RMCWeatherSystem : EntitySystem
     [Dependency] private readonly AreaSystem _area = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // FEC14
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly RMCAmbientLightSystem _rmcLight = default!;
@@ -105,6 +108,7 @@ public sealed class RMCWeatherSystem : EntitySystem
         ent.Comp.CleanCooldown = WeatherCleanInterval;
         ent.Comp.FirstDropComplete = false;
         ent.Comp.EventStartedAt = TimeSpan.Zero;
+        ent.Comp.FECClearRound = _net.IsServer && _random.Prob(Math.Clamp(_cfg.GetCVar(FECCVars.WeatherClearRoundChance), 0, 1)); // FEC14
         Dirty(ent);
     }
 
@@ -360,7 +364,8 @@ public sealed class RMCWeatherSystem : EntitySystem
         if (ent.Comp.CheckCooldown > TimeSpan.Zero)
             return;
 
-        if (!_random.Prob(Math.Clamp(ent.Comp.StartChance, 0, 1)))
+        var startChance = Math.Min(ent.Comp.StartChance, _cfg.GetCVar(FECCVars.WeatherMaxStartChance)); // FEC14
+        if (ent.Comp.FECClearRound || !_random.Prob(Math.Clamp(startChance, 0, 1))) // FEC14
         {
             ent.Comp.CheckCooldown = GetCheckDelay(ent.Comp);
             Dirty(ent);
@@ -532,7 +537,8 @@ public sealed class RMCWeatherSystem : EntitySystem
         ent.Comp.CurrentEventIndex = null;
         ent.Comp.ForcedEvent = null;
         ent.Comp.AdminForcedEvent = false;
-        ent.Comp.CheckCooldown = ent.Comp.MinTimeBetweenEvents;
+        var minClear = TimeSpan.FromMinutes(Math.Max(0, _cfg.GetCVar(FECCVars.WeatherMinClearMinutes))); // FEC14
+        ent.Comp.CheckCooldown = ent.Comp.MinTimeBetweenEvents > minClear ? ent.Comp.MinTimeBetweenEvents : minClear; // FEC14
         ent.Comp.WarningRemaining = TimeSpan.Zero;
         ent.Comp.EventRemaining = TimeSpan.Zero;
         ent.Comp.LightningCooldown = TimeSpan.Zero;
@@ -635,7 +641,7 @@ public sealed class RMCWeatherSystem : EntitySystem
 
         var mapUid = Transform(cycle).MapUid;
         var mapName = mapUid != null ? Name(mapUid.Value) : string.Empty;
-        forecast = new RMCWeatherForecast(Transform(cycle).MapID, state, eventName, remaining > TimeSpan.Zero ? remaining : TimeSpan.Zero, mapName);
+        forecast = new RMCWeatherForecast(Transform(cycle).MapID, state, eventName, remaining > TimeSpan.Zero ? remaining : TimeSpan.Zero, mapName, cycle.Comp.FECClearRound);
         return true;
     }
 
@@ -665,7 +671,8 @@ public sealed class RMCWeatherSystem : EntitySystem
         if (cycle.MinCheckVariance > TimeSpan.Zero)
             delay += _random.Next(cycle.MinCheckVariance) - TimeSpan.FromTicks(cycle.MinCheckVariance.Ticks / 2);
 
-        return delay > TimeSpan.Zero ? delay : TimeSpan.Zero;
+        var minCheck = TimeSpan.FromMinutes(Math.Max(0, _cfg.GetCVar(FECCVars.WeatherMinCheckMinutes))); // FEC14
+        return delay > minCheck ? delay : minCheck; // FEC14
     }
 
     private void SendWeatherWarning(Entity<RMCWeatherCycleComponent> ent, RMCWeatherEvent weatherEvent)
@@ -677,7 +684,10 @@ public sealed class RMCWeatherSystem : EntitySystem
         if (weatherEvent.WarningMode == RMCWeatherWarningMode.SirenOnly)
         {
             if (TryPlayPhysicalWeatherSirens(mapId, weatherEvent))
+            {
+                SendXenoWeatherWarning(weatherEvent); // FEC14
                 return;
+            }
 
             if (weatherEvent.WarningSound is { } fallbackSound)
             {
@@ -713,10 +723,20 @@ public sealed class RMCWeatherSystem : EntitySystem
         _marineAnnounce.AnnounceToMarines(marineMessage, MarineWeatherWarningSound, marineFilter);
 
         var xenoMessage = Loc.GetString("rmc-weather-warning-xeno", ("weather", displayName));
-        var xenoFilter = Filter.Empty().AddWhereAttachedEntity(e =>
-            IsOnWeatherMap(e) &&
-            HasComp<XenoComponent>(e));
+        var xenoFilter = Filter.Empty().AddWhereAttachedEntity(e => HasComp<XenoComponent>(e)); // FEC14
 
+        _xenoAnnounce.Announce(default,
+            xenoFilter,
+            xenoMessage,
+            _xenoAnnounce.WrapHive(xenoMessage),
+            XenoWeatherWarningSound,
+            includeGhosts: false);
+    }
+
+    private void SendXenoWeatherWarning(RMCWeatherEvent weatherEvent) // FEC14
+    {
+        var xenoMessage = Loc.GetString("rmc-weather-warning-xeno", ("weather", GetEventDisplayName(weatherEvent)));
+        var xenoFilter = Filter.Empty().AddWhereAttachedEntity(e => HasComp<XenoComponent>(e));
         _xenoAnnounce.Announce(default,
             xenoFilter,
             xenoMessage,
@@ -1068,4 +1088,4 @@ public sealed class RMCWeatherSystem : EntitySystem
     }
 }
 
-public readonly record struct RMCWeatherForecast(MapId MapId, RMCWeatherCycleState State, string? EventName, TimeSpan Remaining, string MapName);
+public readonly record struct RMCWeatherForecast(MapId MapId, RMCWeatherCycleState State, string? EventName, TimeSpan Remaining, string MapName, bool ClearRound);
