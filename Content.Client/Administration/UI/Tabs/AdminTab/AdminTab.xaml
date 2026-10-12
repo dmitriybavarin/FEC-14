@@ -26,6 +26,7 @@
             <cc:CommandButton Command="rmcdelayroundend" Text="{Loc rmc-ui-delay-round-end}" />
             <!-- FEC14 -->
             <cc:CommandButton Command="jobwhitelistpanel" Text="{Loc fec-job-whitelist-ui-button}" />
+            <cc:CommandButton Command="feceventspanel" Text="{Loc fec-events-ui-button}" />
             <!-- FEC14 -->
         </GridContainer>
     </BoxContainer>

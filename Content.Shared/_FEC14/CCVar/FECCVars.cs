@@ -48,6 +48,18 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<int> EventsVoteSeconds =
         CVarDef.Create("fec.events_vote_seconds", 60, CVar.SERVERONLY);
 
+    public static readonly CVarDef<int> EventsConfirmSeconds =
+        CVarDef.Create("fec.events_confirm_seconds", 60, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EventsLowOnlineWarnMinutes =
+        CVarDef.Create("fec.events_low_online_warn_minutes", 5, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EventsRoleCooldownRounds =
+        CVarDef.Create("fec.events_role_cooldown_rounds", 3, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> EventsRolesFile =
+        CVarDef.Create("fec.events_roles_file", ".CONFIG/event_roles.json", CVar.SERVERONLY);
+
     public static readonly CVarDef<float> WeatherClearRoundChance =
         CVarDef.Create("fec.weather_clear_round_chance", 0.25f, CVar.SERVERONLY);
 

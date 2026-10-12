@@ -3,18 +3,21 @@ using System.Linq;
 using System.Text.Json;
 using Content.Server._FEC14.GameTicking;
 using Content.Server.Administration.Logs;
+using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Voting;
 using Content.Server.Voting.Managers;
 using Content.Shared._FEC14.CCVar;
 using Content.Shared._FEC14.Events;
+using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Rules;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -23,6 +26,7 @@ namespace Content.Server._FEC14.Events;
 public sealed class FECEventsSystem : EntitySystem
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
@@ -39,6 +43,10 @@ public sealed class FECEventsSystem : EntitySystem
     private readonly List<(TimeSpan At, string Text)> _log = new();
     private readonly Dictionary<string, DateTime?> _blocks = new();
     private readonly HashSet<string> _rotationUsed = new();
+    private readonly List<(string Id, TimeSpan At, bool Chained)> _awaiting = new();
+    private readonly HashSet<TimeSpan> _warnedSlots = new();
+    private readonly Dictionary<string, Dictionary<string, int>> _roles = new();
+    private string? _rolesPath;
     private string? _blocksPath;
     private string? _rotationPath;
     private IVoteHandle? _vote;
@@ -50,6 +58,7 @@ public sealed class FECEventsSystem : EntitySystem
     public IReadOnlyList<TimeSpan> Slots => _slots;
     public IReadOnlyList<(string Id, TimeSpan At)> Queued => _queued;
     public bool VoteRunning => _vote != null;
+    public IReadOnlyList<(string Id, TimeSpan At, bool Chained)> Awaiting => _awaiting;
 
     public override void Initialize()
     {
@@ -68,6 +77,8 @@ public sealed class FECEventsSystem : EntitySystem
         _started.Clear();
         _ruleEvents.Clear();
         _log.Clear();
+        _awaiting.Clear();
+        _warnedSlots.Clear();
         _planDone = false;
         Changed?.Invoke();
     }
@@ -83,10 +94,21 @@ public sealed class FECEventsSystem : EntitySystem
             Plan();
         }
 
-        if (_slots.Count == 0 && _queued.Count == 0)
+        if (_slots.Count == 0 && _queued.Count == 0 && _awaiting.Count == 0)
             return;
 
         var now = _ticker.RoundDuration();
+        WarnLowOnline(now);
+        for (var i = _awaiting.Count - 1; i >= 0; i--)
+        {
+            if (_awaiting[i].At > now)
+                continue;
+
+            var (awaitingId, _, awaitingChained) = _awaiting[i];
+            _awaiting.RemoveAt(i);
+            StartNow(awaitingId, awaitingChained);
+        }
+
         for (var i = _slots.Count - 1; i >= 0; i--)
         {
             if (_slots[i] > now)
@@ -103,8 +125,7 @@ public sealed class FECEventsSystem : EntitySystem
 
             var id = _queued[i].Id;
             _queued.RemoveAt(i);
-            if (!TryStart(id, false, out var reason, true))
-                AddLog(Loc.GetString("fec-events-log-chain-skipped", ("name", EventName(id)), ("reason", reason)));
+            Await(id, true);
         }
     }
 
@@ -216,16 +237,95 @@ public sealed class FECEventsSystem : EntitySystem
         if (_ticker.RunLevel != GameRunLevel.InRound)
             return;
 
-        if (!TryStart(id, false, out var reason))
+        Await(id, false);
+    }
+
+    private void Await(string id, bool chained)
+    {
+        var seconds = _cfg.GetCVar(FECCVars.EventsConfirmSeconds);
+        if (seconds <= 0)
         {
-            AddLog(Loc.GetString("fec-events-log-skipped", ("name", EventName(id)), ("reason", reason)));
+            StartNow(id, chained);
             return;
         }
 
-        MarkRotation(id);
+        _awaiting.Add((id, _ticker.RoundDuration() + TimeSpan.FromSeconds(seconds), chained));
+        var text = Loc.GetString("fec-events-admin-awaiting", ("name", EventName(id)), ("seconds", seconds));
+        _chat.SendAdminAlert(text);
+        AddLog(text);
     }
 
-    private List<FECEventPrototype> GetCandidates(TimeSpan now)
+    private void StartNow(string id, bool chained)
+    {
+        if (!TryStart(id, false, out var reason, chained))
+        {
+            AddLog(Loc.GetString(chained ? "fec-events-log-chain-skipped" : "fec-events-log-skipped", ("name", EventName(id)), ("reason", reason)));
+            return;
+        }
+
+        if (!chained)
+            MarkRotation(id);
+    }
+
+    public bool CancelAwaiting(string id, string admin)
+    {
+        var removed = _awaiting.RemoveAll(a => a.Id == id) + _queued.RemoveAll(q => q.Id == id);
+        if (removed == 0)
+            return false;
+
+        var text = Loc.GetString("fec-events-log-cancelled", ("name", EventName(id)), ("admin", admin));
+        _chat.SendAdminAlert(text);
+        AddLog(text);
+        return true;
+    }
+
+    public bool ConfirmAwaiting(string id)
+    {
+        var index = _awaiting.FindIndex(a => a.Id == id);
+        if (index < 0)
+            return false;
+
+        var chained = _awaiting[index].Chained;
+        _awaiting.RemoveAt(index);
+        StartNow(id, chained);
+        return true;
+    }
+
+    private void WarnLowOnline(TimeSpan now)
+    {
+        var lead = TimeSpan.FromMinutes(Math.Max(0, _cfg.GetCVar(FECCVars.EventsLowOnlineWarnMinutes)));
+        foreach (var slot in _slots)
+        {
+            if (slot - lead > now || !_warnedSlots.Add(slot))
+                continue;
+
+            if (GetCandidates(slot).Count > 0)
+                continue;
+
+            var needed = GetCandidates(slot, true).Select(e => e.MinPlayers).DefaultIfEmpty(0).Min();
+            var text = needed > _players.PlayerCount
+                ? Loc.GetString("fec-events-admin-low-online", ("minutes", (int) slot.TotalMinutes), ("players", _players.PlayerCount), ("needed", needed))
+                : Loc.GetString("fec-events-admin-no-candidates", ("minutes", (int) slot.TotalMinutes));
+            _chat.SendAdminAlert(text);
+            AddLog(text);
+        }
+
+        foreach (var (id, at) in _queued)
+        {
+            if (at - lead > now || !_warnedSlots.Add(at) ||
+                !_prototypes.TryIndex<FECEventPrototype>(id, out var proto) ||
+                _players.PlayerCount >= proto.MinPlayers)
+            {
+                continue;
+            }
+
+            var text = Loc.GetString("fec-events-admin-low-online-chain", ("name", Loc.GetString(proto.Name)), ("players", _players.PlayerCount), ("needed", proto.MinPlayers));
+            _chat.SendAdminAlert(text);
+            AddLog(text);
+        }
+    }
+
+    private List<FECEventPrototype> GetCandidates(TimeSpan now, bool ignorePlayers = false)
     {
         LoadRotation();
         var hasPlanet = HasPlanet();
@@ -233,7 +333,7 @@ public sealed class FECEventsSystem : EntitySystem
             .Where(e => !_rotationUsed.Contains(e.ID) &&
                         !_started.Contains(e.ID) &&
                         e.EarliestStart <= now && now <= e.LatestStart &&
-                        _players.PlayerCount >= e.MinPlayers &&
+                        (ignorePlayers || _players.PlayerCount >= e.MinPlayers) &&
                         (!e.RequiresPlanet || hasPlanet))
             .ToList();
     }
@@ -381,6 +481,24 @@ public sealed class FECEventsSystem : EntitySystem
         return true;
     }
 
+    public bool TryGetShipSpawn(out EntityCoordinates coordinates)
+    {
+        coordinates = default;
+        var points = new List<EntityUid>();
+        var query = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var xform))
+        {
+            if (xform.GridUid is { } grid && HasComp<AlmayerComponent>(grid))
+                points.Add(uid);
+        }
+
+        if (points.Count == 0)
+            return false;
+
+        coordinates = _transform.GetMoverCoordinates(_random.Pick(points));
+        return true;
+    }
+
     public bool IsBlocked(string id, out DateTime? until)
     {
         LoadBlocks();
@@ -468,10 +586,56 @@ public sealed class FECEventsSystem : EntitySystem
                 return Loc.GetString("fec-events-status-planned", ("minutes", (int) at.TotalMinutes));
         }
 
+        foreach (var (id, at, _) in _awaiting)
+        {
+            if (id == proto.ID)
+                return Loc.GetString("fec-events-status-awaiting", ("time", $"{(int) at.TotalMinutes:00}:{at.Seconds:00}"));
+        }
+
         if (proto.InRotation && IsRotationUsed(proto.ID))
             return Loc.GetString("fec-events-status-rotation");
 
         return Loc.GetString("fec-events-status-available");
+    }
+
+    public bool IsOnRoleCooldown(NetUserId user, string role)
+    {
+        LoadRoles();
+        var rounds = _cfg.GetCVar(FECCVars.EventsRoleCooldownRounds);
+        return rounds > 0 &&
+               _roles.TryGetValue(user.ToString(), out var roles) &&
+               roles.TryGetValue(role, out var round) &&
+               _ticker.RoundId - round <= rounds;
+    }
+
+    public void RecordRole(NetUserId user, string role)
+    {
+        LoadRoles();
+        if (!_roles.TryGetValue(user.ToString(), out var roles))
+        {
+            roles = new Dictionary<string, int>();
+            _roles[user.ToString()] = roles;
+        }
+
+        roles[role] = _ticker.RoundId;
+        WriteJson(_cfg.GetCVar(FECCVars.EventsRolesFile), _roles);
+    }
+
+    private void LoadRoles()
+    {
+        var path = _cfg.GetCVar(FECCVars.EventsRolesFile);
+        if (path == _rolesPath)
+            return;
+
+        _rolesPath = path;
+        _roles.Clear();
+        if (ReadJson<Dictionary<string, Dictionary<string, int>>>(path) is not { } loaded)
+            return;
+
+        foreach (var (user, roles) in loaded)
+        {
+            _roles[user] = roles;
+        }
     }
 
     private string EventName(string id)

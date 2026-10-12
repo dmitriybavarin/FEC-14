@@ -3,6 +3,7 @@ using Content.Server._FEC14.JobWhitelist;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
+using Content.Server.GameTicking;
 using Content.Shared._FEC14.Events;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -76,7 +77,18 @@ public sealed class FECEventsEui : BaseEui
             ("slotCount", _events.Slots.Count),
             ("vote", _events.VoteRunning ? 1 : 0));
 
-        return new FECEventsEuiState(entries, log, info, _status);
+        var now = _entities.System<GameTicker>().RoundDuration();
+        var awaiting = _events.Awaiting
+            .Select(a => new FECEventsEuiAwaiting(a.Id, EventName(a.Id), (int) Math.Max(0, (a.At - now).TotalSeconds), a.Chained, true))
+            .Concat(_events.Queued.Select(q => new FECEventsEuiAwaiting(q.Id, EventName(q.Id), (int) Math.Max(0, (q.At - now).TotalSeconds), true, false)))
+            .ToList();
+
+        return new FECEventsEuiState(entries, awaiting, log, info, _status);
+    }
+
+    private string EventName(string id)
+    {
+        return _prototypes.TryIndex<FECEventPrototype>(id, out var proto) ? Loc.GetString(proto.Name) : id;
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -124,6 +136,12 @@ public sealed class FECEventsEui : BaseEui
             }
             case FECEventsUnblockMsg unblock:
                 _status = Loc.GetString(_events.Unblock(unblock.Id, admin) ? "fec-events-unblocked" : "fec-events-not-blocked", ("id", unblock.Id));
+                break;
+            case FECEventsCancelMsg cancel:
+                _status = Loc.GetString(_events.CancelAwaiting(cancel.Id, admin) ? "fec-events-cancelled" : "fec-events-not-awaiting", ("id", cancel.Id));
+                break;
+            case FECEventsConfirmMsg confirm:
+                _status = Loc.GetString(_events.ConfirmAwaiting(confirm.Id) ? "fec-events-started" : "fec-events-not-awaiting", ("id", confirm.Id));
                 break;
             case FECEventsResetRotationMsg:
                 _events.ResetRotation(admin);

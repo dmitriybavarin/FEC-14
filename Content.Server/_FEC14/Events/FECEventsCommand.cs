@@ -79,6 +79,9 @@ public sealed class FECEventsCommand : LocalizedEntityCommands
             case "unblock":
                 shell.WriteLine(Loc.GetString(_events.Unblock(id, shell.Player?.Name ?? "console") ? "fec-events-unblocked" : "fec-events-not-blocked", ("id", id)));
                 return;
+            case "cancel":
+                shell.WriteLine(Loc.GetString(_events.CancelAwaiting(id, shell.Player?.Name ?? "console") ? "fec-events-cancelled" : "fec-events-not-awaiting", ("id", id)));
+                return;
             case "start":
                 if (_events.TryStart(id, true, out var reason))
                     shell.WriteLine(Loc.GetString("fec-events-started", ("id", id)));
@@ -95,7 +98,7 @@ public sealed class FECEventsCommand : LocalizedEntityCommands
     {
         return args.Length switch
         {
-            1 => CompletionResult.FromOptions(new[] { "list", "block", "unblock", "start", "rotation" }),
+            1 => CompletionResult.FromOptions(new[] { "list", "block", "unblock", "start", "cancel", "rotation" }),
             2 => CompletionResult.FromHintOptions(
                 _prototypes.EnumeratePrototypes<FECEventPrototype>().Select(p => p.ID).OrderBy(i => i),
                 Loc.GetString("fec-events-hint-id")),

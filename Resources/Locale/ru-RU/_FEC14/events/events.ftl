@@ -22,7 +22,7 @@ fec-events-hint-id = ID события
 fec-events-hint-duration = Срок блокировки (30m, 12h, 7d) или forever
 
 cmd-fecevents-desc = Управление событиями раунда.
-cmd-fecevents-help = Использование: fecevents list | block <ID> [срок|forever] | unblock <ID> | start <ID> | rotation
+cmd-fecevents-help = Использование: fecevents list | block <ID> [срок|forever] | unblock <ID> | start <ID> | cancel <ID> | rotation
 
 fec-event-antag-marshal-name = Выживший маршал КМП США
 fec-event-antag-marshal-objective = Вы можете оказаться маршалом Колониального бюро, застрявшим на колонии. Продержитесь до эвакуации, АРЕС следит за вами.
@@ -99,6 +99,7 @@ fec-events-outcome-punished = экипаж наказан
 fec-events-outcome-landed = патруль высадился
 fec-events-outcome-started = шторм начался
 
+fec-events-ui-button = События
 fec-events-ui-title = События раунда
 fec-events-ui-info = Игроков { $players }. { $slotCount ->
     [0] Слотов нет
@@ -120,3 +121,29 @@ fec-events-ui-unblock = Разблок
 
 cmd-feceventspanel-desc = Открывает окно событий раунда.
 cmd-feceventspanel-help = Использование: feceventspanel
+
+fec-event-pizza-name = Доставка пиццы
+fec-event-pizza-desc = На «Алмейер» прибывает курьер с пиццей. Кто её заказал, никто не помнит.
+fec-pizza-ares = На борт принят гражданский челнок службы доставки. Груз, пицца. Получатель не установлен.
+fec-pizza-summary = На корабль доставили пиццу
+
+fec-event-freelancers-name = Наёмники
+fec-event-freelancers-desc = На колонии высаживается враждебный отряд наёмников-фрилансеров.
+fec-freelancers-ares = Зафиксирована посадка неопознанного челнока на поверхности. Ответчик свой-чужой не отвечает, будьте осторожны.
+fec-freelancers-xeno = На нашу землю спустились новые носители. Они вооружены и не принадлежат к тем, кто на корабле.
+fec-freelancers-summary = На колонию высадились наёмники
+
+fec-events-status-awaiting = ждёт подтверждения, старт в { $time }
+fec-events-cancelled = Запуск события { $id } отменён
+fec-events-not-awaiting = Событие { $id } не ждёт запуска
+fec-events-admin-awaiting = Событие «{ $name }» запустится через { $seconds } сек. Отменить можно в окне «События» или командой fecevents cancel.
+fec-events-admin-low-online = Слот события на { $minutes } минуте пропадёт, игроков { $players }, а самому доступному событию нужно { $needed }.
+fec-events-admin-no-candidates = Слот события на { $minutes } минуте пропадёт, подходящих событий нет.
+fec-events-admin-low-online-chain = Цепочка «{ $name }» может не запуститься, игроков { $players }, нужно { $needed }.
+fec-events-log-cancelled = { $admin } отменил запуск «{ $name }»
+fec-events-ui-awaiting-row = { $chained ->
+    [1] Цепочка
+   *[other] Ожидает
+} «{ $name }», старт через { $seconds } сек
+fec-events-ui-confirm = Сейчас
+fec-events-ui-cancel = Отменить

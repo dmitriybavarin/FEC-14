@@ -22,7 +22,7 @@ fec-events-hint-id = Event ID
 fec-events-hint-duration = Block duration (30m, 12h, 7d) or forever
 
 cmd-fecevents-desc = Manages round events.
-cmd-fecevents-help = Usage: fecevents list | block <ID> [duration|forever] | unblock <ID> | start <ID> | rotation
+cmd-fecevents-help = Usage: fecevents list | block <ID> [duration|forever] | unblock <ID> | start <ID> | cancel <ID> | rotation
 
 fec-event-antag-marshal-name = Surviving CMB Marshal
 fec-event-antag-marshal-objective = You may become a Colonial Marshal Bureau marshal stranded on the colony. Survive until evacuation, ARES is watching over you.
@@ -99,6 +99,7 @@ fec-events-outcome-punished = crew punished
 fec-events-outcome-landed = patrol landed
 fec-events-outcome-started = storm started
 
+fec-events-ui-button = Events
 fec-events-ui-title = Round events
 fec-events-ui-info = { $players } players. { $slotCount ->
     [0] No slots
@@ -120,3 +121,29 @@ fec-events-ui-unblock = Unblock
 
 cmd-feceventspanel-desc = Opens the round events window.
 cmd-feceventspanel-help = Usage: feceventspanel
+
+fec-event-pizza-name = Pizza delivery
+fec-event-pizza-desc = A pizza courier arrives aboard the Almayer. Nobody remembers ordering it.
+fec-pizza-ares = A civilian delivery shuttle has docked. Cargo, pizza. Recipient unknown.
+fec-pizza-summary = Pizza was delivered to the ship
+
+fec-event-freelancers-name = Freelancers
+fec-event-freelancers-desc = A hostile freelancer mercenary team lands on the colony.
+fec-freelancers-ares = An unidentified shuttle has landed on the surface. No IFF response, proceed with caution.
+fec-freelancers-xeno = New hosts have descended upon our land. They are armed and do not belong to those on the ship.
+fec-freelancers-summary = Freelancers landed on the colony
+
+fec-events-status-awaiting = awaiting confirmation, starts at { $time }
+fec-events-cancelled = Event { $id } start cancelled
+fec-events-not-awaiting = Event { $id } is not awaiting start
+fec-events-admin-awaiting = Event "{ $name }" starts in { $seconds } s. Cancel it in the Events window or with fecevents cancel.
+fec-events-admin-low-online = The event slot at minute { $minutes } will be lost, { $players } players while the most accessible event needs { $needed }.
+fec-events-admin-no-candidates = The event slot at minute { $minutes } will be lost, no suitable events.
+fec-events-admin-low-online-chain = Chain "{ $name }" may not start, { $players } players, needs { $needed }.
+fec-events-log-cancelled = { $admin } cancelled "{ $name }"
+fec-events-ui-awaiting-row = { $chained ->
+    [1] Chain
+   *[other] Awaiting
+} "{ $name }", starts in { $seconds } s
+fec-events-ui-confirm = Now
+fec-events-ui-cancel = Cancel

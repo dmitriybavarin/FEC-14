@@ -9,7 +9,6 @@ using Content.Server.Humanoid.Systems;
 using Content.Server.Mind;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
-using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Marines.Announce;
@@ -122,7 +121,9 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
         if (candidates.Count == 0 || !_events.TryGetPlanetSpawn(out var coordinates))
             return false;
 
-        var player = RobustRandom.Pick(candidates);
+        var fresh = candidates.Where(c => !_events.IsOnRoleCooldown(c.UserId, comp.Preference)).ToList();
+        var player = RobustRandom.Pick(fresh.Count > 0 ? fresh : candidates);
+        _events.RecordRole(player.UserId, comp.Preference);
         if (GameTicker.PlayerGameStatuses.GetValueOrDefault(player.UserId) != PlayerGameStatus.JoinedGame)
             GameTicker.PlayerJoinGame(player, true);
 
@@ -193,15 +194,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
 
     private void Crash(EntityUid uid, FECMarshalRescueRuleComponent comp, GameRuleComponent gameRule)
     {
-        var points = new List<EntityUid>();
-        var query = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
-        while (query.MoveNext(out var point, out _, out var xform))
-        {
-            if (xform.GridUid is { } grid && HasComp<AlmayerComponent>(grid))
-                points.Add(point);
-        }
-
-        if (points.Count == 0)
+        if (!_events.TryGetShipSpawn(out var coordinates))
         {
             _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-vessel-lost"));
             _events.ReportOutcome(uid, "no-squad");
@@ -210,8 +203,6 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
             return;
         }
 
-        var crashPoint = RobustRandom.Pick(points);
-        var coordinates = _transform.GetMoverCoordinates(crashPoint);
         _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-air-defense-failed"));
         _explosion.QueueExplosion(_transform.ToMapCoordinates(coordinates), comp.ExplosionType, comp.ExplosionIntensity, 5f, 40f, null);
 
