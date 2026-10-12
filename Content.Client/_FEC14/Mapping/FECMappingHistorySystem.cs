@@ -34,7 +34,7 @@ public sealed class FECMappingHistorySystem : EntitySystem
         CommandBinds.Unregister<FECMappingHistorySystem>();
     }
 
-    private void Undo(bool redo)
+    public void Undo(bool redo)
     {
         if (TacticalMapControl.FECTryHistory(redo) || !_admin.CanAdminPlace())
             return;

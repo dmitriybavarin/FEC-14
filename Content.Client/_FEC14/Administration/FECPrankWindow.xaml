@@ -1,0 +1,14 @@
+<controls:FECPrankWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    MinSize="420 110"
+    Title="{Loc 'fec-prank-button'}">
+    <BoxContainer Orientation="Vertical" Margin="6" SeparationOverride="4">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+            <LineEdit Name="PlayerEdit" HorizontalExpand="True" PlaceHolder="{Loc 'fec-job-whitelist-ui-player'}" />
+            <OptionButton Name="PrankSelector" MinWidth="150" />
+            <Button Name="GoButton" Text="{Loc 'fec-prank-go'}" />
+        </BoxContainer>
+        <Label Text="{Loc 'fec-prank-hint'}" FontColorOverride="#A0A0A0" />
+    </BoxContainer>
+</controls:FECPrankWindow>

@@ -1,0 +1,20 @@
+fec-mapping-ui-undo = Undo
+fec-mapping-ui-undo-tooltip = Undo the last action (Ctrl+Z)
+fec-mapping-ui-redo = Redo
+fec-mapping-ui-redo-tooltip = Redo (Ctrl+Y or Ctrl+Shift+Z)
+fec-mapping-ui-light = Light
+fec-mapping-ui-light-tooltip = Toggle lighting to see the map as in game
+fec-mapping-ui-subfloor = Subfloor
+fec-mapping-ui-subfloor-tooltip = Show or hide pipes and cables under the floor
+fec-mapping-ui-save = Save
+fec-mapping-ui-save-tooltip = Save the map with savemap
+fec-mapping-ui-save-title = Save map
+fec-mapping-ui-save-map = Map id
+fec-mapping-ui-save-hint = Map id from lsmap and a path. The file goes to the server data folder, then move it to Resources/Maps.
+fec-mapping-ui-help = ?
+fec-mapping-ui-help-tooltip = Ctrl+Z / Ctrl+Y undo and redo. Alt+C copies an area (click two corners), Alt+V pastes. 5 picks, 6 deletes. Leave the editor with the Exit button or the mappingexit command.
+fec-mapping-ui-exit = Exit
+fec-mapping-ui-exit-tooltip = Leave the editor to the normal interface
+
+cmd-mappingexit-desc = Leaves the fullscreen mapping editor to the normal interface.
+cmd-mappingexit-help = Usage: mappingexit

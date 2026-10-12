@@ -47,3 +47,15 @@ fec-tp-not-found = "{ $target }" not found. Map is map:N from lsmap, grid is an 
 fec-tp-no-player = Player "{ $player }" not found or has no body
 fec-tp-hint-target = map:N, grid or entity id, username
 fec-tp-hint-player = Who to teleport (you by default)
+
+fec-admin-tab = FEC14
+fec-admin-category-fun = Fun
+fec-admin-category-settings = Settings
+fec-settings-no-access = Changing settings requires the SERVER flag.
+fec-settings-category-fun = Fun
+fec-settings-fec-fun-enabled = Fun features enabled
+fec-settings-fec-fun-death-quote-chance = Epitaph chance on death (0–1)
+fec-settings-fec-fun-round-start-quote = ARES tip of the day at round start
+fec-tp-button = Teleport
+fec-tp-go = Go
+fec-tp-prompt-hint = map:N is a map from lsmap, a number is a grid or entity, or a username.
