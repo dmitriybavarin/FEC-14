@@ -1,0 +1,97 @@
+- type: entity
+  parent: BaseStructure
+  id: FECWeatherTower
+  name: WT-1 meteorological tower
+  description: A static weather monitoring tower with an anemometer, a wind vane and an atmospheric sensor array. Feeds weather data to meteorological stations.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,1.49,1.49"
+        density: 200
+        mask:
+        - MobLayer
+  - type: Sprite
+    sprite: _FEC14/Structures/weather_tower.rsi
+    offset: 0.5, 1.5
+    layers:
+    - state: weather_off
+      map: [ "base" ]
+    - sprite: _RMC14/Structures/communications_tower.rsi
+      state: resin_idle
+      map: [ "resin" ]
+      visible: false
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Breakage" ]
+  - type: FECWeatherTower
+  - type: RMCRepairable
+    heal: 150
+    skillRequired: 1
+    delay: 5
+    fuelUsed: 0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FECWeatherTowerLayers.Layer:
+        base:
+          Broken: { state: weather_broken }
+          Off: { state: weather_off }
+          On: { state: weather_on }
+      enum.WeededEntityLayers.Layer:
+        resin:
+          True: { visible: true }
+          False: { visible: false }
+  - type: MaxDamage
+    max: 500
+  - type: MarineMapTracked
+  - type: XenoMapTracked
+  - type: TacticalMapTracked
+  - type: ActiveTacticalMapTracked
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: supply
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: supply
+  - type: ApcPowerReceiver
+  - type: RMCPowerReceiver
+    idleLoad: 0
+    activeLoad: 5000
+    channel: Equipment
+  - type: Corrodible
+    isCorrodible: false
+  - type: XenoWeedable
+  - type: InteractedBlacklist
+    blacklist:
+      components:
+      - Xeno
+  - type: RMCMesonsNonviewable
+
+- type: entity
+  parent: FECWeatherTower
+  id: FECWeatherTowerOn
+  suffix: On
+  components:
+  - type: FECWeatherTower
+    state: On
