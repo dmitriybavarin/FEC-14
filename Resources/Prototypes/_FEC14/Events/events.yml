@@ -69,3 +69,54 @@
   weight: 2
   earliestStart: 2400
   latestStart: 5400
+
+- type: entity
+  parent: BaseGameRule
+  id: FECPizzaDeliveryRule
+  components:
+  - type: FECTeamDropRule
+    location: Ship
+    spawners:
+    - RMCRandomHumanoidPizzaDeliveryBoy
+    aresAnnouncement: fec-pizza-ares
+    summary: fec-pizza-summary
+    outcome: landed
+
+- type: entity
+  parent: BaseGameRule
+  id: FECFreelancersRule
+  components:
+  - type: FECTeamDropRule
+    location: Planet
+    scatter: 2.5
+    spawners:
+    - RMCRandomHumanoidFreelancerLeaderHostile
+    - RMCRandomHumanoidFreelancerMedicHostile
+    - RMCRandomHumanoidFreelancerStandardHostile
+    - RMCRandomHumanoidFreelancerStandardHostile
+    - RMCRandomHumanoidFreelancerStandardHostile
+    aresAnnouncement: fec-freelancers-ares
+    xenoAnnouncement: fec-freelancers-xeno
+    summary: fec-freelancers-summary
+    outcome: landed
+
+- type: fecEvent
+  id: PizzaDelivery
+  name: fec-event-pizza-name
+  description: fec-event-pizza-desc
+  rule: FECPizzaDeliveryRule
+  minPlayers: 20
+  weight: 1
+  earliestStart: 1200
+  latestStart: 5400
+  requiresPlanet: false
+
+- type: fecEvent
+  id: Freelancers
+  name: fec-event-freelancers-name
+  description: fec-event-freelancers-desc
+  rule: FECFreelancersRule
+  minPlayers: 50
+  weight: 1
+  earliestStart: 2400
+  latestStart: 5400

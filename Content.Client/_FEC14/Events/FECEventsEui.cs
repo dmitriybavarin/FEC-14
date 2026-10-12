@@ -36,6 +36,11 @@ public sealed class FECEventsEui : BaseEui
         _window.StatusLabel.Visible = s.Status != null;
 
         _window.Entries.DisposeAllChildren();
+        foreach (var awaiting in s.Awaiting)
+        {
+            AddAwaitingRow(awaiting);
+        }
+
         foreach (var entry in s.Entries)
         {
             AddRow(entry);
@@ -49,6 +54,34 @@ public sealed class FECEventsEui : BaseEui
         {
             _window.LogBox.AddChild(new Label { Text = s.Log[i] });
         }
+    }
+
+    private void AddAwaitingRow(FECEventsEuiAwaiting awaiting)
+    {
+        var row = new BoxContainer { Orientation = LayoutOrientation.Horizontal, SeparationOverride = 6 };
+        row.AddChild(new Label
+        {
+            Text = Loc.GetString("fec-events-ui-awaiting-row",
+                ("name", awaiting.Name),
+                ("seconds", awaiting.Seconds),
+                ("chained", awaiting.Chained ? 1 : 0)),
+            HorizontalExpand = true,
+            ClipText = true,
+            FontColorOverride = Color.FromHex("#C8C864"),
+        });
+
+        if (awaiting.Confirmable)
+        {
+            var confirm = new Button { Text = Loc.GetString("fec-events-ui-confirm") };
+            confirm.OnPressed += _ => SendMessage(new FECEventsConfirmMsg(awaiting.Id));
+            row.AddChild(confirm);
+        }
+
+        var cancel = new Button { Text = Loc.GetString("fec-events-ui-cancel") };
+        cancel.OnPressed += _ => SendMessage(new FECEventsCancelMsg(awaiting.Id));
+        row.AddChild(cancel);
+
+        _window.Entries.AddChild(row);
     }
 
     private void AddRow(FECEventsEuiEntry entry)
