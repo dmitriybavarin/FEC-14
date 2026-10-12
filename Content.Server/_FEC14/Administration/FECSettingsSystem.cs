@@ -34,9 +34,6 @@ public sealed class FECSettingsSystem : EntitySystem
         new("weather", FECCVars.WeatherMaxStartChance, FECSettingType.Float, 0, 1),
         new("weather", FECCVars.WeatherMinCheckMinutes, FECSettingType.Float, 1, 60),
         new("weather", FECCVars.WeatherMinClearMinutes, FECSettingType.Float, 0, 120),
-        new("fun", FECCVars.FunEnabled, FECSettingType.Bool),
-        new("fun", FECCVars.FunDeathQuoteChance, FECSettingType.Float, 0, 1),
-        new("fun", FECCVars.FunRoundStartQuote, FECSettingType.Bool),
         new("lobby", FECCVars.SpeciesWhitelist, FECSettingType.String),
     };
 

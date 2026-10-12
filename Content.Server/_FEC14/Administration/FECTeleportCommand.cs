@@ -128,7 +128,7 @@ public sealed class FECTeleportCommand : LocalizedEntityCommands
         return args.Length switch
         {
             1 => CompletionResult.FromHintOptions(
-                _maps.GetAllMapIds().OrderBy(m => m.Value).Select(m => $"map:{m.Value}")
+                _maps.GetAllMapIds().OrderBy(m => (int) m).Select(m => $"map:{(int) m}")
                     .Concat(_players.Sessions.Select(s => s.Name)),
                 Loc.GetString("fec-tp-hint-target")),
             2 => CompletionResult.FromHintOptions(_players.Sessions.Select(s => s.Name), Loc.GetString("fec-tp-hint-player")),

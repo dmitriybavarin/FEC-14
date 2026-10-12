@@ -60,15 +60,6 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> EventsRolesFile =
         CVarDef.Create("fec.events_roles_file", ".CONFIG/event_roles.json", CVar.SERVERONLY);
 
-    public static readonly CVarDef<bool> FunEnabled =
-        CVarDef.Create("fec.fun_enabled", true, CVar.SERVERONLY);
-
-    public static readonly CVarDef<float> FunDeathQuoteChance =
-        CVarDef.Create("fec.fun_death_quote_chance", 0.5f, CVar.SERVERONLY);
-
-    public static readonly CVarDef<bool> FunRoundStartQuote =
-        CVarDef.Create("fec.fun_round_start_quote", true, CVar.SERVERONLY);
-
     public static readonly CVarDef<bool> MappingNewUi =
         CVarDef.Create("fec.mapping_new_ui", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
