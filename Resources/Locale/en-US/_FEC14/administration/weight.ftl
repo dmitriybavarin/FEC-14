@@ -12,3 +12,13 @@ cmd-feckick-no-reason = Kicked by an admin.
 cmd-feckick-success = Player { $player } was kicked.
 cmd-feckick-hint-player = <username>
 cmd-feckick-hint-reason = [reason]
+
+fec-audit-rank-added = [Permissions audit] { $admin } created rank { $rank } (flags { $flags })
+fec-audit-rank-updated = [Permissions audit] { $admin } updated rank { $rank } (flags { $flags })
+fec-audit-rank-removed = [Permissions audit] { $admin } removed rank { $rank }
+fec-audit-admin-added = [Permissions audit] { $admin } made { $target } an admin (title { $title }, rank { $rank }, flags { $flags })
+fec-audit-admin-updated = [Permissions audit] { $admin } updated admin { $target } (title { $title }, rank { $rank }, flags { $flags })
+fec-audit-admin-removed = [Permissions audit] { $admin } removed admin { $target }
+fec-audit-weight-set = [Permissions audit] { $admin } set rank { $rank } weight to { $weight }
+fec-audit-blocked-rank = [Permissions audit] Blocked attempt by { $admin } to change rank { $rank } without the required flags or weight
+fec-audit-blocked-admin = [Permissions audit] Blocked attempt by { $admin } to change admin { $target } without the required flags or weight

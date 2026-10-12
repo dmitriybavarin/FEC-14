@@ -19,6 +19,7 @@ namespace Content.Server.Administration.UI
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly Content.Server._FEC14.Administration.FECAdminWeightManager _fecWeight = default!; // FEC14
+        [Dependency] private readonly Content.Server._FEC14.Administration.FECAdminAuditManager _fecAudit = default!; // FEC14
         [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly ISawmill _sawmill;
@@ -150,11 +151,13 @@ namespace Content.Server.Administration.UI
             if (!CanTouchRank(rank))
             {
                 _sawmill.Warning($"{Player} tried to remove higher-ranked admin rank {rank.Name}");
+                FECAudit("fec-audit-blocked-rank", ("admin", Player.Name), ("rank", rank.Name)); // FEC14
                 return;
             }
 
             await _db.RemoveAdminRankAsync(rr.Id);
             _fecWeight.RemoveRank(rr.Id); // FEC14
+            FECAudit("fec-audit-rank-removed", ("admin", Player.Name), ("rank", rank.Name)); // FEC14
 
             _adminManager.ReloadAdminsWithRank(rr.Id);
         }
@@ -170,6 +173,7 @@ namespace Content.Server.Administration.UI
             if (!CanTouchRank(rank))
             {
                 _sawmill.Warning($"{Player} tried to update higher-ranked admin rank {rank.Name}");
+                FECAudit("fec-audit-blocked-rank", ("admin", Player.Name), ("rank", rank.Name)); // FEC14
                 return;
             }
 
@@ -187,6 +191,7 @@ namespace Content.Server.Administration.UI
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ur.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} updated admin rank {rank.Name}/{flagText}.");
+            FECAudit("fec-audit-rank-updated", ("admin", Player.Name), ("rank", rank.Name), ("flags", flagText)); // FEC14
 
             _adminManager.ReloadAdminsWithRank(ur.Id);
         }
@@ -210,6 +215,7 @@ namespace Content.Server.Administration.UI
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ar.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} added admin rank {rank.Name}/{flagText}.");
+            FECAudit("fec-audit-rank-added", ("admin", Player.Name), ("rank", rank.Name), ("flags", flagText)); // FEC14
         }
 
         private async Task HandleRemoveAdmin(RemoveAdmin ra)
@@ -224,6 +230,7 @@ namespace Content.Server.Administration.UI
             if (!CanTouchAdmin(admin))
             {
                 _sawmill.Warning($"{Player} tried to remove higher-ranked admin {ra.UserId.ToString()}");
+                FECAudit("fec-audit-blocked-admin", ("admin", Player.Name), ("target", ra.UserId.ToString())); // FEC14
                 return;
             }
 
@@ -231,6 +238,7 @@ namespace Content.Server.Administration.UI
 
             var record = await _db.GetPlayerRecordByUserId(ra.UserId);
             _sawmill.Info($"{Player} removed admin {record?.LastSeenUserName ?? ra.UserId.ToString()}");
+            FECAudit("fec-audit-admin-removed", ("admin", Player.Name), ("target", record?.LastSeenUserName ?? ra.UserId.ToString())); // FEC14
 
             if (_playerManager.TryGetSessionById(ra.UserId, out var player))
             {
@@ -255,7 +263,15 @@ namespace Content.Server.Administration.UI
             if (!CanTouchAdmin(admin))
             {
                 _sawmill.Warning($"{Player} tried to modify higher-ranked admin {ua.UserId.ToString()}");
+                FECAudit("fec-audit-blocked-admin", ("admin", Player.Name), ("target", ua.UserId.ToString())); // FEC14
                 return;
+            }
+
+            var (bad, rankName) = await FetchAndCheckRank(ua.RankId); // FEC14
+            if (bad) // FEC14
+            {
+                FECAudit("fec-audit-blocked-admin", ("admin", Player.Name), ("target", ua.UserId.ToString())); // FEC14
+                return; // FEC14
             }
 
             admin.Title = ua.Title;
@@ -266,17 +282,13 @@ namespace Content.Server.Administration.UI
             await _db.UpdateAdminAsync(admin);
 
             var playerRecord = await _db.GetPlayerRecordByUserId(ua.UserId);
-            var (bad, rankName) = await FetchAndCheckRank(ua.RankId);
-            if (bad)
-            {
-                return;
-            }
 
             var name = playerRecord?.LastSeenUserName ?? ua.UserId.ToString();
             var title = ua.Title ?? "<no title>";
             var flags = AdminFlagsHelper.PosNegFlagsText(ua.PosFlags, ua.NegFlags);
 
             _sawmill.Info($"{Player} updated admin {name} to {title}/{rankName}/{flags}");
+            FECAudit("fec-audit-admin-updated", ("admin", Player.Name), ("target", name), ("title", title), ("rank", rankName ?? "-"), ("flags", flags)); // FEC14
 
             if (_playerManager.TryGetSessionById(ua.UserId, out var player))
             {
@@ -352,6 +364,7 @@ namespace Content.Server.Administration.UI
             var flags = AdminFlagsHelper.PosNegFlagsText(ca.PosFlags, ca.NegFlags);
 
             _sawmill.Info($"{Player} added admin {name} as {title}/{rankName}/{flags}");
+            FECAudit("fec-audit-admin-added", ("admin", Player.Name), ("target", name), ("title", title), ("rank", rankName), ("flags", flags)); // FEC14
 
             if (_playerManager.TryGetSessionById(userId, out var player))
             {
@@ -476,6 +489,11 @@ namespace Content.Server.Administration.UI
             return actor >= target;
         }
 
+        private void FECAudit(string key, params (string, object)[] args)
+        {
+            _fecAudit.Report(Loc.GetString(key, args));
+        }
+
         private void FECApplyWeight(DbAdminRank rank, int? weight)
         {
             if (weight is not { } value || !UserAdminFlagCheck(AdminFlags.AdminWeight))
@@ -491,11 +509,13 @@ namespace Content.Server.Administration.UI
             if (actor != Content.Server._FEC14.Administration.FECAdminWeightManager.HostWeight && value > actor)
             {
                 _sawmill.Warning($"{Player} tried to set rank {rank.Name} weight {value} above their own {actor}.");
+                FECAudit("fec-audit-blocked-rank", ("admin", Player.Name), ("rank", rank.Name));
                 return;
             }
 
             _fecWeight.SetRankWeight(rank.Id, rank.Name, value);
             _sawmill.Info($"{Player} set admin rank {rank.Name} weight to {value}.");
+            FECAudit("fec-audit-weight-set", ("admin", Player.Name), ("rank", rank.Name), ("weight", value));
         }
         // FEC14
     }
