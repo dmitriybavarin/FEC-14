@@ -303,6 +303,8 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.EditorRotateObject);
             AddButton(ContentKeyFunctions.EditorFlipObject);
             AddButton(ContentKeyFunctions.EditorCopyObject);
+            AddButton(ContentKeyFunctions.FECMappingUndo); // FEC14
+            AddButton(ContentKeyFunctions.FECMappingRedo); // FEC14
 
             AddHeader("ui-options-header-dev");
             AddButton(EngineKeyFunctions.ShowDebugConsole);
