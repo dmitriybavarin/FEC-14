@@ -18,6 +18,9 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> OocColorsFile =
         CVarDef.Create("fec.ooc_colors_file", ".CONFIG/ooc_colors.json", CVar.SERVERONLY);
 
+    public static readonly CVarDef<string> TempJobWhitelistsFile =
+        CVarDef.Create("fec.temp_job_whitelists_file", ".CONFIG/temp_job_whitelists.json", CVar.SERVERONLY);
+
     public static readonly CVarDef<string> AdminAuditWebhook =
         CVarDef.Create("fec.admin_audit_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
