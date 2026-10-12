@@ -46,3 +46,7 @@ fec-weather-tower-needs-repairs = Вышка повреждена, сначал�
 fec-weather-tower-no-power = У вышки нет питания.
 fec-weather-tower-turned-on = Вы включаете метеовышку.
 fec-weather-tower-turned-off = Вы выключаете метеовышку.
+
+fec-weather-cas-blocked = Нелётная погода над целью. Огневая поддержка с воздуха невозможна.
+fec-weather-flight-blocked = Нелётная погода. Вылет дропшипа запрещён до улучшения обстановки.
+fec-meteo-station-no-fly = [color=orange]Нелётная погода. CAS и вылеты дропшипов невозможны.[/color]

@@ -46,3 +46,7 @@ fec-weather-tower-needs-repairs = The tower is damaged and needs repairs first.
 fec-weather-tower-no-power = The tower has no power.
 fec-weather-tower-turned-on = You turn the weather tower on.
 fec-weather-tower-turned-off = You turn the weather tower off.
+
+fec-weather-cas-blocked = No-fly weather over the target. Close air support is impossible.
+fec-weather-flight-blocked = No-fly weather. Dropship launch is forbidden until conditions improve.
+fec-meteo-station-no-fly = [color=orange]No-fly weather. CAS and dropship flights are impossible.[/color]

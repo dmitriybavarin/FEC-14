@@ -85,6 +85,7 @@ public abstract class SharedDropshipWeaponSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedPointLightSystem _pointLight = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly Content.Shared._FEC14.Weather.FECWeatherTacticsSystem _fecWeatherTactics = default!; // FEC14
     [Dependency] private readonly PowerLoaderSystem _powerloader = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedRMCCameraSystem _rmcCamera = default!;
@@ -675,6 +676,12 @@ public abstract class SharedDropshipWeaponSystem : EntitySystem
             var msg = Loc.GetString("rmc-laser-designator-not-cas");
             _popup.PopupCursor(msg, actor);
             return;
+        }
+
+        if (!CasDebug && _fecWeatherTactics.BlocksAir(_transform.GetMapId(coordinates))) // FEC14
+        {
+            _popup.PopupCursor(Loc.GetString("fec-weather-cas-blocked"), actor, PopupType.SmallCaution); // FEC14
+            return; // FEC14
         }
 
         if (!CasDebug && weaponComp.Skills != null && !_skills.HasSkills(actor, weaponComp.Skills))

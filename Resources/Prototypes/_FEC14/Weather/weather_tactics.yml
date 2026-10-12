@@ -1,0 +1,158 @@
+- type: fecWeatherTactics
+  id: Ashfall
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: AshfallLight
+  opticsRangeMultiplier: 0.9
+
+- type: fecWeatherTactics
+  id: AshfallHeavy
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.6
+
+- type: fecWeatherTactics
+  id: Fallout
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: Hail
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.7
+
+- type: fecWeatherTactics
+  id: Rain
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: Sandstorm
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.6
+
+- type: fecWeatherTactics
+  id: SandstormHeavy
+  blocksAir: true
+  mortarDeviation: 3
+  opticsRangeMultiplier: 0.5
+
+- type: fecWeatherTactics
+  id: SnowfallLight
+  opticsRangeMultiplier: 0.9
+
+- type: fecWeatherTactics
+  id: SnowfallMedium
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: SnowfallHeavy
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.6
+
+- type: fecWeatherTactics
+  id: Storm
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.6
+
+- type: fecWeatherTactics
+  id: RMCSolarisDust
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: RMCSolarisSand
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.6
+
+- type: fecWeatherTactics
+  id: RMCSolarisRocks
+  blocksAir: true
+  mortarDeviation: 3
+  opticsRangeMultiplier: 0.5
+
+- type: fecWeatherTactics
+  id: RMCStrataSnowing
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: RMCStrataBlizzard
+  blocksAir: true
+  mortarDeviation: 3
+  opticsRangeMultiplier: 0.5
+
+- type: fecWeatherTactics
+  id: RMCStrataStorm
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: RMCStrataStormLight
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: RMCStrataStormVeryLight
+  opticsRangeMultiplier: 0.9
+
+- type: fecWeatherTactics
+  id: RMCStrataStormTropical
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: RMCStrataStormRainAndThunder
+  blocksAir: true
+  mortarDeviation: 2
+  opticsRangeMultiplier: 0.65
+
+- type: fecWeatherTactics
+  id: RMCStrataStormLightRainAndThunder
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.75
+
+- type: fecWeatherTactics
+  id: RMCStrataStormVeryLightRainAndThunder
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: RMCStrataStormVaradero
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: RMCStrataStormLightVaradero
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: RMCStrataStormVeryLightVaradero
+  opticsRangeMultiplier: 0.9
+
+- type: fecWeatherTactics
+  id: RMCHybrisaRain
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.8
+
+- type: fecWeatherTactics
+  id: RMCHybrisaRainLight
+  mortarDeviation: 1
+  opticsRangeMultiplier: 0.85
+
+- type: fecWeatherTactics
+  id: RMCHybrisaRainVeryLight
+  opticsRangeMultiplier: 0.9
+
+- type: fecWeatherTactics
+  id: RMCTrijentRainLight
+  opticsRangeMultiplier: 0.85
