@@ -13,7 +13,7 @@ rmc-weather-name-monsoon-warning = муссон
 rmc-weather-name-very-light-rain = морось
 
 rmc-weather-warning-marine = [bold]Штормовое предупреждение.[/bold] Приближается { $weather }. Укройтесь в помещении.
-rmc-weather-warning-xeno = Вдали по улью разносится рев. Надвигается { $weather }.
+rmc-weather-warning-xeno = Королева-Мать тянется к вашему разуму. Небо над ульем темнеет, мои дети, надвигается { $weather }. Укройтесь под сводами улья.
 
 rmc-weather-siren-message = Воет сирена. ВНИМАНИЕ. ОБНАРУЖЕНА ОПАСНАЯ ПОГОДНАЯ АНОМАЛИЯ. НЕМЕДЛЕННО УКРОЙТЕСЬ.
 rmc-storm-siren-message = Воет сирена. ВНИМАНИЕ. ВНИМАНИЕ. ПРИБЛИЖАЕТСЯ ТРОПИЧЕСКИЙ ШТОРМ. НЕМЕДЛЕННО УКРОЙТЕСЬ.

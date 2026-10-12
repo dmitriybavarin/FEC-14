@@ -13,7 +13,7 @@ rmc-weather-name-monsoon-warning = Monsoon Warning
 rmc-weather-name-very-light-rain = Very Light Rain
 
 rmc-weather-warning-marine = [bold]Weather Alert:[/bold] Incoming {$weather}. Seek shelter from exterior conditions.
-rmc-weather-warning-xeno = A distant roar echoes through the hive. {$weather} approaches.
+rmc-weather-warning-xeno = The Queen Mother reaches into your mind. The sky above the hive darkens, my children, {$weather} approaches. Shelter beneath the hive.
 
 rmc-weather-siren-message = The {$siren} blares. ATTENTION. POTENTIALLY HAZARDOUS WEATHER ANOMALY DETECTED. SEEK SHELTER IMMEDIATELY.
 rmc-storm-siren-message = The {$siren} blares. ATTENTION. ATTENTION. INCOMING TROPICAL STORM DETECTED. SEEK SHELTER IMMEDIATELY.
