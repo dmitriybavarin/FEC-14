@@ -1,4 +1,3 @@
-using Content.Shared.Eui;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._FEC14.Administration;
@@ -22,26 +21,6 @@ public sealed class FECSettingEntry(string category, string key, FECSettingType 
     public readonly string DefaultValue = defaultValue;
     public readonly double Min = min;
     public readonly double Max = max;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECSettingsEuiState(List<FECSettingEntry> entries, string? status) : EuiStateBase
-{
-    public readonly List<FECSettingEntry> Entries = entries;
-    public readonly string? Status = status;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECSettingsSetMsg(string key, string value) : EuiMessageBase
-{
-    public readonly string Key = key;
-    public readonly string Value = value;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECSettingsResetMsg(string key) : EuiMessageBase
-{
-    public readonly string Key = key;
 }
 
 [Serializable, NetSerializable]

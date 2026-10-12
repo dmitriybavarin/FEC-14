@@ -1,13 +1,7 @@
-fec-admin-category-round = Round
-fec-admin-category-players = Players
-fec-admin-category-server = Server
-fec-admin-weather-button = Weather report
 fec-history-prompt-button = Player history
 fec-history-prompt-title = Player history
 fec-history-prompt-open = Open
 
-fec-settings-button = FEC settings
-fec-settings-title = FEC settings
 fec-settings-hint = Changes apply immediately and last until the server restarts. Permanent values belong in the server config.
 fec-settings-apply = Apply
 fec-settings-reset = Reset
@@ -37,8 +31,6 @@ fec-settings-fec-weather-min-check-minutes = Min weather check interval, min
 fec-settings-fec-weather-min-clear-minutes = Min clear pause between bad weather, min
 fec-settings-fec-species-whitelist = Allowed species (comma separated)
 
-cmd-fecsettings-desc = Opens the FEC settings window.
-cmd-fecsettings-help = Usage: fecsettings
 
 cmd-fectp-desc = Teleports to a map, grid, entity or player. Understands ids from lsmap and lsgrid.
 cmd-fectp-help = Usage: fectp <map:N | grid or entity id | username> [who to teleport]
@@ -49,8 +41,6 @@ fec-tp-hint-target = map:N, grid or entity id, username
 fec-tp-hint-player = Who to teleport (you by default)
 
 fec-admin-tab = FEC14
+fec-admin-tab-tools = Tools
 fec-admin-category-settings = Settings
 fec-settings-no-access = Changing settings requires the SERVER flag.
-fec-tp-button = Teleport
-fec-tp-go = Go
-fec-tp-prompt-hint = map:N is a map from lsmap, a number is a grid or entity, or a username.
