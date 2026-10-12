@@ -3,7 +3,10 @@ using Content.Client.Administration.Managers;
 using Content.Shared._FEC14.Mapping;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
+using Content.Shared.Maps;
 using Content.Shared.Popups;
+using Robust.Client.Placement;
+using Robust.Shared.Enums;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
@@ -13,7 +16,12 @@ namespace Content.Client._FEC14.Mapping;
 public sealed class FECMappingHistorySystem : EntitySystem
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IPlacementManager _placement = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private EntityCoordinates? _copyCorner;
 
@@ -58,7 +66,9 @@ public sealed class FECMappingHistorySystem : EntitySystem
         _copyCorner = null;
         ToolChanged?.Invoke();
 
-        if (Tool == FECMappingTool.Select)
+        if (Tool == FECMappingTool.Pick)
+            _popup.PopupCursor(Loc.GetString("fec-mapping-tool-pick-start"));
+        else if (Tool == FECMappingTool.Select)
             _popup.PopupCursor(Loc.GetString("fec-mapping-tool-select-start"));
         else if (Tool == FECMappingTool.Paste)
             _popup.PopupCursor(Loc.GetString("fec-mapping-tool-paste-start"));
@@ -75,6 +85,13 @@ public sealed class FECMappingHistorySystem : EntitySystem
             return false;
         }
 
+        if (Tool == FECMappingTool.Pick)
+        {
+            Pick(args.EntityUid, args.Coordinates);
+            SetTool(FECMappingTool.None);
+            return true;
+        }
+
         if (Tool == FECMappingTool.Select)
         {
             HandleCopy(args);
@@ -86,6 +103,36 @@ public sealed class FECMappingHistorySystem : EntitySystem
 
         HandlePaste(args);
         return true;
+    }
+
+    private void Pick(EntityUid uid, EntityCoordinates coordinates)
+    {
+        if (uid.IsValid() && MetaData(uid).EntityPrototype is { } prototype)
+        {
+            _placement.BeginPlacing(new PlacementInformation
+            {
+                PlacementOption = prototype.PlacementMode,
+                EntityType = prototype.ID,
+                IsTile = false,
+            });
+            _placement.Direction = Transform(uid).LocalRotation.GetDir();
+            return;
+        }
+
+        var mapCoordinates = _transform.ToMapCoordinates(coordinates);
+        if (!_mapManager.TryFindGridAt(mapCoordinates, out var gridUid, out var grid) ||
+            !_map.TryGetTileRef(gridUid, grid, coordinates, out var tileRef) ||
+            tileRef.Tile.IsEmpty)
+        {
+            return;
+        }
+
+        _placement.BeginPlacing(new PlacementInformation
+        {
+            PlacementOption = "AlignTileAny",
+            TileType = _turf.GetContentTileDefinition(tileRef).TileId,
+            IsTile = true,
+        });
     }
 
     private bool HandleToolCancel(in PointerInputCmdHandler.PointerInputCmdArgs args)
@@ -127,6 +174,7 @@ public sealed class FECMappingHistorySystem : EntitySystem
 public enum FECMappingTool : byte
 {
     None,
+    Pick,
     Select,
     Paste,
 }
