@@ -16,6 +16,7 @@ public sealed class FECMeteoStationSystem : EntitySystem
     [Dependency] private readonly SharedRMCPowerSystem _power = default!;
     [Dependency] private readonly RMCWeatherSystem _weather = default!;
     [Dependency] private readonly FECWeatherTowerSystem _tower = default!;
+    [Dependency] private readonly FECWeatherTacticsSystem _tactics = default!;
 
     public override void Initialize()
     {
@@ -84,6 +85,9 @@ public sealed class FECMeteoStationSystem : EntitySystem
             _ => Loc.GetString("fec-meteo-station-idle",
                 ("minutes", minutes)),
         };
+
+        if (_tactics.BlocksAir(forecast.MapId))
+            body += "\n" + Loc.GetString("fec-meteo-station-no-fly");
 
         return Loc.GetString("fec-meteo-station-forecast", ("location", location), ("body", body));
     }
