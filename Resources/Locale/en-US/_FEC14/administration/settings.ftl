@@ -39,3 +39,11 @@ fec-settings-fec-species-whitelist = Allowed species (comma separated)
 
 cmd-fecsettings-desc = Opens the FEC settings window.
 cmd-fecsettings-help = Usage: fecsettings
+
+cmd-fectp-desc = Teleports to a map, grid, entity or player. Understands ids from lsmap and lsgrid.
+cmd-fectp-help = Usage: fectp <map:N | grid or entity id | username> [who to teleport]
+fec-tp-done = Teleported to { $target }, map { $map }, { $x } { $y }
+fec-tp-not-found = "{ $target }" not found. Map is map:N from lsmap, grid is an id from lsgrid, entity is its id, player is a username.
+fec-tp-no-player = Player "{ $player }" not found or has no body
+fec-tp-hint-target = map:N, grid or entity id, username
+fec-tp-hint-player = Who to teleport (you by default)
