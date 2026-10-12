@@ -31,10 +31,13 @@ public sealed class FECTeamDropRuleSystem : GameRuleSystem<FECTeamDropRuleCompon
 
             if (comp.Summary is { } summary)
                 _summary.AddLine(Loc.GetString(summary));
+
+            _events.ReportOutcome(uid, "landed");
         }
         else
         {
             Log.Info($"FEC team drop event {ToPrettyString(uid)} found no planet spawn point");
+            _events.ReportOutcome(uid, "failed");
         }
 
         GameTicker.EndGameRule(uid, gameRule);

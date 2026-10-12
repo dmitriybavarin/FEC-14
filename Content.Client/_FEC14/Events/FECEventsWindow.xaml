@@ -1,0 +1,24 @@
+<controls:FECEventsWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Events"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    MinSize="620 520"
+    SetSize="760 680"
+    Title="{Loc 'fec-events-ui-title'}">
+    <BoxContainer Orientation="Vertical" Margin="6" SeparationOverride="6">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+            <Label Name="InfoLabel" Access="Public" HorizontalExpand="True" FontColorOverride="#A0A0A0" />
+            <LineEdit Name="DurationEdit" Access="Public" MinWidth="120" PlaceHolder="{Loc 'fec-events-ui-duration'}" ToolTip="{Loc 'fec-events-hint-duration'}" />
+            <Button Name="ResetRotationButton" Access="Public" Text="{Loc 'fec-events-ui-reset-rotation'}" />
+        </BoxContainer>
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Name="Entries" Access="Public" Orientation="Vertical" SeparationOverride="2" />
+        </ScrollContainer>
+        <cc:HSeparator Color="#4972A1" />
+        <Label Text="{Loc 'fec-events-ui-log'}" StyleClasses="LabelHeading" />
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Name="LogBox" Access="Public" Orientation="Vertical" />
+        </ScrollContainer>
+        <Label Name="StatusLabel" Access="Public" FontColorOverride="#C8C864" />
+    </BoxContainer>
+</controls:FECEventsWindow>

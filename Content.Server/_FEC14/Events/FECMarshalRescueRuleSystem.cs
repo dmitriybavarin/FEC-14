@@ -59,6 +59,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
         if (!TrySpawnMarshal(comp))
         {
             Log.Info("FEC marshal rescue event could not find a volunteer or a planet spawn point");
+            _events.ReportOutcome(uid, "failed");
             comp.Stage = FECMarshalStage.Finished;
             GameTicker.EndGameRule(uid, gameRule);
             return;
@@ -147,6 +148,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
                 _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-evacuated", ("name", comp.MarshalName)));
                 _announce.AnnounceHighCommand(Loc.GetString("fec-marshal-hc-thanks"));
                 _summary.AddLine(Loc.GetString("fec-marshal-summary-saved", ("name", comp.MarshalName)));
+                _events.ReportOutcome(uid, "saved");
                 comp.Stage = FECMarshalStage.Finished;
                 GameTicker.EndGameRule(uid, gameRule);
                 return;
@@ -157,6 +159,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
             default:
                 _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-report", ("name", comp.MarshalName), ("status", Loc.GetString($"fec-marshal-status-{status}"))));
                 _summary.AddLine(Loc.GetString("fec-marshal-summary-lost", ("name", comp.MarshalName), ("status", Loc.GetString($"fec-marshal-status-{status}"))));
+                _events.ReportOutcome(uid, "lost");
                 comp.Stage = FECMarshalStage.ReportSent;
                 comp.NextStage = Timing.CurTime + RandomTime(comp.HighCommandDelayMin, comp.HighCommandDelayMax);
                 return;
@@ -200,6 +203,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
         if (points.Count == 0)
         {
             _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-vessel-lost"));
+            _events.ReportOutcome(uid, "no-squad");
             comp.Stage = FECMarshalStage.Finished;
             GameTicker.EndGameRule(uid, gameRule);
             return;
@@ -261,6 +265,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
 
             _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-vessel-lost"));
             _summary.AddLine(Loc.GetString("fec-marshal-summary-no-squad"));
+            _events.ReportOutcome(uid, "no-squad");
             Finish(uid, comp, gameRule);
             return;
         }
@@ -270,6 +275,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
             _announce.AnnounceARES(null, Loc.GetString("fec-marshal-ares-squad-destroyed"));
             _announce.AnnounceHighCommand(Loc.GetString("fec-marshal-hc-squad-destroyed"));
             _summary.AddLine(Loc.GetString("fec-marshal-summary-repelled"));
+            _events.ReportOutcome(uid, "repelled");
             Finish(uid, comp, gameRule);
             return;
         }
@@ -279,6 +285,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
 
         var key = XenosAlive() ? "fec-marshal-end-punished-xenos" : "fec-marshal-end-punished";
         _summary.AddLine(Loc.GetString("fec-marshal-summary-punished"));
+        _events.ReportOutcome(uid, "punished");
         _distress.FECEndRound(DistressSignalRuleResult.MinorMarineVictory, key);
         Finish(uid, comp, gameRule);
     }

@@ -1,0 +1,352 @@
+- type: radioChannel
+  id: FECMarsoc
+  name: chat-radio-fec-marsoc
+  keycode: "0"
+  frequency: 1725
+  color: "#c0392b"
+  longRange: true
+  tower: true
+
+- type: entity
+  parent: SquadSOF
+  id: FECSquadMarsoc
+  name: MARSOC
+  components:
+  - type: SquadTeam
+    color: "#400000"
+    background:
+      sprite: _RMC14/Interface/job_icons/Misc/other.rsi
+      state: empty
+    radio: FECMarsoc
+    accessLevels: []
+    minimapBackground:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: background_sof
+    group: SOF
+    leaderIcon:
+      sprite: _RMC14/Interface/job_icons/UNMC/marsoc.rsi
+      state: hudsquad_soctl
+
+- type: entity
+  parent: RMCHeadsetMARSOC
+  id: FECHeadsetMarsoc
+  name: MARSOC headset
+  description: An encrypted headset of the High Command personal unit. Picks up every USCM and colony channel.
+  suffix: FEC
+  components:
+  - type: RMCHeadset
+    channels:
+    - FECMarsoc
+    - MarineSOF
+    - MarineHighCommand
+    - MarineCommon
+    - MarineCommand
+    - MarineMedical
+    - MarineEngineer
+    - MarineMilitaryPolice
+    - MarineRequisition
+    - MarineIntel
+    - MarineJTAC
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - Colony
+    - CMB
+    - WEYA
+    - Provost
+    radioTextIncrease: 1
+  - type: EncryptionKeyHolder
+    defaultChannel: FECMarsoc
+
+- type: entity
+  parent: FECHeadsetMarsoc
+  id: FECHeadsetMarsocCommand
+  name: MARSOC command headset
+  suffix: FEC, Command
+  components:
+  - type: RMCHeadset
+    channels:
+    - FECMarsoc
+    - MarineSOF
+    - MarineHighCommand
+    - MarineCommon
+    - MarineCommand
+    - MarineMedical
+    - MarineEngineer
+    - MarineMilitaryPolice
+    - MarineRequisition
+    - MarineIntel
+    - MarineJTAC
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - Colony
+    - CMB
+    - WEYA
+    - Provost
+    radioTextIncrease: 3
+
+- type: playTimeTracker
+  id: FECJobMarsocOperative
+
+- type: playTimeTracker
+  id: FECJobMarsocCommander
+
+- type: playTimeTracker
+  id: FECJobMarsocCurator
+
+- type: job
+  parent: CMMarineRaider
+  id: FECMarsocOperative
+  name: fec-job-name-marsoc-operative
+  description: fec-job-desc-marsoc-operative
+  playTimeTracker: FECJobMarsocOperative
+  ranks:
+    RMCRankStaffSergeant: [ ]
+  startingGear: FECGearMarsocOperative
+  icon: RMCJobIconMarineRaider
+  joinNotifyCrew: false
+  accessGroups:
+  - ShipMasterAccess
+  - Colony
+  - ColonistSec
+  - ColonistMedical
+  - ColonistEngi
+  - ColonistCorporate
+  - ColonistCMBSurvivor
+  - Corp
+  spawnMenuRoleName: MARSOC Operative
+  hidden: true
+
+- type: job
+  parent: CMMarineRaiderLeader
+  id: FECMarsocCommander
+  name: fec-job-name-marsoc-commander
+  description: fec-job-desc-marsoc-commander
+  playTimeTracker: FECJobMarsocCommander
+  ranks:
+    RMCRankCaptain: [ ]
+  startingGear: FECGearMarsocCommander
+  icon: RMCJobIconMarineRaiderLeader
+  joinNotifyCrew: false
+  accessGroups:
+  - ShipMasterAccess
+  - Colony
+  - ColonistSec
+  - ColonistMedical
+  - ColonistEngi
+  - ColonistCorporate
+  - ColonistCMBSurvivor
+  - Corp
+  spawnMenuRoleName: MARSOC Commander
+  hidden: true
+
+- type: job
+  parent: CMMarineRaiderLeader
+  id: FECMarsocCurator
+  name: fec-job-name-marsoc-curator
+  description: fec-job-desc-marsoc-curator
+  playTimeTracker: FECJobMarsocCurator
+  ranks:
+    RMCRankMajor: [ ]
+  startingGear: FECGearMarsocCurator
+  icon: RMCJobIconMarineRaiderLeader
+  joinNotifyCrew: false
+  accessGroups:
+  - ShipMasterAccess
+  - Colony
+  - ColonistSec
+  - ColonistMedical
+  - ColonistEngi
+  - ColonistCorporate
+  - ColonistCMBSurvivor
+  - Corp
+  spawnMenuRoleName: MARSOC Curator
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Language
+      spokenLanguages:
+      - English
+      - SignLanguage
+      understoodLanguages:
+      - English
+      - SignLanguage
+      currentLanguage: English
+      defaultLanguage: English
+    - type: Skills
+      skills:
+        RMCSkillCqc: 5
+        RMCSkillFireman: 5
+        RMCSkillEngineer: 2
+        RMCSkillConstruction: 2
+        RMCSkillFirearms: 2
+        RMCSkillLeadership: 4
+        RMCSkillMedical: 2
+        RMCSkillMeleeWeapons: 1
+        RMCSkillEndurance: 5
+        RMCSkillJtac: 3
+        RMCSkillIntel: 2
+    - type: JobPrefix
+      prefix: fec-job-prefix-marsoc-curator
+    - type: MarineOrders
+    - type: RMCPointing
+  hidden: true
+
+- type: startingGear
+  id: FECGearMarsocOperative
+  equipment:
+    head: RMCArmorHelmetMARSOC
+    mask: RMCMaskBalaclavaMARSOC
+    ears: FECHeadsetMarsoc
+    jumpsuit: RMCJumpsuitMarsocWebbingBuckshot
+    outerClothing: RMCArmorMARSOCXM40
+    gloves: CMHandsBlackMarine
+    shoes: CMBootsBlackFilled
+    suitstorage: RMCWeaponRifleXM40
+    id: FECDogtagMarsocOperative
+    belt: RMCWeaponShotgunXM38Filled
+    back: RMCSatchelMARSOC
+
+- type: startingGear
+  id: FECGearMarsocCommander
+  equipment:
+    head: RMCArmorHelmetMARSOC
+    mask: RMCMaskBalaclavaMARSOC
+    ears: FECHeadsetMarsocCommand
+    jumpsuit: RMCJumpsuitMarsocWebbingBuckshot
+    outerClothing: RMCArmorMARSOCXM40
+    gloves: CMHandsBlackMarine
+    shoes: CMBootsBlackFilled
+    suitstorage: RMCWeaponRifleXM40
+    id: FECDogtagMarsocCommander
+    belt: RMCWeaponShotgunXM38Filled
+    back: RMCSatchelMARSOC
+    pocket1: RMCPouchMedicalSocMarineRaiderFill
+    pocket2: RMCPouchToolsSocMarineRaiderFill
+  storage:
+    back:
+    - RMCVisorNightVision
+
+- type: startingGear
+  id: FECGearMarsocCurator
+  equipment:
+    ears: FECHeadsetMarsocCommand
+    jumpsuit: RMCJumpsuitMarsocWebbingBuckshot
+    gloves: CMHandsBlackMarine
+    shoes: CMBootsBlackFilled
+    id: FECDogtagMarsocCurator
+    back: RMCSatchelMARSOC
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: FECDogtagMarsocOperative
+  name: MARSOC operative's dogtags
+  components:
+  - type: PresetIdCard
+    job: FECMarsocOperative
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: FECDogtagMarsocCommander
+  name: MARSOC commander's dogtags
+  components:
+  - type: PresetIdCard
+    job: FECMarsocCommander
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: FECDogtagMarsocCurator
+  name: MARSOC curator's dogtags
+  components:
+  - type: PresetIdCard
+    job: FECMarsocCurator
+
+- type: randomHumanoidSettings
+  parent: RMCEventHumanoid
+  id: FECMarsocOperative
+  components:
+  - type: GhostRole
+    name: fec-job-name-marsoc-operative
+    description: fec-ghost-role-marsoc-operative
+    rules: rmc-ghost-role-information-sof-rules
+    reregister: false
+    job: FECMarsocOperative
+    raffle:
+      settings: short
+    requirements:
+    - !type:RoleTimeRequirement
+      role: CMJobRifleman
+      time: 18000
+  - type: GhostRoleApplySpecial
+    squad: FECSquadMarsoc
+
+- type: randomHumanoidSettings
+  parent: RMCEventHumanoid
+  id: FECMarsocCommander
+  components:
+  - type: GhostRole
+    name: fec-job-name-marsoc-commander
+    description: fec-ghost-role-marsoc-commander
+    rules: rmc-ghost-role-information-sof-rules
+    reregister: false
+    job: FECMarsocCommander
+    raffle:
+      settings: short
+    requirements:
+    - !type:RoleTimeRequirement
+      role: CMJobSquadLeader
+      time: 18000
+  - type: GhostRoleApplySpecial
+    squad: FECSquadMarsoc
+
+- type: randomHumanoidSettings
+  parent: RMCEventHumanoid
+  id: FECMarsocCurator
+  components:
+  - type: GhostRole
+    name: fec-job-name-marsoc-curator
+    description: fec-ghost-role-marsoc-curator
+    rules: fec-ghost-role-marsoc-curator-rules
+    reregister: false
+    job: FECMarsocCurator
+  - type: GhostRoleApplySpecial
+
+- type: entity
+  id: FECRandomHumanoidMarsocOperative
+  name: MARSOC operative ghost role
+  suffix: FEC, Spawner
+  components:
+  - type: Sprite
+    sprite: _RMC14/Markers/landmarks.rsi
+    state: unmc_spawn
+  - type: RandomHumanoidSpawner
+    settings: FECMarsocOperative
+
+- type: entity
+  id: FECRandomHumanoidMarsocCommander
+  name: MARSOC commander ghost role
+  suffix: FEC, Spawner
+  components:
+  - type: Sprite
+    sprite: _RMC14/Markers/landmarks.rsi
+    state: unmc_spawn
+  - type: RandomHumanoidSpawner
+    settings: FECMarsocCommander
+
+- type: entity
+  id: FECRandomHumanoidMarsocCurator
+  name: MARSOC curator ghost role
+  suffix: FEC, Spawner, Admin
+  components:
+  - type: Sprite
+    sprite: _RMC14/Markers/landmarks.rsi
+    state: unmc_spawn
+  - type: RandomHumanoidSpawner
+    settings: FECMarsocCurator

@@ -19,6 +19,7 @@ public sealed class FECWeatherStormRuleSystem : GameRuleSystem<FECWeatherStormRu
     {
         base.Started(uid, comp, gameRule, args);
 
+        var outcome = "failed";
         if (_events.GetPlanetMap() is { } planet)
         {
             var options = _weather.GetWeatherEventCompletionOptions(planet).Select(o => o.Value).ToList();
@@ -30,10 +31,12 @@ public sealed class FECWeatherStormRuleSystem : GameRuleSystem<FECWeatherStormRu
 
                 _announce.AnnounceHighCommand(Loc.GetString(comp.HighCommandAnnouncement));
                 _summary.AddLine(Loc.GetString(comp.Summary));
+                outcome = "started";
                 break;
             }
         }
 
+        _events.ReportOutcome(uid, outcome);
         GameTicker.EndGameRule(uid, gameRule);
     }
 }

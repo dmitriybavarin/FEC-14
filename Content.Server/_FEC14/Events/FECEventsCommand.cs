@@ -35,6 +35,13 @@ public sealed class FECEventsCommand : LocalizedEntityCommands
             return;
         }
 
+        if (args[0] == "rotation")
+        {
+            _events.ResetRotation(shell.Player?.Name ?? "console");
+            shell.WriteLine(Loc.GetString("fec-events-rotation-reset"));
+            return;
+        }
+
         if (args.Length < 2)
         {
             shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
@@ -65,12 +72,12 @@ public sealed class FECEventsCommand : LocalizedEntityCommands
                     duration = parsed;
                 }
 
-                _events.Block(id, duration);
+                _events.Block(id, duration, shell.Player?.Name ?? "console");
                 shell.WriteLine(Loc.GetString("fec-events-blocked-done", ("id", id)));
                 return;
             }
             case "unblock":
-                shell.WriteLine(Loc.GetString(_events.Unblock(id) ? "fec-events-unblocked" : "fec-events-not-blocked", ("id", id)));
+                shell.WriteLine(Loc.GetString(_events.Unblock(id, shell.Player?.Name ?? "console") ? "fec-events-unblocked" : "fec-events-not-blocked", ("id", id)));
                 return;
             case "start":
                 if (_events.TryStart(id, true, out var reason))
@@ -88,7 +95,7 @@ public sealed class FECEventsCommand : LocalizedEntityCommands
     {
         return args.Length switch
         {
-            1 => CompletionResult.FromOptions(new[] { "list", "block", "unblock", "start" }),
+            1 => CompletionResult.FromOptions(new[] { "list", "block", "unblock", "start", "rotation" }),
             2 => CompletionResult.FromHintOptions(
                 _prototypes.EnumeratePrototypes<FECEventPrototype>().Select(p => p.ID).OrderBy(i => i),
                 Loc.GetString("fec-events-hint-id")),

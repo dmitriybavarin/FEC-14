@@ -45,6 +45,10 @@
   weight: 1
   earliestStart: 900
   latestStart: 2400
+  chains:
+  - outcome: saved
+    event: CMBPatrol
+    delay: 600
 
 - type: fecEvent
   id: CMBPatrol
