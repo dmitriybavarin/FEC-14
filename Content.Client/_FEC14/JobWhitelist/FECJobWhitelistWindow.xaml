@@ -20,6 +20,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="6">
             <LineEdit Name="PlayerEdit" Access="Public" HorizontalExpand="True" PlaceHolder="{Loc 'fec-job-whitelist-ui-player'}" />
             <OptionButton Name="JobSelector" Access="Public" HorizontalExpand="True" />
+            <LineEdit Name="DurationEdit" Access="Public" MinWidth="110" PlaceHolder="{Loc 'fec-temp-whitelist-duration'}" ToolTip="{Loc 'fec-temp-whitelist-duration-tooltip'}" />
             <Button Name="AddButton" Access="Public" Text="{Loc 'fec-job-whitelist-ui-add'}" />
         </BoxContainer>
         <Label Text="{Loc 'fec-job-whitelist-ui-other-hint'}" FontColorOverride="#A0A0A0" />

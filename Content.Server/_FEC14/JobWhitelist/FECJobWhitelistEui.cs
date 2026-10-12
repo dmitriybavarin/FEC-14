@@ -26,6 +26,7 @@ public sealed class FECJobWhitelistEui : BaseEui
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly IEntityManager _entities = default!;
 
     private readonly List<(Guid UserId, string Name, string RoleId)> _entries = new();
     private string? _status;
@@ -75,7 +76,8 @@ public sealed class FECJobWhitelistEui : BaseEui
                 e.UserId,
                 e.Name,
                 e.RoleId,
-                _players.TryGetSessionById(new NetUserId(e.UserId), out _)))
+                _players.TryGetSessionById(new NetUserId(e.UserId), out _),
+                _entities.System<FECTempJobWhitelistSystem>().GetExpiry(e.UserId, e.RoleId)))
             .ToList();
 
         return new FECJobWhitelistEuiState(entries, _status);
@@ -94,7 +96,7 @@ public sealed class FECJobWhitelistEui : BaseEui
         switch (msg)
         {
             case FECJobWhitelistAddMsg add:
-                await Add(add.Player.Trim(), add.JobId);
+                await Add(add.Player.Trim(), add.JobId, add.Duration.Trim());
                 break;
             case FECJobWhitelistRemoveMsg remove:
                 Remove(remove.UserId, remove.JobId);
@@ -106,8 +108,20 @@ public sealed class FECJobWhitelistEui : BaseEui
         }
     }
 
-    private async Task Add(string player, string jobId)
+    private async Task Add(string player, string jobId, string durationText)
     {
+        TimeSpan? duration = null;
+        if (durationText.Length > 0)
+        {
+            if (!FECTempJobWhitelistSystem.TryParseDuration(durationText, out var parsed))
+            {
+                SetStatus(Loc.GetString("fec-temp-whitelist-bad-duration", ("duration", durationText)));
+                return;
+            }
+
+            duration = parsed;
+        }
+
         if (!_prototypes.TryIndex<JobPrototype>(jobId, out var job))
         {
             SetStatus(Loc.GetString("cmd-jobwhitelist-job-does-not-exist", ("job", jobId)));
@@ -128,14 +142,44 @@ public sealed class FECJobWhitelistEui : BaseEui
         }
 
         var userId = data.UserId.UserId;
-        if (_entries.Any(e => e.UserId == userId && e.RoleId == job.ID))
+        var temp = _entities.System<FECTempJobWhitelistSystem>();
+        var exists = _entries.Any(e => e.UserId == userId && e.RoleId == job.ID);
+        var isTemp = temp.GetExpiry(userId, job.ID) != null;
+
+        if (duration is { } time)
+        {
+            if (exists && !isTemp)
+            {
+                SetStatus(Loc.GetString("fec-job-whitelist-ui-already", ("player", data.Username), ("job", job.LocalizedName)));
+                return;
+            }
+
+            temp.Add(data.UserId, data.Username, job.ID, time, Player.Name);
+            if (!exists)
+                _entries.Add((userId, data.Username, job.ID));
+
+            _adminLog.Add(LogType.Action, LogImpact.Medium, $"{Player:player} added temporary job whitelist {job.ID} to {data.Username} for {time}");
+            SetStatus(Loc.GetString("fec-temp-whitelist-added",
+                ("player", data.Username),
+                ("job", job.LocalizedName),
+                ("date", $"{DateTime.Now + time:dd.MM.yyyy HH:mm}")));
+            return;
+        }
+
+        if (exists && !isTemp)
         {
             SetStatus(Loc.GetString("fec-job-whitelist-ui-already", ("player", data.Username), ("job", job.LocalizedName)));
             return;
         }
 
-        _jobWhitelist.AddWhitelist(data.UserId, job.ID);
-        _entries.Add((userId, data.Username, job.ID));
+        if (isTemp)
+            temp.Forget(userId, job.ID);
+        else
+            _jobWhitelist.AddWhitelist(data.UserId, job.ID);
+
+        if (!exists)
+            _entries.Add((userId, data.Username, job.ID));
+
         _adminLog.Add(LogType.Action, LogImpact.Medium, $"{Player:player} added job whitelist {job.ID} to {data.Username}");
         SetStatus(Loc.GetString("fec-job-whitelist-ui-added", ("player", data.Username), ("job", job.LocalizedName)));
     }
@@ -148,6 +192,7 @@ public sealed class FECJobWhitelistEui : BaseEui
 
         var name = _entries[index].Name;
         _jobWhitelist.RemoveWhitelist(new NetUserId(userId), jobId);
+        _entities.System<FECTempJobWhitelistSystem>().Forget(userId, jobId);
         _entries.RemoveAt(index);
         _adminLog.Add(LogType.Action, LogImpact.Medium, $"{Player:player} removed job whitelist {jobId} from {name}");
         SetStatus(Loc.GetString("fec-job-whitelist-ui-removed", ("player", name), ("job", JobName(jobId))));

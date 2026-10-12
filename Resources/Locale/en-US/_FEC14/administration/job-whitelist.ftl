@@ -40,3 +40,15 @@ fec-job-whitelist-ui-added = Granted a whitelist for { $job } to { $player }.
 fec-job-whitelist-ui-removed = Removed the whitelist for { $job } from { $player }.
 fec-lobby-other-jobs = Other
 fec-lobby-other-job-no-preference = This job is not chosen through lobby priorities.
+
+fec-temp-whitelist-duration = Duration
+fec-temp-whitelist-duration-tooltip = Empty means permanent. Examples 30m, 12h, 7d, 2w (minutes, hours, days, weeks).
+fec-temp-whitelist-row = { $text } [until { $date }]
+fec-temp-whitelist-added = { $player } receives a temporary whitelist for { $job } until { $date }.
+fec-temp-whitelist-expired = Temporary whitelist of { $player } for { $job } has expired and was removed.
+fec-temp-whitelist-bad-duration = Invalid duration "{ $duration }". Examples 30m, 12h, 7d, 2w.
+cmd-jobwhitelisttemp-desc = Grants a temporary job whitelist.
+cmd-jobwhitelisttemp-help = Usage: jobwhitelisttemp <username> <job> <duration>, for example jobwhitelisttemp Ivan CMSquadLeader 7d
+cmd-jobwhitelisttemp-hint-player = <username or ID>
+cmd-jobwhitelisttemp-hint-job = <job>
+cmd-jobwhitelisttemp-hint-duration = <duration, e.g. 30m, 12h, 7d>

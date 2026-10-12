@@ -40,3 +40,15 @@ fec-job-whitelist-ui-added = { $player } получает вайтлист на 
 fec-job-whitelist-ui-removed = { $player } больше не имеет вайтлиста на должность { $job }.
 fec-lobby-other-jobs = Остальное
 fec-lobby-other-job-no-preference = Эта должность выбирается не через приоритеты в лобби.
+
+fec-temp-whitelist-duration = Срок
+fec-temp-whitelist-duration-tooltip = Пусто — навсегда. Примеры 30m, 12h, 7d, 2w (минуты, часы, дни, недели).
+fec-temp-whitelist-row = { $text } [до { $date }]
+fec-temp-whitelist-added = { $player } получает временный вайтлист на должность { $job } до { $date }.
+fec-temp-whitelist-expired = Временный вайтлист { $player } на должность { $job } истёк и снят.
+fec-temp-whitelist-bad-duration = Неверный срок «{ $duration }». Примеры 30m, 12h, 7d, 2w.
+cmd-jobwhitelisttemp-desc = Выдаёт временный вайтлист на должность.
+cmd-jobwhitelisttemp-help = Использование: jobwhitelisttemp <ник> <должность> <срок>, например jobwhitelisttemp Ivan CMSquadLeader 7d
+cmd-jobwhitelisttemp-hint-player = <ник или ID>
+cmd-jobwhitelisttemp-hint-job = <должность>
+cmd-jobwhitelisttemp-hint-duration = <срок, например 30m, 12h, 7d>
