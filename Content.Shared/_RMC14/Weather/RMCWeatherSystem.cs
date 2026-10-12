@@ -605,6 +605,52 @@ public sealed class RMCWeatherSystem : EntitySystem
             : weatherEvent.DisplayName;
     }
 
+    public void FECApplyPlanetProfile(EntityUid map, Content.Shared._FEC14.Weather.FECPlanetWeatherPrototype profile, bool? clearRound) // FEC14
+    {
+        var mapId = Transform(map).MapID;
+        Entity<RMCWeatherCycleComponent>? found = null;
+        var query = EntityQueryEnumerator<RMCWeatherCycleComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var cycle, out var xform))
+        {
+            if (xform.MapID == mapId)
+            {
+                found = new Entity<RMCWeatherCycleComponent>(uid, cycle);
+                break;
+            }
+        }
+
+        if (found is not { } existing)
+        {
+            if (profile.ExtraEvents.Count == 0)
+                return;
+
+            var created = Factory.GetComponent<RMCWeatherCycleComponent>();
+            created.WeatherEvents.AddRange(profile.ExtraEvents);
+            created.MinTimeBetweenEvents = profile.MinTimeBetweenEvents ?? TimeSpan.FromMinutes(20);
+            created.MinTimeBetweenChecks = profile.MinTimeBetweenChecks ?? TimeSpan.FromMinutes(10);
+            created.StartChance = profile.StartChance ?? 0.5f;
+            AddComp(map, created);
+            existing = new Entity<RMCWeatherCycleComponent>(map, created);
+        }
+        else
+        {
+            existing.Comp.WeatherEvents.AddRange(profile.ExtraEvents);
+            if (profile.StartChance is { } start)
+                existing.Comp.StartChance = start;
+
+            if (profile.MinTimeBetweenChecks is { } checks)
+                existing.Comp.MinTimeBetweenChecks = checks;
+
+            if (profile.MinTimeBetweenEvents is { } events)
+                existing.Comp.MinTimeBetweenEvents = events;
+        }
+
+        if (clearRound is { } clear)
+            existing.Comp.FECClearRound = clear;
+
+        Dirty(existing);
+    }
+
     public bool TryGetForecast(MapId preferredMap, out RMCWeatherForecast forecast)
     {
         forecast = default;
