@@ -498,9 +498,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion Jobs
 
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab"));
-            // TODO RMC14 antags
-            TabContainer.SetTabVisible(2, false);
+            TabContainer.SetTabTitle(2, Loc.GetString("fec-profile-events-tab")); // FEC14
+            TabContainer.SetTabVisible(2, true); // FEC14
 
             RefreshTraits();
 
