@@ -2,6 +2,7 @@ using Content.Client._RMC14.TacticalMap;
 using Content.Client.Administration.Managers;
 using Content.Shared._FEC14.Mapping;
 using Content.Shared.Input;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
@@ -16,6 +17,10 @@ public sealed class FECMappingHistorySystem : EntitySystem
 
     private EntityCoordinates? _copyCorner;
 
+    public FECMappingTool Tool { get; private set; }
+
+    public event Action? ToolChanged;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -25,6 +30,8 @@ public sealed class FECMappingHistorySystem : EntitySystem
             .Bind(ContentKeyFunctions.FECMappingRedo, InputCmdHandler.FromDelegate(_ => Undo(true), handle: false))
             .Bind(ContentKeyFunctions.FECMappingCopy, new PointerInputCmdHandler(HandleCopy, outsidePrediction: true))
             .Bind(ContentKeyFunctions.FECMappingPaste, new PointerInputCmdHandler(HandlePaste, outsidePrediction: true))
+            .BindBefore(EngineKeyFunctions.Use, new PointerInputCmdHandler(HandleToolClick, outsidePrediction: true), typeof(SharedInteractionSystem))
+            .BindBefore(EngineKeyFunctions.UIRightClick, new PointerInputCmdHandler(HandleToolCancel, outsidePrediction: true))
             .Register<FECMappingHistorySystem>();
     }
 
@@ -43,6 +50,51 @@ public sealed class FECMappingHistorySystem : EntitySystem
             RaiseNetworkEvent(new FECMappingRedoRequestEvent());
         else
             RaiseNetworkEvent(new FECMappingUndoRequestEvent());
+    }
+
+    public void SetTool(FECMappingTool tool)
+    {
+        Tool = Tool == tool ? FECMappingTool.None : tool;
+        _copyCorner = null;
+        ToolChanged?.Invoke();
+
+        if (Tool == FECMappingTool.Select)
+            _popup.PopupCursor(Loc.GetString("fec-mapping-tool-select-start"));
+        else if (Tool == FECMappingTool.Paste)
+            _popup.PopupCursor(Loc.GetString("fec-mapping-tool-paste-start"));
+    }
+
+    private bool HandleToolClick(in PointerInputCmdHandler.PointerInputCmdArgs args)
+    {
+        if (Tool == FECMappingTool.None || args.State != BoundKeyState.Down)
+            return false;
+
+        if (!_admin.CanAdminPlace() || !args.Coordinates.IsValid(EntityManager))
+        {
+            SetTool(FECMappingTool.None);
+            return false;
+        }
+
+        if (Tool == FECMappingTool.Select)
+        {
+            HandleCopy(args);
+            if (_copyCorner == null)
+                SetTool(FECMappingTool.None);
+
+            return true;
+        }
+
+        HandlePaste(args);
+        return true;
+    }
+
+    private bool HandleToolCancel(in PointerInputCmdHandler.PointerInputCmdArgs args)
+    {
+        if (Tool == FECMappingTool.None || args.State != BoundKeyState.Down)
+            return false;
+
+        SetTool(FECMappingTool.None);
+        return true;
     }
 
     private bool HandleCopy(in PointerInputCmdHandler.PointerInputCmdArgs args)
@@ -70,4 +122,11 @@ public sealed class FECMappingHistorySystem : EntitySystem
         RaiseNetworkEvent(new FECMappingPasteRequestEvent(GetNetCoordinates(args.Coordinates)));
         return true;
     }
+}
+
+public enum FECMappingTool : byte
+{
+    None,
+    Select,
+    Paste,
 }

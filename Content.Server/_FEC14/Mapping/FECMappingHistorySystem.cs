@@ -42,7 +42,8 @@ public sealed partial class FECMappingHistorySystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        _pendingOldTiles.Clear();
+        if (_pendingOldTiles.Count > 0)
+            _pendingOldTiles.Clear();
     }
 
     private void OnTileChanged(ref TileChangedEvent ev)

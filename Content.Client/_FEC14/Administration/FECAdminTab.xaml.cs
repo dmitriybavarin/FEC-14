@@ -19,6 +19,9 @@ public sealed partial class FECAdminTab : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        TabContainer.SetTabTitle(ToolsTab, Loc.GetString("fec-admin-tab-tools"));
+        TabContainer.SetTabTitle(SettingsTab, Loc.GetString("fec-admin-category-settings"));
+
         RefreshButton.OnPressed += _ => Request();
         Settings.OnSet += (key, value) => _entities.System<FECSettingsSystem>().Set(key, value);
         Settings.OnReset += key => _entities.System<FECSettingsSystem>().Reset(key);

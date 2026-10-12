@@ -5,7 +5,6 @@
     xmlns:hotbar="clr-namespace:Content.Client.UserInterface.Systems.Hotbar.Widgets"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:mapping="clr-namespace:Content.Client.Mapping"
-    xmlns:fecMapping="clr-namespace:Content.Client._FEC14.Mapping"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
     HorizontalAlignment="Center">
@@ -80,7 +79,6 @@
                     <mapping:MappingActionsButton Name="Delete" Access="Public"
                                                   ToolTip="{Loc 'fec-xaml-delete-hold-6'}" />
                     <mapping:MappingActionsButton Name="Flip" Access="Public" ToggleMode="False"/>
-                    <fecMapping:FECMappingToolbar /> <!-- FEC14 -->
                 </BoxContainer>
             </PanelContainer>
         </LayoutContainer>

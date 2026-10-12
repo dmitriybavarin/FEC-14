@@ -16,6 +16,7 @@ public sealed class FECPlanetWeatherSystem : EntitySystem
     [Dependency] private readonly RMCWeatherSystem _weather = default!;
 
     private readonly HashSet<EntityUid> _handled = new();
+    private float _accumulator;
 
     public override void Initialize()
     {
@@ -25,6 +26,11 @@ public sealed class FECPlanetWeatherSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        _accumulator += frameTime;
+        if (_accumulator < 1f)
+            return;
+
+        _accumulator = 0;
         var query = EntityQueryEnumerator<RMCPlanetComponent, MetaDataComponent>();
         while (query.MoveNext(out var uid, out _, out var meta))
         {

@@ -1,13 +1,7 @@
-fec-admin-category-round = Раунд
-fec-admin-category-players = Игроки
-fec-admin-category-server = Сервер
-fec-admin-weather-button = Метеосводка
 fec-history-prompt-button = История игрока
 fec-history-prompt-title = История игрока
 fec-history-prompt-open = Открыть
 
-fec-settings-button = Параметры FEC
-fec-settings-title = Параметры FEC
 fec-settings-hint = Изменения применяются сразу и действуют до перезапуска сервера. Постоянные значения задаются в конфиге сервера.
 fec-settings-apply = Применить
 fec-settings-reset = Сброс
@@ -37,8 +31,6 @@ fec-settings-fec-weather-min-check-minutes = Мин. интервал прове
 fec-settings-fec-weather-min-clear-minutes = Мин. ясная пауза между непогодой, мин
 fec-settings-fec-species-whitelist = Разрешённые расы (через запятую)
 
-cmd-fecsettings-desc = Открывает окно параметров FEC.
-cmd-fecsettings-help = Использование: fecsettings
 
 cmd-fectp-desc = Телепорт к карте, гриду, сущности или игроку. Понимает номера из lsmap и lsgrid.
 cmd-fectp-help = Использование: fectp <map:N | номер грида или сущности | ник> [кого телепортировать]
@@ -49,8 +41,6 @@ fec-tp-hint-target = map:N, номер грида или сущности, ни�
 fec-tp-hint-player = Кого телепортировать (по умолчанию вас)
 
 fec-admin-tab = FEC14
+fec-admin-tab-tools = Инструменты
 fec-admin-category-settings = Настройки
 fec-settings-no-access = Для изменения настроек нужен флаг SERVER.
-fec-tp-button = Телепорт
-fec-tp-go = Переместиться
-fec-tp-prompt-hint = map:N — карта из lsmap, число — грид или сущность, или ник игрока.

@@ -60,9 +60,6 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> EventsRolesFile =
         CVarDef.Create("fec.events_roles_file", ".CONFIG/event_roles.json", CVar.SERVERONLY);
 
-    public static readonly CVarDef<bool> MappingNewUi =
-        CVarDef.Create("fec.mapping_new_ui", false, CVar.CLIENTONLY | CVar.ARCHIVE);
-
     public static readonly CVarDef<float> WeatherClearRoundChance =
         CVarDef.Create("fec.weather_clear_round_chance", 0.25f, CVar.SERVERONLY);
 
