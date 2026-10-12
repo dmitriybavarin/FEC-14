@@ -60,6 +60,9 @@ public sealed class FECMeteoStationSystem : EntitySystem
         if (!_weather.TryGetForecast(Transform(station).MapID, out var forecast))
             return Loc.GetString("fec-meteo-station-no-data");
 
+        if (_tower.IsXenoControlled(forecast.MapId))
+            return Loc.GetString("fec-meteo-station-xeno-tower");
+
         if (!_tower.IsForecastAvailable(forecast.MapId))
             return Loc.GetString("fec-meteo-station-no-tower");
 

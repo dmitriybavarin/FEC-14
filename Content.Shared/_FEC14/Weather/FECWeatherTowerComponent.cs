@@ -12,6 +12,15 @@ public sealed partial class FECWeatherTowerComponent : Component
     [DataField, AutoNetworkedField]
     public FECWeatherTowerState State = FECWeatherTowerState.Off;
 
+    [DataField, AutoNetworkedField]
+    public bool XenoControlled;
+
+    [DataField]
+    public TimeSpan CaptureTime = TimeSpan.FromSeconds(60);
+
+    [ViewVariables]
+    public TimeSpan? WeededSince;
+
     [DataField]
     public Dictionary<ProtoId<WeatherPrototype>, FECWeatherTowerScreen> Screens = new();
 

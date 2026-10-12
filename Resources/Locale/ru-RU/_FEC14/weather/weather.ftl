@@ -50,3 +50,10 @@ fec-weather-tower-turned-off = Вы выключаете метеовышку.
 fec-weather-cas-blocked = Нелётная погода над целью. Огневая поддержка с воздуха невозможна.
 fec-weather-flight-blocked = Нелётная погода. Вылет дропшипа запрещён до улучшения обстановки.
 fec-meteo-station-no-fly = [color=orange]Нелётная погода. CAS и вылеты дропшипов невозможны.[/color]
+
+fec-weather-tower-examine-xeno = Вышка [color=purple]опутана смолой улья[/color]. Пока смола на месте, вышку не починить.
+fec-weather-tower-entangled = Вышка опутана смолой, сначала очистите её.
+fec-weather-tower-captured-marine = Связь с метеорологической вышкой потеряна. Вышка опутана смолой ксеноморфов, штормовые предупреждения ARES недоступны.
+fec-weather-tower-captured-xeno = Высокие потеряли свою башню погоды. Теперь небо видим только мы.
+fec-weather-tower-freed-marine = Смола с метеорологической вышки очищена. Почините и включите вышку, чтобы восстановить метеосводки.
+fec-meteo-station-xeno-tower = Нет связи с метеовышкой. Вышка захвачена ксеноморфами.

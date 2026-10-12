@@ -50,3 +50,10 @@ fec-weather-tower-turned-off = You turn the weather tower off.
 fec-weather-cas-blocked = No-fly weather over the target. Close air support is impossible.
 fec-weather-flight-blocked = No-fly weather. Dropship launch is forbidden until conditions improve.
 fec-meteo-station-no-fly = [color=orange]No-fly weather. CAS and dropship flights are impossible.[/color]
+
+fec-weather-tower-examine-xeno = The tower is [color=purple]entangled in hive resin[/color]. It cannot be repaired while the resin is there.
+fec-weather-tower-entangled = The tower is entangled in resin, clear it first.
+fec-weather-tower-captured-marine = Link to the meteorological tower lost. The tower is entangled in xenomorph resin, ARES storm warnings are unavailable.
+fec-weather-tower-captured-xeno = The tall ones lost their weather tower. Now only we can see the sky.
+fec-weather-tower-freed-marine = Resin has been cleared from the meteorological tower. Repair and turn on the tower to restore weather reports.
+fec-meteo-station-xeno-tower = No link to the weather tower. The tower has been captured by xenomorphs.
