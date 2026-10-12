@@ -296,7 +296,7 @@
   suffix: Alamo
   components:
   - type: DropshipDestination
-    spawn: "/Maps/_RMC14/alamo.yml" # The actual Dropship files are private. These are debug versions to ensure tests pass.
+    spawn: "/Maps/_FEC14/Shuttles/alamo.yml" # FEC14
 
 - type: entity
   parent: CMDropshipDestination
@@ -304,7 +304,7 @@
   suffix: Normandy
   components:
   - type: DropshipDestination
-    spawn: "/Maps/_RMC14/normandy.yml" # The actual Dropship files are private. These are debug versions to ensure tests pass.
+    spawn: "/Maps/_FEC14/Shuttles/normandy.yml" # FEC14
 
 - type: entity
   parent: MarkerBase
