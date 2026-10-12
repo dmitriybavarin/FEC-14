@@ -12,3 +12,13 @@ cmd-feckick-no-reason = Кикнут администрацией.
 cmd-feckick-success = Игрок { $player } кикнут.
 cmd-feckick-hint-player = <ник>
 cmd-feckick-hint-reason = [причина]
+
+fec-audit-rank-added = [Аудит прав] { $admin } создал ранг { $rank } (флаги { $flags })
+fec-audit-rank-updated = [Аудит прав] { $admin } изменил ранг { $rank } (флаги { $flags })
+fec-audit-rank-removed = [Аудит прав] { $admin } удалил ранг { $rank }
+fec-audit-admin-added = [Аудит прав] { $admin } выдал админку { $target } (титул { $title }, ранг { $rank }, флаги { $flags })
+fec-audit-admin-updated = [Аудит прав] { $admin } изменил админку { $target } (титул { $title }, ранг { $rank }, флаги { $flags })
+fec-audit-admin-removed = [Аудит прав] { $admin } снял админку с { $target }
+fec-audit-weight-set = [Аудит прав] { $admin } установил вес ранга { $rank } на { $weight }
+fec-audit-blocked-rank = [Аудит прав] Заблокирована попытка { $admin } изменить ранг { $rank } без нужных флагов или веса
+fec-audit-blocked-admin = [Аудит прав] Заблокирована попытка { $admin } изменить права админа { $target } без нужных флагов или веса

@@ -18,6 +18,9 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> OocColorsFile =
         CVarDef.Create("fec.ooc_colors_file", ".CONFIG/ooc_colors.json", CVar.SERVERONLY);
 
+    public static readonly CVarDef<string> AdminAuditWebhook =
+        CVarDef.Create("fec.admin_audit_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
     public static readonly CVarDef<float> WeatherClearRoundChance =
         CVarDef.Create("fec.weather_clear_round_chance", 0.25f, CVar.SERVERONLY);
 
