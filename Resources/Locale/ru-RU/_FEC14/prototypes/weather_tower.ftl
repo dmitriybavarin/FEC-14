@@ -1,4 +1,16 @@
 ent-FECWeatherTower = метеорологическая вышка WT-1
     .desc = Стационарная вышка наблюдения за погодой с анемометром, флюгером и блоком атмосферных датчиков. Передаёт данные на метеорологические станции.
+    .gender = female
+    .gen = метеорологической вышки WT-1
+    .dat = метеорологической вышке WT-1
+    .acc = метеорологическую вышку WT-1
+    .ins = метеорологической вышкой WT-1
+    .prep = метеорологической вышке WT-1
 ent-FECWeatherTowerOn = { ent-FECWeatherTower }
     .desc = { ent-FECWeatherTower.desc }
+    .gender = female
+    .gen = { ent-FECWeatherTower.gen }
+    .dat = { ent-FECWeatherTower.dat }
+    .acc = { ent-FECWeatherTower.acc }
+    .ins = { ent-FECWeatherTower.ins }
+    .prep = { ent-FECWeatherTower.prep }

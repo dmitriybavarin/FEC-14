@@ -43,6 +43,7 @@ namespace Content.Shared.Localizations
 
             // RMC14
             IoCManager.Resolve<RMCLocalizationManager>().Initialize(culture);
+            IoCManager.Resolve<Content.Shared._FEC14.Localization.FECRussianCases>().Initialize(culture); // FEC14
 
             /*
              * The following language functions are specific to the english localization. When working on your own
