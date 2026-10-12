@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration;
+﻿using Content.Server._FEC14.Administration; // FEC14
+using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Shared.Administration;
@@ -11,6 +12,7 @@ namespace Content.Server._RMC14.Admin;
 public sealed class RMCEraseChatMessagesCommand : LocalizedCommands
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
 
@@ -32,6 +34,9 @@ public sealed class RMCEraseChatMessagesCommand : LocalizedCommands
                 shell.WriteLine($"No player found with name or id {name}");
                 return;
             }
+
+            if (!await _fecWeight.CheckShellTargetAsync(shell, player.UserId)) // FEC14
+                return; // FEC14
 
             _chat.DeleteMessagesBy(player.UserId);
             _adminLog.Add(LogType.AdminCommands, $"{shell.Player?.Name:admin} deleted chat messages by {player.Username}");

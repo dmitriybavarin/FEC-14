@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.GhostKick;
@@ -49,6 +50,7 @@ public sealed class GhostKickCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly GhostKickManager _ghostKick = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
 
     public override string Command => "ghostkick";
 
@@ -68,6 +70,9 @@ public sealed class GhostKickCommand : LocalizedEntityCommands
             shell.WriteError(Loc.GetString($"shell-target-player-does-not-exist"));
             return;
         }
+
+        if (!_fecWeight.CheckShellTarget(shell, player)) // FEC14
+            return; // FEC14
 
         _ghostKick.DoDisconnect(player.Channel, reason);
     }

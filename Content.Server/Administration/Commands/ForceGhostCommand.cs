@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using Content.Server.GameTicking;
 using Content.Server.Ghost;
 using Content.Shared.Administration;
@@ -12,6 +13,7 @@ namespace Content.Server.Administration.Commands;
 public sealed class ForceGhostCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
@@ -31,6 +33,9 @@ public sealed class ForceGhostCommand : LocalizedEntityCommands
             shell.WriteError(LocalizationManager.GetString("shell-target-player-does-not-exist"));
             return;
         }
+
+        if (!_fecWeight.CheckShellTarget(shell, player)) // FEC14
+            return; // FEC14
 
         if (!_gameTicker.PlayerGameStatuses.TryGetValue(player.UserId, out var playerStatus) ||
             playerStatus is not PlayerGameStatus.JoinedGame)

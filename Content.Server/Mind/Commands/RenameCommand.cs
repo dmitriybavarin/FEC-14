@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration;
 using Content.Shared.Administration;
@@ -12,6 +13,7 @@ namespace Content.Server.Mind.Commands;
 public sealed class RenameCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
@@ -35,6 +37,9 @@ public sealed class RenameCommand : LocalizedEntityCommands
 
         if (!TryParseUid(args[0], shell, _entManager, out var entityUid))
             return;
+
+        if (!_fecWeight.CheckShellTarget(shell, entityUid.Value)) // FEC14
+            return; // FEC14
 
         _metaSystem.SetEntityName(entityUid.Value, name);
     }

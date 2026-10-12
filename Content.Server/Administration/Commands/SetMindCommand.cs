@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using Content.Shared.Administration;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -11,6 +12,7 @@ namespace Content.Server.Administration.Commands
     public sealed class SetMindCommand : LocalizedEntityCommands
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
         public override string Command => "setmind";
@@ -56,6 +58,9 @@ namespace Content.Server.Administration.Commands
                 shell.WriteLine(Loc.GetString("shell-target-player-does-not-exist"));
                 return;
             }
+
+            if (!_fecWeight.CheckShellTarget(shell, session) || !_fecWeight.CheckShellTarget(shell, eUid.Value)) // FEC14
+                return; // FEC14
 
             // hm, does player have a mind? if not we may need to give them one
             var playerCData = session.ContentData();
