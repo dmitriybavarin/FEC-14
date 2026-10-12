@@ -39,3 +39,11 @@ fec-settings-fec-species-whitelist = Разрешённые расы (через
 
 cmd-fecsettings-desc = Открывает окно параметров FEC.
 cmd-fecsettings-help = Использование: fecsettings
+
+cmd-fectp-desc = Телепорт к карте, гриду, сущности или игроку. Понимает номера из lsmap и lsgrid.
+cmd-fectp-help = Использование: fectp <map:N | номер грида или сущности | ник> [кого телепортировать]
+fec-tp-done = Телепорт к { $target }, карта { $map }, { $x } { $y }
+fec-tp-not-found = Не найдено «{ $target }». Карта — map:N из lsmap, грид — номер из lsgrid, сущность — её номер, игрок — ник.
+fec-tp-no-player = Игрок «{ $player }» не найден или без тела
+fec-tp-hint-target = map:N, номер грида или сущности, ник
+fec-tp-hint-player = Кого телепортировать (по умолчанию вас)
