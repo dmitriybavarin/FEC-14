@@ -13,6 +13,7 @@ namespace Content.Shared.IoC
 
             // RMC14
             IoCManager.Register<RMCLocalizationManager>();
+            IoCManager.Register<Content.Shared._FEC14.Localization.FECRussianCases>(); // FEC14
         }
     }
 }

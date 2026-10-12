@@ -23,6 +23,6 @@ rmc-fireman-carry-need-aggressive-grab = Сначала нужно крепко 
 rmc-fireman-carry-cant-grab-aggressively = Это нельзя крепко схватить!
 rmc-fireman-carry-not-trained-grab = Вы не обучены крепкому захвату!
 
-rmc-fireman-carry-start-loading = Вы начинаете взваливать раненого на спину.
+rmc-fireman-carry-start-loading = Вы начинаете взваливать { CASE($targetName, "acc") } на спину.
 
 rmc-fireman-carry-not-trained = Вы не обучены переноске людей!
