@@ -1,0 +1,14 @@
+<controls:FECSettingsWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    MinSize="560 420"
+    SetSize="640 600"
+    Title="{Loc 'fec-settings-title'}">
+    <BoxContainer Orientation="Vertical" Margin="6" SeparationOverride="6">
+        <Label Text="{Loc 'fec-settings-hint'}" FontColorOverride="#A0A0A0" />
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Name="Entries" Access="Public" Orientation="Vertical" SeparationOverride="4" />
+        </ScrollContainer>
+        <Label Name="StatusLabel" Access="Public" FontColorOverride="#C8C864" />
+    </BoxContainer>
+</controls:FECSettingsWindow>

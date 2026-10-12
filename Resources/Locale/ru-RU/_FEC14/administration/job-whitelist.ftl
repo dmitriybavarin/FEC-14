@@ -33,7 +33,6 @@ fec-job-whitelist-ui-remove-confirm = Точно?
 fec-job-whitelist-ui-add-heading = Выдать вайтлист
 fec-job-whitelist-ui-player = Ник или ID игрока
 fec-job-whitelist-ui-add = Выдать
-fec-job-whitelist-ui-other-hint = * должность требует вайтлист. [Остальное] должности нет в лобби, игрок увидит ее в категории "Остальное".
 fec-job-whitelist-ui-no-player = Введите ник или ID игрока.
 fec-job-whitelist-ui-already = { $player } уже имеет вайтлист на должность { $job }.
 fec-job-whitelist-ui-added = { $player } получает вайтлист на должность { $job }.
@@ -52,3 +51,9 @@ cmd-jobwhitelisttemp-help = Использование: jobwhitelisttemp <ник
 cmd-jobwhitelisttemp-hint-player = <ник или ID>
 cmd-jobwhitelisttemp-hint-job = <должность>
 cmd-jobwhitelisttemp-hint-duration = <срок, например 30m, 12h, 7d>
+
+fec-job-whitelist-ui-player-label = Игрок
+fec-job-whitelist-ui-job-label = Должность
+fec-temp-whitelist-duration-placeholder = Пусто — навсегда, или 30m, 12h, 7d
+fec-job-whitelist-ui-hint-whitelisted = * — должность требует вайтлист.
+fec-job-whitelist-ui-hint-other = [Остальное] — должности нет в лобби, игрок найдёт её в «Остальном».
