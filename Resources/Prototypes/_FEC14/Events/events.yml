@@ -1,0 +1,67 @@
+- type: antag
+  id: FECEventCMBMarshal
+  name: fec-event-antag-marshal-name
+  objective: fec-event-antag-marshal-objective
+  antagonist: false
+  setPreference: true
+  isCM: true
+
+- type: entity
+  id: FECFactionPunitive
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IFFFaction
+
+- type: entity
+  parent: BaseGameRule
+  id: FECMarshalRescueRule
+  components:
+  - type: FECMarshalRescueRule
+
+- type: entity
+  parent: BaseGameRule
+  id: FECCMBPatrolRule
+  components:
+  - type: FECTeamDropRule
+    spawners:
+    - RMCRandomHumanoidBureauMarshal
+    - RMCRandomHumanoidBureauDeputy
+    - RMCRandomHumanoidBureauDeputy
+    aresAnnouncement: fec-patrol-ares
+    summary: fec-patrol-summary
+
+- type: entity
+  parent: BaseGameRule
+  id: FECAnomalousStormRule
+  components:
+  - type: FECWeatherStormRule
+
+- type: fecEvent
+  id: MarshalRescue
+  name: fec-event-marshal-name
+  description: fec-event-marshal-desc
+  rule: FECMarshalRescueRule
+  minPlayers: 60
+  weight: 1
+  earliestStart: 900
+  latestStart: 2400
+
+- type: fecEvent
+  id: CMBPatrol
+  name: fec-event-patrol-name
+  description: fec-event-patrol-desc
+  rule: FECCMBPatrolRule
+  minPlayers: 30
+  weight: 2
+  earliestStart: 1800
+  latestStart: 4200
+
+- type: fecEvent
+  id: AnomalousStorm
+  name: fec-event-storm-name
+  description: fec-event-storm-desc
+  rule: FECAnomalousStormRule
+  minPlayers: 0
+  weight: 2
+  earliestStart: 2400
+  latestStart: 5400

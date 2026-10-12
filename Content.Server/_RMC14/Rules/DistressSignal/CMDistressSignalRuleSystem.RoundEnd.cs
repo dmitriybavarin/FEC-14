@@ -298,6 +298,18 @@ public sealed partial class CMDistressSignalRuleSystem
         }
     }
 
+    public bool FECEndRound(DistressSignalRuleResult result, LocId message) // FEC14
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out _, out var rule, out _))
+        {
+            EndRound(rule, result, message);
+            return true;
+        }
+
+        return false;
+    }
+
     /// <summary>
     /// Ends the round with the specified result, handling victory conditions and announcements.
     /// </summary>

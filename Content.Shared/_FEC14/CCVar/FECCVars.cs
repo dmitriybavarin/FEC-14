@@ -24,6 +24,18 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<string> AdminAuditWebhook =
         CVarDef.Create("fec.admin_audit_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
+    public static readonly CVarDef<bool> EventsEnabled =
+        CVarDef.Create("fec.events_enabled", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> EventsChance =
+        CVarDef.Create("fec.events_chance", 0.6f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EventsMaxPerRound =
+        CVarDef.Create("fec.events_max_per_round", 2, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> EventsBlocksFile =
+        CVarDef.Create("fec.events_blocks_file", ".CONFIG/event_blocks.json", CVar.SERVERONLY);
+
     public static readonly CVarDef<float> WeatherClearRoundChance =
         CVarDef.Create("fec.weather_clear_round_chance", 0.25f, CVar.SERVERONLY);
 
