@@ -25,6 +25,9 @@
     layers:
     - state: weather_off
       map: [ "base" ]
+    - state: screen_off
+      map: [ "screen" ]
+      shader: unshaded
     - sprite: _RMC14/Structures/communications_tower.rsi
       state: resin_idle
       map: [ "resin" ]
@@ -44,6 +47,39 @@
       - !type:DoActsBehavior
         acts: [ "Breakage" ]
   - type: FECWeatherTower
+    screens:
+      RMCStrataClearsky: Clear
+      Rain: Rain
+      RMCHybrisaRain: Rain
+      RMCHybrisaRainLight: Rain
+      RMCHybrisaRainVeryLight: Rain
+      RMCTrijentRainLight: Rain
+      RMCStrataStorm: Rain
+      RMCStrataStormLight: Rain
+      RMCStrataStormVeryLight: Rain
+      RMCStrataStormTropical: Rain
+      RMCStrataStormVaradero: Rain
+      RMCStrataStormLightVaradero: Rain
+      RMCStrataStormVeryLightVaradero: Rain
+      Storm: Storm
+      RMCStrataStormRainAndThunder: Storm
+      RMCStrataStormLightRainAndThunder: Storm
+      RMCStrataStormVeryLightRainAndThunder: Storm
+      SnowfallLight: Snow
+      SnowfallMedium: Snow
+      SnowfallHeavy: Snow
+      RMCStrataSnowing: Snow
+      RMCStrataBlizzard: Snow
+      Hail: Snow
+      Sandstorm: Dust
+      SandstormHeavy: Dust
+      RMCSolarisDust: Dust
+      RMCSolarisSand: Dust
+      RMCSolarisRocks: Dust
+      Ashfall: Dust
+      AshfallLight: Dust
+      AshfallHeavy: Dust
+      Fallout: Dust
   - type: RMCRepairable
     heal: 150
     skillRequired: 1
@@ -57,6 +93,15 @@
           Broken: { state: weather_broken }
           Off: { state: weather_off }
           On: { state: weather_on }
+      enum.FECWeatherTowerLayers.Screen:
+        screen:
+          Off: { state: screen_off }
+          Clear: { state: screen_clear }
+          Rain: { state: screen_rain }
+          Storm: { state: screen_storm }
+          Snow: { state: screen_snow }
+          Dust: { state: screen_dust }
+          Warning: { state: screen_warning }
       enum.WeededEntityLayers.Layer:
         resin:
           True: { visible: true }

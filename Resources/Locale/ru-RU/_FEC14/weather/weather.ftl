@@ -32,8 +32,8 @@ fec-meteo-station-location-unknown = зона операции
 fec-meteo-station-idle = Ясно. Следующее обновление прогноза примерно через { $minutes } мин.
 fec-meteo-station-cooldown = Затишье после непогоды. Стабильная погода ещё примерно { $minutes } мин.
 fec-meteo-station-warning = [color=orange]ШТОРМОВОЕ ПРЕДУПРЕЖДЕНИЕ:[/color] { $event } через { $seconds } с. Укройтесь под крышей.
-fec-meteo-station-running = [color=red]Сейчас: { $event }.[/color] Ожидаемое окончание примерно через { $minutes } мин.
-fec-meteo-station-running-permanent = [color=red]Сейчас: { $event }.[/color] Окончание не прогнозируется.
+fec-meteo-station-running = [color=red]Сейчас { $event }.[/color] Ожидаемое окончание примерно через { $minutes } мин.
+fec-meteo-station-running-permanent = [color=red]Сейчас { $event }.[/color] Окончание не прогнозируется.
 fec-meteo-station-no-data = Нет связи с датчиками: погодный цикл в зоне операции не обнаружен.
 fec-meteo-station-no-power = Станция обесточена.
 fec-meteo-station-no-tower = Нет связи с метеовышкой. Почините и включите метеорологическую вышку в зоне операции.
