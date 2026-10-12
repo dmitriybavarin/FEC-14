@@ -47,3 +47,15 @@ fec-tp-not-found = Не найдено «{ $target }». Карта — map:N и�
 fec-tp-no-player = Игрок «{ $player }» не найден или без тела
 fec-tp-hint-target = map:N, номер грида или сущности, ник
 fec-tp-hint-player = Кого телепортировать (по умолчанию вас)
+
+fec-admin-tab = FEC14
+fec-admin-category-fun = Приколы
+fec-admin-category-settings = Настройки
+fec-settings-no-access = Для изменения настроек нужен флаг SERVER.
+fec-settings-category-fun = Приколы
+fec-settings-fec-fun-enabled = Приколы включены
+fec-settings-fec-fun-death-quote-chance = Шанс эпитафии при смерти (0–1)
+fec-settings-fec-fun-round-start-quote = Совет дня от АРЕС в начале раунда
+fec-tp-button = Телепорт
+fec-tp-go = Переместиться
+fec-tp-prompt-hint = map:N — карта из lsmap, число — грид или сущность, или ник игрока.

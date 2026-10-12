@@ -1,0 +1,13 @@
+<controls:FECTeleportPromptWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    MinSize="420 90"
+    Title="{Loc 'fec-tp-button'}">
+    <BoxContainer Orientation="Vertical" Margin="6" SeparationOverride="4">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+            <LineEdit Name="TargetEdit" HorizontalExpand="True" PlaceHolder="{Loc 'fec-tp-hint-target'}" />
+            <Button Name="GoButton" Text="{Loc 'fec-tp-go'}" />
+        </BoxContainer>
+        <Label Text="{Loc 'fec-tp-prompt-hint'}" FontColorOverride="#A0A0A0" />
+    </BoxContainer>
+</controls:FECTeleportPromptWindow>

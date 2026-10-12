@@ -43,3 +43,26 @@ public sealed class FECSettingsResetMsg(string key) : EuiMessageBase
 {
     public readonly string Key = key;
 }
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsRequestEvent : EntityEventArgs;
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsStateEvent(List<FECSettingEntry> entries, string? status) : EntityEventArgs
+{
+    public readonly List<FECSettingEntry> Entries = entries;
+    public readonly string? Status = status;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsSetEvent(string key, string value) : EntityEventArgs
+{
+    public readonly string Key = key;
+    public readonly string Value = value;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsResetEvent(string key) : EntityEventArgs
+{
+    public readonly string Key = key;
+}

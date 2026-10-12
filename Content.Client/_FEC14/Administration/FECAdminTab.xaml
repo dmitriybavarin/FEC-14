@@ -1,0 +1,36 @@
+<controls:FECAdminTab
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    Margin="4"
+    MinSize="50 50">
+    <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" SeparationOverride="4">
+            <Label Text="{Loc fec-admin-category-round}" StyleClasses="LabelHeading" />
+            <GridContainer Columns="3">
+                <cc:CommandButton Command="rmcadminui" Text="{Loc rmc-ui-admin}" />
+                <cc:CommandButton Command="feceventspanel" Text="{Loc fec-events-ui-button}" />
+                <cc:CommandButton Command="fecweather" Text="{Loc fec-admin-weather-button}" />
+                <cc:UICommandButton Command="fectp" Text="{Loc fec-tp-button}" WindowType="{x:Type controls:FECTeleportPromptWindow}" />
+            </GridContainer>
+            <Label Text="{Loc fec-admin-category-players}" StyleClasses="LabelHeading" Margin="0 6 0 0" />
+            <GridContainer Columns="3">
+                <cc:UICommandButton Command="playerhistory" Text="{Loc fec-history-prompt-button}" WindowType="{x:Type controls:FECPlayerHistoryPromptWindow}" />
+                <cc:CommandButton Command="jobwhitelistpanel" Text="{Loc fec-job-whitelist-ui-button}" />
+            </GridContainer>
+            <Label Text="{Loc fec-admin-category-fun}" StyleClasses="LabelHeading" Margin="0 6 0 0" />
+            <GridContainer Columns="3">
+                <cc:UICommandButton Command="fecprank" Text="{Loc fec-prank-button}" WindowType="{x:Type controls:FECPrankWindow}" />
+            </GridContainer>
+            <cc:HSeparator Color="#4972A1" Margin="0 10" />
+            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                <Label Text="{Loc fec-admin-category-settings}" StyleClasses="LabelHeading" HorizontalExpand="True" />
+                <Button Name="RefreshButton" Text="{Loc fec-job-whitelist-ui-refresh}" />
+            </BoxContainer>
+            <Label Text="{Loc fec-settings-hint}" FontColorOverride="#A0A0A0" />
+            <Label Name="NoAccessLabel" Text="{Loc fec-settings-no-access}" FontColorOverride="#C86464" Visible="False" />
+            <controls:FECSettingsPanel Name="Settings" />
+        </BoxContainer>
+    </ScrollContainer>
+</controls:FECAdminTab>

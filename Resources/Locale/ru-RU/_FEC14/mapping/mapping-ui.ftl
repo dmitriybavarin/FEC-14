@@ -1,0 +1,20 @@
+fec-mapping-ui-undo = Отменить
+fec-mapping-ui-undo-tooltip = Отменить последнее действие (Ctrl+Z)
+fec-mapping-ui-redo = Вернуть
+fec-mapping-ui-redo-tooltip = Вернуть отменённое (Ctrl+Y или Ctrl+Shift+Z)
+fec-mapping-ui-light = Свет
+fec-mapping-ui-light-tooltip = Включить или выключить освещение, чтобы увидеть карту как в игре
+fec-mapping-ui-subfloor = Подполье
+fec-mapping-ui-subfloor-tooltip = Показать или скрыть трубы и кабели под полом
+fec-mapping-ui-save = Сохранить
+fec-mapping-ui-save-tooltip = Сохранить карту через savemap
+fec-mapping-ui-save-title = Сохранить карту
+fec-mapping-ui-save-map = Номер карты
+fec-mapping-ui-save-hint = Номер карты из lsmap и путь. Файл попадёт в папку data сервера, потом его нужно перенести в Resources/Maps.
+fec-mapping-ui-help = ?
+fec-mapping-ui-help-tooltip = Ctrl+Z / Ctrl+Y — отмена и возврат. Alt+C — копировать область (два клика по углам), Alt+V — вставить. 5 — пипетка, 6 — удаление. Выйти из редактора — кнопка «Выйти» или команда mappingexit.
+fec-mapping-ui-exit = Выйти
+fec-mapping-ui-exit-tooltip = Выйти из редактора в обычный интерфейс
+
+cmd-mappingexit-desc = Выходит из полноэкранного редактора маппинга в обычный интерфейс.
+cmd-mappingexit-help = Использование: mappingexit
