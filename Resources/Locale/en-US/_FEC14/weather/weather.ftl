@@ -36,3 +36,12 @@ fec-meteo-station-running = [color=red]Now: { $event }.[/color] Expected to end 
 fec-meteo-station-running-permanent = [color=red]Now: { $event }.[/color] No end in sight.
 fec-meteo-station-no-data = No sensor link: no weather cycle detected in the area of operations.
 fec-meteo-station-no-power = The station has no power.
+fec-meteo-station-no-tower = No link to the weather tower. Repair and turn on the meteorological tower in the area of operations.
+
+fec-weather-tower-examine-on = The tower is [color=green]online[/color] and transmitting weather data.
+fec-weather-tower-examine-off = The tower is [color=yellow]offline[/color]. Meteorological stations receive no data.
+fec-weather-tower-examine-broken = The tower is [color=red]damaged[/color]. It needs to be repaired with a welder.
+fec-weather-tower-needs-repairs = The tower is damaged and needs repairs first.
+fec-weather-tower-no-power = The tower has no power.
+fec-weather-tower-turned-on = You turn the weather tower on.
+fec-weather-tower-turned-off = You turn the weather tower off.

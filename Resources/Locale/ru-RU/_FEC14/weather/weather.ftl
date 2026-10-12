@@ -36,3 +36,12 @@ fec-meteo-station-running = [color=red]Сейчас: { $event }.[/color] Ожи�
 fec-meteo-station-running-permanent = [color=red]Сейчас: { $event }.[/color] Окончание не прогнозируется.
 fec-meteo-station-no-data = Нет связи с датчиками: погодный цикл в зоне операции не обнаружен.
 fec-meteo-station-no-power = Станция обесточена.
+fec-meteo-station-no-tower = Нет связи с метеовышкой. Почините и включите метеорологическую вышку в зоне операции.
+
+fec-weather-tower-examine-on = Вышка [color=green]работает[/color] и передаёт метеоданные.
+fec-weather-tower-examine-off = Вышка [color=yellow]выключена[/color]. Метеостанции не получают данные.
+fec-weather-tower-examine-broken = Вышка [color=red]повреждена[/color]. Нужен ремонт сварочным аппаратом.
+fec-weather-tower-needs-repairs = Вышка повреждена, сначала её нужно починить.
+fec-weather-tower-no-power = У вышки нет питания.
+fec-weather-tower-turned-on = Вы включаете метеовышку.
+fec-weather-tower-turned-off = Вы выключаете метеовышку.

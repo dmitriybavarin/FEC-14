@@ -635,7 +635,7 @@ public sealed class RMCWeatherSystem : EntitySystem
 
         var mapUid = Transform(cycle).MapUid;
         var mapName = mapUid != null ? Name(mapUid.Value) : string.Empty;
-        forecast = new RMCWeatherForecast(state, eventName, remaining > TimeSpan.Zero ? remaining : TimeSpan.Zero, mapName);
+        forecast = new RMCWeatherForecast(Transform(cycle).MapID, state, eventName, remaining > TimeSpan.Zero ? remaining : TimeSpan.Zero, mapName);
         return true;
     }
 
@@ -1068,4 +1068,4 @@ public sealed class RMCWeatherSystem : EntitySystem
     }
 }
 
-public readonly record struct RMCWeatherForecast(RMCWeatherCycleState State, string? EventName, TimeSpan Remaining, string MapName);
+public readonly record struct RMCWeatherForecast(MapId MapId, RMCWeatherCycleState State, string? EventName, TimeSpan Remaining, string MapName);

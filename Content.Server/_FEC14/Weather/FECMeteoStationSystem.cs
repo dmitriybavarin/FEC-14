@@ -15,6 +15,7 @@ public sealed class FECMeteoStationSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedRMCPowerSystem _power = default!;
     [Dependency] private readonly RMCWeatherSystem _weather = default!;
+    [Dependency] private readonly FECWeatherTowerSystem _tower = default!;
 
     public override void Initialize()
     {
@@ -57,6 +58,9 @@ public sealed class FECMeteoStationSystem : EntitySystem
 
         if (!_weather.TryGetForecast(Transform(station).MapID, out var forecast))
             return Loc.GetString("fec-meteo-station-no-data");
+
+        if (!_tower.IsForecastAvailable(forecast.MapId))
+            return Loc.GetString("fec-meteo-station-no-tower");
 
         var minutes = (int) Math.Ceiling(forecast.Remaining.TotalMinutes);
         var seconds = (int) Math.Ceiling(forecast.Remaining.TotalSeconds);
