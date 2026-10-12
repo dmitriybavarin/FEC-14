@@ -3,7 +3,7 @@
 - type: gameMap
   id: Almayer
   mapName: Almayer
-  mapPath: /Maps/_RMC14/almayer.yml
+  mapPath: /Maps/_FEC14/Almayer/almayer.yml # FEC14
   minPlayers: 0 # TODO RMC14 74
   maxRandomOffset: 0
   randomRotation: false
