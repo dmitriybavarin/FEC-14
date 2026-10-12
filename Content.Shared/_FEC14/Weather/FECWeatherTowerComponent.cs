@@ -1,4 +1,6 @@
+using Content.Shared.Weather;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._FEC14.Weather;
@@ -9,6 +11,21 @@ public sealed partial class FECWeatherTowerComponent : Component
 {
     [DataField, AutoNetworkedField]
     public FECWeatherTowerState State = FECWeatherTowerState.Off;
+
+    [DataField]
+    public Dictionary<ProtoId<WeatherPrototype>, FECWeatherTowerScreen> Screens = new();
+
+    [DataField]
+    public FECWeatherTowerScreen UnknownWeatherScreen = FECWeatherTowerScreen.Rain;
+
+    [DataField]
+    public TimeSpan ScreenUpdateInterval = TimeSpan.FromSeconds(2);
+
+    [ViewVariables]
+    public TimeSpan NextScreenUpdate;
+
+    [ViewVariables]
+    public FECWeatherTowerScreen Screen = FECWeatherTowerScreen.Off;
 }
 
 [Serializable, NetSerializable]
@@ -20,7 +37,20 @@ public enum FECWeatherTowerState : byte
 }
 
 [Serializable, NetSerializable]
+public enum FECWeatherTowerScreen : byte
+{
+    Off,
+    Clear,
+    Rain,
+    Storm,
+    Snow,
+    Dust,
+    Warning,
+}
+
+[Serializable, NetSerializable]
 public enum FECWeatherTowerLayers : byte
 {
     Layer,
+    Screen,
 }
