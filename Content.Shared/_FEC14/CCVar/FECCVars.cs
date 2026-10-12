@@ -28,13 +28,25 @@ public sealed class FECCVars : CVars
         CVarDef.Create("fec.events_enabled", true, CVar.SERVERONLY);
 
     public static readonly CVarDef<float> EventsChance =
-        CVarDef.Create("fec.events_chance", 0.6f, CVar.SERVERONLY);
+        CVarDef.Create("fec.events_chance", 0.3f, CVar.SERVERONLY);
 
     public static readonly CVarDef<int> EventsMaxPerRound =
         CVarDef.Create("fec.events_max_per_round", 2, CVar.SERVERONLY);
 
     public static readonly CVarDef<string> EventsBlocksFile =
         CVarDef.Create("fec.events_blocks_file", ".CONFIG/event_blocks.json", CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> EventsRotationFile =
+        CVarDef.Create("fec.events_rotation_file", ".CONFIG/event_rotation.json", CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> EventsVoteEnabled =
+        CVarDef.Create("fec.events_vote_enabled", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EventsVoteOptions =
+        CVarDef.Create("fec.events_vote_options", 3, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EventsVoteSeconds =
+        CVarDef.Create("fec.events_vote_seconds", 60, CVar.SERVERONLY);
 
     public static readonly CVarDef<float> WeatherClearRoundChance =
         CVarDef.Create("fec.weather_clear_round_chance", 0.25f, CVar.SERVERONLY);

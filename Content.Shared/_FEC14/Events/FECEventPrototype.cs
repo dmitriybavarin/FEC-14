@@ -31,4 +31,26 @@ public sealed partial class FECEventPrototype : IPrototype
 
     [DataField]
     public bool RequiresPlanet = true;
+
+    [DataField]
+    public bool InRotation = true;
+
+    [DataField]
+    public List<FECEventChain> Chains = new();
+}
+
+[DataDefinition]
+public sealed partial class FECEventChain
+{
+    [DataField(required: true)]
+    public string Outcome = string.Empty;
+
+    [DataField(required: true)]
+    public ProtoId<FECEventPrototype> Event;
+
+    [DataField]
+    public TimeSpan Delay = TimeSpan.FromMinutes(5);
+
+    [DataField]
+    public float Chance = 1f;
 }

@@ -22,7 +22,7 @@ fec-events-hint-id = ID события
 fec-events-hint-duration = Срок блокировки (30m, 12h, 7d) или forever
 
 cmd-fecevents-desc = Управление событиями раунда.
-cmd-fecevents-help = Использование: fecevents list | block <ID> [срок|forever] | unblock <ID> | start <ID>
+cmd-fecevents-help = Использование: fecevents list | block <ID> [срок|forever] | unblock <ID> | start <ID> | rotation
 
 fec-event-antag-marshal-name = Выживший маршал КМП США
 fec-event-antag-marshal-objective = Вы можете оказаться маршалом Колониального бюро, застрявшим на колонии. Продержитесь до эвакуации, АРЕС следит за вами.
@@ -64,3 +64,59 @@ fec-patrol-summary = На колонию высадился патруль Ко�
 
 fec-storm-hc-warning = Метеоспутник фиксирует аномальный фронт над зоной операции. Погода резко ухудшается, будьте готовы.
 fec-storm-summary = Над колонией прошёл аномальный шторм
+
+fec-events-status-rotation = уже было в этой ротации
+fec-events-rotation-reset = Ротация событий сброшена, все события снова доступны
+
+fec-events-vote-title = Какое событие произойдёт в раунде?
+fec-events-vote-initiator = Система событий
+
+fec-events-log-slot = Ролл на событие прошёл, слот на { $minutes } минуте
+fec-events-log-no-roll = Ролл на событие не прошёл, в этом раунде событий не будет
+fec-events-log-no-candidates = Подходящих событий нет, слот пропущен
+fec-events-log-vote = Голосование призраков: { $names }
+fec-events-log-vote-result = Призраки выбрали «{ $name }»
+fec-events-log-vote-cancelled = Голосование отменено, выбрано «{ $name }»
+fec-events-log-skipped = «{ $name }» не запущено, { $reason }
+fec-events-log-started = Запущено «{ $name }»
+fec-events-log-started-admin = Админ запустил «{ $name }»
+fec-events-log-started-chain = По цепочке запущено «{ $name }»
+fec-events-log-outcome = Исход «{ $name }», { $outcome }
+fec-events-log-chain = Цепочка, «{ $name }» на { $minutes } минуте
+fec-events-log-chain-blocked = Цепочка не продолжена, «{ $name }» заблокировано
+fec-events-log-chain-skipped = Цепочка, «{ $name }» не запущено, { $reason }
+fec-events-log-blocked = { $admin } заблокировал «{ $name }»
+fec-events-log-unblocked = { $admin } разблокировал «{ $name }»
+fec-events-log-rotation-reset = { $admin } сбросил ротацию событий
+fec-events-log-rotation-done = Все события ротации прошли, ротация началась заново
+
+fec-events-outcome-failed = не удалось начать
+fec-events-outcome-saved = маршал спасён
+fec-events-outcome-lost = маршал потерян
+fec-events-outcome-no-squad = отряд не вышел на связь
+fec-events-outcome-repelled = экипаж отбил штурм
+fec-events-outcome-punished = экипаж наказан
+fec-events-outcome-landed = патруль высадился
+fec-events-outcome-started = шторм начался
+
+fec-events-ui-title = События раунда
+fec-events-ui-info = Игроков { $players }. { $slotCount ->
+    [0] Слотов нет
+   *[other] Слоты на минутах { $slots }
+}. { $vote ->
+    [1] Идёт голосование
+   *[other] Голосования нет
+}
+fec-events-ui-duration = Срок блокировки
+fec-events-ui-reset-rotation = Сбросить ротацию
+fec-events-ui-log = Журнал раунда
+fec-events-ui-log-empty = Журнал пуст
+fec-events-ui-log-line = { $time }  { $text }
+fec-events-ui-row = { $name } ({ $id }), от { $players } игр., вес { $weight }, { $status }
+fec-events-ui-start = Запустить
+fec-events-ui-start-confirm = Точно?
+fec-events-ui-block = Блок
+fec-events-ui-unblock = Разблок
+
+cmd-feceventspanel-desc = Открывает окно событий раунда.
+cmd-feceventspanel-help = Использование: feceventspanel

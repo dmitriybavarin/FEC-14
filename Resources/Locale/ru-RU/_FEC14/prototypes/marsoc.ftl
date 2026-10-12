@@ -1,0 +1,16 @@
+ent-FECSquadMarsoc = MARSOC
+ent-FECHeadsetMarsoc = гарнитура MARSOC
+    .desc = Шифрованная гарнитура личного отряда Верховного командования. Принимает все каналы КМП и колонии.
+    .gender = female
+ent-FECHeadsetMarsocCommand = командная гарнитура MARSOC
+    .desc = { ent-FECHeadsetMarsoc.desc }
+    .gender = female
+ent-FECDogtagMarsocOperative = жетоны оперативника MARSOC
+    .desc = { ent-CMIDCardStandardDogtag.desc }
+ent-FECDogtagMarsocCommander = жетоны командира MARSOC
+    .desc = { ent-CMIDCardStandardDogtag.desc }
+ent-FECDogtagMarsocCurator = жетоны куратора MARSOC
+    .desc = { ent-CMIDCardStandardDogtag.desc }
+ent-FECRandomHumanoidMarsocOperative = роль призрака оперативника MARSOC
+ent-FECRandomHumanoidMarsocCommander = роль призрака командира MARSOC
+ent-FECRandomHumanoidMarsocCurator = роль призрака куратора MARSOC

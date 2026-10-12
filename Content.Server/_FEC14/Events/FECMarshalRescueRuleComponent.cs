@@ -35,10 +35,10 @@ public sealed partial class FECMarshalRescueRuleComponent : Component
     public TimeSpan UnclaimedTimeout = TimeSpan.FromMinutes(5);
 
     [DataField]
-    public string LeaderSettings = "RMCMarineRaiderLeader";
+    public string LeaderSettings = "FECMarsocCommander";
 
     [DataField]
-    public string MemberSettings = "RMCMarineRaider";
+    public string MemberSettings = "FECMarsocOperative";
 
     [DataField]
     public int MinSquad = 4;
