@@ -8,5 +8,5 @@ fec-mapping-tool-undo-tooltip = Отменить последнее действ
 fec-mapping-tool-redo-tooltip = Вернуть отменённое (Ctrl+Y или Ctrl+Shift+Z)
 fec-mapping-tool-select-start = Кликните по первому углу области
 fec-mapping-tool-paste-start = Кликните, куда вставить область
-fec-mapping-tool-pick-tooltip = Пипетка. клик по объекту или полу — и сразу ставите такой же (с тем же поворотом)
+fec-mapping-tool-pick-tooltip = Пипетка. Клик по объекту или полу — и сразу ставите такой же (с тем же поворотом)
 fec-mapping-tool-pick-start = Кликните по объекту или полу, чтобы взять его

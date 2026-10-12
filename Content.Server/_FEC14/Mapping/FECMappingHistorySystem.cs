@@ -168,13 +168,12 @@ public sealed partial class FECMappingHistorySystem : EntitySystem
         return null;
     }
 
-    private void Record(NetUserId user, Step step)
+    private void Record(NetUserId user, Step step, Batch? into = null)
     {
         _redo.Remove(user);
-        var stack = GetStack(_undo, user);
-        if (stack.Last is { } last && last.Value.Tick == _timing.CurTick)
+        if (into != null)
         {
-            last.Value.Steps.Add(step);
+            into.Steps.Add(step);
             return;
         }
 

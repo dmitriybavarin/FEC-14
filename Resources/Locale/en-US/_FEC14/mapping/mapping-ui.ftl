@@ -8,5 +8,5 @@ fec-mapping-tool-undo-tooltip = Undo the last action (Ctrl+Z)
 fec-mapping-tool-redo-tooltip = Redo (Ctrl+Y or Ctrl+Shift+Z)
 fec-mapping-tool-select-start = Click the first corner of the area
 fec-mapping-tool-paste-start = Click where to paste the area
-fec-mapping-tool-pick-tooltip = Eyedropper. click an object or floor to start placing the same (same rotation)
+fec-mapping-tool-pick-tooltip = Eyedropper. Click an object or floor to start placing the same (same rotation)
 fec-mapping-tool-pick-start = Click an object or floor to pick it

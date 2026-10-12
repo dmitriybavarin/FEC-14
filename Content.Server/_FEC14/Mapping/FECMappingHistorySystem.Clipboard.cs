@@ -100,6 +100,7 @@ public sealed partial class FECMappingHistorySystem
             return;
         }
 
+        var batch = new Batch(_timing.CurTick);
         _replaying = true;
         try
         {
@@ -108,7 +109,7 @@ public sealed partial class FECMappingHistorySystem
                 var index = baseIndex + offset;
                 var old = _map.GetTileRef(grid, gridComp, index).Tile;
                 _map.SetTile(grid, gridComp, index, tile);
-                Record(session.UserId, Step.TileChange(grid, index, old));
+                Record(session.UserId, Step.TileChange(grid, index, old), batch);
             }
 
             var origin = (Vector2) baseIndex * gridComp.TileSize;
@@ -116,13 +117,16 @@ public sealed partial class FECMappingHistorySystem
             {
                 var spawned = Spawn(proto, new EntityCoordinates(grid, origin + offset));
                 _transform.SetLocalRotation(spawned, rotation);
-                Record(session.UserId, Step.Spawned(spawned));
+                Record(session.UserId, Step.Spawned(spawned), batch);
             }
         }
         finally
         {
             _replaying = false;
         }
+
+        if (batch.Steps.Count > 0)
+            Push(_undo, session.UserId, batch);
 
         _popup.PopupCursor(Loc.GetString("fec-mapping-pasted",
             ("tiles", clipboard.Tiles.Count),
