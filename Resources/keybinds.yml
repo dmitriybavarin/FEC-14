@@ -655,6 +655,16 @@ binds:
   type: State
   key: Y
   mod1: Control
+- function: FECMappingCopy
+  type: State
+  key: C
+  mod1: Alt
+  canFocus: true
+- function: FECMappingPaste
+  type: State
+  key: V
+  mod1: Alt
+  canFocus: true
 
 # RMC14
 - function: RMCActivateAttachableRail
