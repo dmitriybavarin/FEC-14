@@ -1,0 +1,17 @@
+name: Block .claude in master
+
+on:
+  pull_request:
+    branches: [ master ]
+    paths:
+      - '.claude/**'
+
+jobs:
+  block:
+    name: .claude must not reach master
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail
+        run: |
+          echo "::error::PR в master содержит изменения в .claude/. Слей ветку локально без .claude."
+          exit 1

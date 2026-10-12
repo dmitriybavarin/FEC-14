@@ -1000,9 +1000,8 @@ public sealed class RMCWeatherSystem : EntitySystem
             if (!TryComp(uid, out TransformComponent? xform))
                 continue;
 
-            var blockerBounds = _lookup.GetAABBNoContainer(uid,
-                _transform.GetWorldPosition(xform),
-                _transform.GetWorldRotation(xform));
+            var (blockerPos, blockerRot) = _transform.GetWorldPositionRotation(xform);
+            var blockerBounds = _lookup.GetAABBNoContainer(uid, blockerPos, blockerRot);
 
             if (blockerBounds.Contains(position))
                 return true;
