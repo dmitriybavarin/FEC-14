@@ -1,3 +1,4 @@
+using Content.Client._RMC14.TacticalMap;
 using Content.Client.Administration.Managers;
 using Content.Shared._FEC14.Mapping;
 using Content.Shared.Input;
@@ -14,8 +15,8 @@ public sealed class FECMappingHistorySystem : EntitySystem
         base.Initialize();
 
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.FECMappingUndo, InputCmdHandler.FromDelegate(_ => Send(new FECMappingUndoRequestEvent()), handle: false))
-            .Bind(ContentKeyFunctions.FECMappingRedo, InputCmdHandler.FromDelegate(_ => Send(new FECMappingRedoRequestEvent()), handle: false))
+            .Bind(ContentKeyFunctions.FECMappingUndo, InputCmdHandler.FromDelegate(_ => Undo(false), handle: false))
+            .Bind(ContentKeyFunctions.FECMappingRedo, InputCmdHandler.FromDelegate(_ => Undo(true), handle: false))
             .Register<FECMappingHistorySystem>();
     }
 
@@ -25,9 +26,14 @@ public sealed class FECMappingHistorySystem : EntitySystem
         CommandBinds.Unregister<FECMappingHistorySystem>();
     }
 
-    private void Send(EntityEventArgs ev)
+    private void Undo(bool redo)
     {
-        if (_admin.CanAdminPlace())
-            RaiseNetworkEvent(ev);
+        if (TacticalMapControl.FECTryHistory(redo) || !_admin.CanAdminPlace())
+            return;
+
+        if (redo)
+            RaiseNetworkEvent(new FECMappingRedoRequestEvent());
+        else
+            RaiseNetworkEvent(new FECMappingUndoRequestEvent());
     }
 }

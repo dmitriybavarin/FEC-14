@@ -14,6 +14,8 @@ public sealed partial class TacticalMapControl
     private bool _fecErasing;
     private bool _fecEraseChanged;
 
+    private static readonly HashSet<TacticalMapControl> FECOpen = new();
+
     public bool FECEraseMode { get; set; }
     public bool FECDirty { get; private set; }
     public bool FECCanUndo => _fecUndo.Count > 0;
@@ -47,6 +49,36 @@ public sealed partial class TacticalMapControl
         Lines.Clear();
         LineThicknesses.Clear();
         FECModified();
+    }
+
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+        FECOpen.Add(this);
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+        FECOpen.Remove(this);
+    }
+
+    public static bool FECTryHistory(bool redo)
+    {
+        foreach (var canvas in FECOpen)
+        {
+            if (!canvas.Drawing || !canvas.VisibleInTree)
+                continue;
+
+            if (redo)
+                canvas.FECRedo();
+            else
+                canvas.FECUndo();
+
+            return true;
+        }
+
+        return false;
     }
 
     public void FECUndo()
