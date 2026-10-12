@@ -56,6 +56,7 @@ public sealed class RMCWeatherSystem : EntitySystem
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!; // FEC14
+    [Dependency] private readonly Content.Shared._FEC14.Weather.FECWeatherTowerSystem _fecWeatherTower = default!; // FEC14
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly RMCAmbientLightSystem _rmcLight = default!;
@@ -766,7 +767,8 @@ public sealed class RMCWeatherSystem : EntitySystem
             IsOnWeatherMap(e) &&
             HasComp<MarineComponent>(e));
 
-        _marineAnnounce.AnnounceToMarines(marineMessage, MarineWeatherWarningSound, marineFilter);
+        if (!_fecWeatherTower.IsXenoControlled(mapId)) // FEC14
+            _marineAnnounce.AnnounceToMarines(marineMessage, MarineWeatherWarningSound, marineFilter);
 
         var xenoMessage = Loc.GetString("rmc-weather-warning-xeno", ("weather", displayName));
         var xenoFilter = Filter.Empty().AddWhereAttachedEntity(e => HasComp<XenoComponent>(e)); // FEC14

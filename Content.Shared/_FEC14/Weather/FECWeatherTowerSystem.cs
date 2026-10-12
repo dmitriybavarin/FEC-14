@@ -1,4 +1,9 @@
+using Content.Shared._RMC14.Map;
+using Content.Shared._RMC14.Marines.Announce;
 using Content.Shared._RMC14.Power;
+using Content.Shared._RMC14.Repairable;
+using Content.Shared._RMC14.Xenonids.Announce;
+using Content.Shared._RMC14.Xenonids.Weeds;
 using Content.Shared._RMC14.Weather;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage;
@@ -25,6 +30,9 @@ public sealed class FECWeatherTowerSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly RMCWeatherSystem _rmcWeather = default!;
+    [Dependency] private readonly RMCMapSystem _rmcMap = default!;
+    [Dependency] private readonly SharedMarineAnnounceSystem _marineAnnounce = default!;
+    [Dependency] private readonly SharedXenoAnnounceSystem _xenoAnnounce = default!;
 
     public override void Initialize()
     {
@@ -34,6 +42,7 @@ public sealed class FECWeatherTowerSystem : EntitySystem
         SubscribeLocalEvent<FECWeatherTowerComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<FECWeatherTowerComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<FECWeatherTowerComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<FECWeatherTowerComponent, RMCRepairableTargetAttemptEvent>(OnRepairAttempt);
     }
 
     private void OnMapInit(Entity<FECWeatherTowerComponent> ent, ref MapInitEvent args)
@@ -60,6 +69,12 @@ public sealed class FECWeatherTowerSystem : EntitySystem
     {
         using (args.PushGroup(nameof(FECWeatherTowerComponent)))
         {
+            if (ent.Comp.XenoControlled)
+            {
+                args.PushMarkup(Loc.GetString("fec-weather-tower-examine-xeno"));
+                return;
+            }
+
             args.PushMarkup(Loc.GetString(ent.Comp.State switch
             {
                 FECWeatherTowerState.Broken => "fec-weather-tower-examine-broken",
@@ -100,10 +115,74 @@ public sealed class FECWeatherTowerSystem : EntitySystem
             PopupType.Medium);
     }
 
+    private void OnRepairAttempt(Entity<FECWeatherTowerComponent> ent, ref RMCRepairableTargetAttemptEvent args)
+    {
+        if (!ent.Comp.XenoControlled)
+            return;
+
+        args.Cancelled = true;
+        args.Popup = Loc.GetString("fec-weather-tower-entangled");
+    }
+
     private void OnPowerChanged(Entity<FECWeatherTowerComponent> ent, ref PowerChangedEvent args)
     {
         if (ent.Comp.State == FECWeatherTowerState.On && !args.Powered)
             SetState(ent, FECWeatherTowerState.Off);
+    }
+
+    private void UpdateXenoControl(Entity<FECWeatherTowerComponent> ent, TimeSpan now)
+    {
+        var weeded = IsWeeded(ent);
+        if (ent.Comp.XenoControlled)
+        {
+            if (weeded)
+                return;
+
+            ent.Comp.XenoControlled = false;
+            ent.Comp.WeededSince = null;
+            Dirty(ent);
+            _marineAnnounce.AnnounceToMarines(Loc.GetString("fec-weather-tower-freed-marine"));
+            return;
+        }
+
+        if (!weeded || ent.Comp.State != FECWeatherTowerState.Broken)
+        {
+            ent.Comp.WeededSince = null;
+            return;
+        }
+
+        ent.Comp.WeededSince ??= now;
+        if (now - ent.Comp.WeededSince.Value < ent.Comp.CaptureTime)
+            return;
+
+        ent.Comp.XenoControlled = true;
+        Dirty(ent);
+        _marineAnnounce.AnnounceToMarines(Loc.GetString("fec-weather-tower-captured-marine"));
+        _xenoAnnounce.AnnounceAll(ent, Loc.GetString("fec-weather-tower-captured-xeno"));
+    }
+
+    private bool IsWeeded(EntityUid tower)
+    {
+        var anchored = _rmcMap.GetAnchoredEntitiesEnumerator(tower);
+        while (anchored.MoveNext(out var uid))
+        {
+            if (HasComp<XenoWeedsComponent>(uid))
+                return true;
+        }
+
+        return false;
+    }
+
+    public bool IsXenoControlled(MapId mapId)
+    {
+        var query = EntityQueryEnumerator<FECWeatherTowerComponent, TransformComponent>();
+        while (query.MoveNext(out var tower, out var xform))
+        {
+            if (xform.MapID == mapId && tower.XenoControlled)
+                return true;
+        }
+
+        return false;
     }
 
     public bool IsForecastAvailable(MapId mapId)
@@ -148,6 +227,7 @@ public sealed class FECWeatherTowerSystem : EntitySystem
                 continue;
 
             tower.NextScreenUpdate = now + tower.ScreenUpdateInterval;
+            UpdateXenoControl((uid, tower), now);
             UpdateScreen((uid, tower));
         }
     }
