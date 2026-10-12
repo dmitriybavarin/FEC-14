@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using System.Linq;
 using Content.Server.Administration.Systems;
 using Content.Shared.Administration;
@@ -10,6 +11,7 @@ namespace Content.Server.Administration.Commands;
 public sealed class EraseCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly AdminSystem _admin = default!;
 
@@ -31,6 +33,9 @@ public sealed class EraseCommand : LocalizedEntityCommands
             shell.WriteError(Loc.GetString("cmd-erase-player-not-found"));
             return;
         }
+
+        if (!await _fecWeight.CheckShellTargetAsync(shell, located.UserId)) // FEC14
+            return; // FEC14
 
         _admin.Erase(located.UserId);
     }

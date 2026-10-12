@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration;
+﻿using Content.Server._FEC14.Administration; // FEC14
+using Content.Server.Administration;
 using Content.Server.Database;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -8,6 +9,7 @@ namespace Content.Server.Connection.Whitelist;
 [AdminCommand(AdminFlags.Ban)]
 public sealed class AddBlacklistCommand : LocalizedCommands
 {
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
 
@@ -37,6 +39,10 @@ public sealed class AddBlacklistCommand : LocalizedCommands
             shell.WriteError(Loc.GetString("cmd-blacklistadd-not-found", ("username", args[0])));
             return;
         }
+
+        if (!await _fecWeight.CheckShellTargetAsync(shell, data.UserId)) // FEC14
+            return; // FEC14
+
         var guid = data.UserId;
         var isBlacklisted = await _db.GetBlacklistStatusAsync(guid);
         if (isBlacklisted)

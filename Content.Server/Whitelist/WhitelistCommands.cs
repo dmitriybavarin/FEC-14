@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Administration; // FEC14
 using Content.Server.Administration;
 using Content.Server.Database;
 using Content.Shared.Administration;
@@ -60,6 +61,7 @@ public sealed class AddWhitelistCommand : LocalizedCommands
 [AdminCommand(AdminFlags.Ban)]
 public sealed class RemoveWhitelistCommand : LocalizedCommands
 {
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
 
@@ -79,6 +81,9 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
 
         if (data != null)
         {
+            if (!await _fecWeight.CheckShellTargetAsync(shell, data.UserId)) // FEC14
+                return; // FEC14
+
             var guid = data.UserId;
             var isWhitelisted = await _dbManager.GetWhitelistStatusAsync(guid);
             if (!isWhitelisted)

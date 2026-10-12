@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration;
+﻿using Content.Server._FEC14.Administration; // FEC14
+using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.EUI;
@@ -13,6 +14,7 @@ namespace Content.Server._RMC14.Admin.ChatBans;
 public sealed class RMCAdminChatBansEui : BaseEui
 {
     [Dependency] private readonly IAdminManager _admin = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
@@ -54,6 +56,12 @@ public sealed class RMCAdminChatBansEui : BaseEui
                         var response = new RMCAdminChatBanAddErrorMsg(Loc.GetString("rmc-chat-bans-no-type-specified"));
                         SendMessage(response);
                         break;
+                    }
+
+                    if (!await _fecWeight.CanTargetAsync(Player.UserId, data.UserId)) // FEC14
+                    {
+                        SendMessage(new RMCAdminChatBanAddErrorMsg(Loc.GetString("fec-admin-weight-blocked"))); // FEC14
+                        break; // FEC14
                     }
 
                     _rmcChatBans.AddChatBan(data.UserId, add.Duration, add.Type, Player.UserId, reason);
