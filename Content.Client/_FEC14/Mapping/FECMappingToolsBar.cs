@@ -1,11 +1,8 @@
 using System.Numerics;
 using Content.Client.Administration.Managers;
-using Content.Client.UserInterface.Systems.DecalPlacer;
 using Content.Shared.Ghost;
 using Robust.Client.Placement;
 using Robust.Client.Player;
-using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controllers.Implementations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
@@ -17,7 +14,6 @@ public sealed class FECMappingToolsBar : BoxContainer
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlacementManager _placement = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
 
     private static readonly Vector2 SlotSize = new(64, 64);
 
@@ -40,12 +36,6 @@ public sealed class FECMappingToolsBar : BoxContainer
         };
         AddChild(_box);
 
-        AddSlot("/Textures/Interface/pencil.png", "fec-mapping-tool-brush-tooltip",
-            () => _ui.GetUIController<EntitySpawningUIController>().ToggleWindow());
-        AddSlot("/Textures/Objects/Tiles/tile.rsi/steel.png", "fec-mapping-tool-tiles-tooltip",
-            () => _ui.GetUIController<TileSpawningUIController>().ToggleWindow());
-        AddSlot("/Textures/Objects/Fun/crayons.rsi/black.png", "fec-mapping-tool-decals-tooltip",
-            () => _ui.GetUIController<DecalPlacerUIController>().ToggleWindow());
         _pick = AddSlot("/Textures/Interface/eyedropper.svg.png", "fec-mapping-tool-pick-tooltip",
             () => History.SetTool(FECMappingTool.Pick), true);
         _eraser = AddSlot("/Textures/Interface/eraser.svg.png", "fec-mapping-tool-eraser-tooltip",
@@ -67,7 +57,7 @@ public sealed class FECMappingToolsBar : BoxContainer
         var button = new Button
         {
             ToolTip = Loc.GetString(tooltip),
-            TooltipDelay = 0.2f,
+            TooltipDelay = 0.3f,
             ToggleMode = toggle,
             StyleClasses = { "ButtonSquare" },
             SetSize = SlotSize,
