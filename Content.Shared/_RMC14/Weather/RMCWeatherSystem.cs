@@ -599,6 +599,46 @@ public sealed class RMCWeatherSystem : EntitySystem
             : weatherEvent.DisplayName;
     }
 
+    public bool TryGetForecast(MapId preferredMap, out RMCWeatherForecast forecast)
+    {
+        forecast = default;
+        Entity<RMCWeatherCycleComponent>? found = null;
+        var query = EntityQueryEnumerator<RMCWeatherCycleComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var xform))
+        {
+            if (comp.WeatherEvents.Count <= 0)
+                continue;
+
+            if (xform.MapID == preferredMap)
+            {
+                found = new Entity<RMCWeatherCycleComponent>(uid, comp);
+                break;
+            }
+
+            found ??= new Entity<RMCWeatherCycleComponent>(uid, comp);
+        }
+
+        if (found is not { } cycle)
+            return false;
+
+        var state = cycle.Comp.State;
+        string? eventName = null;
+        var remaining = cycle.Comp.CheckCooldown;
+        if (state is RMCWeatherCycleState.Warning or RMCWeatherCycleState.Running &&
+            TryGetCurrentEvent(cycle.Comp, out var weatherEvent))
+        {
+            eventName = GetEventDisplayName(weatherEvent);
+            remaining = state == RMCWeatherCycleState.Warning
+                ? cycle.Comp.WarningRemaining
+                : weatherEvent.Duration > TimeSpan.Zero ? cycle.Comp.EventRemaining : TimeSpan.Zero;
+        }
+
+        var mapUid = Transform(cycle).MapUid;
+        var mapName = mapUid != null ? Name(mapUid.Value) : string.Empty;
+        forecast = new RMCWeatherForecast(state, eventName, remaining > TimeSpan.Zero ? remaining : TimeSpan.Zero, mapName);
+        return true;
+    }
+
     private bool TryGetCurrentEvent(RMCWeatherCycleComponent cycle, out RMCWeatherEvent weatherEvent)
     {
         weatherEvent = default!;
@@ -949,7 +989,7 @@ public sealed class RMCWeatherSystem : EntitySystem
             {
                 foreach (var (decalId, decal) in chunk.Decals)
                 {
-                    if (!decal.Cleanable)
+                    if (!decal.Cleanable || !_random.Prob(CleanDecalChance))
                         continue;
 
                     var coords = new EntityCoordinates(gridUid, decal.Coordinates);
@@ -960,8 +1000,7 @@ public sealed class RMCWeatherSystem : EntitySystem
                         continue;
                     }
 
-                    if (_random.Prob(CleanDecalChance))
-                        _decalsToRemove.Add((gridUid, decalId));
+                    _decalsToRemove.Add((gridUid, decalId));
                 }
             }
 
@@ -975,13 +1014,13 @@ public sealed class RMCWeatherSystem : EntitySystem
     private bool IsWeatherExposed(EntityUid uid, MapId mapId)
     {
         // Exposure combines the entity's mover tile with RMC partial blockers such as weather cover props.
-        if (!TryGetWeatherTile(uid, mapId, out var grid, out var tile))
+        if (!TryGetWeatherTile(uid, mapId, out var grid, out var tile) ||
+            !_weather.CanWeatherAffect(grid.Owner, grid.Comp, tile))
+        {
             return false;
+        }
 
-        if (IsRMCWeatherBlocked(mapId, _transform.GetMapCoordinates(uid).Position))
-            return false;
-
-        return _weather.CanWeatherAffect(grid.Owner, grid.Comp, tile);
+        return !IsRMCWeatherBlocked(mapId, _transform.GetMapCoordinates(uid).Position);
     }
 
     private bool IsRMCWeatherBlocked(MapId mapId, Vector2 position)
@@ -1028,3 +1067,5 @@ public sealed class RMCWeatherSystem : EntitySystem
         return true;
     }
 }
+
+public readonly record struct RMCWeatherForecast(RMCWeatherCycleState State, string? EventName, TimeSpan Remaining, string MapName);

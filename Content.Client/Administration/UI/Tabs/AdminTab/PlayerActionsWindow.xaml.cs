@@ -40,7 +40,7 @@ namespace Content.Client.Administration.UI.Tabs.AdminTab
                 return;
 
             IoCManager.Resolve<IClientConsoleHost>().ExecuteCommand(
-                $"kick \"{_selectedPlayer.Username}\" \"{CommandParsing.Escape(ReasonLine.Text)}\"");
+                $"feckick \"{_selectedPlayer.Username}\" \"{CommandParsing.Escape(ReasonLine.Text)}\"");
         }
 
         private void SubmitAhelpButtonOnPressed(BaseButton.ButtonEventArgs obj)

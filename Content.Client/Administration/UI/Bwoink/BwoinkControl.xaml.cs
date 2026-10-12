@@ -179,7 +179,7 @@ namespace Content.Client.Administration.UI.Bwoink
             {
                 // TODO: Reason field
                 if (_currentPlayer is not null)
-                    _console.ExecuteCommand($"kick \"{_currentPlayer.Username}\"");
+                    _console.ExecuteCommand($"feckick \"{_currentPlayer.Username}\"");
             };
 
             Follow.OnPressed += _ =>
@@ -237,7 +237,7 @@ namespace Content.Client.Administration.UI.Bwoink
             Ban.Visible = _adminManager.HasFlag(AdminFlags.Ban);
             Ban.Disabled = !Ban.Visible || disabled;
 
-            Kick.Visible = _adminManager.CanCommand("kick");
+            Kick.Visible = _adminManager.CanCommand("feckick");
             Kick.Disabled = !Kick.Visible || disabled;
 
             Respawn.Visible = _adminManager.CanCommand("respawn");

@@ -110,11 +110,11 @@
 
 - Flags: MODERATOR
   Commands:
-  - kick
   - respawn
 
 - Flags: HOST
   Commands:
+  - kick
   - gc_mode
   - gc
   - saveconfig

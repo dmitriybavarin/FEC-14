@@ -121,7 +121,7 @@ public sealed partial class PlayerPanel : FancyWindow
     public void SetButtons()
     {
         BanButton.Disabled = !_adminManager.CanCommand("banpanel");
-        KickButton.Disabled = !_adminManager.CanCommand("kick");
+        KickButton.Disabled = !_adminManager.CanCommand("feckick");
         NotesButton.Disabled = !_adminManager.CanCommand("adminnotes");
         ShowBansButton.Disabled = !_adminManager.CanCommand("banlist");
         WhitelistToggle.Disabled =
