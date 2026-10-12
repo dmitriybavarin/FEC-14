@@ -3,6 +3,7 @@ using Content.Server._FEC14.Events;
 using Content.Server.GameTicking;
 using Content.Shared._FEC14.Events;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Prototypes;
 using Content.Shared.Roles;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
