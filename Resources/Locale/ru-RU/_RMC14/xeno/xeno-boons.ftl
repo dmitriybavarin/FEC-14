@@ -11,7 +11,7 @@ rmc-boon-on-cooldown = Наш улей недавно уже использов�
 rmc-boon-duplicate-active = Дар "{ $boon }" у нас уже активен!
 rmc-boon-not-reusable = Наш улей уже использовал дар "{ $boon }", повторно его не получить!
 
-rmc-boon-pylon-announcement-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-pylon-announcement-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
@@ -19,13 +19,13 @@ rmc-boon-pylon-announcement-marine = [color=#CECECE][font size=16][bold]Биол
 
     ОПАСНОСТЬ: угроза усиливает ксеноморфов. Наземным силам рекомендуется срочно ее устранить.[/font][/color]
 
-rmc-boon-pylon-destroyed-announcement-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-pylon-destroyed-announcement-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
     Накопление энергии вокруг ретранслятора связи в зоне "{ $area }" прекращено.[/font][/color]
 
-rmc-boon-king-announcement-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
@@ -34,28 +34,28 @@ rmc-boon-king-announcement-marine = [color=#CECECE][font size=16][bold]Биол�
     РАСЧЕТНОЕ ВРЕМЯ ДО ЗАВЕРШЕНИЯ: 10 МИНУТ. РЕКОМЕНДУЕТСЯ УНИЧТОЖИТЬ СТРУКТУРУ КСЕНОМОРФОВ В ЭТОЙ ТОЧКЕ ИЛИ ПИЛОН КСЕНОМОРФОВ У ЛЮБОГО ИЗ РЕТРАНСЛЯТОРОВ СВЯЗИ.[/font][/color]
 rmc-boon-king-announcement-xenos = В зоне "{ $area }" растет Король. Любой ценой защитите его и наши пилоны у ретрансляторов связи!
 
-rmc-boon-king-announcement-paused-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-paused-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
     НЕОБЫЧНОЕ НАКОПЛЕНИЕ ЭНЕРГИИ В ЗОНЕ "{ $area }" ПРИОСТАНОВЛЕНО.[/font][/color]
 rmc-boon-king-announcement-paused-xeno = Один из наших пилонов уничтожен, инкубатор остановил развитие!
 
-rmc-boon-king-announcement-resumed-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-resumed-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
     НЕОБЫЧНОЕ НАКОПЛЕНИЕ ЭНЕРГИИ В ЗОНЕ "{ $area }" ВОЗОБНОВИЛОСЬ.[/font][/color]
 rmc-boon-king-announcement-resumed-xeno = Инкубатор снова развивается!
 
-rmc-boon-king-announcement-stopped-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-stopped-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
     НЕОБЫЧНОЕ НАКОПЛЕНИЕ ЭНЕРГИИ В ЗОНЕ "{ $area }" ПРЕКРАЩЕНО.[/font][/color]
 rmc-boon-king-announcement-stopped-xeno = ИНКУБАТОР УНИЧТОЖЕН! ОТОМСТИМ!
 
-rmc-boon-king-announcement-minutes-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-minutes-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
@@ -64,7 +64,7 @@ rmc-boon-king-announcement-minutes-marine = [color=#CECECE][font size=16][bold]�
     РАСЧЕТНОЕ ВРЕМЯ ДО ЗАВЕРШЕНИЯ: { $minutes } МИН. РЕКОМЕНДУЕТСЯ УНИЧТОЖИТЬ СТРУКТУРУ КСЕНОМОРФОВ В ЭТОЙ ТОЧКЕ ИЛИ ПИЛОН КСЕНОМОРФОВ У ЛЮБОГО ИЗ РЕТРАНСЛЯТОРОВ СВЯЗИ.[/font][/color]
 rmc-boon-king-announcement-minutes-xeno = Король вылупится примерно через { $minutes } мин.
 
-rmc-boon-king-announcement-seconds-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-seconds-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
@@ -73,7 +73,7 @@ rmc-boon-king-announcement-seconds-marine = [color=#CECECE][font size=16][bold]�
     РАСЧЕТНОЕ ВРЕМЯ ДО ЗАВЕРШЕНИЯ: { $seconds } СЕК. РЕКОМЕНДУЕТСЯ УНИЧТОЖИТЬ СТРУКТУРУ КСЕНОМОРФОВ В ЭТОЙ ТОЧКЕ ИЛИ ПИЛОН КСЕНОМОРФОВ У ЛЮБОГО ИЗ РЕТРАНСЛЯТОРОВ СВЯЗИ.[/font][/color]
 rmc-boon-king-announcement-seconds-xeno = Король вылупится примерно через { $seconds } сек.
 
-rmc-boon-king-announcement-hatch-marine = [color=#CECECE][font size=16][bold]Биологический сканер ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-boon-king-announcement-hatch-marine = [color=#CECECE][font size=16][bold]Объявление биологического сканера ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     ТРЕВОГА.
 
