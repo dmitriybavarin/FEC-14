@@ -27,6 +27,7 @@ public sealed class PlayerPanelEui : BaseEui
         PlayerPanel.OnKick += username => _console.ExecuteCommand($"feckick \"{username}\"");
         PlayerPanel.OnOpenBanPanel += id => _console.ExecuteCommand($"banpanel \"{id}\"");
         PlayerPanel.OnOpenBans += id => _console.ExecuteCommand($"banlist \"{id}\"");
+        PlayerPanel.FECOnOpenHistory += id => _console.ExecuteCommand($"playerhistory \"{id}\""); // FEC14
         PlayerPanel.OnAhelp += id => _console.ExecuteCommand($"openahelp \"{id}\"");
         PlayerPanel.OnWhitelistToggle += (id, whitelisted) =>
         {

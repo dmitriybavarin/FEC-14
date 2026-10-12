@@ -22,3 +22,39 @@ fec-audit-admin-removed = [Аудит прав] { $admin } снял админк
 fec-audit-weight-set = [Аудит прав] { $admin } установил вес ранга { $rank } на { $weight }
 fec-audit-blocked-rank = [Аудит прав] Заблокирована попытка { $admin } изменить ранг { $rank } без нужных флагов или веса
 fec-audit-blocked-admin = [Аудит прав] Заблокирована попытка { $admin } изменить права админа { $target } без нужных флагов или веса
+
+fec-history-button = История
+fec-history-title = История игрока { $player }
+fec-history-loading = Загрузка истории…
+fec-history-load-error = Не удалось загрузить часть истории, подробности в логах сервера.
+fec-history-empty = Записей нет.
+fec-history-filter-all = Все записи
+fec-history-kind-ban = Бан
+fec-history-kind-roleban = Бан роли
+fec-history-kind-chatban = Чат-бан
+fec-history-kind-note = Заметка
+fec-history-kind-watchlist = Наблюдение
+fec-history-kind-message = Сообщение
+fec-history-kind-whitelist = Вайтлист
+fec-history-system = система
+fec-history-entry = { $admin } { $text }
+fec-history-entry-extra = { $admin } { $text } ({ $extra })
+fec-history-until = до { $date }
+fec-history-permanent = навсегда
+fec-history-pardoned = снят
+fec-history-whitelist = Должность { $job }{ $temp ->
+        [1] , временно до { $date }
+       *[other] , навсегда
+    }
+fec-history-summary-online = Сейчас { $online ->
+        [1] на сервере
+       *[other] не в сети
+    }
+fec-history-summary-playtime = Наиграно { $hours } ч { $minutes } мин
+fec-history-summary-whitelist = Вайтлист сервера { $whitelisted ->
+        [1] есть
+       *[other] нет
+    }
+fec-history-summary-seen = Впервые { $first }, последний вход { $last }
+cmd-playerhistory-desc = Открывает единое окно истории игрока.
+cmd-playerhistory-help = Использование: playerhistory <ник или ID>

@@ -22,3 +22,39 @@ fec-audit-admin-removed = [Permissions audit] { $admin } removed admin { $target
 fec-audit-weight-set = [Permissions audit] { $admin } set rank { $rank } weight to { $weight }
 fec-audit-blocked-rank = [Permissions audit] Blocked attempt by { $admin } to change rank { $rank } without the required flags or weight
 fec-audit-blocked-admin = [Permissions audit] Blocked attempt by { $admin } to change admin { $target } without the required flags or weight
+
+fec-history-button = History
+fec-history-title = History of { $player }
+fec-history-loading = Loading history…
+fec-history-load-error = Failed to load part of the history, see server logs.
+fec-history-empty = No records.
+fec-history-filter-all = All records
+fec-history-kind-ban = Ban
+fec-history-kind-roleban = Role ban
+fec-history-kind-chatban = Chat ban
+fec-history-kind-note = Note
+fec-history-kind-watchlist = Watchlist
+fec-history-kind-message = Message
+fec-history-kind-whitelist = Whitelist
+fec-history-system = system
+fec-history-entry = { $admin } { $text }
+fec-history-entry-extra = { $admin } { $text } ({ $extra })
+fec-history-until = until { $date }
+fec-history-permanent = permanent
+fec-history-pardoned = pardoned
+fec-history-whitelist = Job { $job }{ $temp ->
+        [1] , temporary until { $date }
+       *[other] , permanent
+    }
+fec-history-summary-online = { $online ->
+        [1] Online now
+       *[other] Offline
+    }
+fec-history-summary-playtime = Playtime { $hours } h { $minutes } min
+fec-history-summary-whitelist = Server whitelist { $whitelisted ->
+        [1] yes
+       *[other] no
+    }
+fec-history-summary-seen = First seen { $first }, last seen { $last }
+cmd-playerhistory-desc = Opens the unified player history window.
+cmd-playerhistory-help = Usage: playerhistory <username or ID>
