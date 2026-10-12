@@ -33,7 +33,6 @@ fec-job-whitelist-ui-remove-confirm = Confirm
 fec-job-whitelist-ui-add-heading = Grant Whitelist
 fec-job-whitelist-ui-player = Player name or user ID
 fec-job-whitelist-ui-add = Grant
-fec-job-whitelist-ui-other-hint = * the job requires a whitelist. [Other] the job is not shown in the lobby, players will see it in the "Other" category.
 fec-job-whitelist-ui-no-player = Enter a player name or user ID.
 fec-job-whitelist-ui-already = { $player } already has a whitelist for { $job }.
 fec-job-whitelist-ui-added = Granted a whitelist for { $job } to { $player }.
@@ -52,3 +51,9 @@ cmd-jobwhitelisttemp-help = Usage: jobwhitelisttemp <username> <job> <duration>,
 cmd-jobwhitelisttemp-hint-player = <username or ID>
 cmd-jobwhitelisttemp-hint-job = <job>
 cmd-jobwhitelisttemp-hint-duration = <duration, e.g. 30m, 12h, 7d>
+
+fec-job-whitelist-ui-player-label = Player
+fec-job-whitelist-ui-job-label = Job
+fec-temp-whitelist-duration-placeholder = Empty means forever, or 30m, 12h, 7d
+fec-job-whitelist-ui-hint-whitelisted = * — the job requires a whitelist.
+fec-job-whitelist-ui-hint-other = [Other] — the job is not in the lobby, the player will see it under "Other".

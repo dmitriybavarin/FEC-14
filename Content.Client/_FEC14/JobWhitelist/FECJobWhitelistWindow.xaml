@@ -17,13 +17,19 @@
         </ScrollContainer>
         <cc:HSeparator Color="#4972A1" />
         <Label Text="{Loc 'fec-job-whitelist-ui-add-heading'}" StyleClasses="LabelHeading" />
-        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+        <GridContainer Columns="2" HSeparationOverride="8" VSeparationOverride="4">
+            <Label Text="{Loc 'fec-job-whitelist-ui-player-label'}" MinWidth="90" />
             <LineEdit Name="PlayerEdit" Access="Public" HorizontalExpand="True" PlaceHolder="{Loc 'fec-job-whitelist-ui-player'}" />
+            <Label Text="{Loc 'fec-job-whitelist-ui-job-label'}" MinWidth="90" />
             <OptionButton Name="JobSelector" Access="Public" HorizontalExpand="True" />
-            <LineEdit Name="DurationEdit" Access="Public" MinWidth="110" PlaceHolder="{Loc 'fec-temp-whitelist-duration'}" ToolTip="{Loc 'fec-temp-whitelist-duration-tooltip'}" />
-            <Button Name="AddButton" Access="Public" Text="{Loc 'fec-job-whitelist-ui-add'}" />
-        </BoxContainer>
-        <Label Text="{Loc 'fec-job-whitelist-ui-other-hint'}" FontColorOverride="#A0A0A0" />
+            <Label Text="{Loc 'fec-temp-whitelist-duration'}" MinWidth="90" />
+            <BoxContainer Orientation="Horizontal" SeparationOverride="6" HorizontalExpand="True">
+                <LineEdit Name="DurationEdit" Access="Public" HorizontalExpand="True" PlaceHolder="{Loc 'fec-temp-whitelist-duration-placeholder'}" ToolTip="{Loc 'fec-temp-whitelist-duration-tooltip'}" />
+                <Button Name="AddButton" Access="Public" Text="{Loc 'fec-job-whitelist-ui-add'}" MinWidth="110" />
+            </BoxContainer>
+        </GridContainer>
+        <Label Text="{Loc 'fec-job-whitelist-ui-hint-whitelisted'}" FontColorOverride="#A0A0A0" />
+        <Label Text="{Loc 'fec-job-whitelist-ui-hint-other'}" FontColorOverride="#A0A0A0" />
         <Label Name="StatusLabel" Access="Public" FontColorOverride="#C8C864" />
     </BoxContainer>
 </controls:FECJobWhitelistWindow>

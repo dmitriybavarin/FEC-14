@@ -1,0 +1,10 @@
+<controls:FECPlayerHistoryPromptWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    MinSize="360 90"
+    Title="{Loc 'fec-history-prompt-title'}">
+    <BoxContainer Orientation="Horizontal" Margin="6" SeparationOverride="6">
+        <LineEdit Name="PlayerEdit" HorizontalExpand="True" PlaceHolder="{Loc 'fec-job-whitelist-ui-player'}" />
+        <Button Name="OpenButton" Text="{Loc 'fec-history-prompt-open'}" />
+    </BoxContainer>
+</controls:FECPlayerHistoryPromptWindow>
