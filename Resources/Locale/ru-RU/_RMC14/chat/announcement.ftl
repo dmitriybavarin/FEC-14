@@ -56,7 +56,7 @@ rmc-announcement-dropship-hijack = Зафиксирован внеплановы
 
 rmc-announcement-dropship-hijack-hive = Королева повелела железной птице лететь к железному улью в небесах! Ликуйте!
 
-rmc-announcement-ares-command = [color=#CECECE][font size=16][bold]ARES v3.2[/bold][/font][/color][color=red][font size=16]
+rmc-announcement-ares-command = [color=#CECECE][font size=16][bold]Объявление ARES v3.2:[/bold][/font][/color][color=red][font size=16]
 
     {$message}[/font][/color]
 
