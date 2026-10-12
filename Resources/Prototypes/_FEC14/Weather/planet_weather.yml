@@ -1,0 +1,109 @@
+- type: fecPlanetWeather
+  id: RMCPlanetLV624
+  clearRoundChance: 0.35
+  startChance: 0.3
+
+- type: fecPlanetWeather
+  id: RMCPlanetSolaris
+  clearRoundChance: 0.3
+  startChance: 0.4
+
+- type: fecPlanetWeather
+  id: RMCPlanetShiva
+  clearRoundChance: 0.1
+  startChance: 0.6
+  minTimeBetweenChecks: 600
+
+- type: fecPlanetWeather
+  id: RMCPlanetFiorina
+  clearRoundChance: 1.0
+
+- type: fecPlanetWeather
+  id: RMCPlanetTrijent
+  clearRoundChance: 0.3
+  startChance: 0.4
+
+- type: fecPlanetWeather
+  id: RMCPlanetVaradero
+  clearRoundChance: 0.15
+  startChance: 0.6
+  minTimeBetweenChecks: 600
+
+- type: fecPlanetWeather
+  id: RMCPlanetKutjevo
+  clearRoundChance: 0.3
+  startChance: 0.4
+
+- type: fecPlanetWeather
+  id: RMCPlanetChances
+  clearRoundChance: 0.3
+  startChance: 0.4
+
+- type: fecPlanetWeather
+  id: RMCPlanetHybrisa
+  clearRoundChance: 0.2
+  startChance: 0.5
+
+- type: fecPlanetWeather
+  id: RMCPlanetSorokyne
+  clearRoundChance: 0.15
+  startChance: 0.5
+
+- type: fecPlanetWeather
+  id: RMCPlanetHybrisaRepaired
+  clearRoundChance: 0.2
+  startChance: 0.5
+
+- type: fecPlanetWeather
+  id: RMCPlanetSorokyneRepaired
+  clearRoundChance: 0.15
+  startChance: 0.5
+
+- type: fecPlanetWeather
+  id: RMCPlanetCorsat
+  clearRoundChance: 1.0
+
+- type: fecPlanetWeather
+  id: RMCPlanetArcticValley
+  clearRoundChance: 0.15
+  startChance: 0.6
+  minTimeBetweenChecks: 600
+  minTimeBetweenEvents: 1200
+  extraEvents:
+  - name: FECArcticSnow
+    displayName: rmc-weather-name-snow
+    weatherType: RMCStrataSnowing
+    screenOverlay: Low
+    duration: 600
+    fireSmotheringStrength: 1
+    cleansDecals: false
+  - name: FECArcticBlizzard
+    displayName: rmc-weather-name-snowstorm
+    weatherType: RMCStrataBlizzard
+    screenOverlay: High
+    duration: 360
+    fireSmotheringStrength: 2
+    cleansDecals: true
+
+- type: fecPlanetWeather
+  id: RMCPlanetJungleDelta
+  clearRoundChance: 0.25
+  startChance: 0.5
+  minTimeBetweenChecks: 600
+  minTimeBetweenEvents: 1200
+  extraEvents:
+  - name: FECJungleRain
+    displayName: rmc-weather-name-light-rain
+    weatherType: RMCStrataStormLight
+    screenOverlay: Low
+    duration: 600
+    fireSmotheringStrength: 1
+    cleansDecals: true
+  - name: FECJungleStorm
+    displayName: rmc-weather-name-tropical-storm
+    weatherType: RMCStrataStormRainAndThunder
+    screenOverlay: High
+    duration: 420
+    fireSmotheringStrength: 2
+    cleansDecals: true
+    lightningChance: 0.2
