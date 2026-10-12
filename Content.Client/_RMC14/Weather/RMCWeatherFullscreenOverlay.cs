@@ -23,6 +23,7 @@ public sealed class RMCWeatherFullscreenOverlay : Overlay
     private const float MaxOpacity = 1f;
     private const float FadeInPerSecond = 1.8f;
     private const float FadeOutPerSecond = 2.4f;
+    private static readonly TimeSpan ExposureRecheckInterval = TimeSpan.FromSeconds(0.25);
 
     private readonly IEntityManager _entity;
     private readonly IPlayerManager _player;
@@ -39,6 +40,11 @@ public sealed class RMCWeatherFullscreenOverlay : Overlay
     private Vector2 _drawFullHalfSize;
     private float _drawAlpha;
     private readonly HashSet<Entity<RMCBlockWeatherComponent>> _weatherBlockers = new();
+    private EntityUid? _exposurePlayer;
+    private EntityUid? _exposureGrid;
+    private Vector2i _exposureTile;
+    private TimeSpan _nextExposureCheck;
+    private bool _exposed;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -133,7 +139,7 @@ public sealed class RMCWeatherFullscreenOverlay : Overlay
         if (!RMCWeatherOverlayHelpers.TryGetCurrentMapOverlay(_entity, playerXform.MapID, out var overlayContext))
             return false;
 
-        if (!IsExposedToWeather(player, playerXform, gridUid))
+        if (!IsExposedToWeatherCached(player, playerXform, gridUid))
             return false;
 
         overlay = overlayContext.Overlay;
@@ -144,6 +150,26 @@ public sealed class RMCWeatherFullscreenOverlay : Overlay
             clearHalfSize.Y > 0f &&
             fullHalfSize.X > clearHalfSize.X &&
             fullHalfSize.Y > clearHalfSize.Y;
+    }
+
+    private bool IsExposedToWeatherCached(EntityUid player, TransformComponent playerXform, EntityUid gridUid)
+    {
+        var tile = playerXform.LocalPosition.Floored();
+        var now = _timing.RealTime;
+        if (_exposurePlayer == player &&
+            _exposureGrid == gridUid &&
+            _exposureTile == tile &&
+            now < _nextExposureCheck)
+        {
+            return _exposed;
+        }
+
+        _exposurePlayer = player;
+        _exposureGrid = gridUid;
+        _exposureTile = tile;
+        _nextExposureCheck = now + ExposureRecheckInterval;
+        _exposed = IsExposedToWeather(player, playerXform, gridUid);
+        return _exposed;
     }
 
     private bool IsExposedToWeather(EntityUid player, TransformComponent playerXform, EntityUid gridUid)
@@ -183,9 +209,8 @@ public sealed class RMCWeatherFullscreenOverlay : Overlay
             if (!_entity.TryGetComponent(uid, out TransformComponent? xform))
                 continue;
 
-            var blockerBounds = _lookup.GetAABBNoContainer(uid,
-                _transform.GetWorldPosition(xform),
-                _transform.GetWorldRotation(xform));
+            var (blockerPos, blockerRot) = _transform.GetWorldPositionRotation(xform);
+            var blockerBounds = _lookup.GetAABBNoContainer(uid, blockerPos, blockerRot);
 
             if (blockerBounds.Contains(position))
                 return true;

@@ -6,6 +6,7 @@ on:
 
 jobs:
   docfx:
+   if: github.repository == 'space-wizards/space-station-14'
    runs-on: ubuntu-latest
    steps:
     - uses: actions/checkout@v4.2.2
