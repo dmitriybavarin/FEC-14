@@ -27,6 +27,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Server.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
@@ -230,7 +231,7 @@ public sealed class FECMarshalRescueRuleSystem : GameRuleSystem<FECMarshalRescue
 
     private void CheckAssault(EntityUid uid, FECMarshalRescueRuleComponent comp, GameRuleComponent gameRule)
     {
-        comp.Squad.RemoveWhere(TerminatingOrDeleted);
+        comp.Squad.RemoveWhere(member => TerminatingOrDeleted(member));
 
         var alive = 0;
         var aliveOnShip = 0;
