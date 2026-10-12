@@ -2,6 +2,7 @@ using Content.Server._RMC14.Rules.DistressSignal;
 using Content.Shared._FEC14.Weather;
 using Content.Shared._RMC14.Rules;
 using Content.Shared._RMC14.Weather;
+using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -14,32 +15,28 @@ public sealed class FECPlanetWeatherSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly RMCWeatherSystem _weather = default!;
 
-    private readonly List<(EntityUid Map, string Planet)> _pending = new();
+    private readonly HashSet<EntityUid> _handled = new();
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<RMCPlanetComponent, RMCPlanetAddedEvent>(OnPlanetAdded);
-    }
-
-    private void OnPlanetAdded(Entity<RMCPlanetComponent> ent, ref RMCPlanetAddedEvent args)
-    {
-        if (_distress.FECSelectedPlanet is { } planet)
-            _pending.Add((ent.Owner, planet.Proto.ID));
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _handled.Clear());
     }
 
     public override void Update(float frameTime)
     {
-        if (_pending.Count == 0)
-            return;
-
-        foreach (var (map, planet) in _pending)
+        var query = EntityQueryEnumerator<RMCPlanetComponent, MetaDataComponent>();
+        while (query.MoveNext(out var uid, out _, out var meta))
         {
-            if (!TerminatingOrDeleted(map) && _prototypes.TryIndex<FECPlanetWeatherPrototype>(planet, out var profile))
-                Apply(map, profile);
-        }
+            if (meta.EntityLifeStage < EntityLifeStage.MapInitialized || !_handled.Add(uid))
+                continue;
 
-        _pending.Clear();
+            if (_distress.FECSelectedPlanet is { } planet &&
+                _prototypes.TryIndex<FECPlanetWeatherPrototype>(planet.Proto.ID, out var profile))
+            {
+                Apply(uid, profile);
+            }
+        }
     }
 
     private void Apply(EntityUid map, FECPlanetWeatherPrototype profile)
