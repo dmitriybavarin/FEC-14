@@ -16,6 +16,7 @@ public sealed partial class PlayerPanel : FancyWindow
     public event Action<string>? OnUsernameCopy;
     public event Action<NetUserId?>? OnOpenNotes;
     public event Action<NetUserId?>? OnOpenBans;
+    public event Action<NetUserId?>? FECOnOpenHistory; // FEC14
     public event Action<NetUserId?>? OnAhelp;
     public event Action<string?>? OnKick;
     public event Action<NetUserId?>? OnOpenBanPanel;
@@ -41,6 +42,7 @@ public sealed partial class PlayerPanel : FancyWindow
             KickButton.OnPressed += _ => OnKick?.Invoke(TargetUsername);
             NotesButton.OnPressed += _ => OnOpenNotes?.Invoke(TargetPlayer);
             ShowBansButton.OnPressed += _ => OnOpenBans?.Invoke(TargetPlayer);
+            FECHistoryButton.OnPressed += _ => FECOnOpenHistory?.Invoke(TargetPlayer); // FEC14
             AhelpButton.OnPressed += _ => OnAhelp?.Invoke(TargetPlayer);
             WhitelistToggle.OnPressed += _ =>
             {
@@ -124,6 +126,7 @@ public sealed partial class PlayerPanel : FancyWindow
         KickButton.Disabled = !_adminManager.CanCommand("feckick");
         NotesButton.Disabled = !_adminManager.CanCommand("adminnotes");
         ShowBansButton.Disabled = !_adminManager.CanCommand("banlist");
+        FECHistoryButton.Disabled = !_adminManager.CanCommand("playerhistory"); // FEC14
         WhitelistToggle.Disabled =
             !(_adminManager.CanCommand("whitelistadd") && _adminManager.CanCommand("whitelistremove"));
         LogsButton.Disabled = !_adminManager.CanCommand("adminlogs");
