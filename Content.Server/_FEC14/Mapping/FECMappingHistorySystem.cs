@@ -13,7 +13,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._FEC14.Mapping;
 
-public sealed class FECMappingHistorySystem : EntitySystem
+public sealed partial class FECMappingHistorySystem : EntitySystem
 {
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
@@ -37,6 +37,7 @@ public sealed class FECMappingHistorySystem : EntitySystem
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
         SubscribeNetworkEvent<FECMappingUndoRequestEvent>(OnUndoRequest);
         SubscribeNetworkEvent<FECMappingRedoRequestEvent>(OnRedoRequest);
+        InitializeClipboard();
     }
 
     public override void Update(float frameTime)
