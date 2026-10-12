@@ -4,10 +4,9 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._FEC14.Weather;
 
 [Serializable, NetSerializable]
-public sealed class FECWeatherEuiState(List<FECWeatherMapEntry> maps, List<string> weathers) : EuiStateBase
+public sealed class FECWeatherEuiState(List<FECWeatherMapEntry> maps) : EuiStateBase
 {
     public readonly List<FECWeatherMapEntry> Maps = maps;
-    public readonly List<string> Weathers = weathers;
 }
 
 [Serializable, NetSerializable]
@@ -39,28 +38,3 @@ public sealed class FECWeatherEventEntry(int index, string name, int durationSec
     public readonly int DurationSeconds = durationSeconds;
     public readonly string Weather = weather;
 }
-
-[Serializable, NetSerializable]
-public sealed class FECWeatherStartEventMsg(int mapId, int index, bool now) : EuiMessageBase
-{
-    public readonly int MapId = mapId;
-    public readonly int Index = index;
-    public readonly bool Now = now;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECWeatherEndEventMsg(int mapId) : EuiMessageBase
-{
-    public readonly int MapId = mapId;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECWeatherSetMsg(int mapId, string? weather, int seconds) : EuiMessageBase
-{
-    public readonly int MapId = mapId;
-    public readonly string? Weather = weather;
-    public readonly int Seconds = seconds;
-}
-
-[Serializable, NetSerializable]
-public sealed class FECWeatherRefreshMsg : EuiMessageBase;

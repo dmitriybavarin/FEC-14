@@ -1,0 +1,17 @@
+- type: entity
+  parent: RMCPropComputerBase
+  id: FECMeteoStation
+  name: meteorological station
+  description: A weather monitoring terminal linked to orbital sensors. Shows the forecast for the area of operations.
+  suffix: Weather
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _RMC14/Structures/Machines/computer.rsi
+    layers:
+    - state: "atmos0"
+    - map: ["enum.PowerDeviceVisualLayers.Powered"]
+      state: "atmos"
+  - type: FECMeteoStation

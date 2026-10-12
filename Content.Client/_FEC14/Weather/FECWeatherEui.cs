@@ -6,7 +6,6 @@ using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Localization;
 using Robust.Shared.Utility;
-using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client._FEC14.Weather;
 
@@ -18,7 +17,6 @@ public sealed class FECWeatherEui : BaseEui
     private FECWeatherWindow _window = default!;
     private FECWeatherEuiState? _state;
     private int? _selectedMap;
-    private string? _selectedWeather;
     private string _eventsKey = string.Empty;
     private string _mapsKey = string.Empty;
 
@@ -33,29 +31,6 @@ public sealed class FECWeatherEui : BaseEui
             _eventsKey = string.Empty;
             Refresh();
         };
-        _window.WeatherSelector.OnItemSelected += args =>
-        {
-            _window.WeatherSelector.SelectId(args.Id);
-            _selectedWeather = _state?.Weathers.ElementAtOrDefault(args.Id);
-        };
-        _window.EndButton.OnPressed += _ =>
-        {
-            if (_selectedMap is { } map)
-                SendMessage(new FECWeatherEndEventMsg(map));
-        };
-        _window.SetButton.OnPressed += _ =>
-        {
-            if (_selectedMap is not { } map || _selectedWeather == null)
-                return;
-
-            int.TryParse(_window.SecondsEdit.Text.Trim(), out var seconds);
-            SendMessage(new FECWeatherSetMsg(map, _selectedWeather, Math.Max(0, seconds)));
-        };
-        _window.ClearButton.OnPressed += _ =>
-        {
-            if (_selectedMap is { } map)
-                SendMessage(new FECWeatherSetMsg(map, null, 0));
-        };
         _window.OpenCentered();
     }
 
@@ -69,7 +44,6 @@ public sealed class FECWeatherEui : BaseEui
         if (state is not FECWeatherEuiState s)
             return;
 
-        var firstState = _state == null;
         _state = s;
 
         var mapsKey = string.Join(';', s.Maps.Select(m => $"{m.MapId}:{m.Name}"));
@@ -97,19 +71,6 @@ public sealed class FECWeatherEui : BaseEui
         if (mapsChanged && _selectedMap is { } selected)
             _window.MapSelector.SelectId(selected);
 
-        if (firstState)
-        {
-            _window.WeatherSelector.Clear();
-            for (var i = 0; i < s.Weathers.Count; i++)
-            {
-                _window.WeatherSelector.AddItem(s.Weathers[i], i);
-            }
-
-            _selectedWeather = s.Weathers.FirstOrDefault();
-            if (s.Weathers.Count > 0)
-                _window.WeatherSelector.SelectId(0);
-        }
-
         Refresh();
     }
 
@@ -120,11 +81,9 @@ public sealed class FECWeatherEui : BaseEui
         {
             _window.StatusLabel.SetMessage(string.Empty);
             _window.Events.DisposeAllChildren();
-            _window.EndButton.Disabled = true;
             return;
         }
 
-        var active = map.State is "Warning" or "Running";
         var status = Loc.GetString("fec-weather-ui-status",
             ("state", map.HasCycle ? map.State : "None"),
             ("event", map.CurrentEvent == null ? string.Empty : EventName(map.CurrentEvent)),
@@ -133,9 +92,8 @@ public sealed class FECWeatherEui : BaseEui
         _window.StatusLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(status));
 
         _window.NoCycleLabel.Visible = !map.HasCycle;
-        _window.EndButton.Disabled = !active;
 
-        var key = $"{map.MapId}|{active}|{string.Join(';', map.Events.Select(e => $"{e.Index}:{e.Name}:{e.DurationSeconds}"))}";
+        var key = $"{map.MapId}|{string.Join(';', map.Events.Select(e => $"{e.Index}:{e.Name}:{e.DurationSeconds}"))}";
         if (key == _eventsKey)
             return;
 
@@ -143,28 +101,16 @@ public sealed class FECWeatherEui : BaseEui
         _window.Events.DisposeAllChildren();
         foreach (var ev in map.Events)
         {
-            var row = new BoxContainer { Orientation = LayoutOrientation.Horizontal, SeparationOverride = 6 };
-            row.AddChild(new Label
+            _window.Events.AddChild(new Label
             {
                 Text = Loc.GetString("fec-weather-ui-event",
+                    ("index", ev.Index),
                     ("name", EventName(ev.Name)),
                     ("seconds", ev.DurationSeconds),
                     ("weather", ev.Weather)),
                 HorizontalExpand = true,
                 ClipText = true,
             });
-
-            var warn = new Button { Text = Loc.GetString("fec-weather-ui-start-warning"), Disabled = active };
-            var index = ev.Index;
-            var mapId = map.MapId;
-            warn.OnPressed += _ => SendMessage(new FECWeatherStartEventMsg(mapId, index, false));
-            row.AddChild(warn);
-
-            var now = new Button { Text = Loc.GetString("fec-weather-ui-start-now"), Disabled = active };
-            now.OnPressed += _ => SendMessage(new FECWeatherStartEventMsg(mapId, index, true));
-            row.AddChild(now);
-
-            _window.Events.AddChild(row);
         }
     }
 

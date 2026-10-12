@@ -1,4 +1,5 @@
-﻿using Content.Server.Database;
+﻿using Content.Server._FEC14.Administration;
+using Content.Server.Database;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
@@ -8,6 +9,7 @@ namespace Content.Server.Administration.Commands
     public sealed class PardonCommand : LocalizedCommands
     {
         [Dependency] private readonly IServerDbManager _dbManager = default!;
+        [Dependency] private readonly FECAdminWeightManager _fecWeight = default!;
 
         public override string Command => "pardon";
 
@@ -47,6 +49,14 @@ namespace Content.Server.Administration.Commands
                 else
                     shell.WriteLine(Loc.GetString($"cmd-pardon-already-pardoned"));
 
+                return;
+            }
+
+            if (player != null &&
+                ban.BanningAdmin is { } banningAdmin &&
+                !await _fecWeight.CanTargetAsync(player.UserId, banningAdmin))
+            {
+                shell.WriteError(Loc.GetString("fec-admin-weight-pardon-blocked"));
                 return;
             }
 

@@ -2,39 +2,24 @@ using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
-using Content.Server.Weather;
 using Content.Shared._FEC14.Weather;
 using Content.Shared._RMC14.Weather;
 using Content.Shared.Administration;
-using Content.Shared.Administration.Logs;
-using Content.Shared.Database;
 using Content.Shared.Eui;
 using Content.Shared.Weather;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Server._FEC14.Weather;
 
 public sealed class FECWeatherEui : BaseEui
 {
     [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
     [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
-
-    private readonly RMCWeatherSystem _rmcWeather;
-    private readonly WeatherSystem _weather;
-    private readonly SharedMapSystem _map;
 
     public FECWeatherEui()
     {
         IoCManager.InjectDependencies(this);
-        _rmcWeather = _entities.System<RMCWeatherSystem>();
-        _weather = _entities.System<WeatherSystem>();
-        _map = _entities.System<SharedMapSystem>();
     }
 
     public override void Opened()
@@ -75,12 +60,7 @@ public sealed class FECWeatherEui : BaseEui
 
         maps.Sort((a, b) => a.MapId.CompareTo(b.MapId));
 
-        var weathers = _prototypes.EnumeratePrototypes<WeatherPrototype>()
-            .Select(p => p.ID)
-            .OrderBy(id => id)
-            .ToList();
-
-        return new FECWeatherEuiState(maps, weathers);
+        return new FECWeatherEuiState(maps);
     }
 
     private FECWeatherMapEntry CreateEntry(EntityUid mapUid, MapId mapId)
@@ -144,60 +124,6 @@ public sealed class FECWeatherEui : BaseEui
         base.HandleMessage(msg);
 
         if (!CanUse())
-        {
             Close();
-            return;
-        }
-
-        switch (msg)
-        {
-            case FECWeatherStartEventMsg start:
-            {
-                var mapId = new MapId(start.MapId);
-                if (!_map.MapExists(mapId))
-                    break;
-
-                if (_rmcWeather.TryStartWeatherEvent(mapId, start.Index.ToString(), start.Now, true, out _))
-                {
-                    _adminLog.Add(LogType.Action, LogImpact.Medium,
-                        $"{Player:player} started weather event {start.Index} on map {mapId} (now: {start.Now})");
-                }
-
-                break;
-            }
-            case FECWeatherEndEventMsg end:
-            {
-                var mapId = new MapId(end.MapId);
-                if (!_map.MapExists(mapId))
-                    break;
-
-                if (_rmcWeather.TryEndWeather(mapId, out _))
-                    _adminLog.Add(LogType.Action, LogImpact.Medium, $"{Player:player} ended weather on map {mapId}");
-
-                break;
-            }
-            case FECWeatherSetMsg set:
-            {
-                var mapId = new MapId(set.MapId);
-                if (!_map.MapExists(mapId))
-                    break;
-
-                WeatherPrototype? proto = null;
-                if (set.Weather != null && !_prototypes.TryIndex(set.Weather, out proto))
-                    break;
-
-                _map.TryGetMap(mapId, out var mapUid);
-                if (mapUid != null)
-                    _entities.EnsureComponent<WeatherComponent>(mapUid.Value);
-
-                TimeSpan? endTime = set.Seconds > 0 ? _timing.CurTime + TimeSpan.FromSeconds(set.Seconds) : null;
-                _weather.SetWeather(mapId, proto, endTime);
-                _adminLog.Add(LogType.Action, LogImpact.Medium,
-                    $"{Player:player} set weather {set.Weather ?? "none"} on map {mapId} for {set.Seconds} s");
-                break;
-            }
-        }
-
-        StateDirty();
     }
 }

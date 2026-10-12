@@ -3,6 +3,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
 using Content.Server.Administration.Systems;
+using Content.Server._FEC14.Administration;
 using Content.Server.Database;
 using Content.Server.EUI;
 using Content.Shared.Administration;
@@ -23,6 +24,7 @@ public sealed class PlayerPanelEui : BaseEui
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly EuiManager _eui = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private readonly FECAdminWeightManager _fecWeight = default!;
 
     private readonly LocatedPlayerData _targetPlayer;
     private int? _notes;
@@ -90,7 +92,8 @@ public sealed class PlayerPanelEui : BaseEui
                 if (!_admins.IsAdmin(Player) ||
                     !_entity.TrySystem<AdminFrozenSystem>(out var frozenSystem) ||
                     !_player.TryGetSessionById(_targetPlayer.UserId, out session) ||
-                    session.AttachedEntity == null)
+                    session.AttachedEntity == null ||
+                    !_fecWeight.CanTarget(Player, session))
                     return;
 
                 if (_entity.HasComponent<AdminFrozenComponent>(session.AttachedEntity))
@@ -127,7 +130,8 @@ public sealed class PlayerPanelEui : BaseEui
             case PlayerPanelRejuvenationMessage:
                 if (!_admins.HasAdminFlag(Player, AdminFlags.Debug) ||
                     !_player.TryGetSessionById(_targetPlayer.UserId, out session) ||
-                    session.AttachedEntity == null)
+                    session.AttachedEntity == null ||
+                    !_fecWeight.CanTarget(Player, session))
                     return;
 
                 if (msg is PlayerPanelRejuvenationMessage)

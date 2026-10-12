@@ -401,6 +401,12 @@ namespace Content.Server.Administration.UI
                     _sawmill.Warning($"{Player} tried to assign admin rank above their authorization.");
                     return (true, null);
                 }
+
+                if (_fecWeight.GetRankWeight(r) > _fecWeight.GetWeight(Player))
+                {
+                    _sawmill.Warning($"{Player} tried to assign admin rank {rank.Name} with weight above their own.");
+                    return (true, null);
+                }
             }
 
             return (false, ret);
