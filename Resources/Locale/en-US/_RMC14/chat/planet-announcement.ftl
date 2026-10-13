@@ -1,10 +1,10 @@
-rmc-announcement-planet-lv = An automated distress signal has been received from the archaeological site of Lazarus Landing, on the border world of LV-624. A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-lv = An automated distress signal has been received from the archaeological site of Lazarus Landing, on the border world of LV-624. The UNS Almayer has received the signal and is preparing to move out to investigate.
 
 rmc-announcement-planet-solaris = Weston-Yamada has lost contact with one of its Biological Storage Facilities, Solaris Ridge, on the planet of LV-1413. The UNS Almayer has been requested to look into the blackout by Weston-Yamada.
 
-rmc-announcement-planet-shiva = An automated distress signal has been received from archaeology site "Shiva's Snowball", on border ice world "Ifrit". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-shiva = An automated distress signal has been received from archaeology site "Shiva's Snowball", on border ice world "Ifrit". The UNS Almayer has received the signal and is preparing to move out to investigate.
 
-rmc-announcement-planet-fiorina = An automated distress signal has been received from maximum-security prison "Fiorina Orbital Penitentiary". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-fiorina = An automated distress signal has been received from maximum-security prison "Fiorina Orbital Penitentiary". The UNS Almayer has received the signal and is preparing to move out to investigate.
 
 rmc-announcement-planet-trijent = We've lost contact with Weston-Yamada's extra-solar colony, "Trijent Dam", on the planet "Raijin." The UNS Almayer has been dispatched to assist.
 
@@ -14,9 +14,9 @@ rmc-announcement-planet-chances = Pan-Pan. This is the commander of the UNS Hany
 
 rmc-announcement-planet-hybrisa = An automated distress signal has been received from the Weston-Yamada colony, Hybrisa Prospera — a vast, city-like settlement renowned for its immense wealth, extensive mining operations, and thriving commerce. Recently fully acquired from the TSE, this former colony is now a key asset for Weston-Yamada, with a sprawling urban center housing thousands of residents and numerous smaller outer colonies under its control. The UNS Almayer has been dispatched to investigate the situation.
 
-rmc-announcement-planet-sorokyne = An automated distress signal has been recieved from a mining colony on border world LV-976, "Sorokyne Outpost". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-sorokyne = An automated distress signal has been recieved from a mining colony on border world LV-976, "Sorokyne Outpost". The UNS Almayer has received the signal and is preparing to move out to investigate.
 
-rmc-announcement-planet-varadero = An automated distress signal has been received from New Varadero Naval Base. A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-varadero = An automated distress signal has been received from New Varadero Naval Base. The UNS Almayer has received the signal and is preparing to move out to investigate.
                                            Designation: UNMC Naval base, primary defensive garrison for New Varadero City, research site and mining facility
 
                                            Total Personnel: 47
