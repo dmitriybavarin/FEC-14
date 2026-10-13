@@ -73,7 +73,7 @@ public sealed class FECNightSystem : EntitySystem
                 break;
             case FECNightPhase.Waiting:
                 if (now >= night.NextPhaseAt)
-                    BeginFall((map, night), profile, now);
+                    BeginFall((map, night), profile, now, false);
 
                 break;
             case FECNightPhase.Falling:
@@ -97,20 +97,62 @@ public sealed class FECNightSystem : EntitySystem
         }
     }
 
-    private void BeginFall(Entity<FECNightComponent> night, FECPlanetNightPrototype profile, TimeSpan now)
+    public bool TryForce(bool start, out string message)
+    {
+        var query = EntityQueryEnumerator<CMDistressSignalRuleComponent>();
+        while (query.MoveNext(out _, out var rule))
+        {
+            if (rule.Result != null ||
+                rule.XenoMap is not { } grid ||
+                Transform(grid).MapUid is not { } map)
+            {
+                continue;
+            }
+
+            var profile = _distress.FECSelectedPlanet is { } planet &&
+                          _prototypes.TryIndex<FECPlanetNightPrototype>(planet.Proto.ID, out var found)
+                ? found
+                : new FECPlanetNightPrototype();
+            var night = EnsureComp<FECNightComponent>(map);
+            var active = night.Phase is FECNightPhase.Falling or FECNightPhase.Night;
+            if (start == active)
+            {
+                message = Loc.GetString(start ? "fec-night-force-already" : "fec-night-force-none");
+                return false;
+            }
+
+            if (start)
+                BeginFall((map, night), profile, _timing.CurTime, true);
+            else
+                BeginRise((map, night), profile, _timing.CurTime);
+
+            message = Loc.GetString(start ? "fec-night-force-started" : "fec-night-force-ended");
+            return true;
+        }
+
+        message = Loc.GetString("fec-night-force-no-round");
+        return false;
+    }
+
+    private void BeginFall(Entity<FECNightComponent> night, FECPlanetNightPrototype profile, TimeSpan now, bool force)
     {
         var light = EnsureComp<MapLightComponent>(night);
         var ambient = EnsureComp<RMCAmbientLightComponent>(night);
-        if (ambient.IsAnimating)
-            return;
-
-        if (Luminance(light.AmbientLightColor) <= Luminance(profile.Color))
+        if (!force)
         {
-            night.Comp.Phase = FECNightPhase.Done;
-            return;
+            if (ambient.IsAnimating)
+                return;
+
+            if (Luminance(light.AmbientLightColor) <= Luminance(profile.Color))
+            {
+                night.Comp.Phase = FECNightPhase.Done;
+                return;
+            }
         }
 
-        night.Comp.DayColor = light.AmbientLightColor;
+        if (night.Comp.Phase != FECNightPhase.Rising)
+            night.Comp.DayColor = light.AmbientLightColor;
+
         night.Comp.Phase = FECNightPhase.Falling;
         night.Comp.NextPhaseAt = now + profile.Fade;
         _ambientLight.SetColor((night.Owner, ambient), profile.Color, profile.Fade);
