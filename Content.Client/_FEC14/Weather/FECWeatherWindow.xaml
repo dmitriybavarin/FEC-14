@@ -11,23 +11,15 @@
             <OptionButton Name="MapSelector" Access="Public" HorizontalExpand="True" />
         </BoxContainer>
         <RichTextLabel Name="StatusLabel" Access="Public" />
+        <Button Name="EndButton" Access="Public" Text="{Loc 'fec-weather-ui-end'}" HorizontalAlignment="Left" />
+        <Label Name="ResultLabel" Access="Public" FontColorOverride="#C8C864" />
         <cc:HSeparator Color="#4972A1" />
         <Label Text="{Loc 'fec-weather-ui-events'}" StyleClasses="LabelHeading" />
         <Label Name="NoCycleLabel" Access="Public" Text="{Loc 'fec-weather-ui-no-cycle'}" Visible="False" />
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
             <BoxContainer Name="Events" Access="Public" Orientation="Vertical" SeparationOverride="4" />
         </ScrollContainer>
-        <Button Name="EndButton" Access="Public" Text="{Loc 'fec-weather-ui-end'}" StyleClasses="Caution" />
         <cc:HSeparator Color="#4972A1" />
-        <Label Text="{Loc 'fec-weather-ui-manual'}" StyleClasses="LabelHeading" />
-        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-            <OptionButton Name="WeatherSelector" Access="Public" HorizontalExpand="True" />
-            <LineEdit Name="SecondsEdit" Access="Public" MinWidth="90" PlaceHolder="{Loc 'fec-weather-ui-seconds'}" />
-        </BoxContainer>
-        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-            <Button Name="SetButton" Access="Public" HorizontalExpand="True" Text="{Loc 'fec-weather-ui-set'}" />
-            <Button Name="ClearButton" Access="Public" HorizontalExpand="True" Text="{Loc 'fec-weather-ui-clear'}" />
-        </BoxContainer>
-        <Label Name="ManualHint" Text="{Loc 'fec-weather-ui-manual-hint'}" FontColorOverride="#A0A0A0" />
+        <Label Text="{Loc 'fec-weather-ui-command-hint'}" FontColorOverride="#A0A0A0" />
     </BoxContainer>
 </controls:FECWeatherWindow>

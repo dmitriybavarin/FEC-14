@@ -1,0 +1,47 @@
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._FEC14.Administration;
+
+[Serializable, NetSerializable]
+public enum FECSettingType : byte
+{
+    Bool,
+    Int,
+    Float,
+    String,
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingEntry(string category, string key, FECSettingType type, string value, string defaultValue, double min, double max)
+{
+    public readonly string Category = category;
+    public readonly string Key = key;
+    public readonly FECSettingType Type = type;
+    public readonly string Value = value;
+    public readonly string DefaultValue = defaultValue;
+    public readonly double Min = min;
+    public readonly double Max = max;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsRequestEvent : EntityEventArgs;
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsStateEvent(List<FECSettingEntry> entries, string? status) : EntityEventArgs
+{
+    public readonly List<FECSettingEntry> Entries = entries;
+    public readonly string? Status = status;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsSetEvent(string key, string value) : EntityEventArgs
+{
+    public readonly string Key = key;
+    public readonly string Value = value;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECSettingsResetEvent(string key) : EntityEventArgs
+{
+    public readonly string Key = key;
+}

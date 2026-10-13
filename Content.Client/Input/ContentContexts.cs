@@ -14,6 +14,10 @@ namespace Content.Client.Input
         {
             var common = contexts.GetContext("common");
             common.AddFunction(ContentKeyFunctions.FocusChat);
+            common.AddFunction(ContentKeyFunctions.FECMappingUndo); // FEC14
+            common.AddFunction(ContentKeyFunctions.FECMappingRedo); // FEC14
+            common.AddFunction(ContentKeyFunctions.FECMappingCopy); // FEC14
+            common.AddFunction(ContentKeyFunctions.FECMappingPaste); // FEC14
             common.AddFunction(ContentKeyFunctions.FocusLocalChat);
             common.AddFunction(ContentKeyFunctions.FocusEmote);
             common.AddFunction(ContentKeyFunctions.FocusWhisperChat);

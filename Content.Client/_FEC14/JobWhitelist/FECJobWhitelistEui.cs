@@ -69,7 +69,7 @@ public sealed class FECJobWhitelistEui : BaseEui
         _window.AddButton.OnPressed += _ =>
         {
             if (_selectedJob != null)
-                SendMessage(new FECJobWhitelistAddMsg(_window.PlayerEdit.Text, _selectedJob));
+                SendMessage(new FECJobWhitelistAddMsg(_window.PlayerEdit.Text, _selectedJob, _window.DurationEdit.Text));
         };
 
         _window.OpenCentered();
@@ -128,7 +128,7 @@ public sealed class FECJobWhitelistEui : BaseEui
 
                 foreach (var entry in group.OrderBy(e => e.PlayerName))
                 {
-                    AddRow(PlayerLabel(entry), entry);
+                    AddRow(WithExpiry(PlayerLabel(entry), entry), entry);
                 }
             }
 
@@ -143,10 +143,10 @@ public sealed class FECJobWhitelistEui : BaseEui
 
             foreach (var entry in group.OrderBy(e => JobName(e.JobId)))
             {
-                AddRow(Loc.GetString("fec-job-whitelist-ui-job-row",
+                AddRow(WithExpiry(Loc.GetString("fec-job-whitelist-ui-job-row",
                     ("job", JobName(entry.JobId)),
                     ("id", entry.JobId),
-                    ("other", _visible.Contains(entry.JobId) ? 0 : 1)), entry);
+                    ("other", _visible.Contains(entry.JobId) ? 0 : 1)), entry), entry);
             }
         }
     }
@@ -184,6 +184,16 @@ public sealed class FECJobWhitelistEui : BaseEui
         row.AddChild(remove);
 
         _window.Entries.AddChild(row);
+    }
+
+    private static string WithExpiry(string text, FECJobWhitelistEntry entry)
+    {
+        if (entry.ExpiresAt is not { } expires)
+            return text;
+
+        return Loc.GetString("fec-temp-whitelist-row",
+            ("text", text),
+            ("date", $"{expires.ToLocalTime():dd.MM.yyyy HH:mm}"));
     }
 
     private string PlayerLabel(FECJobWhitelistEntry entry)

@@ -1,30 +1,28 @@
-rmc-announcement-planet-lv = An automated distress signal has been received from the archaeological site of Lazarus Landing, on the border world of LV-624. A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-lv = We have received your automated distress signal from the archaeological site of Lazarus Landing, on the border world of LV-624. We are moving out to investigate.
 
-rmc-announcement-planet-solaris = Weston-Yamada has lost contact with one of its Biological Storage Facilities, Solaris Ridge, on the planet of LV-1413. The UNS Almayer has been requested to look into the blackout by Weston-Yamada.
+rmc-announcement-planet-solaris = Weston-Yamada has lost contact with one of its Biological Storage Facilities, Solaris Ridge, on the planet of LV-1413. Weston-Yamada has requested our assistance. We are moving out to look into the blackout.
 
-rmc-announcement-planet-shiva = An automated distress signal has been received from archaeology site "Shiva's Snowball", on border ice world "Ifrit". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-shiva = We have received your automated distress signal from archaeology site "Shiva's Snowball", on border ice world "Ifrit". We are moving out to investigate.
 
-rmc-announcement-planet-fiorina = An automated distress signal has been received from maximum-security prison "Fiorina Orbital Penitentiary". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-fiorina = We have received your automated distress signal from maximum-security prison "Fiorina Orbital Penitentiary". We are moving out to investigate.
 
-rmc-announcement-planet-trijent = We've lost contact with Weston-Yamada's extra-solar colony, "Trijent Dam", on the planet "Raijin." The UNS Almayer has been dispatched to assist.
+rmc-announcement-planet-trijent = We've lost contact with Weston-Yamada's extra-solar colony, "Trijent Dam", on the planet "Raijin." We are moving out to assist.
 
-rmc-announcement-planet-kutjevo = An automated distress signal has been received from Weston-Yamada colony Kutjevo Refinery, known for botanical research, export, and raw materials processing and refinement. The UNS Almayer has been dispatched to investigate.
+rmc-announcement-planet-kutjevo = We have received your automated distress signal from Weston-Yamada colony Kutjevo Refinery, known for botanical research, export, and raw materials processing and refinement. We are moving out to investigate.
 
 rmc-announcement-planet-chances = Pan-Pan. This is the commander of the UNS Hanyut, UNMC FORECON. We are currently grounded on planet LV-522 in the immediate area of Chance's Claim. We are unable to contact the Hanyut and our dropships are unable to take off at this time. We are requesting assistance from any nearby vessels; this broadcast is set to repeat every 24 hours.
 
-rmc-announcement-planet-hybrisa = An automated distress signal has been received from the Weston-Yamada colony, Hybrisa Prospera — a vast, city-like settlement renowned for its immense wealth, extensive mining operations, and thriving commerce. Recently fully acquired from the TSE, this former colony is now a key asset for Weston-Yamada, with a sprawling urban center housing thousands of residents and numerous smaller outer colonies under its control. The UNS Almayer has been dispatched to investigate the situation.
+rmc-announcement-planet-hybrisa = We have received your automated distress signal from the Weston-Yamada colony, Hybrisa Prospera — a vast, city-like settlement renowned for its immense wealth, extensive mining operations, and thriving commerce. Recently fully acquired from the TSE, this former colony is now a key asset for Weston-Yamada, with a sprawling urban center housing thousands of residents and numerous smaller outer colonies under its control. We are moving out to investigate the situation.
 
-rmc-announcement-planet-sorokyne = An automated distress signal has been recieved from a mining colony on border world LV-976, "Sorokyne Outpost". A response team from the UNS Almayer will be dispatched shortly to investigate.
+rmc-announcement-planet-sorokyne = We have received your automated distress signal from a mining colony on border world LV-976, "Sorokyne Outpost". We are moving out to investigate.
 
-rmc-announcement-planet-varadero = An automated distress signal has been received from New Varadero Naval Base. A response team from the UNS Almayer will be dispatched shortly to investigate.
-                                           Designation: UNMC Naval base, primary defensive garrison for New Varadero City, research site and mining facility
+rmc-announcement-planet-varadero = We have received your automated distress signal from New Varadero Naval Base. We are moving out to investigate.
 
-                                           Total Personnel: 47
-                                           Current Temperature: 68F Interior, 97F Exterior
-                                           Onsite Representative: UN Rep. Steve Haifisch
-                                           Telecommunications Array: Repairs required
+                                           New Varadero serves as a UNMC naval base and the primary defensive garrison for New Varadero City, as well as a research site and mining facility.
 
-                                           No further information available at this time.
+                                           UN Representative Steve Haifisch is on site.
+                                           The temperature is 68F indoors and 97F outdoors.
+                                           The base has a total personnel of 47.
 
 rmc-announcement-planet-varadero-1 = Mayday, Mayday, Mayday. UNS Almayer, we are detecting you on approach. This is Lieutenant #%-#^-@%#, authorization code Lima Alfa Sierra Niner, broadcasting on all stations. Stand by for a situation report.
 

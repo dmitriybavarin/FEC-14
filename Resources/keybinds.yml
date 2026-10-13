@@ -642,6 +642,29 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
+- function: FECMappingUndo
+  type: State
+  key: Z
+  mod1: Control
+- function: FECMappingRedo
+  type: State
+  key: Z
+  mod1: Control
+  mod2: Shift
+- function: FECMappingRedo
+  type: State
+  key: Y
+  mod1: Control
+- function: FECMappingCopy
+  type: State
+  key: C
+  mod1: Alt
+  canFocus: true
+- function: FECMappingPaste
+  type: State
+  key: V
+  mod1: Alt
+  canFocus: true
 
 # RMC14
 - function: RMCActivateAttachableRail

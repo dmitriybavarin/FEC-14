@@ -1,0 +1,244 @@
+using System.Numerics;
+using Content.Shared._FEC14.CCVar;
+using Content.Shared._FEC14.Weather;
+using Content.Shared._FEC14.Wet;
+using Content.Shared._RMC14.Atmos;
+using Content.Shared._RMC14.Water;
+using Content.Shared._RMC14.Weapons.Ranged.Flamer;
+using Content.Shared._RMC14.Weather;
+using Content.Shared.Alert;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.Inventory;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Weather;
+using Robust.Shared.Configuration;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+
+namespace Content.Server._FEC14.Wet;
+
+public sealed class FECWetSystem : EntitySystem
+{
+    private static readonly ProtoId<AlertPrototype> WetAlert = "FECWet";
+    private const string PrintPrototype = "FECWetFootprint";
+    private const float StepDistance = 0.85f;
+    private const float FootOffset = 0.08f;
+    private const float RainGainFactor = 0.67f;
+    private static readonly TimeSpan ErodeStep = TimeSpan.FromSeconds(3);
+    private static readonly TimeSpan SoakInterval = TimeSpan.FromSeconds(1);
+    private static readonly string[] WetSurfaces = ["Wet", "Water"];
+    private static readonly string[] PrintSurfaces = ["Sand", "Dirt", "Mud", "Snow"];
+
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly SharedRMCFlammableSystem _flammable = default!;
+    [Dependency] private readonly SharedRMCFlamerSystem _flamer = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly FECWeatherTacticsSystem _tactics = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefs = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly RMCWeatherSystem _weather = default!;
+
+    private TimeSpan _nextSoak;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<FECWetComponent, ComponentShutdown>(OnWetShutdown);
+    }
+
+    private void OnWetShutdown(Entity<FECWetComponent> ent, ref ComponentShutdown args)
+    {
+        _alerts.ClearAlert(ent.Owner, WetAlert);
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (!_config.GetCVar(FECCVars.WetEnabled))
+            return;
+
+        var now = _timing.CurTime;
+        var tick = now >= _nextSoak;
+        if (tick)
+        {
+            _nextSoak = now + SoakInterval;
+            Soak(now);
+        }
+
+        var wet = EntityQueryEnumerator<FECWetComponent, TransformComponent>();
+        while (wet.MoveNext(out var uid, out var comp, out var xform))
+        {
+            if (now >= comp.ExpiresAt)
+            {
+                _popup.PopupEntity(Loc.GetString("fec-wet-dried"), uid, uid);
+                RemCompDeferred<FECWetComponent>(uid);
+                continue;
+            }
+
+            LeavePrint(uid, comp, xform);
+            if (tick)
+                UpdateAlert(uid, comp, now);
+        }
+
+        if (tick)
+            Erode(now);
+    }
+
+    private void UpdateAlert(EntityUid uid, FECWetComponent wet, TimeSpan now)
+    {
+        var max = TimeSpan.FromSeconds(Math.Max(_config.GetCVar(FECCVars.WetMaxSeconds), 1f));
+        var fraction = Math.Clamp((wet.ExpiresAt - now) / max, 0.0, 1.0);
+        var severity = (short) Math.Clamp((int) Math.Ceiling(fraction * 5) - 1, 0, 4);
+        _alerts.ShowAlert(uid, WetAlert, severity, (wet.ExpiresAt - max, wet.ExpiresAt));
+    }
+
+    private void Erode(TimeSpan now)
+    {
+        var query = EntityQueryEnumerator<FECWetFootprintComponent>();
+        while (query.MoveNext(out var uid, out var print))
+        {
+            if (now >= print.ExpiresAt)
+            {
+                QueueDel(uid);
+                continue;
+            }
+
+            if (!HasActiveWeather(Transform(uid).MapID) || !_weather.IsWeatherExposed(uid))
+                continue;
+
+            print.ExpiresAt -= ErodeStep;
+            Dirty(uid, print);
+        }
+    }
+
+    private bool HasActiveWeather(MapId mapId)
+    {
+        return _map.TryGetMap(mapId, out var mapUid) &&
+               TryComp(mapUid, out WeatherComponent? weather) &&
+               weather.Weather.Count > 0;
+    }
+
+    private void Soak(TimeSpan now)
+    {
+        var max = TimeSpan.FromSeconds(Math.Max(_config.GetCVar(FECCVars.WetMaxSeconds), 1f));
+        var gain = Math.Max(_config.GetCVar(FECCVars.WetGainSeconds), 0f);
+        var query = EntityQueryEnumerator<HumanoidAppearanceComponent, MobStateComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var mobState, out var xform))
+        {
+            if (!_mobState.IsAlive(uid, mobState))
+                continue;
+
+            var inWater = IsOnSurface(xform, WetSurfaces) || IsInWater(xform);
+            var rained = !inWater && _tactics.IsWetWeather(xform.MapID) && _weather.IsWeatherExposed(uid);
+            if (!inWater && !rained)
+                continue;
+
+            if (inWater && TryComp(uid, out FlammableComponent? burning) && burning.OnFire)
+                _flammable.Extinguish((uid, burning));
+
+            if (!TryComp(uid, out FECWetComponent? wet))
+            {
+                wet = EnsureComp<FECWetComponent>(uid);
+                _popup.PopupEntity(Loc.GetString("fec-wet-soaked"), uid, uid);
+            }
+
+            var remaining = wet.ExpiresAt > now ? wet.ExpiresAt - now : TimeSpan.Zero;
+            var total = remaining + TimeSpan.FromSeconds(gain * (inWater ? 1f : RainGainFactor));
+            wet.ExpiresAt = now + (total > max ? max : total);
+            UpdateAlert(uid, wet, now);
+
+            var soaked = inWater || (wet.ExpiresAt - now).TotalSeconds >= max.TotalSeconds * 0.6;
+            if (soaked && (inWater || !wet.FlamersDoused))
+            {
+                wet.FlamersDoused = true;
+                DouseFlamers(uid);
+            }
+        }
+    }
+
+    private void DouseFlamers(EntityUid uid)
+    {
+        foreach (var item in _inventory.GetHandOrInventoryEntities(uid))
+        {
+            if (TryComp(item, out RMCIgniterComponent? igniter))
+                _flamer.FECDouse((item, igniter), uid);
+        }
+    }
+
+    private void LeavePrint(EntityUid uid, FECWetComponent wet, TransformComponent xform)
+    {
+        var position = xform.LocalPosition;
+        if (wet.LastPrint is not { } last)
+        {
+            wet.LastPrint = position;
+            return;
+        }
+
+        var delta = position - last;
+        var distance = delta.Length();
+        if (distance < StepDistance)
+            return;
+
+        wet.LastPrint = position;
+        if (xform.GridUid is not { } gridUid ||
+            xform.ParentUid != gridUid ||
+            !IsOnSurface(xform, PrintSurfaces))
+        {
+            return;
+        }
+
+        wet.LeftFoot = !wet.LeftFoot;
+        var direction = delta / distance;
+        var side = new Vector2(-direction.Y, direction.X) * (wet.LeftFoot ? FootOffset : -FootOffset);
+        var print = Spawn(PrintPrototype, xform.Coordinates.Offset(side));
+        Transform(print).LocalRotation = delta.ToWorldAngle();
+        if (TryComp(print, out FECWetFootprintComponent? footprint))
+        {
+            footprint.ExpiresAt = _timing.CurTime + footprint.Lifetime;
+            Dirty(print, footprint);
+        }
+    }
+
+    private bool IsInWater(TransformComponent xform)
+    {
+        if (xform.GridUid is not { } gridUid || !TryComp(gridUid, out MapGridComponent? grid))
+            return false;
+
+        var indices = _map.CoordinatesToTile(gridUid, grid, xform.Coordinates);
+        var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, indices);
+        while (anchored.MoveNext(out var anchoredUid))
+        {
+            if (HasComp<RMCWaterComponent>(anchoredUid.Value))
+                return true;
+        }
+
+        return false;
+    }
+
+    private bool IsOnSurface(TransformComponent xform, string[] surfaces)
+    {
+        if (xform.GridUid is not { } gridUid || !TryComp(gridUid, out MapGridComponent? grid))
+            return false;
+
+        var indices = _map.CoordinatesToTile(gridUid, grid, xform.Coordinates);
+        var tile = _map.GetTileRef(gridUid, grid, indices).Tile;
+        if (tile.IsEmpty)
+            return false;
+
+        var id = _tileDefs[tile.TypeId].ID;
+        foreach (var surface in surfaces)
+        {
+            if (id.Contains(surface, StringComparison.OrdinalIgnoreCase))
+                return true;
+        }
+
+        return false;
+    }
+}

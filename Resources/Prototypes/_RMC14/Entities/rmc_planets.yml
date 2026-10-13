@@ -9,6 +9,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingLV624
     announcements:
     - text: rmc-announcement-planet-lv
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #- RMCMobSmallHostFarwa
       #- CMMobSmallHostMonkey
@@ -75,6 +78,9 @@
     camouflage: Desert
     announcements:
     - text: rmc-announcement-planet-solaris
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     specialFaxes:
       Liaison: RMCPaperWeYaLiaisonBriefingSolaris
     #smallHostVariants:
@@ -171,6 +177,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingShivas
     announcements:
     - text: rmc-announcement-planet-shiva
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCMobSmallHostYiren
     nightmareScenarios:
@@ -225,6 +234,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingFiorina
     announcements:
     - text: rmc-announcement-planet-fiorina
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCMobSmallHostFarwa
     nightmareScenarios:
@@ -279,6 +291,9 @@
     minPlayers: 130
     announcements:
     - text: rmc-announcement-planet-trijent
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCMobSmallHostStok
     nightmareScenarios:
@@ -377,6 +392,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingVaradero
     announcements:
     - text: rmc-announcement-planet-varadero
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     - text: rmc-announcement-planet-varadero-1
       announcement: "rmc-announcement-ares-varadero"
       delay: 300 # 5 minutes
@@ -442,6 +460,9 @@
     camouflage: Desert
     announcements:
     - text: rmc-announcement-planet-kutjevo
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCMobSmallHostNeaera
       #RMCMobSmallHostStok
@@ -478,6 +499,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingChances
     announcements:
     - text: rmc-announcement-planet-chances
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCSmallHostMobNaera
       #RMCSmallHostMobStok
@@ -514,6 +538,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingHybrisa
     announcements:
     - text: rmc-announcement-planet-hybrisa
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #CMMobSmallHostMonkey
     nightmareScenarios:
@@ -589,6 +616,9 @@
       Liaison: RMCPaperWeYaLiaisonBriefingSorokyne
     announcements:
     - text: rmc-announcement-planet-sorokyne
+    - text: rmc-announcement-ares-operation-confirmed
+      announcement: "rmc-announcement-ares-message"
+      delay: 40
     #smallHostVariants:
       #RMCMobSmallHostStok
       #CMMobSmallHostKobold

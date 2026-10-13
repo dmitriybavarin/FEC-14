@@ -36,6 +36,7 @@ public sealed class RangefinderSystem : EntitySystem
     [Dependency] private readonly SkillsSystem _skills = default!;
     [Dependency] private readonly SquadSystem _squad = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly Content.Shared._FEC14.Weather.FECWeatherTacticsSystem _fecWeatherTactics = default!; // FEC14
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
 
@@ -96,7 +97,8 @@ public sealed class RangefinderSystem : EntitySystem
         args.Handled = true;
 
         string msg;
-        if (!_examine.InRangeUnOccluded(user, coordinates, rangefinder.Comp.Range))
+        var fecRange = rangefinder.Comp.Range * _fecWeatherTactics.GetOpticsRangeMultiplier(_transform.GetMapId(coordinates)); // FEC14
+        if (!_examine.InRangeUnOccluded(user, coordinates, fecRange)) // FEC14
         {
             msg = Loc.GetString("rmc-laser-designator-out-of-range");
             _popup.PopupClient(msg, coordinates, user, PopupType.SmallCaution);

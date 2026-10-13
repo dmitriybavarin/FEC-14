@@ -139,5 +139,9 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction MappingRemoveDecal = "MappingRemoveDecal";
         public static readonly BoundKeyFunction MappingCancelEraseDecal = "MappingCancelEraseDecal";
         public static readonly BoundKeyFunction MappingOpenContextMenu = "MappingOpenContextMenu";
+        public static readonly BoundKeyFunction FECMappingUndo = "FECMappingUndo"; // FEC14
+        public static readonly BoundKeyFunction FECMappingRedo = "FECMappingRedo"; // FEC14
+        public static readonly BoundKeyFunction FECMappingCopy = "FECMappingCopy"; // FEC14
+        public static readonly BoundKeyFunction FECMappingPaste = "FECMappingPaste"; // FEC14
     }
 }

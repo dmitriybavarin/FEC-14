@@ -260,6 +260,18 @@ public abstract class SharedRMCFlamerSystem : EntitySystem
         _appearance.SetData(ent, RMCIgniterVisuals.Ignited, ent.Comp.Enabled);
     }
 
+    public bool FECDouse(Entity<RMCIgniterComponent> ent, EntityUid user) // FEC14
+    {
+        if (!ent.Comp.Enabled)
+            return false;
+
+        ent.Comp.Enabled = false;
+        Dirty(ent);
+        _appearance.SetData(ent, RMCIgniterVisuals.Ignited, false);
+        _popup.PopupEntity(Loc.GetString("fec-flamer-doused", ("flamer", ent.Owner)), ent, user);
+        return true;
+    }
+
     private void OnIgniterToggle(Entity<RMCIgniterComponent> ent, ref IsHotEvent args)
     {
         if (TryComp<AttachableHolderComponent>(ent, out var holder) &&

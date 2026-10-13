@@ -1,3 +1,4 @@
+using Content.Server._FEC14.Weather; // FEC14
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -43,6 +44,7 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly FECRadioNoiseSystem _fecRadioNoise = default!; // FEC14
     // RMC14
 
     // set used to prevent radio feedback loops.
@@ -239,6 +241,8 @@ public sealed class RadioSystem : EntitySystem
                 // send the message
                 // RMC14
                 var actualMessage = message;
+                if (escapeMarkup && _fecRadioNoise.TryDistort(transform.MapID, sourceMapId, message, out var noisyMessage)) // FEC14
+                    actualMessage = noisyMessage; // FEC14
                 var actualWrappedMessage = wrappedMessage;
                 string? actualLanguageIcon = languageIcon;
 

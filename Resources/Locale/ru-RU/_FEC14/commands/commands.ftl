@@ -59,3 +59,16 @@ fec-cmd-xeno-announce-desc = Делает объявление для всех �
 fec-cmd-r-m-c-acid-instant-desc = Переключает или задает мгновенную кислоту.
 fec-cmd-actionss-desc = Сохраняет текущую раскладку панели действий в файл
 fec-cmd-show-areas-desc = Показывает зоны по их свойствам.
+
+fec-cmd-r-m-c-delay-round-end-wrong-args = Ожидалось 1-2 аргумента, получено 3 или больше.
+fec-cmd-r-m-c-delay-round-end-silent-bool = Silent должен быть логическим значением.
+fec-cmd-r-m-c-delay-round-end-admin = {$player} переключает задержку конца раунда: {$value ->
+    [true] включена
+   *[false] выключена
+}.
+fec-cmd-r-m-c-delay-round-end-removed-shell = Задержка конца раунда снята; раунд всё ещё нужно завершить вручную командой или действием.
+fec-cmd-r-m-c-delay-round-end-removed = [bold][font size=24][color=red]Задержка конца раунда отключена![/color][/font][/bold]
+fec-cmd-r-m-c-delay-round-end-delayed-shell = Конец раунда отложен; теперь раунд нужно завершить вручную командой или действием.
+fec-cmd-r-m-c-delay-round-end-delayed = [bold][font size=24][color=red]Конец раунда отложен![/color][/font][/bold]
+fec-cmd-r-m-c-delay-round-end-hint-silent = Без оповещения
+fec-cmd-r-m-c-delay-round-end-hint-message = Сообщение

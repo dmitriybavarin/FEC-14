@@ -23,6 +23,7 @@ public sealed class MortarSystem : SharedMortarSystem
     [Dependency] private readonly DropshipSystem _dropship = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly Content.Shared._FEC14.Weather.FECWeatherTacticsSystem _fecWeatherTactics = default!; // FEC14
     [Dependency] private readonly RMCMapSystem _rmcMap = default!;
     [Dependency] private readonly RMCPlanetSystem _rmcPlanet = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -206,6 +207,10 @@ public sealed class MortarSystem : SharedMortarSystem
             var yDeviation = _random.Pick(fireRandomOffset);
             coordinates = coordinates.Offset(new Vector2(xDeviation, yDeviation));
         }
+
+        var weatherDeviation = _fecWeatherTactics.GetMortarDeviation(coordinates.MapId); // FEC14
+        if (weatherDeviation > 0) // FEC14
+            coordinates = coordinates.Offset(new Vector2(_random.Next(-weatherDeviation, weatherDeviation + 1), _random.Next(-weatherDeviation, weatherDeviation + 1))); // FEC14
     }
 
     private bool CheckContainerCapacity(Entity<MortarComponent> mortar, Entity<MortarShellComponent> shell, EntityUid user)

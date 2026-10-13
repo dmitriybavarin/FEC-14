@@ -28,7 +28,7 @@ public sealed class RMCDelayRoundEndCommand : LocalizedEntityCommands
 
         if (args.Length >= 3)
         {
-            shell.WriteError("Expected 1-2 args got 3 or more");
+            shell.WriteError(Loc.GetString("fec-cmd-r-m-c-delay-round-end-wrong-args")); // FEC14
             return;
         }
 
@@ -39,13 +39,13 @@ public sealed class RMCDelayRoundEndCommand : LocalizedEntityCommands
         {
             if (!bool.TryParse(args[0], out var silentParsed))
             {
-                shell.WriteError(Loc.GetString("shell-invalid-bool")+": Silent must be a boolean.");
+                shell.WriteError(Loc.GetString("shell-invalid-bool") + ": " + Loc.GetString("fec-cmd-r-m-c-delay-round-end-silent-bool")); // FEC14
                 return;
             }
             silent = silentParsed;
         }
 
-        _chatManager.SendAdminAnnouncement($"{shell.Player}, has set the round end delay to {!currentValue}");
+        _chatManager.SendAdminAnnouncement(Loc.GetString("fec-cmd-r-m-c-delay-round-end-admin", ("player", shell.Player?.Name ?? "Server"), ("value", (!currentValue).ToString().ToLowerInvariant()))); // FEC14
 
         _cfg.SetCVar(RMCCVars.RMCDelayRoundEnd, !currentValue);
 
@@ -56,13 +56,13 @@ public sealed class RMCDelayRoundEndCommand : LocalizedEntityCommands
         {
             if (currentValue)
             {
-                shell.WriteLine("Round End delay has been removed; you must manually issue a command/action to conclude the round still.");
-                chatMsg = "[bold][font size=24][color=red]\nThe round end delay has been disabled!\n[/color][/font][/bold]";
+                shell.WriteLine(Loc.GetString("fec-cmd-r-m-c-delay-round-end-removed-shell")); // FEC14
+                chatMsg = "\n" + Loc.GetString("fec-cmd-r-m-c-delay-round-end-removed") + "\n"; // FEC14
             }
             else
             {
-                shell.WriteLine("Round End has been delayed; you must manually issue a command/action to conclude the round now.");
-                chatMsg = "[bold][font size=24][color=red]\nThe round end has been delayed!\n[/color][/font][/bold]";
+                shell.WriteLine(Loc.GetString("fec-cmd-r-m-c-delay-round-end-delayed-shell")); // FEC14
+                chatMsg = "\n" + Loc.GetString("fec-cmd-r-m-c-delay-round-end-delayed") + "\n"; // FEC14
             }
         }
 
@@ -73,8 +73,8 @@ public sealed class RMCDelayRoundEndCommand : LocalizedEntityCommands
     {
         return args.Length switch
         {
-            1 => CompletionResult.FromHint("Silent"),
-            2 => CompletionResult.FromHint("Message"),
+            1 => CompletionResult.FromHint(Loc.GetString("fec-cmd-r-m-c-delay-round-end-hint-silent")), // FEC14
+            2 => CompletionResult.FromHint(Loc.GetString("fec-cmd-r-m-c-delay-round-end-hint-message")), // FEC14
             _ => CompletionResult.Empty,
         };
     }

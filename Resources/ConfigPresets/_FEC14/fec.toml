@@ -22,3 +22,7 @@ max_connections = 1024
 privacy_policy_link = ""
 privacy_policy_identifier = ""
 privacy_policy_version = ""
+
+[fec]
+night_enabled = true
+night_chance = 0.5

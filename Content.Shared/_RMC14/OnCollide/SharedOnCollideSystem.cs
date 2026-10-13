@@ -34,6 +34,7 @@ public abstract class SharedOnCollideSystem : EntitySystem
     private EntityQuery<DamageOnCollideComponent> _damageOnCollideQuery;
 
     private readonly List<Entity<DamageOnCollideComponent>> _damageOnCollide = new();
+    private float _fecPruneAccumulator; // FEC14
 
     public override void Initialize()
     {
@@ -208,6 +209,7 @@ public abstract class SharedOnCollideSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        FECPruneDeleted(frameTime); // FEC14
         _damageOnCollide.Clear();
 
         try
@@ -233,6 +235,28 @@ public abstract class SharedOnCollideSystem : EntitySystem
         finally
         {
             _damageOnCollide.Clear();
+        }
+    }
+
+    private void FECPruneDeleted(float frameTime) // FEC14
+    {
+        _fecPruneAccumulator += frameTime;
+        if (_fecPruneAccumulator < 1f)
+            return;
+
+        _fecPruneAccumulator = 0;
+        var damageQuery = EntityQueryEnumerator<DamageOnCollideComponent>();
+        while (damageQuery.MoveNext(out var uid, out var comp))
+        {
+            if (comp.Damaged.RemoveWhere(e => TerminatingOrDeleted(e)) > 0)
+                Dirty(uid, comp);
+        }
+
+        var chainQuery = EntityQueryEnumerator<CollideChainComponent>();
+        while (chainQuery.MoveNext(out var uid, out var comp))
+        {
+            if (comp.Hit.RemoveWhere(e => TerminatingOrDeleted(e)) > 0)
+                Dirty(uid, comp);
         }
     }
 }

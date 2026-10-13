@@ -110,6 +110,9 @@ public sealed partial class RMCWeatherCycleComponent : Component
     /// </summary>
     [DataField]
     public int EventSequence;
+
+    [DataField]
+    public bool FECClearRound; // FEC14
 }
 
 /// <summary>

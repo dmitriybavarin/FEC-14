@@ -70,5 +70,5 @@ sqlite_dbpath = "preferences.db"
 species_whitelist = "Human"
 # OOC-цвет ника по ID аккаунта: "GUID=#RRGGBB, GUID=#RRGGBB". GUID игрока: таблица player, колонка user_id в базе сервера.
 ooc_colors = ""
-# Файл цветов, который правит бот из .BOT. Сервер перечитывает его сам раз в 5 секунд.
+# Файл цветов. Сервер перечитывает его сам раз в 5 секунд.
 ooc_colors_file = ".CONFIG/ooc_colors.json"

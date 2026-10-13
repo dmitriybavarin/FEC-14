@@ -1,5 +1,6 @@
 using Content.Server._RMC14.Rules;
 using Content.Shared.CCVar;
+using System.IO;
 using Robust.Shared;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Replays;
@@ -117,7 +118,14 @@ public sealed partial class GameTicker
             _sawmillReplays.Error($"Error creating replay directory {state.MoveToPath.Value.Directory}: {e}");
         }
 
-        data.Directory.Rename(data.Path, state.MoveToPath.Value);
+        try // FEC14
+        {
+            data.Directory.Rename(data.Path, state.MoveToPath.Value);
+        }
+        catch (IOException e) // FEC14
+        {
+            _sawmillReplays.Error($"Error moving replay {data.Path} to {state.MoveToPath.Value}: {e}");
+        }
     }
 
     private void ReplaysOnRecordingStopped(MappingDataNode metadata)

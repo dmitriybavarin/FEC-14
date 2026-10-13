@@ -228,6 +228,8 @@
       entries:
       - id: RMCVisorMedical
         points: 15
+      - id: RMCVisorNightVision
+        points: 20
       - id: RMCVisorWelding
         points: 5
     - name: Pamphlets

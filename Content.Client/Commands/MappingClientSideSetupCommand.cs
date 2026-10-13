@@ -23,8 +23,7 @@ internal sealed class MappingClientSideSetupCommand : LocalizedCommands
         {
             _entitySystemManager.GetEntitySystem<MarkerSystem>().MarkersVisible = true;
             _lightManager.Enabled = false;
-            shell.ExecuteCommand("showsubfloor");
-            IoCManager.Resolve<IStateManager>().RequestStateChange<MappingState>();
+            shell.ExecuteCommand("showsubfloor"); // FEC14
         }
     }
 }

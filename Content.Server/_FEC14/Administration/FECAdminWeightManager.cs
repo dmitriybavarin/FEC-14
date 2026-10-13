@@ -8,6 +8,7 @@ using Content.Shared._FEC14.CCVar;
 using Content.Shared.Administration;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -101,6 +102,38 @@ public sealed class FECAdminWeightManager
 
         var targetWeight = await GetWeightAsync(target);
         return targetWeight == NotAdmin || await GetWeightAsync(actor) >= targetWeight;
+    }
+
+    public bool CheckShellTarget(IConsoleShell shell, ICommonSession target)
+    {
+        if (shell.Player is not { } actor || CanTarget(actor, target))
+            return true;
+
+        shell.WriteError(Loc.GetString("fec-admin-weight-blocked"));
+        return false;
+    }
+
+    public bool CheckShellTarget(IConsoleShell shell, NetUserId target)
+    {
+        return !_players.TryGetSessionById(target, out var session) || CheckShellTarget(shell, session);
+    }
+
+    public bool CheckShellTarget(IConsoleShell shell, EntityUid target)
+    {
+        var entities = IoCManager.Resolve<IEntityManager>();
+        if (!entities.TryGetComponent(target, out ActorComponent? actor))
+            return true;
+
+        return CheckShellTarget(shell, actor.PlayerSession);
+    }
+
+    public async Task<bool> CheckShellTargetAsync(IConsoleShell shell, NetUserId target)
+    {
+        if (shell.Player is not { } actor || await CanTargetAsync(actor.UserId, target))
+            return true;
+
+        shell.WriteError(Loc.GetString("fec-admin-weight-blocked"));
+        return false;
     }
 
     private void EnsureLoaded()

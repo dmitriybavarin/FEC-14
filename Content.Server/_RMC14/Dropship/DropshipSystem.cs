@@ -56,6 +56,7 @@ public sealed class DropshipSystem : SharedDropshipSystem
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly PointLightSystem _pointLight = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly Content.Shared._FEC14.Weather.FECWeatherTacticsSystem _fecWeatherTactics = default!; // FEC14
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly SkillsSystem _skills = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -392,6 +393,13 @@ public sealed class DropshipSystem : SharedDropshipSystem
         {
             Log.Warning($"Tried to launch shuttle {ToPrettyString(dropshipId)} in FTL");
             return false;
+        }
+
+        if (!hijack && user != null && // FEC14
+            (_fecWeatherTactics.BlocksAir(Transform(dropshipId.Value).MapID) || _fecWeatherTactics.BlocksAir(Transform(destination).MapID))) // FEC14
+        {
+            _popup.PopupEntity(Loc.GetString("fec-weather-flight-blocked"), user.Value, user.Value, PopupType.MediumCaution); // FEC14
+            return false; // FEC14
         }
 
         var dropship = EnsureComp<DropshipComponent>(dropshipId.Value);

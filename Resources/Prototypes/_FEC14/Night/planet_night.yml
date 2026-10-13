@@ -1,0 +1,32 @@
+- type: fecPlanetNight
+  id: RMCPlanetLV624
+
+- type: fecPlanetNight
+  id: RMCPlanetSolaris
+
+- type: fecPlanetNight
+  id: RMCPlanetShiva
+
+- type: fecPlanetNight
+  id: RMCPlanetTrijent
+
+- type: fecPlanetNight
+  id: RMCPlanetVaradero
+
+- type: fecPlanetNight
+  id: RMCPlanetKutjevo
+
+- type: fecPlanetNight
+  id: RMCPlanetChances
+
+- type: fecPlanetNight
+  id: RMCPlanetHybrisa
+
+- type: fecPlanetNight
+  id: RMCPlanetSorokyne
+
+- type: fecPlanetNight
+  id: RMCPlanetHybrisaRepaired
+
+- type: fecPlanetNight
+  id: RMCPlanetSorokyneRepaired

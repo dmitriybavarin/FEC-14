@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration;
+﻿using Content.Server._FEC14.Administration; // FEC14
+using Content.Server.Administration;
 using Content.Server.Roles.Jobs;
 using Content.Shared.Administration;
 using Content.Shared.Players;
@@ -13,6 +14,7 @@ namespace Content.Server.Roles
     public sealed class AddRoleCommand : LocalizedEntityCommands
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly JobSystem _jobSystem = default!;
 
@@ -33,6 +35,9 @@ namespace Content.Server.Roles
                 shell.WriteLine(Loc.GetString($"cmd-addrole-mind-not-found"));
                 return;
             }
+
+            if (!_fecWeight.CheckShellTarget(shell, data.UserId)) // FEC14
+                return; // FEC14
 
             var mind = data.ContentData()?.Mind;
             if (mind == null)

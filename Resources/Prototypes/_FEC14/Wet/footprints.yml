@@ -1,0 +1,15 @@
+- type: entity
+  id: FECWetFootprint
+  name: wet footprint
+  description: A damp print left by someone who is soaked through.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    sprite: _FEC14/Effects/wet_footprint.rsi
+    state: print
+    drawdepth: FloorObjects
+    noRot: false
+  - type: FECWetFootprint
+    lifetime: 60

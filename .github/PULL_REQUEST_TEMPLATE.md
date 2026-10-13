@@ -13,6 +13,13 @@
 <!-- Attach media if the PR makes ingame changes (clothing, items, features, etc).
 Small fixes/refactors are exempt. Media may be used in RMC14 progress reports with credit. -->
 
+## AI / ИИ
+<!-- Если часть изменений сделана ИИ, отметьте пункты. Правила: AI_GUIDELINES.md -->
+- [ ] Изменения (полностью или частично) сделаны ИИ, коммиты с ИИ начинаются с 🤖.
+- [ ] В ИИ не передавались секреты, конфиги сервера и данные игроков.
+- [ ] Специалист прочитал весь diff, собрал проект и прогнал тесты.
+- [ ] Специалист проверил изменение в игре (или оно не влияет на игру).
+
 ## Requirements
 <!-- Confirm the following by placing an X in the brackets [X]: -->
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).

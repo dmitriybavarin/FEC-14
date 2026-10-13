@@ -1,0 +1,14 @@
+fec-mapping-undo = Отменено действий { $count }
+fec-mapping-undo-empty = Нечего отменять
+fec-mapping-redo = Возвращено действий { $count }
+fec-mapping-redo-empty = Нечего возвращать
+ui-options-function-fec-mapping-undo = Отменить действие (тактическая карта, маппинг)
+ui-options-function-fec-mapping-redo = Вернуть действие (тактическая карта, маппинг)
+ui-options-function-fec-mapping-copy = Маппинг, копировать область (два нажатия по углам)
+ui-options-function-fec-mapping-paste = Маппинг, вставить область
+fec-mapping-copy-first-corner = Первый угол выбран, наведите на второй угол и нажмите ещё раз
+fec-mapping-copy-bad-grid = Оба угла и точка вставки должны быть на одном гриде
+fec-mapping-copy-too-big = Слишком большая область, максимум { $max }×{ $max } клеток
+fec-mapping-copied = Скопировано плиток { $tiles }, объектов { $entities }
+fec-mapping-pasted = Вставлено плиток { $tiles }, объектов { $entities }. Ctrl+Z отменит вставку
+fec-mapping-clipboard-empty = Буфер пуст, сначала скопируйте область

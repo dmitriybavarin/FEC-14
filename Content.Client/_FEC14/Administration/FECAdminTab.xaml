@@ -1,0 +1,30 @@
+<controls:FECAdminTab
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Content.Client._FEC14.Administration"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    Margin="4"
+    MinSize="50 50">
+    <TabContainer Name="Tabs" VerticalExpand="True">
+        <BoxContainer Name="ToolsTab" Orientation="Vertical" SeparationOverride="4" Margin="4">
+            <GridContainer Columns="3">
+                <cc:CommandButton Command="feceventspanel" Text="{Loc fec-events-ui-button}" />
+                <cc:UICommandButton Command="playerhistory" Text="{Loc fec-history-prompt-button}" WindowType="{x:Type controls:FECPlayerHistoryPromptWindow}" />
+                <cc:CommandButton Command="jobwhitelistpanel" Text="{Loc fec-job-whitelist-ui-button}" />
+                <cc:CommandButton Command="fecweather" Text="{Loc fec-weather-ui-button}" />
+                <cc:CommandButton Command="fecnight start" Text="{Loc fec-night-ui-start}" />
+                <cc:CommandButton Command="fecnight end" Text="{Loc fec-night-ui-end}" />
+            </GridContainer>
+        </BoxContainer>
+        <BoxContainer Name="SettingsTab" Orientation="Vertical" SeparationOverride="4" Margin="4">
+            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                <RichTextLabel Name="HintLabel" HorizontalExpand="True" VerticalAlignment="Center" />
+                <Button Name="RefreshButton" Text="{Loc fec-job-whitelist-ui-refresh}" VerticalAlignment="Top" />
+            </BoxContainer>
+            <Label Name="NoAccessLabel" Text="{Loc fec-settings-no-access}" FontColorOverride="#C86464" Visible="False" />
+            <ScrollContainer HScrollEnabled="False" VerticalExpand="True" MinHeight="200">
+                <controls:FECSettingsPanel Name="Settings" />
+            </ScrollContainer>
+        </BoxContainer>
+    </TabContainer>
+</controls:FECAdminTab>

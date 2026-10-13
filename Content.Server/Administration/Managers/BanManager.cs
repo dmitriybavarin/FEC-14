@@ -327,6 +327,13 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             return response.ToString();
         }
 
+        if (unbanningAdmin is { } unbanner &&
+            ban.BanningAdmin is { } banningAdmin &&
+            !await IoCManager.Resolve<Content.Server._FEC14.Administration.FECAdminWeightManager>().CanTargetAsync(unbanner, banningAdmin))
+        {
+            return Loc.GetString("fec-admin-weight-pardon-blocked");
+        }
+
         await _db.AddServerRoleUnbanAsync(new ServerRoleUnbanDef(banId, unbanningAdmin, DateTimeOffset.Now));
 
         if (ban.UserId is { } player

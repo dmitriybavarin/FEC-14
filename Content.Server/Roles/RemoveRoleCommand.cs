@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration;
+﻿using Content.Server._FEC14.Administration; // FEC14
+using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Players;
 using Content.Shared.Roles;
@@ -12,6 +13,7 @@ namespace Content.Server.Roles
     public sealed class RemoveRoleCommand : LocalizedEntityCommands
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly FECAdminWeightManager _fecWeight = default!; // FEC14
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
 
@@ -32,6 +34,9 @@ namespace Content.Server.Roles
                 shell.WriteLine(Loc.GetString($"cmd-addrole-mind-not-found"));
                 return;
             }
+
+            if (!_fecWeight.CheckShellTarget(shell, data.UserId)) // FEC14
+                return; // FEC14
 
             var mind = data.ContentData()?.Mind;
 
