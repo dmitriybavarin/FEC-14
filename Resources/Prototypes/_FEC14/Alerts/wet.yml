@@ -2,6 +2,16 @@
   id: FECWet
   icons:
   - sprite: /Textures/_FEC14/Alerts/wet.rsi
-    state: wet
+    state: wet0
+  - sprite: /Textures/_FEC14/Alerts/wet.rsi
+    state: wet1
+  - sprite: /Textures/_FEC14/Alerts/wet.rsi
+    state: wet2
+  - sprite: /Textures/_FEC14/Alerts/wet.rsi
+    state: wet3
+  - sprite: /Textures/_FEC14/Alerts/wet.rsi
+    state: wet4
   name: fec-alert-wet-name
   description: fec-alert-wet-desc
+  minSeverity: 0
+  maxSeverity: 4

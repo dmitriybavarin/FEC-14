@@ -9,6 +9,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Weather;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -24,6 +25,7 @@ public sealed class FECWetSystem : EntitySystem
     private const float StepDistance = 0.85f;
     private const float FootOffset = 0.08f;
     private const float RainGainFactor = 0.67f;
+    private static readonly TimeSpan ErodeStep = TimeSpan.FromSeconds(3);
     private static readonly TimeSpan SoakInterval = TimeSpan.FromSeconds(1);
     private static readonly string[] WetSurfaces = ["Wet", "Water"];
     private static readonly string[] PrintSurfaces = ["Sand", "Dirt", "Mud", "Snow"];
@@ -42,13 +44,7 @@ public sealed class FECWetSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<FECWetComponent, ComponentStartup>(OnWetStartup);
         SubscribeLocalEvent<FECWetComponent, ComponentShutdown>(OnWetShutdown);
-    }
-
-    private void OnWetStartup(Entity<FECWetComponent> ent, ref ComponentStartup args)
-    {
-        _alerts.ShowAlert(ent.Owner, WetAlert);
     }
 
     private void OnWetShutdown(Entity<FECWetComponent> ent, ref ComponentShutdown args)
@@ -62,7 +58,8 @@ public sealed class FECWetSystem : EntitySystem
             return;
 
         var now = _timing.CurTime;
-        if (now >= _nextSoak)
+        var tick = now >= _nextSoak;
+        if (tick)
         {
             _nextSoak = now + SoakInterval;
             Soak(now);
@@ -79,7 +76,46 @@ public sealed class FECWetSystem : EntitySystem
             }
 
             LeavePrint(uid, comp, xform);
+            if (tick)
+                UpdateAlert(uid, comp, now);
         }
+
+        if (tick)
+            Erode(now);
+    }
+
+    private void UpdateAlert(EntityUid uid, FECWetComponent wet, TimeSpan now)
+    {
+        var max = TimeSpan.FromSeconds(Math.Max(_config.GetCVar(FECCVars.WetMaxSeconds), 1f));
+        var fraction = Math.Clamp((wet.ExpiresAt - now) / max, 0.0, 1.0);
+        var severity = (short) Math.Clamp((int) Math.Ceiling(fraction * 5) - 1, 0, 4);
+        _alerts.ShowAlert(uid, WetAlert, severity, (wet.ExpiresAt - max, wet.ExpiresAt));
+    }
+
+    private void Erode(TimeSpan now)
+    {
+        var query = EntityQueryEnumerator<FECWetFootprintComponent>();
+        while (query.MoveNext(out var uid, out var print))
+        {
+            if (now >= print.ExpiresAt)
+            {
+                QueueDel(uid);
+                continue;
+            }
+
+            if (!HasActiveWeather(Transform(uid).MapID) || !_weather.IsWeatherExposed(uid))
+                continue;
+
+            print.ExpiresAt -= ErodeStep;
+            Dirty(uid, print);
+        }
+    }
+
+    private bool HasActiveWeather(MapId mapId)
+    {
+        return _map.TryGetMap(mapId, out var mapUid) &&
+               TryComp(mapUid, out WeatherComponent? weather) &&
+               weather.Weather.Count > 0;
     }
 
     private void Soak(TimeSpan now)
@@ -106,6 +142,7 @@ public sealed class FECWetSystem : EntitySystem
             var remaining = wet.ExpiresAt > now ? wet.ExpiresAt - now : TimeSpan.Zero;
             var total = remaining + TimeSpan.FromSeconds(gain * (inWater ? 1f : RainGainFactor));
             wet.ExpiresAt = now + (total > max ? max : total);
+            UpdateAlert(uid, wet, now);
         }
     }
 
@@ -136,6 +173,11 @@ public sealed class FECWetSystem : EntitySystem
         var side = new Vector2(-direction.Y, direction.X) * (wet.LeftFoot ? FootOffset : -FootOffset);
         var print = Spawn(PrintPrototype, xform.Coordinates.Offset(side));
         Transform(print).LocalRotation = delta.ToWorldAngle();
+        if (TryComp(print, out FECWetFootprintComponent? footprint))
+        {
+            footprint.ExpiresAt = _timing.CurTime + footprint.Lifetime;
+            Dirty(print, footprint);
+        }
     }
 
     private bool IsInWater(TransformComponent xform)

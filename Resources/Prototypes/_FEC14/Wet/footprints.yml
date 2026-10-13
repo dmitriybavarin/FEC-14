@@ -11,5 +11,5 @@
     state: print
     drawdepth: FloorObjects
     noRot: false
-  - type: TimedDespawn
-    lifetime: 45
+  - type: FECWetFootprint
+    lifetime: 60

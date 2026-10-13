@@ -8,7 +8,19 @@
   },
   "states": [
     {
-      "name": "wet"
+      "name": "wet0"
+    },
+    {
+      "name": "wet1"
+    },
+    {
+      "name": "wet2"
+    },
+    {
+      "name": "wet3"
+    },
+    {
+      "name": "wet4"
     }
   ]
 }
