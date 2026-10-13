@@ -24,6 +24,35 @@ public sealed class FECWeatherTacticsSystem : EntitySystem
         return GetTactics(mapId).OpticsRangeMultiplier;
     }
 
+    public float GetRadioNoise(MapId mapId)
+    {
+        if (!_map.TryGetMap(mapId, out var mapUid) || !TryComp(mapUid, out WeatherComponent? weather))
+            return 0f;
+
+        var noise = 0f;
+        foreach (var id in weather.Weather.Keys)
+        {
+            if (_prototypes.TryIndex<FECWeatherTacticsPrototype>(id.Id, out var tactics))
+                noise = Math.Max(noise, tactics.RadioNoise);
+        }
+
+        return noise;
+    }
+
+    public bool IsWetWeather(MapId mapId)
+    {
+        if (!_map.TryGetMap(mapId, out var mapUid) || !TryComp(mapUid, out WeatherComponent? weather))
+            return false;
+
+        foreach (var id in weather.Weather.Keys)
+        {
+            if (_prototypes.TryIndex<FECWeatherTacticsPrototype>(id.Id, out var tactics) && tactics.Wets)
+                return true;
+        }
+
+        return false;
+    }
+
     public (bool BlocksAir, int MortarDeviation, float OpticsRangeMultiplier) GetTactics(MapId mapId)
     {
         var result = (BlocksAir: false, MortarDeviation: 0, OpticsRangeMultiplier: 1f);

@@ -118,11 +118,11 @@ public sealed partial class GameTicker
             _sawmillReplays.Error($"Error creating replay directory {state.MoveToPath.Value.Directory}: {e}");
         }
 
-        try
+        try // FEC14
         {
             data.Directory.Rename(data.Path, state.MoveToPath.Value);
         }
-        catch (IOException e)
+        catch (IOException e) // FEC14
         {
             _sawmillReplays.Error($"Error moving replay {data.Path} to {state.MoveToPath.Value}: {e}");
         }

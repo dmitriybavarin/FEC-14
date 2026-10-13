@@ -53,6 +53,7 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
+          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
           - RMCMagazineRifleM54CWP
   - type: GunDamageModifier
@@ -132,6 +133,7 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
+          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
   - type: AttachableHolder
     slots:
@@ -189,6 +191,7 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
+          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
   - type: AttachableHolder
     slots:
@@ -247,6 +250,7 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
+          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
 
 - type: entity
@@ -370,6 +374,7 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
+          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
   - type: AttachableHolder
     slots:

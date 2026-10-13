@@ -71,4 +71,19 @@ public sealed class FECCVars : CVars
 
     public static readonly CVarDef<float> WeatherMinClearMinutes =
         CVarDef.Create("fec.weather_min_clear_minutes", 10f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> NightEnabled =
+        CVarDef.Create("fec.night_enabled", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> NightChance =
+        CVarDef.Create("fec.night_chance", 0.5f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> WetEnabled =
+        CVarDef.Create("fec.wet_enabled", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> WetDurationSeconds =
+        CVarDef.Create("fec.wet_duration_seconds", 150f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> RadioNoiseEnabled =
+        CVarDef.Create("fec.radio_noise_enabled", true, CVar.SERVERONLY);
 }

@@ -418,6 +418,8 @@
         amount: 12
       - id: CMMagazineRifleM54CAP
         amount: 10
+      - id: FECMagazineRifleM54CTracer
+        amount: 20
       - id: RMCMagazinePistolM1984AP
         amount: 2
     - name: Extended ammunition

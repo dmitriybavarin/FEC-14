@@ -12,6 +12,12 @@ public sealed partial class FECWeatherTacticsPrototype : IPrototype
     public bool BlocksAir;
 
     [DataField]
+    public bool Wets;
+
+    [DataField]
+    public float RadioNoise;
+
+    [DataField]
     public int MortarDeviation;
 
     [DataField]
