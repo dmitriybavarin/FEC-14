@@ -7,14 +7,14 @@
 python Tools/_FEC14/init_cfg.py
 ```
 
-или задачей VS Code «FEC: Создать папку .CONFIG».
+или задачей VS Code «FEC: Пустой .CONFIG + проверки» (она пересоздает пустой .CONFIG, старый сохранит как `.CONFIG.backup-*`, и запустит проверки; то же: `python Tools/_FEC14/init_cfg.py --reset --check`).
 
 ## Файлы
 
 | Файл | Кто читает | Что внутри |
 |---|---|---|
 | `server_config.toml` | сервер (`--config-file .CONFIG/server_config.toml`, так запускают задачи VS Code) | порт, название, хаб, база данных, вебхуки Discord, ссылки, настройки `[fec]` |
-| `ooc_colors.json` | сервер, бот из `.BOT` | цвета ников в OOC по GUID |
+| `ooc_colors.json` | сервер, бот из `Tools/_FEC14/Bot` | цвета ников в OOC по GUID |
 | `admin_weights.json` | сервер | вес админ-рангов (`fec.admin_weights_file`) |
 
 ## Вес админов
@@ -36,7 +36,7 @@ python Tools/_FEC14/init_cfg.py
 - `fec.ooc_colors`: свой цвет ника в OOC по GUID аккаунта, формат `"GUID=#RRGGBB, GUID=#RRGGBB"`.
   Работает для любых игроков, без Patreon. GUID лежит в базе сервера: таблица `player`, колонка `user_id`.
 - `fec.ooc_colors_file` (по умолчанию `.CONFIG/ooc_colors.json`): те же цвета в JSON `{"GUID": {"color": "#RRGGBB", "name": "ник"}}`.
-  Его правит бот из `.BOT` (`/ooccolor`), сервер перечитывает файл сам раз в 5 секунд. Файл важнее `fec.ooc_colors`.
+  Его правит бот из `Tools/_FEC14/Bot` (`/ooccolor`), сервер перечитывает файл сам раз в 5 секунд. Файл важнее `fec.ooc_colors`.
 
 ## Вайтлисты
 

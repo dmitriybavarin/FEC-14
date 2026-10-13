@@ -309,6 +309,7 @@ Resources/MapImages
 
 # FEC14 host config
 /.CONFIG/
+/.CONFIG.backup-*/
 
 # FEC14 discord bot
 /.BOT/
