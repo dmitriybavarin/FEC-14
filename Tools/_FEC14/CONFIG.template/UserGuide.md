@@ -1,24 +1,23 @@
 # FEC14: руководство хоста
 
-Всё, что нужно знать, чтобы настроить и запустить сервер и Discord-бота.
+Всё, что нужно знать, чтобы настроить и запустить сервер.
 
 ## Содержание
 
 1. [Быстрый старт](#быстрый-старт)
 2. [Задачи VS Code](#задачи-vs-code)
-3. [Папки `.CONFIG` и `.BOT`](#папки-config-и-bot)
+3. [Папки `.CONFIG` и `.BOT`](#папка-config)
 4. [Настройки FEC14](#настройки-fec14)
 5. [Вес админов](#вес-админов)
 6. [Вайтлисты](#вайтлисты)
-7. [Discord-бот](#discord-бот)
-8. [Сервер вне VS Code](#сервер-вне-vs-code)
+7. [Сервер вне VS Code](#сервер-вне-vs-code)
 
 ---
 
 ## Быстрый старт
 
 1. Задача **FEC: Восстановить .CONFIG + проверки**: создаст пустой `.CONFIG/` и проверит его.
-2. Заполнить `.CONFIG/server_config.toml` (порт, название, база, вебхуки) и `.BOT/config.json` (токен бота, создаётся вручную из `Tools/_FEC14/Bot/config.example.json`).
+2. Заполнить `.CONFIG/server_config.toml` (порт, название, база, вебхуки).
 3. Собрать (**Собрать DEV** или **Собрать Release**) и запустить сервер и клиент.
 
 ## Задачи VS Code
@@ -28,25 +27,21 @@
 | Собрать DEV / Собрать Release | собирает всё решение в Debug / Release |
 | Сервер DEV / Клиент DEV | запускает без пересборки, нужна предварительная сборка DEV |
 | Сервер Release / Клиент Release | запускает без пересборки, нужна предварительная сборка Release |
-| Восстановить .CONFIG + проверки | пересоздаёт пустой `.CONFIG` из шаблона и запускает проверки (`.BOT` не трогает) |
-| Запустить Discord-бота | запускает бота из `Tools/_FEC14/Bot` |
+| Восстановить .CONFIG + проверки | пересоздаёт пустой `.CONFIG` из шаблона и запускает проверки |
 
 То же из консоли: `python Tools/_FEC14/init_cfg.py --reset --check`.
 
-## Папки `.CONFIG` и `.BOT`
+## Папка `.CONFIG`
 
-Обе папки в `.gitignore`: токены и пароли в git не попадут.
+Папка в `.gitignore`: токены и пароли в git не попадут.
 
 Шаблон `.CONFIG` лежит в `Tools/_FEC14/CONFIG.template/`. Без `--reset` существующие файлы не перезаписываются. С `--reset` старый `.CONFIG` сохраняется как `.CONFIG.backup-*` (тоже в `.gitignore`), удалить его можно вручную.
-
-`.BOT` задачи не создают и не меняют: скопируйте `Tools/_FEC14/Bot/config.example.json` в `.BOT/config.json` вручную.
 
 | Файл | Кто читает | Что внутри |
 |---|---|---|
 | `.CONFIG/server_config.toml` | сервер (`--config-file`) | порт, название, хаб, база данных, вебхуки Discord, ссылки, секция `[fec]` |
-| `.CONFIG/ooc_colors.json` | сервер, бот | цвета ников в OOC по GUID |
+| `.CONFIG/ooc_colors.json` | сервер | цвета ников в OOC по GUID |
 | `.CONFIG/admin_weights.json` | сервер | вес админ-рангов (`fec.admin_weights_file`) |
-| `.BOT/config.json` | бот | токен, сервер Discord, роли, пути |
 
 ## Настройки FEC14
 
@@ -56,7 +51,7 @@
 |---|---|---|
 | `species_whitelist` | `Human` | какие расы можно выбрать в редакторе персонажа, ID прототипов через запятую; пустая строка разрешает все с `roundStart: true` |
 | `ooc_colors` | пусто | цвет ника в OOC по GUID, формат `"GUID=#RRGGBB, GUID=#RRGGBB"`; работает без Patreon |
-| `ooc_colors_file` | `.CONFIG/ooc_colors.json` | те же цвета в JSON `{"GUID": {"color": "#RRGGBB", "name": "ник"}}`; файл правит бот, сервер перечитывает его раз в 5 секунд; важнее `ooc_colors` |
+| `ooc_colors_file` | `.CONFIG/ooc_colors.json` | те же цвета в JSON `{"GUID": {"color": "#RRGGBB", "name": "ник"}}`; сервер перечитывает файл раз в 5 секунд; важнее `ooc_colors` |
 
 GUID игрока лежит в базе сервера: таблица `player`, колонка `user_id`.
 
@@ -99,33 +94,6 @@ GUID игрока лежит в базе сервера: таблица `player`
 ID должностей: `CMCommandingOfficer`, `RMCJobSynthetic`, `CMSeniorEnlistedAdvisor`, `CMProvostChiefInspector`, `CMProvostInspector`.
 
 `role_whitelist = false` открывает эти должности всем.
-
-## Discord-бот
-
-Правит цвета ников в OOC и показывает состояние сервера.
-
-**Настройка** (`.BOT/config.json`):
-
-| Поле | Описание |
-|---|---|
-| `token` | токен бота; можно передать переменной `DISCORD_TOKEN` |
-| `guild_id` | ID Discord-сервера (команды появятся сразу); `0` значит глобально, до часа ожидания |
-| `admin_role_ids` | роли, которым разрешено управлять цветами; администраторы Discord разрешены всегда |
-| `ooc_colors_file` | путь к файлу цветов |
-| `status_url` | адрес `/status` игрового сервера |
-
-**Запуск:** задача «Запустить Discord-бота» или `Tools/_FEC14/Bot/run.bat` (Linux/VPS: `run.sh`). Скрипт сам создаёт `.BOT/venv` и ставит зависимости.
-
-**Команды:**
-
-| Команда | Что делает |
-|---|---|
-| `/ooccolor set <guid> <#RRGGBB> [ник]` | задать цвет |
-| `/ooccolor remove <guid>` | убрать цвет |
-| `/ooccolor list` | показать список |
-| `/status` | игроки, раунд и карта |
-
-Ответы на `/ooccolor` видны только вызвавшему.
 
 ## Сервер вне VS Code
 

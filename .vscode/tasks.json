@@ -177,9 +177,9 @@
         {
             "label": "FEC: Запустить Discord-бота",
             "type": "process",
-            "command": "${workspaceFolder}/Tools/_FEC14/Bot/run.bat",
+            "command": "${workspaceFolder}/.BOT/run.bat",
             "options": {
-                "cwd": "${workspaceFolder}/Tools/_FEC14/Bot"
+                "cwd": "${workspaceFolder}/.BOT"
             },
             "problemMatcher": [],
             "presentation": {

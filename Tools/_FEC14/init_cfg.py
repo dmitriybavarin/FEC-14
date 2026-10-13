@@ -132,7 +132,7 @@ def check_server_config(r):
 
 def check_repo(r):
     print("Репозиторий")
-    for p in (".CONFIG/server_config.toml", ".BOT/config.json"):
+    for p in (".CONFIG/server_config.toml",):
         res = git("check-ignore", "-q", p)
         (r.ok if res.returncode == 0 else r.fail)(f"{p} в .gitignore" if res.returncode == 0 else f"{p} НЕ в .gitignore")
 
