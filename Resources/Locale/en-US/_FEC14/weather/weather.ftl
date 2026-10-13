@@ -60,3 +60,8 @@ fec-weather-tower-captured-marine = Link to the meteorological tower lost. The t
 fec-weather-tower-captured-xeno = The tall ones lost their weather tower. Now only we can see the sky.
 fec-weather-tower-freed-marine = Resin has been cleared from the meteorological tower. Repair and turn on the tower to restore weather reports.
 fec-meteo-station-xeno-tower = No link to the weather tower. The tower has been captured by xenomorphs.
+
+fec-meteo-station-night-soon = Night is coming: sunset in about { $minutes } min. Visibility will drop.
+fec-meteo-station-night-falling = The sun is setting, visibility is dropping fast.
+fec-meteo-station-night = [color=#8aa4ff]It is night.[/color] Dawn in about { $minutes } min.
+fec-meteo-station-night-rising = Dawn is breaking, visibility is returning to normal.

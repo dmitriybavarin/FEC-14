@@ -80,7 +80,7 @@ public sealed class FECNightSystem : EntitySystem
                 if (now >= night.NextPhaseAt)
                 {
                     night.Phase = FECNightPhase.Night;
-                    night.NextPhaseAt = now + profile.Duration;
+                    night.NextPhaseAt = now + RollDuration(profile);
                 }
 
                 break;
@@ -166,6 +166,13 @@ public sealed class FECNightSystem : EntitySystem
         night.Comp.NextPhaseAt = now + profile.Fade;
         _ambientLight.SetColor((night.Owner, ambient), night.Comp.DayColor, profile.Fade);
         _marineAnnounce.AnnounceARES(default, Loc.GetString("fec-night-rising"));
+    }
+
+    private TimeSpan RollDuration(FECPlanetNightPrototype profile)
+    {
+        var min = profile.MinDuration.TotalSeconds;
+        var max = Math.Max(min, profile.MaxDuration.TotalSeconds);
+        return TimeSpan.FromSeconds(min + (max - min) * _random.NextDouble());
     }
 
     private static float Luminance(Color color)

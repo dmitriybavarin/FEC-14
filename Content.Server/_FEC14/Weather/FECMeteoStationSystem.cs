@@ -1,9 +1,11 @@
+using Content.Shared._FEC14.Night;
 using Content.Shared._FEC14.Weather;
 using Content.Shared._RMC14.Power;
 using Content.Shared._RMC14.Weather;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -11,6 +13,7 @@ namespace Content.Server._FEC14.Weather;
 
 public sealed class FECMeteoStationSystem : EntitySystem
 {
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedRMCPowerSystem _power = default!;
@@ -89,9 +92,29 @@ public sealed class FECMeteoStationSystem : EntitySystem
                 ("minutes", minutes)),
         };
 
+        var night = GetNightText(forecast.MapId);
+        if (night != null)
+            body += "\n" + night;
+
         if (_tactics.BlocksAir(forecast.MapId))
             body += "\n" + Loc.GetString("fec-meteo-station-no-fly");
 
         return Loc.GetString("fec-meteo-station-forecast", ("location", location), ("body", body));
+    }
+
+    private string? GetNightText(MapId mapId)
+    {
+        if (!_map.TryGetMap(mapId, out var mapUid) || !TryComp(mapUid, out FECNightComponent? night))
+            return null;
+
+        var minutes = (int) Math.Max(1, Math.Ceiling((night.NextPhaseAt - _timing.CurTime).TotalMinutes));
+        return night.Phase switch
+        {
+            FECNightPhase.Waiting => Loc.GetString("fec-meteo-station-night-soon", ("minutes", minutes)),
+            FECNightPhase.Falling => Loc.GetString("fec-meteo-station-night-falling"),
+            FECNightPhase.Night => Loc.GetString("fec-meteo-station-night", ("minutes", minutes)),
+            FECNightPhase.Rising => Loc.GetString("fec-meteo-station-night-rising"),
+            _ => null,
+        };
     }
 }

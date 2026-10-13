@@ -1,3 +1,4 @@
+using Content.Shared._FEC14.Night;
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Marines.Announce;
 using Content.Shared._RMC14.Power;
@@ -262,7 +263,7 @@ public sealed class FECWeatherTowerSystem : EntitySystem
             !TryComp(mapUid, out WeatherComponent? weather) ||
             weather.Weather.Count == 0)
         {
-            return FECWeatherTowerScreen.Clear;
+            return IsNight(xform.MapUid) ? FECWeatherTowerScreen.Night : FECWeatherTowerScreen.Clear;
         }
 
         foreach (var id in weather.Weather.Keys)
@@ -272,6 +273,13 @@ public sealed class FECWeatherTowerSystem : EntitySystem
         }
 
         return ent.Comp.UnknownWeatherScreen;
+    }
+
+    private bool IsNight(EntityUid? map)
+    {
+        return map is { } uid &&
+               TryComp(uid, out FECNightComponent? night) &&
+               night.Phase is FECNightPhase.Falling or FECNightPhase.Night;
     }
 
     private void UpdateAppearance(Entity<FECWeatherTowerComponent> ent)

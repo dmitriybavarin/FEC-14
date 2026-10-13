@@ -60,3 +60,8 @@ fec-weather-tower-captured-marine = Связь с метеорологическ
 fec-weather-tower-captured-xeno = Высокие потеряли свою башню погоды. Теперь небо видим только мы.
 fec-weather-tower-freed-marine = Смола с метеорологической вышки очищена. Почините и включите вышку, чтобы восстановить метеосводки.
 fec-meteo-station-xeno-tower = Нет связи с метеовышкой. Вышка захвачена ксеноморфами.
+
+fec-meteo-station-night-soon = Скоро ночь: заход солнца примерно через { $minutes } мин. Видимость упадёт.
+fec-meteo-station-night-falling = Солнце садится, видимость быстро падает.
+fec-meteo-station-night = [color=#8aa4ff]Сейчас ночь.[/color] Рассвет примерно через { $minutes } мин.
+fec-meteo-station-night-rising = Светает, видимость возвращается в норму.

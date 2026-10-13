@@ -102,6 +102,7 @@
           Snow: { state: screen_snow }
           Dust: { state: screen_dust }
           Warning: { state: screen_warning }
+          Night: { state: screen_night }
       enum.WeededEntityLayers.Layer:
         resin:
           True: { visible: true }

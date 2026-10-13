@@ -55,6 +55,7 @@ public enum FECWeatherTowerScreen : byte
     Snow,
     Dust,
     Warning,
+    Night,
 }
 
 [Serializable, NetSerializable]

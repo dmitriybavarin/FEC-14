@@ -15,7 +15,10 @@ public sealed partial class FECPlanetNightPrototype : IPrototype
     public TimeSpan StartDelay = TimeSpan.FromMinutes(40);
 
     [DataField]
-    public TimeSpan Duration = TimeSpan.FromMinutes(12);
+    public TimeSpan MinDuration = TimeSpan.FromMinutes(11);
+
+    [DataField]
+    public TimeSpan MaxDuration = TimeSpan.FromMinutes(16);
 
     [DataField]
     public TimeSpan Fade = TimeSpan.FromMinutes(2);
