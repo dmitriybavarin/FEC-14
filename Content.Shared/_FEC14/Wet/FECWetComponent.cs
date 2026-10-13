@@ -14,4 +14,7 @@ public sealed partial class FECWetComponent : Component
 
     [ViewVariables]
     public bool LeftFoot;
+
+    [ViewVariables]
+    public bool FlamersDoused;
 }

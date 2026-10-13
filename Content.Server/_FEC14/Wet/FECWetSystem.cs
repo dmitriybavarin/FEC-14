@@ -2,10 +2,14 @@ using System.Numerics;
 using Content.Shared._FEC14.CCVar;
 using Content.Shared._FEC14.Weather;
 using Content.Shared._FEC14.Wet;
+using Content.Shared._RMC14.Atmos;
 using Content.Shared._RMC14.Water;
+using Content.Shared._RMC14.Weapons.Ranged.Flamer;
 using Content.Shared._RMC14.Weather;
 using Content.Shared.Alert;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Humanoid;
+using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -32,6 +36,9 @@ public sealed class FECWetSystem : EntitySystem
 
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly SharedRMCFlammableSystem _flammable = default!;
+    [Dependency] private readonly SharedRMCFlamerSystem _flamer = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -133,6 +140,9 @@ public sealed class FECWetSystem : EntitySystem
             if (!inWater && !rained)
                 continue;
 
+            if (inWater && TryComp(uid, out FlammableComponent? burning) && burning.OnFire)
+                _flammable.Extinguish((uid, burning));
+
             if (!TryComp(uid, out FECWetComponent? wet))
             {
                 wet = EnsureComp<FECWetComponent>(uid);
@@ -143,6 +153,22 @@ public sealed class FECWetSystem : EntitySystem
             var total = remaining + TimeSpan.FromSeconds(gain * (inWater ? 1f : RainGainFactor));
             wet.ExpiresAt = now + (total > max ? max : total);
             UpdateAlert(uid, wet, now);
+
+            var soaked = inWater || (wet.ExpiresAt - now).TotalSeconds >= max.TotalSeconds * 0.6;
+            if (soaked && (inWater || !wet.FlamersDoused))
+            {
+                wet.FlamersDoused = true;
+                DouseFlamers(uid);
+            }
+        }
+    }
+
+    private void DouseFlamers(EntityUid uid)
+    {
+        foreach (var item in _inventory.GetHandOrInventoryEntities(uid))
+        {
+            if (TryComp(item, out RMCIgniterComponent? igniter))
+                _flamer.FECDouse((item, igniter), uid);
         }
     }
 

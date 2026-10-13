@@ -21,5 +21,5 @@ public sealed partial class FECPlanetNightPrototype : IPrototype
     public TimeSpan Fade = TimeSpan.FromMinutes(2);
 
     [DataField]
-    public Color Color = Color.FromHex("#0c1226");
+    public Color Color = Color.FromHex("#38477a");
 }
