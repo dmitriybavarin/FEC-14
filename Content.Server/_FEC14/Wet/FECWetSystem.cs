@@ -22,7 +22,8 @@ public sealed class FECWetSystem : EntitySystem
     private static readonly ProtoId<AlertPrototype> WetAlert = "FECWet";
     private const string PrintPrototype = "FECWetFootprint";
     private const float StepDistance = 0.85f;
-    private const float FootOffset = 0.1f;
+    private const float FootOffset = 0.08f;
+    private const float RainGainFactor = 0.67f;
     private static readonly TimeSpan SoakInterval = TimeSpan.FromSeconds(1);
     private static readonly string[] WetSurfaces = ["Wet", "Water"];
     private static readonly string[] PrintSurfaces = ["Sand", "Dirt", "Mud", "Snow"];
@@ -83,15 +84,17 @@ public sealed class FECWetSystem : EntitySystem
 
     private void Soak(TimeSpan now)
     {
-        var duration = TimeSpan.FromSeconds(Math.Max(_config.GetCVar(FECCVars.WetDurationSeconds), 1f));
+        var max = TimeSpan.FromSeconds(Math.Max(_config.GetCVar(FECCVars.WetMaxSeconds), 1f));
+        var gain = Math.Max(_config.GetCVar(FECCVars.WetGainSeconds), 0f);
         var query = EntityQueryEnumerator<HumanoidAppearanceComponent, MobStateComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out _, out var mobState, out var xform))
         {
             if (!_mobState.IsAlive(uid, mobState))
                 continue;
 
-            var rained = _tactics.IsWetWeather(xform.MapID) && _weather.IsWeatherExposed(uid);
-            if (!rained && !IsOnSurface(xform, WetSurfaces) && !IsInWater(xform))
+            var inWater = IsOnSurface(xform, WetSurfaces) || IsInWater(xform);
+            var rained = !inWater && _tactics.IsWetWeather(xform.MapID) && _weather.IsWeatherExposed(uid);
+            if (!inWater && !rained)
                 continue;
 
             if (!TryComp(uid, out FECWetComponent? wet))
@@ -100,7 +103,9 @@ public sealed class FECWetSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("fec-wet-soaked"), uid, uid);
             }
 
-            wet.ExpiresAt = now + duration;
+            var remaining = wet.ExpiresAt > now ? wet.ExpiresAt - now : TimeSpan.Zero;
+            var total = remaining + TimeSpan.FromSeconds(gain * (inWater ? 1f : RainGainFactor));
+            wet.ExpiresAt = now + (total > max ? max : total);
         }
     }
 

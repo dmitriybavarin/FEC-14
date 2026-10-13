@@ -81,8 +81,11 @@ public sealed class FECCVars : CVars
     public static readonly CVarDef<bool> WetEnabled =
         CVarDef.Create("fec.wet_enabled", true, CVar.SERVERONLY);
 
-    public static readonly CVarDef<float> WetDurationSeconds =
-        CVarDef.Create("fec.wet_duration_seconds", 150f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> WetMaxSeconds =
+        CVarDef.Create("fec.wet_max_seconds", 120f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> WetGainSeconds =
+        CVarDef.Create("fec.wet_gain_seconds", 3f, CVar.SERVERONLY);
 
     public static readonly CVarDef<bool> RadioNoiseEnabled =
         CVarDef.Create("fec.radio_noise_enabled", true, CVar.SERVERONLY);
