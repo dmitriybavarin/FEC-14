@@ -59,3 +59,16 @@ fec-cmd-xeno-announce-desc = Announces a message to all xenos.
 fec-cmd-r-m-c-acid-instant-desc = Toggle or set instant corrosive acid.
 fec-cmd-actionss-desc = Saves the current action toolbar assignments to a file
 fec-cmd-show-areas-desc = Shows areas depending on their properties.
+
+fec-cmd-r-m-c-delay-round-end-wrong-args = Expected 1-2 args got 3 or more.
+fec-cmd-r-m-c-delay-round-end-silent-bool = Silent must be a boolean.
+fec-cmd-r-m-c-delay-round-end-admin = {$player}, has set the round end delay to {$value ->
+    [true] True
+   *[false] False
+}
+fec-cmd-r-m-c-delay-round-end-removed-shell = Round End delay has been removed; you must manually issue a command/action to conclude the round still.
+fec-cmd-r-m-c-delay-round-end-removed = [bold][font size=24][color=red]The round end delay has been disabled![/color][/font][/bold]
+fec-cmd-r-m-c-delay-round-end-delayed-shell = Round End has been delayed; you must manually issue a command/action to conclude the round now.
+fec-cmd-r-m-c-delay-round-end-delayed = [bold][font size=24][color=red]The round end has been delayed![/color][/font][/bold]
+fec-cmd-r-m-c-delay-round-end-hint-silent = Silent
+fec-cmd-r-m-c-delay-round-end-hint-message = Message

@@ -65,3 +65,5 @@ rmc-announcement-unidentified-lifesigns = [color=#CECECE][font size=16][bold]Uni
     Unidentified lifesigns ({$count}) detected onboard the dropship {$name}. Recommendation: lockdown of exterior access ports, including ducting and ventilation.[/bold][/font][/color]
 
 rmc-announcement-shipside-header = Please write a message to announce to the crew
+
+rmc-announcement-ares-operation-confirmed = Distress signal confirmed. Command has authorized the operation. Area of operations: {$planet}. The UNS Almayer is setting course. All personnel, prepare for deployment.
