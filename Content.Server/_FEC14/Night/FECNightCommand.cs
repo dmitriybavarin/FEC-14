@@ -7,7 +7,7 @@ using Robust.Shared.Console;
 namespace Content.Server._FEC14.Night;
 
 [AdminCommand(AdminFlags.Weather)]
-public sealed class FECNightCommand : LocalizedCommands
+public sealed class FECNightCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly FECNightSystem _night = default!;

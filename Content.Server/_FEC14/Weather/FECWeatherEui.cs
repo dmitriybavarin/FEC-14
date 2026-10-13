@@ -135,10 +135,10 @@ public sealed class FECWeatherEui : BaseEui
         switch (msg)
         {
             case FECWeatherStartMessage start:
-                weather.TryStartWeatherEvent((MapId) start.MapId, start.EventIndex.ToString(), start.Instant, true, out _message);
+                weather.TryStartWeatherEvent(new MapId(start.MapId), start.EventIndex.ToString(), start.Instant, true, out _message);
                 break;
             case FECWeatherEndMessage end:
-                weather.TryEndWeather((MapId) end.MapId, out _message);
+                weather.TryEndWeather(new MapId(end.MapId), out _message);
                 break;
             default:
                 return;
