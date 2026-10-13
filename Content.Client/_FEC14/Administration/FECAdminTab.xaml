@@ -11,6 +11,7 @@
                 <cc:CommandButton Command="feceventspanel" Text="{Loc fec-events-ui-button}" />
                 <cc:UICommandButton Command="playerhistory" Text="{Loc fec-history-prompt-button}" WindowType="{x:Type controls:FECPlayerHistoryPromptWindow}" />
                 <cc:CommandButton Command="jobwhitelistpanel" Text="{Loc fec-job-whitelist-ui-button}" />
+                <cc:CommandButton Command="fecweather" Text="{Loc fec-weather-ui-button}" />
             </GridContainer>
         </BoxContainer>
         <BoxContainer Name="SettingsTab" Orientation="Vertical" SeparationOverride="4" Margin="4">
