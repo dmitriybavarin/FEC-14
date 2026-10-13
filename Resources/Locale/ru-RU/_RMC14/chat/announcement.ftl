@@ -70,4 +70,4 @@ rmc-announcement-unidentified-lifesigns = [color=#CECECE][font size=16][bold]О�
 
 rmc-announcement-shipside-header = Напишите сообщение для объявления экипажу
 
-rmc-announcement-ares-operation-confirmed = Сигнал бедствия подтвержден. Командование утвердило операцию: UNS "Алмайер" выходит на курс к зоне бедствия. Всему личному составу приступить к подготовке к высадке.
+rmc-announcement-ares-operation-confirmed = Сигнал бедствия подтвержден. Командование утвердило операцию, UNS "Алмайер" выходит на курс к зоне бедствия. Всему личному составу готовиться к высадке.
