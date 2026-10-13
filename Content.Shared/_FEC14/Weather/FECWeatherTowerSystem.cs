@@ -228,6 +228,9 @@ public sealed class FECWeatherTowerSystem : EntitySystem
                 continue;
 
             tower.NextScreenUpdate = now + tower.ScreenUpdateInterval;
+            if (tower.State == FECWeatherTowerState.On && !_power.IsPowered(uid)) // FEC14
+                SetState((uid, tower), FECWeatherTowerState.Off); // FEC14
+
             UpdateXenoControl((uid, tower), now);
             UpdateScreen((uid, tower));
         }
