@@ -11,6 +11,8 @@
             <OptionButton Name="MapSelector" Access="Public" HorizontalExpand="True" />
         </BoxContainer>
         <RichTextLabel Name="StatusLabel" Access="Public" />
+        <Button Name="EndButton" Access="Public" Text="{Loc 'fec-weather-ui-end'}" HorizontalAlignment="Left" />
+        <Label Name="ResultLabel" Access="Public" FontColorOverride="#C8C864" />
         <cc:HSeparator Color="#4972A1" />
         <Label Text="{Loc 'fec-weather-ui-events'}" StyleClasses="LabelHeading" />
         <Label Name="NoCycleLabel" Access="Public" Text="{Loc 'fec-weather-ui-no-cycle'}" Visible="False" />

@@ -1,14 +1,17 @@
-cmd-fecweather-desc = Открывает окно прогноза погоды по картам.
+cmd-fecweather-desc = Открывает панель управления погодой по картам.
 cmd-fecweather-help = Использование: fecweather
 
-fec-weather-ui-button = Прогноз погоды
-fec-weather-ui-title = Прогноз погоды
+fec-weather-ui-button = Управление погодой
+fec-weather-ui-title = Управление погодой
 fec-weather-ui-map = Карта:
 fec-weather-ui-map-entry = { $name } (ID { $id })
 fec-weather-ui-map-unnamed = Карта { $id }
 fec-weather-ui-events = Возможные погодные события
 fec-weather-ui-no-cycle = На этой карте нет цикла погоды.
-fec-weather-ui-command-hint = Панель только показывает прогноз. Форсировать погоду: rmcweather start <карта> <номер> [now], закончить: rmcweather end <карта>.
+fec-weather-ui-command-hint = «Запустить» включает погоду с предупреждением, «Сразу» без него. «Закончить погоду» останавливает текущую.
+fec-weather-ui-start = Запустить
+fec-weather-ui-start-now = Сразу
+fec-weather-ui-end = Закончить погоду
 fec-weather-ui-event = #{ $index } { CAPITALIZE($name) }, { $seconds ->
     [0] бессрочно
    *[other] { $seconds } с

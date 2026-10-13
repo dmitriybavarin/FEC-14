@@ -31,6 +31,11 @@ public sealed class FECWeatherEui : BaseEui
             _eventsKey = string.Empty;
             Refresh();
         };
+        _window.EndButton.OnPressed += _ =>
+        {
+            if (_selectedMap is { } mapId)
+                SendMessage(new FECWeatherEndMessage(mapId));
+        };
         _window.OpenCentered();
     }
 
@@ -45,6 +50,8 @@ public sealed class FECWeatherEui : BaseEui
             return;
 
         _state = s;
+        _window.ResultLabel.Text = s.Message ?? string.Empty;
+        _window.ResultLabel.Visible = !string.IsNullOrEmpty(s.Message);
 
         var mapsKey = string.Join(';', s.Maps.Select(m => $"{m.MapId}:{m.Name}"));
         var mapsChanged = mapsKey != _mapsKey;
@@ -101,7 +108,8 @@ public sealed class FECWeatherEui : BaseEui
         _window.Events.DisposeAllChildren();
         foreach (var ev in map.Events)
         {
-            _window.Events.AddChild(new Label
+            var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 4 };
+            row.AddChild(new Label
             {
                 Text = Loc.GetString("fec-weather-ui-event",
                     ("index", ev.Index),
@@ -111,6 +119,16 @@ public sealed class FECWeatherEui : BaseEui
                 HorizontalExpand = true,
                 ClipText = true,
             });
+
+            var mapId = map.MapId;
+            var index = ev.Index;
+            var start = new Button { Text = Loc.GetString("fec-weather-ui-start") };
+            start.OnPressed += _ => SendMessage(new FECWeatherStartMessage(mapId, index, false));
+            var now = new Button { Text = Loc.GetString("fec-weather-ui-start-now") };
+            now.OnPressed += _ => SendMessage(new FECWeatherStartMessage(mapId, index, true));
+            row.AddChild(start);
+            row.AddChild(now);
+            _window.Events.AddChild(row);
         }
     }
 

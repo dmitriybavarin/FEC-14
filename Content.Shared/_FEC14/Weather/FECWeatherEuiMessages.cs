@@ -4,9 +4,24 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._FEC14.Weather;
 
 [Serializable, NetSerializable]
-public sealed class FECWeatherEuiState(List<FECWeatherMapEntry> maps) : EuiStateBase
+public sealed class FECWeatherEuiState(List<FECWeatherMapEntry> maps, string? message = null) : EuiStateBase
 {
     public readonly List<FECWeatherMapEntry> Maps = maps;
+    public readonly string? Message = message;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECWeatherStartMessage(int mapId, int eventIndex, bool instant) : EuiMessageBase
+{
+    public readonly int MapId = mapId;
+    public readonly int EventIndex = eventIndex;
+    public readonly bool Instant = instant;
+}
+
+[Serializable, NetSerializable]
+public sealed class FECWeatherEndMessage(int mapId) : EuiMessageBase
+{
+    public readonly int MapId = mapId;
 }
 
 [Serializable, NetSerializable]

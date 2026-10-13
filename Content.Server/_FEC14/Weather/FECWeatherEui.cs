@@ -17,6 +17,8 @@ public sealed class FECWeatherEui : BaseEui
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IEntityManager _entities = default!;
 
+    private string? _message;
+
     public FECWeatherEui()
     {
         IoCManager.InjectDependencies(this);
@@ -60,7 +62,7 @@ public sealed class FECWeatherEui : BaseEui
 
         maps.Sort((a, b) => a.MapId.CompareTo(b.MapId));
 
-        return new FECWeatherEuiState(maps);
+        return new FECWeatherEuiState(maps, _message);
     }
 
     private FECWeatherMapEntry CreateEntry(EntityUid mapUid, MapId mapId)
@@ -124,6 +126,24 @@ public sealed class FECWeatherEui : BaseEui
         base.HandleMessage(msg);
 
         if (!CanUse())
+        {
             Close();
+            return;
+        }
+
+        var weather = _entities.System<RMCWeatherSystem>();
+        switch (msg)
+        {
+            case FECWeatherStartMessage start:
+                weather.TryStartWeatherEvent((MapId) start.MapId, start.EventIndex.ToString(), start.Instant, true, out _message);
+                break;
+            case FECWeatherEndMessage end:
+                weather.TryEndWeather((MapId) end.MapId, out _message);
+                break;
+            default:
+                return;
+        }
+
+        StateDirty();
     }
 }

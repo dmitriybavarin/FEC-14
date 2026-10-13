@@ -1,14 +1,17 @@
-cmd-fecweather-desc = Opens the weather forecast window for all maps.
+cmd-fecweather-desc = Opens the weather control panel for all maps.
 cmd-fecweather-help = Usage: fecweather
 
-fec-weather-ui-button = Weather Forecast
-fec-weather-ui-title = Weather Forecast
+fec-weather-ui-button = Weather Control
+fec-weather-ui-title = Weather Control
 fec-weather-ui-map = Map:
 fec-weather-ui-map-entry = { $name } (ID { $id })
 fec-weather-ui-map-unnamed = Map { $id }
 fec-weather-ui-events = Possible Weather Events
 fec-weather-ui-no-cycle = This map has no weather cycle.
-fec-weather-ui-command-hint = This panel only shows the forecast. Force weather: rmcweather start <map> <index> [now], end it: rmcweather end <map>.
+fec-weather-ui-command-hint = Start begins the weather with a warning, Now skips the warning. End Weather stops the current one.
+fec-weather-ui-start = Start
+fec-weather-ui-start-now = Now
+fec-weather-ui-end = End Weather
 fec-weather-ui-event = #{ $index } { $name }, { $seconds ->
     [0] permanent
    *[other] { $seconds } s
