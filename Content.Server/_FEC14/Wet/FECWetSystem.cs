@@ -2,7 +2,9 @@ using System.Numerics;
 using Content.Shared._FEC14.CCVar;
 using Content.Shared._FEC14.Weather;
 using Content.Shared._FEC14.Wet;
+using Content.Shared._RMC14.Water;
 using Content.Shared._RMC14.Weather;
+using Content.Shared.Alert;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -10,12 +12,14 @@ using Content.Shared.Popups;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._FEC14.Wet;
 
 public sealed class FECWetSystem : EntitySystem
 {
+    private static readonly ProtoId<AlertPrototype> WetAlert = "FECWet";
     private const string PrintPrototype = "FECWetFootprint";
     private const float StepDistance = 0.85f;
     private const float FootOffset = 0.1f;
@@ -23,6 +27,7 @@ public sealed class FECWetSystem : EntitySystem
     private static readonly string[] WetSurfaces = ["Wet", "Water"];
     private static readonly string[] PrintSurfaces = ["Sand", "Dirt", "Mud", "Snow"];
 
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
@@ -33,6 +38,22 @@ public sealed class FECWetSystem : EntitySystem
     [Dependency] private readonly RMCWeatherSystem _weather = default!;
 
     private TimeSpan _nextSoak;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<FECWetComponent, ComponentStartup>(OnWetStartup);
+        SubscribeLocalEvent<FECWetComponent, ComponentShutdown>(OnWetShutdown);
+    }
+
+    private void OnWetStartup(Entity<FECWetComponent> ent, ref ComponentStartup args)
+    {
+        _alerts.ShowAlert(ent.Owner, WetAlert);
+    }
+
+    private void OnWetShutdown(Entity<FECWetComponent> ent, ref ComponentShutdown args)
+    {
+        _alerts.ClearAlert(ent.Owner, WetAlert);
+    }
 
     public override void Update(float frameTime)
     {
@@ -70,7 +91,7 @@ public sealed class FECWetSystem : EntitySystem
                 continue;
 
             var rained = _tactics.IsWetWeather(xform.MapID) && _weather.IsWeatherExposed(uid);
-            if (!rained && !IsOnSurface(xform, WetSurfaces))
+            if (!rained && !IsOnSurface(xform, WetSurfaces) && !IsInWater(xform))
                 continue;
 
             if (!TryComp(uid, out FECWetComponent? wet))
@@ -110,6 +131,22 @@ public sealed class FECWetSystem : EntitySystem
         var side = new Vector2(-direction.Y, direction.X) * (wet.LeftFoot ? FootOffset : -FootOffset);
         var print = Spawn(PrintPrototype, xform.Coordinates.Offset(side));
         Transform(print).LocalRotation = delta.ToWorldAngle();
+    }
+
+    private bool IsInWater(TransformComponent xform)
+    {
+        if (xform.GridUid is not { } gridUid || !TryComp(gridUid, out MapGridComponent? grid))
+            return false;
+
+        var indices = _map.CoordinatesToTile(gridUid, grid, xform.Coordinates);
+        var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, indices);
+        while (anchored.MoveNext(out var anchoredUid))
+        {
+            if (HasComp<RMCWaterComponent>(anchoredUid.Value))
+                return true;
+        }
+
+        return false;
     }
 
     private bool IsOnSurface(TransformComponent xform, string[] surfaces)

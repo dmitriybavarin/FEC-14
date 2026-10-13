@@ -1,0 +1,7 @@
+- type: alert
+  id: FECWet
+  icons:
+  - sprite: /Textures/_FEC14/Alerts/wet.rsi
+    state: wet
+  name: fec-alert-wet-name
+  description: fec-alert-wet-desc

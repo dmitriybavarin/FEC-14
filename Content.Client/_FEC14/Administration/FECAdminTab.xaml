@@ -15,8 +15,8 @@
         </BoxContainer>
         <BoxContainer Name="SettingsTab" Orientation="Vertical" SeparationOverride="4" Margin="4">
             <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-                <Label Text="{Loc fec-settings-hint}" FontColorOverride="#A0A0A0" HorizontalExpand="True" ClipText="True" />
-                <Button Name="RefreshButton" Text="{Loc fec-job-whitelist-ui-refresh}" />
+                <RichTextLabel Name="HintLabel" HorizontalExpand="True" VerticalAlignment="Center" />
+                <Button Name="RefreshButton" Text="{Loc fec-job-whitelist-ui-refresh}" VerticalAlignment="Top" />
             </BoxContainer>
             <Label Name="NoAccessLabel" Text="{Loc fec-settings-no-access}" FontColorOverride="#C86464" Visible="False" />
             <ScrollContainer HScrollEnabled="False" VerticalExpand="True" MinHeight="200">
