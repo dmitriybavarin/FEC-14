@@ -76,8 +76,7 @@
             }
         },
         {
-            "label": "FEC: _сервер (DEV)",
-            "hide": true,
+            "label": "FEC: Сервер DEV",
             "type": "process",
             "command": "dotnet",
             "args": [
@@ -98,8 +97,7 @@
             }
         },
         {
-            "label": "FEC: _клиент (DEV)",
-            "hide": true,
+            "label": "FEC: Клиент DEV",
             "type": "process",
             "command": "dotnet",
             "args": [
@@ -117,8 +115,7 @@
             }
         },
         {
-            "label": "FEC: _сервер (Release)",
-            "hide": true,
+            "label": "FEC: Сервер Release",
             "type": "process",
             "command": "dotnet",
             "args": [
@@ -139,8 +136,7 @@
             }
         },
         {
-            "label": "FEC: _клиент (Release)",
-            "hide": true,
+            "label": "FEC: Клиент Release",
             "type": "process",
             "command": "dotnet",
             "args": [
@@ -158,23 +154,7 @@
             }
         },
         {
-            "label": "FEC: Запустить DEV (сервер + клиент)",
-            "dependsOn": [
-                "FEC: _сервер (DEV)",
-                "FEC: _клиент (DEV)"
-            ],
-            "problemMatcher": []
-        },
-        {
-            "label": "FEC: Запустить Release (сервер + клиент)",
-            "dependsOn": [
-                "FEC: _сервер (Release)",
-                "FEC: _клиент (Release)"
-            ],
-            "problemMatcher": []
-        },
-        {
-            "label": "FEC: Пустой .CONFIG + проверки",
+            "label": "FEC: Восстановить .CONFIG + проверки",
             "type": "process",
             "command": "python",
             "args": [
