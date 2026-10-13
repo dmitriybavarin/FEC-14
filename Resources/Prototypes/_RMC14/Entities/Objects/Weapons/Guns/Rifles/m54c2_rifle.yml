@@ -56,7 +56,6 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
-          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
   - type: GunDamageModifier
     multiplier: 1.25
@@ -122,7 +121,6 @@
           - CMMagazineRifleM54CAP
           - CMMagazineRifleM54CExt
           - RMCMagazineRifleM54CIncendiary
-          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CHEAP
   - type: AttachableHolder
     slots:

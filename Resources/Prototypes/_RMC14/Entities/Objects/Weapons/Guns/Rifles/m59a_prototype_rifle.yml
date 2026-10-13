@@ -74,7 +74,6 @@
           - CMMagazineRifleM54CMK1
           - CMMagazineRifleM54CMK1AP
           - RMCMagazineRifleM54CIncendiary
-          - FECMagazineRifleM54CTracer
           - RMCMagazineRifleM54CMK1Incendiary
         startingItem: CMMagazineRifleM54CMK1AP
   - type: GunDamageModifier
