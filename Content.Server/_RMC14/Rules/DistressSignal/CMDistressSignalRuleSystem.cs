@@ -363,7 +363,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
             {
                 component.AresAnnouncementIndex++;
 
-                _marineAnnounce.AnnounceARESStaging(default, Loc.GetString(announcement.Text), announcement: announcement.Announcement);
+                _marineAnnounce.AnnounceARESStaging(default, Loc.GetString(announcement.Text, ("planet", SelectedPlanetMapName ?? string.Empty)), announcement: announcement.Announcement);
             }
         }
 
