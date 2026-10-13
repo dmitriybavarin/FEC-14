@@ -17,14 +17,12 @@ rmc-announcement-planet-hybrisa = We have received your automated distress signa
 rmc-announcement-planet-sorokyne = We have received your automated distress signal from a mining colony on border world LV-976, "Sorokyne Outpost". We are moving out to investigate.
 
 rmc-announcement-planet-varadero = We have received your automated distress signal from New Varadero Naval Base. We are moving out to investigate.
-                                           Designation: UNMC Naval base, primary defensive garrison for New Varadero City, research site and mining facility
 
-                                           Total Personnel: 47
-                                           Current Temperature: 68F Interior, 97F Exterior
-                                           Onsite Representative: UN Rep. Steve Haifisch
-                                           Telecommunications Array: Repairs required
+                                           New Varadero serves as a UNMC naval base and the primary defensive garrison for New Varadero City, as well as a research site and mining facility.
 
-                                           No further information available at this time.
+                                           UN Representative Steve Haifisch is on site.
+                                           The temperature is 68F indoors and 97F outdoors.
+                                           The base has a total personnel of 47.
 
 rmc-announcement-planet-varadero-1 = Mayday, Mayday, Mayday. UNS Almayer, we are detecting you on approach. This is Lieutenant #%-#^-@%#, authorization code Lima Alfa Sierra Niner, broadcasting on all stations. Stand by for a situation report.
 
