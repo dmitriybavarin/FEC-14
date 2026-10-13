@@ -15,6 +15,9 @@ fec-settings-tooltip = { $key }, default { $default }{ $range ->
 fec-settings-category-events = Events
 fec-settings-category-weather = Weather
 fec-settings-category-lobby = Lobby
+fec-settings-category-night = Night
+fec-settings-category-wet = Wet status
+fec-settings-category-radio = Radio
 
 fec-settings-fec-events-enabled = Events enabled
 fec-settings-fec-events-chance = Roll chance per slot (0–1)
@@ -30,6 +33,12 @@ fec-settings-fec-weather-max-start-chance = Max bad weather start chance (0–1)
 fec-settings-fec-weather-min-check-minutes = Min weather check interval, min
 fec-settings-fec-weather-min-clear-minutes = Min clear pause between bad weather, min
 fec-settings-fec-species-whitelist = Allowed species (comma separated)
+fec-settings-fec-night-enabled = Night enabled
+fec-settings-fec-night-chance = Round night chance (0-1)
+fec-settings-fec-wet-enabled = Wet status enabled
+fec-settings-fec-wet-max-seconds = Max wet time, sec
+fec-settings-fec-wet-gain-seconds = Wet gain per second in water, sec
+fec-settings-fec-radio-noise-enabled = Radio noise in bad weather
 
 
 cmd-fectp-desc = Teleports to a map, grid, entity or player. Understands ids from lsmap and lsgrid.

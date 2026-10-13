@@ -15,6 +15,9 @@ fec-settings-tooltip = { $key }, по умолчанию { $default }{ $range ->
 fec-settings-category-events = События
 fec-settings-category-weather = Погода
 fec-settings-category-lobby = Лобби
+fec-settings-category-night = Ночь
+fec-settings-category-wet = Мокрый статус
+fec-settings-category-radio = Рация
 
 fec-settings-fec-events-enabled = События включены
 fec-settings-fec-events-chance = Шанс ролла на слот (0–1)
@@ -30,6 +33,12 @@ fec-settings-fec-weather-max-start-chance = Макс. шанс начала не
 fec-settings-fec-weather-min-check-minutes = Мин. интервал проверки погоды, мин
 fec-settings-fec-weather-min-clear-minutes = Мин. ясная пауза между непогодой, мин
 fec-settings-fec-species-whitelist = Разрешённые расы (через запятую)
+fec-settings-fec-night-enabled = Ночь включена
+fec-settings-fec-night-chance = Шанс ночи в раунде (0–1)
+fec-settings-fec-wet-enabled = Мокрый статус включён
+fec-settings-fec-wet-max-seconds = Макс. время мокроты, сек
+fec-settings-fec-wet-gain-seconds = Прирост мокроты за секунду в воде, сек
+fec-settings-fec-radio-noise-enabled = Помехи рации в непогоду
 
 
 cmd-fectp-desc = Телепорт к карте, гриду, сущности или игроку. Понимает номера из lsmap и lsgrid.
